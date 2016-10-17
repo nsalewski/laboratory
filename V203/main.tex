@@ -36,7 +36,47 @@
 					\item es existiert Temperatur-Bereich in dem L nahezu konstant
 			\end{itemize}
 			\end{itemize}
-		\item Mikroskopische Vorgänge bei der Verdampfung
+		\item Mikroskopische Vorgänge bei der Verdampfung: 
+			\begin{itemize}
+
+			\item Moleküle an Wasseroberfläche besitzen Geschwindigkeitsverteilung gemäß der Maxwell-Boltzmann Verteilung.
+			\item Entsprechender Anteil mit ausreichender kinetischer Energie verdampft.
+			\item Hierbei wird Arbeit gegen Van-der-Waals-Kräfte(Molekularkräfte) verrichtet. 
+			\item Nötige Energie aus Wärmevorrat der Substanz oder von außen zugeführt.
+			\item Energie um $1$ mol Flüssigkeit in Dampf gleicher Temperatur umzuwandeln heißt molare Verdampfungswärme $L$.
+			\item Bei Kondensation wird Wärmeenergie mit dem Betrag von $L$ wieder an die Umgebung abgegeben.
+			\item Moleküle in Dampfphase erzeugen Druck durch Stöße an Wand und Flüssigkeitsoberfläche.
+			\item Moleküle, die auf Oberfläche treffen werden teilweise wieder eingefangen
+			\item Sind äußere Bedingungen gleichbleibend stellt sich thermodynamisches Gleichgewicht ein. Druck bleibt gleich im zeitlichen Mittel: Stoffmenge die verdampft entspricht Stoffmenge die kondensiert.
+			\item dieser Druck heißt Sättigungsdampfdruck
+			\item steigt $T$, verschiebt sich Geschwindigkeitsverteilung, mehr Moleküle haben kinetische Energie um aus Obeerfläche austreten können, höherer Druck
+			\item Druck hängt nicht vom Volumen ab, verändert sich Volumen, verdampft entsprechend mehr Flüssigkeit bis Sättigungsdampfdruck erreicht ist.
+			\item Also lässt sich das Verhältnis vom gesättigten Dampf nicht durch allgemeine Gasgleichung $p V = R T$ beschreiben.
+			\end{itemize}
+		\item Ableitung einer Differentialgleichung für die Dampfdruck-Kurve
+			\begin{itemize}
+				\item betrachte reversiblen Kreisprozess
+				\item isobares, isothermes Verdampfen und anschließendes isobares, isothermes Kondensieren bis zum Ausgangszustand
+				\item daraus erhält man durch Anwendung des 1. und 2. Hauptsatzes der Thermodynamik die Clausius-Clapeyronsche Gleichung 
+				\begin{equation}
+					\frac{L \symup{d}T}{T} = \symup{d}p (V_D - V_F)
+				\end{equation}
+				\item Lösen der DGL schwierig bei komplexen $T$-Abhängigkeiten von $V_D$ und $V_F$
+				\item Daher werden Vereinfachungen verwendet, die gelten wenn $T$ weit unter KP liegt
+					\begin{enumerate}
+						\item $V_F$ vernachlässigbar gegenüber $V_D$
+						\item $V_D$ gehorcht idealer Gasgleichung
+						\item $L$ unabhängig von Druck und Temperatur
+					\end{enumerate}
+				\item daraus erhält man vereinfachte gleichung
+					\begin{equation}
+						\frac{R}{p} \symup{d}p = \frac{L}{T^2} \symup{d}T
+					\end{equation}
+				\item Integration liefert schließlich $T$-Abhängigkeit von $p$
+					\begin{equation}
+						p = p_0 \exp{-\frac{L}{R} \frac{1}{T}}
+					\end{equation}
+			\end{itemize}
 \end{itemize}
 
 
