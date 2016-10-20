@@ -2,7 +2,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
-
+x1=np.linspace(0.0035,0.00265, 77)
 x=np.genfromtxt("1durchT.txt", unpack=True)
 y=np.genfromtxt("ln(p).txt",unpack=True)
 a=(np.mean(x))
@@ -13,11 +13,13 @@ e=((np.mean(x))**2)
 print(a,b,c,d,e)
 f=((c-(a*b))/(d-e))
 g=((d*b)-(a*c))/(d-e)
-print (b,f)
+print (f,g)
+print (len(y))
 
 
 plt.plot (x, y,"rx", label="Messdaten")
-plt.plot(x, f*x+g, "b-", label="Regression")
+plt.plot(x1, f*x1+g, "b-", label="Regression")
+plt.xlim(0.00265, 0.0034)
 
 plt.grid()
 
