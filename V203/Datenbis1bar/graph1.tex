@@ -1,0 +1,42 @@
+\documentclass{scrartcl}
+
+\usepackage{scrhack}
+
+\usepackage[aux]{rerunfilecheck}
+
+\usepackage{polyglossia}
+\setmainlanguage{german}
+
+\usepackage{fontspec}
+
+\usepackage{float}
+\floatplacement{figure}{htbp}
+\usepackage[
+  section,
+  below,
+]{placeins}
+
+\usepackage[
+  labelfont=bf,
+  font=small
+  justification=raggedright
+  width=0.9\textwidth,
+]{caption}
+\usepackage{subcaption}
+\usepackage{blindtext}
+
+\usepackage{graphicx}
+\usepackage{grffile}
+
+\usepackage[unicode]{hyperref}
+\usepackage{bookmark}
+\begin {document}
+
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{messung1.pdf}
+  \caption{Messung 1}
+  \label{fig:plot1}
+\end{figure}
+\end {document}
