@@ -2,7 +2,7 @@ import numpy as np
 from scipy.optimize import curve_fit
 import matplotlib.pyplot as plt
 
-T, p = np.genfromtxt('data2.txt', unpack = True)
+T, p = np.genfromtxt('data.txt', unpack = True)
 
 def y(x, a, b, c,d):
     return a * x**3 + b*x**2 + c*x + d
@@ -54,7 +54,7 @@ plt.legend(loc='best')
 plt.legend(loc='best')
 plt.tight_layout()
 
-plt.savefig('L+.pdf')
+plt.savefig('testL+.pdf')
 
 plt.clf()
 
@@ -64,4 +64,4 @@ plt.plot(w,o,'rx',label='Literaturwerte')
 plt.xlabel(r'$T[K] $')
 plt.legend(loc='best')
 plt.tight_layout()
-plt.savefig('L-.pdf')
+plt.savefig('testL-.pdf')
