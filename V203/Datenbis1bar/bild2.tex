@@ -30,13 +30,21 @@
 
 \usepackage[unicode]{hyperref}
 \usepackage{bookmark}
+
+ \renewcommand\appendix{\par 
+    \setcounter{section}{4}% 
+    \setcounter{subsection}{4}% 
+    \renewcommand\thesection{\Alph{section}}% 
+    \renewcommand\thefigure{\Alph{section}\arabic{figure}}} 
+\setcounter{figure}{2}
 \begin {document}
+
 
 
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{bild3.png}
-  \caption{Messung 1}
+  \caption{Messung für $p<1bar$}
   \label{fig:plot1}
 \end{figure}
 \end {document}
