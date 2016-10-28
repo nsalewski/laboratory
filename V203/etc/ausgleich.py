@@ -45,7 +45,7 @@ o=o*1000
 
 plt.clf()
 
-l=np.linspace(330,451)
+l=np.linspace(330,451, 30)
 plt.plot(l,L(l,R,1,popt[0],popt[1],popt[2],popt[3],0.9),'b-',label='$L_+$')
 plt.plot(w,o,'rx',label='Literaturwerte')
 plt.ylabel(r'$L(T)$')
@@ -55,6 +55,7 @@ plt.legend(loc='best')
 plt.tight_layout()
 
 plt.savefig('L+.pdf')
+print(l, L(l,R,1,popt[0],popt[1],popt[2],popt[3],0.9))
 
 plt.clf()
 
