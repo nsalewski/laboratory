@@ -1,3 +1,9 @@
+## ignore .pdfs to prevent merge errors which are hard to solve
+*.pdf
+
+
+
+
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
