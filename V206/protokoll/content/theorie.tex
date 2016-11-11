@@ -9,38 +9,64 @@ Eine Kenngröße für die Effizienz einer Wärmepumpe ist die Güteziffer $\upnu
 Die Wärmepumpe wird idealisierend als abgeschlossenes System aufgefasst.
 Demnach gilt nach dem 1. Hauptsatz der Thermodynamik, dass die von einem Transportmedium an das Reservoir $1$ übertragene Wärmemenge $Q_1$ gleich der Summe der vom Reservoir $2$ entzogenen Wärmemenge $Q_2$ und der verrichteten Arbeit $A$ ist. Also gilt:
 \begin{equation}
+	\label{eqn:dQ}
 	Q_1 = Q_2 + A
 \end{equation}
 Offensichtlich ist eine Wärmepumpe umso effizienter, wenn eine möglichst kleine mechanische Arbeit für eine möglichst große übertragene Wärmemenge $Q_1$ benötigt wird. Daher wird die Güteziffer $\upnu$ wie folgt definiert:
 \begin{equation}
+	\label{eqn:guete}
 	\upnu := \frac{Q_1}{A}
 \end{equation}
-Aus der Annahme, dass die Wärmepumpe als abgeschlossenes, isoliertes System angenommen wird, ergibt sich für die Entropieänderung $\symup{d}S$ des Systems
+Aus der Annahme, dass die Wärmepumpe als abgeschlossenes isoliertes System angenommen wird, ergibt sich für die Entropieänderung $\symup{d}S$ des Systems
 \begin{equation}
+	\label{eqn:entropie}
 	\symup{d}S = \frac{Q_1}{T_1} - \frac{Q_2}{T_2}
 \end{equation}
 Die Entropieänderung eines isolierten Systems ist gleich Null, wenn die Wärmeübertragung reversibel verläuft. 
-Ein reversibeler Umwandlungsprozess entspricht der Annahme, dass während der Wärmeübertragung die Temperaturen $T_1$ und $T_2$, sowie die zugehörigen Drücke $p_b$ und $p_a$ überall konstant bleiben.
+Ein reversibler Umwandlungsprozess entspricht der Annahme, dass während der Wärmeübertragung die Temperaturen $T_1$ und $T_2$, sowie die zugehörigen Drücke $p_b$ und $p_a$ konstant bleiben. Der Prozess müsste also unendlich langsam verlaufen. 
+Dies muss erfüllt sein, damit die vom Transportmedium aufgenommene Energie jederzeit in einem umgekehrtem Prozess wieder zurückgewonnen werden kann \cite{Anleitung}.
+
+Aus den Gleichungen \eqref{eqn:dQ}, \eqref{eqn:guete} und \eqref{eqn:entropie} erhält man nun für die Güteziffer den Ausdruck:
+\begin{equation}
+	\label{eqn:gueteneu}
+	\upnu = \frac{Q_1}{A} = \frac{T_1}{T_1 - T_2}
+\end{equation}
+Allerdings gilt Gleichung \eqref{eqn:gueteneu} nicht für den realen irreversiblen Fall. 
+Dann ist nämlich $\symup{d}S > 0$ und es gilt für die reale Güteziffer:
+\begin{equation}
+	\upnu_{real} < \frac{T_1}{T_1 - T_2}
+\end{equation}
+Die Wärmepumpe arbeitet also umso effektiver, je kleiner die Temperaturdifferenz $\Delta T$ ist.
+
+Verwendet wird die Wärmepumpe, um preiswert zu heizen.
+Wird mechanische Arbeit unmittelbar in Wärme umgewandelt, ist die übertragene Wärmemenge höchstens so groß wie die aufgewendete Arbeit $A$.
+Mit Hilfe einer Wärmepumpe kann Wärmeenergie allerdings viel effektiver übertragen werden. Es gilt:
+\begin{equation}
+	Q_{1_{real}} < A \frac{T_1}{T_1 - T_2}
+\end{equation}
 
 
+\subsection{Die Arbeitsweise einer Wärmepumpe}
 
 
-\subsection{Kenngrößen der Wärmepumpe}
-\subsubsection {Güteziffer}
+\subsection{Bestimmung von Kenngrößen einer realen Wärmepumpe}
+
+\subsubsection {Reale Güteziffer}
 \label{sec:güteziffer}
 Die Güteziffer $\upnu$ gibt das Verhältnis zwischen transportierter Wärmemenge und der dafür benötigten Arbeit an. Nach dem 1. Hauptsatz der Thermodynamik muss die dem Reservoir 1 hinzugefügte Wärmemenge $Q_1$
 der Summe der aus Reservoir 2 entzogenen Wärmemenge $Q_2$ und der mechanischen Arbeit $A$, im vorliegenden Versuch durch die Kompressionsarbeit realisiert, sein.
 Daraus ergibt sich dann für
 \begin{equation}
-  \label{eqn:equation1}
+  \label{eqn:equation5}
   \upnu=\frac{Q_1}{A}\stackrel{(2)}{\Rightarrow} \upnu_{id}=\frac{T_1}{T_1-T_2}
 \end{equation}
 \begin{equation}
-  \frac{Q_1}{T_1}-\frac{Q_2}{T_2}=0\label{eqn:equation2}
+  \frac{Q_1}{T_1}-\frac{Q_2}{T_2}=0
+	\label{eqn:equation6}
 \end{equation}
 \subsubsection {Massendurchsatz}
 \label{sec:massendurchsatz}
-\subsubsection {Berechnung der Kompressionsleistung}
+\subsubsection {Mechanischen Kompressionsleistung} 
 \label{sec:kompressorleistung}
 
 \input{content/aufbau.tex}
