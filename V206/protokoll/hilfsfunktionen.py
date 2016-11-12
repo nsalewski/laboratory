@@ -18,3 +18,5 @@ ascii.write([params1,params2,errors1,errors2], 'hilfsdateien/errparams.dat', for
 errors1 = np.sqrt(np.diag(covariance1))
 errors2 = np.sqrt(np.diag(covariance2))
 ascii.write([t, T1, T2, pb, pa, leistung], 'hilfsdateien/values.dat', format='latex')
+
+print(errors1)

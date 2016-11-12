@@ -1,5 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\subsection{a)}
 Nachfolgend finden sich die aufgenommenen Messdaten ausgedrückt in SI-Einheiten. Zu den beiden Drücken $p_a$ und $p_b$ wurde jeweils $1 bar$ ($1\cdot10^5 Pa$) addiert. (vgl. \cite{Anleitung})
 \begin{table}
   \centering
@@ -51,9 +53,11 @@ $\frac{t}{s}$ & $\frac{T_1}{K}$ & $\frac{T_2}{K}$& $\frac{p_b\cdot10^5}{Pa}$ & $
 
 \end{table}
 
-Eine nicht-lineare Ausgleichsrechnung mittels curvefit mithilfe der Näherungsfunktion
+\newpage
+\subsection{b)}
+Eine nicht-lineare Ausgleichsrechnung mittels curvefit mithilfe der Näherungsfunktion $T(t) = 
+\frac{At^{\alpha}}{1 + Bt^{\alpha}} + C$ ergibt die folgenden Parameter
 
-ergibt die folgenden Parameter
 für T1
 \begin{table}
 \begin{tabular}{cc}
@@ -82,3 +86,32 @@ C& 294.320491079 \pm 0.29104291577 \\
   \caption{Plot}
   \label{fig:plot}
 \end{figure}
+
+\subsection{c)}
+Im Auswertungsteil c) sollen die Differentialquotienten $\frac{\symup{d}T_{1,2}}{\symup{d}t}$
+für vier verschieden Temperaturen $T_i$ berechnet werden.
+
+Nun gilt ja für die beiden Temperaturen $T_1$ und $T_2$ die Näherungsfunktion
+\begin{equation}
+	T_i(t) = \frac{A_i t^{\alpha_i}}{1 + B_i t^{\alpha_i}} + C_i
+\end{equation}
+Damit erhält man für den Differentialquotienten
+\begin{equation}
+	\frac{\symup{d}T_i}{\symup{d}t} = \frac{\alpha_i A_i t^{\alpha_i - 1}}{(1 + B_i t^{\alpha_i})^2}
+\end{equation}
+Es werden die vier Temperaturen zugehörig zu den Zeiten 300s, 600s, 900s und 1200s betrachtet.
+Für $T_1$ ergeben sich die Werte 
+\begin{table}
+\begin{tabular}{cc}
+Zeit $t$ in s & Temperatur $T_1$ in Grad Celsius \\
+	300 & 25,5 \\
+	600 & 31,2 \\
+	900 & 35,9 \\
+	1200 & 40,0 \\
+\end{tabular}
+\end{table}
+
+
+
+
+
