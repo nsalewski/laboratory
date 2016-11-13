@@ -1,7 +1,13 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+<<<<<<< 75cf7f4a795bba61fa40c2b6383879416b1ebf1e
 
 \subsection{a)}
+||||||| merged common ancestors
+=======
+\subsection{Messdaten}
+\label{sec:messdaten}
+>>>>>>>  added verdampfungswaerme
 Nachfolgend finden sich die aufgenommenen Messdaten ausgedrückt in SI-Einheiten. Zu den beiden Drücken $p_a$ und $p_b$ wurde jeweils $1 bar$ ($1\cdot10^5 Pa$) addiert. (vgl. \cite{Anleitung})
 \begin{table}
   \centering
@@ -50,41 +56,58 @@ $\frac{t}{s}$ & $\frac{T_1}{K}$ & $\frac{T_2}{K}$& $\frac{p_b\cdot10^5}{Pa}$ & $
 2100.0 & 322.65 & 276.05 & 12.5 & 3.2 & 122.0 \\
 2160.0 & 323.15 & 276.05 & 12.7 & 3.2 & 122.0 \\
 \end{tabular}
-
 \end{table}
-
 \newpage
-\subsection{b)}
-Eine nicht-lineare Ausgleichsrechnung mittels curvefit mithilfe der Näherungsfunktion $T(t) = 
-\frac{At^{\alpha}}{1 + Bt^{\alpha}} + C$ ergibt die folgenden Parameter
+\subsection{b)Näherungsfunktion}
+Eine nicht-lineare Ausgleichsrechnung mittels curvefit mithilfe der Näherungsfunktion
+\begin{equation}
+\label{eqn:naeherungsfunktion}
+T(t)=\frac{At^\alpha}{1+Bt^\alpha}+C
+\end{equation}
 
-für T1
-\begin{table}
-\begin{tabular}{cc}
-col0 & col1 \\
-A& 0.00628783578154 \pm 0.00149293305498 \\
-$\alpha$& 1.19703458148 \pm 0.0360058939096 \\
-B& 0.0001090619383 \pm 2.08039537226e-05 \\
-C& 293.237543897 \pm 0.166671854986 \\
-\end{tabular}
-\end{table}
+ergibt die folgenden Parameter
+für $T_1(t)$\\
 
-für T2
-\begin{table}
-\begin{tabular}{cc}
-col0 & col1 \\
-A&-0.00133382194218 \pm 0.00104923580266 \\
-$\alpha$ &1.34714994906 \pm 0.118067658101 \\
-B&4.09937384238e-05 \pm 2.72288576068e-05 \\
-C& 294.320491079 \pm 0.29104291577 \\
-\end{tabular}
-\end{table}
+A= (0.006 \pm 0.001) $\frac{K}{s^\alpha}$ \\
+$\alpha$= 1.19 \pm 0.04 \\
+B= (0.00011 \pm 0.00002) $\frac{K}{s^\alpha}$\\
+C= (293.2 \pm 0.2) $K$ \\
+
+und für $T_2(t)$\\
+
+A=(-0.001\pm 0.001)$\frac{K}{s^\alpha}$ \\
+$\alpha$= 1.3 \pm 0.1 \\
+B= (4.0 \pm 2.1) $\cdot 10^{-5}\frac{K}{s^\alpha}$\\
+C= (294.3 \pm 0.3) $K$ \\
+
+Im nachfolgenden Plot sind die Temperaturverläufe beider Reservoire mit einem zugehörigen Regressionsgraphen abgebildet.
 
 \begin{figure}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot}
-  \label{fig:plot}
+  \includegraphics{build/plot.pdf}
+  \caption{Temperaturverläufe beider Reservoire}
+  \label{fig:temperaturverlauf}
+\end{figure}
+
+
+
+\subsection{Bestimmung des Massendurchsatz}
+Zur Berechnung des Massendurchsatzes muss die Verdampfungswärme $L$ bestimmt werden.
+Diese wird aus den Wertepaaren (p,T) und einer linearen Ausgleichsrechnung nach \eqref{eqn:ausgleichsgrade} bestimmt.
+
+Die Verdampfungswärme ergibt sich dann nach $ L = −m \cdot R$, wobei $m$ die Steigung der Geraden und $R$ die allgemeine Gaskonstante ist.
+
+Für $m$=(-2017 \pm 15)$K$ und $R$=(8.3144598 \pm 0.0000048) $\frac{J}{mol\cdot K}$ \cite{gas}
+ergibt sich nach der Gauß’schen Fehlerfortpflanzung \eqref{eqn.fehlerfortpflanzung} der Fehler der Verdampungfswärme $L$.
+
+$L$=(16770.3\pm 124.7)$\frac{J}{mol \cdot K}$
+
+
+\begin{figure}
+  \centering
+  \includegraphics{build/ex_e.pdf}
+  \caption{Plot der Verdampfungswärme}
+  \label{fig:verdampfungswaerme}
 \end{figure}
 
 \subsection{c)}
@@ -100,7 +123,7 @@ Damit erhält man für den Differentialquotienten
 	\frac{\symup{d}T_i}{\symup{d}t} = \frac{\alpha_i A_i t^{\alpha_i - 1}}{(1 + B_i t^{\alpha_i})^2}
 \end{equation}
 Es werden die vier Temperaturen zugehörig zu den Zeiten 300s, 600s, 900s und 1200s betrachtet.
-Für $T_1$ ergeben sich die Werte 
+Für $T_1$ ergeben sich die Werte
 \begin{table}
 \begin{tabular}{cc}
 Zeit $t$ in s & Temperatur $T_1$ in Grad Celsius \\
@@ -110,8 +133,3 @@ Zeit $t$ in s & Temperatur $T_1$ in Grad Celsius \\
 	1200 & 40,0 \\
 \end{tabular}
 \end{table}
-
-
-
-
-
