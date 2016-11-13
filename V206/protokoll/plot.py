@@ -3,6 +3,10 @@ import numpy as np
 from scipy.optimize import curve_fit
 from astropy.io import ascii
 import sympy
+from uncertainties import ufloat
+import uncertainties.unumpy as unp
+from sympy import Symbol, latex
+from sympy import *
 
 #aufgabe a: Messdaten plotten
 t,T1,T2,pb,pa,leistung =np.genfromtxt("daten.txt", unpack=True)
@@ -58,19 +62,20 @@ def error(f, err_vars=None):
     s = 0
     latex_names = dict()
 
-    if err_var == None:
-        err_vars == f.free_symbols
+    if err_vars == None:
+        err_vars = f.free_symbols
 
     for v in err_vars:
-        err = Symbol('latex_std' + v.name)
+        err = Symbol('latex_std_' + v.name)
         s += f.diff(v)**2 * err**2
-        latex_names[err] = '\\sigma_{ ' + latex(v) + '}'
+        latex_names[err] = '\\sigma_{' + latex(v) + '}'
 
-    return latex(sympy.sqrt(s), symbol_names = latex_names)
-
+    return latex(sqrt(s), symbol_names=latex_names)
 
 t, A, B, a = sympy.var('t A B a')
 
-f = (a * A * t**(a-1)) / (1 + B * t**a)^2
+f = (a * A * t**(a-1)) / (1 + B * t**a)**2
 print(f)
 print(error(f))
+
+#aufgabe f
