@@ -88,24 +88,26 @@ B= ufloat(0.00011,0.00002)
 C= ufloat(293.2,0.2)
 L= ufloat(16770.3,124.7)
 print("Massendurchsatz")
+kappa=1.14
 m=120.91
 zeit=[300,600,900,1200]
+def delta_m(a,A,B,t, L, c, m):
+    return (((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c*m)
+def rho(pa, T2):
+    return (273.15*5.51*pa[t/60])/(T2[t/60])
 for t in zeit:
-    print(((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c)
+    print(delta_m(a,A,B,t, L, c, m)/m)
 print("Massendurchsazt in SI einheit")
 for t in zeit:
-    print(((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c*m)
+    print(delta_m(a,A,B,t, L, c, m))
 #print(g)
 #print(error(g))
 
 
 
 #aufgabe f
-kappa=1.14
-
-
 for t in zeit:
-    print (1000*(1/(kappa-1))*(((pb[t/60])*((pa[t/60])/pb[t/60])**(1/kappa))-pa[t/60])*((T2[t/60])/(273.15*5.51*pa[t/60]))*(((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c*m))
+    print ((1/(kappa-1))*(((pb[t/60])*((pa[t/60])/pb[t/60])**(1/kappa))-pa[t/60])*1000*(1/rho(pa, T2))*(delta_m(a,A,B,t, L, c, m)))
     #*1000 für einheitenumrechnung watt=kg*m^2/s^3; rechte seite=bar*m^3/kg*g/s=m^2/s^2*g/s=>m^2/s^2*g*1000/s
 for t in zeit:
-    print((1505*pa[t/60])/(T2[t/60]))
+    print(rho(pa, T2))
