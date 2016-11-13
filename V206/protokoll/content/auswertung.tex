@@ -125,16 +125,16 @@ Damit erhält man für den Differentialquotienten
 Es werden die vier Temperaturen zugehörig zu den Zeiten 300s, 600s, 900s und 1200s betrachtet.
 Für $T_1$ ergeben sich die Werte
 \begin{table}
-\begin{tabular}{cc}
-Zeit $t$ in s & Temperatur $T_1$ in Grad Celsius \\
-	300 & 25,5 \\
-	600 & 31,2 \\
-	900 & 35,9 \\
-	1200 & 40,0 \\
+\begin{tabular}{cccc}
+	Zeit $t$ in s & Temperatur $T_1$ & $\frac{\symup{d}T_1}{\symup{d}t}$ & Fehler \\
+	300 & 25,5 & 0,0191 & 0,0050 \\
+	600 & 31,2 & 0,0175 & 0,0046 \\
+	900 & 35,9 & 0,0151 & 0,0041 \\
+	1200 & 40,0 & 0,0129 & 0,0036 \\
 \end{tabular}
 \end{table}
 
+Für $T_2$ ergeben sich die Werte 
 
 
-Ausgabe Error funktion:
-$\sqrt{\frac{4 A^{2} a^{2} \sigma_{B}^{2} t^{2 a}}{\left(B t^{a} + 1\right)^{6}} t^{2 a - 2} + \frac{a^{2} \sigma_{A}^{2} t^{2 a - 2}}{\left(B t^{a} + 1\right)^{4}} + \sigma_{a}^{2} \left(- \frac{2 A B a t^{a} t^{a - 1}}{\left(B t^{a} + 1\right)^{3}} \log{\left (t \right )} + \frac{A a t^{a - 1}}{\left(B t^{a} + 1\right)^{2}} \log{\left (t \right )} + \frac{A t^{a - 1}}{\left(B t^{a} + 1\right)^{2}}\right)^{2} + \sigma_{t}^{2} \left(- \frac{2 A B a^{2} t^{a} t^{a - 1}}{t \left(B t^{a} + 1\right)^{3}} + \frac{A a t^{a - 1} \left(a - 1\right)}{t \left(B t^{a} + 1\right)^{2}}\right)^{2}}$
+$\sqrt{\frac{4 A^{2} a^{2} \sigma_{B}^{2} t^{2 a}}{\left(B t^{a} + 1\right)^{6}} t^{2 a - 2} + \frac{a^{2} \sigma_{A}^{2} t^{2 a - 2}}{\left(B t^{a} + 1\right)^{4}} + \sigma_{a}^{2} \left(- \frac{2 A B a t^{a} t^{a - 1}}{\left(B t^{a} + 1\right)^{3}} \log{\left (t \right )} + \frac{A a t^{a - 1}}{\left(B t^{a} + 1\right)^{2}} \log{\left (t \right )} + \frac{A t^{a - 1}}{\left(B t^{a} + 1\right)^{2}}\right)^{2}}$
