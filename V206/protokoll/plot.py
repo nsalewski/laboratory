@@ -98,3 +98,13 @@ for t in zeit:
 #print(g)
 #print(error(g))
 
+
+
+#aufgabe f
+kappa=1.14
+
+
+for t in zeit:
+    print ((1/(kappa-1))*(((pb[t/60])*((pa[t/60])/pb[t/60])**(1/kappa))-pa[t/60])*((T2[t/60])/(1505*pa[t/60]))*(((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c*m))
+for t in zeit:
+    print((1505*pa[t/60])/(T2[t/60]))
