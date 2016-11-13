@@ -105,7 +105,7 @@ kappa=1.14
 
 
 for t in zeit:
-    print (1000*(1/(kappa-1))*(((pb[t/60])*((pa[t/60])/pb[t/60])**(1/kappa))-pa[t/60])*((T2[t/60])/(1505*pa[t/60]))*(((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c*m))
+    print (1000*(1/(kappa-1))*(((pb[t/60])*((pa[t/60])/pb[t/60])**(1/kappa))-pa[t/60])*((T2[t/60])/(273.15*5.51*pa[t/60]))*(((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c*m))
     #*1000 für einheitenumrechnung watt=kg*m^2/s^3; rechte seite=bar*m^3/kg*g/s=m^2/s^2*g/s=>m^2/s^2*g*1000/s
 for t in zeit:
     print((1505*pa[t/60])/(T2[t/60]))
