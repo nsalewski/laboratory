@@ -126,6 +126,7 @@ $\sqrt{\frac{4 A^{2} a^{2} \sigma_{B}^{2} t^{2 a}}{\left(B t^{a} + 1\right)^{6}}
 \subsection{d) Güteziffer der Wärmepumpe}
 
 \subsection{e) Bestimmung des Massendurchsatz}
+\label{sec:massendurchsatz}
 Zur Berechnung des Massendurchsatzes muss die Verdampfungswärme $L$ bestimmt werden.
 Diese wird aus den Wertepaaren (p,T) und einer linearen Ausgleichsrechnung nach \eqref{eqn:ausgleichsgrade} bestimmt.
 
@@ -133,8 +134,7 @@ Die Verdampfungswärme ergibt sich dann nach $ L = −m \cdot R$, wobei $m$ die 
 
 Für $m$=(-2017 \pm 15)$K$ und $R$=(8.3144598 \pm 0.0000048) $\frac{J}{mol\cdot K}$ \cite{gas}
 ergibt sich nach der Gauß’schen Fehlerfortpflanzung \eqref{eqn:fehlerfortpflanzung} der Fehler der Verdampungfswärme $L$.
-
-$L$=(16770.3\pm 124.7)$\frac{J}{mol \cdot K}$
+Damit ist $L$=(16770.3\pm 124.7)$\frac{J}{mol}$ .
 
 
 \begin{figure}
@@ -151,9 +151,10 @@ Da
 	\frac{\symup{d}T_i}{\symup{d}t} = \frac{\alpha_i A_i t^{\alpha_i - 1}}{(1 + B_i t^{\alpha_i})^2}
 \end{equation}
 
-gilt, ergibt sich für den Massendurchsatz mit $m_W c_W=16727\frac{J}{K}$ \cite{eichler} und $m_k c_k=750\frac{J}{K}$ und  $L$=(16770.3\pm 124.7)$\frac{J}{mol \cdot K}$
+gilt, ergibt sich für den Massendurchsatz mit $m_W c_W=16727\frac{J}{K}$ \cite{eichler} und $m_k c_k=750\frac{J}{K}$ und  $L$=(16770.3\pm 124.7)$\frac{J}{mol}$
 
 \begin{table}
+  \centering
   \caption{Massendurchsatz}
   \begin{tabular}{ccc}
     \toprule
@@ -167,13 +168,40 @@ gilt, ergibt sich für den Massendurchsatz mit $m_W c_W=16727\frac{J}{K}$ \cite{
 \end{table}
 \subsection{f) Bestimmung der mechanischen Kompressorleistung}
 
-Zur Bestimmung der mechanischen Kompressorleistung nach \eqref{eqn:kompressorleistung} muss zunächst die Dichte bestimmt werden.
+Zur Bestimmung der mechanischen Kompressorleistung nach \eqref{eqn:kompressorleistung} muss zunächst die Dichte $\rho$ bestimmt werden.
+Diese lässt sich aus der allgemeinen Gasgleichung bestimmen.
+Aus
+\begin{equation}
+  pV = nRT
+\end{equation}
+mit $R$=8,3144621 $\frac{J}{molK}$ der allgemeinen Gaskonstanten (nach \cite{eichler}), und $\rho=\frac{m}{V} \Rightarrow V=\frac{m}{\rho}$,
+folgt:
+
+\begin{equation}
+  \frac{p_0\cdot V_0}{T_0}=\frac{p_2\cdot V_2}{T_2}
+\end{equation}
+
+; da $n\cdot R=const$ (konstantes Volumen bei variablem Druck und Temperatur) gilt.
+
+Einsetzen von $\rho$ liefert:
+
+\begin{equation}
+  \frac{p_0\cdot \frac{m_0}{\rho_0}}{T_0}= \frac{p_2\cdot \frac{m_2}{\rho_2}}{T_2}
+\end{equation}
+
+Mit $\rho_2=\rho$ und $p_2=p_a$ folgt:
+
+\begin{equation}
+  \rho=\frac{p_a \cdot \rho_0 \cdot T_0}{p_0 \cdot T_2}
+\end{equation}
+
+Nach \cite{Anleitung} gilt $\rho_0= 5.51 \frac{g}{l}$ bei $T_0=273.15K$ und $p_0 = 1 Bar$ sowie $\kappa = 1.14$ .
 
 
-damit ergibt sich die Kompressorleistung zu
+Damit ergibt sich die Kompressorleistung nach Formel \eqref{eqn:kompressorleistung}.
+Es wurde weiterhin mit dem berechneten Massendurchsatz aus \ref{sec:massendurchsatz} gerechnet.
 \begin{table}
   \caption{}
-  \label{}
   \begin{tabular} {ccc}
     Zeit $t$ in s & Dichte in $bar=\frac{kg}{m \cdot s^2}$& Kompressorleistung in $10^2 \cdot W= 10^2 \cdot \frac{kg \cdot m^2}{s^3}$\\
     \midrule
