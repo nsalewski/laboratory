@@ -77,5 +77,26 @@ t, A, B, a = sympy.var('t A B a')
 f = (a * A * t**(a-1)) / (1 + B * t**a)**2
 print(f)
 print(error(f))
+#aufgabe e
+
+A, B, a, L = sympy.var('A B a L')
+c=17477
+g = ((a * A * t**(a-1)) / (1 + B * t**a)**2)*1/L*c
+A= ufloat(0.006,0.001)
+a= ufloat(1.19,0.04)
+B= ufloat(0.00011,0.00002)
+C= ufloat(293.2,0.2)
+L= ufloat(16770.3,124.7)
+print("Massendurchsatz")
+m=120.91
+zeit=[300,600,900,1200]
+for t in zeit:
+    print(((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c)
+print("Massendurchsazt in SI einheit")
+for t in zeit:
+    print(((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c*m)
+#print(g)
+#print(error(g))
+
 
 #aufgabe f

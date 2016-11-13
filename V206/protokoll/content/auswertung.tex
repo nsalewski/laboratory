@@ -1,13 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-<<<<<<< 75cf7f4a795bba61fa40c2b6383879416b1ebf1e
-
-\subsection{a)}
-||||||| merged common ancestors
-=======
-\subsection{Messdaten}
+\subsection{a)Messdaten}
 \label{sec:messdaten}
->>>>>>>  added verdampfungswaerme
 Nachfolgend finden sich die aufgenommenen Messdaten ausgedrückt in SI-Einheiten. Zu den beiden Drücken $p_a$ und $p_b$ wurde jeweils $1 bar$ ($1\cdot10^5 Pa$) addiert. (vgl. \cite{Anleitung})
 \begin{table}
   \centering
@@ -90,26 +84,6 @@ Im nachfolgenden Plot sind die Temperaturverläufe beider Reservoire mit einem z
 \end{figure}
 
 
-
-\subsection{Bestimmung des Massendurchsatz}
-Zur Berechnung des Massendurchsatzes muss die Verdampfungswärme $L$ bestimmt werden.
-Diese wird aus den Wertepaaren (p,T) und einer linearen Ausgleichsrechnung nach \eqref{eqn:ausgleichsgrade} bestimmt.
-
-Die Verdampfungswärme ergibt sich dann nach $ L = −m \cdot R$, wobei $m$ die Steigung der Geraden und $R$ die allgemeine Gaskonstante ist.
-
-Für $m$=(-2017 \pm 15)$K$ und $R$=(8.3144598 \pm 0.0000048) $\frac{J}{mol\cdot K}$ \cite{gas}
-ergibt sich nach der Gauß’schen Fehlerfortpflanzung \eqref{eqn.fehlerfortpflanzung} der Fehler der Verdampungfswärme $L$.
-
-$L$=(16770.3\pm 124.7)$\frac{J}{mol \cdot K}$
-
-
-\begin{figure}
-  \centering
-  \includegraphics{build/ex_e.pdf}
-  \caption{Plot der Verdampfungswärme}
-  \label{fig:verdampfungswaerme}
-\end{figure}
-
 \subsection{c)}
 Im Auswertungsteil c) sollen die Differentialquotienten $\frac{\symup{d}T_{1,2}}{\symup{d}t}$
 für vier verschieden Temperaturen $T_i$ berechnet werden.
@@ -134,7 +108,53 @@ Für $T_1$ ergeben sich die Werte
 \end{tabular}
 \end{table}
 
-Für $T_2$ ergeben sich die Werte 
+
+Für $T_2$ ergeben sich die Werte
+
+\newpage
 
 
 $\sqrt{\frac{4 A^{2} a^{2} \sigma_{B}^{2} t^{2 a}}{\left(B t^{a} + 1\right)^{6}} t^{2 a - 2} + \frac{a^{2} \sigma_{A}^{2} t^{2 a - 2}}{\left(B t^{a} + 1\right)^{4}} + \sigma_{a}^{2} \left(- \frac{2 A B a t^{a} t^{a - 1}}{\left(B t^{a} + 1\right)^{3}} \log{\left (t \right )} + \frac{A a t^{a - 1}}{\left(B t^{a} + 1\right)^{2}} \log{\left (t \right )} + \frac{A t^{a - 1}}{\left(B t^{a} + 1\right)^{2}}\right)^{2}}$
+\newpage
+
+\subsection{e) Bestimmung des Massendurchsatz}
+Zur Berechnung des Massendurchsatzes muss die Verdampfungswärme $L$ bestimmt werden.
+Diese wird aus den Wertepaaren (p,T) und einer linearen Ausgleichsrechnung nach \eqref{eqn:ausgleichsgrade} bestimmt.
+
+Die Verdampfungswärme ergibt sich dann nach $ L = −m \cdot R$, wobei $m$ die Steigung der Geraden und $R$ die allgemeine Gaskonstante ist.
+
+Für $m$=(-2017 \pm 15)$K$ und $R$=(8.3144598 \pm 0.0000048) $\frac{J}{mol\cdot K}$ \cite{gas}
+ergibt sich nach der Gauß’schen Fehlerfortpflanzung \eqref{eqn:fehlerfortpflanzung} der Fehler der Verdampungfswärme $L$.
+
+$L$=(16770.3\pm 124.7)$\frac{J}{mol \cdot K}$
+
+
+\begin{figure}
+  \centering
+  \includegraphics{build/ex_e.pdf}
+  \caption{Plot der Verdampfungswärme}
+  \label{fig:verdampfungswaerme}
+\end{figure}
+
+
+Der Massendurchsatz berechnet sich nun nach Gleichung \eqref{eqn:massendurchsatz}.
+Da
+\begin{equation}
+	\frac{\symup{d}T_i}{\symup{d}t} = \frac{\alpha_i A_i t^{\alpha_i - 1}}{(1 + B_i t^{\alpha_i})^2}
+\end{equation}
+
+gilt, ergibt sich für den Massendurchsatz mit $m_W c_W=16727\frac{J}{K}$ \cite{eichler} und $m_k c_k=750\frac{J}{K}$ und  $L$=(16770.3\pm 124.7)$\frac{J}{mol \cdot K}$
+
+\begin{table}
+  \caption{Massendurchsatz}
+  \begin{tabular}{ccc}
+    \toprule
+    Zeit $t$ in s & Massendurchsatz $\diff{m}{t} in \frac{mol}{s}$& $\diff{m}{t} in \frac{g}{s}$\\
+    \midrule
+300 & 0.018 \pm 0.005 &2.2 \pm 0.6\\
+600 & 0.017 \pm 0.004 & 2.0 \pm 0.5\\
+900 & 0.015 \pm 0.004 & 1.8 \pm 0.4\\
+1200 & 0.0126 \pm 0.0031 & 1.5 \pm 0.4\\
+    \end{tabular}
+\end{table}
+\subsection{f) Bestimmung der mechanischen Kompressorleistung}
