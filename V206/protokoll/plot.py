@@ -71,6 +71,6 @@ def error(f, err_vars=None):
 
 t, A, B, a = sympy.var('t A B a')
 
-f = (a * A * t^(a-1)) / (1 + B * t^a)^2
+f = (a * A * t**(a-1)) / (1 + B * t**a)^2
 print(f)
 print(error(f))
