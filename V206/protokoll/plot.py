@@ -98,5 +98,3 @@ for t in zeit:
 #print(g)
 #print(error(g))
 
-
-#aufgabe f
