@@ -49,6 +49,7 @@ $\frac{t}{s}$ & $\frac{T_1}{K}$ & $\frac{T_2}{K}$& $\frac{p_b\cdot10^5}{Pa}$ & $
 2040.0 & 322.05 & 276.25 & 12.4 & 3.2 & 122.0 \\
 2100.0 & 322.65 & 276.05 & 12.5 & 3.2 & 122.0 \\
 2160.0 & 323.15 & 276.05 & 12.7 & 3.2 & 122.0 \\
+\bottomrule
 \end{tabular}
 \end{table}
 \newpage
@@ -98,6 +99,8 @@ Damit erhält man für den Differentialquotienten
 \end{equation}
 Es werden die vier Temperaturen zugehörig zu den Zeiten $300s, 600s, 900s$ und $1200s$ betrachtet.
 Die Fehler ergeben sich jeweils mit der Gauß'schen Fehlerfortpflanzung mittels:
+
+
 $\Delta \frac{\symup{d}T}{\symup{d}t} = \sqrt{\frac{4 A^{2} a^{2} \sigma_{B}^{2} t^{2 a}}{\left(B t^{a} + 1\right)^{6}} t^{2 a - 2} + \frac{a^{2} \sigma_{A}^{2} t^{2 a - 2}}{\left(B t^{a} + 1\right)^{4}} + \sigma_{a}^{2} \left(- \frac{2 A B a t^{a} t^{a - 1}}{\left(B t^{a} + 1\right)^{3}} \log{\left (t \right )} + \frac{A a t^{a - 1}}{\left(B t^{a} + 1\right)^{2}} \log{\left (t \right )} + \frac{A t^{a - 1}}{\left(B t^{a} + 1\right)^{2}}\right)^{2}}$
 
 
@@ -145,27 +148,25 @@ Die Differentialquotienten für $T_2$ sind in \ref{tab:diffT2} zu finden.
 
 Für die Güteziffer gilt die Gleichung \eqref{eqn:gueteziffer}.
 Die gesamte Wärmekapazität $C_{ges} = (m_1 c_W + m_k c_k)$ setzt sich aus der Wärmekapazität der Kupferschlange und des Eimers (abgelesen: $m_k c_k = 750 \frac{J}{K}$) und der Wärmekapazität des Reservoirs 1 zusammen.
-Für die Wärmekapazität des Reservoirs 1 erhält man $m_1 c_W = \rho V_1 c_W = 17478 \frac{J}{K}$ mit der Dichte $\rho$ (\cite{geschke}), dem angegebenen Volumen $V_1 = 4 \cdot 10^{-3} m$ und der spezifischen Wärmekapazität $c_W$ (\cite{geschke})
+Für die Wärmekapazität des Reservoirs 1 erhält man $m_1 c_W = \rho V_1 c_W = 17478 \frac{J}{K}$ mit der Dichte $\rho$ (\cite{geschke}), dem angegebenen Volumen $V_1 = 4 \cdot 10^{-3} m$ und der spezifischen Wärmekapazität $c_W$ (\cite{geschke}).
+
+Die Güteziffer $\upnu_{ideal}$ einer idealen Wärmepumpe wurde aus \eqref{eqn:gueteneu} bestimmt.
 Für die Güteziffer ergibt sich jeweils:
 \begin{table}
 	\centering
 	\caption{Güteziffer $\upnu$ zu verschiedenen Zeiten}
 	\label{tab:gueteziffer}
-\begin{tabular}{cccc}
+\begin{tabular}{ccccc}
 	\toprule
-	$t$ / s & $T_1$ / $°C$ & $\upnu$ / ??? & $\Delta \upnu$ / ??? \\
+	$t$ / s & $T_1$ / $°C$ & $\upnu$ & $\Delta \upnu$ & $\upnu_{ideal}$ \\
 	\midrule
-	300 & 25,5 & 2,714 & 0,710 \\
-	600 & 31,2 & 2,570 & 0,676 \\
-	900 & 35,9 & 2,200 & 0,597 \\
-	1200 & 40,0 & 1,848 & 0,516 \\
+	300 & 25,5 & 2,714 & 0,710 & 45,25 \\
+	600 & 31,2 & 2,570 & 0,676 & 18,67 \\
+	900 & 35,9 & 2,200 & 0,597 & 12,82 \\
+	1200 & 40,0 & 1,848 & 0,516 & 10,17 \\
 	\bottomrule
 \end{tabular}
 \end{table}
-
-
-Als Mittelwert ergibt sich für die Güteziffer $\upnu = 2,333 ?$ mit einem Fehler von $\Delta \upnu = 0,195$
-
 
 
 \subsection{e) Bestimmung des Massendurchsatz}
@@ -207,6 +208,7 @@ gilt, ergibt sich für den Massendurchsatz mit $m_W c_W=16727\frac{J}{K}$ \cite{
 600 & 0.017 \pm 0.004 & 2.0 \pm 0.5\\
 900 & 0.015 \pm 0.004 & 1.8 \pm 0.4\\
 1200 & 0.0126 \pm 0.0031 & 1.5 \pm 0.4\\
+	\bottomrule
     \end{tabular}
 \end{table}
 \subsection{f) Bestimmung der mechanischen Kompressorleistung}
