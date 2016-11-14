@@ -90,6 +90,9 @@ L= ufloat(16770.3,124.7)
 print("Massendurchsatz")
 kappa=1.14
 m=120.91
+
+print(g)
+print(error(g))
 zeit=[300,600,900,1200]
 def delta_m(a,A,B,t, L, c, m):
     return (((a * A * t**(a-1)) / (1 + B * t**a)**2)*(1/L)*c*m)
@@ -104,10 +107,12 @@ for t in zeit:
 #print(error(g))
 
 
-
+fehler=0
 #aufgabe f
 for t in zeit:
+    fehler+=((1/(kappa-1))*(((pb[t/60])*((pa[t/60])/pb[t/60])**(1/kappa))-pa[t/60])*10**(2)*(1/rho(pa, T2))*(delta_m(a,A,B,t, L, c, m)))
     print ((1/(kappa-1))*(((pb[t/60])*((pa[t/60])/pb[t/60])**(1/kappa))-pa[t/60])*10**(2)*(1/rho(pa, T2))*(delta_m(a,A,B,t, L, c, m)))
     #*1000 für einheitenumrechnung watt=kg*m^2/s^3; rechte seite=bar*m^3/kg*g/s=m^2/s^2*g/s=>m^2/s^2*g*1000/s
+print(np.mean(fehler))
 for t in zeit:
     print(rho(pa, T2))

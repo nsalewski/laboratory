@@ -103,7 +103,6 @@ Die Fehler ergeben sich jeweils mit der Gauß'schen Fehlerfortpflanzung mittels:
 
 $\Delta \frac{\symup{d}T}{\symup{d}t} = \sqrt{\frac{4 A^{2} a^{2} \sigma_{B}^{2} t^{2 a}}{\left(B t^{a} + 1\right)^{6}} t^{2 a - 2} + \frac{a^{2} \sigma_{A}^{2} t^{2 a - 2}}{\left(B t^{a} + 1\right)^{4}} + \sigma_{a}^{2} \left(- \frac{2 A B a t^{a} t^{a - 1}}{\left(B t^{a} + 1\right)^{3}} \log{\left (t \right )} + \frac{A a t^{a - 1}}{\left(B t^{a} + 1\right)^{2}} \log{\left (t \right )} + \frac{A t^{a - 1}}{\left(B t^{a} + 1\right)^{2}}\right)^{2}}$
 
-
 \begin{table}
 	\centering
 	\caption{Differentialquotienten $\frac{\symup{d}T_1}{\symup{d}t}$ }
@@ -170,7 +169,7 @@ Für die Güteziffer ergibt sich jeweils:
 
 
 \subsection{e) Bestimmung des Massendurchsatz}
-\label{sec:massendurchsatz}
+\label{sec:Massendurchsatz}
 Zur Berechnung des Massendurchsatzes muss die Verdampfungswärme $L$ bestimmt werden.
 Diese wird aus den Wertepaaren (p,T) und einer linearen Ausgleichsrechnung nach \eqref{eqn:ausgleichsgrade} bestimmt.
 
@@ -211,6 +210,16 @@ gilt, ergibt sich für den Massendurchsatz mit $m_W c_W=16727\frac{J}{K}$ \cite{
 	\bottomrule
     \end{tabular}
 \end{table}
+Die Bestimmung der Fehler ergibt sich mit Gauß'scher Fehlerfortpflanzung nach \eqref{eqn:fehlerfortpflanzung} zu
+
+
+$\Delta \frac{\Delta m}{\Delta t}  = [\frac{1221782116 A^{2} a^{2} \sigma_{B}^{2} t^{2 a} t^{2 a - 2}}{L^{2} (B t^{a} + 1)^{6}} + \frac{305445529 A^{2} a^{2} \sigma_{L}^{2} t^{2 a - 2}}{L^{4} (B t^{a} + 1)^{4}}  + \frac{305445529 a^{2} \sigma_{A}^{2} t^{2 a - 2}}{L^{2} (B t^{a} + 1)^{4}}$
+
+$ + \sigma_{a}^{2} (- \frac{34954 A B a t^{a} t^{a - 1}}{L (B t^{a} + 1)^{3}} \log{ (t  )} + \frac{17477 A a t^{a - 1} \log{ (t  )}}{L (B t^{a} + 1)^{2}} + \frac{17477 A t^{a - 1}}{L (B t^{a} + 1)^{2}})^{2}]^{\frac{1}{2}}$
+
+%$\Delta \frac{\Delta m}{\Delta t}  = \sqrt{\frac{1221782116 A^{2} a^{2} \sigma_{B}^{2} t^{2 a} t^{2 a - 2}}{L^{2} \left(B t^{a} + 1\right)^{6}} + \frac{305445529 A^{2} a^{2} \sigma_{L}^{2} t^{2 a - 2}}{L^{4} \left(B t^{a} + 1\right)^{4}}  + \frac{305445529 a^{2} \sigma_{A}^{2} t^{2 a - 2}}{L^{2} \left(B t^{a} + 1\right)^{4}} + \sigma_{a}^{2} \left(- \frac{34954 A B a t^{a} t^{a - 1}}{L \left(B t^{a} + 1\right)^{3}} \log{\left (t \right )} + \frac{17477 A a t^{a - 1} \log{\left (t \right )}}{L \left(B t^{a} + 1\right)^{2}} + \frac{17477 A t^{a - 1}}{L \left(B t^{a} + 1\right)^{2}}\right)^{2}}$
+
+
 \subsection{f) Bestimmung der mechanischen Kompressorleistung}
 
 Zur Bestimmung der mechanischen Kompressorleistung nach \eqref{eqn:kompressorleistung} muss zunächst die Dichte $\rho$ bestimmt werden.
@@ -244,9 +253,11 @@ Nach \cite{Anleitung} gilt $\rho_0= 5.51 \frac{g}{l}$ bei $T_0=273.15K$ und $p_0
 
 
 Damit ergibt sich die Kompressorleistung nach Formel \eqref{eqn:kompressorleistung}.
-Es wurde weiterhin mit dem berechneten Massendurchsatz aus \ref{sec:massendurchsatz} gerechnet.
+Es wurde weiterhin mit dem berechneten Massendurchsatz aus \ref{sec:Massendurchsatz} gerechnet.
+
+
 \begin{table}
-  \caption{}
+  \caption{mechanische Kompressorleistung}
   \begin{tabular} {ccc}
     Zeit $t$ in s & Dichte in $bar=\frac{kg}{m \cdot s^2}$& Kompressorleistung in $10^2 \cdot W=  \cdot \frac{kg \cdot m^2}{s^3}$\\
     \midrule
@@ -254,6 +265,9 @@ Es wurde weiterhin mit dem berechneten Massendurchsatz aus \ref{sec:massendurchs
 600 & 20.74& 27\pm 7\\
 900 &19.17 & 29 \pm 7\\
 1200 &18.28 & 29 \pm 7\\
-
 \end{tabular}
 \end{table}
+
+
+Der Fehler ergibt sich erneut mit Gauß'scher Fehlerfortpflanzung (\eqref{eqn:fehlerfortpflanzung}). Aus Gründen der Übersichtlichkeit wird aber hier auf das explizite Einsetzen in die Fehlerformel verzichtet.
+Die mittlere Wirkleistung ergibt sich etwa zu $N_{wirk}=26.5W$. Da die mittlere Kompressorleistung etwa $N_{Kompressor}=120W$ beträgt, wird ein Wirkungsgrad von etwa $21\%$ erreicht. Gründe für den recht schlechten Wirkungsgrad werden in Abschnitt \ref{sec:Diskussion} genannt.
