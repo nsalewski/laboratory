@@ -96,30 +96,48 @@ Damit erhält man für den Differentialquotienten
 \begin{equation}
 	\frac{\symup{d}T_i}{\symup{d}t} = \frac{\alpha_i A_i t^{\alpha_i - 1}}{(1 + B_i t^{\alpha_i})^2}
 \end{equation}
-Es werden die vier Temperaturen zugehörig zu den Zeiten 300s, 600s, 900s und 1200s betrachtet.
-Für $T_1$ ergeben sich die Werte
+Es werden die vier Temperaturen zugehörig zu den Zeiten $300s, 600s, 900s$ und $1200s$ betrachtet.
+Die Fehler ergeben sich jeweils mit der Gauß'schen Fehlerfortpflanzung mittels:
+$\Delta \frac{\symup{d}T}{\symup{d}t} = \sqrt{\frac{4 A^{2} a^{2} \sigma_{B}^{2} t^{2 a}}{\left(B t^{a} + 1\right)^{6}} t^{2 a - 2} + \frac{a^{2} \sigma_{A}^{2} t^{2 a - 2}}{\left(B t^{a} + 1\right)^{4}} + \sigma_{a}^{2} \left(- \frac{2 A B a t^{a} t^{a - 1}}{\left(B t^{a} + 1\right)^{3}} \log{\left (t \right )} + \frac{A a t^{a - 1}}{\left(B t^{a} + 1\right)^{2}} \log{\left (t \right )} + \frac{A t^{a - 1}}{\left(B t^{a} + 1\right)^{2}}\right)^{2}}$
+
+
 \begin{table}
+	\centering
+	\caption{Differentialquotienten $\frac{\symup{d}T_1}{\symup{d}t}$ }
+	\label{tab:diffT1}
 \begin{tabular}{cccc}
-	Zeit $t$ in s & Temperatur $T_1$ & $\frac{\symup{d}T_1}{\symup{d}t}$ & Fehler \\
+	\toprule
+	$t$ / $s$ & $T_1$ / $°C$ & $\frac{\symup{d}T_1}{\symup{d}t}$ / $\frac{K}{s}$ & $\Delta \frac{\symup{d}T_1}{\symup{d}t}$  / $\frac{K}{s}$ \\
+	\midrule
 	300 & 25,5 & 0,0191 & 0,0050 \\
 	600 & 31,2 & 0,0175 & 0,0046 \\
 	900 & 35,9 & 0,0151 & 0,0041 \\
 	1200 & 40,0 & 0,0129 & 0,0036 \\
+	\bottomrule
 \end{tabular}
 \end{table}
 
+Die Differentialquotienten für  $T_1$ sind in \ref{tab:diffT1} dargestellt.
+
 Für $T_2$ ergeben sich die Werte
 \begin{table}
+	\centering
+	\caption{Differentialquotienten $\frac{\symup{d}T_2}{\symup{d}t}$} 
+	\label{tab:diffT2}
 \begin{tabular}{cccc}
-	Zeit $t$ in s & Temperatur $T_2$ & $\frac{\symup{d}T_2}{\symup{d}t}$ & Fehler \\
+	\toprule
+	$t$ in $s$ & $T_2$ / $°C$ & $\frac{\symup{d}T_2}{\symup{d}t}$ / $\frac{K}{s}$ & $\Delta \frac{\symup{d}T_2}{\symup{d}t}$  / $\frac{K}{s}$ \\
+	\midrule
 	300 & 18,9 & -0,0063 & 0,0063 \\
 	600 & 14,9 & -0,0065 & 0,0066 \\
 	900 & 11,9 & -0,0061 & 0,0062 \\
 	1200 & 9,2 & -0,0055 & 0,0057 \\
+	\bottomrule
 \end{tabular}
 \end{table}
 
-$\sqrt{\frac{4 A^{2} a^{2} \sigma_{B}^{2} t^{2 a}}{\left(B t^{a} + 1\right)^{6}} t^{2 a - 2} + \frac{a^{2} \sigma_{A}^{2} t^{2 a - 2}}{\left(B t^{a} + 1\right)^{4}} + \sigma_{a}^{2} \left(- \frac{2 A B a t^{a} t^{a - 1}}{\left(B t^{a} + 1\right)^{3}} \log{\left (t \right )} + \frac{A a t^{a - 1}}{\left(B t^{a} + 1\right)^{2}} \log{\left (t \right )} + \frac{A t^{a - 1}}{\left(B t^{a} + 1\right)^{2}}\right)^{2}}$
+Die Differentialquotienten für $T_2$ sind in \ref{tab:diffT2} zu finden.
+
 \newpage
 
 
@@ -130,14 +148,21 @@ Die gesamte Wärmekapazität $C_{ges} = (m_1 c_W + m_k c_k)$ setzt sich aus der 
 Für die Wärmekapazität des Reservoirs 1 erhält man $m_1 c_W = \rho V_1 c_W = 17478 \frac{J}{K}$ mit der Dichte $\rho$ (\cite{geschke}), dem angegebenen Volumen $V_1 = 4 \cdot 10^{-3} m$ und der spezifischen Wärmekapazität $c_W$ (\cite{geschke})
 Für die Güteziffer ergibt sich jeweils:
 \begin{table}
+	\centering
+	\caption{Güteziffer $\upnu$ zu verschiedenen Zeiten}
+	\label{tab:gueteziffer}
 \begin{tabular}{cccc}
-	Zeit $t$ in s & Temperatur $T_1$ & Güteziffer $\upnu$ & Fehler\\
+	\toprule
+	$t$ / s & $T_1$ / $°C$ & $\upnu$ / ??? & $\Delta \upnu$ / ??? \\
+	\midrule
 	300 & 25,5 & 2,714 & 0,710 \\
 	600 & 31,2 & 2,570 & 0,676 \\
 	900 & 35,9 & 2,200 & 0,597 \\
 	1200 & 40,0 & 1,848 & 0,516 \\
+	\bottomrule
 \end{tabular}
 \end{table}
+
 
 Als Mittelwert ergibt sich für die Güteziffer $\upnu = 2,333 ?$ mit einem Fehler von $\Delta \upnu = 0,195$
 
