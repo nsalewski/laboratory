@@ -1,6 +1,6 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-\subsection{a)Messdaten}
+\subsection{a) Messdaten}
 \label{sec:messdaten}
 Nachfolgend finden sich die aufgenommenen Messdaten ausgedrückt in SI-Einheiten. Zu den beiden Drücken $p_a$ und $p_b$ wurde jeweils $1 bar$ ($1\cdot10^5 Pa$) addiert. (vgl. \cite{Anleitung})
 \begin{table}
@@ -53,7 +53,7 @@ $\frac{t}{s}$ & $\frac{T_1}{K}$ & $\frac{T_2}{K}$& $\frac{p_b\cdot10^5}{Pa}$ & $
 \end{tabular}
 \end{table}
 \newpage
-\subsection{b)Näherungsfunktion}
+\subsection{b) Näherungsfunktion}
 Eine nicht-lineare Ausgleichsrechnung mittels curvefit mithilfe der Näherungsfunktion
 \begin{equation}
 \label{eqn:naeherungsfunktion}
@@ -65,14 +65,14 @@ für $T_1(t)$\\
 
 A= (0.006 \pm 0.001) $\frac{K}{s^\alpha}$ \\
 $\alpha$= 1.197 \pm  0.036 \\
-B= (0.00011 \pm 0.00002) $\frac{K}{s^\alpha}$\\
+B= (0.00011 \pm 0.00002) $\frac{1}{s^\alpha}$\\
 C= (293.2 \pm 0.2) $K$ \\
 
 und für $T_2(t)$\\
 
 A=(-0.001\pm 0.001)$\frac{K}{s^\alpha}$ \\
 $\alpha$= 1.3 \pm 0.1 \\
-B= (4.1 \pm 2.1) $\cdot 10^{-5}\frac{K}{s^\alpha}$\\
+B= (4.1 \pm 2.1) $\cdot 10^{-5}\frac{1}{s^\alpha}$\\
 C= (294.3 \pm 0.3) $K$ \\
 
 Im nachfolgenden Plot sind die Temperaturverläufe beider Reservoire mit einem zugehörigen Regressionsgraphen abgebildet.
@@ -85,7 +85,7 @@ Im nachfolgenden Plot sind die Temperaturverläufe beider Reservoire mit einem z
 \end{figure}
 
 
-\subsection{c)}
+\subsection{c) Differentialquotienten}
 Im Auswertungsteil c) sollen die Differentialquotienten $\frac{\symup{d}T_{1,2}}{\symup{d}t}$
 für vier verschieden Temperaturen $T_i$ berechnet werden.
 
@@ -128,7 +128,7 @@ Für $T_2$ ergeben sich die Werte
 	\label{tab:diffT2}
 \begin{tabular}{cccc}
 	\toprule
-	$t$ in $s$ & $T_2$ / $°C$ & $\frac{\symup{d}T_2}{\symup{d}t}$ / $\frac{K}{s}$ & $\Delta \frac{\symup{d}T_2}{\symup{d}t}$  / $\frac{K}{s}$ \\
+	$t$ / $s$ & $T_2$ / $°C$ & $\frac{\symup{d}T_2}{\symup{d}t}$ / $\frac{K}{s}$ & $\Delta \frac{\symup{d}T_2}{\symup{d}t}$  / $\frac{K}{s}$ \\
 	\midrule
 	300 & 18,9 & -0,0063 & 0,0063 \\
 	600 & 14,9 & -0,0065 & 0,0066 \\
@@ -201,7 +201,7 @@ gilt, ergibt sich für den Massendurchsatz mit $m_W c_W=16727\frac{J}{K}$ \cite{
   \caption{Massendurchsatz}
   \begin{tabular}{ccc}
     \toprule
-    Zeit $t$ in s & Massendurchsatz $\diff{m}{t} in \frac{mol}{s}$& $\diff{m}{t} in \frac{g}{s}$\\
+     $t$ / $s$ &  $\diff{m}{t}$ / $\frac{mol}{s}$& $\diff{m}{t}$ / $ \frac{g}{s}$\\
     \midrule
 300 & 0.018 \pm 0.005 &2.2 \pm 0.6\\
 600 & 0.017 \pm 0.004 & 2.0 \pm 0.5\\
@@ -257,9 +257,11 @@ Es wurde weiterhin mit dem berechneten Massendurchsatz aus \ref{sec:Massendurchs
 
 
 \begin{table}
+  \centering
   \caption{mechanische Kompressorleistung}
   \begin{tabular} {ccc}
-    Zeit $t$ in s & Dichte in $bar=\frac{kg}{m \cdot s^2}$& Kompressorleistung in $10^2 \cdot W=  \cdot \frac{kg \cdot m^2}{s^3}$\\
+    \toprule
+    $t$ / $s$ &  $\rho$ / $\frac{g}{m^3}$& $N_{mech}$ / $\frac{1}{W}$\\
     \midrule
 300 & 22.62& 21 \pm 6\\
 600 & 20.74& 27\pm 7\\
