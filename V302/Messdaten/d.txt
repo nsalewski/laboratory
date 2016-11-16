@@ -1,0 +1,5 @@
+#Maxwell-Brücke mit L-R Glied 17
+#R_2 in Ohm	C_4 in nF	R_4 in Ohm	R_3 in Ohm
+332		597		754.1		215.2
+664		597		753.2		108.0
+1000		597		753.2		72.0
