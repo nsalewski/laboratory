@@ -1,21 +1,16 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.optimize import curve_fit
+from astropy.io import ascii
+import sympy
+from uncertainties import ufloat
+import uncertainties.unumpy as unp
+from sympy import Symbol, latex
+from sympy import *
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
-
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
-
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
-
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+r2,r3=np.genfromtxt("Messdaten/a.txt", unpack=True)
+r4=1000-r3
+rx=unp.uarray(r2*(r3/r4), r2*0.005*(r3*0.005/r4*0.005))
+print(rx)
+r_m=np.mean(rx)
+print(r_m)
