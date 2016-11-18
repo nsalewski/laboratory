@@ -1,2 +1,69 @@
 \section{Durchführung}
 \label{sec:Durchführung}
+
+Die einzelnen Brückenschaltungen werden in den Unterpunkten a) - e) erläutert.
+
+\subsection{Wheatstonesche Brücke}
+\label{sec:durcha}
+Zunächst wird die Wheatstonesche Brücke wie in Abbildung \ref{fig:wheatstonebrücke} aufgebaut.
+
+Es sollen zwei unbekannte Widerstände gemessen werden, die jeweils dem $R_x$ in der Abbildung entsprechen.
+Als Nullindikator dient ein digitales Oszilloskop.
+Ein Tiefpassfilter am Oszilloskop ermöglicht es, die hochfrequenten Störspannungen zu dämpfen.
+
+Nachdem der Aufbau abgeschlossen ist, können die Spannungsquelle $U_S$ sowie das Oszilloskop eingeschaltet werden.
+Es wird ein Wechselstrom verwendet.
+Nun muss der Widerstand $R_3$ solange variiert werden, bis auf dem Oszilloskop nur noch die hochfrequenten Störspannungen zu erkennen sind.
+Wenn dies der Fall ist, kann die Skala des Oszilloskops empfindlicher eingestellt werden und 
+die Variation des Widerstandes $R_3$ kann wiederholt werden.
+Dieser Vorgang wird solange ausgeführt, bis die höchste Empfindlichkeit des Oszilloskops erreicht ist.
+Dann wird die Abgleichbedingung (???) als erfüllt angesehen und der Messdurchgang beendet.
+Das Potentiometer, das für das Verhältnis $\frac{R_3}{R_4}$ verwendet wird hat einen Gesamtwiderstand von $R_{GES} = R_3 + R_4 = 1000 \Omega$. 
+Damit erhält man $R_4$, wenn $R_3$ ermittelt wurde, durch $R_4 = 1000 \Omega - R_3$.
+
+Für jeden unbekannten Widerstand $R_x$ werden drei Messdurchgänge mit drei verschiedenen Referenzwiderständen $R_2$ durchgeführt.
+
+\subsection{Kapazitätsmessbrücke}
+\label{sec:durchb}
+Der Versuchsaufbau ist in Abbildung \ref{fig:kapazitaetmessbrücke} dargestellt.
+
+Zunächst soll ein R-C-Kombinationsglied gemessen werden, also ein Kondensator (Kapazität $C_x$) mit nicht vernachlässigbarem ohmschen Widerstand $R_x$.
+Um die Abgleichbedingung zu erfüllen (Brückenspannung Null) wird ein alternierendes Messen durchgeführt.
+Das heißt, dass das Stellglied $R_2$ und das Potentiometer ($\frac{R_3}{R_4}$) abwechselnd reguliert werden, sodass die Brückenspannung minimal wird.
+Dieser Vorgang wird solange wiederholt bis das Oszilloskop bei größter Empfindlichkeit nur noch die hochfrequenten Störspannungen anzeigt.
+Danach wird die Messung mit zwei weiteren Referenzkapazitäten $C_2$ wiederholt.
+
+Des Weiteren sollen die Kapazitäten zweier Kondensatoren ohne das Stellglied $R_2$ bestimmt werden.
+Hierfür wird einfach das Stellglied aus dem Versuchsaufbau entfernt.
+Die Durchführung funktioniert nun wieder analog zu \ref{sec:durcha}.
+Auch hier werden wieder drei Messungen mit drei verschiedenen Referenzkapazitäten durchgeführt.
+
+\subsection{Induktivitätsmessbrücke}
+\label{sec:durchc}
+
+In Abbildung \ref{fig:induktivitätsmessbrücke} ist der Aufbau der Induktivitätsmessbrücke dargestellt.
+Es soll die Induktivität $L_x$ und der Verlustwiderstand $R_x$ einer unbekannten Spule gemessen werden.
+Verwendet wird hierfür ein L-R-Kombinationsglied.
+Die Durchführung ist analog zur Messung des R-C-Kombinationsglieds \ref{sec:durchb}.
+Die Werte für $R_2$, $R_3$ und $R_4$, die die Abgleichbedingungen erfüllen, werden also wieder alternierend gemessen.
+Variiert wird hier für drei Messungen jeweils die Referenzinduktivität $L_2$.
+
+\subsection{Maxwell-Brücke}
+
+Der Versuchsaufbau der Maxwell-Brücke ist in Abbildung \ref{fig:maxxwellbrücke} dargestellt.
+Mit der Maxwell-Brücke soll das L-R-Kombinationsglied aus \ref{sec:durchc} ein weiteres Mal gemessen werden.
+Hierfür wird der Referenzwiderstand $R_2$ bei drei Messungen jeweils variiert.
+Die Referenzkapazität $C_4$ wird hingegen nicht verändert.
+Die beiden Stellglieder $R_3$ und $R_4$ werden wie in den vorherigen Messungen alternierend gemessen, bis die auf dem Oszilloskop angezeigte Spannung bei der höchsten Empfindlichkeit nur den hochfrequenten Störspannungen entspricht.
+Daraus erhält man mit den Abgleichbedingungen die unbekannte Kapazität und den unbekannten Verlustwiderstand.
+
+\subsection{Wien-Robinson-Brücke}
+Der Aufbau der Wien-Robinson-Brücke ist in Abbildung \ref{fig:wienrobinsonbrücke} dargestellt.
+Die Abgleichbedingung ist bei der Wien-Robinson-Brücke abhängig von der Spannungsfrequenz.
+Daher ist die Frequenz der Wechselspannung bei dieser Brückenschaltung nicht konstant wie 
+bei den vorherigen Messungen, sondern wird variiert zwischen $\omega = 20 Hz$ und $\omega = 30kHz$.
+Zunächst wird nach dem Start der Messung die Spannungsfrequenz $\omega_{min}$ bestimmt, bei welcher die Brückenspannung $U_{Br}$ ein Minimum erreicht.
+Danach wird die eigentliche Messung gestartet.
+Hierbei werden in geeigneten Abständen um die Spannungsfrequenz $\omega_{min}$ die Messwerte für $U_S$ und $U_{Br}$ abgelesen.
+Da die Brückenspannung am Oszilloskop abgelesen wird, ist zu beachten, dass die Amplituden vollständig auf dem Oszilloskop zu sehen sind.
+\newpage
