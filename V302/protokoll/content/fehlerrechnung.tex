@@ -18,11 +18,11 @@ mit Hilfe der Gauß’schen Fehlerfortpflanzung berechnet:
   \label{eqn:fehlerfortpflanzung}
   \Delta f = \sqrt{ \sum \limits_{i = 1}^{N} (\frac{\partial f}{\partial x_i})^2 \cdot (\Delta x_i)^2}.
 \end{equation}
-Haben Messgeräte baubedingte Unsicherheiten, so errechnen sich die Fehler des Mittelwerts nach der Regel zur Fehlerfortpflanzung von Gerätefehlern wie folgt:
+Mit der gaußschen Fehlerfortpflanzung lassen sich ebenfalls Unsicherheiten in verwendeten Bauteilen und ihre Auswirkung auf Ergebnisse berechnen.
+Haben Messgeräte und Bauteile baubedingte Unsicherheiten, so errechnen sich die prozentualen Fehler des Mittelwerts nach der Regel zur Fehlerfortpflanzung von Gerätefehlern wie folgt:
  \begin{equation}
    \frac{\Delta z}{z}=\sqrt{(\frac{\Delta x}{x})^2+(\frac{\Delta y}{y})^2}
 \end{equation}
-
 Die Regression von Polynomen und Ausgleichsgrade, sowie die Bestimmung der zugehörigen Fehler werden mit
 IPython 5.1.0 mittels Scipy 0.18.1 durchgeführt.
 Parameter eventueller Ausgleichsgeraden

@@ -50,10 +50,10 @@ Die Messwerte und der ermittelte Widerstand $R_{12}$ sind in Tabelle \ref{tab:wh
 Für den zu bestimmenden Widerstand ergibt sich $R_{12} = (392,9 \pm 2,1??) \Omega$.
 
 \subsection{Kapazitätsmessbrücke}
-Der Aufbau einer Kapazitätsmessbrücke ist in Abbildung ??? dargestellt.
-Zunächst sollen die Widerstände einer RC-Kombination bestimmt werden. 
-Für den ohmschen Widerstand $R_x$ gilt nach Formel ??? $R_x = R_2 \frac{R_3}{R_4}$
-Für den kapazitiven Widerstand $C_x$ gilt nach Formel ??? $C_x = C_2 \frac{R_4}{R_3}$
+Der Aufbau einer Kapazitätsmessbrücke ist in Abbildung \ref{fig:kapazitätsmessbrücke} dargestellt.
+Zunächst sollen die Widerstände einer RC-Kombination bestimmt werden.
+Für den ohmschen Widerstand $R_x$ gilt nach Formel \eqref{eqn:kapwiderstand}$R_x = R_2 \frac{R_3}{R_4}$
+Für den kapazitiven Widerstand $C_x$ gilt nach Formel \eqref{eqn:kapazitaet} $C_x = C_2 \frac{R_4}{R_3}$
 	\begin{table}
 		\centering
 		\caption{Messdaten für das RC-Kombinations-Glied 8}
@@ -116,11 +116,10 @@ Die Werte für den Kondensator 3 sind in Tabelle \ref{tab:kapa3} dargestellt.
 
 \subsection{Induktivitätsmessbrücke}
 
-\blindtext
 
-Die Induktivitätsmessbrücke ist in Abbildung ??? dargestellt.
-Die unbekannte Induktivität $L_x$ ($L_{17}$) wurde mittels Formel ??? bestimmt, der 
-Verlustwiderstand $R_x$ ($R_{17}$) mit Formel ???.
+Die Induktivitätsmessbrücke ist in Abbildung \ref{fig:induktivitätsmessbrücke} dargestellt.
+Die unbekannte Induktivität $L_x$ ($L_{17}$) wurde mittels Formel \eqref{eqn:induktivität} bestimmt, der
+Verlustwiderstand $R_x$ ($R_{17}$) mit Formel \eqref{eqn:indukwiderstand}.
 
 	\begin{table}
 		\centering
@@ -159,6 +158,55 @@ Der Fehler von $R_x$ und $L_x$ durch die fehlerbehafteten Größen $L_2$ (0,2 \%
 	\end{table}
 
 
+%Soll hier noch erklärung und verweis auf formeln hin?
 
 
+\subsection{Wien-Robinson-Brücke}
+In der letzten Messreihe soll die Frequenzabhängigkeit der Wien-Robinson-Brücke im Bereich $20Hz-30000Hz$ untersucht. Nach Abbildung \ref{wheatstone} wurden Bauelemente mit den folgenden Kenndaten verwendet.
 
+\begin{table}
+\centering
+\caption{Kenndaten der verwendeten Bauteile der Wien-Robinson-Brücke}
+\begin{tabular}{cccc}
+$R'$/$\Omega$& $2R'$/$\Omega$& $R$/$\Omega$ &$C_1$/$nF$\\
+332&664&1000&	???
+
+\end{tabular}
+\end{table}
+Die Kapazität des Kondensators $C_1$ wurde hierbei als Mittelwert der Berechnung in Tabelle \ref{tab:kapa1} angenommen.
+In der nachfolgenden Tabelle sind die gemessenen Spannungen $U_s$, $U_Br, eff$ in Abhängigkeit zur Frequenz
+$f$ sowie sowohl der gemessene Quotient der Spannungen als auch der nach
+Formel \eqref{eqn:wienquotient} berechnete Quotient eingetragen. Zudem wird $\Omega =\frac{f}{f_0}$ aufgeführt.
+Da es sich um eine Wechselspannung handelt, berechnet sich $U_Br, eff$ nach
+\begin{equation}
+	U_Br, eff=\frac{U_Br}{2 \sqrt{2}}
+\end{equation}
+und $\omega_0$ ist die Frequenz, bei der die Brückenspannung verschwindet.
+Da
+\begin{equation}
+	v_0=\frac{\omega_0}{2 \pi}; mit \omega_o=\frac{1}{RC}
+\end{equation}
+Bei unserem Aufbau ergab sich $\omega_0$ etwa zu $240Hz$. Nach der Formel würde sich etwa $\omega_0=241.6Hz$ ergeben.
+\input{Messdaten/values.tex}
+\begin{figure}
+	\includegraphics{build/plot.pdf}
+	\caption{Vergleich der Messdaten mit der Theoriekurve}
+	\label{fig:plot1}
+\end{figure}
+\subsubsection{Klirrfaktor-Messung}
+Wie bereits in der Theorie beschrieben, wird im vorliegenden Experiment die Näherung
+verwendet, dass lediglich die zweite Oberwelle betrachtet wird.
+Zur Berechnung von $k$ nach Formel \eqref{eqn:klirrfaktor} werden also $U_1$ und $U_2$ benötigt. $U_1$ ist $U_S=2.93 \Omega$ bei $\omega_0$. Mit \eqref{eqn:wienquotienteinfach} und $\Omega=2$ sowie
+\begin{equation}
+	\label{eqn:klirrfkt}
+U_2=\frac{U_{Br}}{f(2)}
+\end{equation}
+f(2) ist, mit \Omega=2, hierbei:
+\begin{equation}
+f(2)^2=\left|\frac{U_Br}{U_s}\right|^2(\Omega)=\frac{1}{45}
+\end{equation}
+Damit ergibt sich $U_2=0.079 \Omega$ und schließlich
+\begin{equation}
+k=\frac{U_2}{U_1}=0.027
+\end{equation}
+Formel \eqref{eqn:klirrfkt} wurde nach \cite{Anleitung} verwendet.
