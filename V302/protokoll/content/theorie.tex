@@ -44,7 +44,7 @@ U_0=\sum_{i}{U_i} \Rightarrow \sum_{k}{U_k}=0
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{Bilder/brueckenschaltungallgemein.png}
+  \includegraphics[width=0.7\textwidth]{Bilder/brueckenschaltungallgemein.png}
   \caption{Grundlegender Aufbau einer Brückenschaltung \cite{Anleitung}}
   \label{fig:brückenschaltung}
 \end{figure}
@@ -125,7 +125,7 @@ $R_x$ steht hierbei stellvertretend für die Wärmeverluste im Kondensator. Zum 
 Hierzu wird ein bekannter Kondensator $C_2$ in Reihe geschaltet zu einem regulierbaren ohmschen Widerstand $R_2$.
 $R_2$ ist hierbei regulierbar, um die in der Kapazität entstehende Phasenverschiebung zu kompensieren. Für den $R_2-C_2$-Zweig wird hierbei angenommen, dass $R_{Wirk}=R_2$ gilt, also der Kondensator $C_2$ verlustfrei ist. Dies ist, wie sich auch anhand von $R_x$ nahezu 0 zeigt, realisierbar.
 Wenn der unbekannte Kondensator als verlustfrei angenommen werden kann, kann auf den regelbaren Widerstand $R_2$ verzichtet werden.
-Dies würde sich auch in der Messung zeigen. Wenn $R_2$ auf $0 \Omega$ gestellt werden kann und sich die Brückenspannnung trotzdem zu Null abgleichen lässt, kann man den Kondensator als verlustfrei annehmen.
+Dies würde sich auch in der Messung zeigen. Wenn $R_2$ auf $0 \si{\ohm}$ gestellt werden kann und sich die Brückenspannnung trotzdem zu Null abgleichen lässt, kann man den Kondensator als verlustfrei annehmen.
 Die Abgleichbedingungen ergeben sich somit zu
 \begin{equation}
 \centering
@@ -219,13 +219,13 @@ Es ist sofort ersichtlich, dass der Zähler=0 ist, die Brückenspannung also ver
 \end{equation}
 Somit lässt sich \eqref{eqn:wienquotient} vereinfacht darstellen durch die Einführung des Frequenzverhältnis:
 \begin{equation}
-\Omega:=\frac{\omega}{\omega_0}
+\si{\ohm}:=\frac{\omega}{\omega_0}
 \end{equation}
 Der Quotient der Spannungen wird damit zu
 
 \begin{equation}
 \label{eqn:wienquotienteinfach}
-\left|\frac{U_{Br}}{U_s}\right|^2= \frac{1}{9}\frac{(\Omega-1)^2}{(1-\Omega^2)^2+9\Omega^2}
+\left|\frac{U_{Br}}{U_s}\right|^2= \frac{1}{9}\frac{(\si{\ohm}-1)^2}{(1-\si{\ohm}^2)^2+9\si{\ohm}^2}
 \end{equation}
 Die Filterfunktion der Wien-Robinson-Brücke schlägt somit bei $\omega_0$ nach \eqref{eqn:Omega} zu. Das heißt, dass $\omega_0$ aus dem kontinuierlichen Frequenzspektrum herausgefiltert wird und die umgebenden Frequenzen stark abgeschwächt werden.
 \subsubsection{Klirrfaktor-Messung}
