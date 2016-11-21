@@ -33,7 +33,7 @@ gamma=g/241.6
 ubus=uc/us
 ubus2=v*((gamma**2-1)**2/((1-gamma**2)**2+9*gamma**2))
 print(ubus, ubus2)
-ascii.write([f, us.round(2), um.round(2), (uc/us).round(2),np.sqrt(ubus2).round(2) ,(f/241.6).round(2)], "Messdaten/values.tex", format="latex")
+ascii.write([f, us.round(2), um.round(2), (uc/us).round(4),np.sqrt(ubus2).round(4) ,(f/241.6).round(2)], "Messdaten/values.dat", format="latex")
 #print(f)
 plt.plot(f/241.6, ubus, 'o', label='Messdaten')
 plt.xlabel(r'$\Omega= \frac{f}{f_0}$')

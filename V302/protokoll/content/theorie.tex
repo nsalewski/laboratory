@@ -1,7 +1,7 @@
 \section{Theorie}
 \label{sec:Theorie}
 Brückenschaltungen werden in der Physik verwendet, um über bereits bekannte Bauelemente die
-physikalischen Kennwerte eines unbekannten Widerstands oder einer anderen Impedanz zu bestimmen.
+physikalischen Kennwerte eines unbekannten ohmschen Widerstands oder einer Impedanz zu bestimmen.
 Mithilfe der beiden Kirchhoffschen Regeln lassen sich Bedingungen zur Bestimmung unbekannter Elemente in
 Brückenschaltungen formulieren.
 \subsection{Kirchhoff'sche Regel}
@@ -22,7 +22,7 @@ und alle ausgehenden Strömen gleich Null sein muss.
 Eine Masche bezeichnet einen in sich geschlossenen Stromkreis.
 Die Maschenregel besagt, dass für eine Masche die Summe aller Einzelspannungen $U_i$
 an den einzelnen Bauelementen, wie zum Beispiel Ohmschen Widerständen, Spulen und Kondensatoren,
-gleich der angelegten Gesamtspannung $U_0$ ist. Äquivalent dazu ist die Formulierung, dass die Summe aller auftretenden Spannungen $U_k$ gleich Null ist.
+gleich der angelegten Gesamtspannung $U_0$ sein muss. Äquivalent dazu ist die Formulierung, dass die Summe aller auftretenden Spannungen $U_k$ gleich Null ist.
 
 \begin{equation}
   \label{eqn:maschenregel}
@@ -31,7 +31,7 @@ U_0=\sum_{i}{U_i} \Rightarrow \sum_{k}{U_k}=0
 \end{equation}
  Eine alternative Formulierung erhält man unter Verwendung des Ohmschen Gesetz. Dieses definiert den elektrischen Widerstand $R$
  als Quotienten aus der anliegenden Spannung $U$ zur Stromstärke $I$ des durch den Widerstand fließenden Stroms.
- Stellt man das Ohmsche Gesetz nach $U$ um, ergitb sich der Zusammenhang
+ Stellt man das Ohmsche Gesetz nach $U$ um, ergibt sich der Zusammenhang
 \begin{equation}
    \centering
    U=R \cdot I
@@ -65,9 +65,9 @@ Die Brücke wird dann als abgeglichen bezeichnet. Es gilt also:
 R_2R_3=R_1R_4
 \label{eqn:abgleichbedingung}
 \end{equation}
-Die Abgleichbedingung hängt somit lediglich von den Widerständen ab. Somit lässt sich ein unbekannter Widerstand $R_x$ mittels der abgeglichenen Brücke bestimmen.
+Diese sogenannte Abgleichbedingung hängt somit lediglich von den Widerständen ab. Somit lässt sich ein unbekannter Widerstand $R_x$ mittels der abgeglichenen Brücke bestimmen.
 
-Dafür müssen die bekannten Widerstände mit möglichst großer Genauigkeit bekannt werden und mindestens einer der Widerstände muss sich regulieren lassen.
+Dafür müssen die bekannten Widerstände mit möglichst großer Genauigkeit bekannt sein und mindestens einer der Widerstände muss sich regulieren lassen.
 
 Um eine möglichst genaue Bestimmung des unbekannten Widerstands $R_x$ zu realisieren, muss man die Brückenspannung möglichst genau zu Null abgleichen können.
 Dazu wird ein Galvanometer, (Mikro-)Voltmeter oder ein Kathodenstrahloszillograph verwendet.
@@ -89,7 +89,6 @@ oder in den Drähten auf.
 
 Zur Realisierung solcher sogenannter dielektrischen Verluste
 ergänzt man daher das Ersatzschaltbild durch gedachte ohmsche Widerstände $R_x$.
-Die $R_x$ verursachen eine Phasenverschiebung.
 Brückenschaltungen mit komplexen Widerständen müssen somit im Gegensatz zu Schaltungen, welche lediglich ohmsche Widerstände enthalten, mit Wechselstrom betrieben werden, sodass das magnetische bzw. elektrische Feld sich periodisch auf- und auch wieder abbauen kann.
 
 Somit müssen wiederum die Abgleichbedingungen für den Fall, dass Kondensatoren und Spulen in der Brückenschaltung verwendet werden, sowohl Phase, als auch den Wirkwiderstand berücksichtigen.
@@ -103,8 +102,8 @@ Im Folgenden soll im Einzelnen auf die fünf verschiedenen Brückenschaltungen e
   \label{fig:wheatstonebrücke}
 \end{figure}
 
-In Schaltbild \ref{fig:wheatstonebrücke} ist die Wheatstonesche Brücke abgebildet. Diese enthält lediglich Ohmsche Widerstände. Daher kann sie sowohl mit Wechselstrom als auch mit Glecihstrom betrieben werden.
-Der zu bestimmende Widerstand $R_x$ lässt sich nach \eqref{abgleichbedingung} über die anderen Widerstände wie folgt bestimmen:
+In Schaltbild \ref{fig:wheatstonebrücke} ist die Wheatstonesche Brücke abgebildet. Diese enthält lediglich Ohmsche Widerstände. Daher kann sie sowohl mit Wechselstrom als auch mit Gleichstrom betrieben werden.
+Der zu bestimmende Widerstand $R_x$ lässt sich nach \eqref{eqn:abgleichbedingung} über die anderen Widerstände wie folgt bestimmen:
 \begin{equation}
   \centering
   R_x=R_2 \cdot \frac{R_3}{R_4};
@@ -116,16 +115,15 @@ Daher können $R_3$ und $R_4$ mittels eines Potentiometers realisiert werden.
 \subsection{Kapazitätsmessbrücke}
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{Bilder/kapazitaetmessbruecke.png}
+  \includegraphics[width=0.7\textwidth]{Bilder/kapazitaetmessbruecke.png}
   \caption{Brückenschaltung zur Bestimmung eines unbekannten Kondensators \cite{Anleitung}}
-  \label{fig:kapazitätmessbrücke}
+  \label{fig:kapazitätsmessbrücke}
 \end{figure}
 Bei der Kapazitätsmessbrücke abgebildet in \ref{fig:kapazitätsmessbrücke} wird ein Kondensator in die Brückenschaltung eingebaut.
 Wie bereits in \ref{sec:komplexewiderstände} erklärt, muss daher sowohl die Phase, als auch der Wirkwiderstand abgeglichen werden.
-$R_x$ steht hierbei als gedachter Ersatz für die Wärmeverluste im Kondensator. Zum Abgleich des komplexen kapazitiven Widerstands wird also eine Ersatzschaltung verwendet.
+$R_x$ steht hierbei stellvertretend für die Wärmeverluste im Kondensator. Zum Abgleich des komplexen kapazitiven Widerstands wird also eine Ersatzschaltung verwendet.
 Hierzu wird ein bekannter Kondensator $C_2$ in Reihe geschaltet zu einem regulierbaren ohmschen Widerstand $R_2$.
-Diese Ersatzschaltung dient hierbei dazu, die Phasenverschiebung des gedachten Widerstandes $R_x$,
-welcher die Wärmeverluste im zu messenden Kondensator darstellt, zu kompensieren. Für den $R_2-C_2$-Zweig wird hierbei angenommen, dass $R_{Wirk}=R_2$ gilt, also der Kondensator $C_2$ verlustfrei ist. Dies ist, wie sich auch anhand von $R_x$ nahezu 0 zeigt, realisierbar.
+$R_2$ ist hierbei regulierbar, um die in der Kapazität entstehende Phasenverschiebung zu kompensieren. Für den $R_2-C_2$-Zweig wird hierbei angenommen, dass $R_{Wirk}=R_2$ gilt, also der Kondensator $C_2$ verlustfrei ist. Dies ist, wie sich auch anhand von $R_x$ nahezu 0 zeigt, realisierbar.
 Wenn der unbekannte Kondensator als verlustfrei angenommen werden kann, kann auf den regelbaren Widerstand $R_2$ verzichtet werden.
 Dies würde sich auch in der Messung zeigen. Wenn $R_2$ auf $0 \Omega$ gestellt werden kann und sich die Brückenspannnung trotzdem zu Null abgleichen lässt, kann man den Kondensator als verlustfrei annehmen.
 Die Abgleichbedingungen ergeben sich somit zu
