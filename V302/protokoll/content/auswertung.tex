@@ -2,7 +2,7 @@
 \label{sec:Auswertung}
 
 \subsection{Wheatstonesche Brücke}
-Mit der Wheatstoneschen Brücke (Abb: \ref{fig:wheatstonebrücke}) sollen zwei unbekannte Widerstände bestimmt werden.
+Mit der Wheatstoneschen Brücke (\ref{fig:wheatstonebrücke}) sollen zwei unbekannte Widerstände bestimmt werden.
 Für den unbekannten Widerstand $R_x$ gilt nach Formel \eqref{eqn:widerstand}
 \begin{equation}
 	R_x = R_2 \frac{R_3}{R_4}
@@ -27,8 +27,9 @@ Die Messwerte mit dem berechneten Widerstand 13 sind in Tabelle \ref{tab:wheat1}
 Für den Referenzwiderstand $R_2$ soll ein Fehler von $0,2\%$ und für das Verhältnis $\frac{R_3}{R_4}$ ein Fehler von $0,5\%$ angenommen werden (\cite{Anleitung}).
 Daraus ergeben sich die Fehler für $R_x$ mit der Gaußschen Fehlerfortpfplanzung.
 
-Damit ergibt sich für den zu bestimmenden Widerstand $R_{13} = (320,9 \pm 1,7??) \Omega$.
-\newpage
+Damit ergibt sich für den zu bestimmenden Widerstand $R_{13} = (320,9 \pm 1,4) \Omega$.
+Der Fehler des Mittelwerts wurde und wird im Folgenden gemäß Formel \eqref{eqn:mittelwertfehler} bestimmt, indem die einzelnen absoluten Fehler $\Delta R_x$ addiert bzw. subtrahiert werden, sodass die einzelnen Fehler maximal werden.
+
 Der zweite bestimmte Widerstand war der Widerstand 12.
 
 	\begin{table}
@@ -47,7 +48,7 @@ Der zweite bestimmte Widerstand war der Widerstand 12.
 	\end{table}
 Die Messwerte und der ermittelte Widerstand $R_{12}$ sind in Tabelle \ref{tab:wheat2} dargestellt.
 
-Für den zu bestimmenden Widerstand ergibt sich $R_{12} = (392,9 \pm 2,1??) \Omega$.
+Für den zu bestimmenden Widerstand ergibt sich $R_{12} = (392,9 \pm 1,6) \Omega$.
 
 \subsection{Kapazitätsmessbrücke}
 Der Aufbau einer Kapazitätsmessbrücke ist in Abbildung \ref{fig:kapazitätsmessbrücke} dargestellt.
@@ -71,7 +72,7 @@ Für den kapazitiven Widerstand $C_x$ gilt nach Formel \eqref{eqn:kapazitaet} $C
 Die Werte für das RC-Kombinations-Glied sind in Tabelle \ref{tab:kapakombi} dargestellt.
 Der Fehler von $R_2$ wurde auf $\Delta R_2 = 0,5 \Omega$ festgelegt.
 
-Damit erhält man für die zu bestimmenden Größen: $R_x = (571,4 \pm 3,1??) \Omega$ und $C_x = (297,7 \pm 1,6??) nF$.
+Damit erhält man für die zu bestimmenden Größen: $R_x = (571,4 \pm 2,9) \Omega$ und $C_x = (297,7 \pm 38,9) nF$.
 
 
 
@@ -94,7 +95,7 @@ Es wurden jeweils der Kondensator $C_2$ variiert und der ohmsche Widerstand $R_2
 	\end{tabular}
 	\end{table}
 
-Die Werte für den Kondensator 1 sind in Tabelle \ref{tab:kapa1} dargestellt.
+Die Werte für den Kondensator 1 sind in Tabelle \ref{tab:kapa1} dargestellt. Für die zu bestimmende Kapazität ergibt sich $C_x = (658,5 \pm 6,0) nF$.
 
 
 	\begin{table}
@@ -111,7 +112,7 @@ Die Werte für den Kondensator 1 sind in Tabelle \ref{tab:kapa1} dargestellt.
 		\bottomrule
 	\end{tabular}
 	\end{table}
-Die Werte für den Kondensator 3 sind in Tabelle \ref{tab:kapa3} dargestellt.
+Die Werte für den Kondensator 3 sind in Tabelle \ref{tab:kapa3} aufgetragen. Für den Kondensator 3 erhält man damit $C_x = (418,4 \pm 3,7) nF$.
 
 
 \subsection{Induktivitätsmessbrücke}
@@ -139,9 +140,11 @@ Verlustwiderstand $R_x$ ($R_{17}$) mit Formel \eqref{eqn:indukwiderstand}.
 Die Werte für das L-R-Kombinationsglied sind in Tabelle \ref{tab:induk} dargestellt.
 Der Fehler von $R_x$ und $L_x$ durch die fehlerbehafteten Größen $L_2$ (0,2 \%), $R_2$ (3 \%) und $\frac{R_3}{R_4}$ (0,5 \%) wurden mittels Gaußscher Fehlerfortpfplanzung bestimmt.
 
+Für den Verlustwiderstand $R_x$ erhält man $R_x = (92,1 \pm 6,8) \Omega$ und für die unbekannte Induktivität $L_x = (43,1 \pm 0,4) mH$.
 
 \subsection{Maxwell-Brücke}
 
+In Abbildung \ref{fig:maxwellbrücke} ist der Aufbau der Maxwell-Brücke dargestellt.
 	\begin{table}
 		\centering
 		\caption{Messdaten für das L-R-Kombinationsglied 17}
@@ -156,9 +159,10 @@ Der Fehler von $R_x$ und $L_x$ durch die fehlerbehafteten Größen $L_2$ (0,2 \%
 		\bottomrule
 	\end{tabular}
 	\end{table}
+Die gemessenen Werte und die sich daraus ergebenden Größen für $R_x$ und $L_x$ ergeben sich aus den Gleichungen \eqref{eqn:maxwellr} und \eqref{eqn:maxwellinduktivität}.
+Für den Verlustwiderstand $R_x$ erhält man $R_x = (95,2 \pm 3,1)$ und für die Induktivität $L_x = (42,8 \pm 1,0) mH$.
 
-
-%Soll hier noch erklärung und verweis auf formeln hin?
+%Soll hier noch erklärung und verweis auf formeln hin? - Ja amk
 
 
 \subsection{Wien-Robinson-Brücke}
@@ -174,17 +178,17 @@ $R'$/$\Omega$& $2R'$/$\Omega$& $R$/$\Omega$ &$C_1$/$nF$\\
 \end{tabular}
 \end{table}
 Die Kapazität des Kondensators $C_1$ wurde hierbei als Mittelwert der Berechnung in Tabelle \ref{tab:kapa1} angenommen.
-In der nachfolgenden Tabelle sind die gemessenen Spannungen $U_s$, $U_Br, eff$ in Abhängigkeit zur Frequenz
+In der nachfolgenden Tabelle sind die gemessenen Spannungen $U_s$, $U_{Br, eff}$ in Abhängigkeit zur Frequenz
 $f$ sowie sowohl der gemessene Quotient der Spannungen als auch der nach
 Formel \eqref{eqn:wienquotient} berechnete Quotient eingetragen. Zudem wird $\Omega =\frac{f}{f_0}$ aufgeführt.
 Da es sich um eine Wechselspannung handelt, berechnet sich $U_Br, eff$ nach
 \begin{equation}
-	U_Br, eff=\frac{U_Br}{2 \sqrt{2}}
+	U_{Br, eff}=\frac{U_Br}{2 \sqrt{2}}
 \end{equation}
 und $\omega_0$ ist die Frequenz, bei der die Brückenspannung verschwindet.
 Da
 \begin{equation}
-	v_0=\frac{\omega_0}{2 \pi}; mit \omega_o=\frac{1}{RC}
+	v_0=\frac{\omega_0}{2 \pi} \text{; mit } \omega_o=\frac{1}{RC}
 \end{equation}
 Bei unserem Aufbau ergab sich $\omega_0$ etwa zu $240Hz$. Nach der Formel würde sich etwa $\omega_0=241.6Hz$ ergeben.
 \input{Messdaten/values.tex}
