@@ -13,7 +13,7 @@ oder neu entstehen.
 \begin{equation}
   \centering
   \label{eqn:knotenregel}
-\sum_{k}{I_K}=0
+\sum_{k}{I_k}=0
 \end{equation}
 Etwas mathematischer ausgedrückt heißt das, dass die Summe über alle eingehenden
 und alle ausgehenden Strömen gleich Null sein muss.
@@ -57,7 +57,7 @@ Der Stromfluss teilt sich auf die beiden parallelen Zweige auf. Er fließt damit
 Mithilfe der Kirchhoffschen Regeln \eqref{eqn:knotenregel} und \eqref{eqn:maschenregel} lässt sich die Brückenspannung $U_{Br}$ abhängig von den verwendeten Widerständen und der angelegten Spannung $U_S$ wie folgt formulieren:
 \begin{equation}
   \label{eqn:brückeeingang}
-U_{Br}=\frac{R_2R_3-R_1R_4}{(R_3+R_4)(R_1+R_2)}U_S .
+U_{Br}=\frac{R_2R_3-R_1R_4}{(R_3+R_4)(R_1+R_2)}U_S
 \end{equation}
 Die Brückenspannung verschwindet, wenn der Zähler gleich Null, also $R_2R_3-R_1R_4=0$ gilt.
 Die Brücke wird dann als abgeglichen bezeichnet. Es gilt also:
@@ -73,6 +73,7 @@ Um eine möglichst genaue Bestimmung des unbekannten Widerstands $R_x$ zu realis
 Dazu wird ein Galvanometer, (Mikro-)Voltmeter oder ein Kathodenstrahloszillograph verwendet.
 
 Da nach Gleichung \eqref{eqn:brückeeingang} ein Zusammenhang zwischen der Speisespannung $U_S$ und der Brückenspannung $U_{Br}$ besteht, wird die Genauigkeit der Messung zudem durch eine möglichst große Speisespannung verbessert.
+
 Schließlich kann anstelle eines ohmschen Widerstands auch ein komplexer Widerstand mittels der abgeglichenen Brücke bestimmt werden. Hierfür muss man allerdings beachten, dass dieser sich aus einen Wirk-und einen Blindwiderstand zusammensetzt.
 
 \subsection{Realisierung komplexer Widerstände von Induktivitäten und Kondensatoren}
@@ -89,6 +90,7 @@ oder in den Drähten auf.
 
 Zur Realisierung solcher sogenannter dielektrischen Verluste
 ergänzt man daher das Ersatzschaltbild durch gedachte ohmsche Widerstände $R_x$.
+
 Brückenschaltungen mit komplexen Widerständen müssen somit im Gegensatz zu Schaltungen, welche lediglich ohmsche Widerstände enthalten, mit Wechselstrom betrieben werden, sodass das magnetische bzw. elektrische Feld sich periodisch auf- und auch wieder abbauen kann.
 
 Somit müssen wiederum die Abgleichbedingungen für den Fall, dass Kondensatoren und Spulen in der Brückenschaltung verwendet werden, sowohl Phase, als auch den Wirkwiderstand berücksichtigen.
@@ -97,7 +99,7 @@ Im Folgenden soll im Einzelnen auf die fünf verschiedenen Brückenschaltungen e
 \subsection{Wheatstonesche Brückenschaltung}
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{Bilder/Wheatstone_bruecke.png}
+  \includegraphics[width=0.7\textwidth]{Bilder/Wheatstone_bruecke.png}
   \caption{Wheatstonesche Brückenschaltung zur Bestimmung eines unbekannten Widerstands \cite{Anleitung}}
   \label{fig:wheatstonebrücke}
 \end{figure}
