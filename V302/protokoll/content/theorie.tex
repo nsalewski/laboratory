@@ -8,8 +8,7 @@ Brückenschaltungen formulieren.
 
 \subsubsection{Knotenregel}
 Die Knotenregel besagt anschaulich, dass Ströme, die in einen Knotenpunkt
-hineinfließen, auch wieder hinausfließen müssen. Im Knoten selbst dürfen also keine Ströme verschwinden,
-oder neu entstehen.
+hineinfließen, auch wieder hinausfließen müssen.
 \begin{equation}
   \centering
   \label{eqn:knotenregel}
@@ -34,7 +33,7 @@ U_0=\sum_{i}{U_i} \Rightarrow \sum_{k}{U_k}=0
  Stellt man das Ohmsche Gesetz nach $U$ um, ergibt sich der Zusammenhang
 \begin{equation}
    \centering
-   U=R \cdot I
+   U=R \cdot I \text{.}
  \end{equation}
  Somit kann die Maschenregel auch abhängig von Stromstärke und Widerständen formuliert werden:
  \begin{equation}
@@ -49,20 +48,20 @@ U_0=\sum_{i}{U_i} \Rightarrow \sum_{k}{U_k}=0
   \label{fig:brückenschaltung}
 \end{figure}
 In Abbildung \ref{fig:brückenschaltung} ist der schematische Aufbau einer Brückenschaltung dargestellt.
-Als Brückenspannung wird hierbei die zwischen den Punkten $A$ und $B$ auftretende Spannung $U_{Br}$ bezeichnet.
+Als Brückenspannung wird hierbei die zwischen den Punkten $A$ und $B$ auftretende Spannung $U_{\text{Br}}$ bezeichnet.
 
-Die Brückenschaltung kann man als Parallelschaltung zweier widerstandsbehafteter Leiter verstehen. An diese Parallelschaltung wird dabei die Speisespannung $U_S$ angelegt.
+Die Brückenschaltung kann man als Parallelschaltung zweier widerstandsbehafteter Leiter verstehen. An diese Parallelschaltung wird dabei die Speisespannung $U_{\text{S}}$ angelegt.
 Der Stromfluss teilt sich auf die beiden parallelen Zweige auf. Er fließt damit entweder durch den linken Zweig und somit durch die Widerstände $R_1$ und $R_2$ oder durch den rechten Zweig, also durch $R_3$ und $R_4$.
 
-Mithilfe der Kirchhoffschen Regeln \eqref{eqn:knotenregel} und \eqref{eqn:maschenregel} lässt sich die Brückenspannung $U_{Br}$ abhängig von den verwendeten Widerständen und der angelegten Spannung $U_S$ wie folgt formulieren:
+Mithilfe der Kirchhoffschen Regeln \eqref{eqn:knotenregel} und \eqref{eqn:maschenregel} lässt sich die Brückenspannung $U_{\text{Br}}$ abhängig von den verwendeten Widerständen und der angelegten Spannung $U_S$ wie folgt formulieren:
 \begin{equation}
   \label{eqn:brückeeingang}
-U_{Br}=\frac{R_2R_3-R_1R_4}{(R_3+R_4)(R_1+R_2)}U_S
+U_{\text{Br}}=\frac{R_2R_3-R_1R_4}{(R_3+R_4)(R_1+R_2)}U_{\text{S}} \text{.}
 \end{equation}
 Die Brückenspannung verschwindet, wenn der Zähler gleich Null, also $R_2R_3-R_1R_4=0$ gilt.
 Die Brücke wird dann als abgeglichen bezeichnet. Es gilt also:
 \begin{equation}
-R_2R_3=R_1R_4
+R_2R_3=R_1R_4 \text{.}
 \label{eqn:abgleichbedingung}
 \end{equation}
 Diese sogenannte Abgleichbedingung hängt somit lediglich von den Widerständen ab. Somit lässt sich ein unbekannter Widerstand $R_x$ mittels der abgeglichenen Brücke bestimmen.
@@ -72,7 +71,7 @@ Dafür müssen die bekannten Widerstände mit möglichst großer Genauigkeit bek
 Um eine möglichst genaue Bestimmung des unbekannten Widerstands $R_x$ zu realisieren, muss man die Brückenspannung möglichst genau zu Null abgleichen können.
 Dazu wird ein Galvanometer, (Mikro-)Voltmeter oder ein Kathodenstrahloszillograph verwendet.
 
-Da nach Gleichung \eqref{eqn:brückeeingang} ein Zusammenhang zwischen der Speisespannung $U_S$ und der Brückenspannung $U_{Br}$ besteht, wird die Genauigkeit der Messung zudem durch eine möglichst große Speisespannung verbessert.
+Da nach Gleichung \eqref{eqn:brückeeingang} ein Zusammenhang zwischen der Speisespannung $U_{\text{S}}$ und der Brückenspannung $U_{\text{Br}}$ besteht, wird die Genauigkeit der Messung zudem durch eine möglichst große Speisespannung verbessert.
 
 Schließlich kann anstelle eines ohmschen Widerstands auch ein komplexer Widerstand mittels der abgeglichenen Brücke bestimmt werden. Hierfür muss man allerdings beachten, dass dieser sich aus einen Wirk-und einen Blindwiderstand zusammensetzt.
 
@@ -82,7 +81,7 @@ Fließt Strom durch einen Kondensator, so baut sich in diesem ein elektrisches F
 Einer Spannungsquelle wird also durch angeschlossene Kondensatoren oder Spulen Energie entzogen und im elektrischen bzw. magnetischen Feld gespeichert. Diese wird allerdings nicht umgewandelt in eine andere Energie (z.B. thermische oder mechanische) sondern kann nach einer Umkehrung der Spannungsrichtung zur Quelle zurückgeführt werden.
 Daher werden sogenannte Impedanzen (Wechselstromwiderstände) zur Beschreibung von Spulen und Kondensatoren verwendet:
 \begin{equation}
-\Theta= X+iY
+\Theta= X+iY \text{.}
 \end{equation}
 $X$ ist hierbei der Wirkwiderstand und $Y$ die Reaktanz (Blindwiderstand).
 Bei Spulen und Kondensatoren treten zudem Wärmeverluste, zum Beispiel zwischen den Kondensatorplatten
@@ -104,7 +103,7 @@ Im Folgenden soll im Einzelnen auf die fünf verschiedenen Brückenschaltungen e
   \label{fig:wheatstonebrücke}
 \end{figure}
 
-In Schaltbild \ref{fig:wheatstonebrücke} ist die Wheatstonesche Brücke abgebildet. Diese enthält lediglich Ohmsche Widerstände. Daher kann sie sowohl mit Wechselstrom als auch mit Gleichstrom betrieben werden.
+In Abbildung \ref{fig:wheatstonebrücke} ist die Wheatstonesche Brücke abgebildet. Diese enthält lediglich ohmsche Widerstände. Daher kann sie sowohl mit Wechselstrom als auch mit Gleichstrom betrieben werden.
 Der zu bestimmende Widerstand $R_x$ lässt sich nach \eqref{eqn:abgleichbedingung} über die anderen Widerstände wie folgt bestimmen:
 \begin{equation}
   \centering
@@ -117,17 +116,18 @@ Daher können $R_3$ und $R_4$ mittels eines Potentiometers realisiert werden.
 \subsection{Kapazitätsmessbrücke}
 \begin{figure}
   \centering
-  \includegraphics[width=0.7\textwidth]{Bilder/kapazitaetmessbruecke.png}
+  \includegraphics[width=0.65\textwidth]{Bilder/kapazitaetmessbruecke.png}
   \caption{Brückenschaltung zur Bestimmung eines unbekannten Kondensators \cite{Anleitung}}
   \label{fig:kapazitätsmessbrücke}
 \end{figure}
-Bei der Kapazitätsmessbrücke abgebildet in \ref{fig:kapazitätsmessbrücke} wird ein Kondensator in die Brückenschaltung eingebaut.
+Bei der Kapazitätsmessbrücke abgebildet in Abbildung \ref{fig:kapazitätsmessbrücke} wird ein Kondensator in die Brückenschaltung eingebaut.
 Wie bereits in \ref{sec:komplexewiderstände} erklärt, muss daher sowohl die Phase, als auch der Wirkwiderstand abgeglichen werden.
 $R_x$ steht hierbei stellvertretend für die Wärmeverluste im Kondensator. Zum Abgleich des komplexen kapazitiven Widerstands wird also eine Ersatzschaltung verwendet.
 Hierzu wird ein bekannter Kondensator $C_2$ in Reihe geschaltet zu einem regulierbaren ohmschen Widerstand $R_2$.
-$R_2$ ist hierbei regulierbar, um die in der Kapazität entstehende Phasenverschiebung zu kompensieren. Für den $R_2-C_2$-Zweig wird hierbei angenommen, dass $R_{Wirk}=R_2$ gilt, also der Kondensator $C_2$ verlustfrei ist. Dies ist, wie sich auch anhand von $R_x$ nahezu 0 zeigt, realisierbar.
+
+$R_2$ ist hierbei regulierbar, um die in der Kapazität entstehende Phasenverschiebung zu kompensieren. Für den $R_2-C_2$-Zweig wird hierbei angenommen, dass $R_{\text{Wirk}}=R_2$ gilt, also der Kondensator $C_2$ verlustfrei ist. Dies ist, wie sich auch anhand von $R_x$ nahezu 0 zeigt, realisierbar.
 Wenn der unbekannte Kondensator als verlustfrei angenommen werden kann, kann auf den regelbaren Widerstand $R_2$ verzichtet werden.
-Dies würde sich auch in der Messung zeigen. Wenn $R_2$ auf $0 \si{\ohm}$ gestellt werden kann und sich die Brückenspannnung trotzdem zu Null abgleichen lässt, kann man den Kondensator als verlustfrei annehmen.
+Dies würde sich auch in der Messung zeigen. Wenn $R_2$ auf $\SI{0}{\ohm}$ gestellt werden kann und sich die Brückenspannnung trotzdem zu $0$ abgleichen lässt, kann man den Kondensator als verlustfrei annehmen.
 Die Abgleichbedingungen ergeben sich somit zu
 \begin{equation}
 \centering
@@ -138,7 +138,7 @@ und
 \begin{equation}
 \centering
 \label{eqn:kapazitaet}
-C_x=\frac{C_2R_4}{R_3}
+C_x=\frac{C_2R_4}{R_3}\text{.}
 \end{equation}
 Aus den Abgleichbedingungen ist ersichtlich, dass das Verhältnis von $R_3$ zu $R_4$ mit \eqref{eqn:kapazitaet} unabhängig von $R_x$ formuliert werden kann.
 Die Notwendigkeit der zweiten Abgleichbedingung und damit das Hinzufügen eines ohmschen Widerstands $R_2$ ergibt sich somit nur, wenn $R_x$ ungleich 0 ist.
@@ -147,12 +147,12 @@ Die Notwendigkeit der zweiten Abgleichbedingung und damit das Hinzufügen eines 
 
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{Bilder/Messbruecke_Spule_mit_R.png}
+  \includegraphics[width=0.65\textwidth]{Bilder/Messbruecke_Spule_mit_R.png}
   \caption{Brückenschaltung zur Bestimmung der Induktivität einer Spule  \cite{Anleitung}}
   \label{fig:induktivitätsmessbrücke}
 \end{figure}
-In Schaltbild \ref{fig:induktivitätsmessbrücke} ist eine Brückenschaltung zur Messung eines induktiven Widerstands dargestellt.
-Es müssen also erneut komplexe Widerstände betrachtet werden. Der prinzipielle Aufbau zur Messung einer realen Spule stellt sich also sehr ähnlich wie die Brückenschaltung zur Bestimmung eines Kondensators dar.
+In Abbildung \ref{fig:induktivitätsmessbrücke} ist eine Brückenschaltung zur Messung eines induktiven Widerstands dargestellt.
+Es müssen also erneut komplexe Widerstände betrachtet werden. Der prinzipielle Aufbau zur Messung einer realen Spule ähnelt dem Aufbau der Brückenschaltung zur Bestimmung eines Kondensators.
 Es müssen lediglich die Kondensatoren $C_i$ an entsprechender Stelle durch Spulen $L_i$ ersetzt werden.
 Die Abgleichbedingungen ergeben sich somit zu:
 \begin{equation}
@@ -164,23 +164,21 @@ und
 \begin{equation}
 \centering
 \label{eqn:induktivität}
-L_x=\frac{L_2R_3}{R_4}
+L_x=\frac{L_2R_3}{R_4}\text{.}
 \end{equation}
 Die bei der Kapazitätsmessbrücke leicht zu realisierende Forderung, dass der Wirkwiderstand im linken unteren Zweigabschnitt gleich dem Widerstand $R_2$ ist,
-lässt sich bei Induktivitäten besonders für niedrige Frequenzen nur schwerlich realisieren.
+lässt sich bei Induktivitäten besonders für niedrige Frequenzen nur schwierig realisieren.
 Es lassen sich daher genauere Ergebnisse erzielen, wenn anstelle der Induktivität $L_2$ eine Ersatzschaltung mit einer Kapazität, die sogenannte Maxwell-Brücke, verwendet wird.
 
 \subsection{Maxwell-Brücke}
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{Bilder/maxwell_bruecke.png}
+  \includegraphics[width=0.7\textwidth]{Bilder/maxwell_bruecke.png}
   \caption{Maxwell-Brücke zur Bestimmung einer Induktivität \cite{Anleitung}}
   \label{fig:maxwellbrücke}
 \end{figure}
-In der in Abbildung \ref{fig:maxwellbrücke} werden erneut Induktivitäten vermessen.
-Wie bereits erwähnt, erzielt man im Gegensatz zur Induktivitätsmessbrücke
-mit einer Induktivität $L_2$ hier mit einer eingebauten Kapazität $C_2$ aufgrund der deutlich geringeren Wärmeverluste eine höhere Genauigkeit der messung.
-Für die Abgleichbedingungen erhält man, indem man erneut die Kirchhoffschen Regeln nach \eqref{eqn:maschenregel} und \eqref{eqn:knotenregel} verwendet, zu:
+In der in Abbildung \ref{fig:maxwellbrücke} dargestellten Maxwell-Brücke werden erneut Induktivitäten vermessen.
+Für die Abgleichbedingungen erhält man, indem man erneut die Kirchhoffschen Regeln nach \eqref{eqn:maschenregel} und \eqref{eqn:knotenregel} verwendet
 \begin{equation}
 \label{eqn:maxwellr}
 \centering
@@ -190,12 +188,12 @@ und
 \begin{equation}
 \centering
 \label{eqn:maxwellinduktivität}
-L_x=R_2R_3C_4
+L_x=R_2R_3C_4 \text{.}
 \end{equation}
 \subsection{Wien-Robinson-Brücke}
 \begin{figure}
   \centering
-  \includegraphics[width=0.9\textwidth]{Bilder/wien_robinson_bruecke.png}
+  \includegraphics[width=0.65\textwidth]{Bilder/wien_robinson_bruecke.png}
   \caption{Wien-Robinson-Brücke zur Klirrfaktor-Bestimmung \cite{Anleitung}}
   \label{fig:wienrobinsonbrücke}
 \end{figure}
@@ -205,16 +203,14 @@ Bei den zuvor betrachteten Brückenschaltungen sollte sich prinzipiell also die 
 
 Die Wien-Robinson-Brücke dient nun als elektronischer Filter, das heißt, im Gegensatz zu den bisherigen Schaltungen wird die Wien-Robinson-Brücke sich nur bei einer bestimmten Frequenz $\omega=\omega_0$ abgleichen lassen.
 
-Die Ableichbedingung ergibt sich somit über die Frequenz.
-
 Der Quotient aus Speise-und Brückenspannung ergibt sich unter der Verwendung komplexer Widerstände und Kapazitäten zu:
 
 \begin{equation}
 \label{eqn:wienquotient}
-\left|\frac{U_{Br}}{U_s}\right|^2= \frac{(\omega^2R^2C^2-1)^2}{9 \cdot ((1-\omega^2R^2C^2)^2+9\omega^2R^2C^2)}
+\left|\frac{U_{Br}}{U_s}\right|^2= \frac{(\omega^2R^2C^2-1)^2}{9 \cdot ((1-\omega^2R^2C^2)^2+9\omega^2R^2C^2)} \text{.}
 \end{equation}
 
-Es ist sofort ersichtlich, dass der Zähler=0 ist, die Brückenspannung also verschwindet für
+Es ist sofort ersichtlich, dass der Zähler gleich $0$ ist, die Brückenspannung also verschwindet für
 \begin{equation}
   \label{eqn:Omega}
 \omega=\omega_0=\frac{1}{RC} .
@@ -232,7 +228,7 @@ Der Quotient der Spannungen wird damit zu
 Die Filterfunktion der Wien-Robinson-Brücke schlägt somit bei $\omega_0$ nach \eqref{eqn:Omega} zu. Das heißt, dass $\omega_0$ aus dem kontinuierlichen Frequenzspektrum herausgefiltert wird und die umgebenden Frequenzen stark abgeschwächt werden.
 \subsubsection{Klirrfaktor-Messung}
 
-In einer idealen Wien-Robinson-Brücke unter Verwendung eines idealen Sinusspannungsgerenators würde die Brückenpannung bei der Frequenz $\omega_0$ verschwinden. Im realen Fall wird allerdings trotzdem eine von Null verschiedene Spannung $U_{Br}$ festgestellt.
+An einer idealen Wien-Robinson-Brücke unter Verwendung eines idealen Sinusspannungsgerenators würde die Brückenpannung bei der Frequenz $\omega_0$ verschwinden. Im realen Fall wird allerdings trotzdem eine von Null verschiedene Spannung $U_{Br}$ festgestellt.
 Diese entsteht durch Oberwellen, welche ungewollt durch den Sinusgenerator erzeugt werden. Im idealen Fall enthält eine Sinusschwingung keine Oberwellen. Um eine Aussage über die Güte des realen Sinusgenerators zu erhalten, wird der sogenannte Klirrfaktor bestimmt.
 Der Klirrfaktor setzt hierbei die Oberwellen ins Verhältnis zur Grundwelle. Ein kleiner Klirrfaktor kennzeichnet somit einen guten Sinusgenerator.
 Allgemein berechnet sich der Klirrfaktor zu

@@ -26,11 +26,22 @@ Der erste bestimmte unbekannte Widerstand war der Widerstand 13.
 Die Messwerte mit dem berechneten Widerstand 13 sind in Tabelle \ref{tab:wheat1} dargestellt.
 Für den Referenzwiderstand $R_2$ soll ein Fehler von $0,2\%$ und für das Verhältnis $\frac{R_3}{R_4}$ ein Fehler von $0,5\%$ angenommen werden \cite{Anleitung}.
 Daraus ergeben sich die Fehler für $R_x$ mit der Gaußschen Fehlerfortpfplanzung.
+\begin{equation}
+  \label{eqn:fehlerfortpflanzung}
+  \Delta f = \sqrt{ \sum \limits_{i = 1}^{N} (\frac{\partial f}{\partial x_i})^2 \cdot (\Delta x_i)^2}.
+\end{equation}
 
-Damit ergibt sich für den zu bestimmenden Widerstand $R_{13} = (320,9 \pm 1,4) \si{\ohm}$.
-Der Fehler des Mittelwerts wurde und wird im Folgenden gemäß Formel \eqref{eqn:mittelwertfehler} bestimmt, indem die einzelnen absoluten Fehler $\Delta R_x$ addiert bzw. subtrahiert werden, sodass die einzelnen Fehler maximal werden.
 
-Der zweite bestimmte Widerstand war der Widerstand 12.
+
+\begin{equation}
+  \label{eqn:mittelwertfehler}
+  \Delta \overline x= \frac{1}{\sqrt{N}} \sqrt{\frac{1}{N-1} \sum \limits_{i=1}^{N} (x_i- \overline x)^2}.
+\end{equation}
+
+Damit ergibt sich für den zu bestimmenden Widerstand $R_{13} = \SI{320,9 \pm 1,4}{\ohm}$.
+Der Fehler des Mittelwerts wurde und wird im Folgenden gemäß Formel \eqref{eqn:mittelwertfehler} bestimmt, indem die einzelnen absoluten Fehler $\Delta R_x$ auf die jeweiligen $x_i$ addiert bzw. subtrahiert werden, sodass die einzelnen Summanden $(\overline x - (x_i \pm \Delta R_x))^2$  maximal werden.
+
+Der zweite bestimmte Widerstand war Widerstand 12.
 
 	\begin{table}
 		\centering
@@ -61,7 +72,7 @@ Für den kapazitiven Widerstand $C_x$ gilt nach Formel \eqref{eqn:kapazitaet} $C
 		\label{tab:kapakombi}
 	\begin{tabular}{cccccc}
 		\toprule
-		$C_2$ / $nF$ & $R_2$ / $\si{\ohm}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $R_x$ / $\si{\ohm}$ & $C_x$ / $nF$ \\
+		$C_2$ / $\si{\nano\farad}$ & $R_2$ / $\si{\ohm}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $R_x$ / $\si{\ohm}$ & $C_x$ / $\si{\nano\farad}$ \\
 		\midrule
 		597 & 225,2 & 717,0 & 283,0 & 570,6 \pm 3,1 & 235,6 \pm 1,3 \\
 		750 & 279,9 & 671,8 & 328,2 & 572,9 \pm 3,0 & 366,4 \pm 2,0 \\
@@ -72,7 +83,7 @@ Für den kapazitiven Widerstand $C_x$ gilt nach Formel \eqref{eqn:kapazitaet} $C
 Die Werte für das RC-Kombinations-Glied sind in Tabelle \ref{tab:kapakombi} dargestellt.
 Der Fehler von $R_2$ wurde auf $\Delta R_2 = 0,5 \si{\ohm}$ festgelegt.
 
-Damit erhält man für die zu bestimmenden Größen: $R_x = (571,4 \pm 2,9) \si{\ohm}$ und $C_x = (297,7 \pm 38,9) nF$.
+Damit erhält man für die zu bestimmenden Größen: $R_x = (571,4 \pm 2,9) \, \si{\ohm}$ und $C_x = (298 \pm 39)\,\si{\nano\farad}$.
 
 
 
@@ -86,7 +97,7 @@ Es wurden jeweils der Kondensator $C_2$ variiert und der ohmsche Widerstand $R_2
 		\label{tab:kapa1}
 	\begin{tabular}{ccccc}
 		\toprule
-		$C_2$ / $nF$ & $R_2$ / $\si{\ohm}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $C_x$ / $nF$ \\
+		$C_2$ / $\si{\nano\farad}$ & $R_2$ / $\si{\ohm}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $C_x$ / $\si{\nano\farad}$ \\
 		\midrule
 		597 & 0 & 476,9 & 523,1 & 654,8 \pm 3,5 \\
 		750 & 0 & 529,8 & 470,2 & 665,6 \pm 3,6 \\
@@ -95,7 +106,7 @@ Es wurden jeweils der Kondensator $C_2$ variiert und der ohmsche Widerstand $R_2
 	\end{tabular}
 	\end{table}
 
-Die Werte für den Kondensator 1 sind in Tabelle \ref{tab:kapa1} dargestellt. Für die zu bestimmende Kapazität ergibt sich $C_x = (658,5 \pm 6,0) nF$.
+Die Werte für den Kondensator 1 sind in Tabelle \ref{tab:kapa1} dargestellt. Für die zu bestimmende Kapazität ergibt sich $C_x = (658,5 \pm 6,0)\, \si{\nano\farad}$.
 
 
 	\begin{table}
@@ -104,7 +115,7 @@ Die Werte für den Kondensator 1 sind in Tabelle \ref{tab:kapa1} dargestellt. F�
 		\label{tab:kapa3}
 	\begin{tabular}{ccccc}
 		\toprule
-		$C_2$ / $nF$ & $R_2$ / $\si{\ohm}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $C_x$ / $nF$ \\
+		$C_2$ / $\si{\nano\farad}$ & $R_2$ / $\si{\ohm}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $C_x$ / $\si{\nano\farad}$ \\
 		\midrule
 		597 & 0 & 589,1 & 410,9 & 416,4 \pm 2,2 \\
 		750 & 0 & 639,5 & 360,5 & 422,8 \pm 2,3 \\
@@ -112,7 +123,7 @@ Die Werte für den Kondensator 1 sind in Tabelle \ref{tab:kapa1} dargestellt. F�
 		\bottomrule
 	\end{tabular}
 	\end{table}
-Die Werte für den Kondensator 3 sind in Tabelle \ref{tab:kapa3} aufgetragen. Für den Kondensator 3 erhält man damit $C_x = (418,4 \pm 3,7) nF$.
+Die Werte für den Kondensator 3 sind in Tabelle \ref{tab:kapa3} aufgetragen. Für den Kondensator 3 erhält man damit $C_x = (418,4 \pm 3,7)\si{\nano\farad}$.
 
 
 \subsection{Induktivitätsmessbrücke}
@@ -128,7 +139,7 @@ Verlustwiderstand $R_x$ ($R_{17}$) mit Formel \eqref{eqn:indukwiderstand}.
 		\label{tab:induk}
 	\begin{tabular}{cccccc}
 		\toprule
-		$L_2$ / $mH$ & $R_2$ / $\si{\ohm}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $R_x$ / $\si{\ohm}$ & $L_x$ / $mH$ \\
+		$L_2$ / $\si{\milli\henry}$ & $R_2$ / $\si{\ohm}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $R_x$ / $\si{\ohm}$ & $L_x$ / $\si{\milli\henry}$ \\
 		\midrule
 		20,1 & 38,8 & 680,1 & 319,9 & 82,5 \pm 2,5 & 42,7 \pm 0,2 \\
 		27,5 & 60,5 & 609,2 & 390,8 & 94,3 \pm 2,5 & 42,9 \pm 0,2 \\
@@ -140,7 +151,7 @@ Verlustwiderstand $R_x$ ($R_{17}$) mit Formel \eqref{eqn:indukwiderstand}.
 Die Werte für das L-R-Kombinationsglied sind in Tabelle \ref{tab:induk} dargestellt.
 Der Fehler von $R_x$ und $L_x$ durch die fehlerbehafteten Größen $L_2$ (0,2 \%), $R_2$ (3 \%) und $\frac{R_3}{R_4}$ (0,5 \%) wurden mittels Gaußscher Fehlerfortpfplanzung bestimmt.
 
-Für den Verlustwiderstand $R_x$ erhält man $R_x = (92,1 \pm 6,8) \si{\ohm}$ und für die unbekannte Induktivität $L_x = (43,1 \pm 0,4) mH$.
+Für den Verlustwiderstand $R_x$ erhält man $R_x = (92,1 \pm 6,8) \, \si{\ohm}$ und für die unbekannte Induktivität $L_x = (43,1 \pm 0,4)\,\si{\milli\henry}$.
 
 \subsection{Maxwell-Brücke}
 
@@ -151,7 +162,7 @@ In Abbildung \ref{fig:maxwellbrücke} ist der Aufbau der Maxwell-Brücke dargest
 		\label{tab:maxwk}
 	\begin{tabular}{cccccc}
 		\toprule
-		$R_2$ / $\si{\ohm}$ & $C_4$ / $nF$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $R_x$ / $\si{\ohm}$ & $L_x$ / $mH$ \\
+		$R_2$ / $\si{\ohm}$ & $C_4$ / $\si{\nano\farad}$ & $R_3$ / $\si{\ohm}$ & $R_4$ / $\si{\ohm}$ & $R_x$ / $\si{\ohm}$ & $L_x$ / $\si{\milli\henry}$ \\
 		\midrule
 		332 & 597 & 215,2 & 754,1 & 94,7 \pm 4,0 & 42,7 \pm 1,3 \\
 		664 & 597 & 108,0 & 753,2 & 95,2 \pm 4,0 & 42,8 \pm 1,3 \\
@@ -160,7 +171,7 @@ In Abbildung \ref{fig:maxwellbrücke} ist der Aufbau der Maxwell-Brücke dargest
 	\end{tabular}
 	\end{table}
 Die gemessenen Werte und die sich daraus ergebenden Größen für $R_x$ und $L_x$ ergeben sich aus den Gleichungen \eqref{eqn:maxwellr} und \eqref{eqn:maxwellinduktivität}.
-Für den Verlustwiderstand $R_x$ erhält man $R_x = (95,2 \pm 3,1)$ und für die Induktivität $L_x = (42,8 \pm 1,0) mH$.
+Für den Verlustwiderstand $R_x$ erhält man $R_x = (95,2 \pm 3,1)\, \si{\ohm}$ und für die Induktivität $L_x = (42,8 \pm 1,0)\,\si{\milli\henry}$.
 
 %Soll hier noch erklärung und verweis auf formeln hin? - Ja amk
 
@@ -173,7 +184,7 @@ In der letzten Messreihe soll die Frequenzabhängigkeit der Wien-Robinson-Brück
 \caption{Kenndaten der verwendeten Bauteile der Wien-Robinson-Brücke}
 \begin{tabular}{cccc}
 	\toprule
-$R'$/$\si{\ohm}$& $2R'$/$\si{\ohm}$& $R$/$\si{\ohm}$ &$C_1$/$nF$\\
+$R'$/$\si{\ohm}$& $2R'$/$\si{\ohm}$& $R$/$\si{\ohm}$ &$C_1$/$\si{\nano\farad}$\\
 \midrule
 332&664&1000&	658.5\\
 
@@ -181,19 +192,19 @@ $R'$/$\si{\ohm}$& $2R'$/$\si{\ohm}$& $R$/$\si{\ohm}$ &$C_1$/$nF$\\
 \end{table}
 Die Kapazität des Kondensators $C_1$ wurde hierbei als Mittelwert der Berechnung in Tabelle \ref{tab:kapa1} angenommen.
 
-In der nachfolgenden Tabelle sind die gemessenen Spannungen $U_s$, $U_{Br, eff}$ in Abhängigkeit zur Frequenz
+In der nachfolgenden Tabelle sind die gemessenen Spannungen $U_\text{S}$, $U_{\text{Br, eff}}$ in Abhängigkeit zur Frequenz
 $\omega$ sowie sowohl der gemessene Quotient der Spannungen als auch der nach
 Formel \eqref{eqn:wienquotient} berechnete Quotient eingetragen. Zudem wird $\si{\ohm} =\frac{\omega}{\omega_0}$ aufgeführt.
-Da es sich um eine Wechselspannung handelt, berechnet sich $U_{Br, eff}$ nach
+Da es sich um eine Wechselspannung handelt, berechnet sich $U_{\text{Br, eff}}$ nach
 \begin{equation}
-	U_{Br, eff}=\frac{U_{Br}}{2 \sqrt{2}}
+	U_{\text{Br, eff}}=\frac{U_{\text{Br}}}{2 \sqrt{2}}
 \end{equation}
 und $\omega_0$ ist die Frequenz, bei der die Brückenspannung verschwindet.
 Da
 \begin{equation}
 	\omega_o=\frac{1}{2\pi RC}
 \end{equation}
-Bei unserem Aufbau ergab sich $\omega_0$ etwa zu $240Hz$. Nach der Formel würde sich etwa $\omega_0=241.69Hz$ ergeben.
+Bei unserem Aufbau ergab sich $\omega_0$ etwa zu $240\si{\Hz}$. Nach der Formel ergibt sich $\omega_0=241.69\si{\Hz}$.
 \input{Messdaten/values.tex}
 \begin{figure}
 	\includegraphics{build/plot.pdf}
@@ -203,16 +214,16 @@ Bei unserem Aufbau ergab sich $\omega_0$ etwa zu $240Hz$. Nach der Formel würde
 \subsubsection{Klirrfaktor-Messung}
 Wie bereits in der Theorie beschrieben, wird im vorliegenden Experiment die Näherung
 verwendet, dass lediglich die zweite Oberwelle betrachtet wird.
-Zur Berechnung von $k$ nach Formel \eqref{eqn:klirrfaktor} werden also $U_1$ und $U_2$ benötigt. $U_1$ ist $U_S=2.93 \si{\ohm}$ bei $\omega_0$. Mit \eqref{eqn:wienquotienteinfach} und $\Omega=2$ sowie
+Zur Berechnung von $k$ nach Formel \eqref{eqn:klirrfaktor} werden also $U_1$ und $U_2$ benötigt. $U_1$ ist $U_\text{S}=2.93 \,\si{\ohm}$ bei $\omega_0$. Mit \eqref{eqn:wienquotienteinfach} und $\Omega=2$ sowie
 \begin{equation}
 	\label{eqn:klirrfkt}
-U_2=\frac{U_{Br}}{f(2)}
+U_2=\frac{U_{\text{Br}}}{f(2)}
 \end{equation}
 f(2) ist, mit $\Omega=2$, hierbei:
 \begin{equation}
-f(2)^2=\left|\frac{U_{Br}}{U_s}\right|^2(\si{\ohm})=\frac{1}{45}
+f(2)^2=\left|\frac{U_{\text{Br}}}{U_\text{S}}\right|^2(\si{\ohm})=\frac{1}{45}
 \end{equation}
-Damit ergibt sich $U_2=0.079 \si{\ohm}$ und schließlich
+Damit ergibt sich $U_2=0.079 \,\si{\ohm}$ und schließlich
 \begin{equation}
 k=\frac{U_2}{U_1}=0.027
 \end{equation}
