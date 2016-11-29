@@ -1,0 +1,16 @@
+#d Rechteckspannung: Belastungsstrom I in mA Fehler \pm 3%; Klemmspannung U_K in V Fehler \pm 1.5%
+4.5	0.165
+4.1	0.195
+3.4	0.245
+2.6	0.295
+2.2	0.325
+1.9	0.345
+1.7	0.365
+1.4	0.380
+1.2	0.395
+1.1	0.405
+1.0	0.415
+0.8	0.420
+0.7	0.425
+0.68	0.430
+0.67	0.430

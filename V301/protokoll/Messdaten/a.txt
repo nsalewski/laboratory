@@ -1,0 +1,2 @@
+#a Monozelle R_v in M Ohm und U_0 in V
+10	1.5

@@ -1,0 +1,13 @@
+#d Sinusspannung: Belastungsstrom I in mA Fehler \pm 3%; Klemmspannung U_K in V Fehler \pm 1.5%
+1.62	0.510
+1.35	0.675
+0.93	0.960
+0.66	1.125
+0.51	1.230
+0.36	1.320
+0.27	1.395
+0.21	1.425
+0.18	1.455
+0.15	1.485
+0.12	1.491
+0.09	1.500
