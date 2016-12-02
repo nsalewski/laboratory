@@ -1,27 +1,50 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-Die direkt an der Monozelle abgegriffene Leerlaufspannung $U_\text{0}$ ergibt sich etwa zu $1.5 \si{\ohm}$.
+Da eine lineare Abhängigkeit zwischen der Spannung $U_\text{k}$ und der Stromstärke $I$ nach Formel ??? besteht,
+wird im Folgenden eine lineare Regression sowie die Bestimmung der zugehörigen Fehler mit
+IPython 5.1.0 mittels Scipy 0.18.1 durchgeführt.
+Die Parameter der Ausgleichsgeraden
+\begin{equation}
+\label{eqn:ausgleichsgrade}
+y=a \cdot x +b .
+\end{equation}
+werden dabei bestimmt über
+
+\begin{equation*}
+\label{eqn:ausgleichsgrade_a}
+a= \frac{ \overline{xy}- \overline{x} \cdot \overline{y}}{\overline{x^2}-\overline{x}^2} .
+\end{equation*}
+
+\begin{equation*}
+\label{eqn:ausgleichsgrade_b}
+b= \frac{ \overline{x^2} \overline{y}- \overline{x} \cdot \overline{xy}}{\overline{x^2}-\overline{x}^2} .
+\end{equation*}
+
+Die direkt an der Monozelle abgegriffene Leerlaufspannung $U_\text{0}$ ergibt sich zu $1.5 \,\si{\ohm}$.
 Der Fehler des Voltmeters beträgt nach Herstellerangaben im verwendeten Messbereich $1.5\%$.
-Damit ergibt sich $U_\text{0}=(1.5 \pm 0.0225) \si{\ohm}$.
-Der Innenwiderstand des Voltmeters ist nach Herstellerangaben $R_\text{V}\approx 10 \cdot 10^6 \si{\ohm}$.
+Damit ergibt sich $U_\text{0}=(1.5 \pm 0.0225) \,\si{\ohm}$.
+Der Innenwiderstand des Voltmeters ist nach Herstellerangaben $R_\text{V}\approx 10 \cdot 10^6 \,\si{\ohm}$.
 
-Der Innenwiderstand $R_\text{i}$ und die Leerlaufspannung $U_\text{0}$ der Monozelle ergeben sich mit Linearer Regression nach \eqref{eqn:ausgleichsgrade} unter Verwendung von Formel ???.
-Dazu werden die in Tabelle \ref{tab:monozelle} gelisteten $U_\text{k}$ gegen $I$ aufgetragen.
+Der Innenwiderstand $R_\text{i}$ und die Leerlaufspannung $U_\text{0}$ der Monozelle ergeben sich mit
+Linearer Regression nach \eqref{eqn:ausgleichsgrade} unter Verwendung von Formel ???.
+Dazu werden die in Tabelle \ref{tab:mono} gelisteten $U_\text{k}$ gegen $I$ aufgetragen. Der zugehörige Plot ist in Abbildung \ref{fig:plot_a} zu sehen.
+
 \begin{equation*}
-  -a= R_\text{i}=(15.5\pm0.3)\si{\ohm}
+  -a= R_\text{i}=(15.5\pm0.3)\,\si{\ohm}
 \end{equation*}
 \begin{equation*}
-  b =U_\text{0}=(1501.4\pm13.9)\si{\milli\volt}
+  b =U_\text{0}=(1501.4\pm13.9)\,\si{\milli\volt}
 \end{equation*}
 
 
-\begin{table}
+\begin{table}[h]
   \centering
-  \label{tab:monozelle}
   \caption{Messdaten für die Klemmenspannung in Abhängigkeit des Strom bei der Monozelle}
+  \label{tab:mono}
+
 \begin{tabular}{cc}
   \toprule
-$U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
+$U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 \midrule
 69.0 & 91.0 \\
 342.0 & 74.0 \\
@@ -40,7 +63,7 @@ $U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}
+\begin{figure}[h]
 \includegraphics{Bilder/a.pdf}
 \caption{Linearer Fit zur Monozelle ohne Gegenspannung}
 \label{fig:plot_a}
@@ -48,19 +71,22 @@ $U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
 
 
 %monozelle belastet
+Die Messung der Leerlaufspannung $U_\text{0}$ und des Innenwiderstandes $R_i$ der Monozelle wird mit den Daten der Messreihe mit Gegenspannung wiederholt. Hierbei ist die Stromrichtung nun umgekehrt, sodass sich das Vorzeichen in Gleichung ??? umkehrt.
+Mit den Messdaten aus Tabelle \ref{tab:monozelle_belastet} ergibt sich der zugehörige Plot in \ref{fig:plot_monozellebelastet} mit \eqref{eqn:ausgleichsgrade}. Damit erhält man:
+
 \begin{equation*}
-  a= R_\text{i}=(17.3\pm 0.5)\si{\ohm}
+  a= R_\text{i}=(17.3\pm 0.5)\,\si{\ohm}
 \end{equation*}
 \begin{equation*}
-  b =U_\text{0}=(1626.3\pm 26.1)\si{\milli\volt}
+  b =U_\text{0}=(1626.3\pm 26.1)\,\si{\milli\volt}\,.
 \end{equation*}
-\begin{table}
+\begin{table}[h]
   \centering
-  \label{tab:monozelle_belastet}
   \caption{Messdaten für die Klemmenspannung in Abhängigkeit des Strom bei der Monozelle mit Gegenspannung}
+  \label{tab:monozelle_belastet}
 \begin{tabular}{cc}
   \toprule
-$U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
+$U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 \midrule
 3400.0 & 99.0 \\
 3100.0 & 92.0 \\
@@ -79,29 +105,39 @@ $U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}
+\begin{figure}[h]
 \includegraphics{Bilder/c.pdf}
 \caption{Linearer Fit zur Monozelle mit Gegenspannung}
 \label{fig:plot_monozellebelastet}
 \end{figure}
 
+Die Berechnung der Ausgleichsgeraden für die Rechteck-und Sinusspannungsquelle ergeben sich analog zu den Berechnungen bei der Monozelle.
 
 
 %rechteckspannung
+Die Leerlaufspannung $U_\text{0}$ und den Innenwiderstand $R_\text{i}$ der Rechteckspannung ergeben sich mit den Daten aus Tabelle \ref{tab:reckteck} und der Ausgleichsgraden in Plot \ref{fig:plot_rechteck} zu:
 \begin{equation*}
-  -a= R_\text{i}=(69.1\pm0.7)\si{\ohm}
+  -a= R_\text{i}=(69.1\pm0.7)\,\si{\ohm}
 \end{equation*}
 \begin{equation*}
-  b =U_\text{0}=(477.8\pm1.4)\si{\milli\volt}
+  b =U_\text{0}=(477.8\pm1.4)\,\si{\milli\volt}
+\end{equation*}
+Die Leerlaufspannung $U_\text{0}$ und der Innenwiderstand $R_\text{i}$ der Sinusspannung ergeben sich mit den Daten aus Tabelle \ref{tab:sinus} und der Ausgleichsgraden in Plot \ref{fig:plot_sinus} zu:
+%sinusspannung
+\begin{equation*}
+  -a= R_\text{i}=(657.0± 5.0)\,\si{\ohm}
+\end{equation*}
+\begin{equation*}
+  b =U_\text{0}=(1567.4\pm3.6)\,\si{\milli\volt}
 \end{equation*}
 
-\begin{table}
+\begin{table}[h]
   \centering
-  \label{tab:reckteck}
   \caption{Messdaten für die Klemmenspannung in Abhängigkeit des Strom bei der Rechteckspannungsquelle}
+  \label{tab:reckteck}
 \begin{tabular}{cc}
   \toprule
-$U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
+$U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 \midrule
 165.0 & 4.5 \\
 195.0 & 4.1 \\
@@ -121,29 +157,20 @@ $U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}
+\begin{figure}[h]
 \includegraphics{Bilder/d.pdf}
 \caption{Linearer Fit zur Rechteckspannung}
 \label{fig:plot_rechteck}
 \end{figure}
 
-
-
-%sinusspannung
-\begin{equation*}
-  -a= R_\text{i}=(657.0± 5.0)\si{\ohm}
-\end{equation*}
-\begin{equation*}
-  b =U_\text{0}=(1567.4\pm3.6)\si{\milli\volt}
-\end{equation*}
-
-\begin{table}
+\begin{table}[h]
   \centering
-  \label{tab:sinus}
   \caption{Messdaten für die Klemmenspannung in Abhängigkeit des Strom bei der Sinusspannungsquelle}
+  \label{tab:sinus}
+
 \begin{tabular}{cc}
   \toprule
-$U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
+$U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 \midrule
 510.0 & 1.62 \\
 675.0 & 1.35 \\
@@ -160,7 +187,7 @@ $U_\text{k}$/$\si{\milli\volt}$ & $I$/$\si{\milli\ampere}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}
+\begin{figure}[h]
 \includegraphics{Bilder/e.pdf}
 \caption{Linearer Fit zur Sinusspannung}
 \label{fig:plot_sinus}
