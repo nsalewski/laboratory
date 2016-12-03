@@ -37,7 +37,7 @@ Dazu werden die in Tabelle \ref{tab:mono} gelisteten $U_\text{k}$ gegen $I$ aufg
 \end{equation*}
 
 
-\begin{table}[h]
+\begin{table}
   \centering
   \caption{Messdaten für die Klemmenspannung in Abhängigkeit des Strom bei der Monozelle}
   \label{tab:mono}
@@ -63,7 +63,7 @@ $U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}[h]
+\begin{figure}
 \includegraphics{Bilder/a.pdf}
 \caption{Linearer Fit zur Monozelle ohne Gegenspannung}
 \label{fig:plot_a}
@@ -80,7 +80,7 @@ Mit den Messdaten aus Tabelle \ref{tab:monozelle_belastet} ergibt sich der zugeh
 \begin{equation*}
   b =U_\text{0}=(1626.3\pm 26.1)\,\si{\milli\volt}\,.
 \end{equation*}
-\begin{table}[h]
+\begin{table}
   \centering
   \caption{Messdaten für die Klemmenspannung in Abhängigkeit des Strom bei der Monozelle mit Gegenspannung}
   \label{tab:monozelle_belastet}
@@ -105,7 +105,7 @@ $U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}[h]
+\begin{figure}
 \includegraphics{Bilder/c.pdf}
 \caption{Linearer Fit zur Monozelle mit Gegenspannung}
 \label{fig:plot_monozellebelastet}
@@ -131,7 +131,7 @@ Die Leerlaufspannung $U_\text{0}$ und der Innenwiderstand $R_\text{i}$ der Sinus
   b =U_\text{0}=(1567.4\pm3.6)\,\si{\milli\volt}
 \end{equation*}
 
-\begin{table}[h]
+\begin{table}
   \centering
   \caption{Messdaten für die Klemmenspannung in Abhängigkeit des Strom bei der Rechteckspannungsquelle}
   \label{tab:reckteck}
@@ -157,13 +157,13 @@ $U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}[h]
+\begin{figure}
 \includegraphics{Bilder/d.pdf}
 \caption{Linearer Fit zur Rechteckspannung}
 \label{fig:plot_rechteck}
 \end{figure}
 
-\begin{table}[h]
+\begin{table}
   \centering
   \caption{Messdaten für die Klemmenspannung in Abhängigkeit des Strom bei der Sinusspannungsquelle}
   \label{tab:sinus}
@@ -187,8 +187,29 @@ $U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 \bottomrule
 \end{tabular}
 \end{table}
-\begin{figure}[h]
+\begin{figure}
 \includegraphics{Bilder/e.pdf}
 \caption{Linearer Fit zur Sinusspannung}
 \label{fig:plot_sinus}
 \end{figure}
+Bisher wurde für die Berechnungen vereinfachend angenommen worden,
+dass der Term $-IR_\text{i}$ in Gleichung \eqref{eqn:klemmu} vernachlässigt werden kann. Im realen Fall ist allerdings der Innenwiderstand $R_\text{V}$ des Voltmeters nicht unendlich groß.
+Somit ergibt sich mit dem Ohmschen Gesetz ein systematischer Fehler bei der direkten Leerlaufspannungsmessung:
+\begin{equation*}
+  U_\text{k}=I\cdot R_\text{a} \leftrightarrow I=\frac{U_\text{k}}{R_\text{V}}\, ;
+\end{equation*}
+da im vorliegenden Fall, wie in Abbildung \ref{fig:abbildung1} zu sehen, $R_\text{a}=R_\text{V}$ gilt, ergibt sich mit Gleichung \eqref{eqn:klemmu}
+\begin{equation*}
+U_\text{0}=U_\text{k}+\frac{R_\text{i}}{R_\text{V}}\cdot U_\text{k}\, .
+\end{equation*}
+Damit ergibt sich der Fehler
+\begin{equation*}
+  \Delta  U_\text{0}=\frac{R_\text{i}}{R_\text{V}} \, .
+\end{equation*}
+Mit $R_\text{V}=10 \cdot 10^6 \,\si{\ohm}$ und $R_\text{i}=(15.5\pm0.3)\,\si{\ohm}$ ergibt sich für die Monozelle
+\begin{equation*}
+\Delta U_\text{0}= (1.55 \pm 0.03)\cdot 10^{-6}\, \si{\ohm}
+\end{equation*}
+Da der direkt gemessene Wert $U_\text{0}=(1.5 \pm 0.0225)\, \si{\ohm}$ betrug, ergibt sich ein Fehler von $\frac{\Delta U_\text{0}}{U_\text{0}}=(1.033\pm0.025)\cdot 10^{-6} \%$.
+Dieser systematische Fehler ist sehr gering und wird daher im Weiteren vernachlässigt.
+Ein weiterer systematischer Fehler blablubbbb%hier d einfügen
