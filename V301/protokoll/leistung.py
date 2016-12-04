@@ -34,7 +34,8 @@ for i in range(0,len(ra)):
 sp=np.sqrt((1/(n**2-n))*sp)
 print('Das Mittel der Differenz : ', summi)
 print('Mittlere Fehler : ' ,sp)
-
+print(N[6])
+print(y(26.1,Uo,ri))
 plt.xlabel("Belastungswiderstand $R_{\\text{a}}$/$\\si{\\ohm}$")
 plt.ylabel("abgegebende Leistung $N(R_{\\text{a}}$)/$\si{\\watt}$")
 plt.plot(ra, N, 'rx', label="Messwerte")
