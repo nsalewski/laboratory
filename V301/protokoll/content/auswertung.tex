@@ -197,7 +197,7 @@ Bisher wurde für die Berechnungen vereinfachend angenommen worden,
 dass der Term $-IR_\text{i}$ in Gleichung \eqref{eqn:klemmu} vernachlässigt werden kann. Im realen Fall ist allerdings der Innenwiderstand $R_\text{V}$ des Voltmeters nicht unendlich groß.
 Somit ergibt sich mit dem Ohmschen Gesetz ein systematischer Fehler bei der direkten Leerlaufspannungsmessung:
 \begin{equation*}
-  U_\text{k}=I\cdot R_\text{a} \leftrightarrow I=\frac{U_\text{k}}{R_\text{V}}\, ;
+  U_\text{k}=I\cdot R_\text{a} \leftrightarrow I=\frac{U_\text{k}}{R_\text{a}}\, ;
 \end{equation*}
 da im vorliegenden Fall, wie in Abbildung \ref{fig:abbildung1} zu sehen, $R_\text{a}=R_\text{V}$ gilt, ergibt sich mit Gleichung \eqref{eqn:klemmu}
 \begin{equation*}
@@ -217,7 +217,7 @@ Dieser systematische Fehler ist sehr gering und wird daher im Weiteren vernachl�
 Des Weiteren würde man einen systematischen Fehler machen, wenn man in Abbildung \ref{fig:abbildung2} das Voltmeter hinter das Amperemeter - also an den Punkt H legt.
 Dies liegt daran, dass durch den Innenwiderstand des Amperemeters ein weiterer Spannungsabfall zu berücksichtigen ist. Daher würde man nicht die zuvor definierte Klemmenspannung $U_{\text{K}}$ messen.
 
-Die abgegebende Leistung $N$ in Abhängigkeit vom Belastungswiderstand $R_{\text{a}}$ ist in Abbildung \ref{fig:aufe} dargestellt. 
+Die abgegebende Leistung $N$ in Abhängigkeit vom Belastungswiderstand $R_{\text{a}}$ ist in Abbildung \ref{fig:aufe} dargestellt.
 Hierzu wird die Theoriekurve mit der rechten Seite der Formel \eqref{eqn:leistung} bestimmt.
 Die Werte $N$ für die abgegebende Leistung, die sich aus den Messdaten $U_{\text{K}}$ und $I$ aus Tabelle \ref{tab:labbadia} ergeben, werden allerdings mit der linken Seite der Formel \eqref{eqn:leistung} berechnet.
 \begin{figure}
@@ -225,11 +225,9 @@ Die Werte $N$ für die abgegebende Leistung, die sich aus den Messdaten $U_{\tex
 \caption{Abgegebende Leistung in Abhängigkeit vom Belastungswiderstand}
 \label{fig:aufe}
 \end{figure}
-
 Die Abweichungen der einzelnen Messpunkte zur Theoriekurve $N(R_{\text{a}})$ lassen sich nicht auf einen systematischen Fehler zurückführen.
 Zuerst lässt sich anmerken, dass die größte Abweichung von der Theoriekurve bei $R_{\text{a}} \approx \SI{26,1}{\ohm}$ mit ungefähr $5,3 \, \%$ gering ausfällt. Daher herrscht eine geringe Diskrepanz zwischen den Messwerten und der Theoriekurve.
 Des Weiteren liegen die Messpunkte sowohl über- als auch unterhalb der Theoriekurve, was ein weiteres Indiz für ausschlaggebende zufällige Fehler ist.
 Der systematische Fehler beispielsweise bei der direkten Messung der Leerlaufspannung $U_0$ ist - wie vorher angenommen - vernachlässigbar in Relation zu den zufälligen Fehlern bei diesen Messungen.
 
 Das Maximum der Leistung liegt bei $R_{\text{a}} \approx R_{\text{i}} = (15,5 \pm 0,3) \, \si{\ohm}$ - was auch nach der Theorie zu erwarten war.
-
