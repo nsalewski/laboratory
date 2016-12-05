@@ -1,6 +1,6 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-Da eine lineare Abhängigkeit zwischen der Spannung $U_\text{k}$ und der Stromstärke $I$ nach Formel ??? besteht,
+Da eine lineare Abhängigkeit zwischen der Spannung $U_\text{k}$ und der Stromstärke $I$ nach Formel \eqref{eqn:klemmu} besteht,
 wird im Folgenden eine lineare Regression sowie die Bestimmung der zugehörigen Fehler mit
 IPython 5.1.0 mittels Scipy 0.18.1 durchgeführt.
 Die Parameter der Ausgleichsgeraden
@@ -26,7 +26,7 @@ Damit ergibt sich $U_\text{0}=(1.5 \pm 0.0225) \,\si{\ohm}$.
 Der Innenwiderstand des Voltmeters ist nach Herstellerangaben $R_\text{V}\approx 10 \cdot 10^6 \,\si{\ohm}$.
 
 Der Innenwiderstand $R_\text{i}$ und die Leerlaufspannung $U_\text{0}$ der Monozelle ergeben sich mit
-Linearer Regression nach \eqref{eqn:ausgleichsgrade} unter Verwendung von Formel ???.
+Linearer Regression nach \eqref{eqn:ausgleichsgrade} unter Verwendung von Formel \eqref{eqn:klemmu}.
 Dazu werden die in Tabelle \ref{tab:mono} gelisteten $U_\text{k}$ gegen $I$ aufgetragen. Der zugehörige Plot ist in Abbildung \ref{fig:plot_a} zu sehen.
 
 \begin{equation*}
@@ -72,7 +72,7 @@ $U_\text{k}$/$\,\si{\milli\volt}$ & $I$/$\,\si{\milli\ampere}$\\
 
 
 %monozelle belastet
-Die Messung der Leerlaufspannung $U_\text{0}$ und des Innenwiderstandes $R_i$ der Monozelle wird mit den Daten der Messreihe mit Gegenspannung wiederholt. Hierbei ist die Stromrichtung nun umgekehrt, sodass sich das Vorzeichen in Gleichung ??? umkehrt.
+Die Messung der Leerlaufspannung $U_\text{0}$ und des Innenwiderstandes $R_{\text{i}}$ der Monozelle wird mit den Daten der Messreihe mit Gegenspannung wiederholt. Hierbei ist die Stromrichtung nun umgekehrt, sodass sich das Vorzeichen in Gleichung \eqref{eqn:klemmu} umkehrt.
 Mit den Messdaten aus Tabelle \ref{tab:monozelle_belastet} ergibt sich der zugehörige Plot in \ref{fig:plot_monozellebelastet} mit \eqref{eqn:ausgleichsgrade}. Damit erhält man:
 
 \begin{equation*}
@@ -219,12 +219,14 @@ Dies liegt daran, dass durch den Innenwiderstand des Amperemeters ein weiterer S
 
 Die abgegebende Leistung $N$ in Abhängigkeit vom Belastungswiderstand $R_{\text{a}}$ ist in Abbildung \ref{fig:aufe} dargestellt.
 Hierzu wird die Theoriekurve mit der rechten Seite der Formel \eqref{eqn:leistung} bestimmt.
-Die Werte $N$ für die abgegebende Leistung, die sich aus den Messdaten $U_{\text{K}}$ und $I$ aus Tabelle \ref{tab:labbadia} ergeben, werden allerdings mit der linken Seite der Formel \eqref{eqn:leistung} berechnet.
+Die Werte $N$ für die abgegebende Leistung, die sich aus den Messdaten $U_{\text{K}}$ und $I$ aus Tabelle \ref{tab:labbadia} ergeben, werden allerdings mit der linken Seite der Formel \eqref{eqn:leistung} berechnet und gegen $R_{\text{a}} = \frac{U_{\text{K}}}{I}$ aufgetragen.
+
 \begin{figure}
 \includegraphics{Bilder/leistung.pdf}
 \caption{Abgegebende Leistung in Abhängigkeit vom Belastungswiderstand}
 \label{fig:aufe}
 \end{figure}
+
 Die Abweichungen der einzelnen Messpunkte zur Theoriekurve $N(R_{\text{a}})$ lassen sich nicht auf einen systematischen Fehler zurückführen.
 Zuerst lässt sich anmerken, dass die größte Abweichung von der Theoriekurve bei $R_{\text{a}} \approx \SI{26,1}{\ohm}$ mit ungefähr $5,3 \, \%$ gering ausfällt. Daher herrscht eine geringe Diskrepanz zwischen den Messwerten und der Theoriekurve.
 Des Weiteren liegen die Messpunkte sowohl über- als auch unterhalb der Theoriekurve, was ein weiteres Indiz für ausschlaggebende zufällige Fehler ist.
