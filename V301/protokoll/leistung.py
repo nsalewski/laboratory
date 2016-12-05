@@ -40,5 +40,7 @@ plt.xlabel("Belastungswiderstand $R_{\\text{a}}$/$\\si{\\ohm}$")
 plt.ylabel("abgegebende Leistung $N(R_{\\text{a}}$)/$\si{\\watt}$")
 plt.plot(ra, N, 'rx', label="Messwerte")
 plt.plot(x, y(x,Uo,ri),'b-',label="Theoriekurve")
+plt.tight_layout()
+
 plt.legend(loc="best")
 plt.savefig("Bilder/leistung.pdf")

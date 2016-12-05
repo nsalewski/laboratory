@@ -24,4 +24,6 @@ plt.plot(x, f(x, *params), 'b-', label='Linearer Fit')
 plt.xlabel("Stromstärke $I$/$\\si{\\milli\\ampere}$")
 plt.ylabel("Klemmenspannung $U_\\text{k}$/$\si{\\milli\\volt}$")
 plt.legend(loc="best")
+plt.tight_layout()
+
 plt.savefig("Bilder/d.pdf")
