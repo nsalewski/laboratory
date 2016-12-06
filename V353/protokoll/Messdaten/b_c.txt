@@ -1,0 +1,18 @@
+#Messaufgabe b und c
+#f(identisch am Oszilloskop und am Generator) in Hz	A(omega)[CH1; Hinterm RC-Glied]in Volt	A(omega) direkt am Generator in Volt 	delta(t) in ms (also zeitl. Phasenverschiebung)
+4.24	2.8	56	0
+10	4.4	88	0.2	
+15	4.88	97.6	0.76
+20	5.04	102	0.80
+35	5.2	107	0.72
+60	5.12	109	0.68
+90	4.88	109	0.67
+150	4.32	109	0.63
+230	3.6	109	0.52
+320	2.88	109	0.44
+500	2.08	109	0.33
+1000	1.12	109	0.18
+2000	0.68	110	0.09
+5000	0.23	115	0.05
+10000	0.12	114	0.02
+
