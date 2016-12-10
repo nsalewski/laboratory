@@ -1,7 +1,6 @@
-import numpy as np
 import matplotlib.pyplot as plt
+import numpy as np
 from scipy.optimize import curve_fit
-from astropy.io import ascii
 #from astropy.io import ascii
 #import sympy
 #from uncertainties import ufloat
@@ -17,11 +16,12 @@ def f(x, a, b):
     return a * x + b
 params, covariance = curve_fit(f,t, np.log(uc/unull))
 errors = np.sqrt(np.diag(covariance))
-print('a = RC =', -1/params[0], '±', -1/errors[0])
+print('a = RC =', params[0], '±', errors[0])
+print(params)
 plt.plot(t, np.log(uc/unull), 'rx', label="Messwerte")
 plt.plot(t, f(t, *params), 'b-', label='Ausgleichsgerade')
 #plt.xlabel(r'$t$ /$10^{-6}\\si{\\second}$')
 #plt.ylabel(r'$\\ln{(\\frac{U_\\text{C}}{U_\\text{0}})}$')
 plt.legend(loc='best')
 plt.xlim([1,2000])
-plt.savefig("build/plot.pdf")
+plt.savefig("build/test.pdf")
