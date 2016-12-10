@@ -21,9 +21,10 @@ ascii.write([w, a, b, phi], 'Messdaten/c.tex', format="latex")
 
 # used temp, bc without temp there was really freaky and wrong behaviour
 # in matplotlib
-temp = (f(w, *params))
+m=np.logspace(0.01,4,)
+temp = (f(m, *params))
 plt.plot(w, phi, 'rx', label="Messwerte")
-plt.plot(w, temp, 'b-', label='Ausgleichsgerade')
+plt.plot(m, temp, 'b-', label='Ausgleichsgerade')
 plt.xlim(4.24, 10000)
 plt.xlabel("$\omega$ / $\si{\Hz}$")
 plt.ylabel(r"$\phi(\omega)$/ $\si{\radian}$")
