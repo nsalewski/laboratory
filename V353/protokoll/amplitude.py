@@ -14,7 +14,7 @@ def f(x, a):
 params, covariance = curve_fit(f, w, urc)
 errors = np.sqrt(np.diag(covariance))
 print('a = (RC) =', params[0], '±',
-      errors[0])
+      errors[0] / 2 * np.sqrt(params[0]))
 print(params)
 ascii.write([urc, w], 'Messdaten/b.tex', format="latex")
 
