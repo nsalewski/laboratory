@@ -1,2 +1,22 @@
 \section{Diskussion}
 \label{sec:Diskussion}
+Die bestimmten Zeitkonstanten $RC$ weichen teils deutlich voneinander ab. Dies deutet, ebenso wie die starke Abweichung der Messwerte von der Regressionskurve
+in Abbildung \ref{fig:plotb} für kleine Frequenzen ($\omega \ll 35\,\si{\Hz}$) darauf hin, dass die Messung fehlerbehaftet war. Beispielsweise könnte ein Wackelkontakt an einer der Steckverbindungen vorgelegen haben.
+Ebenso verwundert das Maximum von $A(\omega)$ bei etwa $35 \,\si{\Hz}$. Für kleine Frequenzen scheint der Funktionengenerator nicht die gleiche Spannungsamplitude liefern zu können, wie für große Frequenzen.
+Wie in Tabelle \ref{tab:diskussion} zu sehen, scheint hier ein Fehler am Funktionengenerator vorzuliegen. Erwartet worden wäre, dass die gelieferte Spannungsamplitude frequenzunabhängig ist, also nahezu konstant bleibt.
+\begin{table}
+  \centering
+	\caption{Starke Frequenzabhängigkeit der Spannung für niedrige Frequenzen}
+	\label{tab:diskussion}
+	\begin{tabular}{ccc}
+		\toprule
+		$\omega$/$\si{\Hz}$ & $U_\text{C}$/ $\si{\volt}$ & $U(t)$/ $\si{\volt}$ \\
+		\midrule
+		4.24                & 2.80                       & 56.0                 \\
+		10                  & 4.40                       & 88.0                 \\
+		15                  & 4.88                       & 97.6                 \\
+		20                  & 5.04                       & 102.0                \\
+		35                  & 5.20                       & 107.0                \\
+		\bottomrule
+	\end{tabular}
+\end{table}
