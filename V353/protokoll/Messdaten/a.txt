@@ -1,6 +1,5 @@
 #Messdaten Aufgabe a
-#f(am Oszilloskop)=282.78Hz f(am Generator)=282.2Hz U_0=7.28 Volt
-#U_c in Volt	t in Mikrosek
+
 6.04	0
 4.04	250
 2.76	500
@@ -8,5 +7,3 @@
 1.08	1000
 0.56	1250
 0.24	1500
-0.01	1750
-

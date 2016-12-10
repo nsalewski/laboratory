@@ -1,4 +1,76 @@
 \section{Theorie}
 \label{sec:Theorie}
+Relaxation bezeichnet in der Physik den Übergang eines Systems hin zu einem stabilen Endzustand, nachdem es aus diesem entfernt wurde.
+Die Änderungsgeschwindigkeit $\dot{A}$ einer physikalischen Größe $A$ ist dabei meist proportional zur Abweichung zwischen $A$ zu einem Zeitpunkt $t$ und seinem Endzustand $A(\infty)$.
+Die Integration dieses Zusammenhangs vom Zeitpunkt $0$ bis zu einem Zeitpunkt $t$ liefert:
+\begin{equation}
+  \label{eqn:relaxation}
+  A(t)=A(\infty) (  A(0)-A(\infty) ) \cdot e^{ct}\, ;\,\, mit\,\, c<0 .
+\end{equation}
 
-\cite{Anleitung}
+Auf-und Entladevorgänge von Kondensatoren sind Beispiele für Relaxationsvorgänge und sollen im Folgenden detaillierter betrachtet werden.
+Bei einem geladenen Kondensator mit der Kapazität $C$ befindet sich die Ladung $Q$ auf den Platten.
+Zwischen den Kondensatorplatten liegt dabei die Spannung $U_\text{C}$ vor. Mit
+\begin{equation*}
+  U_\text{C}=\frac{Q}{C}
+\end{equation*}
+und dem Ohmschen Gesetz lässt sich $\dot{Q}=I$ zu
+\begin{equation}
+\dot{Q}=-\frac{1}{RC}Q(t)
+\end{equation}
+umformen.
+Da der Kondensator sich nach unendlich langer Zeit entladen wird, folgt unter Verwendung von Formel \eqref{eqn:relaxation} für den zeitlichen Verlauf der Entladung
+
+\begin{equation}
+  \label{eqn:aufladung}
+  Q(t)=Q(0)(e^{-\frac{t}{RC}})
+\end{equation}
+Für die Aufladung des Kondensators durch eine Spannungsquelle mit $U_0$ über einen Widerstand erhält man mit ähnlichen Überlegungen unter Beachtung der Anfangsbedingungen $Q(0)=0$ und $Q(\infty)=CU_\text{0}$
+
+\begin{equation}
+  \label{eqn:entladung}
+  Q(t)=CU_\text{0}(  1-e^{-\frac{t}{RC}} ) .
+\end{equation}
+$RC$ wird hierbei als Zeitkonstante des Systems bezeichnet.\\
+\\Relaxationsvorgänge sind auch bei periodisch angeregten Systemen zu beobachten.
+Liegt an einem RC-Kreis eine Wechselspannung $U(t)=U_\text{0}\cos(\omega t)$ an, und $\omega \ll \frac{1}{RC}$ gilt, ist $U_\text{C} \approx U(t)$.
+Für große $\omega$ ist dies nicht mehr erfüllt, zudem nimmt die Amplitude von $U_\text{C}$ mit größer werdenden $\omega$ ab.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.7\textwidth]{bilder/periodisch.png}
+  \caption{Schaltung zur Diskussion von Relaxationsvorgängen unter Einfluss von periodischer Anregung \cite{Anleitung}}
+  \label{fig:periodisch}
+\end{figure}
+Unter Verwendung des Ansatz
+\begin{equation*}
+U_\text{C}=A(\omega)\cos(\omega t +\phi(\omega)) ,
+\end{equation*}
+erhält man mit den Kirchhoffschen Regeln und einigen Umformungen
+\begin{equation}
+\phi(\omega)=\arctan(-\omega RC)
+\end{equation}
+Weitere Umformungen liefern
+\begin{equation}
+A(\omega)=\frac{U_\text{0}}{\sqrt{1+\omega ^2R^2C^2}} .
+\end{equation}
+Für sehr kleine, beziehungsweise sehr große Frequenzen erhält man die folgenden Grenzfälle:
+
+\begin{table*}
+\centering
+  \label{tab:tab1}
+  \begin{tabular}{cc}
+
+    $\omega \ll \frac{1}{RC} $&  $ \omega \gg \frac{1}{RC}$ \\
+    \midrule
+    keine Phasenverschiebung & $\phi \to \frac{\pi}{2}$\\
+    $A(\omega) \to U_\text{0} $ & $A(\omega) \to 0$\\
+  \end{tabular}
+\end{table*}
+
+Somit ist sofort ersichtlich, dass das RC-Glied als Tiefpass verwendet werden kann. Große Frequenzen werden weitestgehend herausgefiltert und kleine Frequenzen passieren das RC-Glied nahezu unverändert. \\
+\\Für genügend große Frequenzen  $\omega$ ergibt sich aus \ref{fig:periodisch} wiederum mit den Kirchhoffschen Regeln, dass $U_\text{C}$ vernachlässigbar klein ist, also $U(t) \approx U_\text{R}(t)$ gilt.
+Mit Umformungen erhält man
+\begin{equation}
+  U_\text{C}(t)=\frac{1}{RC} \int_{0}^{t} U(t') dt'
+\end{equation}
+Der RC-Kreis kann also verwendet werden,  um eine angelegte Spannung $U(t)$ zu integrieren.
