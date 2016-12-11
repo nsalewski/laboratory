@@ -10,6 +10,7 @@ a = a / 1000
 b = 1 / w
 phi = 2 * np.pi * a / b
 
+
 def f(w, c):
     return np.arctan(-w * c)
 
@@ -21,7 +22,7 @@ ascii.write([w, a, b, phi], 'Messdaten/c.tex', format="latex")
 ascii.write([phi, urc/unull], 'Messdaten/pol.tex', format = 'latex')
 # used temp, bc without temp there was really freaky and wrong behaviour
 # in matplotlib
-m=np.logspace(0.01,4,)
+m = np.logspace(0.01, 4,)
 temp = (f(m, *params))
 plt.plot(w, phi, 'rx', label="Messwerte")
 plt.plot(m, temp, 'b-', label='Ausgleichskurve')

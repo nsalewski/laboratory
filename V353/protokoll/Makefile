@@ -17,9 +17,10 @@ build/amplitude.pdf: amplitude.py matplotlibrc header-matplotlib.tex | build
 		TEXINPUTS="$(call translate,$(pwd):)" python amplitude.py
 build/phase.pdf: phase.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python phase.py
-
+build/testpolar.pdf: testpolar.py matplotlibrc header-matplotlib.tex | build
+		TEXINPUTS="$(call translate,$(pwd):)" python testpolar.py
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/test.pdf  build/amplitude.pdf build/phase.pdf
+build/main.pdf: build/test.pdf  build/amplitude.pdf build/phase.pdf build/testpolar.pdf
 
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
