@@ -49,6 +49,8 @@ Die Messdaten sowie die berechnete lineare Regression befinden sich in Abbildung
 	\label{fig:plota}
 \end{figure}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 Die Zeitkonstante $RC$ soll nun erneut bestimmt werden, indem die Frequenzabhängigkeit der Amplitude $A(\omega)$ der Spannung $U_\text{C}$ am Kondensator untersucht wird.
 Dazu wird $A(\omega)$ in Abhängigkeit zur Frequenz $\omega$ aufgetragen. Die verwendeten Daten befinden sich in Tabelle \ref{tab:tab2}.
 Eine Regression mit Gleichung \eqref{eqn:amplitude} liefert für die Zeitkonstante :
@@ -91,6 +93,105 @@ Die Messdaten und die berechnete Regression sind in Abbildung \refeq{fig:plotb} 
 	\caption{Regression zur Bestimmung der Zeitkonstanten $RC$ über die Frequenzabhängigkeit der Amplitude}
 	\label{fig:plotb}
 \end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Nun wird die Zeitkonstante ein weiteres Mal mithilfe der Phasenverschiebung zwischen Generator- und Kondensatorspannung bestimmt.
+Die Phasenverschiebung $\phi$ ergibt sich zu
+\begin{equation*}
+	\phi = \frac{a}{b} \, 2\pi \text{,}
+\end{equation*}
+wobei $a$ dem gemessenen zeitlichen Abstand der Nulldurchgänge der Spannungskurven entspricht und $b$ als Periodendauer durch $b = \frac{1}{\omega}$ bestimmt wird.
+
+\begin{table}
+	\caption{Messdaten zur Bestimmung der Zeitkonstanten $RC$ über die Phasenverschiebung $\phi$}
+	\label{tab:phasen}
+	\centering
+	\begin{tabular}{cccc}
+		\toprule
+		$\omega$ / $\si{\Hz}$ & $a$ / $\si{\second}$ & $b$ / $\si{\second}$& $\phi$ / $\si{\radian}$ \\
+		\midrule
+		4.2 & 0.00000 & 0.23585 & 0.00000 \\
+		10.0 & 0.00020 & 0.10000 & 0.01257 \\
+		15.0 & 0.00076 & 0.06667 & 0.07163 \\
+		20.0 & 0.00080 & 0.05000 & 0.10053 \\
+		35.0 & 0.00072 & 0.02857 & 0.15834 \\
+		60.0 & 0.00068 & 0.01667 & 0.25635 \\
+		90.0 & 0.00067 & 0.01111 & 0.37888 \\
+		150.0 & 0.00063 & 0.00667 & 0.59376 \\
+		230.0 & 0.00052 & 0.00435 & 0.75147 \\
+		320.0 & 0.00044 & 0.00313 & 0.88467 \\
+		500.0 & 0.00033 & 0.00200 & 1.03673 \\
+		1000.0 & 0.00018 & 0.00100 & 1.13097 \\
+		2000.0 & 0.00009 & 0.00050 & 1.13097 \\
+		5000.0 & 0.00005 & 0.00020 & 1.57080 \\
+		10000.0 & 0.00002 & 0.00010 & 1.25664 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+Die sich ergebenden Werte für die Frequenz $\omega$ und die Phasenverschiebung $\phi$ sind in Tabelle \ref{tab:phasen} aufgetragen.
+
+\begin{figure}
+	\centering
+	\includegraphics{build/phase.pdf}
+	\caption{Regression zur Bestimmung der Zeitkonstanten $RC$ über die Phasenverschiebung von Generator- und Kondensatorspannung}
+	\label{fig:phasi}
+\end{figure}
+
+
+
+Nach Formel \eqref{eqn:phase} wird eine Ausgleichskurve bestimmt (siehe Abbildung \ref{fig:phasi}
+).
+
+Für die Zeitkonstante $RC$ ergibt sich damit der Wert $RC = (3,67 \pm 0,45) \cdot 10^{-3} \, \si{\second}$. 
+
+\begin{figure}
+	\centering
+	\includegraphics{polaar.pdf}
+	\caption{Polardarstellung von Messtupeln $\{A(\omega_{\text{i}}), \phi(\omega_{\text{i}}) \}$ und erwarteter Theoriekurve}
+	\label{fig:polari}
+\end{figure}
+
+Mit der bestimmten Zeitkonstante $RC$ lassen sich in einem Polarkoordinatensystem die gemessenen Tupel $\{A(\omega_{\text{i}}), \phi(\omega_{\text{i}}) \}$ sowie eine Theoriekurve gemäß Formel ??? also
+\begin{equation}
+	\frac{A({\omega})}{U_0} = - \frac{\sin(\phi(\omega))}{\omega \, RC} \text{,}
+\end{equation}
+auftragen (siehe Abbildung \ref{fig:polari}).
+
+\begin{table}
+	\caption{Messdaten von Phasenverschiebung $\phi(\omega)$ und Relativamplitude $\frac{A(\omega)}{U_0}$}
+	\centering
+	\label{tab:polars}
+\begin{tabular}{cc}
+	\toprule
+	$\phi$ / $\si{\radian}$ & $\frac{A}{U_0}$ \\
+	\midrule
+		0.00000 & 0.38462 \\
+		0.01257 & 0.60440 \\
+		0.07163 & 0.67033 \\
+		0.10053 & 0.69231 \\
+		0.15834 & 0.71429 \\
+		0.25635 & 0.70330 \\
+		0.37888 & 0.67033 \\
+		0.59376 & 0.59341 \\
+		0.75147 & 0.49451 \\
+		0.88467 & 0.39560 \\
+		1.03673 & 0.28571 \\
+		1.13097 & 0.15385 \\
+		1.13097 & 0.09341 \\
+		1.57080 & 0.03159 \\
+		1.25664 & 0.01648 \\
+	\bottomrule
+\end{tabular}
+\end{table}
+
+Die benötigten Messwerte sind in Tabelle \ref{tab:polars} augetragen. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{d) Integration}
 
