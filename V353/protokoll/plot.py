@@ -12,7 +12,7 @@ from astropy.io import ascii
 uc, t = np.genfromtxt("Messdaten/a.txt", unpack=True)
 unull = 7.28
 t = t / 1000
-ascii.write([uc, np.log(uc / unull), t], 'Messdaten/a.tex', format="latex",
+ascii.write([uc, np.round(np.log(uc / unull), 4), t], 'Messdaten/a.tex', format="latex",
             names=[r'$U_\\text{C}$/$\\si{\\volt}$', '$\\ln{(\\frac{U_\\text{C}}{U_\\text{0}})}$', "$t$ /$10^{-6}\\si{\\second}$"])
 
 

@@ -1,6 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Bestimmung der Zeitkonstanten RC}
+\label{sec:RC}
 Zur Bestimmung der Zeitkonstanten RC werden aus der Entladekurve in Abbildung \ref{fig:plotrc} die Werte für $U_\text{C}$ abgelesen.
 $U_\text{0}$ wurde bestimmt zu $U_\text{0}=\SI{7.28}{\ohm}$.
 Die abgelesenen Daten finden sich in Tabelle \ref{tab:taba}.
@@ -24,13 +25,13 @@ Aus der Steigung der Regressionsgeraden nach Gleichung \eqref{eqn:ausgleich1} er
 		\toprule
 		$U_\text{C}$/$\si{\volt}$ & $\ln{(\frac{U_\text{C}}{U_\text{0}})}$ & $t$ /$10^{-3}\si{\second}$ \\
 		\midrule
-		6.04                      & -0.186726850262                        & 0.0                        \\
-		4.04                      & -0.588886170236                        & 0.25                       \\
-		2.76                      & -0.96990018248                         & 0.5                        \\
-		1.8                       & -1.39734419731                         & 0.75                       \\
-		1.08                      & -1.90816982107                         & 1.0                        \\
-		0.56                      & -2.56494935746                         & 1.25                       \\
-		0.24                      & -3.41224721785                         & 1.5                        \\
+		6.04                      & -0.1867                                & 0.00                       \\
+		4.04                      & -0.5889                                & 0.25                       \\
+		2.76                      & -0.9699                                & 0.50                       \\
+		1.80                      & -1.3973                                & 0.75                       \\
+		1.08                      & -1.9082                                & 1.00                       \\
+		0.56                      & -2.5649                                & 1.25                       \\
+		0.24                      & -3.4122                                & 1.50                       \\
 		\bottomrule
 	\end{tabular}
 \end{table}
@@ -52,7 +53,7 @@ Die Messdaten sowie die berechnete lineare Regression befinden sich in Abbildung
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Die Zeitkonstante $RC$ soll nun erneut bestimmt werden, indem die Frequenzabhängigkeit der Amplitude $A(\omega)$ der Spannung $U_\text{C}$ am Kondensator untersucht wird.
-Dazu wird $A(\omega)$ in Abhängigkeit zur Frequenz $\omega$ aufgetragen. Die verwendeten Daten befinden sich in Tabelle \ref{tab:tab2}.
+Dazu wird $\frac{A(\omega)}{U_\text{0}}$ in Abhängigkeit zur Frequenz $\omega$ aufgetragen. Die verwendeten Daten befinden sich in Tabelle \ref{tab:tab2}.
 Eine Regression mit Gleichung \eqref{eqn:amplitude} liefert für die Zeitkonstante :
 \begin{equation*}
 	\centering
@@ -63,25 +64,25 @@ Eine Regression mit Gleichung \eqref{eqn:amplitude} liefert für die Zeitkonstan
 	\caption{Messdaten zur Bestimmung der Zeitkonstanten $RC$ über die Frequenzabhängigkeit der Amplitude $A(\omega)$}
 	\label{tab:tab2}
 	\centering
-	\begin{tabular}{cc}
+	\begin{tabular} {ccc}
 		\toprule
-		$A(\omega)$/ $10^{-3} \si{\volt}$ & $\omega$/$\si{\Hz}$ \\
+		$A(\omega)$/ $\si{\volt}$ & $\frac{A(\omega)}{U_\text{0}}$ & $\omega$/$\si{\Hz}$ \\
 		\midrule
-		2800.0                            & 4.24                \\
-		4400.0                            & 10.0                \\
-		4880.0                            & 15.0                \\
-		5040.0                            & 20.0                \\
-		5200.0                            & 35.0                \\
-		5120.0                            & 60.0                \\
-		4880.0                            & 90.0                \\
-		4320.0                            & 150.0               \\
-		3600.0                            & 230.0               \\
-		2880.0                            & 320.0               \\
-		2080.0                            & 500.0               \\
-		1120.0                            & 1000.0              \\
-		680.0                             & 2000.0              \\
-		230.0                             & 5000.0              \\
-		120.0                             & 10000.0             \\
+		2.80                      & 0.38                           & 4.2                 \\
+		4.40                      & 0.60                           & 10.0                \\
+		4.88                      & 0.67                           & 15.0                \\
+		5.04                      & 0.69                           & 20.0                \\
+		5.20                      & 0.71                           & 35.0                \\
+		5.12                      & 0.70                           & 60.0                \\
+		4.88                      & 0.67                           & 90.0                \\
+		4.32                      & 0.59                           & 150.0               \\
+		3.60                      & 0.49                           & 230.0               \\
+		2.88                      & 0.40                           & 320.0               \\
+		2.08                      & 0.29                           & 500.0               \\
+		1.12                      & 0.15                           & 1000.0              \\
+		0.68                      & 0.09                           & 2000.0              \\
+		0.23                      & 0.03                           & 5000.0              \\
+		0.12                      & 0.02                           & 10000.0             \\
 		\bottomrule
 	\end{tabular}
 \end{table}

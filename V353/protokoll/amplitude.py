@@ -5,8 +5,7 @@ from astropy.io import ascii
 
 
 w, urc, ug, phi = np.genfromtxt("Messdaten/b_c.txt", unpack=True)
-unull=7.28
-
+unull = 7.28
 
 
 def f(x, a):
@@ -14,11 +13,12 @@ def f(x, a):
 params, covariance = curve_fit(f, w, urc / unull)
 errors = np.sqrt(np.diag(covariance))
 print('a = (RC) =', params[0], '±', errors[0])
-ascii.write([urc, w], 'Messdaten/b.tex', format="latex")
+ascii.write([urc, np.round(urc / unull, 2), w],
+            'Messdaten/b.tex', format="latex")
 
 # used temp, bc without temp there was really freaky and wrong behaviour
 # in matplotlib
-m=np.logspace(0.01,4,)
+m = np.logspace(0.01, 4,)
 temp = (f(m, *params))
 plt.plot(w, urc / unull, 'rx', label="Messwerte")
 plt.plot(m, temp, 'b-', label='Regression')
