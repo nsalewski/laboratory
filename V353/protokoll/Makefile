@@ -14,14 +14,17 @@ all: build/main.pdf
 build/test.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
 build/amplitude.pdf: amplitude.py matplotlibrc header-matplotlib.tex | build
-		TEXINPUTS="$(call translate,$(pwd):)" python amplitude.py
+	TEXINPUTS="$(call translate,$(pwd):)" python amplitude.py
 build/phase.pdf: phase.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python phase.py
-build/testpolar.pdf: testpolar.py matplotlibrc header-matplotlib.tex | build
-		TEXINPUTS="$(call translate,$(pwd):)" python testpolar.py
+build/integration3.pdf: integration3.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python integration3.py
+build/integration1.pdf: integration1.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python integration1.py
+build/integration2.pdf: integration2.py matplotlibrc header-matplotlib.tex | build
+	TEXINPUTS="$(call translate,$(pwd):)" python integration2.py
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
-build/main.pdf: build/test.pdf  build/amplitude.pdf build/phase.pdf build/testpolar.pdf
-
+build/main.pdf: build/test.pdf  build/amplitude.pdf build/integration1.pdf build/integration2.pdf build/integration3.pdf build/phase.pdf
 build/main.pdf: FORCE | build
 	  TEXINPUTS="$(call translate,build:)" \
 	  BIBINPUTS=build: \
