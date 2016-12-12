@@ -5,7 +5,7 @@ from astropy.io import ascii
 
 
 w, urc, ug, phi = np.genfromtxt("Messdaten/b_c.txt", unpack=True)
-unull = 7.28
+unull = 6.04
 
 
 def f(x, a):

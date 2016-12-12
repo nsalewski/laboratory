@@ -5,7 +5,7 @@ from astropy.io import ascii
 
 
 w, urc, ug, a = np.genfromtxt("Messdaten/b_c.txt", unpack=True)
-unull = 7.28
+unull = 6.04
 a = a / 1000
 b = 1 / w
 phi = 2 * np.pi * a / b

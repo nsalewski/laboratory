@@ -10,7 +10,7 @@ from astropy.io import ascii
 #from pylab import *
 
 uc, t = np.genfromtxt("Messdaten/a.txt", unpack=True)
-unull = 7.28
+unull = 6.04
 t = t / 1000
 ascii.write([uc, np.round(np.log(uc / unull), 4), t], 'Messdaten/a.tex', format="latex",
             names=[r'$U_\\text{C}$/$\\si{\\volt}$', '$\\ln{(\\frac{U_\\text{C}}{U_\\text{0}})}$', "$t$ /$10^{-6}\\si{\\second}$"])
