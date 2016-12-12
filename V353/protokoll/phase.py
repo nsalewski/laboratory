@@ -19,7 +19,7 @@ errors = np.sqrt(np.diag(covariance))
 print('c =', params[0], '±', errors[0])
 print(params)
 ascii.write([w, a, b, phi], 'Messdaten/c.tex', format="latex")
-ascii.write([phi, urc/unull], 'Messdaten/pol.tex', format = 'latex')
+ascii.write([np.round(phi,5), np.round(urc / unull, 5)], 'Messdaten/pol.tex', format = 'latex')
 # used temp, bc without temp there was really freaky and wrong behaviour
 # in matplotlib
 m = np.logspace(0.01, 4)
