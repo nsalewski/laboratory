@@ -43,9 +43,9 @@ phi_ = np.linspace(0.000000000000001, np.pi/2, 1000)
 v = -np.tan(phi_)
 plt.polar(phi, urc/unull, 'rx', label = 'Messwerte')
 plt.polar(phi_, -np.sin(phi_) / v, 'b-', label = 'Theoriekurve')
-plt.polar(phi_, -np.sin(phi_) / (v * 3.67 * 10 ** (-3)), 'b-', label = 'Theoriekurve')
-plt.polar(phi_, -np.sin(phi_) / (v * 3.67 * 10 ** (-3)), 'b-', label = 'Theoriekurve')
-plt.polar(phi_, -np.sin(phi_) / (v * 3.67 * 10 ** (-3)), 'b-', label = 'Theoriekurve')
+#plt.polar(phi_, -np.sin(phi_) / (v * 3.67 * 10 ** (-3)), 'b-', label = 'Theoriekurve')
+#plt.polar(phi_, -np.sin(phi_) / (v * 3.67 * 10 ** (-3)), 'b-', label = 'Theoriekurve')
+#plt.polar(phi_, -np.sin(phi_) / (v * 3.67 * 10 ** (-3)), 'b-', label = 'Theoriekurve')
 xT=plt.xticks()[0]
 xL=['0',r'$\frac{\pi}{4}$',r'$\frac{\pi}{2}$',r'$\frac{3\pi}{4}$',\
             r'$\pi$',r'$\frac{5\pi}{4}$',r'$\frac{3\pi}{2}$',r'$\frac{7\pi}{4}$']
