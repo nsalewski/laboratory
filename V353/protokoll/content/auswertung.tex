@@ -17,6 +17,7 @@ Aus der Steigung der Regressionsgeraden nach Gleichung \eqref{eqn:ausgleich1} er
 	\centering
 	RC = (0.48 \pm 0.03) \cdot 10^{-3} \si{\second} .
 \end{equation*}
+
 \begin{table}
 	\caption{Messdaten zur Bestimmung der Zeitkonstanten $RC$}
 	\label{tab:taba}
@@ -57,9 +58,8 @@ Dazu wird $\frac{A(\omega)}{U_\text{0}}$ in Abhängigkeit zur Frequenz $\omega$ 
 Eine Regression mit Gleichung \eqref{eqn:amplitude} liefert für die Zeitkonstante :
 \begin{equation*}
 	\centering
-	RC=(10 \pm 3)\cdot 10^{-3} \si{\second}
+	RC=(6.3 \pm 1.5)\cdot 10^{-3} \si{\second} .
 \end{equation*}
-
 \begin{table}
 	\caption{Messdaten zur Bestimmung der Zeitkonstanten $RC$ über die Frequenzabhängigkeit der Amplitude $A(\omega)$}
 	\label{tab:tab2}
@@ -94,9 +94,6 @@ Die Messdaten und die berechnete Regression sind in Abbildung \refeq{fig:plotb} 
 	\caption{Regression zur Bestimmung der Zeitkonstanten $RC$ über die Frequenzabhängigkeit der Amplitude}
 	\label{fig:plotb}
 \end{figure}
-
-
-
 Nun wird die Zeitkonstante ein weiteres Mal mithilfe der Phasenverschiebung zwischen Generator- und Kondensatorspannung bestimmt.
 Die Phasenverschiebung $\phi$ ergibt sich zu
 \begin{equation*}
@@ -132,20 +129,17 @@ wobei $a$ dem gemessenen zeitlichen Abstand der Nulldurchgänge der Spannungskur
 \end{table}
 
 Die sich ergebenden Werte für die Frequenz $\omega$ und die Phasenverschiebung $\phi$ sind in Tabelle \ref{tab:phasen} aufgetragen.
-
 \begin{figure}
 	\centering
 	\includegraphics{build/phase.pdf}
 	\caption{Regression zur Bestimmung der Zeitkonstanten $RC$ über die Phasenverschiebung von Generator- und Kondensatorspannung}
 	\label{fig:phasi}
 \end{figure}
-
-
-
-Nach Formel \eqref{eqn:phase} wird eine Ausgleichskurve bestimmt (siehe Abbildung \ref{fig:phasi}
-).
-
-Für die Zeitkonstante $RC$ ergibt sich damit der Wert $RC = (3,67 \pm 0,45) \cdot 10^{-3} \, \si{\second}$.
+Nach Formel \eqref{eqn:phase} wird eine Ausgleichskurve bestimmt (siehe Abbildung \ref{fig:phasi}).
+Für die Zeitkonstante $RC$ ergibt sich damit der Wert
+\begin{equation*}
+	RC = (3,67 \pm 0,45) \cdot 10^{-3} \, \si{\second} .
+\end{equation*}
 
 \begin{figure}
 	\centering
@@ -154,7 +148,7 @@ Für die Zeitkonstante $RC$ ergibt sich damit der Wert $RC = (3,67 \pm 0,45) \cd
 	\label{fig:polari}
 \end{figure}
 
-Mit der bestimmten Zeitkonstante $RC$ lassen sich in einem Polarkoordinatensystem die gemessenen Tupel $\{A(\omega_{\text{i}}), \phi(\omega_{\text{i}}) \}$ sowie eine Theoriekurve gemäß Formel ??? also
+Mit der bestimmten Zeitkonstante $RC$ lassen sich in einem Polarkoordinatensystem die gemessenen Tupel $\{A(\omega_{\text{i}}), \phi(\omega_{\text{i}}) \}$ sowie eine Theoriekurve gemäß Formel \eqref{eqn:sinphase} also
 \begin{equation}
 	\frac{A({\omega})}{U_0} = - \frac{\sin(\phi(\omega))}{\omega \, RC} \text{,}
 \end{equation}
@@ -203,6 +197,7 @@ Die benötigten Messwerte sind in Tabelle \ref{tab:polars} augetragen.
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.98\textwidth]{bilder/ALL0001/F0001TEK.JPG}
+		\label{fig:rorig}
 	\end{subfigure}
 \end{figure}
 In Abbildung \ref{fig:rechteck} ist die Rechteckspannung sowie die über das RC-Glied integrierte Rechteckspannung dargestellt.
@@ -219,6 +214,7 @@ Die integrierte Rechteckspannung ist wie zu erwarten eine Dreiecksspannung.
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.98\textwidth]{bilder/ALL0002/F0002TEK.JPG}
+		\label{fig:sorig}
 	\end{subfigure}
 \end{figure}
 
@@ -236,6 +232,7 @@ Der Spannungsverlauf der Sinusspannung ist in Abbildung \ref{fig:sinus} dargeste
 	\begin{subfigure}{0.48\textwidth}
 		\centering
 		\includegraphics[width=0.98\textwidth]{bilder/ALL0003/F0003TEK.JPG}
+		\label{fig:dorig}
 	\end{subfigure}
 
 \end{figure}
