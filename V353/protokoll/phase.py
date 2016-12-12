@@ -22,7 +22,7 @@ ascii.write([w, a, b, phi], 'Messdaten/c.tex', format="latex")
 ascii.write([phi, urc/unull], 'Messdaten/pol.tex', format = 'latex')
 # used temp, bc without temp there was really freaky and wrong behaviour
 # in matplotlib
-m = np.logspace(0.01, 4,)
+m = np.logspace(0.01, 4)
 temp = (f(m, *params))
 plt.plot(w, phi, 'rx', label="Messwerte")
 plt.plot(m, temp, 'b-', label='Ausgleichskurve')
@@ -36,7 +36,7 @@ plt.savefig("build/phase.pdf")
 
 plt.clf()
 phi_ = np.linspace(0, np.pi/2, 1000)
-v = -np.tan(phi_) / (3.67 * 10**(-3))
+v = -np.tan(phi_)
 plt.polar(phi, urc/unull, 'rx', label = 'Messwerte')
-plt.polar(phi_, -np.sin(phi_) / (v * 3.67 * 10 ** (-3)), 'b-', label = 'Theoriekurve')
+plt.polar(phi_, -np.sin(phi_) / (v, 'b-', label = 'Theoriekurve')
 plt.savefig('polaar.pdf')
