@@ -3,7 +3,7 @@
 \subsection{Bestimmung der Zeitkonstanten RC}
 \label{sec:RC}
 Zur Bestimmung der Zeitkonstanten RC werden aus der Entladekurve in Abbildung \ref{fig:plotrc} die Werte für $U_\text{C}$ abgelesen.
-$U_\text{0}$ wurde bestimmt zu $U_\text{0}=\SI{7.28}{\ohm}$.
+$U_\text{0}$ wurde bestimmt zu $U_\text{0}=\SI{6.04}{\volt}$.
 Die abgelesenen Daten finden sich in Tabelle \ref{tab:taba}.
 Durch Umformung wird Formel \eqref{eqn:aufladung} zu
 \begin{equation}
@@ -94,12 +94,13 @@ Die Messdaten und die berechnete Regression sind in Abbildung \refeq{fig:plotb} 
 	\caption{Regression zur Bestimmung der Zeitkonstanten $RC$ über die Frequenzabhängigkeit der Amplitude}
 	\label{fig:plotb}
 \end{figure}
+
 Nun wird die Zeitkonstante ein weiteres Mal mithilfe der Phasenverschiebung zwischen Generator- und Kondensatorspannung bestimmt.
 Die Phasenverschiebung $\phi$ ergibt sich zu
 \begin{equation*}
 	\phi = \frac{a}{b} \, 2\pi \text{,}
 \end{equation*}
-wobei $a$ dem gemessenen zeitlichen Abstand der Nulldurchgänge der Spannungskurven entspricht und $b$ als Periodendauer durch $b = \frac{1}{\omega}$ bestimmt wird.
+wobei $a$ dem gemessenen zeitlichen Abstand der Nulldurchgänge der Spannungskurven entspricht und $b$ als Periodendauer durch die Frequenz $\omega$ bestimmt wird.
 
 \begin{table}
 	\caption{Messdaten zur Bestimmung der Zeitkonstanten $RC$ über die Phasenverschiebung $\phi$}
@@ -182,7 +183,7 @@ auftragen (siehe Abbildung \ref{fig:polari}).
 \end{table}
 
 Die benötigten Messwerte sind in Tabelle \ref{tab:polars} augetragen.
-\subsection{d) Integration}
+\subsection{Das RC-Glied als Integrator}
 Zur besseren Vergleichbarkeit sind neben den gemessenen Spannunsgverläufen jeweils beispielhaft berechnete Funktionsgraphen zu den jeweils erwarteten Spannungen und ihren Integrierten, eingefügt.
 
 \begin{figure}
@@ -237,4 +238,4 @@ Der Spannungsverlauf der Sinusspannung ist in Abbildung \ref{fig:sinus} dargeste
 
 \end{figure}
 
-In Abbildung \ref{fig:dreieck} ist Dreieck und Parabelspannung zu sehen
+In Abbildung \ref{fig:dreieck} ist eine Dreieck- und die sich ergebende Parabelspannung aufgetragen.
