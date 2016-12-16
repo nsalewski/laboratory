@@ -1,21 +1,30 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy.optimize import curve_fit
+from astropy.io import ascii
+#import sympy
+#from uncertainties import ufloat
+#import uncertainties.unumpy as unp
+#from sympy import Symbol, latex
+#from sympy import *
+#from pylab import *
+uc, t = np.genfromtxt("Messdaten/a_and_b.txt", unpack=True)
 
-x = np.linspace(0, 10, 1000)
-y = x ** np.sin(x)
+ascii.write([uc, t], 'Messdaten/tab_a.tex', format="latex",
+            names=[r'$U_\\text{C}$/$\\si{\\volt}$', "$t$ /$10^{-6}\\si{\\second}$"])
 
-plt.subplot(1, 2, 1)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
+def f(x, a, b):
+    return a*np.exp(-2*np.pi*b*t)
+params, covariance = curve_fit(f, t, uc)
+errors = np.sqrt(np.diag(covariance))
+print('A_0 = ', params[0], '±', errors[0])
+print('mü = ', params[1], '±', errors[1])
+m=np.linspace(-10,500,150)
+plt.plot(t, uc, 'rx', label="Messwerte")
+plt.plot(t, f(t, *params), 'b-', label='Ausgleichsgerade')
+plt.xlabel(r'$t$ /$10^{-6}\si{\second}$')
+plt.ylabel(r'$U_\text{C}$/$\si{\volt}$')
 plt.legend(loc='best')
+plt.tight_layout()
 
-plt.subplot(1, 2, 2)
-plt.plot(x, y, label='Kurve')
-plt.xlabel(r'$\alpha \:/\: \si{\ohm}$')
-plt.ylabel(r'$y \:/\: \si{\micro\joule}$')
-plt.legend(loc='best')
-
-# in matplotlibrc leider (noch) nicht möglich
-plt.tight_layout(pad=0, h_pad=1.08, w_pad=1.08)
-plt.savefig('build/plot.pdf')
+plt.savefig("build/test.pdf")
