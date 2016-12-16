@@ -124,6 +124,19 @@
 % erweiterte Bookmarks im PDF
 \usepackage{bookmark}
 
+\AtBeginDocument{ % wird bei \begin{document} ausgeführt
+	\let\symRe=\Re % werden sonst wieder von unicode-math überschrieben
+	\RenewDocumentCommand \Re {}
+	{
+		\operatorname{Re}
+		}
+		\let\symIm=\Im
+		\RenewDocumentCommand \Im {}
+		{
+			\operatorname{Im}
+			}
+			}
+
 % Trennung von Wörtern mit Strichen
 \usepackage[shortcuts]{extdash}
 \usepackage{blindtext}
