@@ -45,3 +45,32 @@ Mittels Scipy und Python ergeben sich die Größen samt ihrer Fehler zu:
 Ein Vergleich zwischen dem berechneten $R_\text{eff}$ und dem in der Schaltung eingebauten Widerstand $R_\text{1}$ zeigt eine Differenz von $\delta R=60.1 \,\si{\ohm}$.
 Diese lässt sich begründen über den bisher nicht beachteten Innenwiderstand des Funktionengenerators von $R=50\,\si{\ohm}$. Die verbleibende Differenz lässt sich begründen mit kleinen Messunsicherheiten und liegt annähernd im Toleranzbereich.
 Für die weiteren Berechnungen wird der Innenwiderstand des Generators nun mitbetrachtet.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\subsection{Bestimmung von $R_{\text{ap}}$}
+
+Nach Gleichung \eqref{eqn:apigrenz} ergibt sich der Widerstand $R_{\text{ap}}$, bei dem der
+aperiodische Grenzfall eintritt zu
+\begin{equation}
+	R_{\text{ap}} = \pm \sqrt{\frac{4L}{C}} \, \text{,}
+	\label{eqn:rap}
+\end{equation}
+wobei der positive Wert -- also die physikalisch relevante Größe -- betrachtet wird.
+Mit den notierten Werten und Gauß'scher Fehlerfortpflanzung erhält man schließlich
+\begin{equation*}
+	R_{\text{ap}} = (4390 \pm 9) \, \si{\ohm} \text{.}
+\end{equation*}
+
+Der gemessene Wert ist $R_{\text{ap}} = \SI{3400}{\ohm}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Phasenverschiebung}
+
+Die Frequenzabhängigkeit der Phasenverschiebung ist in Abbildung \ref{fig:phasenplot} dargestellt.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.7\textwidth]{build/taskd.pdf}
+	\caption{Frequenzabhängigkeit der Phasenverschiebung zwischen Kondensator- und Erregerspannung}
+	\label{fig:phasenplot}
+\end{figure}
