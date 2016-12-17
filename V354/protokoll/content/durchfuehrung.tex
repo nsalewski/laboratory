@@ -5,3 +5,28 @@
 
 \subsection{Versuchsbeschreibung}
 \label{sec:Versuchsbeschreibung}
+
+Vor Beginn der Messung werden die Kenngrößen der verwendeten Bauteile notiert.
+
+Zur Bestimmung des effektiven Dämpfungswiderstandes $R_\text{eff}$ und der Abklingdauer $T_ex$ wird die Abnahme der Spannungsamplitude der Kondensatorspannung $U_\text{C}$ untersucht.
+Es wird der kleinere der beiden fixen Widerstände des Schaltkreises, $R_\text{1}=(48.1 \pm 0.1)\,\si{\ohm}$, verwendet.
+Dazu wird am Funktionengenerator ein Nadelimpuls eingestellt.
+Die Kondensatorspannung wird hierbei auf den ersten Kanal des Oszilloskops gegeben.
+Auf dem Bildschirm des Oszilloskops ist nun die Abnahme der Spannungsamplitude der Kondensators zu sehen.
+Der Nadelimpuls soll nun so eingestellt werden, dass die Spannungsamplitude am Kondensator sich zwischen zwei Impulsen mindestens um den Faktor 3 bis 8 ändert.
+Dazu werden die Frequenz und Amplitude des Nadelimpulses ebenso wie das Triggerlevel am Oszilloskop variiert, bis sich der gewünschte Spannungsverlauf auf dem Bildschirm des Oszilloskops zeigt.
+Mit der Cursorfunktion werden nun die positiven Spannungsamplituden mit den zugehörigen Zeitdifferenzen zum auslösenden Nadelimpuls bestimmt und der Spannungsverlauf über die USB-Ausgabe des Oszilloskops gespeichert.
+
+Für die zweite Messung zur Bestimmung des Widerstands $R_\text{ap}$ im aperiodischen Grenzfall wird der regelbare Widerstand $R_\text{3}$ verwendet.
+Dieser wird zunächst auf seinen maximalen wert gestellt. Am Oszilloskop zeigt sich nun lediglich die erwartete stetig abfallende Spannung am Kondensator.
+Der Widerstand $R_\text{3}$ wird nun so weit heruntergeregelt, dass am Spannungsverlauf Überschwinger sichtbar werden.
+Der Widerstand $R_\text{3}$ wird nun langsam so weit wieder hoch geregelt, dass die Überschwinger soeben verwschwinden. Der Wert des Widerstandes $R_\text{3}$ entspricht nun dem Widerstand für den aperiodischen Grenzfall des Schaltkreises und wird notiert.
+
+Zur Bestimmung der Frequenzabhängigkeit der Kondensatorspannung und der Phase zwischen Kondensator- und Erregerspannung wird am Funktionengenerator eine Sinusspannung eingestellt und die Generatorspannung $U(t)$ über den zweiten Kanal des Oszilloskops abgegriffen.
+Am Oszilloskop werden beide Spannunsgverläufe übereinander gelegt.
+Zunächst wird nun die Frequenz einmal über den Bereich $1 \,\si{\kilo\Hz}$ bis etwa $100 \,\si{\kilo\Hz}$ und dabei die Spannungsverläufe am Oszilloskop beobachtet, sodass etwa der Bereich der Resonatorfrequenz bestimmt werden kann.
+Für Frequenzen nahe der Resonatorfrequenz wird im Weiteren in höherer Auflösung gemessen.
+Es werden nun etwa 20 Datensätze aus Generatorspannung $U(t)$, Kondensatorspannung $U_\text{C}$, dem Abstand $a$ zwischen den Nulldurchgängen der beiden Spannungen und der jeweiligen Frequenz $f$ der Sinusspannung aufgenommen.
+Die Spannungsmaxima beider Spannungen werden jeweils über die Measure-Funktion des Oszilloskops bestimmt.
+Der Abstand zwischen den Nulldurchgängen der beiden Spannungsverläufe wird mit der Cursorfunktion bestimmt.
+Die Periodenlänge $b$, welche zusätzlich zur Berechnung der Phasendifferenz $\phi$ benötigt wird, muss nicht gemessen werden, da sie über den Kehrwert der verwendeten Frequenz berechnet werden kann.
