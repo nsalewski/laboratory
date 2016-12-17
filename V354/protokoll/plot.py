@@ -18,6 +18,8 @@ def f(x, a, b):
 params, covariance = curve_fit(f, t, uc)
 errors = np.sqrt(np.diag(covariance))
 print(errors)
+
+
 print('A_0 = ', params[0], '±', errors[0])
 print('mü = ', params[1], '±', errors[1])
 plt.plot(t, uc, 'rx', label="Messwerte")
@@ -26,5 +28,17 @@ plt.xlabel(r'$t$ /$10^{-6}\si{\second}$')
 plt.ylabel(r'$U_\text{C}$/$\si{\volt}$')
 plt.legend(loc='best')
 plt.tight_layout()
+
+anull=ufloat(params[0],errors[0])
+muuuh=ufloat(params[1],errors[1])
+L=ufloat(10.11 , 0.03)
+t=1/(2*np.pi*muuuh)
+print ("t=",t)
+L=L/1000
+Errr=ufloat(48.1,0.1)
+
+R=4*np.pi*muuuh*L
+print("R=",R)
+print("diff R=" ,R-Errr)
 
 plt.savefig("build/test.pdf")

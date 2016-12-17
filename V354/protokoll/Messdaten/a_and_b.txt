@@ -1,4 +1,4 @@
-#Allgemeine Daten: L=10.11 \pm 0.03 mH; C=2.098 \pm 0.006 nF; R_1=48.1 \pm 0.1 Ohm; R_2=509.5\pm 0.5 Ohm gemessen bei f=798 Hz zu b) 3.4 kiloOhm
+#Allgemeine Daten: L=10.11 \pm 0.03 mH; C=2.098 \pm 0.006 nF; R_1=48.1 \pm 0.1 Ohm; R_2=509.5\pm 0.5 Ohm (Innenwiderstand Generator=50 Ohm) gemessen bei f=798 Hz zu b) 3.4 kiloOhm
 #U_C in Volt	 t in microsec
 6.64	0
 5.68	30

@@ -2,56 +2,46 @@
 \label{sec:Auswertung}
 Die zu Beginn notierten Werte für die Komponenten des Schaltkreises lauten:
 \begin{equation*}
-  L=(10.11 \pm 0.03) \,\si{\milli\henry}
+	L=(10.11 \pm 0.03) \,\si{\milli\henry}
 \end{equation*}
 
 \begin{equation*}
-C=(2.098 \pm 0.006) \cdot 10^{-9} \, \si{\farad}
+	C=(2.098 \pm 0.006) \cdot 10^{-9} \, \si{\farad}
 \end{equation*}
 
 \begin{equation*}
-R_\text{1}= (48.1 \pm 0.1) \, \si{\ohm}
+	R_\text{1}= (48.1 \pm 0.1) \, \si{\ohm}
 \end{equation*}
 
 \begin{equation*}
-R_\text{2}= (509.5\pm 0.5)\,\si{\ohm}
+	R_\text{2}= (509.5\pm 0.5)\,\si{\ohm}
 \end{equation*}
 
 
 In Tabelle \ref{tab:messung1} finden sich die gemessenen Daten der Spannungsamplituden $U_C$ und die zugehörigen Zeiten $t$.
 Der Verlauf der Spannungsamplitude ist in Abbildung \ref{fig:spannungsamplitude} abgebildet. Die zugehörige Einhüllende ist in Abbildung \ref{fig:einhuellende} dargestellt.
-Da  Gleichung \eqref{eqn:blablup} ergibt sich die Einhüllende mittels
+Da sich $U_\text{0}$ nach dem Ohmschen Gesetz nur um einen Faktor von $I_\text{0}$ unterscheidet, ergibt sich nach Gleichung \eqref{eqn:schwingi} die Einhüllende mittels
 \begin{equation}
-A=A_\text{0}exp{-2 \pi \mu t}
+	A=A_\text{0}exp{-2 \pi \mu t}
 \end{equation}
-%A_0 =  6.5992883063 ± 0.0353016378746
-%mü =  851.764459304 ± 7.4567304364
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\subsection{Bestimmung von $R_{\text{ap}}$}
-
-Nach Gleichung \eqref{eqn:apigrenz} ergibt sich der Widerstand $R_{\text{ap}}$, bei dem der 
-aperiodische Grenzfall eintritt zu
-\begin{equation}
-	R_{\text{ap}} = \pm \sqrt{\frac{4L}{C}} \, \text{,}
-	\label{eqn:rap}
-\end{equation}
-wobei der positive Wert -- also die physikalisch relevante Größe -- betrachtet wird.
-Mit den notierten Werten und Gauß'scher Fehlerfortpflanzung erhält man schließlich
+Die Ausgleichsrechnung mittels Scipy und Python liefert die Werte:
 \begin{equation*}
-	R_{\text{ap}} = (4390 \pm 9) \, \si{\ohm} \text{.}
+	A_0 =  (6.60 \pm 0.04) \,\si{\volt}
+\end{equation*}
+\begin{equation*}
+	\mu =  (851.8 \pm 7.5) \, \frac{1}{\si{\second}}
 \end{equation*}
 
-Der gemessene Wert ist $R_{\text{ap}} = \SI{3400}{\ohm}$.
+$R_\text{eff}$ lässt sich nun mittels $\mu$ über Gleichung \eqref{eqn:defis} ermitteln. $T_\text{ex}$ ergibt sich nun nach Gleichung \eqref{eqn:abkling}.
+Mittels Scipy und Python ergeben sich die Größen samt ihrer Fehler zu:
+\begin{equation*}
+  T_{\text{ex}}=(18.7 \pm 0.2) \cdot 10^{-5}\,\si{\second}
+\end{equation*}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Phasenverschiebung}
+\begin{equation*}
+  R_{\text{eff}}= (108.2 \pm 1.0) \,\si{\ohm}
+\end{equation*}
 
-Die Frequenzabhängigkeit der Phasenverschiebung ist in Abbildung \ref{fig:phasenplot} dargestellt.
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.7\textwidth]{build/taskd.pdf}
-	\caption{Frequenzabhängigkeit der Phasenverschiebung zwischen Kondensator- und Erregerspannung}
-	\label{fig:phasenplot}
-\end{figure}
+Ein Vergleich zwischen dem berechneten $R_\text{eff}$ und dem in der Schaltung eingebauten Widerstand $R_\text{1}$ zeigt eine Differenz von $\delta R=60.1 \,\si{\ohm}$.
+Diese lässt sich begründen über den bisher nicht beachteten Innenwiderstand des Funktionengenerators von $R=50\,\si{\ohm}$. Die verbleibende Differenz lässt sich begründen mit kleinen Messunsicherheiten und liegt annähernd im Toleranzbereich.
+Für die weiteren Berechnungen wird der Innenwiderstand des Generators nun mitbetrachtet.
