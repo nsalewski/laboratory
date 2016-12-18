@@ -15,11 +15,13 @@ build/plot.pdf: plot.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python plot.py
 build/taskd.pdf: taskd.py matplotlibrc header-matplotlib.tex | build
 	TEXINPUTS="$(call translate,$(pwd):)" python taskd.py
-
+build/c.pdf: c.py matplotlibrc header-matplotlib.tex | build
+		TEXINPUTS="$(call translate,$(pwd):)" python c.py
 
 # hier weitere Abhängigkeiten für build/main.pdf deklarieren:
 build/main.pdf: build/plot.pdf
 build/main.pdf: build/taskd.pdf
+build/main.pdf: build/c.pdf
 
 
 build/main.pdf: FORCE | build

@@ -7,7 +7,7 @@ from astropy.io import ascii
 w, a, uc, u = np.genfromtxt("Messdaten/c_und_d.txt", unpack=True)
 b = 1 / (w * 1000)
 phi = 2 * np.pi * a / (10**6 * b)
-R = 509.5
+R = 559.5 #müsste doch 559.5 sein, wegen generatorinnenwiderstand. habs mal geändert. Vorher war es 509.5
 L = 10.11 / 1000
 C = 2.098 / 10**9
 
@@ -29,5 +29,3 @@ plt.xscale('log')
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig("build/taskd.pdf")
-
-
