@@ -9,6 +9,15 @@ phi = 2 * np.pi * a / (10**6 * b)
 R = 559.5 #müsste doch 559.5 sein, wegen generatorinnenwiderstand. habs mal geändert. Vorher war es 509.5
 L = 10.11 / 1000
 C = 2.098 / 10**9
+c=(R/(2*L))
+
+w1=(c +np.sqrt((1/(L*C))+((R**2)/(4*L**2))))
+w2=(-c +np.sqrt((1/(L*C))+((R**2)/(4*L**2))))
+
+wres=np.sqrt((1/(L*C))-((R**2)/(2*L**2)))
+print("wres= ",wres)
+print("w1=",w1)
+print("w2=",w2)
 
 def f(w):
     return np.arctan(-(w * R * C) / (1 - L * C * w**2))
@@ -17,9 +26,6 @@ ascii.write([w, a, b*10**6, phi], 'Messdaten/d.tex', format="latex")
 
 #m = np.logspace(0.01, 4)
 #temp = (f(m, *params))
-x1=[30.5, 30.5]
-x2=[37.5, 37.5]
-y1=[0,3.5]
 
 plt.figure(0)
 plt.plot(w, phi, 'rx', label="Messwerte")
@@ -32,19 +38,34 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig("build/taskd.pdf")
 
+
+#changed to manual lines, because its easier to control colours
+
+x1=[10,45]
+y1=[0.25*np.pi,0.25*np.pi]
+y2=[0.5*np.pi,0.5*np.pi]
+y3=[0.75*np.pi,0.75*np.pi]
+y4=[0,5]
+x2=[30.2,30.2]
+x3=[33.7,33.7]
+x4=[37.7,37.7]
 plt.figure(1)
 plt.plot(w, phi, 'rx', label="Messwerte")
-plt.plot(x1,y1,"g--", label=r"$ \omega_\mathrm{+}$ und $\omega_\mathrm{-}$")
-plt.plot(x2,y1,'g--')
-plt.axhline(y = np.pi / 4)
-plt.axhline(y = np.pi / 2)
-plt.axhline(y = 3 * np.pi / 4)
-plt.xlim(10, 40)
+plt.plot(x1,y1, "b-.")
+plt.plot(x1,y2, "g-.")
+plt.plot(x1,y3, "b-.")
+
+plt.plot(x2,y4,"b--")
+plt.plot(x3,y4,"g--",label="Resonatorfrequenz")
+plt.plot(x4,y4,"b--",label="$\omega_1$ bzw.$\omega_2$")
+plt.yticks( [0, np.pi/4, np.pi/2, 3*np.pi/4, np.pi],
+            [ r'$0$', r'$\pi/4$',r"$\pi/2$" ,r'$3\pi/4$',r"\pi"]
+    )
+plt.xlim(10, 45)
+plt.ylim(0,np.pi)
 plt.xlabel("$\omega$ / $\si{\Hz}$")
 plt.ylabel(r"$\phi(\omega)$/ $\si{\radian}$")
 plt.legend(loc='best')
 plt.grid()
 plt.tight_layout()
 plt.savefig("build/taskdlinear.pdf")
-
-

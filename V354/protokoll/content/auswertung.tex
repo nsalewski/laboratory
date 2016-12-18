@@ -29,19 +29,19 @@ Die zu Beginn notierten Werte für die Komponenten des Schaltkreises lauten:
 		\midrule
 		6.64                      & 0.0                        \\
 		5.68                      & 30.0                       \\
-		4.8                       & 58.0                       \\
+		4.80                      & 58.0                       \\
 		4.08                      & 88.0                       \\
 		3.44                      & 118.0                      \\
 		2.96                      & 148.0                      \\
 		2.56                      & 176.0                      \\
 		2.16                      & 206.0                      \\
 		1.84                      & 236.0                      \\
-		1.6                       & 266.0                      \\
+		1.60                      & 266.0                      \\
 		1.36                      & 294.0                      \\
-		1.2                       & 324.0                      \\
+		1.20                      & 324.0                      \\
 		1.04                      & 354.0                      \\
 		0.88                      & 382.0                      \\
-		0.8                       & 412.0                      \\
+		0.80                      & 412.0                      \\
 		0.72                      & 442.0                      \\
 		\bottomrule
 	\end{tabular}
@@ -51,9 +51,13 @@ Die zu Beginn notierten Werte für die Komponenten des Schaltkreises lauten:
 	\centering
 	\includegraphics[width=0.75\textwidth]{build/test.pdf}
 	\caption{Zeitlicher Verlauf der Kondensatorspannung und die berechnete Einhüllende aufgetragen gegen die Zeit}
+	\label{fig:einhüllende}
+\end{figure}
+\begin{figure}
+	\includegraphics{Bilder/a)correct/F0002TEK.JPG}
+	\caption{Zeitlicher Verlauf der Spannungsamplitude am Kondensator nach Anregung durch einen Nadelimpuls .}
 	\label{fig:spannungsamplitude}
 \end{figure}
-
 In Tabelle \ref{tab:messung1} finden sich die gemessenen Daten der Spannungsamplituden $U_C$ und die zugehörigen Zeiten $t$.
 Der Verlauf der Spannungsamplitude ist in Abbildung \ref{fig:spannungsamplitude} abgebildet. Die zugehörige Einhüllende ist in Abbildung \ref{fig:einhuellende} dargestellt.
 Da sich $U_\text{0}$ nach dem Ohmschen Gesetz nur um einen Faktor von $I_\text{0}$ unterscheidet, ergibt sich nach Gleichung \eqref{eqn:schwingi} die Einhüllende mittels
@@ -114,10 +118,10 @@ In Abbildung \ref{fig:q} ist die normierte Kondensatorspannung $\frac{U_{\mathrm
 	\label{tab:Kuh}
 	\centering
 	\begin{tabular}{ccc}
-    \toprule
-  	$f$/$\cdot 10^{3} \si{\Hz}$ & $U_\text{C}$/$\si{\volt}$ & $\frac{U(t)}{U_\text{C}}$ \\
-    \midrule
-    1.0                         & 2.52                      & 0.93                      \\
+		\toprule
+		$f$/$\cdot 10^{3} \si{\Hz}$ & $U_\text{C}$/$\si{\volt}$ & $\frac{U(t)}{U_\text{C}}$ \\
+		\midrule
+		1.0                         & 2.52                      & 0.93                      \\
 		5.0                         & 3.4                       & 0.97                      \\
 		10.0                        & 3.56                      & 1.02                      \\
 		14.0                        & 3.88                      & 1.11                      \\
@@ -139,8 +143,8 @@ In Abbildung \ref{fig:q} ist die normierte Kondensatorspannung $\frac{U_{\mathrm
 		50.0                        & 2.8                       & 0.8                       \\
 		75.0                        & 0.75                      & 0.23                      \\
 		100.0                       & 0.35                      & 0.11                      \\
-    \bottomrule
-  \end{tabular}
+		\bottomrule
+	\end{tabular}
 \end{table}
 
 Aus den Messdaten wird die Resonanzüberhöhung $q$ abgelesen zu
@@ -149,14 +153,13 @@ Aus den Messdaten wird die Resonanzüberhöhung $q$ abgelesen zu
 \end{equation*}
 Aus Formel \eqref{eqn:guete} ergibt sich $q$ zu:
 \begin{equation*}
-q_\mathrm{Theorie}= (3.923 \pm 0.009) .
+	q_\mathrm{Theorie}= (3.923 \pm 0.009) .
 \end{equation*}
-Ein Vergleich zwischen der theoretisch aus den Kenngrößen des Schwingkreises berechneten Güte $q_\mathrm{Theorie}$ mit der experimentell bestimmten Güte $q_\mathrm{Experiment}$ zeigt sich eine Abweichung von $8\%$.
-%w-;w+= (5.534+/-0.017)e+04
+
 \begin{figure}
-  \includegraphics[width=0.9\textwidth]{build/breite.pdf}
-  \caption{Linearer Plot der normierten Kondensatorspannung gegen die Frequenz zur Bestimmung der Güte und der Breite der Resonatorfrequenz.}
-  \label{fig:breite}
+	\includegraphics[width=0.9\textwidth]{build/breite.pdf}
+	\caption{Linearer Plot der normierten Kondensatorspannung gegen die Frequenz zur Bestimmung der Güte und der Breite der Resonatorfrequenz.}
+	\label{fig:breite}
 \end{figure}
 Zur Untersuchung der Breite der Resonanzkurve wird der Bereich um die Resonanzfrequenz
 wie in Abbildung \ref{fig:breite} linear dargestellt.
@@ -164,13 +167,12 @@ Zusätzlich wird $\frac{q_\mathrm{Experiment}}{\sqrt{2}}$ eingezeichnet, sodass 
 Aus der Abbildung wurde die Breite abgelesen zu
 
 \begin{equation*}
-  	\text{Abgelesen}: \omega_+ - \omega_- \approx 9.25 \cdot 10^{3} \,\si{\Hz}
+	\text{Abgelesen}: \omega_+ - \omega_- \approx 9.25 \cdot 10^{3} \,\si{\Hz}
 \end{equation*}
 nach Formel \eqref{eqn:breite} ergibt sich:
 \begin{equation*}
-  \text{Theorie}: 	\omega_+ - \omega_- \approx \frac{R}{L}=(5.534+/-0.017) \cdot 10^{4} \,\si{\Hz} .
+	\text{Theorie}: 	\omega_+ - \omega_- \approx \frac{R}{L}=(5.534+/-0.017) \cdot 10^{4} \,\si{\Hz} .
 \end{equation*}
-Es ergibt sich eine Abweichung von $ 498 \%$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Phasenverschiebung}
 
@@ -219,7 +221,9 @@ Die Frequenzabhängigkeit der Phasenverschiebung ist in Abbildung \ref{fig:phase
 	\label{fig:phasenplot}
 \end{figure}
 
-
+Um die Resonatorfrequenz bzw. $\omega_1$ und $\omega_2$ besser ablesen zu können, wird der Bereich um die Resonatorfrequenz linear geplottet.
+Der zugehörige Plot findet sich in Abbildung \ref{fig:phasenplotlinear} 
+Aus dem Plot werden die entsprechenden Werte abgelesen und die Theoriewerte werden nach Gleichung
 
 \begin{figure}
 	\centering

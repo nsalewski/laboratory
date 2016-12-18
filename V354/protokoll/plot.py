@@ -14,12 +14,12 @@ ascii.write([uc, t], 'Messdaten/tab_a.dat', format="latex",
             names=[r'$U_\\text{C}$/$\\si{\\volt}$', "$t$ /$10^{-6}\\si{\\second}$"])
 
 def f(x, a, b):
-    return a*np.exp(-2*np.pi*b*t*(1/1000000))
+    return a*np.exp(-2*np.pi*b*x*(1/1000000))
 params, covariance = curve_fit(f, t, uc)
 errors = np.sqrt(np.diag(covariance))
-
+m=np.linspace(0,450, 50)
 plt.plot(t, uc, 'rx', label="Messwerte")
-plt.plot(t, f(t, *params), 'b-', label='Ausgleichsgerade') #didnt work with linspace for me, dunno why.
+plt.plot(m, f(m, *params), 'b-', label='Ausgleichsgerade') #didnt work with linspace for me, dunno why.
 plt.xlabel(r'$t$ /$10^{-6}\si{\second}$')
 plt.ylabel(r'$U_\text{C}$/$\si{\volt}$')
 plt.legend(loc='best')
