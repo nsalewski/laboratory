@@ -20,6 +20,7 @@ R=ufloat(559.5,0.5)
 
 f=w*1000
 omega=R/L
+omega=omega/(2*np.pi) #gotcha! that was the missing and huge errors causing line!
 omeganull=unp.sqrt(1/(L*C))
 q=1/(omeganull*R*C)
 print("q=",q)

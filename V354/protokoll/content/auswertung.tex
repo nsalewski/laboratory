@@ -49,17 +49,17 @@ Die zu Beginn notierten Werte für die Komponenten des Schaltkreises lauten:
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.75\textwidth]{build/test.pdf}
+	\includegraphics[width=0.9\textwidth]{build/test.pdf}
 	\caption{Zeitlicher Verlauf der Kondensatorspannung und die berechnete Einhüllende aufgetragen gegen die Zeit}
 	\label{fig:einhüllende}
 \end{figure}
 \begin{figure}
-	\includegraphics{Bilder/a)correct/F0002TEK.JPG}
+	\includegraphics[width=0.6\textwidth,angle=90]{Bilder/a)correct/F0002TEK.JPG}
 	\caption{Zeitlicher Verlauf der Spannungsamplitude am Kondensator nach Anregung durch einen Nadelimpuls .}
 	\label{fig:spannungsamplitude}
 \end{figure}
 In Tabelle \ref{tab:messung1} finden sich die gemessenen Daten der Spannungsamplituden $U_C$ und die zugehörigen Zeiten $t$.
-Der Verlauf der Spannungsamplitude ist in Abbildung \ref{fig:spannungsamplitude} abgebildet. Die zugehörige Einhüllende ist in Abbildung \ref{fig:einhuellende} dargestellt.
+Der Verlauf der Spannungsamplitude ist in Abbildung \ref{fig:spannungsamplitude} abgebildet. Die zugehörige Einhüllende ist in Abbildung \ref{fig:einhüllende} dargestellt.
 Da sich $U_\text{0}$ nach dem Ohmschen Gesetz nur um einen Faktor von $I_\text{0}$ unterscheidet, ergibt sich nach Gleichung \eqref{eqn:schwingi} die Einhüllende mittels
 \begin{equation}
 	A=A_\text{0}exp{-2 \pi \mu t}
@@ -171,7 +171,7 @@ Aus der Abbildung wurde die Breite abgelesen zu
 \end{equation*}
 nach Formel \eqref{eqn:breite} ergibt sich:
 \begin{equation*}
-	\text{Theorie}: 	\omega_+ - \omega_- \approx \frac{R}{L}=(5.534+/-0.017) \cdot 10^{4} \,\si{\Hz} .
+	\text{Theorie}: 	\omega_+ - \omega_- \approx \frac{R}{L}\cdot \frac{1}{2\pi}=(8.81\pm 0.03) \cdot 10^{3} \,\si{\Hz} .
 \end{equation*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Phasenverschiebung}
@@ -216,7 +216,7 @@ Die Frequenzabhängigkeit der Phasenverschiebung ist in Abbildung \ref{fig:phase
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{build/taskd.pdf}
+	\includegraphics[width=0.9\textwidth]{build/taskd.pdf}
 	\caption{Frequenzabhängigkeit der Phasenverschiebung zwischen Kondensator- und Erregerspannung}
 	\label{fig:phasenplot}
 \end{figure}
@@ -231,7 +231,8 @@ Es ergibt sich somit:
 	\label{tab:senseless_table}
 	\begin{tabular}{cccc}
 		\toprule
-		 &$\omega_1$ / $ \cdot 10^{3} \si{\Hz}$ &$\omega_{\mathrm{res}}$ / $ \cdot 10^{3} \si{\Hz}$&$\omega_2$ / $ \cdot 10^{3} \si{\Hz}$\\
+		 &$\omega_1$ / $10^{3} \si{\Hz}$ &$\omega_{\mathrm{res}}$ / $10^{3} \si{\Hz}$&$\omega_2$ / $10^{3} \si{\Hz}$\\
+		 \midrule
 		 \text{Abgelesen}&30.2&33.7&37.7\\
 		 \text{Theoriewert}&30.4&34.0&39.2\\
 	\bottomrule
@@ -239,7 +240,7 @@ Es ergibt sich somit:
 \end{table}
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{build/taskdlinear.pdf}
+	\includegraphics[width=0.9\textwidth]{build/taskdlinear.pdf}
 	\caption{Frequenzabhängigkeit der Phasenverschiebung zwischen Kondensator- und Erregerspannung}
 	\label{fig:phasenplotlinear}
 \end{figure}
