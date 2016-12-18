@@ -3,13 +3,13 @@
 
 
 Ein Serienresonanzkreis ist in Abbildung \ref{fig:serienreson} dargestellt.
-Er besteht aus einer äußeren Spannungsquelle $U(t)$ und in Serie
-geschaltetem ohmschen Widerstand $R$, Spule mit Induktivität $L$ und Kondensator
-mit Kapazität $C$ (\cite{noltingbro}).
+Er besteht aus einer äußeren Spannungsquelle $U(t)$ und -in Serie
+geschaltet- einem ohmschen Widerstand $R$, einer Spule mit Induktivität $L$ und einem Kondensator
+mit Kapazität $C$ \cite{noltingbro}.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.7\textwidth]{Bilder/Aufbau.png}
+	\includegraphics[width=0.85\textwidth]{Bilder/Aufbau.png}
 	\caption{Schaltung eines Serienresonanzkreises \cite{Anleitung}}
 	\label{fig:serienreson}
 \end{figure}
@@ -21,7 +21,7 @@ Vorerst soll ein Serienresonanzkreis ohne äußere Spannungsquelle (Abbildung \r
 
 Nimmt man an, dass zum Zeitpunkt $t=0$ ein bestimmter Energiebetrag im System vorhanden ist,
 werden elektrische Schwingungen erzeugt.
-Diese lassen sich unterordnen in ungedämpfte und gedämpfte Schwingungen.
+Diese lassen sich kategorisieren in ungedämpfte und gedämpfte Schwingungen.
 
 \textbf{Ungedämpfte Schwingungen} lassen sich in der Realität nicht erzeugen, da über ohmsche
 Widerstände elektrische Energie irreversibel in Wärmeenergie umgewandelt wird.
@@ -106,7 +106,7 @@ Damit $\nu$ komplexwertig ist, muss $\frac{1}{LC} < \frac{R^2}{4L^2}$ gelten.
 Ist dies der Fall, spricht man von dem Kriechfall oder auch der aperiodischen Dämpfung.
 Dann gilt für $I(t)$ die Proportionalität
 \begin{equation}
-	I(t) \sim \exp(-(\frac{R}{2L} - \sqrt{\frac{R^2}{4L^2} - \frac{1}{LC}})t) \text{,}
+	I(t) \sim \exp\left(-\left(\frac{R}{2L} - \sqrt{\frac{R^2}{4L^2} - \frac{1}{LC}}\right)t\right) \text{,}
 \end{equation}
 es liegt also kein Schwingungsvorgang vor, sondern es treten Relaxationsphänomene auf.
 

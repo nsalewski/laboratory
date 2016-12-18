@@ -10,11 +10,16 @@ R = 559.5 #m√ºsste doch 559.5 sein, wegen generatorinnenwiderstand. habs mal ge√
 L = 10.11 / 1000
 C = 2.098 / 10**9
 c=(R/(2*L))
-
+print(c)
 w1=(c +np.sqrt((1/(L*C))+((R**2)/(4*L**2))))
-w2=(-c +np.sqrt((1/(L*C))+((R**2)/(4*L**2))))
-
+w2=((-c) +np.sqrt((1/(L*C))+((R**2)/(4*L**2))))
 wres=np.sqrt((1/(L*C))-((R**2)/(2*L**2)))
+#quite not sure 'bout the following. Thought, it was already in correct frequency-type ()
+w1=w1/(2*np.pi)
+w2=w2/(2*np.pi)
+wres=wres/(2*np.pi)
+
+
 print("wres= ",wres)
 print("w1=",w1)
 print("w2=",w2)
