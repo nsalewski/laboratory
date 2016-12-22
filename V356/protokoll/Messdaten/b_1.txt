@@ -1,0 +1,10 @@
+#Bestimmung der Dispersionskurve für LC_1C_2
+#n-te Oberwelle w in kHz
+1 8.65
+2 17.05
+3 25.1
+4 32.45
+5 38.9
+6 43.8
+7 73.8
+8 75.1

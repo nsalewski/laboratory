@@ -1,0 +1,9 @@
+#allgemeine Daten L=1.217mH, C_1=20.13nF,C_2=9.41nF, Z=sqrt(2C/2C_1)=246Ohm
+#LC-Kette
+#Messpunkt  Frequenz in kHz
+1 37.721
+2 45.221
+3 56.253
+4 67.841
+5 84.237
+6 105.8
