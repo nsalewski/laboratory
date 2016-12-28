@@ -3,8 +3,9 @@
 Alle berechneten Mittelwerte werden mit folgender Formel bestimmt:
 \begin{equation}
   \label{eqn:mittelwert}
-  \overline x=\frac{1}{N}\sum \limits_{i=1}^{N} x_i .
+	\overline x=\frac{1}{N}\sum \limits_{i=1}^{N} x_i \text{,}
 \end{equation}
+wobei $x_{\text{i}}$ den einzelnen (insgesamt $N$) Messwerten entspricht.
 Der zugehörige Fehler des Mittelwerts bestimmt sich mit:
 
 \begin{equation}
@@ -18,26 +19,22 @@ mit Hilfe der Gauß’schen Fehlerfortpflanzung berechnet:
   \label{eqn:fehlerfortpflanzung}
   \Delta f = \sqrt{ \sum \limits_{i = 1}^{N} (\frac{\partial f}{\partial x_i})^2 \cdot (\Delta x_i)^2}.
 \end{equation}
-Haben Messgeräte baubedingte Unsicherheiten, so errechnen sich die Fehler des Mittelwerts nach der Regel zur Fehlerfortpflanzung von Gerätefehlern wie folgt:
- \begin{equation}
-   \frac{\Delta z}{z}=\sqrt{(\frac{\Delta x}{x})^2+(\frac{\Delta y}{y})^2}
-\end{equation}
 
 Die Regression von Polynomen und Ausgleichsgrade, sowie die Bestimmung der zugehörigen Fehler werden mit
 IPython 5.1.0 mittels Scipy 0.18.1 durchgeführt.
-Parameter eventueller Ausgleichsgeraden
+Parameter linearer Ausgleichsgeraden
 \begin{equation}
 \label{eqn:ausgleichsgrade}
-y=a \cdot x +b .
+y=a \cdot x +b
 \end{equation}
 werden bestimmt über
 
 \begin{equation}
 \label{eqn:ausgleichsgrade_a}
-a= \frac{ \overline{xy}- \overline{x} \overline{y}}{\overline{x^2}-\overline{x}^2} .
+	a= \frac{ \overline{xy}- \overline{x} \overline{y}}{\overline{x^2}-\overline{x}^2} \text{,}
 \end{equation}
 
 \begin{equation}
 \label{eqn:ausgleichsgrade_b}
-b= \frac{ \overline{x^2} \overline{y}- \overline{x} \cdot \overline{xy}}{\overline{x^2}-\overline{x}^2} .
+	b= \frac{ \overline{x^2} \overline{y}- \overline{x} \cdot \overline{xy}}{\overline{x^2}-\overline{x}^2} \text{.}
 \end{equation}

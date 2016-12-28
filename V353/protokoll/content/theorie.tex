@@ -5,10 +5,15 @@ Die Änderungsgeschwindigkeit $\dot{A}$ einer physikalischen Größe $A$ ist dab
 Die Integration dieses Zusammenhangs vom Zeitpunkt $0$ bis zu einem Zeitpunkt $t$ liefert:
 \begin{equation}
 	\label{eqn:relaxation}
-	A(t)=A(\infty) (  A(0)-A(\infty) ) \cdot e^{ct}\, ;\,\, mit\,\, c<0 .
+	A(t)=A(\infty) + ( A(0)-A(\infty) ) \cdot e^{ct}\, ,\,\, \text{mit}\,\, c<0 .
+	%
+	%Hier sagt sie c definieren, keine Ahnung ob sie meint, dass c aus R ist oder was
+	%c für ne physikalische Bedeutung hat...
+	%
 \end{equation}
 
 Auf- und Entladevorgänge von Kondensatoren sind Beispiele für Relaxationsvorgänge und sollen im Folgenden detaillierter betrachtet werden.
+\subsection{Entladevorgang eines Kondensators}
 Bei einem geladenen Kondensator mit der Kapazität $C$ befindet sich die Ladung $Q$ auf den Platten.
 Zwischen den Kondensatorplatten liegt dabei die Spannung $U_\text{C}$ an. Mit
 \begin{equation*}
@@ -17,6 +22,9 @@ Zwischen den Kondensatorplatten liegt dabei die Spannung $U_\text{C}$ an. Mit
 und dem Ohmschen Gesetz lässt sich $\dot{Q}=I$ zu
 \begin{equation}
 	\dot{Q}=-\frac{1}{RC}Q(t)
+	%
+	%Hier sagt sie R definieren, gleiche Frage wie oben...
+	%
 \end{equation}
 umformen.
 Da sich der Kondensator nach unendlich langer Zeit entladen wird, folgt unter Verwendung von Formel \eqref{eqn:relaxation} für den zeitlichen Verlauf der Entladung
@@ -25,6 +33,7 @@ Da sich der Kondensator nach unendlich langer Zeit entladen wird, folgt unter Ve
 	\label{eqn:aufladung}
 	Q(t)=Q(0)(e^{-\frac{t}{RC}}) \text{.}
 \end{equation}
+\subsection{Aufladevorgang eines Kondensators}
 Für die Aufladung des Kondensators durch eine Spannungsquelle mit $U_0$ über einen Widerstand erhält man mit ähnlichen Überlegungen unter Beachtung der Anfangsbedingungen $Q(0)=0$ und $Q(\infty)=CU_\text{0}$
 
 \begin{equation}
@@ -34,18 +43,18 @@ Für die Aufladung des Kondensators durch eine Spannungsquelle mit $U_0$ über e
 $RC$ wird hierbei als Zeitkonstante des Systems bezeichnet.\\
 \\Relaxationsvorgänge sind auch bei periodisch angeregten Systemen zu beobachten.
 Liegt an einem RC-Kreis eine Wechselspannung $U(t)=U_\text{0}\cos(\omega t)$ an, und $\omega \ll \frac{1}{RC}$ gilt, ist $U_\text{C} \approx U(t)$.
-Für große $\omega$ ist dies nicht mehr erfüllt, zudem nimmt die Amplitude von $U_\text{C}$ mit größer werdenden $\omega$ ab.
+Für große $\omega$ ist dies nicht mehr erfüllt, da die Amplitude von $U_\text{C}$ mit größer werdenden $\omega$ abnimmt.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.7\textwidth]{bilder/periodisch.png}
-	\caption{Schaltung zur Diskussion von Relaxationsvorgängen unter Einfluss von periodischer Anregung \cite{Anleitung}}
+	\caption{Schaltung zur Diskussion von Relaxationsvorgängen unter Einfluss von periodischer Anregung \cite{Anleitung}.}
 	\label{fig:periodisch}
 \end{figure}
-Unter Verwendung des Ansatz
+Unter Verwendung des Ansatzes
 \begin{equation*}
 	U_\text{C}=A(\omega)\cos(\omega t +\phi(\omega)) ,
 \end{equation*}
-erhält man mit den Kirchhoffschen Regeln und einigen Umformungen
+ergibt sich mit den Kirchhoffschen Regeln und einigen Umformungen
 \begin{equation}
 	\label{eqn:phase}
 	\phi(\omega)=\arctan(-\omega RC) \text{.}
@@ -75,10 +84,10 @@ Für sehr kleine, beziehungsweise sehr große Frequenzen erhält man die folgend
 	\end{tabular}
 \end{table*}
 
-Somit ist sofort ersichtlich, dass das RC-Glied als Tiefpass verwendet werden kann. Große Frequenzen werden weitestgehend herausgefiltert und kleine Frequenzen passieren das RC-Glied nahezu unverändert. \\
-\\Für genügend große Frequenzen  $\omega$ ergibt sich aus Abbildung \ref{fig:periodisch} wiederum mit den Kirchhoffschen Regeln, dass $U_\text{C}$ vernachlässigbar klein ist, also $U(t) \approx U_\text{R}(t)$ gilt.
+Da die Kondensatorspannung $U_{\text{C}}$ für $\omega \to \infty$ gegen Null geht, kann das RC-Glied als Tiefpass verwendet werden. Große Frequenzen werden weitestgehend unterdrückt und kleine Frequenzen passieren das RC-Glied nahezu unverändert. \\
+\\Für genügend große Frequenzen  $\omega$ ergibt sich aus Abbildung \ref{fig:periodisch} wiederum mit den Kirchhoffschen Regeln, dass $U_\text{C}$ klein gegen $U_{\text{R}}$ und $U$ ist, also $U(t) \approx U_\text{R}(t)$ gilt.
 Mittels Umformungen erhält man
 \begin{equation}
 	U_\text{C}(t)=\frac{1}{RC} \int_{0}^{t} U(t') dt' \text{.}
 \end{equation}
-Der RC-Kreis kann also - bei geeigneten Frequenzen - verwendet werden,  um eine angelegte Spannung $U(t)$ zu integrieren.
+Der RC-Kreis kann also - bei hohen Frequenzen - verwendet werden,  um eine angelegte Spannung $U(t)$ zu integrieren.
