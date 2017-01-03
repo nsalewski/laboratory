@@ -1,5 +1,5 @@
 #LC-Kette
-#n-te Oberwelle w in Hz
+#n-te Oberwelle w in kHz
 1 7.2
 2 14.3
 3 21.4

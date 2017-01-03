@@ -1,9 +1,140 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-%\begin{figure}
-%  \centering
-%  \includegraphics{plot.pdf}
-%  \caption{Plot.}
-%  \label{fig:plot}
-%\end{figure}
+%%%%%%%%%%
+%c
+\subsection{Phasengeschwindigkeit in einer $LC$-Kette}
+
+Aus den bestimmten Eigenfrequenzen $f$ der $LC$-Kette und den zugehörigen Phasenverschiebungen $\theta$ lassen sich nach Formel \eqref{eqn:v-phase} die jeweiligen Phasengeschwindigkeiten berechnen.
+Die Theoriekurve ergibt sich ebenso nach Formel \eqref{eqn:v-phase}.
+$\theta$, also die Phasenverschiebung pro Kettenglied, ergibt sich aus der Phasenverschiebung $\phi$ über die gesamte $LC$-Kette dividiert durch die Anzahl der Kettenglieder $n=14$.
+In Tabelle \ref{tab:c} finden sich die bestimmten Nummern der Entartungen $n$ der Lissajou-Figuren, welche jeweils der Phasenverschiebung über der ganzen $LC$-Kette mit $\phi=n\pi$ entsprechen mit den zugehörigen Eigenfrequenzen $f$.
+Zudem werden die Eigenfrequenzen umgerechnet in die Kreisfrequenz $\omega$ und die Phasenverschiebung pro Kettenglied $\theta$ in die Tabelle eingetragen.
+In der fünften Spalte ist die Phasengeschwindigkeit nach $v_{\mathrm{Ph}}=\frac{\omega}{\theta}$ eingetragen.
+In Abbildung \ref{fig:plotc} sind die gefundenden Messwerte der Phasengeschwindigkeit im Vergleich zur Theoriekurve aufgetragen.
+\begin{table}
+  \caption{Phasengeschwindigkeiten zu den jeweiligen Eigenfrequenzen der $LC$-Kette}
+\label{tab:c}
+\centering
+\begin{tabular}{ccccc}
+\toprule
+Phasenverschiebung $\phi$/$\pi\si{\radian}$ & $f$/$\si{\kilo\Hz}$ & $\omega$/$\si{\kilo\Hz}$ & $\theta$/$\si{\radian}$ & $v_{\mathrm{Ph}}$/\si{\kilo\metre\per\second} \\
+\midrule
+1.0 & 7.2 & 45.2 & 0.22 & 201.6 \\
+2.0 & 14.3 & 89.8 & 0.45 & 200.2 \\
+3.0 & 21.4 & 134.5 & 0.67 & 199.73 \\
+4.0 & 28.3 & 177.8 & 0.9 & 198.1 \\
+5.0 & 34.7 & 218.0 & 1.12 & 194.32 \\
+6.0 & 41.0 & 257.6 & 1.35 & 191.33 \\
+7.0 & 46.4 & 291.5 & 1.57 & 185.6 \\
+8.0 & 51.5 & 323.6 & 1.8 & 180.25 \\
+9.0 & 56.0 & 351.9 & 2.02 & 174.22 \\
+10.0 & 58.7 & 368.8 & 2.24 & 164.36 \\
+11.0 & 61.1 & 383.9 & 2.47 & 155.53 \\
+12.0 & 63.2 & 397.1 & 2.69 & 147.47 \\
+13.0 & 64.4 & 404.6 & 2.92 & 138.71 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\begin{figure}
+  \centering
+ \includegraphics{Bilder/c.pdf}
+  \caption{Phasengeschwindigkeit der $LC$-Kette an jedem Kettenglied aufgetragen gegen die Kreisfrequenz}
+  \label{fig:plotc}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%d
+\subsection{Spannungsverlauf der $LC$-Kette bei offenem Ende}
+Die gemessenen Spannungsamplituden an jedem Kettenglied bei der 1. und 2. Eigenschwingung der $LC$-Kette finden sich in Tabelle \ref{tab:ei}.
+
+\begin{table}
+   \centering
+\caption{Wichtige Tabelle}
+\label{tab:ei}
+\begin{tabular}{ccc}
+  \toprule
+Nummer des Kettenglieds & $U$/$\si{\volt}$ bei 1.Eigenschwingung & $U$/$\si{\volt}$ bei 2.Eigenschwingung \\
+\midrule
+0 & 0.93 & 1.11 \\
+1 & 1.17 & 0.81 \\
+2 & 1.2 & 0.3 \\
+3 & 1.14 & 0.07 \\
+4 & 0.84 & 0.35 \\
+5 & 0.63 & 0.6 \\
+6 & 0.3 & 0.69 \\
+7 & 0.09 & 0.78 \\
+8 & 0.225 & 0.6 \\
+9 & 0.65 & 0.3 \\
+10 & 0.84 & 0.15 \\
+11 & 0.75 & 0.66 \\
+12 & 0.78 & 1.05 \\
+13 & 0.9 & 1.05 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Die Grundschwingung, also die erste Eigenschwingung der $LC$-Kette, betrug $w_{\mathrm{0}}=7.5 \,\si{\kilo\Hz}$, die erste Oberschwingung, also die 2. Eigenschwingung betrug $w_{\mathrm{1}}=14.7 \,\si{\kilo\Hz}$.
+Nach Formel  \eqref{eqn:abschluss} wird bei der beidseitig offenen $LC$-Kette, also $R=\infty$ an den Enden der LC-Kette ein Maximum der Spannungsamplitude angenommen, sowie kein Phasensprung am Kettenende erwartet.
+In Abbildung \ref{fig:plotdeins} sind die jeweilig gemessenen Spannungsamplituden bei den ersten beiden Eigenschwingungen gegen die Kettenglieder aufgetragen.
+Der erwartete Spannungsverlauf einer stehenden Cosinus-Welle wird durch die Messdaten annähernd erreicht. Die stehende Welle weist bei der Grundschwingung einen Spannungsknoten etwa in der Mitte der $LC$-Kette auf, während an den Enden Spannungsbäuche auftreten.
+Daher findet auch wie erwartet kein Phasensprung am Kettenende statt.
+ Der Spannungsverlauf bei der ersten Eigenschwingung bildet sich eine stehende Welle mit halber Wellenlänge.
+In Abbildung \ref{fig:plotd} erkennt man ebenso den erwarteten Verlauf der Spannungsamplituden für die zweite Eigenschwingung.
+Erneut zeigen sich an Anfang und Ende der $LC$-Kette Spanungsbäuche, es findet also wieder wie erwartet kein Phasensprung am Kettenende statt.
+Etwa in der Mitte der $LC$-Kette zeigt sich ein dritter Wellenbauch und es ergeben sich somit 2 Schwingungsknoten und 3 Schwingungsbäuche.
+Die erste Oberschwingung weist also genau eine Wellenlänge auf.
+\begin{figure}
+  \centering
+ \includegraphics{Bilder/d.pdf}
+  \caption{Spannungsverlauf der offenen $LC$-Kette für $f=7.5 \,\si{\kilo\Hz}$(Grundschwingung)}
+  \label{fig:plotdeins}
+\end{figure}
+
+\begin{figure}
+  \centering
+ \includegraphics{Bilder/d2.pdf}
+  \caption{Spannungsverlauf der offenen $LC$-Kette für $f=14.7 \,\si{\kilo\Hz}$(erste Oberschwingung)}
+  \label{fig:plotd}
+\end{figure}
+
+\subsection{Spannungsverlauf der mit dem Wellenwiderstand $Z$ abgeschlossenen $LC$-Kette}
+Für eine geschlossene $LC$-Kette mit dem Wellenwiderstand $Z$ als Abschlusswiderstand wird keine Reflektion am Kettenende erwartet und damit dürften sich auch keine stehenden Wellen bilden.
+Der Wellenwiderstand ergibt sich nach Formel \eqref{eqn:wellenwiderstand} etwa zu $Z=246 \,\si{\ohm}$.
+In Tabelle \ref{tab:lame} finden sich die gemessenen Spannungsamplituden für die erste Eigenschwingung der $LC$-Kette an den jeweiligen Kettengliedern.
+In Abbildung \ref{fig:really?!} sind die Spannungsamplituden gegen die Orte auf der $LC$-Kette -also die Nummern der jeweiligen Masche der Kette- aufgetragen.
+\begin{table}
+  \centering
+\caption{Spannungsamplituden and den einzelnen Kettengliedern für die erste Eigenfrequenz der mit dem Wellenwiderstand abgeschlossenen $LC$-Kette}
+\label{tab:lame}
+\begin{tabular}{cc}
+\toprule
+Nummer des Kettenglieds & $U$/$\si{\volt}$ bei 1.Eigenschwingung und Abschlusswiderstand $R=Z$ \\
+\midrule
+0 & 0.025 \\
+1 & 0.025 \\
+2 & 0.025 \\
+3 & 0.025 \\
+4 & 0.025 \\
+5 & 0.025 \\
+6 & 0.025 \\
+7 & 0.025 \\
+8 & 0.025 \\
+9 & 0.025 \\
+10 & 0.025 \\
+11 & 0.025 \\
+12 & 0.025 \\
+13 & 0.025 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Es zeigt sich der erwartete Verlauf. Es lässt sich eine konstante Spannungsamplitude an jedem Kettenglied feststellen.
+Somit hat sich keine stehende Welle ausgeprägt und es findet, wie erwartet, für den Wellenwiderstand als Abschlusswiderstand keine Reflektion am Kettenende statt.
+
+
+\begin{figure}
+  \centering
+ \includegraphics{Bilder/d3.pdf}
+  \caption{Spannungsverlauf einer mit dem Wellenwiderstand $Z$ abgeschlossenen $LC$-Kette bei der ersten Eigenfrequenz ($7.5 \,\si{\kilo\Hz}$)}
+  \label{fig:really?!}
+\end{figure}
