@@ -1,20 +1,61 @@
 \section{Durchführung}
 \label{sec:Durchführung}
 
-\subsection{Durchlasskurve}
+\subsection{Bestimmung einer Durchlasskurve}
 Die Durchlasskurven einer LC- beziehungsweise LC$_1$C$_2$-Kette können
 mit dem Aufbau in Abbildung \ref{fig:durchlasskurve} bestimmt werden.
 
-Zunächst soll nur die Bestimmung der Durchlasskurve einer LC-Kette betrachtet werden.
 Der Wellenwiderstand $Z$ am Eingang und Ausgang der Kette wird durch einen
 regelbaren Widerstand realisiert und mittels
 \begin{equation}
 	Z = \sqrt{\frac{L}{C}}
 \end{equation}
-berechnet.
+beziehungsweise
+\begin{equation}
+	Z = \sqrt{\frac{2L}{C_1+C_2}}
+\end{equation}
+auf den genäherten Wellenwiderstand $Z$ für kleine Frequenzen festgelegt (vergleiche Formel \eqref{eqn:wellenwiderstand}).
+Auf einem X-Y-Schreiber lässt sich die Ausgangsspannung $U_{\text{aus}}$ in Abhängigkeit von der Frequenz $\omega$ der Eingangsspannung $U_{\text{ein}}$ aufzeichnen.
+Die Eingangsspannung liefert ein wobbelbarer NF-Generator.
+Außerdem kann an diesem NF-Generator eine Range eingestellt werden, in der die Frequenzen um eine festgelegte Frequenz variieren.
+Dies ermöglicht eine Aufzeichnung um die Grenzfrequenz -- beziehungsweise 
+bei der LC$_1$C$_2$-Kette um die Grenzfrequenzen.
 
+Des Weiteren müssen an dem X-Y-Schreiber die Position sowie die Sensitivität der Achsen eingestellt werden.
+Hierbei muss beachtet werden, dass der Schreiber nicht den Rand überschreitet und der betrachtete Messbereich geeignet groß dargestellt wird.
+
+Nachdem die Kalibrierung abgeschlossen und die Grenzfrequenzen zu erkennen sind, kann der Aufzeichnungsvorgang am X-Y-Schreiber gestartet werden.
+Bei diesem müssen einige Referenzpunkte für die Frequenz bestimmt werden, 
+da die Achsen des verwendeten Millimeterpapiers nicht skaliert sind.
+
+Bei der Aufzeichnung der Durchlasskurve für die LC$_1$C$_2$-Kette wird jeder zweite Kondensator der LC-Kette ausgetauscht.
 
 
 \subsection{Dispersionsrelation}
+
+Hierbei soll die Frequenzabhängigkeit der Phasenverschiebung $\phi$ 
+zwischen Eingangsspannung $U_{\text{ein}}$ und Ausgangsspannung $U_{\text{aus}}$ gemäß der Dispersionsrelation nach Formel \eqref{eqn:dispersion}
+-- beziehungsweise Formel \eqref{eqn:dispersion2} untersucht werden.
+Zum Nachweis der Dispersionsrelation lässt sich der Aufbau aus Abbildung 
+\ref{fig:} verwenden.
+
+Dafür wird die Eingangsspannung sowie die Ausgangsspannung auf den X- beziehungsweise Y-Eingang 
+des Oszilloskops gegeben und das Oszilloskop im Zwei-Kanal-Modus betrieben.
+Dann werden für die LC- und die LC$_1$C$_2$-Kette die Frequenzen ermittelt, bei denen auf 
+dem Oszilloskop eine Phasenverschiebung von $\pi$ zu erkennen ist.
+Dies wird realisiert, indem am NF-Generator die Frequenzen $\omega$ der Eingangsspannung 
+hochgeregelt werden bis auf dem Oszilloskop eine Phasenverschiebung von $\pi$ also eine 
+Gerade zu erkennen ist.
+
+Zu beachten ist hier, dass bei der LC$_1$C$_2$-Kette -- wie in Abschnitt \ref{sec:} erläutert 
+-- der optische Ast auftritt.
+
+
+
+
+
+
+
+
 
 \subsection{Nachweis von stehenden Wellen}
