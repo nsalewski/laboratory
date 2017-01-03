@@ -1,8 +1,103 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Teil b)
+\FloatBarrier
+\subsection{Dispersionskurven nach Dispersionsrelation}
+
+\subsubsection{Dispersionskurve der LC-Kette}
+Die Dispersionskurve ergibt sich nach Gleichung \eqref{eqn:dispersion} mit 
+\begin{equation}
+	\label{eqn:dispisi}
+	\omega = \sqrt{\frac{2}{LC}(1-\cos\theta)} \, \text{,}
+\end{equation}
+da negative Frequenzen nicht betrachtet werden.
+Die Phasenverschiebung pro Kettenglied $\theta$ ergibt sich durch 
+\begin{equation}
+	\theta = \frac{\phi}{n} \, \text{,}
+\end{equation}
+wobei $\phi$ der gemessenen Phasenverschiebung zwischen Eingangsspannung $U_{\text{ein}}$
+und Ausgangsspannung $U_{\text{aus}}$ entspricht.
+
+Die sich ergebenden Werte sind in Tabelle \ref{tab:dispersionlc} aufgetragen.
+
+\begin{table}
+	\caption{Messdaten zur Untersuchung der Dispersionskurve einer LC-Kette}
+	\label{tab:dispersionlc}
+	\centering
+	\begin{tabular}{cccc}
+	\toprule
+	$\phi$/$\si{\radian}$ & $f$/$\si{\kilo\Hz}$ & $\omega$/$\si{\kilo\Hz}$ & $\theta$/$\si{\radian}$ \\
+	\midrule
+		$\pi$ & 7.2 & 45.2 & 0.22 \\
+		2$\pi$ & 14.3 & 89.8 & 0.45 \\
+		3$\pi$ & 21.4 & 134.5 & 0.67 \\
+		4$\pi$ & 28.3 & 177.8 & 0.90 \\
+		5$\pi$ & 34.7 & 218.0 & 1.12 \\
+		6$\pi$ & 41.0 & 257.6 & 1.35 \\
+		7$\pi$ & 46.4 & 291.5 & 1.57 \\
+		8$\pi$ & 51.5 & 323.6 & 1.80 \\
+		9$\pi$ & 56.0 & 351.9 & 2.02 \\
+		10$\pi$ & 58.7 & 368.8 & 2.24 \\
+		11$\pi$ & 61.1 & 383.9 & 2.47 \\
+		12$\pi$ & 63.2 & 397.1 & 2.69 \\
+		13$\pi$ & 64.4 & 404.6 & 2.92 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+Die theoretische Dispersionskurve nach Gleichung \eqref{eqn:dispisi} mit den zugehörigen
+Messwerten ist in Abbildung \ref{fig:dispilc} dargestellt.
+
+\begin{figure}
+	\centering
+	\includegraphics{Bilder/b1.pdf}
+	\caption{Dispersionskurve der LC-Kette: Kreisfrequenz $\omega$ gegen die Phasenverschiebung pro Kettenglied $\theta$ aufgetragen}
+	\label{fig:dispilc}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Dispersionskurve der LC$_1$C$_2$-Kette}
+Die Dispersionskurve für die LC$_1$C$_2$-Kette ergibt sich nach Formel \eqref{eqn:dispersion2}.
+
+Analog wie bei der LC-Kette erhält man die Messdaten, die in Tabelle \ref{tab:dispersioncc}
+aufgetragen sind.
+
+\begin{table}
+	\caption{Messdaten zur Untersuchung der Dispersionskurve einer LC$_1$C$_2$-Kette}
+	\label{tab:dispersioncc}
+	\centering
+	\begin{tabular}{cccc}
+	\toprule
+	$\phi$/$\si{\radian}$ & $f$/$\si{\kilo\Hz}$ & $\omega$/$\si{\kilo\Hz}$ & $\theta$/$\si{\radian}$ \\
+	\midrule
+		$\pi$ & 8.65 & 54.3 & 0.22 \\
+		2$\pi$ & 17.05 & 107.1 & 0.45 \\
+		3$\pi$ & 25.10 & 157.7 & 0.67 \\
+		4$\pi$ & 32.45 & 203.9 & 0.90 \\
+		5$\pi$ & 38.90 & 244.4 & 1.12 \\
+		6$\pi$ & 43.80 & 275.2 & 1.35 \\
+		7$\pi$ & 73.80 & 463.7 & 1.57 \\
+		8$\pi$ & 75.10 & 471.9 & 1.80 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+Die theoretische Dispersionskurve nach Gleichung \eqref{eqn:dispersion2} mit den zugehörigen Messwerten ist in Abbildung \ref{fig:dispicc} dargestellt. 
+
+\begin{figure}
+	\centering
+	\includegraphics{Bilder/b2.pdf}
+	\caption{Dispersionskurve der LC$_1$C$_2$-Kette: Kreisfrequenz $\omega$ gegen die Phasenverschiebung pro Kettenglied $\theta$ aufgetragen}
+	\label{fig:dispicc}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %c
+\FloatBarrier
 \subsection{Phasengeschwindigkeit in einer $LC$-Kette}
 
 Aus den bestimmten Eigenfrequenzen $f$ der $LC$-Kette und den zugehörigen Phasenverschiebungen $\theta$ lassen sich nach Formel \eqref{eqn:v-phase} die jeweiligen Phasengeschwindigkeiten berechnen.
