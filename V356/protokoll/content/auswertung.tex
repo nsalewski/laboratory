@@ -9,7 +9,7 @@
 \subsection{Ermittlung der Grenzfrequenzen aus Durchlasskurven}
 
 \subsubsection{Durchlasskurve der LC-Kette}
-
+\label{sec:durchLC}
 Der theoretische Wert für die Grenzfrequenz $f_{\text{G}}$ ergibt sich nach Formel \eqref{eqn:wgrenz_lc} zu
 \begin{equation}
 	f_{\text{G}} = \frac{1}{\pi \sqrt{LC}} \text{.}
@@ -62,12 +62,21 @@ Damit ergibt sich die Skalierung der $x$-Achse zu
 \begin{equation}
 	f(x) = a \cdot \mathrm{e}^{bx} \text{,}
 \end{equation}
-mit den Paramtern oben.
+mit den Parametern oben.
 
 Aus der Durchlasskurve in Abbildung \ref{fig:durchiLC} lässt sich die $x$-Position mit einem
 Ablesefehler zu $x_{\text{G}} = (14,6 \pm 0,1) \, \si{\centi\meter}$ bestimmen.
 Damit erhält man für die Grenzfrequenz mit Gaußscher Fehlerfortpflanzung (Formel
 \eqref{eqn:fehlerfortpflanzung}):
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%z.B.
+%Damit erhält man für die Grenzfrequenz mittels einer Regression von f(x) mit python/numpy \cite{numpy}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{equation*}
 	f_{\text{G}} = (64,115 \pm 1,546 ) \, \si{\kilo\hertz} \text{.}
 \end{equation*}
@@ -132,7 +141,10 @@ ablesen, man erhält:
 	x_2 = (18,9 \pm 0,1) \, \si{\centi\meter} \, \text{.}
 \end{gather*}
 
-Mittels der Skalarierungsfunktion, den bestimmten Paramatern und Gaußscher Fehlerfortpflanzung
+Mittels der Skalierungsfunktion, den bestimmten Paramatern und Gaußscher Fehlerfortpflanzung
+%%%%%%%%%%%%%%%%%%
+%einer Ausgleichsrechnung mittels python/numpy \cite{numpy}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 (Formel \eqref{eqn:fehlerfortpflanzung}) erhält man nun die drei Grenzfrequenzen der
 LC$_1$C$_2$-Kette zu:
 \begin{gather*}
