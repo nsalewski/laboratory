@@ -1,9 +1,9 @@
 \section{Theorie}
 \label{sec:Theorie}
 Als $LC$-Kette wird eine Kette aus $LC$-Schwingkreisen bezeichnet.
-Ein $LC$-Schwingkreis besteht dabei aus einer Induktivität $L$ und einer Kapazität $C$. Je nachdem, wie diese Bauteile
-im Schwingkreis positioniert sind, wirkt eine $LC$-Schaltung als Hochpass (hohe Frequenzen passieren nahezu ungehindert die Schaltung)
-oder als Tiefpass (niedrige Frequenzen können die Schaltung passieren).
+Ein $LC$-Schwingkreis besteht dabei aus einer Induktivität $L$ und einer Kapazität $C$.\\
+Je nachdem, wie diese Bauteile im Schwingkreis positioniert sind, wirkt eine $LC$-Schaltung als Hochpass (hohe Frequenzen passieren nahezu ungehindert die Schaltung)
+oder als Tiefpass (niedrige Frequenzen können die Schaltung passieren).\\
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.48\textwidth}
@@ -19,22 +19,23 @@ oder als Tiefpass (niedrige Frequenzen können die Schaltung passieren).
 	\caption{Verschiedene Filterschaltungen aus Induktivitäten und Kapazitäten. \cite{Anleitung}}\label{fig:filter}
 \end{figure}
 In Abbildung \ref{fig:hoch} ist die notwendige Anordnung von Induktivitäten
-und Kondensatoren für einen Hochpass und entsprechend für einen Tiefpass in Abbildung \ref{fig:tief} dargestellt.
+und Kondensatoren für einen Hochpass und entsprechend für einen Tiefpass in Abbildung \ref{fig:tief} dargestellt.\\
 Wie in Abbildung \ref{fig:tief} zu erkennen, haben zwei benachbarte Maschen eine gemeinsame Kapazität. Daher kann die $LC$-Kette analog zur
-Mechanik als System gekoppelter Schwinger betrachtet werden.
-Zudem kann die $LC$-Kette, für den Grenzübergang dass die Anzahl der $LC$-Kettenglieder bei endlicher Kettenlänge gegen unendlich strebt als verlustfreie Leitung betrachtet werden.
+Mechanik als System gekoppelter Schwinger betrachtet werden.\\
+Zudem kann die $LC$-Kette, für den Grenzübergang, dass die Anzahl der $LC$-Kettenglieder bei endlicher Kettenlänge gegen unendlich strebt, als verlustfreie Leitung betrachtet werden.
+\FloatBarrier
 
 \subsection{Dispersion und Dispersionsrelation}
 \label{subsec-dispersion}
 Als Dispersion wird die Abhängigkeit einer Größe von der Frequenz bezeichnet.
-Im vorliegenden Fall lässt sich für den n-ten Knoten der $LC$-Kette mit den Kirchhoffschen Regeln die Schwingungsgleichung herleiten.
+Im vorliegenden Fall lässt sich für den n-ten Knoten der $LC$-Kette mit den Kirchhoffschen Regeln die Schwingungsgleichung herleiten.\\
 Die Schwingungsgleichung lässt sich lösen mit einem Ansatz der Form
 \begin{equation}
 	\centering
 	U(n,t)=U_{\mathrm{0}} \cdot exp(i\cdot( \omega t- n\theta )).
 	\label{eqn:e-ansatz}
 \end{equation}
-Es wird also angenommen, dass alle Maschen der $LC$-Kette mit der gleichen Frequenz $\omega$ schwingen, die Schwingung allerdings beim Durchgang durch jedes Schaltungsglied um die Phase $\sigma$ verschoben wird.
+Es wird also angenommen, dass alle Maschen der $LC$-Kette mit der gleichen Frequenz $\omega$ schwingen, die Schwingung allerdings beim Durchgang durch jedes Schaltungsglied um die Phase $\theta$ verschoben wird.
 Durch Einsetzen von \eqref{eqn:e-ansatz} in die Schwingungsgleichung ergibt sich die Frequenzabhängigkeit der Phasenverschiebung zu
 \begin{equation}
 	\centering
@@ -42,11 +43,15 @@ Durch Einsetzen von \eqref{eqn:e-ansatz} in die Schwingungsgleichung ergibt sich
 	\label{eqn:dispersion}
 \end{equation}
 Aus dieser sogenannten Dispersionsrelation ist ersichtlich, dass die Frequenz \omega nicht beliebige Werte annehmen kann,
-sondern auf einem endlichen Intervall definiert ist.
-Es ergibt sich $0<=\omega<\frac{\sqrt{2}}{\sqrt{LC}}$.
-Die Grenzfrequenz ist somit $\omega_{\mathrm{G}}=\sqrt{\frac{2}{LC}}$.
+sondern auf einem endlichen Intervall definiert ist.\\
+Es ergibt sich
+\begin{equation*}
+	\centering
+	0\leq \omega<\frac{\sqrt{2}}{\sqrt{LC}}.
+\end{equation*}
+%Die Grenzfrequenz ist somit $\omega_{\mathrm{G}}=\sqrt{\frac{2}{LC}}$.
 Wird die Schaltung nun etwas verallgemeinert, indem alternierend Kondensatoren zweier verschiedener Kapazitäten verwendet werden,
-ergibt sich wiederum unter Verwendung der Kirchhoffschen Regeln und unter der Annahmne, das nun jeder zweite Schwingkreis mit der gleichen Amplitude
+ergibt sich wiederum unter Verwendung der Kirchhoffschen Regeln und unter der Annahmne, dass nun jeder zweite Schwingkreis mit der gleichen Amplitude
 schwingt, die Dispersionsrelation
 \begin{equation}
 	\centering
@@ -59,13 +64,29 @@ schwingt, die Dispersionsrelation
 	\caption{Dispersionskurve für eine $LC_{\mathrm{1}}C_{\mathrm{2}}$-Kette mit den auseinanderfallenden Kurvenästen. \cite{Anleitung}}
 	\label{fig:dispersionskurve}
 \end{figure}
-Aufgrund des alternierenden Vorzeichens teilt sich die Dispersionskurve wie in Abbildung \ref{fig:dispersionskurve} zu sehen, in zwei Äste.
-In der Kristallphysik wird der untere Ast als akustischer und der obere Ast als optischer Ast bezeichnet.
+Aufgrund des alternierenden Vorzeichens teilt sich die Dispersionskurve wie in Abbildung \ref{fig:dispersionskurve} zu sehen, in zwei Äste. \\
+In der Kristallphysik wird der untere Ast als akustischer und der obere Ast als optischer Ast bezeichnet.\\
 Es existiert also ein endlicher Frequenzbereich zwischen den Kurvenästen, indem keine Schwingungen angeregt werden können.
+Es ergeben sich also zwei Grenzfrequenzen für die $LC_{\mathrm{1}}C_{\mathrm{2}}$-Kette
+\begin{equation}
+	\centering
+	\label{eqn:wgrenz_lc1c2}
+	\begin{gathered}
+		\omega_{\mathrm{Gr,1}}=\sqrt{\frac{2}{LC_{\mathrm{2}}}} \text{,}\\
+		\omega_{\mathrm{Gr,2}}=\sqrt{\frac{2}{LC_{\mathrm{1}}}} \text{.}
+	\end{gathered}
+\end{equation}
+Die dritte Grenzfrequenz der $LC_{\mathrm{1}}C_{\mathrm{2}}$-Kette ergibt sich aus dem Startwert des optischen Ast zu:
+\begin{equation}
+	\centering
+	\label{eqn:wgrenz_lc1c2-3}
+	\omega_{1}(0)=\omega_{\mathrm{Gr,3}}=\sqrt{\frac{1}{L}\frac{2(C_1+C_2)}{C_1C_2}}.
+\end{equation}
+\FloatBarrier
 
 \subsection{Ausbreitungsgeschwindigkeit von Wellen in LC-Ketten}
-Die Phasengeschwindigkeit wird definiert als des Quotienten der Wellenlänge zur Periodendauer, also der Geschwindigkeit einer bestimmten Phase.
-Nach Gleichung \eqref{eqn:e-ansatz} ergibt sich unter Verwendung der Dispersionsrelation  \eqref{eqn:dispersion2}
+Die Phasengeschwindigkeit wird definiert als Quotient der Wellenlänge zur Periodendauer, also als Geschwindigkeit einer bestimmten Phase.
+Nach Gleichung \eqref{eqn:e-ansatz} ergibt sich unter Verwendung der Dispersionsrelation  \eqref{eqn:dispersion}
 \begin{equation}
 	\centering
 	\label{eqn:v-phase}
@@ -75,11 +96,19 @@ $v_{\mathrm{Ph}}$ ist also zeitlich und räumlich unbeschränkt. Die Phasengesch
 Zur Signalübertragung wird ein Wellenpaket benötigt.
 Die Geschwindigkeit mit welcher ein Signal auf einer LC-Kette weitergeleitet wird, heißt Gruppengeschwindigkeit.
 Die Gruppengeschwindigkeit bezeichnet dabei die Geschwindigkeit des Maximums der Einhüllenden des Wellenpakets.
-Für unterschiedliche Phasengeschwindigkeiten kann also das Wellenpaket zerfließen.
-Wie bereits in Abschnitt \ref{subsec-dispersion} erwähnt, ist $\omega$ auf einem endlichen Intervall definiert.
-Für Frequenzen $\omega>=\frac{2}{\sqrt{LC}}$ würde die Gruppengeschwindigkeit imaginär werden und folglich kein Signal übertragen werden können.
+Für unterschiedliche Phasengeschwindigkeiten kann also das Wellenpaket zerfließen.\\
+%Wie bereits in Abschnitt \ref{subsec-dispersion} erwähnt, ist $\omega$ auf einem endlichen Intervall definiert.
+Für Frequenzen $\omega\geq\frac{2}{\sqrt{LC}}$ würde die Gruppengeschwindigkeit imaginär werden und folglich kein Signal übertragen werden können.
+Die Grenzfrequenz der $LC$-Kette ergibt sich somit zu
+\begin{equation}
+	\centering
+	\label{eqn:wgrenz_lc}
+	\omega_{\mathrm{Gr}}=\frac{2}{\sqrt{LC}}.
+\end{equation}
+\FloatBarrier
+
 \subsection{Wellenwiderstand der unendlichen Kette}
-Als Eingangswiderstand der $LC$-Kette wird der Quotient aus der Spannung $U_{\mathrm{0}}$ am 1. Kondensator der Kette mit der Kapazität $\frac{C}{2}$ und dem Strom $I_{\mathrm{0}}$ welcher in die Schaltung fließt, definiert.
+Als Eingangswiderstand der $LC$-Kette wird der Quotient aus der Spannung $U_{\mathrm{0}}$ am 1. Kondensator der Kette mit der Kapazität $\frac{C}{2}$ und dem Strom $I_{\mathrm{0}}$ welcher in die Schaltung fließt, definiert.\\
 Mit den Kirchhoffschen Regeln und der bereits gefundenen Dispersionsrelation lässt sich der Eingangswiderstand $Z$ der $LC$-Kette berechnen.
 Der Eingangswiderstand wird auch als Wellenwiderstand der $LC$-Kette bezeichnet und ergibt sich zu:
 \begin{equation}
@@ -88,7 +117,7 @@ Der Eingangswiderstand wird auch als Wellenwiderstand der $LC$-Kette bezeichnet 
 	Z(\omega)=\frac{U_{\mathrm{0}}}{I_{\mathrm{0}}}=\sqrt{\frac{L}{C}}\cdot \frac{1}{\sqrt{1-\frac{1}{4}\omega^2LC}}.
 \end{equation}
 Trotz der imaginären Impedanzen ist $Z(\omega)$ also reell.
-Für Frequenzen $\omega<<\omega_{\mathrm{G}}$ ist also $Z(\omega)$ nahezu konstant $\sqrt{\frac{L}{C}}$.\\
+Für Frequenzen $\omega \ll \omega_{\mathrm{G}}$ ist also $Z(\omega)$ nahezu konstant $\sqrt{\frac{L}{C}}$.\\
 Die Frequenzabhängigkeit des Wellenwiderstands ist in Abbildung \ref{fig:impedanz} dargestellt.
 \begin{figure}
 	\centering
@@ -97,6 +126,7 @@ Die Frequenzabhängigkeit des Wellenwiderstands ist in Abbildung \ref{fig:impeda
 	\label{fig:impedanz}
 \end{figure}
 Zudem ist $Z(\omega)$ nicht abhängig von der Anzahl der Kettenglieder. Eine unendliche $LC$-Kette lässt sich also simulieren, indem eine $LC$-Kette mit endlicher Anzahl an Kettengliedern mit einem nach Gleichung \eqref{eqn:wellenwiderstand} berechneten Widerstand abgeschlossen wird.
+\FloatBarrier
 
 \subsection{Endlich lange $LC$-Kette}
 Wenn die $LC$-Kette also mit einem Widerstand $R$ welcher dem Wellenwiderstand $Z$ entspricht, abgeschlossen wird, zeigt sich keine
@@ -109,11 +139,11 @@ Das Verhältnis der reflektierten Spannung $U_{\mathrm{r}}$ zur Eingangsspannung
 	\frac{U_{\mathrm{r}}}{U}=\frac{R-Z}{R+Z}.
 \end{equation}
 
-Für $R=0$, also einen Kurzschluss am Kettenende, gilt also $U_{\mathrm{r}}=-U$. Die Spannungswelle wird also mit dem Phasensprung $\pi$ reflektiert.
-Für $R=\infty$ besitzt die Kette ein offenes Ende. Die Spannungswelle wird also ohne Phasensprung vollständig reflektiert.
-Wie bereits erwähnt, findet für $R=Z$ keine Reflektion statt.
+Für $R=0$, also einen Kurzschluss am Kettenende, gilt $U_{\mathrm{r}}=-U$. Die Spannungswelle wird mit dem Phasensprung $\pi$ reflektiert.
+Für $R=\infty$ besitzt die Kette ein offenes Ende. Die Spannungswelle wird ohne Phasensprung vollständig reflektiert.
+Wie bereits erwähnt, findet für $R=Z$ keine Reflektion statt. \\
 Für andere $R$ treten Teilreflexionen auf.
-Für bestimmte Abschlusswiderstände $R$ lassen sich also durch Überlagerung der hinlaufenden Welle $A_{\mathrm{hin}}$und der reflektierten Welle $A_{\mathrm{ref}}$ stehende Wellen auf der $LC$-Kette beobachten.
+Für geeignete Abschlusswiderstände $R$ lassen sich durch Überlagerung der hinlaufenden Welle $A_{\mathrm{hin}}$ und der reflektierten Welle $A_{\mathrm{ref}}$ stehende Wellen auf der $LC$-Kette beobachten.\\
 Aus der Superposition der beiden Wellen ergibt sich, dass für $R=\infty$, bzw. für $R=0$ für
 \begin{equation}
 	\centering
@@ -121,7 +151,7 @@ Aus der Superposition der beiden Wellen ergibt sich, dass für $R=\infty$, bzw. 
 	\label{eqn:label1}
 \end{equation}
 eine stehende Welle ausgebildet wird.
-Für $R=\infty$ tritt ein Spannungsbauch und für $R=0$ ein Spannungsknoten an den Kettenenden auf.
+Für $R=\infty$ tritt hierbei ein Spannungsbauch und für $R=0$ ein Spannungsknoten an den Kettenenden auf. \\
 Zudem können stehende Wellen auftreten wenn am Anfang der $LC$-Kette ein  Spannungsbauch und am Kettenende ein Spannungsknoten, bzw. umgekehrt, vorliegen.
 Die Bedingung hierfür lautet:
 \begin{equation}
@@ -129,5 +159,5 @@ Die Bedingung hierfür lautet:
 	N_{\mathrm{max}} \theta_{\mathrm{l}}=l \frac{\pi}{2}  \,\,\,\mathrm{ für } \,\,\, l=0,1,3,5...,2N_{\mathrm{max}-1}.
 	\label{eqn:label2}
 \end{equation}
-Es lassen sich also insgesamt $2N_{\mathrm{max}}$ Eigenschwingungen auf der $LC$-Kette anregen.
+Es lassen sich also insgesamt $2N_{\mathrm{max}}$ Eigenschwingungen auf der $LC$-Kette anregen.\\
 Die Frequenzen, bei denen die Eigenschwingungen und damit stehende Wellen ausgebildet werden, lassen sich jeweils über die Dispersionsrelation \eqref{eqn:dispersion} unter Verwendung der Gleichung \eqref{eqn:label1} beziehungsweise \eqref{eqn:label2} bestimmen.

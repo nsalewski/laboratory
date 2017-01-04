@@ -1,12 +1,7 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
-Es wurden Bauteile mit folgenden Größen verwendet:
-\begin{gather*}
-	L = \SI{1.217}{\milli\henry} \text{,} \\
-	C_1 = \SI{20.13}{\nano\farad} \text{,} \\
-	C_2 = \SI{9.41}{\nano\farad} \text{.}
-\end{gather*}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -14,12 +9,12 @@ Es wurden Bauteile mit folgenden Größen verwendet:
 \subsection{Ermittlung der Grenzfrequenzen aus Durchlasskurven}
 
 \subsubsection{Durchlasskurve der LC-Kette}
-\label{sec:durchLC}
-Der theoretische Wert für die Grenzfrequenz $f_{\text{G}}$ ergibt sich mit 
+
+Der theoretische Wert für die Grenzfrequenz $f_{\text{G}}$ ergibt sich nach Formel \eqref{eqn:wgrenz_lc} zu
 \begin{equation}
 	f_{\text{G}} = \frac{1}{\pi \sqrt{LC}} \text{.}
 \end{equation}
-Man erhält nach Einsetzen der Werte für die theoretische Grenzfrequenz
+Man erhält nach Einsetzen der Bauteilgrößen für die theoretische Grenzfrequenz
 \begin{equation*}
 	f_{\text{G}} = \SI{64310.7}{\hertz} \, \text{.}
 \end{equation*}
@@ -28,7 +23,7 @@ Die mit dem X-Y-Schreiber aufgezeichnete Durchlasskurve für die LC-Kette ist in
 \ref{fig:durchiLC} zu sehen.
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{Bilder/durchlasskurve_lc_kette.jpg}
+	\includegraphics[width=1.02\textwidth]{Bilder/durchlasskurve_lc_kette.jpg}
 	\caption{Durchlasskurve der LC-Kette: Ausgangsspannung $U_{\text{aus}}$ gegen die
 		Frequenz $\omega$ aufgetragen.}
 	\label{fig:durchiLC}
@@ -55,33 +50,33 @@ auf dem Millimeterpapier und die Frequenzen $f$ der zu diesem Zeitpunkt abgelese
 		\bottomrule
 	\end{tabular}
 \end{table}
-Aus den Messdaten in Tabelle \ref{tab:skalaLC} wird nun aufgrund der logarithmischen 
-Abhängigkeit von $x$ von der Frequenz $f$ eine Ausgleichsrechnung mit der Funktion 
-$f(x) = a \cdot \mathrm{e}^{bx}$ durchgeführt. 
+Aus den Messdaten in Tabelle \ref{tab:skalaLC} wird nun aufgrund der logarithmischen
+Abhängigkeit von $x$ von der Frequenz $f$ eine Ausgleichsrechnung mit der Funktion
+$f(x) = a \cdot \mathrm{e}^{bx}$ durchgeführt.
 Für die Paramter erhält man:
 \begin{gather*}
 	a = (29,79 \pm 0,55) \, \si{\kilo\hertz} \, \text{,}  \\
 	b = (0,0525 \pm 0,0010) \, \si{\centi\meter} \text{.}
 \end{gather*}
-Damit ergibt sich die Skalierung der $x$-Achse zu 
+Damit ergibt sich die Skalierung der $x$-Achse zu
 \begin{equation}
 	f(x) = a \cdot \mathrm{e}^{bx} \text{,}
 \end{equation}
 mit den Paramtern oben.
 
-Aus der Durchlasskurve in Abbildung \ref{fig:durchiLC} lässt sich die $x$-Position mit einem 
+Aus der Durchlasskurve in Abbildung \ref{fig:durchiLC} lässt sich die $x$-Position mit einem
 Ablesefehler zu $x_{\text{G}} = (14,6 \pm 0,1) \, \si{\centi\meter}$ bestimmen.
-Damit erhält man für die Grenzfrequenz mit Gaußscher Fehlerfortpflanzung (Formel 
+Damit erhält man für die Grenzfrequenz mit Gaußscher Fehlerfortpflanzung (Formel
 \eqref{eqn:fehlerfortpflanzung}):
 \begin{equation*}
-	f_{\text{G}} = (64,115 \pm 1,546 ) \, \si{\kilo\hertz} \text{.} 
+	f_{\text{G}} = (64,115 \pm 1,546 ) \, \si{\kilo\hertz} \text{.}
 \end{equation*}
 
 
 \FloatBarrier
 \subsubsection{Durchlasskurve der LC$_1$C$_2$-Kette}
 
-Die theoretischen Grenzfrequenzen für die LC$_1$C$_2$-Kette mit den Werten für 
+Die theoretischen Grenzfrequenzen für die LC$_1$C$_2$-Kette mit den Werten für
 $L$, $C_1$ und $C_2$ ergeben sich zu:
 \begin{gather*}
 	f_0 = \frac{1}{2\pi} \sqrt{\frac{2}{LC_1}} = \SI{45475}{\hertz} \text{,} \\
@@ -93,7 +88,7 @@ Die Durchlasskurve der LC$_1$C$_2$-Kette ist in Abbildung \ref{fig:durchiLCC} da
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.8\textwidth]{Bilder/durchlasskurve_lc1c2.jpg}
+	\includegraphics[width=1.02\textwidth]{Bilder/durchlasskurve_lc1c2.jpg}
 	\caption{Durchlasskurve der LC$_1$C$_2$-Kette: Ausgangsspannung $U_{\text{aus}}$ gegen
 		die Frequenz $\omega$ aufgetragen.}
 	\label{fig:durchiLCC}
@@ -120,7 +115,7 @@ Die Messwerte für die Referenzpunkte zur Skalarierung der $x$-Achse sind in Tab
 		\bottomrule
 	\end{tabular}
 \end{table}
-Analog wie in Abschnitt \ref{sec:durchLC} ergeben sich die Paramater der Ausgleichsfunktion 
+Analog wie in Abschnitt \ref{sec:durchLC} ergeben sich die Paramater der Ausgleichsfunktion
 \begin{equation*}
 	f(x) = a \cdot \mathrm{e}^{bx}
 \end{equation*}
@@ -129,16 +124,16 @@ zu
 	a = (29,56 \pm 0,68) \, \si{\kilo\hertz} \text{,} \\
 	b = (0,0525 \pm 0,0012) \, \si{\centi\meter} \text{.}
 \end{gather*}
-Die Positionen $x_\text{n}$ der Grenzfrequenzen lassen sich aus Abbildung \ref{fig:durchiLCC} 
+Die Positionen $x_\text{n}$ der Grenzfrequenzen lassen sich aus Abbildung \ref{fig:durchiLCC}
 ablesen, man erhält:
 \begin{gather*}
-	x_0 = (10,8 \pm 0,1) \, \si{\centi\meter} \, \text{,} \\ 
-	x_1 = (15,5 \pm 0,1) \, \si{\centi\meter} \, \text{,} \\ 
+	x_0 = (10,8 \pm 0,1) \, \si{\centi\meter} \, \text{,} \\
+	x_1 = (15,5 \pm 0,1) \, \si{\centi\meter} \, \text{,} \\
 	x_2 = (18,9 \pm 0,1) \, \si{\centi\meter} \, \text{.}
 \end{gather*}
 
-Mittels der Skalarierungsfunktion, den bestimmten Paramatern und Gaußscher Fehlerfortpflanzung 
-(Formel \eqref{eqn:fehlerfortpflanzung}) erhält man nun die drei Grenzfrequenzen der 
+Mittels der Skalarierungsfunktion, den bestimmten Paramatern und Gaußscher Fehlerfortpflanzung
+(Formel \eqref{eqn:fehlerfortpflanzung}) erhält man nun die drei Grenzfrequenzen der
 LC$_1$C$_2$-Kette zu:
 \begin{gather*}
 	f_0 = (52,170 \pm 1,405) \, \si{\kilo\hertz} \, \text{,} \\
@@ -245,12 +240,13 @@ Die theoretische Dispersionskurve nach Gleichung \eqref{eqn:dispersion2} mit den
 \FloatBarrier
 \subsection{Phasengeschwindigkeit in einer $LC$-Kette}
 
-Aus den bestimmten Eigenfrequenzen $f$ der $LC$-Kette und den zugehörigen Phasenverschiebungen $\theta$ lassen sich nach Formel \eqref{eqn:v-phase} die jeweiligen Phasengeschwindigkeiten berechnen.
-Die Theoriekurve ergibt sich ebenso nach Formel \eqref{eqn:v-phase}.
-$\theta$, also die Phasenverschiebung pro Kettenglied, ergibt sich aus der Phasenverschiebung $\phi$ über die gesamte $LC$-Kette dividiert durch die Anzahl der Kettenglieder $n=14$.
-In Tabelle \ref{tab:c} finden sich die bestimmten Nummern der Entartungen $n$ der Lissajou-Figuren, welche jeweils der Phasenverschiebung über der ganzen $LC$-Kette mit $\phi=n\pi$ entsprechen mit den zugehörigen Eigenfrequenzen $f$.
-Zudem werden die Eigenfrequenzen umgerechnet in die Kreisfrequenz $\omega$ und die Phasenverschiebung pro Kettenglied $\theta$ in die Tabelle eingetragen.
-In der fünften Spalte ist die Phasengeschwindigkeit nach $v_{\mathrm{Ph}}=\frac{\omega}{\theta}$ eingetragen.
+Aus den bestimmten Eigenfrequenzen $f$ der $LC$-Kette und den zugehörigen Phasenverschiebungen $\theta$ lassen sich nach Formel \eqref{eqn:v-phase} die jeweiligen Phasengeschwindigkeiten berechnen.\\
+Die Theoriekurve ergibt sich ebenso nach Formel \eqref{eqn:v-phase}.\\
+$\theta$, also die Phasenverschiebung pro Kettenglied, ergibt sich aus der Phasenverschiebung $\phi$ über die gesamte $LC$-Kette dividiert durch die Anzahl der Kettenglieder $n=14$.\\
+In Tabelle \ref{tab:c} finden sich die Nummern der Entartungen $n$ der Lissajou-Figuren zu Geraden, welche der Phasenverschiebung $\phi$ über der gesamten $LC$-Kette mit $\phi=n\pi$ entsprechen samt den zugehörigen Eigenfrequenzen $f$.\\
+Zudem werden die Eigenfrequenzen umgerechnet in die Kreisfrequenz $\omega$ und die Phasenverschiebung pro Kettenglied $\theta$ in die Tabelle eingetragen. \\
+In der fünften Spalte findet sich die Phasengeschwindigkeit nach $v_{\mathrm{Ph}}=\frac{\omega}{\theta}$.
+
 In Abbildung \ref{fig:plotc} sind die gefundenden Messwerte der Phasengeschwindigkeit im Vergleich zur Theoriekurve aufgetragen.
 \begin{table}
 	\caption{Phasengeschwindigkeiten zu den jeweiligen Eigenfrequenzen der $LC$-Kette.}
@@ -315,15 +311,19 @@ Die gemessenen Spannungsamplituden an jedem Kettenglied bei der 1. und 2. Eigens
 \end{table}
 
 Die Grundschwingung, also die erste Eigenschwingung der $LC$-Kette, betrug $w_{\mathrm{0}}=7.5 \,\si{\kilo\Hz}$, die erste Oberschwingung, also die 2. Eigenschwingung betrug $w_{\mathrm{1}}=14.7 \,\si{\kilo\Hz}$.
+
 Nach Formel  \eqref{eqn:abschluss} wird bei der beidseitig offenen $LC$-Kette, also $R=\infty$ an den Enden der LC-Kette ein Maximum der Spannungsamplitude angenommen, sowie kein Phasensprung am Kettenende erwartet.
-In Abbildung \ref{fig:plotdeins} sind die jeweilig gemessenen Spannungsamplituden bei den ersten beiden Eigenschwingungen gegen die Kettenglieder aufgetragen.
+
+In Abbildung \ref{fig:plotdeins} sind die jeweilig gemessenen Spannungsamplituden bei den ersten beiden Eigenschwingungen gegen die Nummer der Kettenglieder aufgetragen.
+
 Der erwartete Spannungsverlauf einer stehenden Cosinus-Welle wird durch die Messdaten annähernd erreicht. Die stehende Welle weist bei der Grundschwingung einen Spannungsknoten etwa in der Mitte der $LC$-Kette auf, während an den Enden Spannungsbäuche auftreten.
 Daher findet auch wie erwartet kein Phasensprung am Kettenende statt.
 Der Spannungsverlauf bei der ersten Eigenschwingung bildet sich eine stehende Welle mit halber Wellenlänge.
-In Abbildung \ref{fig:plotd} erkennt man ebenso den erwarteten Verlauf der Spannungsamplituden für die zweite Eigenschwingung.
+
+In Abbildung \ref{fig:plotd} zeigt sich ebenso der erwarteten Verlauf der Spannungsamplituden für die zweite Eigenschwingung.\\
 Erneut zeigen sich an Anfang und Ende der $LC$-Kette Spanungsbäuche, es findet also wieder wie erwartet kein Phasensprung am Kettenende statt.
 Etwa in der Mitte der $LC$-Kette zeigt sich ein dritter Wellenbauch und es ergeben sich somit 2 Schwingungsknoten und 3 Schwingungsbäuche.
-Die erste Oberschwingung weist also genau eine Wellenlänge auf.
+Die erste Oberschwingung weist somit genau eine Wellenlänge auf.
 \begin{figure}
 	\centering
 	\includegraphics{Bilder/d.pdf}
@@ -339,9 +339,11 @@ Die erste Oberschwingung weist also genau eine Wellenlänge auf.
 \end{figure}
 \FloatBarrier
 \subsection{Spannungsverlauf der mit dem Wellenwiderstand $Z$ abgeschlossenen $LC$-Kette}
-Für eine geschlossene $LC$-Kette mit dem Wellenwiderstand $Z$ als Abschlusswiderstand wird keine Reflektion am Kettenende erwartet und damit dürften sich auch keine stehenden Wellen bilden.
-Der Wellenwiderstand ergibt sich nach Formel \eqref{eqn:wellenwiderstand} etwa zu $Z=246 \,\si{\ohm}$.
+Für eine geschlossene $LC$-Kette mit dem Wellenwiderstand $Z$ als Abschlusswiderstand wird keine Reflektion am Kettenende erwartet und damit dürften sich auch keine stehenden Wellen bilden.\\
+Der Wellenwiderstand ergibt sich nach Formel \eqref{eqn:wellenwiderstand} etwa zu $Z=246 \,\si{\ohm}$.\\
+
 In Tabelle \ref{tab:lame} finden sich die gemessenen Spannungsamplituden für die erste Eigenschwingung der $LC$-Kette an den jeweiligen Kettengliedern.
+
 In Abbildung \ref{fig:really?!} sind die Spannungsamplituden gegen die Orte auf der $LC$-Kette -also die Nummern der jeweiligen Masche der Kette- aufgetragen.
 \begin{table}
 	\centering
@@ -370,7 +372,7 @@ In Abbildung \ref{fig:really?!} sind die Spannungsamplituden gegen die Orte auf 
 \end{table}
 
 Es zeigt sich der erwartete Verlauf. Es lässt sich eine konstante Spannungsamplitude an jedem Kettenglied feststellen.
-Somit hat sich keine stehende Welle ausgeprägt und es findet, wie erwartet, für den Wellenwiderstand als Abschlusswiderstand keine Reflektion am Kettenende statt.
+Somit hat sich keine stehende Welle ausgeprägt und es findet, wie erwartet, für den Wellenwiderstand als Abschlusswiderstand, keine Reflektion am Kettenende statt.
 
 
 \begin{figure}
