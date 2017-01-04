@@ -3,8 +3,8 @@
 
 Es wurden Bauteile mit folgenden Größen verwendet:
 \begin{gather*}
-	L = \SI{1.217}{\milli\henry} \\
-	C_1 = \SI{20.13}{\nano\farad} \\
+	L = \SI{1.217}{\milli\henry} \text{,} \\
+	C_1 = \SI{20.13}{\nano\farad} \text{,} \\
 	C_2 = \SI{9.41}{\nano\farad} \text{.}
 \end{gather*}
 
@@ -14,7 +14,8 @@ Es wurden Bauteile mit folgenden Größen verwendet:
 \subsection{Ermittlung der Grenzfrequenzen aus Durchlasskurven}
 
 \subsubsection{Durchlasskurve der LC-Kette}
-Der theoretische Wert für die Grenzfrequenz $f_{\text{G}}$ ergibt sich mit
+\label{sec:durchLC}
+Der theoretische Wert für die Grenzfrequenz $f_{\text{G}}$ ergibt sich mit 
 \begin{equation}
 	f_{\text{G}} = \frac{1}{\pi \sqrt{LC}} \text{.}
 \end{equation}
@@ -54,11 +55,39 @@ auf dem Millimeterpapier und die Frequenzen $f$ der zu diesem Zeitpunkt abgelese
 		\bottomrule
 	\end{tabular}
 \end{table}
+Aus den Messdaten in Tabelle \ref{tab:skalaLC} wird nun aufgrund der logarithmischen 
+Abhängigkeit von $x$ von der Frequenz $f$ eine Ausgleichsrechnung mit der Funktion 
+$f(x) = a \cdot \mathrm{e}^{bx}$ durchgeführt. 
+Für die Paramter erhält man:
+\begin{gather*}
+	a = (29,79 \pm 0,55) \, \si{\kilo\hertz} \, \text{,}  \\
+	b = (0,0525 \pm 0,0010) \, \si{\centi\meter} \text{.}
+\end{gather*}
+Damit ergibt sich die Skalierung der $x$-Achse zu 
+\begin{equation}
+	f(x) = a \cdot \mathrm{e}^{bx} \text{,}
+\end{equation}
+mit den Paramtern oben.
 
+Aus der Durchlasskurve in Abbildung \ref{fig:durchiLC} lässt sich die $x$-Position mit einem 
+Ablesefehler zu $x_{\text{G}} = (14,6 \pm 0,1) \, \si{\centi\meter}$ bestimmen.
+Damit erhält man für die Grenzfrequenz mit Gaußscher Fehlerfortpflanzung (Formel 
+\eqref{eqn:fehlerfortpflanzung}):
+\begin{equation*}
+	f_{\text{G}} = (64,115 \pm 1,546 ) \, \si{\kilo\hertz} \text{.} 
+\end{equation*}
 
 
 \FloatBarrier
 \subsubsection{Durchlasskurve der LC$_1$C$_2$-Kette}
+
+Die theoretischen Grenzfrequenzen für die LC$_1$C$_2$-Kette mit den Werten für 
+$L$, $C_1$ und $C_2$ ergeben sich zu:
+\begin{gather*}
+	f_0 = \frac{1}{2\pi} \sqrt{\frac{2}{LC_1}} = \SI{45475}{\hertz} \text{,} \\
+	f_1 = \frac{1}{2\pi} \sqrt{\frac{2}{LC_2}} = \SI{66511}{\hertz} \text{,} \\
+	f_2 = \frac{1}{2\pi} \sqrt{\frac{2}{L} \frac{C_1+C_2}{C_1C_2}} = \SI{80571}{\hertz} \text{.}
+\end{gather*}
 
 Die Durchlasskurve der LC$_1$C$_2$-Kette ist in Abbildung \ref{fig:durchiLCC} dargestellt.
 
@@ -91,9 +120,31 @@ Die Messwerte für die Referenzpunkte zur Skalarierung der $x$-Achse sind in Tab
 		\bottomrule
 	\end{tabular}
 \end{table}
+Analog wie in Abschnitt \ref{sec:durchLC} ergeben sich die Paramater der Ausgleichsfunktion 
+\begin{equation*}
+	f(x) = a \cdot \mathrm{e}^{bx}
+\end{equation*}
+zu
+\begin{gather*}
+	a = (29,56 \pm 0,68) \, \si{\kilo\hertz} \text{,} \\
+	b = (0,0525 \pm 0,0012) \, \si{\centi\meter} \text{.}
+\end{gather*}
+Die Positionen $x_\text{n}$ der Grenzfrequenzen lassen sich aus Abbildung \ref{fig:durchiLCC} 
+ablesen, man erhält:
+\begin{gather*}
+	x_0 = (10,8 \pm 0,1) \, \si{\centi\meter} \, \text{,} \\ 
+	x_1 = (15,5 \pm 0,1) \, \si{\centi\meter} \, \text{,} \\ 
+	x_2 = (18,9 \pm 0,1) \, \si{\centi\meter} \, \text{.}
+\end{gather*}
 
-
-
+Mittels der Skalarierungsfunktion, den bestimmten Paramatern und Gaußscher Fehlerfortpflanzung 
+(Formel \eqref{eqn:fehlerfortpflanzung}) erhält man nun die drei Grenzfrequenzen der 
+LC$_1$C$_2$-Kette zu:
+\begin{gather*}
+	f_0 = (52,170 \pm 1,405) \, \si{\kilo\hertz} \, \text{,} \\
+	f_1 = (66,801 \pm 2,007) \, \si{\kilo\hertz} \, \text{,} \\
+	f_2 = (79,883 \pm 2,615) \, \si{\kilo\hertz} \, \text{.}
+\end{gather*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Teil b)
