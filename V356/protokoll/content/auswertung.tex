@@ -1,6 +1,100 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 
+Es wurden Bauteile mit folgenden Größen verwendet:
+\begin{gather*}
+	L = \SI{1.217}{\milli\henry} \\
+	C_1 = \SI{20.13}{\nano\farad} \\
+	C_2 = \SI{9.41}{\nano\farad} \text{.}
+\end{gather*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Teil a)
+\subsection{Ermittlung der Grenzfrequenzen aus Durchlasskurven}
+
+\subsubsection{Durchlasskurve der LC-Kette}
+Der theoretische Wert für die Grenzfrequenz $f_{\text{G}}$ ergibt sich mit 
+\begin{equation}
+	f_{\text{G}} = \frac{1}{\pi \sqrt{LC}} \text{.}
+\end{equation}
+Man erhält nach Einsetzen der Werte für die theoretische Grenzfrequenz 
+\begin{equation*}
+	f_{\text{G}} = \SI{64310.7}{\hertz} \, \text{.}
+\end{equation*}
+
+Die mit dem X-Y-Schreiber aufgezeichnete Durchlasskurve für die LC-Kette ist in Abbildung 
+\ref{fig:durchiLC} zu sehen.
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Bilder/durchlasskurve_lc_kette.jpg}
+	\caption{Durchlasskurve der LC-Kette: Ausgangsspannung $U_{\text{aus}}$ gegen die 
+	Frequenz $\omega$ aufgetragen.}
+	\label{fig:durchiLC}
+\end{figure}
+Die Referenzpunkte für die Skalarierung des Millimeterpapiers sind in Tabelle 
+\ref{tab:skalaLC} aufgetragen. Hierbei entsprechen die $x$-Werte der horizontalen Position 
+auf dem Millimeterpapier und die Frequenzen $f$ der zu diesem Zeitpunkt abgelesenen Frequenz.
+
+\begin{table}
+	\caption{Messdaten zur Skalierung der $x$-Achse des Millimeterpapiers bei der 
+	Durchlasskurve der LC-Kette.}
+	\label{tab:skalaLC}
+	\centering
+	\begin{tabular}{cc}
+	\toprule
+	$x$/$\si{\centi\meter}$ & $f$/$\si{\kilo\hertz}$ \\
+	\midrule
+		4.0 & 37.72 \\
+		8.0 & 45.22 \\
+		12.0 & 56.25 \\
+		16.0 & 67.84 \\
+		20.0 & 84.24 \\
+		24.0 & 105.80 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+\FloatBarrier
+\subsubsection{Durchlasskurve der LC$_1$C$_2$-Kette}
+
+Die Durchlasskurve der LC$_1$C$_2$-Kette ist in Abbildung \ref{fig:durchiLCC} dargestellt.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Bilder/durchlasskurve_lc1c2.jpg}
+	\caption{Durchlasskurve der LC$_1$C$_2$-Kette: Ausgangsspannung $U_{\text{aus}}$ gegen 
+	die Frequenz $\omega$ aufgetragen.}
+	\label{fig:durchiLCC}
+\end{figure}
+
+Die Messwerte für die Referenzpunkte zur Skalarierung der $x$-Achse sind in Tabelle 
+\ref{tab:skalaLCC} aufgetragen.
+
+\begin{table}
+	\caption{Messdaten zur Skalierung der $x$-Achse des Millimeterpapiers bei der 
+	Durchlasskurve der LC$_1$C$_2$-Kette.}
+	\label{tab:skalaLCC}
+	\centering
+	\begin{tabular}{cc}
+	\toprule
+	$x$/$\si{\centi\meter}$ & $f$/$\si{\kilo\hertz}$ \\
+	\midrule
+		4.0 & 36.50 \\
+		8.0 & 45.15 \\
+		12.0 & 56.60 \\
+		16.0 & 68.21 \\
+		20.0 & 82.77 \\
+		24.0 & 105.48 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Teil b)
 \FloatBarrier
