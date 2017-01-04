@@ -4,7 +4,21 @@ Als $LC$-Kette wird eine Kette aus $LC$-Schwingkreisen bezeichnet.
 Ein $LC$-Schwingkreis besteht dabei aus einer Induktivität $L$ und einer Kapazität $C$. Je nachdem, wie diese Bauteile
 im Schwingkreis positioniert sind, wirkt eine $LC$-Schaltung als Hochpass (hohe Frequenzen passieren nahezu ungehindert die Schaltung)
 oder als Tiefpass (niedrige Frequenzen können die Schaltung passieren).
-In Abbildung \ref{fig: hoch} ist die notwendige Anordnung von Induktivitäten
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/hochpass_schema.png}
+        \caption{Prinzipieller Aufbau eines Hochpass.}
+        \label{fig:hoch}
+    \end{subfigure}
+    \begin{subfigure}{0.48\textwidth}
+        \includegraphics[width=\textwidth]{Bilder/tiefpass_schema.png}
+        \caption{Prinzipieller Aufbau eines Tiefpass.}
+        \label{fig:tief}
+    \end{subfigure}
+    \caption{Verschiedene Filterschaltungen aus Induktivitäten und Kapazitäten. \cite{Anleitung}}\label{fig:filter}
+\end{figure}
+In Abbildung \ref{fig:hoch} ist die notwendige Anordnung von Induktivitäten
 und Kondensatoren für einen Hochpass und entsprechend für einen Tiefpass in Abbildung \ref{fig:tief} dargestellt.
 Wie in Abbildung \ref{fig:tief} zu erkennen, haben zwei benachbarte Maschen eine gemeinsame Kapazität. Daher kann die $LC$-Kette analog zur
 Mechanik als System gekoppelter Schwinger betrachtet werden.
@@ -13,8 +27,7 @@ Zudem kann die $LC$-Kette, für den Grenzübergang dass die Anzahl der $LC$-Kett
 \subsection{Dispersion und Dispersionsrelation}
 \label{subsec-dispersion}
 Als Dispersion wird die Abhängigkeit einer Größe von der Frequenz bezeichnet.
-Im vorliegenden Fall lässt sich für den n-ten Knoten der $LC$-Kette (vergleiche dazu
-Abbildung \eqref{fig:nterknoten}) mit den Kirchhoffschen Regeln die Schwingungsgleichung herleiten.
+Im vorliegenden Fall lässt sich für den n-ten Knoten der $LC$-Kette mit den Kirchhoffschen Regeln die Schwingungsgleichung herleiten.
 Die Schwingungsgleichung lässt sich lösen mit einem Ansatz der Form
 \begin{equation}
 \centering
@@ -40,6 +53,12 @@ schwingt, die Dispersionsrelation
  \omega_{1,2}^2=\frac{1}{L}\left ( \frac{1}{C_{\mathrm{1}}}+\frac{1}{C_{\mathrm{2}}} \right ) \pm \frac{1}{L} \cdot \sqrt{\left ( \frac{1}{C_{\mathrm{1}}}+\frac{1}{C_{\mathrm{2}}} \right )^2-\frac{\left(2\cdot sin(\theta)\right)^2}{C_{\mathrm{1}}C_{\mathrm{2}}}}
   \label{eqn:dispersion2}
 \end{equation}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\textwidth]{Bilder/Dispersionäste.png}
+    \caption{Dispersionskurve für eine $LC_{\mathrm{1}}C_{\mathrm{2}}$-Kette mit den auseinanderfallenden Kurvenästen. \cite{Anleitung}}
+    \label{fig:dispersionskurve}
+\end{figure}
 Aufgrund des alternierenden Vorzeichens teilt sich die Dispersionskurve wie in Abbildung \ref{fig:dispersionskurve} zu sehen, in zwei Äste.
 In der Kristallphysik wird der untere Ast als akustischer und der obere Ast als optischer Ast bezeichnet.
 Es existiert also ein endlicher Frequenzbereich zwischen den Kurvenästen, indem keine Schwingungen angeregt werden können.
@@ -69,8 +88,14 @@ Der Eingangswiderstand wird auch als Wellenwiderstand der $LC$-Kette bezeichnet 
 Z(\omega)=\frac{U_{\mathrm{0}}}{I_{\mathrm{0}}}=\sqrt{\frac{L}{C}}\cdot \frac{1}{\sqrt{1-\frac{1}{4}\omega^2LC}}.
 \end{equation}
 Trotz der imaginären Impedanzen ist $Z(\omega)$ also reell.
-Für Frequenzen $\omega<<\omega_{\mathrm{G}}$ ist also $Z(\omega)$ nahezu konstant $\sqrt{\frac{L}{C}}$.
+Für Frequenzen $\omega<<\omega_{\mathrm{G}}$ ist also $Z(\omega)$ nahezu konstant $\sqrt{\frac{L}{C}}$.\\
 Die Frequenzabhängigkeit des Wellenwiderstands ist in Abbildung \ref{fig:impedanz} dargestellt.
+\begin{figure}
+    \centering
+\includegraphics[width=0.8\textwidth]{Bilder/frequenzabhäng_d_impedanz.png}
+    \caption{Frequenzabhängigkeit des Wellenwiderstands der unendlichen Kette. \cite{Anleitung}}
+    \label{fig:impedanz}
+\end{figure}
 Zudem ist $Z(\omega)$ nicht abhängig von der Anzahl der Kettenglieder. Eine unendliche $LC$-Kette lässt sich also simulieren, indem eine $LC$-Kette mit endlicher Anzahl an Kettengliedern mit einem nach Gleichung \eqref{eqn:wellenwiderstand} berechneten Widerstand abgeschlossen wird.
 
 \subsection{Endlich lange $LC$-Kette}
