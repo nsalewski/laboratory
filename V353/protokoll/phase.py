@@ -17,6 +17,7 @@ def f(w, c):
 params, covariance = curve_fit(f, w, phi) # bounds = ([0], [np.inf]))
 errors = np.sqrt(np.diag(covariance))
 print('c =', params[0], '±', errors[0])
+
 print(params)
 ascii.write([w, a, b, phi], 'Messdaten/c.tex', format="latex")
 ascii.write([np.round(phi,5), np.round(urc / unull, 5)], 'Messdaten/pol.tex', format = 'latex')

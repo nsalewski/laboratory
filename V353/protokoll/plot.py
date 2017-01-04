@@ -21,6 +21,7 @@ def f(x, a, b):
 params, covariance = curve_fit(f, t, np.log(uc / unull))
 errors = np.sqrt(np.diag(covariance))
 print('a = ', params[0], '±', errors[0])
+print('b=',params[1], '±', errors[1])
 print(params)
 m = np.linspace(-0.1, 2)
 plt.plot(t, np.log(uc / unull), 'rx', label="Messwerte")

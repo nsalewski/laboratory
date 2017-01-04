@@ -3,7 +3,20 @@
 Bereits bei der Verwendung der ersten Methode zur Bestimmung der Zeitkonstanten $RC$ (vgl. Abschnitt \ref{sec:RC}) fiel %diesmal hab ichs richtig geschrieben :P
 auf, dass der Generator keine reine Rechteckspannung lieferte, sondern Schwankungen und Abweichungen von der idealen Rechteckspannung zeigte.
 
-Die bestimmten Zeitkonstanten $RC$ weichen deutlich voneinander ab. Dies deutet, ebenso wie die starke Abweichung der Messwerte von der Regressionskurve
+\begin{table}
+	\centering
+	\caption{Alle bestimmten Zeitkonstanten $RC$ samt ihrer prozentualen Fehler}
+	\label{tab:diskussion2}
+	\begin{tabular}{cccc}
+		\toprule
+		$RC$/$10^{-3} \si{\second}$  bestimmt über...& ...Entladekurve&...$A(\omega)$&...Phasenverschiebung \\
+		\midrule
+		Berechneter Wert \pm Fehler& (0.48 \pm 0.03)& (6.2 \pm 0.5) & (3,67 \pm 0,45)                \\
+		Prozentualer Fehler&       6.25\%  & 8.1\%                      &  13.1\%         \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Die bestimmten Zeitkonstanten $RC$ (vgl. \ref{tab:diskussion2}) weichen deutlich voneinander ab. Dies deutet, ebenso wie die starke Abweichung der Messwerte von der Regressionskurve
 in Abbildung \ref{fig:plotb} für kleine Frequenzen ($\omega \ll 35\,\si{\Hz}$) darauf hin, dass die Messung fehlerbehaftet war. Beispielsweise könnte ein Wackelkontakt an einer der Steckverbindungen vorgelegen haben.
 Des Weiteren war das Maximum von $A(\omega)$ bei etwa $35 \,\si{\Hz}$ nicht zu erwarten. Für kleine Frequenzen scheint der Funktionengenerator nicht die gleiche Spannungsamplitude liefern zu können, wie für große Frequenzen.
 Wie in Tabelle \ref{tab:diskussion} zu sehen, scheint hier ein Defekt am Funktionengenerator vorzuliegen. Erwartet worden wäre, dass die gelieferte Spannungsamplitude frequenzunabhängig ist, also nahezu konstant bleibt.
@@ -32,5 +45,4 @@ Diskrepanz zur Theoriekurve zeigen. Diese Abweichungen lassen sich auf zufällig
 Die Integratorfunktion des RC-Gliedes konnte außerdem - bei erforderlichen hohen Frequenzen -
 nachgewiesen werden.
 
-Folglich lässt sich sagen, dass die starken Abweichungen der bestimmten Zeitkonstante $RC$ auf die starken Abweichungen von den Messwerten im niedrigeren Frequenzbereich zu den theoretischen Werten zurückzuführen sind.
 Weiterhin müssen systematische Fehler - wie zum Beispiel die Vernachlässigung der Innenwiderstände von Generator und Oszilloskop - berücksichtigt werden.

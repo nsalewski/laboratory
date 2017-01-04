@@ -11,13 +11,16 @@ Durch Umformung wird Formel \eqref{eqn:aufladung} zu
 	\ln\left(\frac{U_\text{C}}{U_\text{0}}\right)=-\frac{1}{RC}t \,\,\,\, (y = -m \cdot t).
 \end{equation}
 Zur Bestimmung der Zeitkonstanten $RC$ wird nun $\ln\left(\frac{U_\text{C}}{U_\text{0}}\right)$ gegen die Zeit $t$ aufgetragen.
-Aus der Steigung der Regressionsgeraden nach Gleichung \eqref{eqn:ausgleich1} ergibt sich nun die berechnete Zeitkonstante zu
+Aus den Parametern der Regressionsgeraden nach Gleichung \eqref{eqn:ausgleich1} ergibt sich nun die berechnete Zeitkonstante zu
 
 \begin{equation*}
 	\centering
-	RC = (0.48 \pm 0.03) \cdot 10^{-3} \si{\second} .
+	RC = a = (0.48 \pm 0.03) \cdot 10^{-3} \si{\second} .
 \end{equation*}
-
+\begin{equation*}
+	\centering
+	b = (0.17 \pm 0.13)
+\end{equation*}
 \begin{table}
 	\caption{Messdaten zur Bestimmung der Zeitkonstanten $RC$.}
 	\label{tab:taba}
@@ -55,11 +58,27 @@ Die Messdaten sowie die berechnete lineare Regression befinden sich in Abbildung
 \subsection{Bestimmung der Zeitkonstanten RC über die Frequenzabhängigkeit der Amplitude.}
 Die Zeitkonstante $RC$ soll nun erneut bestimmt werden, indem die Frequenzabhängigkeit der Amplitude $A(\omega)$ der Spannung $U_\text{C}$ am Kondensator untersucht wird.
 Dazu wird $\frac{A(\omega)}{U_\text{0}}$ in Abhängigkeit zur Frequenz $\omega$ aufgetragen. Die verwendeten Daten befinden sich in Tabelle \ref{tab:tab2}.
+$U_{\mathrm{0}}$ betrug hierbei $6.04 \,\si{\volt}$.
 Eine Regression mit Gleichung \eqref{eqn:amplitude} liefert für die Zeitkonstante :
+
 \begin{equation*}
 	\centering
-	RC=(6.3 \pm 1.5)\cdot 10^{-3} \si{\second} .
+	RC = a =(6.3 \pm 1.5)\cdot 10^{-3} \si{\second} .
 \end{equation*}
+Mit Phyton und Scypi wurde hierfür die Funktion
+
+\begin{equation*}
+	f(\omega)=\frac{1}{\sqrt{1 +\omega^2 a^2}}
+\end{equation*}
+nach $\omega$ für den Parameter $a$ gefittet.
+Werden die ersten vier Messpunkte ausgenommen, ergibt sich ein etwas kleinerer Fehler:
+
+\begin{equation*}
+	\centering
+	RC = a =(6.2 \pm 0.5)\cdot 10^{-3} \si{\second} .
+\end{equation*}
+Somit haben die ersten Messpunkte nahezu keine Auswirkung auf das berechnete $RC$, obwohl sie sehr stark von der Regression abweichen, sie beeinflussen lediglich den Fehler der Zeitkonstanten.
+%hoffe das reicht ihr
 \begin{table}
 	\caption{Messdaten zur Bestimmung der Zeitkonstanten $RC$ über die Frequenzabhängigkeit der Amplitude $A(\omega)$.}
 	\label{tab:tab2}

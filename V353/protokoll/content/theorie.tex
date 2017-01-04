@@ -11,20 +11,23 @@ Die Integration dieses Zusammenhangs vom Zeitpunkt $0$ bis zu einem Zeitpunkt $t
 	%c für ne physikalische Bedeutung hat...
 	%
 \end{equation}
-
+$c$ muss die Einheit $\si{\per\second}$ haben, damit der Exponent der e-Funktion einheitenlos ist.
+$c$ ist, wie im Eeiteren genauer erläutert wird, die negative inverse Zeitkonstante der Relaxation des Systems und muss hierbei kleiner $0$ sein, damit A beschränkt bleibt.
+%überhaupt keine Ahnung, was sie da will, hab jetzt einfach mal alles, was mir auch nur annähernd eingefallen ist, rausgehauen. Kannst gerne noch bearbeiten/löschen
 Auf- und Entladevorgänge von Kondensatoren sind Beispiele für Relaxationsvorgänge und sollen im Folgenden detaillierter betrachtet werden.
 \subsection{Entladevorgang eines Kondensators}
 Bei einem geladenen Kondensator mit der Kapazität $C$ befindet sich die Ladung $Q$ auf den Platten.
-Zwischen den Kondensatorplatten liegt dabei die Spannung $U_\text{C}$ an. Mit
+Zwischen den Kondensatorplatten liegt dabei die Spannung $U_\text{C}$ an. Damit gilt:
 \begin{equation*}
-	U_\text{C}=\frac{Q}{C}
+	U_\text{C}=\frac{Q}{C}.
 \end{equation*}
-und dem Ohmschen Gesetz lässt sich $\dot{Q}=I$ zu
+Nach dem Ohmschen Gesetz verursacht die Spannung $U_{\mathrm{C}}$ durch den Widerstand $R$ einen Strom $I$. Mit $\dot{Q}=I$ lässt sich dies zu
 \begin{equation}
 	\dot{Q}=-\frac{1}{RC}Q(t)
 	%
 	%Hier sagt sie R definieren, gleiche Frage wie oben...
 	%
+	%% keine ahnung, was sie hier wirklich will, hab einfach mal erwähnt, dass R für Widerstand steht.
 \end{equation}
 umformen.
 Da sich der Kondensator nach unendlich langer Zeit entladen wird, folgt unter Verwendung von Formel \eqref{eqn:relaxation} für den zeitlichen Verlauf der Entladung
