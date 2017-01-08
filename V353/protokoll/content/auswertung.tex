@@ -8,7 +8,7 @@ Die abgelesenen Daten finden sich in Tabelle \ref{tab:taba}.
 Durch Umformung wird Formel \eqref{eqn:aufladung} zu
 \begin{equation}
 	\label{eqn:ausgleich1}
-	\ln\left(\frac{U_\text{C}}{U_\text{0}}\right)=-\frac{1}{RC}t \,\,\,\, (y = -m \cdot t).
+	\ln\left(\frac{U_\text{C}}{U_\text{0}}\right)=-\frac{1}{RC}t \,\,\,\, (y = -a \cdot t+b).
 \end{equation}
 Zur Bestimmung der Zeitkonstanten $RC$ wird nun $\ln\left(\frac{U_\text{C}}{U_\text{0}}\right)$ gegen die Zeit $t$ aufgetragen.
 Aus den Parametern der Regressionsgeraden nach Gleichung \eqref{eqn:ausgleich1} ergibt sich nun die berechnete Zeitkonstante zu
@@ -53,7 +53,7 @@ Die Messdaten sowie die berechnete lineare Regression befinden sich in Abbildung
 	\caption{Lineare Regression zur Bestimmung der Zeitkonstanten $RC$.}
 	\label{fig:plota}
 \end{figure}
-
+\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Bestimmung der Zeitkonstanten RC über die Frequenzabhängigkeit der Amplitude.}
 Die Zeitkonstante $RC$ soll nun erneut bestimmt werden, indem die Frequenzabhängigkeit der Amplitude $A(\omega)$ der Spannung $U_\text{C}$ am Kondensator untersucht wird.
@@ -71,7 +71,7 @@ Mit Python und Matplotlib \cite{matplotlib} wurde hierfür die Funktion
 	f(\omega)=\frac{1}{\sqrt{1 +\omega^2 a^2}}
 \end{equation*}
 nach $\omega$ für den Parameter $a$ gefittet.
-Werden die ersten vier Messpunkte ausgenommen, ergibt sich ein etwas kleinerer Fehler:
+Werden die ersten vier Messpunkte ausgenommen, da sie relativ große Abweichungen von der Theoriekurve zeigen, ergibt sich ein etwas kleinerer Fehler:
 
 \begin{equation*}
 	\centering
@@ -113,7 +113,7 @@ Die Messdaten und die berechnete Regression sind in Abbildung \refeq{fig:plotb} 
 	\caption{Regression zur Bestimmung der Zeitkonstanten $RC$ über die Frequenzabhängigkeit der Amplitude.}
 	\label{fig:plotb}
 \end{figure}
-
+\FloatBarrier
 \subsection{Bestimmung der Zeitkonstanten RC mit der Phasenverschiebung zwischen Generator- und Kosinusspannung}
 
 Nun wird die Zeitkonstante mithilfe der Phasenverschiebung zwischen Generator- und Kondensatorspannung bestimmt.
@@ -204,6 +204,7 @@ auftragen (siehe Abbildung \ref{fig:polari}).
 \end{table}
 
 Die benötigten Messwerte sind in Tabelle \ref{tab:polars} aufgetragen.
+\FloatBarrier
 \subsection{Das RC-Glied als Integrator}
 Zur besseren Vergleichbarkeit sind neben den gemessenen Spannungsverläufen jeweils beispielhaft berechnete Funktionsgraphen zu den jeweils erwarteten Spannungen und ihren Integrierten, eingefügt.
 
