@@ -58,14 +58,14 @@ Die Messdaten sowie die berechnete lineare Regression befinden sich in Abbildung
 \subsection{Bestimmung der Zeitkonstanten RC über die Frequenzabhängigkeit der Amplitude.}
 Die Zeitkonstante $RC$ soll nun erneut bestimmt werden, indem die Frequenzabhängigkeit der Amplitude $A(\omega)$ der Spannung $U_\text{C}$ am Kondensator untersucht wird.
 Dazu wird $\frac{A(\omega)}{U_\text{0}}$ in Abhängigkeit zur Frequenz $\omega$ aufgetragen. Die verwendeten Daten befinden sich in Tabelle \ref{tab:tab2}.
-$U_{\mathrm{0}}$ betrug hierbei $6.04 \,\si{\volt}$.
+$U_{\mathrm{0}}$ beträgt hierbei $6.04 \,\si{\volt}$.
 Eine Regression mit Gleichung \eqref{eqn:amplitude} liefert für die Zeitkonstante :
 
 \begin{equation*}
 	\centering
 	RC = a =(6.3 \pm 1.5)\cdot 10^{-3} \si{\second} .
 \end{equation*}
-Mit Phyton und Matplotlib \cite{matplotlib} wurde hierfür die Funktion
+Mit Python und Matplotlib \cite{matplotlib} wurde hierfür die Funktion
 
 \begin{equation*}
 	f(\omega)=\frac{1}{\sqrt{1 +\omega^2 a^2}}
