@@ -10,23 +10,23 @@ mit Kapazität $C$ \cite{noltingbro}.
 \begin{figure}
 	\centering
 	\includegraphics[width=0.85\textwidth]{Bilder/Aufbau.png}
-	\caption{Schaltung eines Serienresonanzkreises. \cite{Anleitung}}
+	\caption{Schaltung eines Serienresonanzkreises. (vgl. \cite{Anleitung})}
 	\label{fig:serienreson}
 \end{figure}
 
 
 \subsection{Ungedämpfte und gedämpfte Schwingungen}
 
-Vorerst soll ein Serienresonanzkreis ohne äußere Spannungsquelle (Abbildung \ref{fig:serienreson}) -- also ein RLC-Kreis -- betrachtet werden.
+Vorerst wird ein Serienresonanzkreis ohne äußere Spannungsquelle (Abbildung \ref{fig:serienreson}) -- also ein RLC-Kreis -- betrachtet.
 
-Nimmt man an, dass zum Zeitpunkt $t=0$ ein bestimmter Energiebetrag im System vorhanden ist,
+Unter der Annahme, dass zum Zeitpunkt $t=0$ ein bestimmter Energiebetrag im System vorhanden ist,
 werden elektrische Schwingungen erzeugt.
 Diese lassen sich kategorisieren in ungedämpfte und gedämpfte Schwingungen.
 
 \textbf{Ungedämpfte Schwingungen} lassen sich in der Realität nicht erzeugen, da über ohmsche
 Widerstände elektrische Energie irreversibel in Wärmeenergie umgewandelt wird.
 Sie entstehen also unter Vernachlässigung von ohmschen Widerständen.
-Man betrachtet einen LC-Kreis, der mit einer Spule und einem Kondensator aus zwei
+Es wird daher ein LC-Kreis betrachtet, der mit einer Spule und einem Kondensator aus zwei
 Energiespeichern besteht.
 Dann alterniert die Energie verlustfrei als elektrische bzw. magnetische Feldenergie zwischen dem Kondensator und der Spule.\\
 Dies ist der Fall, da bei der Entladung des Kondensators ein Magnetfeld in der Spule erzeugt
@@ -38,11 +38,11 @@ Dann wird die vom Strom transportierte Energie zum Teil irreversibel in Wärme
 umgewandelt und die Gesamtenergie im RLC-Kreis ist nicht erhalten. Im Folgenden sollen gedämpfte
 Schwingungen näher betrachtet werden.
 
-Mit dem 2. Kirchhoffschen Gesetz erhält man aus dem Schaltkreis in Abbildung \ref{fig:serienreson} die Gleichung
+Mit dem 2. Kirchhoffschen Gesetz ergibt sich aus dem Schaltkreis in Abbildung \ref{fig:serienreson} die Gleichung
 \begin{equation*}
 	U_{\text{R}}(t) + U_{\text{C}}(t) + U_{\text{L}}(t) = 0 \text{.}
 \end{equation*}
-Weiterhin erhält man mit dem Ohmschen Gesetz, dem Induktionsgesetz, der Spannung $U_{\text{C}} = \frac{Q(t)}{C}$ am Kondensator und dem Zusammenhang $I = \dot{Q}$ die Differentialgleichung
+Mit dem Ohmschen Gesetz, dem Induktionsgesetz, der Spannung $U_{\text{C}} = \frac{Q(t)}{C}$ am Kondensator und dem Zusammenhang $I = \dot{Q}$ ergibt sich die Differentialgleichung
 \begin{equation}
 	\ddot{I} + \frac{R}{L} \, \dot{I} + \frac{1}{LC} \, I = 0 \text{,}
 	\label{eqn:idgl}
@@ -59,7 +59,7 @@ Für $\omega$ ergibt sich
 \end{equation}
 Mit den Definitionen
 \begin{align}
-	2 \pi \mu &:= \frac{R}{2L} & 2 \pi \nu &:= \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
+	2 \pi \mu & := \frac{R}{2L} & 2 \pi \nu & := \sqrt{\frac{1}{LC} - \frac{R^2}{4L^2}}
 	\label{eqn:defis}
 \end{align}
 lässt sich die allgemeine Lösung von Gleichung \eqref{eqn:idgl} schreiben als
@@ -73,7 +73,7 @@ Nun lassen sich die drei signifikanten Fälle für $\nu$ unterscheiden in denen 
 \subsubsection{Der Schwingfall}
 Damit $\nu$ reell ist, muss der Term in der Wurzel in der zweiten Gleichung \eqref{eqn:defis}
 positiv sein, also $\frac{1}{LC} > \frac{R^2}{4L^2}$ gelten.
-Ist dies der Fall, erhält man als reelle Lösungsfunktion
+Ist dies der Fall, ergitb sich als reelle Lösungsfunktion
 \begin{equation}
 	I(t) = I_0 \mathrm{e}^{-2 \pi \mu t} \cos(2\pi \nu t + \eta) \text{.}
 	\label{eqn:schwingi}
@@ -88,11 +88,11 @@ Die gedämpfte Schwingung ist in Abbildung \ref{fig:???} dargestellt.
 	\caption{Zeitlicher Verlauf der gedämpften Spannungsamplitude am Kondensator.}
 	\label{fig:???}
 \end{figure}
-Für die Periodendauer $T$ erhält man
+Für die Periodendauer $T$ ergibt sich
 \begin{equation}
 	T = \frac{1}{\nu} = \frac{2 \pi}{\frac{1}{LC} - \frac{R^2}{4L^2}} \text{.}
 \end{equation}
-Betrachtet man nun den Fall $\frac{1}{LC} \gg \frac{R^2}{4L^2}$, gilt
+Für den Fall $\frac{1}{LC} \gg \frac{R^2}{4L^2}$, gilt
 \begin{equation}
 	T \approx T_0 = \frac{2 \pi}{\omega_0} = 2 \pi \, \sqrt{LC} \text{,}
 \end{equation}
@@ -100,7 +100,7 @@ die Thomsonsche Schwingungsformel. Die Periodendauer entspricht dann der Periode
 ungedämpften Schwingung.
 
 Die Abnahmegeschwindigkeit der Amplitude ist durch $2 \pi \mu = \frac{R}{2L}$ festgelegt.
-Man definiert die Abklingdauer $T_{\text{ex}}$ durch
+Die Abklingdauer $T_{\text{ex}}$ wird definiert durch
 \begin{equation}
 	T_{\text{ex}} := \frac{1}{2 \pi \mu} = \frac{2L}{R} \text{.}
 	\label{eqn:abkling}
@@ -108,7 +108,7 @@ Man definiert die Abklingdauer $T_{\text{ex}}$ durch
 
 \subsubsection{Der Kriechfall}
 Damit $\nu$ komplexwertig ist, muss $\frac{1}{LC} < \frac{R^2}{4L^2}$ gelten.
-Ist dies der Fall, spricht man von dem Kriechfall oder auch der aperiodischen Dämpfung.
+Dieser Fall wird Kriechfall oder auch aperiodische Dämpfung genannt.
 Dann gilt für $I(t)$ die Proportionalität
 \begin{equation}
 	I(t) \sim \exp\left(-\left(\frac{R}{2L} - \sqrt{\frac{R^2}{4L^2} - \frac{1}{LC}}\right)t\right) \text{,}
@@ -122,7 +122,7 @@ Der aperiodische Grenzfall tritt auf, wenn $\nu$ verschwindet, also wenn
 	\label{eqn:apigrenz}
 \end{equation}
 gilt.
-Dann erhält man
+Somit ergibt sich
 \begin{equation}
 	I(t) = I_0 \mathrm{e}^{-\frac{R}{2L} t} = I_0 \mathrm{e}^{-\frac{1}{\sqrt{LC}} t} \text{.}
 \end{equation}
@@ -171,7 +171,7 @@ Des Weiteren hat $U_{\text{C}}$ ein Maximum, bei der Frequenz
 \end{equation}
 der Resonanzfrequenz.
 \\
-In dem Fall $\frac{R^2}{2L^2} \ll \frac{1}{LC}$ spricht man von schwacher Dämpfung und es gilt
+In dem Fall $\frac{R^2}{2L^2} \ll \frac{1}{LC}$ liegt nur eine schwacher Dämpfung und es gilt
 $\omega_{\text{res}} \approx \omega_0$. Damit folgt $U_{\text{C,max}} > U_0$ mit
 \begin{equation}
 	U_{\text{C,max}} = \frac{1}{\omega_0 RC} U_0 = \frac{1}{R} \sqrt{\frac{L}{C}} U_0 \text{.}

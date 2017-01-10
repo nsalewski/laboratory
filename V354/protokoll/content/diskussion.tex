@@ -1,9 +1,9 @@
 \section{Diskussion}
 \label{sec:Diskussion}
 Die Differenz zwischen dem berechneten $R_\text{eff}$ und dem in der Schaltung eingebauten Widerstand $R_\text{1}$ beträgt$\Delta R=60.1 \,\si{\ohm}$.
-Diese lässt sich auf Innenwiderstand des Funktionengenerators von $R=50\,\si{\ohm}$ zurückführen.
-Daher wird, wie in der Auswertung erwähnt, der Generatorinnenwiderstand in den Berechnungen berücksichtigt.
-Die verbleibende Differenz lässt sich mit kleinen Messunsicherheiten -- also statistischen Fehlern -- begründen und liegt annähernd im Toleranzbereich.
+Diese lässt sich auf Innenwiderstand des Funktionengenerators von $R_{\mathrm{Generator}}=50\,\si{\ohm}$ zurückführen.
+Daher wird, wie in der Auswertung erwähnt, der Generatorinnenwiderstand bei der Berechnung der Frequenzabhängigkeit der Kondensatorspannung berücksichtigt.
+Die verbleibende Differenz $\Delta R-R_{\mathrm{Generator}}=10.1 \,\si{\ohm}$ lässt sich mit kleinen Messunsicherheiten -- also statistischen Fehlern -- begründen und liegt annähernd im Toleranzbereich.
 
 Bei der Bestimmung des Dämpfungswiderstandes $R_{\mathrm{ap}}$ zeigt sich eine Abweichung
 des experimentell bestimmten Wertes von $29\%$ zum Theoriewert. Dies lässt sich einerseits
@@ -30,3 +30,24 @@ Wahrscheinlich wird dies allerdings wenig Einfluss auf die Messung gehabt haben.
 	\label{fig:blabliblub}
 	\includegraphics[width = 0.5 \textwidth, angle=90]{Bilder/a)rectangle/F0001TEK.JPG}
 \end{figure}
+\begin{table}
+	\centering
+	\caption{Tabelle aller bestimmen/abgelesenen Werte}
+	\label{tab:all_values}
+	\begin{tabular}{cc}
+		\toprule
+		Messgröße                                                & Bestimmter/abgelesener Wert                  \\
+		\midrule
+		Abklingdauer $T_{\text{ex}}$                               & $(18.7 \pm 0.2) \cdot 10^{-5}\,\si{\second}$ \\
+		Effektiver Schaltungswiderstand $R_{\text{eff}}$           & (108.2 \pm 1.0) \,\si{\ohm}                  \\
+		$R_{\mathrm{ap,Theorie}}$                                  & (4390 \pm 9) \, \si{\ohm}                    \\
+		$R_{\text{ap,Experiment}}$                                 & \SI{3400}{\ohm}                              \\
+		Resonanzüberhöhung $q_\mathrm{Experiment}$               & 3.61                                         \\
+		Resonanzüberhöhung $q_\mathrm{Theorie}$                  & (3.923 \pm 0.009)                            \\
+		Breite d. Resonanzkurve $\omega_+ - \omega_-$ : Experiment & $9.25 \cdot 10^{3} \,\si{\Hz}$               \\
+		Breite d. Resonanzkurve $\omega_+ - \omega_-$ : Theorie    & $(8.81\pm 0.03) \cdot 10^{3} \,\si{\Hz}$     \\
+		Resonatorfrequenz $\omega_{\mathrm{res}}$ : Experiment     & $33.7\cdot 10^{3} \,\si{\Hz}$                \\
+		Resonatorfrequenz $\omega_{\mathrm{res}}$ : Theorie        & $(34.0 \pm 0.1)\cdot 10^{3} \,\si{\Hz}$      \\
+		\bottomrule
+	\end{tabular}
+\end{table}

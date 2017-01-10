@@ -74,7 +74,7 @@ Die Ausgleichsrechnung mittels Scipy und Python liefert die Werte:
 	\mu =  (851.8 \pm 7.5) \, \frac{1}{\si{\second}} \text{.}
 \end{equation*}
 
-$R_\text{eff}$ lässt sich nun mittels $\mu$ über Gleichung \eqref{eqn:defis} ermitteln. $T_\text{ex}$ ergibt sich nun nach Gleichung \eqref{eqn:abkling}.
+$R_\text{eff}$ lässt sich mittels $\mu$ über Gleichung \eqref{eqn:defis} ermitteln. $T_\text{ex}$ ergibt sich nach Gleichung \eqref{eqn:abkling}.
 Mittels Scipy und Python ergeben sich die Größen samt ihrer Fehler zu:
 \begin{equation*}
 	T_{\text{ex}}=(18.7 \pm 0.2) \cdot 10^{-5}\,\si{\second} \text{,}
@@ -83,8 +83,8 @@ Mittels Scipy und Python ergeben sich die Größen samt ihrer Fehler zu:
 \begin{equation*}
 	R_{\text{eff}}= (108.2 \pm 1.0) \,\si{\ohm} \text{.}
 \end{equation*}
-
-Für die weiteren Berechnungen wird der Innenwiderstand des Generators nun mitbetrachtet.
+Der effektive Widerstand $R_{\text{eff}}$ weicht somit von $R_1=48.1\,\si{\ohm}$ um $\Delta R=60.1\,\si{\ohm}$ ab. Diese Abweichung wird verursacht durch den bisher vernachlässigten Innenwiderstand des Generators.
+Für die Berechnung der Frequenzabhängigkeit der Kondensatorspannung wird der Innenwiderstand des Generators von $R_{\mathrm{Generator}}=50\,\si{\ohm}$ daher mitbetrachtet.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5 <---die ist nice
 \subsection{Bestimmung des Dämpfungswiderstandes $R_{\text{ap}}$}
@@ -172,6 +172,7 @@ nach Formel \eqref{eqn:breite} ergibt sich:
 \begin{equation*}
 	\text{Theorie}: 	\omega_+ - \omega_- \approx \frac{R}{L}\cdot \frac{1}{2\pi}=(8.81\pm 0.03) \cdot 10^{3} \,\si{\Hz} \text{.}
 \end{equation*}
+Hierbei entspricht $R=R_{\mathrm{Generator}}+R_2=(559.5 \pm 0.5)\,\si{\ohm}$, also dem Gesamtwiderstand der Schaltung bestehend aus Innenwiderstand $R_{\mathrm{Generator}}$ des Generators und dem eingebauten Widerstand $R_2$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Frequenzabhängigkeit der Phasenverschiebung}
 
@@ -236,7 +237,7 @@ Die abgelesenen bzw. berechneten Werte sind in Tabelle \ref{tab:senseless_table}
 		                   & $\omega_1$ / $\si{\kilo\hertz}$ & $\omega_{\mathrm{res}}$ / $\si{\kilo\hertz}$ & $\omega_2$ / $\si{\kilo\hertz}$ \\
 		\midrule
 		\text{Abgelesen}   & 30.2                            & 33.7                                         & 37.7                            \\
-		\text{Theoriewert} & 30.4 \pm \, 0.1                    & 34.0 \pm \, 0.1                                 & 39.2 \pm \, 0.1                    \\
+		\text{Theoriewert} & 30.4 \pm \, 0.1                 & 34.0 \pm \, 0.1                              & 39.2 \pm \, 0.1                 \\
 		\bottomrule
 	\end{tabular}
 \end{table}
