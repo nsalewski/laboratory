@@ -6,7 +6,7 @@ Daher wird, wie in der Auswertung erwähnt, der Generatorinnenwiderstand bei der
 Die verbleibende Differenz $\Delta R-R_{\mathrm{Generator}}=10.1 \,\si{\ohm}$ lässt sich mit kleinen Messunsicherheiten -- also statistischen Fehlern -- begründen und liegt annähernd im Toleranzbereich.
 
 Bei der Bestimmung des Dämpfungswiderstandes $R_{\mathrm{ap}}$ zeigt sich eine Abweichung
-des experimentell bestimmten Wertes von $29\%$ zum Theoriewert. Dies lässt sich einerseits
+des experimentell bestimmten Wertes von $23\%$ zum Theoriewert. Dies lässt sich einerseits
 auf das Vernachlässigen von den Innenwiderständen der weiteren Bauteile und
 andererseits auf Schwierigkeiten beim Ablesen des Widerstandes zurückführen. Im Grenzbereich zeigten
 sich keine erkennbaren Unterschiede im Verlauf der Kondensatorspannung.
@@ -24,6 +24,7 @@ und Ablesefehler zurückzuführen.
 Allerdings fiel bereils zu Beginn der Messung auf, dass der Funktionengenerator keinen richtigen Nadelimpuls lieferte. Stattdessen lieferte der Generator einen Rechteckimpuls. Vergleiche dazu Abbildung \ref{fig:blabliblub}.
 Wahrscheinlich wird dies allerdings wenig Einfluss auf die Messung gehabt haben.
 
+Alle bestimmten Messgrößen finden sich in Tabelle \ref{tab:all_values}. Falls ein Theoriewert bestimmt wurde, ist zudem die prozentuale Abweichung zwischen Experiment und Theorie angegeben.
 \begin{figure}
 	\centering
 	\caption{Spannungsverlauf der Generatorspannung bei eingestellter Nadelimpulsfunktion.}
@@ -34,20 +35,16 @@ Wahrscheinlich wird dies allerdings wenig Einfluss auf die Messung gehabt haben.
 	\centering
 	\caption{Tabelle aller bestimmen/abgelesenen Werte}
 	\label{tab:all_values}
-	\begin{tabular}{cc}
+	\begin{tabular}{cccc}
 		\toprule
-		Messgröße                                                & Bestimmter/abgelesener Wert                  \\
+		Messgröße                           & Experiment                                   & Theorie                                  & Abweichung \\
 		\midrule
-		Abklingdauer $T_{\text{ex}}$                               & $(18.7 \pm 0.2) \cdot 10^{-5}\,\si{\second}$ \\
-		Effektiver Schaltungswiderstand $R_{\text{eff}}$           & (108.2 \pm 1.0) \,\si{\ohm}                  \\
-		$R_{\mathrm{ap,Theorie}}$                                  & (4390 \pm 9) \, \si{\ohm}                    \\
-		$R_{\text{ap,Experiment}}$                                 & \SI{3400}{\ohm}                              \\
-		Resonanzüberhöhung $q_\mathrm{Experiment}$               & 3.61                                         \\
-		Resonanzüberhöhung $q_\mathrm{Theorie}$                  & (3.923 \pm 0.009)                            \\
-		Breite d. Resonanzkurve $\omega_+ - \omega_-$ : Experiment & $9.25 \cdot 10^{3} \,\si{\Hz}$               \\
-		Breite d. Resonanzkurve $\omega_+ - \omega_-$ : Theorie    & $(8.81\pm 0.03) \cdot 10^{3} \,\si{\Hz}$     \\
-		Resonatorfrequenz $\omega_{\mathrm{res}}$ : Experiment     & $33.7\cdot 10^{3} \,\si{\Hz}$                \\
-		Resonatorfrequenz $\omega_{\mathrm{res}}$ : Theorie        & $(34.0 \pm 0.1)\cdot 10^{3} \,\si{\Hz}$      \\
+		Abklingdauer $T_{\text{ex}}$          & $(18.7 \pm 0.2) \cdot 10^{-5}\,\si{\second}$ & \--                                      & \--        \\
+		Schaltungswiderstand $R_{\text{eff}}$ & (108.2 \pm 1.0) \,\si{\ohm}                  & \--                                      & \--        \\
+		$R_{\text{ap}}$                       & \SI{3400}{\ohm}                              & (4390 \pm 9) \, \si{\ohm}                & $22.6\%$   \\
+		Resonanzüberhöhung $q$              & 3.61                                         & (3.923 \pm 0.009)                        & $8\%$      \\
+		$\omega_+ - \omega_-$                 & $9.25 \cdot 10^{3} \,\si{\Hz}$               & $(8.81\pm 0.03) \cdot 10^{3} \,\si{\Hz}$ & $5\%$      \\
+		$\omega_{\mathrm{res}}$               & $33.7\cdot 10^{3} \,\si{\Hz}$                & $(34.0 \pm 0.1)\cdot 10^{3} \,\si{\Hz}$  & $0.9\%$    \\
 		\bottomrule
 	\end{tabular}
 \end{table}
