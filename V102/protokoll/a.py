@@ -13,6 +13,8 @@ Theta_halterung = 22.5
 Theta_halterung = Theta_halterung / 10**7
 L_draht = 0.585
 Theta_kugel = 2 / 5 * m_k * R_k**2
+E = ufloat(210.0, 0.5) * 10**9
+print("Teil a:")
 print("Theta Kugel=", Theta_kugel)
 Theta_ges = Theta_kugel + Theta_halterung
 n, Ddraht = np.genfromtxt("Messdaten/daten_des_aufbau.txt", unpack=True)
@@ -24,3 +26,9 @@ T = np.mean(t)
 
 G = ((2 * L_draht) / (np.pi * R_draht**4)) * (2 * np.pi / T)**2 * Theta_ges
 print("Schubmodul G=", G)
+muh = ((E / (2 * G)) - 1)
+Q = (E) / (3 * (1 - 2 * muh))
+print("E=", E)
+print("müh=", muh)
+print("Q=", Q)
+print("***********************Ende von a******************************")
