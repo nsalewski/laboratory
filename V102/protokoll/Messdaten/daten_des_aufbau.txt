@@ -1,4 +1,4 @@
-#Allgemeine Angaben: Kugelmasse m_k=512.2g \pm 0.04% entspricht \pm 0.2g; Durchmesser Kugel 2*R_k=50.76mm\pm 0.007% entspricht 0.004g;
+#Allgemeine Angaben: Kugelmasse m_k=512.2g \pm 0.04% entspricht \pm 0.2g; Durchmesser Kugel 2*R_k=50.76mm\pm 0.007% entspricht 0.004mm;
 #Trägheitsmoment Halterung \theta_k=22.5g*cm^2;
 #Radius Helmholtzspule=78mm , Windungszahl 390, Maximalstrom Helmholtz-Spule=1.4A
 #Elastizitätsmodul E=(210.0\pm0.5)GPa=10^9N/m^2
