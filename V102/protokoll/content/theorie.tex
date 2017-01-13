@@ -1,4 +1,153 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+\subsection{Begriffe aus der Elastizitätstheorie}
+\label{sec:begriffe}
+
+Kräfte, die an Festkörpern angreifen, lassen sich in Volumenkräfte und Oberflächenkräfte 
+unterteilen. Letztere werden in diesem Versuch genauer betrachtet. 
+Volumenkräfte wirken auf jedes Volumenelement des Festkörpers und können Translationsbewegungen 
+und Rotationsbewegungen hervorrufen.
+Im Gegensatz dazu können \textbf{Oberflächenkräfte} -- Kräfte, die an Oberflächenelementen
+angreifen -- Gestalts- und Volumenänderungen bewirken. Sie können neben der Oberfläche auch an 
+jeder Querschnittsfläche des Körpers nachgewiesen werden.
+
+Es wird der Begriff der \textbf{Spannung} eingeführt, welche als Oberflächenkraft pro Fläche
+definiert ist. Des Weiteren unterscheidet man zwischen der \textbf{Normalspannung $\sigma$}
+(auch \textbf{Druck $P$}) und der \textbf{Tangentialspannung $\tau$} (auch
+\textbf{Schubspannung}), welche dem orthogonalen bzw. dem tangentialen Anteil der Spannung
+entsprechen. 
+
+Wirkt eine Spannung auf einen Festkörper, treten Verformungen -- in Form von Gestalts- und 
+Volumenänderungen -- auf. Diese Verformungen entsprechen auf molekularer Ebene einem veränderten 
+Gleichgewichtszustand der Atom- bzw. Molekülstruktur, der durch die elektrostatischen 
+Kräfte zwischen den Atomen bzw. Molekülen eintritt. Wenn die wirkende Spannung abgenommen wird
+und der Körper in seinen ursprünglichen Zustand -- mit gleicher Form und Größe -- zurückkehrt,
+spricht man von einer \textbf{elastischen Deformation}.
+
+Weiterhin ergibt sich ein proportionaler Zusammenhang zwischen der Deformation -- in Form 
+einer relativen Längen- oder Volumenänderung $\frac{\Delta L}{L}$ bzw.
+$\frac{\Delta V}{V}$ -- und der Spannung, wenn der Betrag der wirkenden Oberflächenkraft nicht 
+zu groß ist, was in Abbildung \ref{fig:Hooki} durch den Hookeschen Bereich illustriert ist.
+% Hier später Kraftverlauf zwischen benachbarten Atomen einfügen \Picture
+Liegt die Kraft in diesem Bereich, wird ein proportionaler Zusammenhang angenommen, der sich zu
+\begin{align}
+	\label{eqn:elastimodi}
+	&\sigma = E \, \frac{\Delta L}{L} \,\,\,\, \mathrm{oder}  &P = Q \, \frac{\Delta V}{V}
+\end{align}
+ergibt.
+
+Allgemein werden 36 Konstanten (jeweils 6 Konstanten zur Charakterisierung der Spannung und
+Deformation) in Form einer Matrix benötigt, um den proportionalen Zusammenhang zwischen
+Spannung und Deformation zu beschreiben.
+Zusätzlich ist das Schema der Elastizitätskonstantenmatrix symmetrisch \cite{Ergebnis der 
+exakten Naturwissenschaften vierter band , googlen 21 elastsoooss}, sodass im allgemeinen Fall 
+21 Elastizitätskonstanten benötigt werden.
+Im sogenannten kubischen Kristallsystem verbleiben aufgrund weiterer Symmetrien 3 notwendige 
+Elastizitätskonstanten und bei \textbf{isotropen Körpern} -- Körper mit richtungsunabhängigen 
+Elastizitätskonstanten -- wird diese Anzahl auf nur 2 reduziert.
+
+Diese 2 Konstanten werden als \textbf{Schubmodul $G$} (auch \textbf{Torsionsmodul}) und 
+\textbf{Kompressionsmodul $Q$} bezeichnet.
+Letztere ist eine Kenngröße für die Volumenelastizität. Der Schubmodul charakterisiert die 
+Gestaltselastizität.
+
+Weiterhin definiert man in der Praxis zwei weitere Konstanten: der
+\textbf{Elastizitätsmodul $E$} und die \textbf{Poissonsche Querkontraktionszahl $\mu$}.
+
+Der Elastizitätsmodul wurde in Gleichung \eqref{eqn:elastimodi} definiert und ist der 
+Proportionalitätsfaktor zwischen dem Druck $P$ und der relativen Volumenänderung
+$\frac{\Delta V}{V}$.
+Bewirkt eine Oberflächenspannung $\vec{\sigma}$ an einem Festkörper eine Längenänderung, 
+entspricht die Poissonsche Querkontraktionszahl $\mu$ dem Proportionalitätsfaktor zwischen 
+der Längenänderung parallel zur Spannungsrichtung $\frac{\Delta L}{L}$ und der Längenänderung
+orthogonal zur Spannungsrichtung $\frac{\Delta B}{B}$. Die Poissonsche Querkontraktionszahl
+wird in Abbildung \ref{fig:querkontrakti} durch das Beispiel eines gedehnten Stabes erklärt und
+als
+\begin{equation*}
+	\mu := - \frac{\Delta B}{B} \cdot \frac{L}{\Delta L}
+\end{equation*}
+%Hier Bild für QUerkontraktionszahl einfügen...............
+definiert.
+
+Da bei isotropen Körpern nur zwei Konstanten benötigt werden, müssen die zwei zusätzlichen
+Konstanten durch zwei Gleichungen miteinander verknüpft sein.
+Diese Zusammenhänge ergeben sich zu 
+\begin{align}
+	E &= 2G (\mu + 1) \\
+	E &= 3Q (1 - 2\mu) \mathrm{.}
+\end{align}
+\FloatBarrier
+
+\subsection{Der Schubmodul $G$}
+
+Der Schubmodul $G$ ist eine Kenngröße für die Gestaltselastizität eines Körpers und entspricht 
+dem Proportionalitätsfaktor zwischen einer Tangentialspannung $\tau$ und einem Scherungswinkel 
+$\alpha$:
+\begin{equation}
+	\label{eqn:schubimoduli}
+	\tau = G \alpha \mathrm{.}
+\end{equation}
+Die dem Schubmodul $G$ zugehörige Deformation wird also als \textbf{Scherung} bezeichnet.
+Diese Deformation ist durch eine an einem Körper angreifende Tangentialspannung bedingt, die 
+den Körper -- wie in Abbildung \ref{fig:würfeli} illustriert -- um einen Scherungswinkel $\alpha$
+neigt.
+%Hier Bild von Würfel
+Da der Scherungswinkel $\alpha$ in Abbildung \ref{fig:würfeli} allerdings nur schwierig zu messen
+ist, wird im Folgenden die Torsion eines Zylinders betrachtet.
+
+\subsubsection{Das Drehmoment eines Zylinders}
+%Hier Bild Torsion
+Der Zylinder ist an einem Ende fest eingespannt und wird am anderen Ende durch zwei
+gegenüberliegende, in entgegengesetzte Richtung wirkende Kräfte gedrillt (siehe Abbildung 
+\ref{fig:torsioni}).
+Durch diese Kräfte wirkt ein Drehmoment $M$ auf den Zylinder und erzeugt eine Drehung des losen
+Endes des Zylinders gegenüber dem fest eingespannten Ende des Zylinder. Diese Drehung wird 
+durch den Torsionswinkel $\varphi$ festgelegt.
+Da das Drehmoment über den Durchmesser des Zylinders variiert, wird der Zylinder in Hohlzylinder 
+mit dem Radius $r$ und Dicke $\symup{d} r$ zerlegt, von denen sich die einzelnen Drehmomente 
+über den gesamten Zylinderradius integrieren lassen, sodass man das Gesamtdrehmoment $M$ 
+erhält.
+
+Des Weiteren legt der Torsionswinkel $\varphi$ den Scherungswinkel $\alpha$ zwischen den 
+Mantelschichten fest, wie in Abbildung \ref{fig:verdrilltorsion} dargestellt.
+%Hier Bild von Zylinder
+Es ergibt sich der Zusammenhang zwischen Torsionswinkel $\varphi$ und Scherungswinkel $\alpha$ 
+zu 
+\begin{equation}
+	\label{eqn:variphi}
+	\alpha = \frac{r \varphi}{L} \mathrm{,}
+\end{equation}
+mit der Länge $L$ und dem Radius $r$ der Hohlzylinder.
+
+Mit Gleichung \eqref{eqn:schubimoduli} soll nun ein Zusammenhang zwischen dem Drehmoment $M$ 
+und dem Torsionswinkel $\varphi$ gefunden werden. 
+Das infinitiesimale Drehmoment $\symup{d} M$, welches auf einen Punkt mit der Entfernung $r$ 
+zur Zylinderachse wirkt, ergibt sich durch  
+\begin{equation*}
+	\symup{d} M = r \, \symup{d}K \mathrm{,}
+\end{equation*}
+wobei $\symup{d} K$ der Tangentialkraft entspricht.
+Weiterhin ist die Tangentialspannung $\tau$ aus Gleichung \eqref{eqn:elastimodi} als 
+Tangentialkraft pro Flächeneinheit 
+\begin{equation*}
+	\tau = \frac{\symup{d} K}{\symup{d} F}
+\end{equation*}
+definiert.
+Mit diesen beiden Definitionen und Gleichungen \eqref{eqn:schubimoduli} und \eqref{eqn:variphi}
+ergibt sich das Drehmoment eines Hohlzylinders $\symup{d} M$ zu 
+\begin{equation}
+	\symup{d} M = 2\pi \frac{G}{L} \varphi r^3 \symup{d}r \mathrm{.}
+\end{equation}
+Integration über den Zylinderradius $R$ liefert das Drehmoment
+\begin{equation}
+	\label{eqn:drehmoment}
+	M = \int_0^R \symup{d} M = \frac{\pi}{2} G \frac{R^4}{L} \varphi \mathrm{.}
+\end{equation}
+
+
+
+
+
+
 \cite{Anleitung}
