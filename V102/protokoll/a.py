@@ -59,7 +59,7 @@ mu_0 = muh[0]  # muh contains (value, "unit",error)
 B_H = 8 / np.sqrt(125) * amperage * N * mu_0 / R_Helmholtz
 Delta = ((2 * np.pi) / mws)**2 * Theta_ges.nominal_value
 print("B=", B_H)
-print("Theta_ges ohne Fehler", Theta_ges.nominal_value)
+print("Theta_ges ohne Fehler", Theta_ges)
 
 
 def ausgleichsgrade(B, a, b):
