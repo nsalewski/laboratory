@@ -87,6 +87,7 @@ Da bei isotropen Körpern nur zwei Konstanten benötigt werden, müssen die zwei
 Konstanten durch zwei Gleichungen miteinander verknüpft sein.
 Diese Zusammenhänge ergeben sich zu
 \begin{align}
+	\label{eqn:zusammenhang}
 	E & = 2G (\mu + 1) \mathrm{,}  \\
 	E & = 3Q (1 - 2\mu) \mathrm{.}
 \end{align}
@@ -195,17 +196,17 @@ einer periodischen Funktion der Zeit entspricht.
 \subsubsection{Die dynamische Methode}
 \label{sec:dynamisch}
 Bei der dynamischen Methode wird das Beispiel aus Abschnitt \ref{sec:torsionii} mit einem Körper
-mit Trägheitsmoment $\theta$ am freien Ende des Zylinders erweitert.
+mit Trägheitsmoment $\Theta$ am freien Ende des Zylinders erweitert.
 Das Drehmoment $M_{\mathrm{T}}$  des Körpers ergibt sich zu
 \begin{equation}
-	M_{\mathrm{T}} = \theta \frac{\symup{d}^2 \varphi}{\symup{d} t^2} \mathrm{.}
+	M_{\mathrm{T}} = \Theta \frac{\symup{d}^2 \varphi}{\symup{d} t^2} \mathrm{.}
 \end{equation}
 Wird nun der Zylinder ausgelenkt, wirken zwei entgegengesetzte Drehmomente: Das Drehmoment
 durch die Torsion des Zylinders und das Drehmoment bedingt durch die Trägheit des Körpers.
 
 Dadurch entsteht eine Drehschwingung mit der Differentialgleichung
 \begin{equation}
-	D \varphi + \theta \frac{\symup{d}^2 \varphi}{\symup{d} t^2} \mathrm{.}
+	D \varphi + \Theta \frac{\symup{d}^2 \varphi}{\symup{d} t^2} \mathrm{.}
 \end{equation}
 Die Lösung der Differentialgleichung ergibt sich durch
 \begin{equation}
@@ -214,24 +215,24 @@ Die Lösung der Differentialgleichung ergibt sich durch
 wobei
 \begin{equation}
 	\label{eqn:toughtimes}
-	T = 2\pi \sqrt{\frac{\theta}{D}}
+	T = 2\pi \sqrt{\frac{\Theta}{D}}
 \end{equation}
 der Schwingungsdauer der ungedämpften Schwingung -- unter Vernachlässigung von
 Reibungskräften -- entspricht.
 
 \subsubsection{Bestimmung des Trägheitsmomentes}
 
-Das Trägheitsmoment $\theta$ ist als
+Das Trägheitsmoment $\Theta$ ist als
 \begin{equation*}
-	\theta = \int_V \, \vec{r}_{\perp} \, \rho(\vec{r}) \symup{d} V
+	\Theta = \int_V \, \vec{r}_{\perp} \, \rho(\vec{r}) \symup{d} V
 \end{equation*}
 definiert, mit dem Vektor $\vec{r}_{\perp}$, der den Abstand eines Massenelementes zur
 Roatationsachse festlegt.
 
 Im Versuch wird eine Kugel mit homogener Masseverteilung verwendet.
-Das Trägheitsmoment $\theta_{mathrm{Kugel}}$ ergibt sich zu
+Das Trägheitsmoment $\Theta_{mathrm{Kugel}}$ ergibt sich zu
 \begin{equation*}
-	\theta_{\mathrm{Kugel}} = \frac{8}{15} \pi \rho R_{\mathrm{k}}^5 \mathrm{,}
+	\Theta_{\mathrm{Kugel}} = \frac{8}{15} \pi \rho R_{\mathrm{k}}^5 \mathrm{,}
 \end{equation*}
 mit dem Kugelradius $R_{\mathrm{k}}$.
 Mit der Kugelmasse
@@ -285,7 +286,7 @@ abweichenden Periodendauer $T_{\mathrm{m}} \neq T$.
 Richtet man den Magneten parallel zur Feldrichtung aus entspricht $\gamma$ aus Abbildung
 \ref{fig:magnetus} dem Torsionswinkel $\varphi$ und es ergibt sich die Differentialgleichung
 \begin{equation}
-	m B \sin(\varphi)  + D \varphi + \theta \frac{\symup{d}^2 \varphi}{\symup{d} t^2} = 0
+	m B \sin(\varphi)  + D \varphi + \Theta \frac{\symup{d}^2 \varphi}{\symup{d} t^2} = 0
 	\mathrm{.}
 \end{equation}
 Diese nicht-lineare Differentialgleichung lässt sich mit einer Kleine-Winkel-Näherung
@@ -294,7 +295,8 @@ Diese nicht-lineare Differentialgleichung lässt sich mit einer Kleine-Winkel-N�
 \end{equation*}
 schreiben als
 \begin{equation}
-	(mB + D) \varphi + \theta \frac{\symup{d}^2 \varphi}{\symup{d} t^2} = 0 \mathrm{.}
+	\label{eqn:jkadsfl}
+	(mB + D) \varphi + \Theta \frac{\symup{d}^2 \varphi}{\symup{d} t^2} = 0 \mathrm{.}
 \end{equation}
 Die Lösung dieser linearen Differentialgleichung hat die Form
 \begin{equation}
@@ -303,5 +305,5 @@ Die Lösung dieser linearen Differentialgleichung hat die Form
 mit der neuen Periodendauer
 \begin{equation}
 	\label{eqn:periodemagnet}
-	T_{\mathrm{m}} = 2\pi \sqrt{\frac{\theta}{mB + D}} \mathrm{.}
+	T_{\mathrm{m}} = 2\pi \sqrt{\frac{\Theta}{mB + D}} \mathrm{.}
 \end{equation}

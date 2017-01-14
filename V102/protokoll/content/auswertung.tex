@@ -1,46 +1,183 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-\subsection{Bestimmung des Schubmoduls G}
+Es wurden Bauteile mit folgenden Größen verwendet:
 \begin{equation}
-	\theta_{\mathrm{Kugel}}=(1.3197\pm 0.0006) \cdot 10^{-4} \,\si{\kilo\gram \square\metre}
+	\label{eqn:bauteile}
+	\begin{aligned}
+		M_{\mathrm{Kugel}}                       & = & (512.2 \pm 0.2) \,\si{\gram}\text{,}                       \\
+		D_{\mathrm{Kugel}} = 2R_{\mathrm{Kugel}} & = & (50.760\pm 0.004)\,\si{\milli\meter} \text{,}              \\
+		\Theta_{\mathrm{Halterung}}              & = & 22.5 \cdot 10^{-7} \, \si{\kilo\gram\square\metre}\text{,} \\
+		L_{\mathrm{Draht}}                       & = & 585 \,\si{\milli\meter} \text{.}
+	\end{aligned}
 \end{equation}
-\begin{equation}
-	G= (8.987\pm 0.004) \cdot 10^{10}  \,\si{\newton \per \square\metre}
-\end{equation}
-\begin{equation}
-	Q= (1.056\pm 0.011) \cdot 10^{11}  \,\si{\newton \per \square\metre}
-\end{equation}
+\FloatBarrier
 
-\begin{equation}
-	\mu= 0.1684\pm 0.0028
-\end{equation}
-%\begin{figure}
-%  \centering
-%  \includegraphics{plot.pdf}
-%  \caption{Plot.}
-%  \label{fig:plot}
-%\end{figure}
-E= (2.100+/-0.005)e+11
+\subsection{Bestimmung des Schubmoduls $G$}
+Zur Bestimmung des Schubmoduls $G$ nach Gleichung \eqref{eqn:schubischu} ist zu beachten,
+dass das gesamte Trägheitsmoment $\Theta_{\mathrm{Gesamt}}$ des Drehschwingers sich zusammensetzt aus
+$\Theta_{\mathrm{Halterung}}$ und $\Theta_{\mathrm{Kugel}}$.
+Aus Gleichung \eqref{eqn:toughtimes} folgt
+\begin{equation*}
+	\label{eqn:dattD}
+	D=\left(\frac{2\pi}{T}\right)^2 \cdot \Theta_{\mathrm{Gesamt}} \mathrm{.}
+\end{equation*}
+Mit Gleichung \eqref{eqn:richti} ergibt sich für $G$ der Ausdruck
+\begin{equation*}
+	\label{eqn:richtigerG}
+	G=\left(\frac{2\pi}{T}\right)^2 \cdot \Theta_{\mathrm{Gesamt}}\cdot \frac{2L}{\pi\cdot R^4} \mathrm{.}
+\end{equation*}
+\subsubsection{Bestimmung des Trägheitsmoment}
+Zur Bestimmung des Schubmoduls $G$ wird zunächst $\Theta_{\mathrm{Kugel}}$ nach Formel \eqref{eqn:trägee} bestimmt.
+Mit den Kenngrößen des Drehschwingers nach \refeq{eqn:bauteile} und dem Fehler nach Gaußscher Fehlerfortpflanzung mit Formel \eqref{eqn:fehlerfortpflanzung} ergibt sich
+\begin{equation*}
+	\Theta_{\mathrm{Kugel}}=(1.3197\pm 0.0006) \cdot 10^{-4} \,\si{\kilo\gram \square\metre} \text{.}
+\end{equation*}
+Damit ergibt sich $\Theta_{\mathrm{Gesamt}}$ zu:
+\begin{equation*}
+	\label{eqn:trägemasse}
+	\Theta_{\mathrm{Gesamt}}= \Theta_{\mathrm{Kugel}}+\Theta_{\mathrm{Halterung}}= (1.3422+/-0.0006)
+	\cdot 10^{-4} \,\si{\kilo\gram \square\metre} \text{.}
+\end{equation*}
+\subsubsection{Bestimmung des Drahtradius}
+
+\begin{table}
+	\centering
+
+	\caption{Durchmesser und Radius an 6 verschiedenen Messpunkten des Drahtes.}
+	\label{tab:niceslabel}
+	\begin{tabular}{ccc}
+		\toprule
+		Messpunkt & $D_{\mathrm{Draht}}$ / $\si{\micro\meter}$ & $R_{\mathrm{Draht}}$ / $\si{\micro\meter}$ \\
+		\midrule
+		1         & 180                                        & 90.0                                       \\
+		2         & 177                                        & 88.5                                       \\
+		3         & 171                                        & 85.5                                       \\
+		4         & 170                                        & 85.0                                       \\
+		5         & 168                                        & 84.0                                       \\
+		6         & 166                                        & 83.0                                       \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Zudem wird zur Bestimmung des Schubmoduls $G$ der Radius des Drahtes benötigt.
+In Tabelle \ref{tab:niceslabel} sind die gemessenen Durchmesser des Drahtes an sechs verschiedenen Stellen sowie der Radius $R_{\mathrm{Draht}}=0.5 \cdot D_{\mathrm{Draht}}$ eingetragen.
+Nach Formel \eqref{eqn:mittelwert} ergibt sich der Mittelwert sowie nach Formel \eqref{eqn:mittelwertfehler} der Fehler des Mittelwerts des Drahtradius zu:
+\begin{equation*}
+	R_{\mathrm{Draht}}= (86.0 \pm 1.1)\,\si{\micro\meter} \text{.}
+\end{equation*}
+\FloatBarrier
+
+\subsubsection{Bestimmung der Schwingungsdauer ohne äußeres Magnetfeld}
+\begin{table}
+	\centering
+	\caption{Schwingungsdauer $T$ ohne äußeres Magnetfeld}
+	\label{tab:schwingung_ohne}
+	\begin{tabular}{cc}
+
+		\toprule
+		Messpunkt & Schwingungsdauer $T$/$\si{\second}$ \\
+		\midrule
+		1         & 20.032                              \\
+		2         & 20.039                              \\
+		3         & 20.044                              \\
+		4         & 20.033                              \\
+		5         & 20.032                              \\
+		6         & 20.033                              \\
+		7         & 20.034                              \\
+		8         & 20.037                              \\
+		9         & 20.03                               \\
+		10        & 20.048                              \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+In Tabelle \ref{tab:schwingung_ohne} sind die Schwingungsdauern $T$ für 10 Perioden für den Drehschwinger ohne äußeres Magnetfeld dargestellt.
+Der Mittelwert der Schwingungsdauer gibt sich nach Formel \eqref{eqn:mittelwert} samt dem Fehler des Mittelwerts nach Formel \eqref{eqn:mittelwertfehler} zu:
+\begin{equation*}
+	T= (20.0362 \pm0.0018) \,\si{\second} \text{.}
+\end{equation*}
+
+
+Somit ergibt sich der Schubmodul $G$ mit $\Theta_{\mathrm{Gesamt}}$, $R_{\mathrm{Draht}}$ und $T$ zu:
+\begin{equation*}
+	G= (90 \pm 5) \,\si{\giga\pascal} \text{.}
+\end{equation*}
+\FloatBarrier
+
+\subsection{Berechnung der weiteren elastischen Materialkonstanten}
+Da die Messung zur Bestimmung des Elastizitätsmodul $E$ entfiel, wird dieses angegeben mit:
+\begin{equation*}
+	E= (210.0 \pm 0.5 )\,\si{\giga\pascal} \text{.}
+\end{equation*}
+Nach Formel \eqref{eqn:zusammenhang} ergeben sich nun der Kompressionsmodul $Q$ und die Querkontraktionszahl $\mu$ zu:
+\begin{align*}
+	\mu  = \frac{E}{2G}-1       & = 0.168\pm 0.003 \mathrm{,}                     \\
+	Q    = \frac{E}{3(1-2 \mu)} & = (105.6\pm 1.1) \,\si{\giga\pascal} \mathrm{.}
+\end{align*}
+Die Fehler wurden hierfür mit der Gaußschen Fehlerfortpflanzung nach Gleichung \eqref{eqn:fehlerfortpflanzung} bestimmt.
 \subsection{Bestimmung des magnetischen Moments $m$ des Helmholtzspulenpaars}
-Das B-Feld eines Helmholtzspulenpaars ergibt sich mit
+Durch Umformen von Gleichung \eqref{eqn:periodemagnet} ergibt sich
+\begin{equation*}
+	\label{eqn:NeLine}
+	m\cdot B+D=\left(\frac{2\pi}{T_\mathrm{m}}\right)^2 \cdot \Theta_{\mathrm{Gesamt}} =\Phi \text{.}
+\end{equation*}
+Es lässt sich somit ein linearer Zusammenhang zwischen der magnetischen Flussdichte $B$ und $\left(\frac{1}{T_{\mathrm{m}}}\right)^2$, also dem reziproken Quadrat der Schwingungsdauer feststellen.
+Aus diesem linearen Zusammenhang wird nun das magnetische Moment $m$ bestimmt.
+Das B-Feld eines Helmholtzspulenpaars ergibt sich nach \cite{LordHelmchen} mit
 \begin{equation}
-	B_{\mathrm{H}}=
+	\label{eqn:MisterMagneto}
+	B_{\mathrm{H}}= \frac{8}{\sqrt{125}}\cdot \mu_{\mathrm{0}} \frac{I\cdot N}{R} \text{.}
 \end{equation}
+Mit dem bereits bekannten Trägheitsmoment des Drehschwingers $\Theta_{\mathrm{Gesamt}}$ lässt sich die neu eingeführte Variable $\Phi$ nach Gleichung \eqref{eqn:MisterMagneto} berechnen.
+In Tabelle \ref{tab:vielvieldaten} befinden sich die fünf Periodendauern $T_{\mathrm{i}}$ zu jeder Stromstärke der Messung mit eingeschalteten Helmholtz-Spulen.
+Zudem wurde für jede Stromstärke die mittlere Schwingungsdauer sowie der zugehörige Fehler nach Formel \eqref{eqn:mittelwert} bzw. \eqref{mittelwertfehler} bestimmt.
+Außerdem wird jeweils die magnetische Flussdichte $B$ und die berechneten $\Phi$ angegeben. Ihre Fehler wurden über die Gaußsche Fehlerfortpflanzung nach Formel \eqref{eqn:fehlerfortpflanzung} bestimmt.
+
+\begin{table}
+	\centering
+	\caption{Messdaten zur Bestimmung des magnetischen Moments}
+	\label{tab:vielvieldaten}
+	\begin{tabular}{ccccccccc}
+		\toprule
+		$I$ / $\si{\ampere}$ & $T_{\mathrm{1}}$ /$\si{\second}$ & $T_{\mathrm{2}}$ /$\si{\second}$ & $T_{\mathrm{3}}$ /$\si{\second}$ & $T_{\mathrm{4}}$ /$\si{\second}$ & $T_{\mathrm{5}} $/$\si{\second}$ & $T_{\mathrm{mittel}}$/ $\si{\second}$ & $B$/$\si{\milli\tesla}$ & $\Phi \cdot 10^{-5} $/$\si{\kilo\gram\square\metre\per\square\second}$ \\
+		\midrule
+		0.1                  & 14.154                           & 14.137                           & 14.107                           & 14.085                           & 14.052                           & (14.107 \pm 0.018)                    & 0.4496                  & (2.663 \pm 0.007)                                                      \\
+		0.2                  & 12.143                           & 12.106                           & 12.080                           & 12.045                           & 12.013                           & (12.077 \pm 0.023)                    & 0.8992                  & (3.633 \pm 0.014)                                                      \\
+		0.3                  & 10.215                           & 10.186                           & 10.156                           & 10.131                           & 10.105                           & (10.159 \pm 0.019)                    & 1.3488                  & (5.135 \pm 0.020)                                                      \\
+		0.4                  & 8.893                            & 8.882                            & 8.856                            & 8.845                            & 8.821                            & (8.859\pm 0.013)                      & 1.7984                  & (6.751 \pm 0.020)                                                      \\
+		0.5                  & 8.022                            & 7.997                            & 7.998                            & 7.972                            & 7.972                            & (7.992\pm 0.009)                      & 2.2480                  & (8.296 \pm 0.020)                                                      \\
+		0.6                  & 7.359                            & 7.344                            & 7.327                            & 7.333                            & 7.341                            & (7.341\pm 0.005)                      & 2.6980                  & (9.833 \pm 0.015)                                                      \\
+		0.7                  & 6.839                            & 6.840                            & 6.838                            & 6.834                            & 6.829                            & (6.836\pm0.002)                       & 3.1471                  & (11.339 \pm 0.008)                                                     \\
+		0.8                  & 6.389                            & 6.406                            & 6.396                            & 6.403                            & 6.409                            & (6.401 \pm0.004)                      & 3.5967                  & (12.934 \pm 0.016)                                                     \\
+		0.9                  & 6.159                            & 6.067                            & 6.030                            & 6.009                            & 6.030                            & (6.059 \pm0.027)                      & 4.0463                  & (14.430 \pm 0.130)                                                     \\
+		1.0                  & 5.861                            & 5.820                            & 5.698                            & 5.619                            & 5.656                            & (5.730\pm0.050)                       & 4.4959                  & (16.130 \pm 0.260)                                                     \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Nun wird $\Phi$ gegen $B$ geplottet und über eine lineare Regression ($\Phi=a\cdot B +b$) mit python/matplotlib \cite{matplotlib} das magnetische Moment $m$ bestimmt.
+Die Regression beziehungsweise die Berechnung der Regressionsparameter nach Gleichung \eqref{eqn:ausgleichsgrade} liefert:
+\begin{align*}
+	a = m & = & (0.0339 \pm0.0004) \,\si{\ampere\square\meter} \text{,}                                   \\
+	b = D & = & (7.434 \pm 1.224) \cdot 10^{-6} \,\si{\kilo\gram\square\meter\per\square\second} \text{.}
+\end{align*}
+Die zugehörigen Messdaten samt der Regressionsgraden findet sich in Abbildung \ref{fig:magnetischesMoment}.
+\begin{figure}
+	\centering
+	\includegraphics{Bilder/b.pdf}
+	\caption{Plot.}
+	\label{fig:magnetischesMoment}
+\end{figure}
+Das magnetische Moment ergibt sich also zu $m=(0.0339 \pm0.0004) \,\si{\ampere\square\meter}$.
 
 
-
-a = m = 0.0338563481372 +- 0.000438666200483
-b = D =  7.434181548e-06 +- 1.22371249137e-06
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
 \subsection{Bestimmung der Horizontalkomponente des Erdmagnetfeldes}
 
-Die Messwerte der Periodendauer $T$ der Drehschwingung zur Bestimmung der Horizontalkomponente 
+Die Messwerte der Periodendauer $T$ der Drehschwingung zur Bestimmung der Horizontalkomponente
 des Erdmagnetfeldes sind in Tabelle \ref{tab:magnetusmaximus} aufgetragen.
 \begin{table}
-	\caption{Messwerte der Periodendauer $T$ zur Bestimmung der Horizontalkomponente 
+	\caption{Messwerte der Periodendauer $T$ zur Bestimmung der Horizontalkomponente
 	des Magnetfeldes.}
 	\label{tab:magnetusmaximus}
 	\centering
@@ -48,28 +185,28 @@ des Erdmagnetfeldes sind in Tabelle \ref{tab:magnetusmaximus} aufgetragen.
 		\toprule
 		Nummer & $T$/$\si{\second}$ \\
 		\midrule
-		1 & 19.957 \\
-		2 & 19.948 \\
-		3 & 19.949 \\
-		4 & 19.940 \\
-		5 & 19.944 \\
-		6 & 19.944 \\
-		7 & 19.936 \\
-		8 & 19.933 \\
-		9 & 19.937 \\
-		10 & 19.930 \\
+		1      & 19.957             \\
+		2      & 19.948             \\
+		3      & 19.949             \\
+		4      & 19.940             \\
+		5      & 19.944             \\
+		6      & 19.944             \\
+		7      & 19.936             \\
+		8      & 19.933             \\
+		9      & 19.937             \\
+		10     & 19.930             \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 Damit ergibt sich die Periodendauer $T$ als Mittelwert (bestimmt mit Formel
 \eqref{eqn:mittelwert} dieser Messwerte mit zugehörigem Fehler (bestimmt mit Formel
-\eqref{eqn:mittelwertfehler}) zu 
+\eqref{eqn:mittelwertfehler}) zu
 \begin{equation*}
 	T = (19,942 \pm 0,003) \, \si{\second} \mathrm{.}
 \end{equation*}
 
-Die Horizontalkomponente des Erdmagnetfeldes ergibt sich durch Formel \eqref{eqn:periodemagnet} 
+Die Horizontalkomponente des Erdmagnetfeldes ergibt sich durch Formel \eqref{eqn:periodemagnet}
 und der Richtgröße eines Zylinders $D$ (Formel \eqref{eqn:richti}) zu
 \begin{equation}
-	B = 4\pi^2\frac{\theta}{m T^2} - \frac{\pi G R^4}{2Lm} \mathrm{.} 
+	B = 4\pi^2\frac{\Theta}{m T^2} - \frac{\pi G R^4}{2Lm} \mathrm{.}
 \end{equation}
