@@ -64,7 +64,6 @@ amperage = np.linspace(0.1, 1, 10)
 mu_null = scipy.constants.physical_constants["mag. constant"]
 mu_0 = mu_null[0]  # muh contains (value, "unit",error)
 B_H = 8 / np.sqrt(125) * amperage * N * mu_0 / R_Helmholtz
-print("B_Helmholtz=", B_H)
 
 ###########
 S, Ts = np.genfromtxt("Messdaten/b.txt", unpack="True")
@@ -88,37 +87,44 @@ mean_T_Per_Amperage = np.asarray(mean)
 
 # right side of equation (formula (20) => m*B+D=Phi) ;contains errors
 # (Theta_ges and mean_T_Per_Amperage are uarrays)
-Phi = ((2 * np.pi) / mean_T_Per_Amperage)**2 * Theta_ges
 # for plotting we will only need nominal values of Phi
 
-Phi_nv = list()
-for i in range(10):
-    Phi_nv.append(Phi[i].nominal_value)
-Phi_nominalvalue = np.asarray(Phi_nv)
-
 # calculate regression and plotting for m*B+D=Phi
+
+print(mean_T_Per_Amperage)
+mean_T_Per_Amperage_nv = list()
+for i in range(10):
+    mean_T_Per_Amperage_nv.append(mean_T_Per_Amperage[i].nominal_value)
+mean_T_Per_Amperage_nominalvalue = np.asarray(mean_T_Per_Amperage_nv)
 
 
 def ausgleichsgrade(B, a, b):
     return a * B + b
 
-params, covariance = curve_fit(ausgleichsgrade, B_H, Phi_nominalvalue)
+params, covariance = curve_fit(
+    ausgleichsgrade, (1 / mean_T_Per_Amperage_nominalvalue**2), B_H)
 errors = np.sqrt(np.diag(covariance))
-
-print('a = m =', params[0], '+-', errors[0])
-print('b = D = ', params[1], '+-', errors[1])
-ausgleich_B = np.linspace(0, 50 / 10000, 100)
-plt.plot(B_H * 1000, Phi_nominalvalue * 10000, 'ro', label="Messwerte")
-plt.plot(ausgleich_B * 1000, ausgleichsgrade(
-    ausgleich_B, *params) * 10000, 'b-', label="Regressionsgrade")
-plt.ylabel(
-    r"$\Phi \cdot 10^{-5} $/$\si{\kilo\gram\square\metre\per\square\second}$")
+a = ufloat(params[0], errors[0])
+b = ufloat(params[1], errors[1])
+m = ((4 * np.pi**2) / a) * Theta_ges
+D = -m * b
+print('m =', m)
+print('D = ', D)
+ausgleich_T = np.linspace(5, 60, 100)
+plt.plot(1 / mean_T_Per_Amperage_nominalvalue **
+         2, B_H * 1000, 'ro', label="Messwerte")
+plt.plot(1 / ausgleich_T**2, ausgleichsgrade(
+    1 / ausgleich_T**2, *params) * 1000, 'b-', label="Regressionsgrade")
 plt.xlabel(
+    r"$\frac{1}{T_{\mathrm{m}}^2}$/$\si{\per\square\second}$")
+plt.ylabel(
     r"$B_{\mathrm{Helmholtz}} \cdot 10^{-3}$/ $\si{\tesla}$")
+plt.ylim(0, 5)
+plt.xlim(0, 0.035)
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/b.pdf')
 
 # generating tables
-ascii.write([amperage, t1, t2, t3, t4, t5, mean_T_Per_Amperage, B_H, Phi], 'Messdaten/b.tex', format="latex",
-            names=["Stromstärke", "T1", "T2", "T3", "T4", "T5", "T mittel \pm standardabweichung", "BFeld", "Phi"])
+ascii.write([amperage, t1, t2, t3, t4, t5, mean_T_Per_Amperage, B_H], 'Messdaten/b.tex', format="latex",
+            names=["Stromstärke", "T1", "T2", "T3", "T4", "T5", "T mittel \pm standardabweichung", "BFeld"])
