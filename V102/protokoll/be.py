@@ -15,6 +15,7 @@ print('Mittelwert:', np.mean(Te), ' und Fehler des Mittelwerts: ',
 
 
 T_mittel = ufloat(np.mean(Te), np.std(Te, ddof=1) / np.sqrt(len(Te)))
+print("T_mittel=", T_mittel)
 Theta_ges = ufloat(1.3422, 0.0006) / 10000
 magn_moment = ufloat(0.0339, 0.0004)
 G = ufloat(90, 5) * 10**(9)
