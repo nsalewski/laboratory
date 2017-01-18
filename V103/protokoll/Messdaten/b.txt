@@ -1,5 +1,5 @@
 #stab einseitig eingespannt, Messing rund, Gewicht_Last=520.9g; runder Stab mit D=10mm, Gewicht_Stab=360.5g, Länge_Stab=55cm
-Messpunkt D_0(x) in mm  D(x) in mm
+#Messpunkt D_0(x) in mm  D(x) in mm
 0   0.50    0.58
 1   0.46    0.55
 2   0.45    0.57
