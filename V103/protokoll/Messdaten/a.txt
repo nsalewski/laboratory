@@ -1,5 +1,5 @@
-#stab einseitig eingespannt, wahrscheinlich Alu, Gewicht_Last=767.4g; quadratischer Stab mit L=B=10mm, Gewicht_Stab=167.1g, Länge Stab=60cm
-Messpunkt D_0(x) in mm  D(x) in mm
+#stab einseitig eingespannt, wahrscheinlich Alu, Gewicht_Last=767.4g; quadratischer Stab mit L=B=10mm, Gewicht_Stab=167.1g, Länge Stab=60cm, Länge Stab eingespannt=54cm
+#Messpunkt D_0(x) in mm  D(x) in mm
 0   1.00    1.05
 1   0.97    1.06
 2   0.93    1.05
