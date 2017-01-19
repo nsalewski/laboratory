@@ -43,7 +43,8 @@ ascii.write([x_alu, d_alu, dx_alu, D_x_alu], 'Messdaten/alu_einseitig.tex', form
 
 # Bisher: Plot von D(x). Soll aber plot von D(x_alu_fit) sein. Warum?!
 
-
+x_alu = x_alu / 100
+x_messing = x_messing / 100
 x_alu_fit = (L_stab_alueingespannt * x_alu**2 - ((x_alu**3) / 3))
 x_messing_fit = (L_stab_messing_eingespannt *
                  x_messing**2 - ((x_messing**3) / 3))
@@ -52,11 +53,11 @@ x_messing_fit = (L_stab_messing_eingespannt *
 def D(x, a, b):
     return a * x + b
 
-params, covariance = curve_fit(D, x_alu, D_x_alu)
+params, covariance = curve_fit(D, x_alu_fit, D_x_alu)
 errors = np.sqrt(np.diag(covariance))
 print("params", *params)
-plt.plot(x_alu, D_x_alu, 'rx', label="Messwerte")
-plt.plot(x_alu, D(x_alu, *params), 'b-', label="Regressionsgrade")
+plt.plot(x_alu_fit, D_x_alu, 'rx', label="Messwerte")
+plt.plot(x_alu_fit, D(x_alu_fit, *params), 'b-', label="Regressionsgrade")
 plt.xlabel(
     r"$L\cdot x^2- \frac{x^3}{3}$")
 plt.ylabel(
@@ -65,11 +66,12 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/a.pdf')
 plt.clf()
-params_m, covariance_m = curve_fit(D, x_messing, D_x_messing)
+params_m, covariance_m = curve_fit(D, x_messing_fit, D_x_messing)
 errors = np.sqrt(np.diag(covariance_m))
 print("params", *params_m)
-plt.plot(x_messing, D_x_messing, 'rx', label="Messwerte")
-plt.plot(x_messing, D(x_messing, *params_m), 'b-', label="Regressionsgrade")
+plt.plot(x_messing_fit, D_x_messing, 'rx', label="Messwerte")
+plt.plot(x_messing_fit, D(x_messing_fit, *params_m),
+         'b-', label="Regressionsgrade")
 plt.xlabel(
     r"$L\cdot x^2- \frac{x^3}{3}$")
 plt.ylabel(
