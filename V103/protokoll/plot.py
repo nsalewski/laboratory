@@ -41,8 +41,7 @@ print("Dichte Messing Literatur", dichte_lit_messing)
 ascii.write([x_alu, d_alu, dx_alu, D_x_alu], 'Messdaten/alu_einseitig.tex', format="latex",
             names=["messpunkt x ", "D_0", "D_belastet", "D diff"])
 
-# Bisher: Plot von D(x). Soll aber plot von D(x_alu_fit) sein. Warum?!
-
+x_linspace = np.linspace(0, 53)
 x_alu = x_alu / 100
 x_messing = x_messing / 100
 x_alu_fit = (L_stab_alueingespannt * x_alu**2 - ((x_alu**3) / 3))
