@@ -1,5 +1,5 @@
 #stab beidseitig eingespannt, Stab wie in a) Gewicht_Last=4720.1g; wert 27 ist mitte mit 0.65/1.50
-Messpunkt D_0(x) in mm  D(x) in mm
+#Messpunkt D_0(x) in mm  D(x) in mm
 0   1.00    1.09
 1   0.99    1.23
 2   0.98    1.38
@@ -27,7 +27,7 @@ Messpunkt D_0(x) in mm  D(x) in mm
 24  0.70    3.64
 25  0.70    3.65
 26  0.67    3.65
-27  0.65    -----
+27  0.65    0 
 28  1.48    4.41
 29  1.46    4.38
 30  1.44    4.34
