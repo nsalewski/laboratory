@@ -22,11 +22,11 @@ bestätigt sich der Verdacht.
 \FloatBarrier
 \subsection{Durchbiegung des eckigen Stabs (Aluminium) bei einseitiger Einspannung}
 Die Gesamtauslenkung $D(x)$ des Stabes ergibt sich als Differenz aus $D_{\mathrm{M}}(x)-D_{\mathrm{0}}(x)$.
-Die Messdaten für jeden Messpunkt $x$ finden sich in Tabelle \ref{tab:aluu}. Hierbei bezeichnet $x$ den Abstand zum Einspannpunkt.
+Die Messdaten für jeden Messpunkt $x$ finden sich in Tabelle \ref{tab:Aluu}. Hierbei bezeichnet $x$ den Abstand zum Einspannpunkt.
 
 \begin{longtable}[c]{cccc}
 	\caption{Messergebnisse für die Durchbiegung des Aluminiumstabes bei einseitiger Einspannung.}\\
-	\label{tab:aluu}\\
+	\label{tab:Aluu}\\
 	\toprule
 	$x$ /$\si{\centi\meter}$ & $D_{\mathrm{0}}(x)$/$\si{\milli\meter}$ & $D_{\mathrm{M}}(x)$/$\si{\milli\meter}$ & $D(x)$/$\si{\milli\meter}$ \\
 
@@ -98,12 +98,12 @@ Die Messdaten für jeden Messpunkt $x$ finden sich in Tabelle \ref{tab:aluu}. Hi
 Der Elastizitätsmodul wird nach Gleichung \eqref{eqn:d_x_einseitig} über eine lineare Regression $y= a\cdot x$ nach Formel \eqref{eqn:ausgleichsgrade} mittels Scipy \cite{scipy} bestimmt.
 
 Dafür wird die Auslenkung $D(x)$ gegen $(L_{\mathrm{eckig}})\cdot x^2-\frac{x^3}{3}$ aufgetragen.
-Diese ist in Abbildung \ref{fig:alu_einseitig} samt den Messdaten aufgetragen.
+Diese ist in Abbildung \ref{fig:Alu_einseitig} samt den Messdaten aufgetragen.
 \begin{figure}
 	\centering
 	\includegraphics{Bilder/a.pdf}
 	\caption{Durchbiegung $D(x)$ des Aluminiumstabes aufgetragen gegen $L_{\mathrm{eckig}}x^2-\frac{x^3}{3}$}
-	\label{fig:alu_einseitig}
+	\label{fig:Alu_einseitig}
 \end{figure}
 Für den Parameter $a$ ergibt sich
 \begin{equation*}
@@ -120,7 +120,7 @@ Für das Flächenträgheitsmoment $I$ ergibt sich nach \cite{bla}
 \end{equation}
 Mit der Erdanziehung $g=(9.811899 \pm 0.000041) \,\si{\meter\per\square\second}$ (für Dortmund) nach \cite{G} und der Masse der Last $m_{\mathrm{Last}}=767.4\,\si{\gram}$ ergibt sich der Elastizitätsmodul zu
 \begin{equation*}
-	E_{\mathrm{alu}}= (70.42 \pm 0.22)\,\si{\giga\pascal} \text{.}
+	E_{\mathrm{Alu}}= (70.42 \pm 0.22)\,\si{\giga\pascal} \text{.}
 \end{equation*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
