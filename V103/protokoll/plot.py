@@ -45,7 +45,7 @@ plt.plot(x_linspace_fit_messing * 1000, D(x_linspace_fit_messing, *params_m),
 plt.xlabel(
     r"$L\cdot x^2- \frac{x^3}{3}$/$10^{-3}\,\si{\cubic\meter}$")
 plt.ylabel(
-    r"$D(x)$/$10^{-3}\,\si{\cubic\meter}$")
+    r"$D(x)$/$\si{\milli\meter}$")
 #plt.xlim(0, 53)
 #plt.ylim(0, 5.6)
 plt.axis('tight')
@@ -95,7 +95,7 @@ plt.plot(x_linspace_fit_alu * 1000, D(x_linspace_fit_alu, *params),
 plt.xlabel(
     r"$L\cdot x^2- \frac{x^3}{3}$/$10^{-3}\,\si{\cubic\meter}$")
 plt.ylabel(
-    r"$D(x)$/$10^{-3}\,\si{\cubic\meter}$")
+    r"$D(x)$/$\si{\milli\meter}$")
 #plt.xlim(0, 53)
 #plt.ylim(0, 5.75)
 plt.axis('tight')

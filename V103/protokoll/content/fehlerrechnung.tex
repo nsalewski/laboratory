@@ -2,42 +2,39 @@
 \label{sec:fehlerrechnung}
 Alle berechneten Mittelwerte werden mit folgender Formel bestimmt:
 \begin{equation}
-  \label{eqn:mittelwert}
-  \overline x=\frac{1}{N}\sum \limits_{i=1}^{N} x_i .
+	\label{eqn:mittelwert}
+	\overline x=\frac{1}{N}\sum \limits_{i=1}^{N} x_i .
 \end{equation}
 Der zugehörige Fehler des Mittelwerts bestimmt sich mit:
 
 \begin{equation}
-  \label{eqn:mittelwertfehler}
-  \Delta \overline x= \frac{1}{\sqrt{N}} \sqrt{\frac{1}{N-1} \sum \limits_{i=1}^{N} (x_i- \overline x)^2}.
-\end {equation}
+	\label{eqn:mittelwertfehler}
+	\Delta \overline x= \frac{1}{\sqrt{N}} \sqrt{\frac{1}{N-1} \sum \limits_{i=1}^{N} (x_i- \overline x)^2}.
+\end{equation}
 Wenn fehlerbehaftete Größen in einer späteren Formel weiter verwendet werden, so wird der sich fortpflanzende Fehler
 mit Hilfe der Gauß’schen Fehlerfortpflanzung berechnet:
 
 \begin{equation}
-  \label{eqn:fehlerfortpflanzung}
-  \Delta f = \sqrt{ \sum \limits_{i = 1}^{N} (\frac{\partial f}{\partial x_i})^2 \cdot (\Delta x_i)^2}.
-\end{equation}
-Haben Messgeräte baubedingte Unsicherheiten, so errechnen sich die Fehler des Mittelwerts nach der Regel zur Fehlerfortpflanzung von Gerätefehlern wie folgt:
- \begin{equation}
-   \frac{\Delta z}{z}=\sqrt{(\frac{\Delta x}{x})^2+(\frac{\Delta y}{y})^2}
+	\label{eqn:fehlerfortpflanzung}
+	\Delta f = \sqrt{ \sum \limits_{i = 1}^{N} (\frac{\partial f}{\partial x_i})^2 \cdot (\Delta x_i)^2}.
 \end{equation}
 
+
 Die Regression von Polynomen und Ausgleichsgrade, sowie die Bestimmung der zugehörigen Fehler werden mit
-IPython 5.1.0 mittels Scipy 0.18.1 durchgeführt.
+IPython 5.1.0 mittels Scipy 0.18.1 \cite{scipy} durchgeführt.
 Parameter eventueller Ausgleichsgeraden
 \begin{equation}
-\label{eqn:ausgleichsgrade}
-y=a \cdot x +b .
+	\label{eqn:ausgleichsgrade}
+	y=a \cdot x +b .
 \end{equation}
 werden bestimmt über
 
 \begin{equation}
-\label{eqn:ausgleichsgrade_a}
-a= \frac{ \overline{xy}- \overline{x} \overline{y}}{\overline{x^2}-\overline{x}^2} .
+	\label{eqn:ausgleichsgrade_a}
+	a= \frac{ \overline{xy}- \overline{x} \overline{y}}{\overline{x^2}-\overline{x}^2} .
 \end{equation}
 
 \begin{equation}
-\label{eqn:ausgleichsgrade_b}
-b= \frac{ \overline{x^2} \overline{y}- \overline{x} \cdot \overline{xy}}{\overline{x^2}-\overline{x}^2} .
+	\label{eqn:ausgleichsgrade_b}
+	b= \frac{ \overline{x^2} \overline{y}- \overline{x} \cdot \overline{xy}}{\overline{x^2}-\overline{x}^2} .
 \end{equation}

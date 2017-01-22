@@ -43,10 +43,8 @@ errors = np.sqrt(np.diag(covariance))
 print("params", *params, "und +/-", errors[0])
 plt.plot(x_alu_fit, D1, 'rx', label="Messwerte")
 plt.plot(x_alu_fit, Y1(x_alu_fit, *params), 'b-', label="Regressionsgrade")
-plt.xlabel(
-    r"$3L^2 x - 4x^3$")
-plt.ylabel(
-    r"$D(x)$")
+plt.xlabel(r"$3L^2 x - 4x^3$/$10^{-3}\,\si{\cubic\meter}$")
+plt.ylabel(r"$D(x)$/$\si{\milli\meter}$")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/c.pdf')
@@ -71,9 +69,9 @@ print("params", *params, "fehler", *errors)
 plt.plot(x_alufit, D2, 'rx', label="Messwerte")
 plt.plot(x_alufit, Y2(x_alufit, *params), 'b-', label="Regressionsgrade")
 plt.xlabel(
-    r"$4x^3 -12Lx^2 + 9L^2x - L^3")
-plt.ylabel(
-    r"$D(x)$")
+    r"$4x^3 -12Lx^2 + 9L^2x - L^3$/$10^{-3}\,\si{\cubic\meter}$")
+plt.ylabel(r"$D(x)$/$\si{\milli\meter}$")
+
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/c2.pdf')
