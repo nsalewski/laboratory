@@ -9,15 +9,17 @@ Mit der Masse des Stabes $m_{\mathrm{eckig}}=167.1\,\si{\gram}$ ergibt sich die 
 	\rho_{\mathrm{eckig}}=\frac{m_{\mathrm{eckig}}}{V_{\mathrm{eckig}}}=2.785 \,\si{\gram\per\cubic\centi\meter}\text{.}
 \end{equation}
 
-Aufgrund der silbernen Farbe und des relativ geringen Gewicht des Probestabs wird vermutet, dass dieser aus Aluminium ist.\\
+Aufgrund der silbernen Farbe und dem relativ geringen Gewicht des Probestabs wird vermutet, dass dieser aus Aluminium ist.\\
 Diese Vermutung wird bestätigt durch einen Vergleich mit dem Literaturwert der Dichte für Aluminium.\\
 Dieser liegt bei $\rho_{\mathrm{Aluminium}}=2.712\,\si{\gram\per\cubic\centi\meter}$. \cite{Werkzeugkiste}
+%Der Name Werkzeugkiste ist legendär!!!
 
-Für den runden Stab ergibt sich nach dem gleichen Prinzip mit dem Durchmesser $d_{\mathrm{rund}}=1\,\si{\centi\meter}$ und der Stablänge $L_{\mathrm{rund}}=55\,\si{\centi\meter}$ bei einem
-Gewicht von $m_{\mathrm{rund}}=360.5\,\si{\gram}$ die Dichte zu $\rho_{\mathrm{rund}}=8.346 \,\si{\gram\per\cubic\centi\meter}$.\\
+Für den runden Stab ergibt sich nach dem gleichen Prinzip, mit dem Durchmesser $d_{\mathrm{rund}}=1\,\si{\centi\meter}$ und der Stablänge $L_{\mathrm{rund}}=55\,\si{\centi\meter}$ bei einem
+Gewicht von $m_{\mathrm{rund}}=360.5\,\si{\gram}$, die Dichte zu $\rho_{\mathrm{rund}}=8.346 \,\si{\gram\per\cubic\centi\meter}$.\\
 Anhand der gelblichen Farbe des Probestabs wird vermutet, dass dieser aus Messing ist.\\
 Mit dem Literaturwert von $\rho_{\mathrm{Messing}}=8.4\,\si{\gram\per\cubic\centi\meter}$ nach \cite{Werkzeugkiste} %können alternativ auch noch eine andere Quelle nehmen, Hab da noch ein Buch für
 bestätigt sich der Verdacht.
+%Ganz schön viele Verdächtigungen hörma, sehr nice geschrieben (Y)
 
 \FloatBarrier
 \subsection{Durchbiegung des eckigen Stabs (Aluminium) bei einseitiger Einspannung}
@@ -98,13 +100,14 @@ Die Messdaten für jeden Messpunkt $x$ finden sich in Tabelle \ref{tab:Aluu}. Hi
 Der Elastizitätsmodul wird nach Gleichung \eqref{eqn:d_x_einseitig} über eine lineare Regression $y= a\cdot x$ nach Formel \eqref{eqn:ausgleichsgrade} mittels Scipy \cite{scipy} bestimmt.
 
 Dafür wird die Auslenkung $D(x)$ gegen $(L_{\mathrm{eckig}})\cdot x^2-\frac{x^3}{3}$ aufgetragen.
-Diese ist in Abbildung \ref{fig:Alu_einseitig} samt den Messdaten aufgetragen.
+Diese ist in Abbildung \ref{fig:Alu_einseitig} mit den zugehörigen Messdaten aufgetragen.
 \begin{figure}
 	\centering
 	\includegraphics{Bilder/a.pdf}
 	\caption{Durchbiegung $D(x)$ des Aluminiumstabes aufgetragen gegen $L_{\mathrm{eckig}}x^2-\frac{x^3}{3}$}
 	\label{fig:Alu_einseitig}
 \end{figure}
+
 Für den Parameter $a$ ergibt sich
 \begin{equation*}
 	a=(64.16\pm 0.20) \,\si{\per\square\meter}  \text{.}
@@ -127,7 +130,8 @@ Mit der Erdanziehung $g=(9.811899 \pm 0.000041) \,\si{\meter\per\square\second}$
 \subsection{Durchbiegung des runden Stabs (Messing) bei einseitiger Einspannung}
 Der Elastizitätsmodul für den Messingsstab ergibt sich nach dem gleichen Prinzip wie beim Aluminiumstab.
 Die Messpunkte im Abstand $x$ von der Einspannung samt den zugehörigen Auslenkungen ohne Belastung $D_{\mathrm{0}}(0)$
-und der Auslenkung mit angehängtem Gewicht $D_{\mathrm{M}}(x)$ sowie der Differenz $D(x)$ finden sich in Tabelle \ref{tab:b}.
+und der Auslenkung mit angehängtem Gewicht $D_{\mathrm{M}}(x)$ sowie der Differenz $D(x)$ sind 
+in Tabelle \ref{tab:b} zu finden.
 
 \begin{longtable}[c]{cccc}
 	\caption{Messergebnisse für die Durchbiegung des Messingstabs bei einseitiger Einspannung.}\\
@@ -201,7 +205,7 @@ und der Auslenkung mit angehängtem Gewicht $D_{\mathrm{M}}(x)$ sowie der Differ
 \end{longtable}
 
 Eine lineare Regression mittels Scipy \cite{scipy} für Gleichung \eqref{eqn:d_x_einseitig} nach Formel \eqref{eqn:ausgleichsgrade} für $D(x)$ gegen $L_{\mathrm{eckig}}\cdot x^2-\frac{x^3}{3}$
-findet sich in Abbildung \ref{fig:messing_einseitig}.
+befindet sich in Abbildung \ref{fig:messing_einseitig}.
 
 \begin{figure}
 	\centering
@@ -212,7 +216,7 @@ findet sich in Abbildung \ref{fig:messing_einseitig}.
 Der Regressionsparameter $a$ wird erneut zur Berechnung von $E$ verwendet.
 Es ergibt sich
 \begin{equation*}
-	a=(69.48 \pm 0.39) \,\si{\per\square\meter} \text{.}
+	a=(69.48 \pm 0.39) \, \si{\per\square\meter} \text{.}
 \end{equation*}
 Mit Gleichung \eqref{eqn:d_x_einseitig} ergibt sich
 \begin{equation}
@@ -231,7 +235,9 @@ Mit der Erdanziehung $g=(9.811899 \pm 0.000041) \,\si{\meter\per\square\second}$
 \FloatBarrier
 \subsection{Durchbiegung des Stabes bei beidseitiger Einspannung}
 
-Die Messwerte zur beidseitigen Einspannung sind in Tabelle \ref{tab:beidi} aufgetragen.
+Die Messpunkte im Abstand $x$ mit den zugehörigen Auslenkungen ohne Belastung ($D_0(x)$), mit 
+Belastung ($D_{\mathrm{M}}$) und der Differenz $D(x)$ sind in Tabelle \ref{tab:beidi}
+aufgetragen.
 
 
 \begin{longtable}[c]{cccc}
@@ -311,13 +317,13 @@ Die Messwerte zur beidseitigen Einspannung sind in Tabelle \ref{tab:beidi} aufge
 \begin{figure}
 	\centering
 	\includegraphics{Bilder/c.pdf}
-	\caption{Durchbiegung der Stäbe.}
+	\caption{Durchbiegung $D(x)$ des beidseitig eingespannten Aluminiumstabes aufgetragen gegen das Polynom $3L^2x - 4x^3$ für $0 \leq x \leq \frac{L}{2}$.}
 	\label{fig:Stabus}
 \end{figure}
 
-Die Durchbiegung $D(x)$ an den Orten $0 \leq x \leq \frac{L}{2}$
-also $\SI{0}{\centi\meter} \leq x \leq \SI{26}{\centi\meter}$
-ist in Abbildung \ref{fig:Stabus} gemäß Formel \eqref{eqn:d_x_beidseitig_eins} gegen das
+Die Durchbiegung $D(x)$ an den Messpunkten $0 \leq x \leq \frac{L}{2}$ -- also
+$\SI{0}{\centi\meter} \leq x \leq \SI{26}{\centi\meter}$ -- ist in Abbildung \ref{fig:Stabus}
+gemäß Formel \eqref{eqn:d_x_beidseitig_eins} gegen das
 Polynom $3L^2x - 4x^3$ aufgetragen.
 
 Die Regressionsgerade der Form
@@ -326,9 +332,9 @@ Die Regressionsgerade der Form
 \end{equation*}
 mit $a = \frac{F}{48EI}$ gemäß Formel \eqref{eqn:d_x_beidseitig_eins}, wurde mit Scipy
 \cite{scipy} berechnet.
-Der Parameter $a$ ergibt sich zu
+Für den Parameter $a$ ergibt sich:
 \begin{equation*}
-	a = (17.18 \pm 0.08) \,\si{\per\square\meter} \mathrm{.}
+	a = (17.18 \pm 0.08) \, \si{\per\square\meter} \mathrm{.}
 \end{equation*}
 Damit erhält man den Elastizitätsmodul $E$ zu
 \begin{equation*}
@@ -338,18 +344,20 @@ Damit erhält man den Elastizitätsmodul $E$ zu
 \begin{figure}
 	\centering
 	\includegraphics{Bilder/c2.pdf}
-	\caption{Durchbiegung der Stäbe amk.}
+	\caption{Durchbiegung $D(x)$ des beidseitig eingespannten Aluminiumstabes aufgetragen gegen das Polynom $4x^3 - 12Lx^2 + 9L^2x - L^3$ für $\frac{L}{2} \leq x \leq L$.}
 	\label{fig:StabusMaximus}
 \end{figure}
 
-Die Regeressionsgerade für die zweite Hälfte des beidseitig eingespannten Stabes  mit den
+Die Regressionsgerade nach Formel \eqref{eqn:d_x_beidseitig_zwei} für die zweite Hälfte
+des beidseitig eingespannten Stabes -- also für die 
+Messpunkten $\SI{28}{\centi\meter} \leq x \leq \SI{52}{\centi\meter}$ --  mit den
 zugehörigen Messwerten ist in Abbildung \ref{fig:StabusMaximus} dargestellt.
 Für die Steigung der $a$ der Regressionsgerade ergibt sich
-
 \begin{equation*}
 	a = (16.2\pm 0.1)\,\si{\per\square\meter}  \mathrm{.}
 \end{equation*}
-Damit erhält man für den Elastizitätsmodul $E$ den Wert
+Damit erhält man für den Elastizitätsmodul $E$ analog zur ersten Hälfte nach Formel 
+\eqref{eqn:d_x_beidseitig_zwei} den Wert
 \begin{equation*}
 	E =(71.3 \pm 0.4) \, \si{\giga\pascal} \mathrm{.}
 \end{equation*}
