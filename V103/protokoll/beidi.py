@@ -33,8 +33,8 @@ x = x / 100
 x1 = x1 / 100
 x2 = x2 / 100
 x_alu_fit = ((3 * L_stab_alueingespannt**2) * x1 - 4 * x1**3)
-x1_ls = np.linspace(0, 58, 50)
-x_alu_fit_ls = ((3 * L_stab_alueingespannt**2) * x1_ls - 4 * x1_ls**3)
+#x1_ls = np.linspace(3, 60, 50) / 100
+#x_alu_fit_ls = ((3 * L_stab_alueingespannt**2) * x1_ls - 4 * x1_ls**3)
 
 
 def Y1(x, a):
@@ -44,12 +44,14 @@ params, covariance = curve_fit(Y1, x_alu_fit, D1)
 errors = np.sqrt(np.diag(covariance))
 print("params", *params, "und +/-", errors[0])
 plt.plot(x_alu_fit, D1, 'rx', label="Messwerte")
-plt.plot(x_alu_fit_ls, Y1(x_alu_fit_ls, *params),
+plt.plot(x_alu_fit, Y1(x_alu_fit, *params),
          'b-', label="Regressionsgrade")
 plt.xlabel(r"$3L^2 x - 4x^3$/$10^{-3}\,\si{\cubic\meter}$")
 plt.ylabel(r"$D(x)$/$\si{\milli\meter}$")
 plt.legend(loc='best')
 plt.tight_layout()
+#plt.ylim(0, 3.5)
+#plt.xlim(0, 0.19)
 plt.savefig('Bilder/c.pdf')
 a_alu = ufloat(params[0], errors[0])
 F_alu = mlast_alu * g
@@ -65,19 +67,20 @@ def Y2(x, A):
 
 x_alufit = 4 * x2**3 - 12 * L_stab_alueingespannt * x2**2 + \
     9 * L_stab_alueingespannt**2 * x2 - L_stab_alueingespannt**3
-x2_ls = np.linspace(0, 58, 50)
-x_alufit_ls = 4 * x2_ls**3 - 12 * L_stab_alueingespannt * x2_ls**2 + \
-    9 * L_stab_alueingespannt**2 * x2_ls - L_stab_alueingespannt**3
+#x2_ls = np.linspace(3, 70, 50) / 100
+# x_alufit_ls = 4 * x2_ls**3 - 12 * L_stab_alueingespannt * x2_ls**2 + \
+#9 * L_stab_alueingespannt**2 * x2_ls - L_stab_alueingespannt**3
 plt.clf()
 params, covariance = curve_fit(Y2, x_alufit, D2)
 errors = np.sqrt(np.diag(covariance))
 print("params", *params, "fehler", *errors)
 plt.plot(x_alufit, D2, 'rx', label="Messwerte")
-plt.plot(x_alufit_ls, Y2(x_alufit_ls, *params), 'b-', label="Regressionsgrade")
+plt.plot(x_alufit, Y2(x_alufit, *params), 'b-', label="Regressionsgrade")
 plt.xlabel(
     r"$4x^3 -12Lx^2 + 9L^2x - L^3$/$10^{-3}\,\si{\cubic\meter}$")
 plt.ylabel(r"$D(x)$/$\si{\milli\meter}$")
-
+plt.ylim(0.5, 3.0)
+plt.xlim(0.03, 0.18)
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/c2.pdf')
