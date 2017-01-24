@@ -1,0 +1,8 @@
+#unsere Messung Hier nur Entartungen in dritter Spalte die jeweiligen differenzen, also die tatsächlichen halben wellenlängen (achtung erster wert nur platzhalter null!!!)
+#Entartung (hässlich) lamnda/2 (in mm) diff in mm
+1 3.5   0
+2 12.0  8.5
+3 20.3  8.3
+4 28.7  8.4
+5 37.1  8.4
+6 45.5  8.4

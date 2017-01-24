@@ -1,0 +1,13 @@
+#jeweils noch Fragen, ob bei denen überall mit 5/4 malgenommen werden muss.
+#wie zuvor diesmal messung der schwebung, also reflektor verbaut, zudem tiefpass, damit nur Schwebung gemessen wird, tiefpass mit C=100nF, R=10KiloOhm
+#Wieder pro Gang die 10 Messungen (Reihenfolge anders als in c :D, also erst rückwärts, dann vorwärts), nicht wundern über kommazahlen bei ersten(6.) Gang, da haben die beiden mit höherer Auflösung gemessen
+6   4.9 4.8 4.8 4.8 4.8 4.8 4.8 4.8 4.9 4.9
+12  10  14  13  13  10  10  10  11  10  10
+18  15  15  15  15  15  15  15  15  15  15
+24  19  20  19  20  19  20  20  20  20  20
+30  24  24  24  24  24  25  25  25  24  25
+36  29  29  29  29  29  30  29  29  31  30
+42  34  34  34  34  34  35  35  35  34  34
+48  39  39  39  39  39  39  39  39  39  39
+54  44  44  44  44  44  44  44  44  44  44
+60  49  49  49  49  49  49  49  49  49  49

@@ -1,0 +1,13 @@
+#Messdaten sind von uns, Strecke zwischen Dioden =25cm, Zeit ist bereits umgerechnet in Sekunden. Zeitbasisgenerator erzeugt 1/mikrosekunde, Untersetzer steht auf 10^3
+#Aufgetragen ist jeweils Gang in Spalte 1, und in 2-6 die messwerte für rückwärts fahren, in 7-11 vorwärts fahren.
+#Gang Messpunkte wie oben beschrieben
+6   5042  5058  5050  5036  5023  5165  5154  5177  5170  5128
+12  2545  2552  2554  2551  2557  2595  2602  2658  2619  2600
+18  1703  1731  1720  1726  1725  1762  1761  1761  1756  1762
+24  1310  1310  1312  1308  1310  1329  1328  1329  1335  1328
+30  1057  1057  1059  1059  1056  1077  1078  1076  1077  1075
+36  890   894   891   894   893   907   908   908   908   907
+42  772   772   771   770   770   789   788   788   789   790
+48  681   681   683   684   683   697   698   695   697   697
+54  612   618   616   614   614   628   629   627   627   631
+60  556   557   554   558   553   569   573   571   574   574
