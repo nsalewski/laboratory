@@ -1,0 +1,14 @@
+# abstand d. Lichtschranken, 20cm,
+#Immer #Gang, dann vorwärts, dann rückwärts
+#6
+39616
+39488
+39515
+39550
+39521
+39838
+39758
+39808
+39908
+39820
+#12

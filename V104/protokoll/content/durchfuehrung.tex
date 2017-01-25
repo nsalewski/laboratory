@@ -21,14 +21,14 @@ sodass am Ausgang \textbf{Q} das Potential auf \textbf{LOW} geändert wird. Die 
 Es werden für jeden Gang des Antriebsmotor des Wagens jeweils 5 Messungen für den Hin-und Rückweg durchgeführt.
 
 
-\subsection{Messung der Frequenz $\upnu_{\matrm{0}}$ der Schallwelle bei ruhendem Lautsprecher}
+\subsection{Messung der Frequenz der Schallwelle bei ruhendem Lautsprecher}
 \label{sec:schall} %zu faul zum ändern
 Die Messung der Frequenz der Schallwelle bei ruhendem Lautsprecher wird ermittelt mittels der in Abschnitt \ref{sec:frequenz} ausführlich erklärten Schaltung.
 Diese wird hier allerdings manuell ausgelöst und dient lediglich dazu, dass die Schwingungen des Zeitbasisgenerators nur für eine fest definierte Zeit gezählt werden.
-Diese fest definierte Zeit wird am Untersetzer zu $\SI{1}{\second}$ eingestellt. Am Zählwerk kann somit direkt die Frequenz $\upnu_{\mathrm{0}}$ in $\si{\per\second}=\si{\Hz}$ abgelesen werden.
+Diese fest definierte Zeit wird am Untersetzer zu $\SI{1}{\second}$ eingestellt. Am Zählwerk kann somit direkt die Frequenz $\nu_{\mathrm{0}}$ in $\si{\per\second}=\si{\Hz}$ abgelesen werden.
 Die Messung wird zehnmal wiederholt.
-\subsection{Messung der Schallgeschwindigkeit $c$ über die Wellenlänge $\lambda$}
-Die Schallgeschwindigkeit bei Zimmertemperatur lässt sich bestimmen über die Kenntnis der Frequenz $\upnu_{\mathrm{0}}$ des ruhenden Lautsprechers und der Wellenlänge $\lambda$ der Schallwelle.
+\subsection{Messung der Schallgeschwindigkeit über die Wellenlänge}
+Die Schallgeschwindigkeit bei Zimmertemperatur lässt sich bestimmen über die Kenntnis der Frequenz $\nu_{\mathrm{0}}$ des ruhenden Lautsprechers und der Wellenlänge $\lambda$ der Schallwelle.
 Die Wellenlänge wird über \textbf{LISSAJOUS-Figuren} bestimmt.
 Diese entstehen, wenn auf beide Achsen eines Oszilloskops Schwingungen aufgegeben werden. Dazu wird auf die X-Achse des Oszilloskops das verstärkte Ausgangssignal des Mikrophons und auf die Y-Achse das Signal des Sinusgenerators gegeben.
 Jede Entartung der \textbf{LISSAJOUS-Figuren} zu einer Geraden stellt eine Phasenverschiebung von $\pi$ zwischen den beiden auf die Achsen gegebenen Schwingungen dar.
@@ -46,8 +46,8 @@ Mittels der bereits in Abschnitt \ref{sec:schall} bestimmten Frequenz der Schall
 
 \subsection{Messung der Frequenz der Schallwelle bei bewegter Quelle}
 \label{sec:frequenz}
-In Abbildung \ref{fig:delphin} ist der prinzipielle Aufbau zur Bestimmung der Frequenz $\upnu_{\matrm{Q}}$ bei bewegter Quelle dargestellt.
-Der Wagen mit dem Lautsprecher bewegt sich nun relativ zum Empfänger mit den in Abschnitt \ref{sec:speedygonzales}} bestimmten Geschwindigkeiten.
+In Abbildung \ref{fig:delphin} ist der prinzipielle Aufbau zur Bestimmung der Frequenz $\nu_{\mathrm{Q}}$ bei bewegter Quelle dargestellt.
+Der Wagen mit dem Lautsprecher bewegt sich nun relativ zum Empfänger mit den in Abschnitt \ref{sec:speedygonzales} bestimmten Geschwindigkeiten.
 Jede Messung wird erneut für jeden Gang des Antriebmotors jeweils fünfmal für den Hin-als auch den Rückweg durchgeführt.
 Das Zählwerk zählt, wie in Abschnitt \ref{sec:schall} bereits beschrieben, genau eine Sekunde lang die Schwingungen der Schallquelle, welche am Empfänger eintreffen. Es wird also die Frequenz der Schallwelle, welche am Empfänger eintrifft, auf dem Zählwerk ausgegeben.
 Um dies zu erreichen, wird das \textbf{LOW}-Signal, welches erzeugt wird beim Durchfahren des Wagens durch die erste Lichtschranke, auf den \textbf{\={S}}-Eingang einer bistabilen kippstufe gegeben, sodass deren \textbf{Q}-Ausgang auf \textbf{HIGH}-Potential gestellt wird.
@@ -60,7 +60,7 @@ Da der Ausgang der zweiten Torstufe (auch hier erneut realisiert über \textbf{A
 zur weiteren Steuerung der Schaltung weitergibt.
 Da der Zeitbasisgenerator jede Mikrosekunde einen Schwingungsimpuls, also $10^6$ Impulse pro Sekunde, muss der Untersetzer auf $10^6$ gestellt werden (Der Untersetzer zählt die Anzahl der eintreffenden Impulse, sobald der zuvor festgelegte Wert erreicht ist, sendet der Übersetzer ein \textbf{HIGH}-Impuls).
 Das durch den Übersetzer gesendete \textbf{HIGH}-Signal wird auf den \textbf{T}-Eingang der bistabilen Kippstufe gegeben. Da die bistabile Kippstufe bei fallender Flanke (also \textbf{HIGH} zu \textbf{LOW}) am \textbf{T}-Eingang den Status am \textbf{Q}-Ausgang ändert, wird dieser auf \textbf{LOW} gesetzt und beide Torstufen der Schaltung deaktiviert.
-Am Zählwerk kann die Frequenz $\upnu_{\mathrm{Q}}$ jetzt direkt abgelesen werden.
+Am Zählwerk kann die Frequenz $\nu_{\mathrm{Q}}$ jetzt direkt abgelesen werden.
 
 \begin{figure}
 	\includegraphics{Bilder/Frequenz.png}
