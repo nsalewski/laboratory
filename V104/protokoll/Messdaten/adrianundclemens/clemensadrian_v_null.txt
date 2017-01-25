@@ -1,0 +1,7 @@
+#Messpunkt v_null in Hz
+1   16593
+2   16593
+3   16594
+4   16593
+5   16594
+6   16594 #here was a small typo
