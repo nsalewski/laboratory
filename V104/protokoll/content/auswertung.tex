@@ -1,21 +1,109 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
+\FloatBarrier
 \subsection{Ruhefrequenz}
 \begin{table}
 	\centering
-	\caption{Messwerte zur Bestimmung der Ruhefrequenz $\nu_0$}
+	\caption{Messwerte zur Bestimmung der Ruhefrequenz $\nu_0$.}
 	\label{tab:ruhefr}
 	\begin{tabular}{cc}
 		\toprule
 		Messwert & $\nu_0$ / $\si{\hertz}$ \\
 		\midrule
-		1 & 16593 \\
-		2 & 16593 \\
-		3 & 16594 \\
-		4 & 16593 \\
-		5 & 16594 \\
-		6 & 16594 \\
+		1        & 20741.25                \\
+		2        & 20741.25                \\
+		3        & 20742.50                \\
+		4        & 20741.25                \\
+		5        & 20742.50                \\
+		6        & 20742.50                \\
 		\bottomrule
 	\end{tabular}
 \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%b
+\FloatBarrier
+\subsection{Auswertung der Messung der Wellenlänge}
+In Tabelle \ref{tab:juice} finden sich die direkt gemessenen Wellenlängen. Diese ergeben sich aus der Differenz des Abstands zwischen Mikrophon und Lautsprecher für zwei verschiedene Entartungen der LISSAJOUS-Figuren zu Geraden.
+Da sowohl die Entartungen zu steigenden, als auch zu fallenden Geraden betrachtet wurden, muss der gemessene Abstand jeweils noch verdoppelt werden, sodass sich die ganze Wellenlänge $\lambda$ ergibt.
+Nach Formel \eqref{eqn:mittelwert} ergibt sich der Mittelwert der Wellenlänge zu.
+\begin{equation}
+	\label{eqn:wellenlänge}
+	\lambda=\SI{16.80(6)}{\milli\metre}\text{.}
+\end{equation}
+Der Fehler des Mittelwerts ergibt sich mit Formel \eqref{eqn:mittelwertfehler}.
+Zur Bestimmung der Schallgeschwindigkeit wird zudem die Frequenz $\nu_{0}$ bei keiner relativen geschwindigkeit zwischen Sender und Empfänger.
+Die bestimmten Frequenzen finden sich in Tabelle \ref{tab:ruhefrequenz}.
+Nach Formel \eqref{eqn:mittelwert} mit dem Fehler nach Formel \eqref{eqn:mittelwertfehler} ergibt sich $\nu_0$ zu
+\begin{equation}
+	\label{eqn:rrrruhe}
+	\nu_0=\SI{20600(60)}{\Hz}\text{.}
+\end{equation}
+Die Schallgeschwindigkeit $c$ ergibt sich damit zu
+\begin{equation}
+	\label{eqn:Schallgeschwindigkeit}
+	c=\nu_0 \cdot\lambda=\SI{346(2)}{\meter\per\second}\text{.}
+\end{equation}
+Der Fehler wurde hierbei nach Gauß'scher Fehlerfortpflanzung \eqref{eqn:fehlerfortpflanzung}.
+
+Die Größe $\frac{\nu_0}{c}=\frac{1}{\lambda}$ ergibt sich somit zu
+\begin{equation}
+	\label{eqn:wichtige_größe}
+	\frac{\nu_0}{c}=\frac{1}{\lambda}=\SI{59.5(2)}{\per\meter}
+\end{equation}
+
+
+\begin{table}
+	\centering
+	\caption{Messwerte der Ruhefrequenz $\nu_{\mathrm{0}}$ zur Bestimmung der Schallgeschwindigkeit $c$.}
+	\label{tab:ruhefrequenz}
+	\begin{tabular}{cc}
+		\toprule
+		Datenpunkt & $\nu_0$ / $\si{\hertz}$ \\
+		\midrule
+		1          & 20742                   \\
+		2          & 20160                   \\
+		3          & 20740                   \\
+		4          & 20741                   \\
+		5          & 20685                   \\
+		6          & 20715                   \\
+		7          & 20718                   \\
+		8          & 20520                   \\
+		9          & 20633                   \\
+		10         & 20373                   \\
+		\bottomrule
+	\end{tabular}
+
+\end{table}
+
+\begin{table}
+	\centering
+	\caption{Messung der Wellenlänge über die Entartung der LISSAJOUS-Figuren zur Bestimmung der Schallgeschwindigkeit $c$.}
+	\label{tab:juice}
+	\begin{tabular}{ccc}
+		\toprule
+		Entartung & Abstand $d$/$\si{\milli\meter}$ & Wellenlänge $\lambda$/$\si{\milli\meter}$ \\
+		\midrule
+		1         & 8.5                             & 17.0                                       \\
+		2         & 8.3                             & 16.6                                       \\
+		3         & 8.4                             & 16.8                                       \\
+		4         & 8.4                             & 16.8                                       \\
+		5         & 8.4                             & 16.8                                       \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\FloatBarrier
+%%%%%%%%%%%%%%%%%%
+\subsection{Nachweis des Doppler-Effekts über die direkte Messung}
+
+\begin{figure}
+	\includegraphics{Bilder/vquellebewegt.pdf}
+	\caption{Direkte Messung der Frequenz}
+	\label{fig:doppler}
+\end{figure}
+\FloatBarrier
+\subsection{Nachweis des Doppler-Effekts mit der Schwebungsmethode}
+\begin{figure}
+	\includegraphics{Bilder/schwebung.pdf}
+	\caption{Schwebungsmethode}
+	\label{fig:doppler_schwebung}
+\end{figure}
