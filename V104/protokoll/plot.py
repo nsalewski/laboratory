@@ -14,6 +14,37 @@ Gang = np.linspace(1, 10, 10)
 
 # short function for generating arrays with nominalvalues
 
+####################################################################################### a)
+puls = np.genfromtxt("Messdaten/adrianundclemens/adrianclemens_messunga.txt", unpack = "True")
+n6h = ufloat(np.mean(puls[0:5]), np.std(puls[0:5]) / np.sqrt(5))
+n6z = ufloat(np.mean(puls[5:10]), np.std(puls[5:10]) / np.sqrt(5))
+n12h = ufloat(np.mean(puls[10:15]), np.std(puls[10:15]) / np.sqrt(5))
+n12z = ufloat(np.mean(puls[15:20]), np.std(puls[15:20]) / np.sqrt(5))
+n18h = ufloat(np.mean(puls[20:25]), np.std(puls[20:25]) / np.sqrt(5))
+n18z = ufloat(np.mean(puls[25:30]), np.std(puls[25:30]) / np.sqrt(5))
+n24h = ufloat(np.mean(puls[30:35]), np.std(puls[30:35]) / np.sqrt(5))
+n24z = ufloat(np.mean(puls[35:40]), np.std(puls[35:40]) / np.sqrt(5))
+n30h = ufloat(np.mean(puls[40:45]), np.std(puls[40:45]) / np.sqrt(5))
+n30z = ufloat(np.mean(puls[45:50]), np.std(puls[45:50]) / np.sqrt(5))
+n36h = ufloat(np.mean(puls[50:55]), np.std(puls[50:55]) / np.sqrt(5))
+n36z = ufloat(np.mean(puls[55:60]), np.std(puls[55:60]) / np.sqrt(5))
+n42h = ufloat(np.mean(puls[60:65]), np.std(puls[60:65]) / np.sqrt(5))
+n42z = ufloat(np.mean(puls[65:70]), np.std(puls[65:70]) / np.sqrt(5))
+n48h = ufloat(np.mean(puls[70:75]), np.std(puls[70:75]) / np.sqrt(5))
+n48z = ufloat(np.mean(puls[75:80]), np.std(puls[75:80]) / np.sqrt(5))
+n54h = ufloat(np.mean(puls[80:85]), np.std(puls[80:85]) / np.sqrt(5))
+n54z = ufloat(np.mean(puls[85:90]), np.std(puls[85:90]) / np.sqrt(5))
+n60h = ufloat(np.mean(puls[90:95]), np.std(puls[90:95]) / np.sqrt(5))
+n60z = ufloat(np.mean(puls[95:100]), np.std(puls[95:100]) / np.sqrt(5))
+
+List = [n6h, n6z, n12h, n12z, n18h, n18z, n24h, n24z, n30h, n30z, n36h, n36z, n42h, n42z, n48h, n48z, n54h, n54z, n60h, n60z]
+pulse = unp.uarray([n6h.n, n6z.n, n12h.n, n12z.n, n18h.n, n18z.n, n24h.n, n24z.n, n30h.n, n30z.n, n36h.n, n36z.n, n42h.n, n42z.n, n48h.n, n48z.n, n54h.n, n54z.n, n60h.n, n60z.n], [n6h.s, n6z.s, n12h.s, n12z.s, n18h.s, n18z.s, n24h.s, n24z.s, n30h.s, n30z.s, n36h.s, n36z.s, n42h.s, n42z.s, n48h.s, n48z.s, n54h.s, n54z.s, n60h.s, n60z.s])
+s = 0.2
+t = (10**(-3) * pulse)
+pace = s / (10**(-3) * pulse)
+
+ascii.write([List, t, pace], 'Messdaten/pace.tex', format='latex')
+###################################################################################### ende a)
 
 def nomvalues_array(array):
     List = list()

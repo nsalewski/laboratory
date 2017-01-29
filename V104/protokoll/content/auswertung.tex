@@ -1,6 +1,59 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \FloatBarrier
+\subsection{Bestimmung der Geschwindigkeiten der verschiedenen Gänge}
+Mit dem Aufbau aus Abschnitt \ref{sec:} lassen sich die Geschwindigkeiten des Wagens bei den 
+jeweiligen Gängen mit
+\begin{equation}
+	v = \frac{s}{n \cdot 10^{-3} \,\si{\second}} 
+\end{equation}
+bestimmen, wobei $n$ der Anzahl der gemessenen Impulse entspricht.
+Der Faktor $10^{-3}$ entspricht der Impulsfrequenz und ergibt sich aus dem Produkt der
+Zeitbasis ($\frac{1}{\si{\micro\second}}$ und dem Untersetzungsfaktor ($10^2$), womit sich
+die Zeit $t$ zu $t = n \cdot 10^{-3}$ ergibt.
+Die Strecke $s$ ($s = \SI{20}{\centi\meter}$) ist die ausgemessene Distanz zwischen den beiden
+Lichtschranken.
+\begin{table}
+	\centering
+	\caption{Messwerte zur Bestimmung der Geschwindigkeit $v$ bei verschiedenen Gängen.}
+	\label{tab:pace}
+	\begin{tabular}{cccc}
+		\toprule
+		 Gang & $n$ & $t$ / $\si{\second}$ & $v$ / $\si{\meter\per\second}$ \\
+		\midrule
+		6 vor & 39538 \pm 20 & 39.538 \pm 0.020 & 0.005058 \pm 0.000003 \\
+		6 zurück & 39826 \pm22 & 39.826 \pm 0.022 & 0.005022  \pm  0.000003 \\
+		12 vor & 19693 \pm 29 & 19.693 \pm 0.029 & 0.010156 \pm 0.000015 \\
+		12 zurück & 19952 \pm 23 & 19.952 \pm 0.023 & 0.010024 \pm 0.000012 \\
+		18 vor & 13147 \pm 12 & 13.147 \pm 0.012 & 0.015213 \pm 0.000014 \\
+		18 zurück & 13285 \pm 9 & 13.285 \pm 0.009 & 0.015055 \pm 0.000010 \\
+		24 vor & 9865 \pm 8 & 9.865 \pm 0.008 & 0.020274 \pm 0.000015 \\
+		24 zurück & 9985 \pm 10 & 9.985 \pm 0.010 & 0.020030 \pm 0.000020 \\
+		30 vor & 7908 \pm 4 & 7.908 \pm 0.004 & 0.025292 \pm 0.000011 \\
+		30 zurück & 8050 \pm 40 & 8.050 \pm 0.040 & 0.024830 \pm 0.000130 \\
+		36 vor & 6558 \pm 6 & 6.558 \pm 0.006 & 0.030499 \pm 0.000027 \\
+		36 zurück & 6678 \pm 6 & 6.678 \pm 0.006 & 0.029947 \pm 0.000029 \\
+		42 vor & 5598 \pm 4 & 5.598 \pm 0.004 & 0.035724 \pm 0.000027 \\
+		42 zurück & 5729 \pm 7 & 5.729 \pm 0.007 & 0.034910 \pm 0.000040 \\
+		48 vor & 4840 \pm 50 & 4.840 \pm 0.050 & 0.041400 \pm 0.000400 \\
+		48 zurück & 5013 \pm 5 & 5.013 \pm 0.005 & 0.039890 \pm 0.000040 \\
+		54 vor & 4362.0 \pm 3 & 4.362 \pm 0.003 & 0.045851 \pm 0.000040 \\
+		54 zurück & 4452 \pm 4 & 4.452 \pm 0.004 & 0.044930 \pm 0.000040 \\
+		60 vor & 3910 \pm 6 & 3.910 \pm 0.006 & 0.051150 \pm 0.000080 \\
+		60 zurück & 4041 \pm 17 & 4.041 \pm 0.017 & 0.049490 \pm 0.000210 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Die sich ergebenden Werte für die Geschwindigkeit des Wagens sind in Tabelle \ref{tab:pace}
+aufgetragen. Die Mittelwerte der gemessenen Impulsanzahl $n$ wurden mit Formel 
+\eqref{eqn:mittelwert} bestimmt und der zugehörige Fehler mit Formel
+\eqref{eqn:mittelwertfehler}. Weiterhin wird der Fehler der Geschwindigkeit $v$ mit 
+Gauß'scher Fehlerfortpflanzung (Formel \eqref{eqn:fehlerfortpflanzung} ermittelt.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FloatBarrier
 \subsection{Ruhefrequenz}
 \begin{table}
 	\centering
