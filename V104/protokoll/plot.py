@@ -283,7 +283,7 @@ plt.plot(v_lp, ausgleichsgrade(
 plt.xlabel(
     r"Geschwindigkeit des Reflektors $v_{\mathrm{R}}$/$\si{\meter\per\second}$")
 plt.ylabel(
-    r"Frequenzänderung $\Delta \nu$/$\si{Hz}$")
+    r"Frequenzänderung $\frac{\Delta \nu}{2}$/$\si{Hz}$")
 plt.xlim(-0.6, 0.6)
 plt.legend(loc='best')
 plt.tight_layout()

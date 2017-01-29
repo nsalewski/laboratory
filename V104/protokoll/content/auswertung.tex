@@ -76,6 +76,7 @@ Gauß'scher Fehlerfortpflanzung (Formel \eqref{eqn:fehlerfortpflanzung} ermittel
 %b
 \FloatBarrier
 \subsection{Auswertung der Messung der Wellenlänge}
+\label{sec:wellenlaenge}
 In Tabelle \ref{tab:juice} finden sich die direkt gemessenen Wellenlängen. Diese ergeben sich aus der Differenz des Abstands zwischen Mikrophon und Lautsprecher für zwei verschiedene Entartungen der LISSAJOUS-Figuren zu Geraden.
 Da sowohl die Entartungen zu steigenden, als auch zu fallenden Geraden betrachtet wurden, muss der gemessene Abstand jeweils noch verdoppelt werden, sodass sich die ganze Wellenlänge $\lambda$ ergibt.
 Nach Formel \eqref{eqn:mittelwert} ergibt sich der Mittelwert der Wellenlänge zu.
@@ -147,26 +148,28 @@ Die Größe $\frac{\nu_0}{c}=\frac{1}{\lambda}$ ergibt sich somit zu
 \FloatBarrier
 %%%%%%%%%%%%%%%%%%
 \subsection{Nachweis des Doppler-Effekts über die direkte Messung}
-Der Doppler-Effekt wird nun untersucht für eine bewegte Quelle und einen ruhenden Empfänger.
-Dafür werden die zuvor verwendeten Geschwindigkeiten des Wagens verwendet, auf dem die Quelle montiert ist.
-In Tabelle \ref{tab:direkt} sind dazu die bestimmten Wagengeschwindigkeiten gegen die Differenz $\Delta \nu$ zwischen Ruhefrequenz $\nu_\mathrm{0}$ und der jeweils gemessenen Frequenz $\nu_{\mathrm{Q}}$ aufgetragen.
+Der Doppler-Effekt wird nun untersucht für eine bewegte Quelle und einen ruhenden Empfänger.\\
+Dafür werden die zuvor bestimmten Geschwindigkeiten des Wagens verwendet, auf dem die Quelle montiert ist.\\
+In Tabelle \ref{tab:direkt} sind dazu die bestimmten Wagengeschwindigkeiten und die Differenz $\Delta \nu$ zwischen Ruhefrequenz $\nu_\mathrm{0}$ und der jeweils gemessenen Frequenz $\nu_{\mathrm{Q}}$ aufgetragen.\\
 Hierbei wird die Geschwindigkeit des Wagens für die Fahrt von der Quelle weg als negativ betrachtet.
 \begin{table}
 	\centering
-	\caption{}
+	\caption{Untersuchung des Dopplereffekts für bewegte Quelle und ruhenden Empfänger}
 	\label{tab:direkt}
 	\begin{tabular}{cc}
+		\toprule
 		Wagengeschwindigkeit $v$/$\si{\meter\per\second}$ & $\Delta \nu$/$\si{\Hz}$ \\
+		\midrule
 		-0.495                                            & -30.375                 \\
 		-0.449                                            & -26.875                 \\
 		-0.399                                            & -24.125                 \\
 		-0.349                                            & -20.625                 \\
 		-0.299                                            & -17.875                 \\
 		-0.248                                            & -15.125                 \\
-		-0.2                                              & -11.875                 \\
+		-0.200                                            & -11.875                 \\
 		-0.151                                            & -8.625                  \\
-		-0.1                                              & -5.875                  \\
-		-0.05                                             & -2.375                  \\
+		-0.100                                            & -5.875                  \\
+		-0.050                                            & -2.375                  \\
 		0.051                                             & 3.125                   \\
 		0.102                                             & 6.375                   \\
 		0.152                                             & 9.375                   \\
@@ -177,8 +180,16 @@ Hierbei wird die Geschwindigkeit des Wagens für die Fahrt von der Quelle weg al
 		0.414                                             & 24.375                  \\
 		0.459                                             & 26.875                  \\
 		0.512                                             & 30.375                  \\
+		\bottomrule
 	\end{tabular}
 \end{table}
+In Abbildung \ref{fig:doppler} ist $\Delta \nu$ gegen die Wagengeschwindigkeit $v$ aufgetragen.
+Es wird eine lineare Regression nach Formel \eqref{eqn:ausgleichsgrade} mit python/scipy \cite{scipy} durchgeführt.
+Der Steigungsparameter $a$ entspricht der bereits in Abschnitt \ref{sec:wellenlaenge} bestimmten Größe $\frac{1}{\lambda}$.
+Dieser ergibt sich zu
+\begin{equation*}
+	a_{\mathrm{Quelle}}=\frac{1}{\lambda}=\SI{59.76(25)}{\per\meter} \text{.}
+\end{equation*}
 \begin{figure}
 	\includegraphics{Bilder/vquellebewegt.pdf}
 	\caption{Direkte Messung der Frequenz}
@@ -186,37 +197,44 @@ Hierbei wird die Geschwindigkeit des Wagens für die Fahrt von der Quelle weg al
 \end{figure}
 \FloatBarrier
 \subsection{Nachweis des Doppler-Effekts mit der Schwebungsmethode}
+Ebenso wie im vorherigen Abschnitt wird für die Messung der Schwebung verfahren. In Tabelle \ref{tab:schwebe} sind die gemessenen $\Delta \nu$ gegen die Wagengeschwindigkeit aufgetragen.
+Da sich der Wagen mit dem Reflektor sich bezüglich des Empfängers mit $2v$ bewegt, wird im vorliegenden Fall der halbe gemessene Wert für die Frequenz $\nu$ gegen die Wagengeschwindigkeit geplottet.
+In Abbildung \ref{fig:doppler_schwebung} wird $\frac{\Delta \nu}{2}$ gegen die Wagengeschwindigkeit $v$ aufgetragen.
 \begin{table}
 	\centering
 	\caption{}
-	\label{tab:direkt}
+	\label{tab:schwebung}
 	\begin{tabular}{cc}
 		\toprule
-		Wagengeschwindigkeit $v$/$\si{\meter\per\second}$ & $\Delta \nu$/$\si{\Hz}$ \\
+		Wagengeschwindigkeit $v$/$\si{\meter\per\second}$ & $\frac{\Delta \nu}{2}$/$\si{\Hz}$ \\
 		\midrule
-		-0.495                                            & -30.625                 \\
-		-0.449                                            & -27.5                   \\
-		-0.399                                            & -24.375                 \\
-		-0.349                                            & -21.25                  \\
-		-0.299                                            & -18.125                 \\
-		-0.248                                            & -15.0                   \\
-		-0.2                                              & -12.125                 \\
-		-0.151                                            & -9.375                  \\
-		-0.1                                              & -7.5                    \\
-		-0.05                                             & -3.0125                 \\
-		0.051                                             & 3.025                   \\
-		0.102                                             & 6.375                   \\
-		0.152                                             & 9.375                   \\
-		0.203                                             & 12.5                    \\
-		0.253                                             & 15.5                    \\
-		0.305                                             & 18.625                  \\
-		0.357                                             & 21.625                  \\
-		0.414                                             & 24.375                  \\
-		0.459                                             & 27.5                    \\
-		0.512                                             & 30.625                  \\
+		-0.495                                            & -30.625                           \\
+		-0.449                                            & -27.500                           \\
+		-0.399                                            & -24.375                           \\
+		-0.349                                            & -21.250                           \\
+		-0.299                                            & -18.125                           \\
+		-0.248                                            & -15.000                           \\
+		-0.200                                            & -12.125                           \\
+		-0.151                                            & -9.375                            \\
+		-0.100                                            & -7.500                            \\
+		-0.050                                            & -3.0125                           \\
+		0.051                                             & 3.025                             \\
+		0.102                                             & 6.375                             \\
+		0.152                                             & 9.375                             \\
+		0.203                                             & 12.500                            \\
+		0.253                                             & 15.500                            \\
+		0.305                                             & 18.625                            \\
+		0.357                                             & 21.625                            \\
+		0.414                                             & 24.375                            \\
+		0.459                                             & 27.500                            \\
+		0.512                                             & 30.625                            \\
 		\bottomrule
 	\end{tabular}
 \end{table}
+Der Steigungsparameter der Regressionsgrade mit python/scipy \cite{scipy} ergibt sich zu
+\begin{equation*}
+	a=\frac{1}{\lambda}=\SI{60.74(30)}{\per\meter} \text{.}
+\end{equation*}
 \begin{figure}
 	\includegraphics{Bilder/schwebung.pdf}
 	\caption{Schwebungsmethode}
