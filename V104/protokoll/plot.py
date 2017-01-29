@@ -12,10 +12,18 @@ import uncertainties.unumpy as unp
 Gang = np.linspace(1, 10, 10)
 # für vorwärts-und rückwärtsgang einfügen
 
+
+def nomvalues_array(array):
+    List = list()
+    for i in range(len(array)):
+        List.append(array[i].nominal_value)
+    array_noms = np.asarray(List)
+    return array_noms
 # short function for generating arrays with nominalvalues
 
-####################################################################################### a)
-puls = np.genfromtxt("Messdaten/adrianundclemens/adrianclemens_messunga.txt", unpack = "True")
+# a)
+puls = np.genfromtxt(
+    "Messdaten/adrianundclemens/adrianclemens_messunga.txt", unpack="True")
 n6h = ufloat(np.mean(puls[0:5]), np.std(puls[0:5]) / np.sqrt(5))
 n6z = ufloat(np.mean(puls[5:10]), np.std(puls[5:10]) / np.sqrt(5))
 n12h = ufloat(np.mean(puls[10:15]), np.std(puls[10:15]) / np.sqrt(5))
@@ -37,21 +45,34 @@ n54z = ufloat(np.mean(puls[85:90]), np.std(puls[85:90]) / np.sqrt(5))
 n60h = ufloat(np.mean(puls[90:95]), np.std(puls[90:95]) / np.sqrt(5))
 n60z = ufloat(np.mean(puls[95:100]), np.std(puls[95:100]) / np.sqrt(5))
 
-List = [n6h, n6z, n12h, n12z, n18h, n18z, n24h, n24z, n30h, n30z, n36h, n36z, n42h, n42z, n48h, n48z, n54h, n54z, n60h, n60z]
-pulse = unp.uarray([n6h.n, n6z.n, n12h.n, n12z.n, n18h.n, n18z.n, n24h.n, n24z.n, n30h.n, n30z.n, n36h.n, n36z.n, n42h.n, n42z.n, n48h.n, n48z.n, n54h.n, n54z.n, n60h.n, n60z.n], [n6h.s, n6z.s, n12h.s, n12z.s, n18h.s, n18z.s, n24h.s, n24z.s, n30h.s, n30z.s, n36h.s, n36z.s, n42h.s, n42z.s, n48h.s, n48z.s, n54h.s, n54z.s, n60h.s, n60z.s])
+List = [n6h, n6z, n12h, n12z, n18h, n18z, n24h, n24z, n30h, n30z,
+        n36h, n36z, n42h, n42z, n48h, n48z, n54h, n54z, n60h, n60z]
+pulse = unp.uarray([n6h.n, n6z.n, n12h.n, n12z.n, n18h.n, n18z.n, n24h.n, n24z.n, n30h.n, n30z.n, n36h.n, n36z.n, n42h.n, n42z.n, n48h.n, n48z.n, n54h.n, n54z.n, n60h.n, n60z.n], [
+                   n6h.s, n6z.s, n12h.s, n12z.s, n18h.s, n18z.s, n24h.s, n24z.s, n30h.s, n30z.s, n36h.s, n36z.s, n42h.s, n42z.s, n48h.s, n48z.s, n54h.s, n54z.s, n60h.s, n60z.s])
+pulse_vor = [n6h, n12h, n18h, n24h, n30h, n36h, n42h, n48h, n54h, n60h]
+pulse_rueck = [-n60z, -n54z, -n48z, -n42z, -
+               n36z, -n30z, -n24z, -n18z, -n12z, -n6z]
+pulse_vor_noms = nomvalues_array(pulse_vor)
+pulse_rueck_noms = nomvalues_array(pulse_rueck)
+pulse_vor_noms = pulse_vor_noms.tolist()
+pulse_rueck_noms = pulse_rueck_noms.tolist()
+pulse_noms = pulse_rueck_noms + pulse_vor_noms
+pulse_noms = np.asarray(pulse_noms)
+print(pulse_noms)
 s = 0.2
-t = (10**(-3) * pulse)
-pace = s / (10**(-3) * pulse)
+t = (10**(-4) * pulse_noms)
+pace_noms = s / ((10**(-4)) * pulse_noms)
+v = pace_noms
+s = 0.2
+t = (10**(-4) * pulse)
+pace = s / (10**(-4) * pulse)
+print("Geschwindigkeit", v)
 
 ascii.write([List, t, pace], 'Messdaten/pace.tex', format='latex')
-###################################################################################### ende a)
+print("v", v)
+v_lp = np.linspace(-0.6, 0.6)
+# ende a)
 
-def nomvalues_array(array):
-    List = list()
-    for i in range(len(array)):
-        List.append(array[i].nominal_value)
-    array_noms = np.asarray(List)
-    return array_noms
 
 #########
 # b) berechnet mit unseren daten
@@ -80,7 +101,6 @@ print("Geforderte Größe (Gradenparameter später)=",
 ######################################
 # calculating diff
 #################################
-v = np.linspace(-10, 10, 20)
 # kannst du einfach löschen, wenn du die geschwindikeit des wagens für
 # Vor und zurück berechnet hast. Nenn das array am besten einfach genauso, dann musst du unten nichts ändern.
 ###########################################
@@ -158,26 +178,30 @@ vquelle_diff_vor_noms = vquelle_diff_vor_noms.tolist()
 vquelle_diff_rueck_noms = vquelle_diff_rueck_noms.tolist()
 vquellediff_noms = vquelle_diff_vor_noms + vquelle_diff_rueck_noms
 vquellediff_noms.sort()
+ascii.write([np.round(v, 3), vquellediff_noms],
+            'Messdaten/quellebewegt.tex', format='latex')
+
 #################
 
 
-def ausgleichsgrade(v, a, b):
-    return a * v + b
+def ausgleichsgrade(v, a):
+    return a * v
 
 paramsv, covariancev = curve_fit(
     ausgleichsgrade, v, vquellediff_noms)
+print(covariancev)
 errorsv = np.sqrt(np.diag(covariancev))
+
 av = ufloat(paramsv[0], errorsv[0])
-bv = ufloat(paramsv[1], errorsv[1])
 print('a Messung für quelle bewegt ist in 1/Meter=', av)
-print('b = ', bv)
 plt.plot(v, vquellediff_noms, 'ro', label="Messwerte")
-plt.plot(v, ausgleichsgrade(
-    v, *paramsv), 'b-', label="Regressionsgrade")
+plt.plot(v_lp, ausgleichsgrade(
+    v_lp, *paramsv), 'b-', label="Regressionsgrade")
 plt.xlabel(
     r"Relativgeschwindigkeit der Quelle zum Empfänger $v$/$\si{\meter\per\second}$")
 plt.ylabel(
     r"Frequenzänderung $\Delta \nu$/$\si{Hz}$")
+plt.xlim(-0.6, 0.6)
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/vquellebewegt.pdf')
@@ -245,20 +269,22 @@ g_rueck_noms = g_rueck_noms.tolist()
 g_vor_noms = g_vor_noms.tolist()
 g_noms = g_vor_noms + g_rueck_noms  # wie in a argumentiert, kein unterschied
 g_noms.sort()
+ascii.write([np.round(v, 3), g_noms],
+            'Messdaten/schwebung.tex', format='latex')
+
 paramsdeltav, covariancedeltav = curve_fit(
     ausgleichsgrade, v, g_noms)
 errorsdeltav = np.sqrt(np.diag(covariancedeltav))
 adeltav = ufloat(paramsdeltav[0], errorsdeltav[0])
-bdeltav = ufloat(paramsdeltav[1], errorsdeltav[1])
 print('a direkte Messung über Schwebung in 1/Meter=', adeltav)
-print('b = ', bdeltav)
 plt.plot(v, g_noms, 'ro', label="Messwerte")
-plt.plot(v, ausgleichsgrade(
-    v, *paramsdeltav), 'b-', label="Regressionsgrade")
+plt.plot(v_lp, ausgleichsgrade(
+    v_lp, *paramsdeltav), 'b-', label="Regressionsgrade")
 plt.xlabel(
     r"Geschwindigkeit des Reflektors $v_{\mathrm{R}}$/$\si{\meter\per\second}$")
 plt.ylabel(
     r"Frequenzänderung $\Delta \nu$/$\si{Hz}$")
+plt.xlim(-0.6, 0.6)
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/schwebung.pdf')
