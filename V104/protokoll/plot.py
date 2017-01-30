@@ -110,6 +110,7 @@ a, vnull_adrianclemens = np.genfromtxt(
 vnull_adrianclemens = vnull_adrianclemens * 5 / 4
 vnull_ac = ufloat(np.mean(vnull_adrianclemens), np.std(
     vnull_adrianclemens, ddof=1) / np.sqrt(len(vnull_adrianclemens)))
+print(vnull_ac)
 vq = np.genfromtxt(
     "Messdaten/adrianundclemens/adrian_clemens_d.txt", unpack="True")
 vq = vq * 5 / 4
