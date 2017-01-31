@@ -1,0 +1,45 @@
+#Pendellänge 45\pm0.3 cm, m=1kg, zuerst linkes pendel, dann rechtes, dann gleichphasig, dann gegenphasig.
+#T in s
+6.49
+6.43
+6.50
+6.60
+6.43
+6.43
+6.60
+6.67
+6.63
+6.46
+#######rechtes Pendel
+6.41
+6.47
+6.55
+6.56
+6.52
+6.46
+6.41
+6.61
+6.39
+6.60
+##########gleichphasig
+6.68
+6.56
+6.64
+6.58
+6.67
+6.64
+6.64
+6.60
+6.61
+6.63
+##########gegenphasig
+5.73
+5.53
+5.33
+5.72
+5.63
+5.93
+5.66
+5.43
+5.60
+5.73
