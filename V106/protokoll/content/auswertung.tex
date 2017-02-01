@@ -1,11 +1,33 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+Alle im folgenden berechneten Mittelwerte werden mit
+\begin{equation}
+	\label{eqn:mittelwert}
+	\overline x=\frac{1}{N}\sum \limits_{i=1}^{N} x_i
+\end{equation}
+bestimmt.
+Der zugehörige Fehler des Mittelwerts bestimmt sich über
+\begin{equation}
+	\label{eqn:mittelwertfehler}
+	\Delta \overline x= \frac{1}{\sqrt{N}} \sqrt{\frac{1}{N-1} \sum \limits_{i=1}^{N} (x_i- \overline x)^2}\text{.}
+\end{equation}
+Wenn fehlerbehaftete Größen in einer späteren Formel weiter verwendet werden, so wird der sich fortpflanzende Fehler
+mit Hilfe der Gauß’schen Fehlerfortpflanzung berechnet:
+\begin{equation}
+	\label{eqn:fehlerfortpflanzung}
+	\Delta f = \sqrt{ \sum \limits_{i = 1}^{N} (\frac{\partial f}{\partial x_i})^2 \cdot (\Delta x_i)^2}\text{.}
+\end{equation}
 \FloatBarrier
-\subsection{Messung 1: Pendellänge 0.45m}
-Mit der Erdanziehung $g=(9.811899 \pm 0.000041) \,\si{\meter\per\square\second}$ (für Dortmund) nach \cite{G}.
+Für die Berechnung der Theoriewerte werden folgende fehlerbehaftete Größen verwendet:
+\begin{gather*}
+	l=\SI{0.450(3)}{\centi\meter} \text{,}
+	g=\SI{9.81190(4)}{\meter\per\square\second} \text{.}
+\end{gather*}
+Hierbei ist $l$ die Pendellänge samt Ablesefehler und die Erdanziehung $g$ wird nach \cite{G} für Dortmund angegeben.
+\subsection{Messung 1: Pendellänge 0.45}
 Um eine kleinere Messunsicherheit zu erhalten, wird jeweils für 5 Schwingungen gemessen. Daher wird der gemessene Wert zu Beginn durch fünf dividiert, um die Dauer für eine Schwingung zu erhalten.
-In Tabelle \ref{tab:alinksrechts} sind die Periodendauern für die beiden Pendel ohne Kopplungsfeder aufgetragen.
-Nach Formel \eqref{eqn:mittelwert} ergibt sich der Mittelwert der Periodendauer mit dem Fehler des Mittelwerts nach Formel \eqref{eqn:mittelwertfehler} zu
+\\In Tabelle \ref{tab:alinksrechts} sind die Periodendauern für die beiden Pendel ohne Kopplungsfeder aufgetragen.
+\\Nach Formel \eqref{eqn:mittelwert} ergibt sich der Mittelwert der Periodendauer mit dem Fehler des Mittelwerts nach Formel \eqref{eqn:mittelwertfehler} zu
 \begin{gather*}
 	T_{\mathrm{mittel, rechts}}=\SI{1.300(5)}{\second}\\
 	T_{\mathrm{mittel, links}}=\SI{1.305(6)}{\second}
@@ -60,7 +82,7 @@ Ebenso wird die Periodendauer für die gleich-und gegensinnige Schwingung nach F
 	T_{\mathrm{mittel, gegensinnig}}=T_{\mathrm{-}} =\SI{1.13(1)}{\second} \text{.}
 \end{gather*}
 Aus den Periodendauern lässt sich die experimentell bestimmte Schwingungsfrequenz jeweils über $\omega=\frac{2\pi}{T}$ bestimmen.
-Es ergibt sich
+\\Es ergibt sich
 \begin{gather*}
 	\omega_{\mathrm{+}}= \SI{4.742(9)}{\Hz} \text{,}\\
 	\omega_{\mathrm{-}}= \SI{5.58(5)}{\Hz} \text{.}
@@ -81,7 +103,7 @@ Nach Formel \eqref{eqn:kappa} lässt sich $\omega_{\mathrm{-}}$ wie folgt berech
 	\label{eqn:omegaminus}
 	\omega_{\mathrm{-}}=\sqrt{\frac{\omega_{\mathrm{+}}^2 \cdot(1+\kappa)}{1-\kappa}} \text{.}
 \end{equation}
-Für $\kappa$ ergibt sich mit den experimentell bestimmten Schwingungsdauern für die gleich-und gegensinnige Schwingung nach Formel \eqref{eqn:kappa}
+Für den Kopplungsgrad $\kappa$ ergibt sich mit den experimentell bestimmten Schwingungsdauern für die gleich-und gegensinnige Schwingung nach Formel \eqref{eqn:kappa}
 \begin{align*}
 	\kappa=\SI{0.161(9)}{} \text{.}
 \end{align*}
@@ -94,7 +116,8 @@ Schließlich lässt sich der Theoriewert für $T_{\mathrm{-}}$ über
 	T_{\mathrm{-}}=\frac{2\pi}{\omega_{\mathrm{-}}}=\SI{1.13(1)}{\second}
 \end{align*}
 bestimmen.
-In Tabelle \ref{tab:schwebung} finden sich die gemessenen Schwebungsdauern der Messung der gekoppelten Schwingungen.
+
+In Tabelle \ref{tab:schwebung} finden sich die gemessenen Schwebungsdauern der Messung der gekoppelten Schwingungen.\\
 In der linken Spalte sind hierbei die Messwerte für die erste Schwebungsdauer und in der rechten Spalte die bereits auf eine Schwebung umgerechnete Dauer der Messung über fünf Schwebungsdauern aufgetragen.
 \begin{table}
 	\centering
@@ -117,21 +140,20 @@ In der linken Spalte sind hierbei die Messwerte für die erste Schwebungsdauer u
 		\bottomrule
 	\end{tabular}
 \end{table}
-Der Mittelwert über die einfache Messung ergibt sich zu
+\\Der Mittelwert über die einfache Messung ergibt sich zu
 \begin{align*}
 	T_{\mathrm{S}}=\SI{6.4(1)}{\second} \text{.}
 \end{align*}
-Der Mittelwert samt Fehler wird ebenso wie der Mittelwert der fünffachen Messung erneut nach Formel \eqref{eqn:mittelwert} und Formel \eqref{eqn:mittelwertfehler} bestimmt.
-Es ergibt sich
+\\Der Mittelwert samt Fehler wird ebenso wie der Mittelwert der fünffachen Messung erneut nach Formel \eqref{eqn:mittelwert} und Formel \eqref{eqn:mittelwertfehler} bestimmt.
+\\Es ergibt sich
 \begin{align*}
 	T_{\mathrm{S}}=\SI{6.96(3)}{\second}\text{.}
 \end{align*}
-Der Theoriewert der Schwebungsdauer ergibt sich nach Formel \eqref{eqn:twschwebe} mit den bereits bestimmten Theoriewerten für $T_{\mathrm{+}}$ und $T_{\mathrm{-}}$ zu
+Der Theoriewert der Schwebungsdauer berechnet sich nach Formel \eqref{eqn:twschwebe} mit den bereits bestimmten Theoriewerten für $T_{\mathrm{+}}$ und $T_{\mathrm{-}}$ zu
 \begin{align*}
 	T_{\mathrm{S}}=\SI{6.9(4)}{\second}\text{.}
 \end{align*}
 Sowohl der Theoriewert, als auch der experimentell bestimmte Wert für die Schwebungsfrequenz $\omega_{\mathrm{S}}$ ergibt sich nach Formel \eqref{eqn:twschwebe} mit den bereits bestimmten Werten für $\omega_{\mathrm{+}}$ und $\omega_{\mathrm{-}}$.
-Es ergibt sich
 \begin{align*}
 	\omega_{\mathrm{S,Experiment}}=\SI{0.84(5)}{\Hz}\text{,} \\
 	\omega_{\mathrm{S,Theorie}}=\SI{0.91(6)}{\Hz}\text{.}
