@@ -21,14 +21,13 @@ mit Hilfe der Gauß’schen Fehlerfortpflanzung berechnet:
 \FloatBarrier
 
 \subsection{Messung 1: Pendellänge $\SI{0.45}{\meter}$}
+\label{sec:erstens}
 Für die Berechnung der Theoriewerte werden folgende fehlerbehaftete Größen verwendet:
 \begin{gather*}
 	l=\SI{0.450(3)}{\centi\meter} \text{,}\\
 	g=\SI{9.81190(4)}{\meter\per\square\second} \text{.}
 \end{gather*}
 Hierbei ist $l$ die Pendellänge samt Ablesefehler und die Erdanziehung $g$ wird nach \cite{G} für Dortmund angegeben.
-\subsection{Messung 1: Pendellänge 0.45}
-\ref{sec:erstens}
 Um eine kleinere Messunsicherheit zu erhalten, wird jeweils für 5 Schwingungen gemessen. Daher wird der gemessene Wert zu Beginn durch fünf dividiert, um die Dauer für eine Schwingung zu erhalten.
 \\In Tabelle \ref{tab:alinksrechts} sind die Periodendauern für die beiden Pendel ohne Kopplungsfeder aufgetragen.
 \\Nach Formel \eqref{eqn:mittelwert} ergibt sich der Mittelwert der Periodendauer mit dem Fehler des Mittelwerts nach Formel \eqref{eqn:mittelwertfehler} zu
@@ -159,15 +158,15 @@ Der Theoriewert der Schwebungsdauer berechnet sich nach Formel \eqref{eqn:twschw
 \end{align*}
 Der Theoriewert und der experimentell bestimmte Wert der Schwebungsfrequenz ergibt sich nach $\omega_{\mathrm{S}}=\frac{2\pi}{T_{\mathrm{S}}}$ zu
 \begin{align*}
-	\omega_{\mathrm{S, 2, Experiment}}=\SI{0.903(4)}{\Hz}\text{,} \\
-	\omega_{\mathrm{S, 2, Theorie}}=\SI{0.91(6)}{\Hz}\text{.}
+	\omega_{\mathrm{S, Experiment2}}=\SI{0.903(4)}{\Hz}\text{,} \\
+	\omega_{\mathrm{S, Theorie2}}=\SI{0.91(6)}{\Hz}\text{.}
 \end{align*}
 
 Sowohl der Theoriewert, als auch der experimentell bestimmte Wert für die Schwebungsfrequenz $\omega_{\mathrm{S}}$ können zudem nach Formel \eqref{eqn:twtest} mit den bereits bestimmten Werten für $\omega_{\mathrm{+}}$ und $\omega_{\mathrm{-}}$ berechnet werden.
 Es ergibt sich:
 \begin{align*}
-	\omega_{\mathrm{S, 1, Experiment}}=\SI{0.84(5)}{\Hz}\text{,} \\
-	\omega_{\mathrm{S, 1, Theorie}}=\SI{0.91(6)}{\Hz}\text{.}
+	\omega_{\mathrm{S, Experiment1}}=\SI{0.84(5)}{\Hz}\text{,} \\
+	\omega_{\mathrm{S, Theorie1}}=\SI{0.91(6)}{\Hz}\text{.}
 \end{align*}
 
 
@@ -176,11 +175,17 @@ Es ergibt sich:
 
 
 \FloatBarrier
-\subsection{Messung 2: Pendellänge 0.73}
-
+\subsection{Messung 2: Pendellänge $\SI{0.72}{\meter}$}
+Für die Berechnung der Theoriewerte werden folgende fehlerbehaftete Größen verwendet:
+\begin{gather*}
+	l=\SI{0.720(3)}{\centi\meter} \text{,}\\
+	g=\SI{9.81190(4)}{\meter\per\square\second} \text{.}
+\end{gather*}
+Hierbei ist $l$ die Pendellänge samt Ablesefehler und die Erdanziehung $g$ wird nach \cite{G} für Dortmund angegeben.
+In Tabelle \ref{tab:rivaldo} finden sich die Messwerte für die Schwingungsdauern der ungekoppelten Pendel.
 \begin{table}
 	\centering
-	\caption{Messwerte für die Periodendauer der ungekoppelten Pendel bei einer Pendellänge von $l=\SI{0.73}{\meter}$.}
+	\caption{Messwerte für die Periodendauer der ungekoppelten Pendel bei einer Pendellänge von $l=\SI{0.72}{\meter}$.}
 	\label{tab:rivaldo}
 	\begin{tabular}{cc}
 		\toprule
@@ -200,7 +205,7 @@ Es ergibt sich:
 	\end{tabular}
 \end{table}
 
-Es ergeben sich die Werte
+Die Mittelwerte samt Fehler für die Schwingungsdauern der ungekoppelten Pendel ergeben sich nach Formel \eqref{eqn:mittelwert} und \eqref{eqn:mittelwertfehler} zu
 \begin{equation*}
 	T_{\mathrm{mittel,links}} = \SI{1.605(4)}{\second}
 \end{equation*}
@@ -210,11 +215,11 @@ und
 \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%
-
+In Tabelle \ref{tab:beckham} finden sich die Messwerte für die Schwingungsdauern der gleich-und gegensinnigen Schwingung.
 \begin{table}
 	\centering
 	\caption{Messwerte für die Periodendauer der gekoppelten Pendel bei gleich- und
-		gegenphasiger Schwinung bei einer Pendellänge von $l=\SI{0.73}{\meter}$.}
+		gegenphasiger Schwinung bei einer Pendellänge von $l=\SI{0.72}{\meter}$.}
 	\label{tab:beckham}
 	\begin{tabular}{cc}
 		\toprule
@@ -235,7 +240,7 @@ und
 	\end{tabular}
 \end{table}
 
-Es ergeben sich die Werte
+Die Mittelwerte samt Fehler werden nach Formel \eqref{eqn:mittelwert} und \eqref{eqn:mittelwertfehler} berechnet zu
 \begin{equation*}
 	T_{\mathrm{mittel,gleichphasig}} = T_+ = \SI{1.609(4)}{\second}
 \end{equation*}
@@ -244,7 +249,7 @@ und
 	T_{\mathrm{mittel,gegenphasig}} = T_- = \SI{1.410(6)}{\second} \mathrm{.}
 \end{equation*}
 
-Weiterhin werden die Schwingungsfrequenz mit $\omega = \frac{2\pi}{T}$ zu
+Weiterhin werden die Schwingungsfrequenz mit $\omega = \frac{2\pi}{T}$ berechnet zu
 \begin{equation*}
 	\omega_+ = \SI{3.904(10)}{\hertz}
 \end{equation*}
@@ -256,9 +261,9 @@ Der Theoriewert für $\omega_+$ ergibt sich nach Formel \eqref{eqn:wgleich} zu
 \begin{equation*}
 	\omega_+ = \SI{3.692(8)}{\hertz} \mathrm{.}
 \end{equation*}
-
+Damit ergitb sich der Theoriewert für $T_{\mathrm{+}}$ zu
 \begin{equation*}
-	T_+ = \SI{1.7020(35)}{\second}
+	T_+ = \SI{1.7020(35)}{\second} \mathrm{.}
 \end{equation*}
 
 Der Theoriewert für $\omega_-$ ergibt sich wieder analog zu Abschnitt \ref{sec:erstens} mit
@@ -279,7 +284,7 @@ Damit berechnet sich der Theoriewert für $T_- = \frac{2\pi}{\omega_-}$ zu
 
 \begin{table}
 	\centering
-	\caption{Messwerte für die Schwebungsdauer bei einer Pendellänge von $l=\SI{0.73}{\meter}$.}
+	\caption{Messwerte für die Schwebungsdauer bei einer Pendellänge von $l=\SI{0.72}{\meter}$.}
 	\label{tab:kalou}
 	\begin{tabular}{cc}
 		\toprule
