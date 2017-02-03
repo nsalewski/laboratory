@@ -68,3 +68,8 @@ print("Schwebungsdauer theorie", schwebungtheo)
 print("Schwingung", schwingung)
 
 print("Schwebung", schwebung)
+omegaex = 2 * np.pi / schwebung
+omegatheo = 2 * np.pi / schwebungtheo
+print("Omega s experiment über Zeit", omegaex)
+print("Omega s theorie über Zeit", omegatheo)
+print("****************************************************************************************")

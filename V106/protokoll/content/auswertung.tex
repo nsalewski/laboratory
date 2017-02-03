@@ -1,5 +1,6 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Verwendete Fehlerformeln}
 Alle im folgenden berechneten Mittelwerte werden mit
 \begin{equation}
 	\label{eqn:mittelwert}
@@ -18,9 +19,11 @@ mit Hilfe der Gauß’schen Fehlerfortpflanzung berechnet:
 	\Delta f = \sqrt{ \sum \limits_{i = 1}^{N} (\frac{\partial f}{\partial x_i})^2 \cdot (\Delta x_i)^2}\text{.}
 \end{equation}
 \FloatBarrier
+
+\subsection{Messung 1: Pendellänge $\SI{0.45}{\meter}$}
 Für die Berechnung der Theoriewerte werden folgende fehlerbehaftete Größen verwendet:
 \begin{gather*}
-	l=\SI{0.450(3)}{\centi\meter} \text{,}
+	l=\SI{0.450(3)}{\centi\meter} \text{,}\\
 	g=\SI{9.81190(4)}{\meter\per\square\second} \text{.}
 \end{gather*}
 Hierbei ist $l$ die Pendellänge samt Ablesefehler und die Erdanziehung $g$ wird nach \cite{G} für Dortmund angegeben.
@@ -35,7 +38,7 @@ Um eine kleinere Messunsicherheit zu erhalten, wird jeweils für 5 Schwingungen 
 \end{gather*}
 \begin{table}
 	\centering
-	\caption{Periodendauer der ungekoppelten Pendel.}
+	\caption{Periodendauer der ungekoppelten Pendel für die Pendellänge $l=\SI{0.45}{\meter}$.}
 	\label{tab:alinksrechts}
 	\begin{tabular}{cc}
 		\toprule
@@ -58,7 +61,7 @@ Um eine kleinere Messunsicherheit zu erhalten, wird jeweils für 5 Schwingungen 
 
 \begin{table}
 	\centering
-	\caption{Periodendauer für gleich-und gegensinnige Schwingung.}
+	\caption{Periodendauer für gleich-und gegensinnige Schwingung für die Pendellänge $l=\SI{0.45}{\meter}$.}
 	\label{tab:gleichgegen}
 	\begin{tabular}{cc}
 		\toprule
@@ -77,7 +80,7 @@ Um eine kleinere Messunsicherheit zu erhalten, wird jeweils für 5 Schwingungen 
 		\bottomrule
 	\end{tabular}
 \end{table}
-Ebenso wird die Periodendauer für die gleich-und gegensinnige Schwingung nach Formel \eqref{eqn:mittelwert} mit dem Fehler des Mittelwerts nach Formel \eqref{eqn:mittelwertfehler} berechnet zu
+Ebenso wird die Periodendauer für die gleich-und gegensinnige Schwingung mit den Messwerten in Tabelle \ref{tab:gleichgegen} nach Formel \eqref{eqn:mittelwert} mit dem Fehler des Mittelwerts nach Formel \eqref{eqn:mittelwertfehler} berechnet zu
 \begin{gather*}
 	T_{\mathrm{mittel, gleichsinnig}}=T_{\mathrm{+}}=\SI{1.325(2)}{\second} \text{,}\\
 	T_{\mathrm{mittel, gegensinnig}}=T_{\mathrm{-}} =\SI{1.13(1)}{\second} \text{.}
@@ -122,7 +125,7 @@ In Tabelle \ref{tab:schwebung} finden sich die gemessenen Schwebungsdauern der M
 In der linken Spalte sind hierbei die Messwerte für die erste Schwebungsdauer und in der rechten Spalte die bereits auf eine Schwebung umgerechnete Dauer der Messung über fünf Schwebungsdauern aufgetragen.
 \begin{table}
 	\centering
-	\caption{Schwebungsdauer gemessen über eine bzw. fünf Perioden.}
+	\caption{Schwebungsdauer gemessen über eine bzw. fünf Perioden für die Pendellänge $l=\SI{0.45}{\meter}$.}
 	\label{tab:schwebung}
 	\begin{tabular}{cc}
 		\toprule
@@ -154,10 +157,17 @@ Der Theoriewert der Schwebungsdauer berechnet sich nach Formel \eqref{eqn:twschw
 \begin{align*}
 	T_{\mathrm{S}}=\SI{6.9(4)}{\second}\text{.}
 \end{align*}
-Sowohl der Theoriewert, als auch der experimentell bestimmte Wert für die Schwebungsfrequenz $\omega_{\mathrm{S}}$ ergibt sich nach Formel \eqref{eqn:twschwebe} mit den bereits bestimmten Werten für $\omega_{\mathrm{+}}$ und $\omega_{\mathrm{-}}$.
+Der Theoriewert und der experimentell bestimmte Wert der Schwebungsfrequenz ergibt sich nach $\omega_{\mathrm{S}}=\frac{2\pi}{T_{\mathrm{S}}}$ zu
 \begin{align*}
-	\omega_{\mathrm{S,Experiment}}=\SI{0.84(5)}{\Hz}\text{,} \\
-	\omega_{\mathrm{S,Theorie}}=\SI{0.91(6)}{\Hz}\text{.}
+	\omega_{\mathrm{S, 2, Experiment}}=\SI{0.903(4)}{\Hz}\text{,} \\
+	\omega_{\mathrm{S, 2, Theorie}}=\SI{0.91(6)}{\Hz}\text{.}
+\end{align*}
+
+Sowohl der Theoriewert, als auch der experimentell bestimmte Wert für die Schwebungsfrequenz $\omega_{\mathrm{S}}$ können zudem nach Formel \eqref{eqn:twtest} mit den bereits bestimmten Werten für $\omega_{\mathrm{+}}$ und $\omega_{\mathrm{-}}$ berechnet werden.
+Es ergibt sich:
+\begin{align*}
+	\omega_{\mathrm{S, 1, Experiment}}=\SI{0.84(5)}{\Hz}\text{,} \\
+	\omega_{\mathrm{S, 1, Theorie}}=\SI{0.91(6)}{\Hz}\text{.}
 \end{align*}
 
 
@@ -174,23 +184,23 @@ Sowohl der Theoriewert, als auch der experimentell bestimmte Wert für die Schwe
 	\label{tab:rivaldo}
 	\begin{tabular}{cc}
 		\toprule
-		$T_{\mathrm{links}}$ / $ \si{\second}$ & $T_{\mathrm{rechts}}$ / $\si{\second}$\\
+		$T_{\mathrm{links}}$ / $ \si{\second}$ & $T_{\mathrm{rechts}}$ / $\si{\second}$ \\
 		\midrule
-		1.602 & 1.606 \\
-		1.59 & 1.612 \\
-		1.626 & 1.626 \\
-		1.602 & 1.584 \\
-		1.592 & 1.606 \\
-		1.618 & 1.626 \\
-		1.606 & 1.618 \\
-		1.592 & 1.602 \\
-		1.606 & 1.626 \\
-		1.614 & 1.626 \\
+		1.602                                  & 1.606                                  \\
+		1.590                                  & 1.612                                  \\
+		1.626                                  & 1.626                                  \\
+		1.602                                  & 1.584                                  \\
+		1.592                                  & 1.606                                  \\
+		1.618                                  & 1.626                                  \\
+		1.606                                  & 1.618                                  \\
+		1.592                                  & 1.602                                  \\
+		1.606                                  & 1.626                                  \\
+		1.614                                  & 1.626                                  \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-Es ergeben sich die Werte 
+Es ergeben sich die Werte
 \begin{equation*}
 	T_{\mathrm{mittel,links}} = \SI{1.605(4)}{\second}
 \end{equation*}
@@ -204,28 +214,28 @@ und
 \begin{table}
 	\centering
 	\caption{Messwerte für die Periodendauer der gekoppelten Pendel bei gleich- und
-	gegenphasiger Schwinung bei einer Pendellänge von $l=\SI{0.73}{\meter}$.}
+		gegenphasiger Schwinung bei einer Pendellänge von $l=\SI{0.73}{\meter}$.}
 	\label{tab:beckham}
 	\begin{tabular}{cc}
 		\toprule
-		$T_{\mathrm{gleichphasig}}$ / $\si{\second}$ & $T_{\mathrm{gegenphasig}}$ 
+		$T_{\mathrm{gleichphasig}}$ / $\si{\second}$ & $T_{\mathrm{gegenphasig}}$
 		/ $\si{\second}$ \\
 		\midrule
-		1.590 & 1.374 \\
-		1.600 & 1.408 \\
-		1.594 & 1.418 \\
-		1.620 & 1.418 \\
-		1.608 & 1.432 \\
-		1.626 & 1.426 \\
-		1.608 & 1.426 \\
-		1.606 & 1.406 \\
-		1.624 & 1.406 \\
-		1.618 & 1.390 \\
+		1.590                                        & 1.374                      \\
+		1.600                                        & 1.408                      \\
+		1.594                                        & 1.418                      \\
+		1.620                                        & 1.418                      \\
+		1.608                                        & 1.432                      \\
+		1.626                                        & 1.426                      \\
+		1.608                                        & 1.426                      \\
+		1.606                                        & 1.406                      \\
+		1.624                                        & 1.406                      \\
+		1.618                                        & 1.390                      \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-Es ergeben sich die Werte 
+Es ergeben sich die Werte
 \begin{equation*}
 	T_{\mathrm{mittel,gleichphasig}} = T_+ = \SI{1.609(4)}{\second}
 \end{equation*}
@@ -248,10 +258,10 @@ Der Theoriewert für $\omega_+$ ergibt sich nach Formel \eqref{eqn:wgleich} zu
 \end{equation*}
 
 \begin{equation*}
-	T_+ = \SI{1.7020(35)}{\second} 
+	T_+ = \SI{1.7020(35)}{\second}
 \end{equation*}
 
-Der Theoriewert für $\omega_-$ ergibt sich wieder analog zu Abschnitt \ref{sec:erstens} mit 
+Der Theoriewert für $\omega_-$ ergibt sich wieder analog zu Abschnitt \ref{sec:erstens} mit
 Formel \eqref{eqn:omegaminus}. Mit dem Kopplungsgrad $\kappa$ nach Formel \eqref{eqn:kappa}
 \begin{equation*}
 	\kappa = \SI{0.131(5)}{}
@@ -275,35 +285,35 @@ Damit berechnet sich der Theoriewert für $T_- = \frac{2\pi}{\omega_-}$ zu
 		\toprule
 		$T_{\mathrm{Schwebung,einfach}}$ / $\si{\second}$ & $T_{\mathrm{Schwebung}}$ / $\si{\second}$ \\
 		\midrule
-		12.46 & 12.192 \\
-		12.06 & 12.700 \\
-		11.86 & 12.426 \\
-		11.58 & 12.276 \\
-		11.72 & 12.258 \\
-		11.68 & 12.180 \\
-		11.83 & 12.402 \\
-		11.66 & 12.374 \\
-		11.73 & 12.192 \\
-		11.65 & 12.230 \\
+		12.46                                             & 12.192                                    \\
+		12.06                                             & 12.700                                    \\
+		11.86                                             & 12.426                                    \\
+		11.58                                             & 12.276                                    \\
+		11.72                                             & 12.258                                    \\
+		11.68                                             & 12.180                                    \\
+		11.83                                             & 12.402                                    \\
+		11.66                                             & 12.374                                    \\
+		11.73                                             & 12.192                                    \\
+		11.65                                             & 12.230                                    \\
 		\bottomrule
 	\end{tabular}
 \end{table}
 
-In Tabelle \ref{tab:kalou} sind die Messdaten für die Bestimmung der Schwebungsdauer 
-aufgetragen. 
+In Tabelle \ref{tab:kalou} sind die Messdaten für die Bestimmung der Schwebungsdauer
+aufgetragen.
 
 Als Mittelwerte (bestimmt mit Formel \eqref{eqn:mittelwert}) mit zugehörigen Fehlern (nach
-Formel \eqref{eqn:mittelwertfehler}) ergeben sich die Werte 
+Formel \eqref{eqn:mittelwertfehler}) ergeben sich die Werte
 \begin{equation*}
-	T_{\mathrm{S,einfach}} = \SI{11.82(8)}{\second} 
+	T_{\mathrm{S,einfach}} = \SI{11.82(8)}{\second}
 \end{equation*}
-für die einfache Messung der Schwebungsdauer und 
+für die einfache Messung der Schwebungsdauer und
 \begin{equation*}
-	T_{\mathrm{S,fünffach}} = \SI{12.32(5)}{\second} 
+	T_{\mathrm{S,fünffach}} = \SI{12.32(5)}{\second}
 \end{equation*}
 für die Messung über die fünf Schwebungsdauern.
 
-Der Theoriewert für die Schwebungsdauer $T_{\mathrm{S}}$ berechnet sich mit Formel 
+Der Theoriewert für die Schwebungsdauer $T_{\mathrm{S}}$ berechnet sich mit Formel
 \eqref{eqn:twschwebe} zu
 \begin{equation*}
 	T_{\mathrm{S}} = \SI{12.1(5)}{\second} \mathrm{,}
@@ -311,16 +321,13 @@ Der Theoriewert für die Schwebungsdauer $T_{\mathrm{S}}$ berechnet sich mit For
 wobei sich der Fehler mit Gauß'scher Fehlerfortpflanzung (Formel \eqref{eqn:fehlerfortpflanzung})
 ergibt.
 
-Für die Schwebungsfrequenzen ergeben sich die Werte 
+Für die Schwebungsfrequenzen ergeben sich die Werte
 \begin{gather*}
 	\omega_{\mathrm{S,Theorie1}} = \SI{0.521(20)}{\hertz} \\
 	\omega_{\mathrm{S,Experiment1}} = \SI{0.551(20)}{\hertz} \\
 	\omega_{\mathrm{S,Theorie2}} = \SI{0.521(20)}{\hertz} \\
 	\omega_{\mathrm{S,Experiment2}} = \SI{0.5099(21)}{\hertz} \mathrm{,} \\
 \end{gather*}
-wobei $\omega_{\mathrm{S,Theorie1}}$ und $\omega_{\mathrm{S,Experiment1}}$ mit Formel 
-\eqref{eqn:twtest} bestimmt werden und $\omega_{\mathrm{S,Theorie2}}$ und 
+wobei $\omega_{\mathrm{S,Theorie1}}$ und $\omega_{\mathrm{S,Experiment1}}$ mit Formel
+\eqref{eqn:twtest} bestimmt werden und $\omega_{\mathrm{S,Theorie2}}$ und
 $\omega_{\mathrm{S,Experiment2}}$ über die Beziehung $\omega = \frac{2\pi}{T}$.
-
-
-
