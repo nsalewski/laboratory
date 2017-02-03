@@ -25,6 +25,7 @@ Für die Berechnung der Theoriewerte werden folgende fehlerbehaftete Größen ve
 \end{gather*}
 Hierbei ist $l$ die Pendellänge samt Ablesefehler und die Erdanziehung $g$ wird nach \cite{G} für Dortmund angegeben.
 \subsection{Messung 1: Pendellänge 0.45}
+\ref{sec:erstens}
 Um eine kleinere Messunsicherheit zu erhalten, wird jeweils für 5 Schwingungen gemessen. Daher wird der gemessene Wert zu Beginn durch fünf dividiert, um die Dauer für eine Schwingung zu erhalten.
 \\In Tabelle \ref{tab:alinksrechts} sind die Periodendauern für die beiden Pendel ohne Kopplungsfeder aufgetragen.
 \\Nach Formel \eqref{eqn:mittelwert} ergibt sich der Mittelwert der Periodendauer mit dem Fehler des Mittelwerts nach Formel \eqref{eqn:mittelwertfehler} zu
@@ -246,6 +247,25 @@ Der Theoriewert für $\omega_+$ ergibt sich nach Formel \eqref{eqn:wgleich} zu
 	\omega_+ = \SI{3.692(8)}{\hertz} \mathrm{.}
 \end{equation*}
 
+\begin{equation*}
+	T_+ = \SI{1.7020(35)}{\second} 
+\end{equation*}
+
+Der Theoriewert für $\omega_-$ ergibt sich wieder analog zu Abschnitt \ref{sec:erstens} mit 
+Formel \eqref{eqn:omegaminus}. Mit dem Kopplungsgrad $\kappa$ nach Formel \eqref{eqn:kappa}
+\begin{equation*}
+	\kappa = \SI{0.131(5)}{}
+\end{equation*}
+ergibt sich der Theoriewert für $\omega_-$ zu
+\begin{equation*}
+	\omega_- = \SI{4.212(22)}{\hertz} \mathrm{.}
+\end{equation*}
+Damit berechnet sich der Theoriewert für $T_- = \frac{2\pi}{\omega_-}$ zu
+\begin{equation*}
+	\SI{1.492(8)}{\second} \mathrm{.}
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}
 	\centering
@@ -268,3 +288,39 @@ Der Theoriewert für $\omega_+$ ergibt sich nach Formel \eqref{eqn:wgleich} zu
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+In Tabelle \ref{tab:kalou} sind die Messdaten für die Bestimmung der Schwebungsdauer 
+aufgetragen. 
+
+Als Mittelwerte (bestimmt mit Formel \eqref{eqn:mittelwert}) mit zugehörigen Fehlern (nach
+Formel \eqref{eqn:mittelwertfehler}) ergeben sich die Werte 
+\begin{equation*}
+	T_{\mathrm{S,einfach}} = \SI{11.82(8)}{\second} 
+\end{equation*}
+für die einfache Messung der Schwebungsdauer und 
+\begin{equation*}
+	T_{\mathrm{S,fünffach}} = \SI{12.32(5)}{\second} 
+\end{equation*}
+für die Messung über die fünf Schwebungsdauern.
+
+Der Theoriewert für die Schwebungsdauer $T_{\mathrm{S}}$ berechnet sich mit Formel 
+\eqref{eqn:twschwebe} zu
+\begin{equation*}
+	T_{\mathrm{S}} = \SI{12.1(5)}{\second} \mathrm{,}
+\end{equation*}
+wobei sich der Fehler mit Gauß'scher Fehlerfortpflanzung (Formel \eqref{eqn:fehlerfortpflanzung})
+ergibt.
+
+Für die Schwebungsfrequenzen ergeben sich die Werte 
+\begin{gather*}
+	\omega_{\mathrm{S,Theorie1}} = \SI{0.521(20)}{\hertz} \\
+	\omega_{\mathrm{S,Experiment1}} = \SI{0.551(20)}{\hertz} \\
+	\omega_{\mathrm{S,Theorie2}} = \SI{0.521(20)}{\hertz} \\
+	\omega_{\mathrm{S,Experiment2}} = \SI{0.5099(21)}{\hertz} \mathrm{,} \\
+\end{gather*}
+wobei $\omega_{\mathrm{S,Theorie1}}$ und $\omega_{\mathrm{S,Experiment1}}$ mit Formel 
+\eqref{eqn:twtest} bestimmt werden und $\omega_{\mathrm{S,Theorie2}}$ und 
+$\omega_{\mathrm{S,Experiment2}}$ über die Beziehung $\omega = \frac{2\pi}{T}$.
+
+
+

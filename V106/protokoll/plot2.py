@@ -39,6 +39,9 @@ w_plus_theo = unp.sqrt(g/l)
 w_plus_exp = 2*np.pi / T_gleichphasig
 w_minus_exp = 2*np.pi / T_gegenphasig
 T_plus_theo = 2*np.pi*unp.sqrt(l/g)
+kappa = (T_gleichphasig**2 - T_gegenphasig**2)/(T_gleichphasig**2 + T_gegenphasig**2)
+w_minus_theo = unp.sqrt(w_plus_theo**2*(1+kappa)/(1-kappa))
+T_minus_theo = 2*np.pi/w_minus_theo
 
 ########################################################################################
 
@@ -50,3 +53,13 @@ print('w_plus_exp = ', w_plus_exp)
 print('w_minus_exp = ', w_minus_exp)
 print('w_plus_theo = ', w_plus_theo)
 print('T_plus_theo', T_plus_theo)
+print('kappa = ', kappa)
+print('w_minus_theo = ',  w_minus_theo)
+print('T_minus_theo = ', T_minus_theo)
+print('T_schwingung = ', T_schwingung)
+print('T_schwebung = ', T_schwebung)
+print('T_schwebung_theo = ', T_plus_theo*T_minus_theo/(T_plus_theo-T_minus_theo))
+print('w_theo_1 = ', w_plus_theo - w_minus_theo)
+print('w_exp_1 = ', w_plus_exp - w_minus_exp)
+print('w_theo_2 = ', 2*np.pi/(T_plus_theo*T_minus_theo/(T_plus_theo-T_minus_theo)))
+print('w_exp_1 = ', 2*np.pi/T_schwebung)

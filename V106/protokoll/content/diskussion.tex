@@ -3,8 +3,8 @@
 Allgemein lässt sich die sowohl die Schwingungsdauer als auch die Schwebungsdauer der gekoppelten Pendel nur recht ungenau bestimmen, da sämtliche Zeiten manuell gestoppt wurden.\\
 Ein zusätzlicher Fehler ergibt sich eventuell über die teils klemmenden Knöpfe der Stoppuhr.
 Eine genauere Messung lässt sich beispielsweise realisieren, indem die Zeitnahme zum Beispiel mittels Lichtschranken und einer entsprechenden Steuerungsschaltung automatisiert wird.
-In Tabelle \ref{tab:discuss} und %%% bau hier einfach den Satz so um, dass deine Auswertung dazu passt.
-sind die gemessenen und nach der Theorie berechneten Werte eingetragen.
+In Tabelle \ref{tab:discuss} und \ref{tab:discuss2} sind die gemessenen und nach der Theorie
+berechneten Werte eingetragen.
 
 \begin{table}
 	\caption{Vergleich zwischen Theorie und Experiment für die Pendellänge 45 \,\si{\centi\meter}}
@@ -23,5 +23,26 @@ sind die gemessenen und nach der Theorie berechneten Werte eingetragen.
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\begin{table}
+	\caption{Vergleich zwischen Theorie und Experiment für die Pendellänge 72 \,\si{\centi\meter}}
+	\label{tab:discuss2}
+	\begin{tabular}{cccc}
+		\toprule
+		Messung                    & Experiment               & Theorie                  & prozentuale Abweichung \\
+		\midrule
+		$T_{\mathrm{+}}$           & $\SI{1.609(4)}{\second}$ & $\SI{1.702(4)}{\second}$ & $5.5\%$                \\
+		$\omega_{\mathrm{+}}$      & $\SI{3.904(10)}{\Hz}$     & $\SI{3.692(8)}{\Hz}$      & $5.7\%$                \\
+		$T_{\mathrm{-}}$           & $\SI{1.410(6)}{\second}$  & $\SI{1.492(8)}{\second}$  & $5.5\% $               \\
+		$\omega_{\mathrm{-}}$      & $\SI{4.455(18)}{\hertz}$      & $\SI{4.212(22)}{\Hz}$      & $5.8\%$                \\
+		$T_{\mathrm{S,einfach}}$   & $\SI{11.82(8)}{\second}$   & $\SI{12.1(5)}{\second}$   & $2.3\%$                \\
+		$T_{\mathrm{S,fünffach}}$ & $\SI{12.32(5)}{\second}$  & $\SI{12.1(5)}{\second}$   & $1.8\%$                \\
+		$\omega_{\mathrm{S,1}}$      & $\SI{0.551(20)}{\Hz}$      & $\SI{0.521(20)}{\Hz}$      & $5.8\%$                \\
+		$\omega_{\mathrm{S,2}}$      & $\SI{0.510(21)}{\Hz}$      & $\SI{0.521(20)}{\Hz}$      & $2.1\%$                \\
+
+		\bottomrule
+	\end{tabular}
+\end{table}
+
 Die größte Abweichung in der Zeitmessung zeigt sich bei der einfach gemessenen Schwebungsdauer. Die Zeit war hier recht kurz, sodass sich ein Fehler verursacht durch verspätete Reaktion beim Starten oder Stoppen der Uhr besonders auswirkt.
 Sämtliche weitere Abweichungen liegen deutlich unter der Auflösung der Messung, Fehler durch verzögertes Betätigen der Stoppuhr werden auf bis zu $\SI{0.2}{\second}$ geschätzt (nach \cite{CS-Pro}).
