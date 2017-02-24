@@ -56,7 +56,7 @@ $f(x) = a \cdot \mathrm{e}^{bx}$ durchgeführt.
 Für die Paramter erhält man:
 \begin{gather*}
 	a = (29,79 \pm 0,55) \, \si{\kilo\hertz} \, \text{,}  \\
-	b = (0,0525 \pm 0,0010) \, \si{\centi\meter} \text{.}
+	b = (0,0525 \pm 0,0010) \, \si[per-mode=reciprocal]{\per\centi\meter} \text{.}
 \end{gather*}
 Damit ergibt sich die Skalierung der $x$-Achse zu
 \begin{equation}
@@ -66,7 +66,7 @@ mit den Parametern oben.
 
 Aus der Durchlasskurve in Abbildung \ref{fig:durchiLC} lässt sich die $x$-Position mit einem
 Ablesefehler zu $x_{\text{G}} = (14,6 \pm 0,1) \, \si{\centi\meter}$ bestimmen.
-Damit erhält man für die Grenzfrequenz mittels einer Regression von $_{\text{G}}$ mit python
+Damit erhält man für die Grenzfrequenz mittels einer Regression von $f_{\text{G}}$ mit python
 \begin{equation*}
 	f_{\text{G}} = (64,115 \pm 1,546 ) \, \si{\kilo\hertz} \text{.}
 \end{equation*}
@@ -121,7 +121,7 @@ Analog wie in Abschnitt \ref{sec:durchLC} ergeben sich die Paramater der Ausglei
 zu
 \begin{gather*}
 	a = (29,56 \pm 0,68) \, \si{\kilo\hertz} \text{,} \\
-	b = (0,0525 \pm 0,0012) \, \si{\centi\meter} \text{.}
+	b = (0,0525 \pm 0,0012) \, \si[per-mode=reciprocal]{\per\centi\meter} \text{.}
 \end{gather*}
 Die Positionen $x_\text{n}$ der Grenzfrequenzen lassen sich aus Abbildung \ref{fig:durchiLCC}
 ablesen, man erhält:
@@ -252,7 +252,7 @@ In Abbildung \ref{fig:plotc} sind die gefundenden Messwerte der Phasengeschwindi
 	\centering
 	\begin{tabular}{ccccc}
 		\toprule
-		Phasenverschiebung $\phi$/$\pi\si{\radian}$ & $f$/$\si{\kilo\Hz}$ & $\omega$/$\si{\kilo\Hz}$ & $\theta$/$\si{\radian}$ & $v_{\mathrm{Ph}}$/\si{\kilo\metre\per\second} \\
+		Phasenverschiebung $\phi$/$\pi\si{\radian}$ & $f$/$\si{\kilo\Hz}$ & $\omega$/$\si{\kilo\Hz}$ & $\theta$/$\si{\radian}$ & $v_{\mathrm{Ph}}$/\si{\kilo\hertz\per\radian} \\
 		\midrule
 		1.0                                         & 7.2                 & 45.2                     & 0.22                    & 201.6                                         \\
 		2.0                                         & 14.3                & 89.8                     & 0.45                    & 200.2                                         \\
@@ -308,13 +308,13 @@ Die gemessenen Spannungsamplituden an jedem Kettenglied bei der 1. und 2. Eigens
 	\end{tabular}
 \end{table}
 
-Die Grundschwingung, also die erste Eigenschwingung der $LC$-Kette, betrug $w_{\mathrm{0}}=7.5 \,\si{\kilo\Hz}$, die erste Oberschwingung, also die 2. Eigenschwingung betrug $w_{\mathrm{1}}=14.7 \,\si{\kilo\Hz}$.
+Die Grundschwingung, also die erste Eigenschwingung der $LC$-Kette, betrug $f_{\mathrm{0}}=7.5 \,\si{\kilo\Hz}$, die erste Oberschwingung, also die 2. Eigenschwingung betrug $f_{\mathrm{1}}=14.7 \,\si{\kilo\Hz}$.
 
 Nach Formel  \eqref{eqn:abschluss} wird bei der beidseitig offenen $LC$-Kette, also $R=\infty$ an den Enden der LC-Kette ein Maximum der Spannungsamplitude angenommen, sowie kein Phasensprung am Kettenende erwartet.
 
 In Abbildung \ref{fig:plotdeins} sind die jeweilig gemessenen Spannungsamplituden bei den ersten beiden Eigenschwingungen gegen die Nummer der Kettenglieder aufgetragen.
 
-Der erwartete Spannungsverlauf einer stehenden Cosinus-Welle wird durch die Messdaten annähernd erreicht. Die stehende Welle weist bei der Grundschwingung einen Spannungsknoten etwa in der Mitte der $LC$-Kette auf, während an den Enden Spannungsbäuche auftreten.
+Der erwartete Spannungsverlauf einer stehenden Cosinus-Welle ($\lvert \cos \rvert$) wird durch die Messdaten annähernd erreicht. Die stehende Welle weist bei der Grundschwingung einen Spannungsknoten etwa in der Mitte der $LC$-Kette auf, während an den Enden Spannungsbäuche auftreten.
 Daher findet auch wie erwartet kein Phasensprung am Kettenende statt.
 Der Spannungsverlauf bei der ersten Eigenschwingung bildet sich eine stehende Welle mit halber Wellenlänge.
 
@@ -339,7 +339,6 @@ Die erste Oberschwingung weist somit genau eine Wellenlänge auf.
 \subsection{Spannungsverlauf der mit dem Wellenwiderstand $Z$ abgeschlossenen $LC$-Kette}
 Für eine geschlossene $LC$-Kette mit dem Wellenwiderstand $Z$ als Abschlusswiderstand wird keine Reflektion am Kettenende erwartet und damit dürften sich auch keine stehenden Wellen bilden.\\
 Der Wellenwiderstand ergibt sich nach Formel \eqref{eqn:wellenwiderstand} etwa zu $Z=246 \,\si{\ohm}$.\\
-
 In Tabelle \ref{tab:lame} finden sich die gemessenen Spannungsamplituden für die erste Eigenschwingung der $LC$-Kette an den jeweiligen Kettengliedern.
 
 In Abbildung \ref{fig:really?!} sind die Spannungsamplituden gegen die Orte auf der $LC$-Kette -also die Nummern der jeweiligen Masche der Kette- aufgetragen.
