@@ -1,4 +1,92 @@
 \section{Theorie}
 \label{sec:Theorie}
 
+Die Theorie wird in zwei Abschnitte gegliedert: die Phänomene der Interferenz und Kohärenz.
+
+
+\subsection{Interferenz}
+\label{sec:interferenz}
+
+\subsubsection{Der Begriff der Interferenz}
+\label{sec:interferenzdef}
+Die Interferenz beschreibt das Phänomen, das auftritt, wenn Wellen -- hier Licht als 
+elektromagnetische Welle -- überlagert werden. 
+Die Intensitäten der Wellen werden nicht nur addiert, sondern zusätzlich mit einem
+Interferenzterm multipliziert. Daher können sich Wellen verstärken, was \textbf{konstruktive 
+Interferenz} genannt wird und gegenseitig auslöschen (\textbf{destruktive Interferenz}).
+
+Die Lichtausbreitung im Vakuum lässt sich durch ebene elektromagnetische Wellen
+\begin{equation}
+	\label{eqn:ebenewelle}
+	\vec{E}(x,t) = \vec{E}_0 \cos(k x - \omega t - \delta) 
+\end{equation}
+beschreiben, wobei $\vec{E}$ der elektrischen Feldstärke, $x$ dem Ort, $t$ der Zeit, $k=\frac{2\pi}{\lambda}$ der Wellenzahl, $\lambda$
+der Wellenlänge, $\omega$ der Kreisfrequenz und $\delta$ dem Phasenunterschied bezüglich eines 
+festen Bezugspunktes entspricht.
+Die Beschreibbarkeit der Ausbreitung des Lichts durch elektromagnetische Wellen impliziert die 
+Gültigkeit der Maxwell'schen Gleichungen. Diese sind lineare Differentialgleichungen. Daher 
+gilt das Prinzip der linearen Superposition, welches besagt, dass ein elektrisches Feld
+$\vec{E}$, das aus mehreren einzelnen elektrischen Feldern $\vec{E}_{\mathrm{i}}$
+zusammengesetzt wird, der Summe dieser, also $\vec{E} = \sum \vec{E}_{\mathrm{i}}$, entspricht.
+
+Weiterhin ist die Feldstärke von Licht, aufgrund der hohen Frequenz, von
+Messgeräten nicht messbar. Diesbezüglich wird die Intensität von Licht, die Lichtleistung pro 
+Fläche, betrachtet.
+Aus den Maxwell'schen Gleichungen ergibt sich diese zu
+\begin{equation}
+	\label{eqn:intensity}
+	I = C \, |\vec{E}|^2 \mathrm{, } \, C = \mathrm{const.}
+\end{equation}
+Mit den Gleichungen \eqref{eqn:ebenewelle} und \eqref{eqn:intensity} und der linearen 
+Superposition ergibt sich für die Gesamtintensität $I_{\mathrm{GES}}$ von zwei Lichtwellen mit 
+der gleichen Amplitude $\vec{E}_0$, die an einem festen Ort $x$ einfallen,
+\begin{equation}
+	I_{\mathrm{GES}} = \frac{C}{t_2 - t_1} \int_{t_1}^{t_2} |\vec{E_1} + \vec{E_2}|^2(x,t) \,  \symup{d}t \mathrm{,}
+\end{equation}
+wobei das Beobachtungsintervall $t_2 - t_1$ groß gegen die Periodendauer $T=\frac{2\pi}{\omega}$
+sein soll.
+Einsetzen und Ausmultiplizieren liefert schließlich
+\begin{equation}
+	I_{\mathrm{GES}} = 2C \, \vec{E_0}^2 (1+\cos(\delta_2 - \delta_1)) \mathrm{,}
+\end{equation}
+den Interferenzterm. Die Intensitäten weichen bei einem Phasenunterschied von
+$\delta_2 - \delta_1 = n \cdot 2\pi$ um $2C \vec{E_0}^2$ vom Mittelwert ab und verschwinden
+bei einem Phasenunterschied von $(2n+1) \cdot \pi$, mit $n \in \mathbb{N}$.
+
+
+\subsubsection{Diskussion über die Voraussetzungen zur Messung von Interferenzerscheinungen}
+\label{sec:messunginterferenz}
+
+Werden Lichtwellen aus verschiedenen Quellen überlagert, sind keine Interferenzeffekte zu 
+beobachten. Dies hat die Ursache, dass bei der Emission von Lichtwellen Elektronen 
+Emissionszentren darstellen: Die Elektronen werden durch hinzugefügte Energie in einen 
+angeregten Zustand versetzt und emittieren bei der Rückkehr in den Grundzustand Energie in Form 
+eines Wellenzuges endlicher Länge, also einer Wellengruppe. Des Weiteren treten diese Emissionen 
+statistisch verteilt in der Elektronenhülle des Atoms bzw. Moleküls auf und daher sind die Phasen
+$\delta_1$ bzw. $\delta_2$ statistische Funktionen der Zeit. 
+
+Daraus folgt, dass die Mittelung über die Zeit
+\begin{equation}
+	\frac{1}{t_2-t_1} \int_{t_1}^{t_2} C \, \cos(\delta_2(t)-\delta_1(t)) \, \symup{d}t
+\end{equation}
+verschwindet, da das Beobachtungsintervall $t_2-t_1$ groß gegen die Periodendauer $T$ ist und 
+der Phasenunterschied $\delta_2-\delta_1$ beliebige Werte annimmt.
+
+Licht aus verschiedenen Quellen ist also nicht interferenzfähig, es ist \textbf{inkohärent}.
+Interferenzeffekte lassen sich also nur erzeugen, wenn das Licht aus der selben Quelle stammt, 
+sogenanntes \textbf{kohährentes} Licht.
+
+
+\subsection{Kohärenz}
+\label{sec:kohärenz} 
+
+
+
+
+
+
+
+
+
+
 \cite{Anleitung}
