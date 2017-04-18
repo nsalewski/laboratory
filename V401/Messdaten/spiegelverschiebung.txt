@@ -1,0 +1,9 @@
+# Weglänge in cm  gezählte Impulse/Intensitätsmaxima
+0.210   1028
+0.211   1006
+0.206   999
+0.214   979
+0.207   984
+0.215   991
+0.212   1023
+0.205   1025
