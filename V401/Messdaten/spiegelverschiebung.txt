@@ -1,4 +1,4 @@
-# Weglänge in cm  gezählte Impulse/Intensitätsmaxima
+# Weglänge in cm  gezählte Impulse/Intensitätsmaxima Hebelübersetzung 5.024
 0.210   1028
 0.211   1006
 0.206   999

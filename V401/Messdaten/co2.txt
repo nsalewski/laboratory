@@ -1,4 +1,4 @@
-#druck in bar unter normaldruck gezählte impulse
+#druck in bar unter normaldruck gezählte impulse breite der kammer 50mm
 0.8  54
 0.75   42
 0.85   59

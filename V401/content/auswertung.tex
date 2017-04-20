@@ -1,9 +1,33 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Bestimmung der Wellenlänge des Lasers}
+Zur Bestimmung der Wellenlänge des Lasers werden Datenpaare aus den gezählten Interferenzmaxima am Photoelement $z$ und der Verschiebestrecke des Spiegels $\Delta d$ benötigt.
+Die Verschiebestrecke ergibt sich über die abgelesene Verschiebung an der Mikrometerschraube multipliziert mit dem Faktor $\frac{1}{HÜ}$.
+Dabei ist $HÜ=5.046$ die Hebelübersetzung.
 
-\begin{figure}
+Ebenso wie die Datenpaare befinden sich die aus ihnen nach Formel \eqref{eqn:sf} berechneten Wellenlängen $\lambda $ in Tabelle %\tabref{tab:spieglein}.
+\begin{table}
+  \caption{Datenpaare zur Berechnung der Wellenlänge des Lasers.}
+  \label{tab:spieglein}
   \centering
-  \includegraphics{plot.pdf}
-  \caption{Plot.}
-  \label{fig:plot}
-\end{figure}
+\begin{tabular}{ccc}
+  \toprule
+$\Delta d$/$10^{-4}\si{\meter}$ & Anzahl $z$ der Intensitätsmaxima & Wellenlänge $\lambda$/$\si{\nano\meter}$ \\
+\midrule
+4.16 & 1028.0 & 809.67 \\
+4.18 & 1006.0 & 831.32 \\
+4.08 & 999.0 & 817.31 \\
+4.24 & 979.0 & 866.39 \\
+4.1 & 984.0 & 833.79 \\
+4.26 & 991.0 & 859.9 \\
+4.2 & 1023.0 & 821.38 \\
+4.06 & 1025.0 & 792.71 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+Die Wellenlängen werden mittels python/numpy \cite{numpy} gemittelt und es ergibt sich:
+\begin{equation}
+\lambda=  \SI{829(23)}{\nano\meter}
+\end{equation}
