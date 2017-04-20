@@ -1,8 +1,8 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-Die Theorie wird in drei Abschnitte gegliedert: Zum Einen in den Begriff der Interferenz und 
-die Voraussetzungen für Interferenzeffekte, weiterhin in die Interferenzeffekte mit 
+Die Theorie wird in drei Abschnitte gegliedert: Zum Einen in den Begriff der Interferenz und
+die Voraussetzungen für Interferenzeffekte, weiterhin in die Interferenzeffekte mit
 kohärentem Licht und zuletzt in die Theorie des Michelson-Interferometers.
 
 
@@ -11,36 +11,36 @@ kohärentem Licht und zuletzt in die Theorie des Michelson-Interferometers.
 
 \subsubsection{Der Begriff der Interferenz}
 \label{sec:interferenzdef}
-Die Interferenz beschreibt das Phänomen, das auftritt, wenn Wellen -- hier Licht als 
-elektromagnetische Welle -- überlagert werden. 
+Die Interferenz beschreibt das Phänomen, das auftritt, wenn Wellen -- hier Licht als
+elektromagnetische Welle -- überlagert werden.
 Die Intensitäten der Wellen werden nicht nur addiert, sondern zusätzlich mit einem
-Interferenzterm multipliziert. Daher können sich Wellen verstärken, was \textbf{konstruktive 
+Interferenzterm multipliziert. Daher können sich Wellen verstärken, was \textbf{konstruktive
 Interferenz} genannt wird und gegenseitig auslöschen (\textbf{destruktive Interferenz}).
 
 Die Lichtausbreitung im Vakuum lässt sich durch ebene elektromagnetische Wellen
 \begin{equation}
 	\label{eqn:ebenewelle}
-	\vec{E}(x,t) = \vec{E}_0 \cos(k x - \omega t - \delta) 
+	\vec{E}(x,t) = \vec{E}_0 \cos(k x - \omega t - \delta)
 \end{equation}
 beschreiben, wobei $\vec{E}$ der elektrischen Feldstärke, $x$ dem Ort, $t$ der Zeit, $k=\frac{2\pi}{\lambda}$ der Wellenzahl, $\lambda$
-der Wellenlänge, $\omega$ der Kreisfrequenz und $\delta$ dem Phasenunterschied bezüglich eines 
+der Wellenlänge, $\omega$ der Kreisfrequenz und $\delta$ dem Phasenunterschied bezüglich eines
 festen Bezugspunktes entspricht.
-Die Beschreibbarkeit der Ausbreitung des Lichts durch elektromagnetische Wellen impliziert die 
-Gültigkeit der Maxwell'schen Gleichungen. Diese sind lineare Differentialgleichungen. Daher 
+Die Beschreibbarkeit der Ausbreitung des Lichts durch elektromagnetische Wellen impliziert die
+Gültigkeit der Maxwell'schen Gleichungen. Diese sind lineare Differentialgleichungen. Daher
 gilt das Prinzip der linearen Superposition, welches besagt, dass ein elektrisches Feld
 $\vec{E}$, das aus mehreren einzelnen elektrischen Feldern $\vec{E}_{\mathrm{i}}$
 zusammengesetzt wird, der Summe dieser, also $\vec{E} = \sum \vec{E}_{\mathrm{i}}$, entspricht.
 
 Weiterhin ist die Feldstärke von Licht, aufgrund der hohen Frequenz, von
-Messgeräten nicht messbar. Diesbezüglich wird die Intensität von Licht, die Lichtleistung pro 
+Messgeräten nicht messbar. Diesbezüglich wird die Intensität von Licht, die Lichtleistung pro
 Fläche, betrachtet.
 Aus den Maxwell'schen Gleichungen ergibt sich diese zu
 \begin{equation}
 	\label{eqn:intensity}
 	I = C \cdot |\vec{E}|^2 \mathrm{, } \, C = \mathrm{const.}
 \end{equation}
-Mit den Gleichungen \eqref{eqn:ebenewelle} und \eqref{eqn:intensity} und der linearen 
-Superposition ergibt sich für die Gesamtintensität $I_{\mathrm{GES}}$ von zwei Lichtwellen mit 
+Mit den Gleichungen \eqref{eqn:ebenewelle} und \eqref{eqn:intensity} und der linearen
+Superposition ergibt sich für die Gesamtintensität $I_{\mathrm{GES}}$ von zwei Lichtwellen mit
 der gleichen Amplitude $\vec{E}_0$, die an einem festen Ort $x$ einfallen,
 \begin{equation}
 	I_{\mathrm{GES}} = \frac{C}{t_2 - t_1} \int_{t_1}^{t_2} |\vec{E_1} + \vec{E_2}|^2(x,t) \,  \symup{d}t \mathrm{,}
@@ -59,56 +59,56 @@ bei einem Phasenunterschied von $(2n+1) \cdot \pi$, mit $n \in \mathbb{N}$.
 \subsubsection{Diskussion über die Voraussetzungen zur Messung von Interferenzerscheinungen}
 \label{sec:messunginterferenz}
 
-Werden Lichtwellen aus verschiedenen Quellen überlagert, sind keine Interferenzeffekte zu 
-beobachten. Dies hat die Ursache, dass bei der Emission von Lichtwellen Elektronen 
-Emissionszentren darstellen: Die Elektronen werden durch hinzugefügte Energie in einen 
-angeregten Zustand versetzt und emittieren bei der Rückkehr in den Grundzustand Energie in Form 
-eines Wellenzuges endlicher Länge, also einer Wellengruppe. Des Weiteren treten diese Emissionen 
+Werden Lichtwellen aus verschiedenen Quellen überlagert, sind keine Interferenzeffekte zu
+beobachten. Dies hat die Ursache, dass bei der Emission von Lichtwellen Elektronen
+Emissionszentren darstellen: Die Elektronen werden durch hinzugefügte Energie in einen
+angeregten Zustand versetzt und emittieren bei der Rückkehr in den Grundzustand Energie in Form
+eines Wellenzuges endlicher Länge, also einer Wellengruppe. Des Weiteren treten diese Emissionen
 statistisch verteilt in der Elektronenhülle des Atoms bzw. Moleküls auf und daher sind die Phasen
-$\delta_1$ bzw. $\delta_2$ statistische Funktionen der Zeit. 
+$\delta_1$ bzw. $\delta_2$ statistische Funktionen der Zeit.
 
 Daraus folgt, dass die Mittelung über die Zeit
 \begin{equation}
 	\frac{1}{t_2-t_1} \int_{t_1}^{t_2} C \, \cos(\delta_2(t)-\delta_1(t)) \, \symup{d}t
 \end{equation}
-verschwindet, da das Beobachtungsintervall $t_2-t_1$ groß gegen die Periodendauer $T$ ist und 
+verschwindet, da das Beobachtungsintervall $t_2-t_1$ groß gegen die Periodendauer $T$ ist und
 der Phasenunterschied $\delta_2-\delta_1$ beliebige Werte annimmt.
 
 Licht aus verschiedenen Quellen ist also nicht interferenzfähig, es ist \textbf{inkohärent}.
-Interferenzeffekte lassen sich also nur erzeugen, wenn das Licht aus der selben Quelle stammt, 
+Interferenzeffekte lassen sich also nur erzeugen, wenn das Licht aus der selben Quelle stammt,
 sogenanntes \textbf{kohährentes} Licht.
 
 
 \subsection{Interferenzeffekte mit kohärentem Licht}
-\label{sec:kohärenz} 
+\label{sec:kohärenz}
 
-Um Interferenzeffekte mit kohärentem Licht erzeugen zu können, muss die Quelle Licht mit 
+Um Interferenzeffekte mit kohärentem Licht erzeugen zu können, muss die Quelle Licht mit
 festem $k$, $\omega$ und $\delta$ (vergleiche Gleichung \eqref{eqn:ebenewelle}) emittieren.
-Weiterhin muss der Strahlengang des Lichts getrennt werden, damit sich die beiden Teilwellen 
+Weiterhin muss der Strahlengang des Lichts getrennt werden, damit sich die beiden Teilwellen
 an einem Punkt P überlagern können.
-Der Unterschied der Weglängen der beiden Teilwellen wird \textbf{Wegunterschied $\Delta$} 
+Der Unterschied der Weglängen der beiden Teilwellen wird \textbf{Wegunterschied $\Delta$}
 genannt.
-Hierbei ist zu beachten, dass der Wegunterschied $\Delta$ nicht zu groß gegen die Länge eines 
-Wellenzugs sein darf. Dies liegt daran, dass ein Emissionsakt eine endliche Dauer $\tau$ und der 
+Hierbei ist zu beachten, dass der Wegunterschied $\Delta$ nicht zu groß gegen die Länge eines
+Wellenzugs sein darf. Dies liegt daran, dass ein Emissionsakt eine endliche Dauer $\tau$ und der
 emittierte Wellenzug somit eine endliche Länge hat. Ist der Wegunterschied $\Delta$ zu groß
-gegen die Länge dieses Wellenzuges, treffen Teilwellen aus unterschiedlichen Wellenzügen 
-zeitgleich am Punkt P auf und können aufgrund der inkonstanten Phasenbeziehung zueinander nicht 
+gegen die Länge dieses Wellenzuges, treffen Teilwellen aus unterschiedlichen Wellenzügen
+zeitgleich am Punkt P auf und können aufgrund der inkonstanten Phasenbeziehung zueinander nicht
 interferieren.
 Der Wegunterschied $\Delta$, ab dem keine Interferenzeffekte auftreten, heißt \textbf{
-	Kohärenzlänge $\ell$}. Sie ergibt sich aus der Anzahl $N$ der im Interferenzbild 
-auftretenden Intensitätsmaxima und der Wellenlänge $\lambda$ zu 
+	Kohärenzlänge $\ell$}. Sie ergibt sich aus der Anzahl $N$ der im Interferenzbild
+auftretenden Intensitätsmaxima und der Wellenlänge $\lambda$ zu
 \begin{equation}
 	\ell = N \lambda \, \mathrm{.}
 \end{equation}
-Außerdem ergibt sich aus dem \textbf{Fourier'schem Theorem}, dass ein Wellenzug endlicher 
-Länge nicht monochromatisch ist und ein Frequenz- und Wellenlängenspektrum hat. Dieses 
-Spektrum sorgt für ein unklares Interferenzbild, weil eine Frequenz aus dem Spektrum in dem 
+Außerdem ergibt sich aus dem \textbf{Fourier'schem Theorem}, dass ein Wellenzug endlicher
+Länge nicht monochromatisch ist und ein Frequenz- und Wellenlängenspektrum hat. Dieses
+Spektrum sorgt für ein unklares Interferenzbild, weil eine Frequenz aus dem Spektrum in dem
 Punkt bei einem gewissen Wegunterschied $\Delta$ ein Maximum haben kann, während eine andere
 Frequenz aus dem Spektrum destruktiv interferiert. Daher muss entweder das Spektrum oder der
 Wegunterschied sehr klein sein, damit sich Maxima und Minima nicht in einem Punkt überschneiden.
 
-Das Frequenzspektrum eines Wellenzuges ergibt sich durch eine Fourier-Transformation der 
-Feldstärke zu 
+Das Frequenzspektrum eines Wellenzuges ergibt sich durch eine Fourier-Transformation der
+Feldstärke zu
 \begin{equation}
 	g(\omega) = 2E_0 \frac{\sin((\omega-\omega_0)\frac{\tau}{2}}{\omega-\omega_0}
 \end{equation}
@@ -117,37 +117,37 @@ und damit die Intensität als Betragsquadrat zu
 	\label{eqn:waveintensity}
 	G(\omega) = |g(\omega)|^2 = 4E_0^2 \frac{\sin^2((\omega-\omega_0)\frac{\tau}{2}}{(\omega \omega_0)^2} \mathrm{.}
 \end{equation}
-Die Intensitätsverteilung \eqref{eqn:waveintensity} hat ein Maximum bei $\omega=\omega_0$ und 
+Die Intensitätsverteilung \eqref{eqn:waveintensity} hat ein Maximum bei $\omega=\omega_0$ und
 als Verteilungsfunktion die Breite $\Delta \omega = \frac{2\pi}{\tau}$.
-Mit dem Zusammenhang 
+Mit dem Zusammenhang
 \begin{equation}
 	\lambda_0 := \frac{2\pi \symup{c}}{\omega_0} \mathrm{,}
 \end{equation}
-der Breite $\Delta \omega = \frac{2\pi}{\tau}$ der Verteilungsfunktion $G(\omega)$ und 
+der Breite $\Delta \omega = \frac{2\pi}{\tau}$ der Verteilungsfunktion $G(\omega)$ und
 Differentiation ergibt sich
 \begin{equation}
 	\Delta \lambda = \frac{\lambda_0^2}{\symup{c}\tau}
 \end{equation}
-und wegen der Dauer eines Wellenzuges $\tau = \frac{\ell}{\symup{c}}$ 
+und wegen der Dauer eines Wellenzuges $\tau = \frac{\ell}{\symup{c}}$
 (auch \textbf{Kohärenzzeit}) ein Zusammenhang zwischen der Kohärenzlänge $\ell$, der Dauer
-eines Wellenzuges $\tau$ und der Breite $\Delta \lambda$ der Wellenlängen- und Frequenzverteilung zu 
+eines Wellenzuges $\tau$ und der Breite $\Delta \lambda$ der Wellenlängen- und Frequenzverteilung zu
 \begin{equation}
 	\Delta \lambda = \frac{\lambda_0^2}{\ell} \mathrm{.}
 \end{equation}
 
-Des Weiteren zu beachten ist, dass in der Realität verwendete Lichtquellen nicht punktförmig 
-sind, sondern eine endliche Ausdehnung haben. Strahlen, die von einer ausgedehnten Lichtquelle 
-(siehe Abbildung \ref{fig:...}) aus durch eine Linse auf einen Beobachtungspunkt P fokussiert 
-werden, können paarweise interferieren, wenn sie aus dem gleichen Punkt emittiert wurden. 
-Durch den Winkel $\zeta$ in Abbildung \ref{fig:...} tritt eine zusätzliche Phasenverschiebung 
-$\Delta \phi$ zwischen den Strahlen 3 und 4 auf, sodass das Interferenzbild im Punkt P 
-zerstört werden kann, wenn die Phasenverschiebung $\Delta \phi$ durch den Winkel $\zeta$ nicht 
+Des Weiteren zu beachten ist, dass in der Realität verwendete Lichtquellen nicht punktförmig
+sind, sondern eine endliche Ausdehnung haben. Strahlen, die von einer ausgedehnten Lichtquelle
+(siehe Abbildung \ref{fig:...}) aus durch eine Linse auf einen Beobachtungspunkt P fokussiert
+werden, können paarweise interferieren, wenn sie aus dem gleichen Punkt emittiert wurden.
+Durch den Winkel $\zeta$ in Abbildung \ref{fig:...} tritt eine zusätzliche Phasenverschiebung
+$\Delta \phi$ zwischen den Strahlen 3 und 4 auf, sodass das Interferenzbild im Punkt P
+zerstört werden kann, wenn die Phasenverschiebung $\Delta \phi$ durch den Winkel $\zeta$ nicht
 viel kleiner als $\pi$ ist.
-Somit ergibt sich mit 
+Somit ergibt sich mit
 \begin{equation}
 	\Delta \phi = \frac{2\pi}{\lambda} a \sin(\zeta) \mathrm{,}
 \end{equation}
-die \textbf{Kohärenzbedingung für ausgedehnte Lichtquellen} zu 
+die \textbf{Kohärenzbedingung für ausgedehnte Lichtquellen} zu
 \begin{equation}
 	a \sin(\zeta) \ll \frac{\lambda}{2} \mathrm{.}
 \end{equation}
@@ -155,8 +155,17 @@ die \textbf{Kohärenzbedingung für ausgedehnte Lichtquellen} zu
 
 \subsection{Die Theorie des Michelson-Interferometers}
 
+Das Michelson-Interferometer erlaubt, mithilfe der Betrachtung von Interferenzeffekten, die Messung optischer Größen.
+Um Interferenzen zu erhalten, ist es nötig, einen Lichtstrahl in zwei Teilbündel zu zerteilen und diese, nachdem ein Teilbündel beispielsweise einer Variation seines optischen Wegs erfahren hat, wieder zusammen.
+Beim Michelson-Morley Experiment erfolgt die Strahlteilung mittels einer semipermeablen Platte $P$ .
+Eines der Strahlbündel geht dabei ohne Richtungsänderung durch den Strahlteiler zu Spiegel $S_2$, der Rest wird senkrecht zum ursprünglichen Strahl hin zu Spiegel $S_1$ gebrochen.
+Beide Strahlbündel werden an den Spiegeln reflektiert und treffen am Strahlteiler $P$ wieder zusammen. Jeweils ein Teil der Strahlbündel läuft nun zurück zur Quelle $L$ und wird auch nicht weiter betrachtet. Die anderen Teile der beiden Strahlbündel laufen parallel zum Beobachtungsort $D$.
+Sofern der optische Wegunterschied der beiden Strahlbündel kleiner ist als die Kohärenzlänge der Lichtquelle, sind die am Beobachtungsort ankommenden Strahlbündel kohärent.
+Im Strahlweg des Strahlbündels $S_2$ wird eine zusätzliche Kompensationsplatte eingebracht, da das Strahlbündel $S_1$ dreimal ddie semipermeable Platte passiert, während selbige das Strahlbündel $S_2$ nur einmal passiert.
+Sind beide Strahlwege exakt gleich lang realisiert, kommt es dennoch am Beobachtungsort $D$ zur destruktiven Interferenz, da das Strahlbündel $S_2$ bei der Reflexion am Strahlteiler einen Phasensprung erfährt.
+Wird einer der Spiegel um das Wegstück $\Delta d$ verschoben, besteht ein Wegunterschied von $2\Delta d$ zwischen beiden Strahlwegen.
 
-
+To be continued
 
 
 
