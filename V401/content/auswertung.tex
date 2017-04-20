@@ -31,3 +31,86 @@ Die Wellenlängen werden mittels python/numpy \cite{numpy} gemittelt und es ergi
 \begin{equation}
 \lambda=  \SI{829(23)}{\nano\meter}
 \end{equation}
+
+\subsection{Bestimmung des Brechungsindex von Luft}
+
+Für die Bestimmung der Brechungsindizes werden folgende Werte verwendet:
+
+\begin{align}
+	T_0 &= \SI{273,15}{\kelvin} \\
+	p_0 &= \SI{1,0132}{\bar}  \\
+	T &= \SI{293,15}{\kelvin} \\
+	b &= \SI{50}{\milli\meter} \\
+	\lambda &= \SI{635}{\nano\meter}
+\end{align}
+
+
+
+\begin{table}
+	\caption{Messwerte für die Berechnung des Brechungsindex von Luft.}
+	\label{tab:luftbrech}
+	\centering
+	\begin{tabular}{ccc}
+	\toprule
+	$p$ / $\si{\bar}$ & Anzahl $z$ der Intensitätsmaxima & Brechungsindex \\
+	\midrule
+		0.75 & 25 & 1.000230 \\
+		0.80 & 25 & 1.000216 \\
+		0.80 & 32 & 1.000276 \\
+		0.80 & 34 & 1.000293 \\
+		0.80 & 32 & 1.000276 \\
+		0.80 & 34 & 1.000293 \\
+		0.80 & 33 & 1.000285 \\
+		0.80 & 33 & 1.000285 \\
+		0.80 & 34 & 1.000293 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+In Tabelle \ref{tab:luftbrech} sind die Messwerte zur Bestimmung des Brechungsindex von Luft
+und der jeweils bestimmte Brechungsindex aufgetragen. 
+Der Brechungsindex wird mit Formel \eqref{eqn:????} berechnet, wobei sich $\Delta n$ aus Formel 
+\eqref{eqn:???} ergibt.
+
+Es ergibt sich der Brechungsindex für Luft mit dem Fehler des Mittelwerts von
+\begin{equation}
+	n_{\mathrm{LUFT}} = (1,000272 \pm 0.000027) \mathrm{.}
+\end{equation}
+
+
+\subsection{Bestimmung des Brechungsindex von \texorpdfstring{$CO_2$}{math} }
+
+Analog zur Bestimmung des Brechungsindex von Luft verläuft die Berechnung des 
+Brechungsindex von CO$_2$.
+
+\begin{table}
+	\caption{Messwerte für die Berechnung des Brechungsindex von \texorpdfstring{CO$_2$}{math}.}
+	\label{tab:co2brech}
+	\centering
+	\begin{tabular}{ccc}
+	\toprule
+	$p$ / $\si{\bar}$ & Anzahl $z$ der Intensitätsmaxima & Brechungsindex \\
+	\midrule
+		0.80 & 54 & 1.000466 \\
+		0.75 & 42 & 1.000387 \\
+		0.85 & 59 & 1.000479 \\
+		0.80 & 56 & 1.000483 \\
+		0.85 & 58 & 1.000471 \\
+		0.80 & 54 & 1.000466 \\
+		0.82 & 58 & 1.000488 \\
+		0.80 & 53 & 1.000457 \\
+		0.80 & 56 & 1.000483 \\
+		0.80 & 52 & 1.000449 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+Die Messwerte mit zugehörigem Brechungsindex sind in Tabelle \ref{tab:co2brech} aufgetragen.
+Es ergibt sich der Brechungsindex zu
+\begin{equation}
+	n_{\mathrm{CO}_2} = 1.000463 \pm 0.000028 \mathrm{.}
+\end{equation}
+
+
+
+
