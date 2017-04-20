@@ -1,7 +1,9 @@
 \section{Theorie}
 \label{sec:Theorie}
 
-Die Theorie wird in zwei Abschnitte gegliedert: die Phänomene der Interferenz und Kohärenz.
+Die Theorie wird in zwei Abschnitte gegliedert: Zum Einen in den Begriff der Interferenz und 
+die Voraussetzungen für Interferenzeffekte und zum Anderen in die Interferenzeffekte mit 
+kohärentem Licht.
 
 
 \subsection{Interferenz}
@@ -35,7 +37,7 @@ Fläche, betrachtet.
 Aus den Maxwell'schen Gleichungen ergibt sich diese zu
 \begin{equation}
 	\label{eqn:intensity}
-	I = C \, |\vec{E}|^2 \mathrm{, } \, C = \mathrm{const.}
+	I = C \cdot |\vec{E}|^2 \mathrm{, } \, C = \mathrm{const.}
 \end{equation}
 Mit den Gleichungen \eqref{eqn:ebenewelle} und \eqref{eqn:intensity} und der linearen 
 Superposition ergibt sich für die Gesamtintensität $I_{\mathrm{GES}}$ von zwei Lichtwellen mit 
@@ -77,8 +79,80 @@ Interferenzeffekte lassen sich also nur erzeugen, wenn das Licht aus der selben 
 sogenanntes \textbf{kohährentes} Licht.
 
 
-\subsection{Kohärenz}
+\subsection{Interferenzeffekte mit kohärentem Licht}
 \label{sec:kohärenz} 
+
+Um Interferenzeffekte mit kohärentem Licht erzeugen zu können, muss die Quelle Licht mit 
+festem $k$, $\omega$ und $\delta$ (vergleiche Gleichung \eqref{eqn:ebenewelle}) emittieren.
+Weiterhin muss der Strahlengang des Lichts getrennt werden, damit sich die beiden Teilwellen 
+an einem Punkt P überlagern können.
+Der Unterschied der Weglängen der beiden Teilwellen wird \textbf{Wegunterschied $\Delta$} 
+genannt.
+Hierbei ist zu beachten, dass der Wegunterschied $\Delta$ nicht zu groß gegen die Länge eines 
+Wellenzugs sein darf. Dies liegt daran, dass ein Emissionsakt eine endliche Dauer $\tau$ und der 
+emittierte Wellenzug somit eine endliche Länge hat. Ist der Wegunterschied $\Delta$ zu groß
+gegen die Länge dieses Wellenzuges, treffen Teilwellen aus unterschiedlichen Wellenzügen 
+zeitgleich am Punkt P auf und können aufgrund der inkonstanten Phasenbeziehung zueinander nicht 
+interferieren.
+Der Wegunterschied $\Delta$, ab dem keine Interferenzeffekte auftreten, heißt \textbf{
+	Kohärenzlänge $\ell$}. Sie ergibt sich aus der Anzahl $N$ der im Interferenzbild 
+auftretenden Intensitätsmaxima und der Wellenlänge $\lambda$ zu 
+\begin{equation}
+	\ell = N \lambda \, \mathrm{.}
+\end{equation}
+Außerdem ergibt sich aus dem \textbf{Fourier'schem Theorem}, dass ein Wellenzug endlicher 
+Länge nicht monochromatisch ist und ein Frequenz- und Wellenlängenspektrum hat. Dieses 
+Spektrum sorgt für ein unklares Interferenzbild, weil eine Frequenz aus dem Spektrum in dem 
+Punkt bei einem gewissen Wegunterschied $\Delta$ ein Maximum haben kann, während eine andere
+Frequenz aus dem Spektrum destruktiv interferiert. Daher muss entweder das Spektrum oder der
+Wegunterschied sehr klein sein, damit sich Maxima und Minima nicht in einem Punkt überschneiden.
+
+Das Frequenzspektrum eines Wellenzuges ergibt sich durch eine Fourier-Transformation der 
+Feldstärke zu 
+\begin{equation}
+	g(\omega) = 2E_0 \frac{\sin((\omega-\omega_0)\frac{\tau}{2}}{\omega-\omega_0}
+\end{equation}
+und damit die Intensität als Betragsquadrat zu
+\begin{equation}
+	\label{eqn:waveintensity}
+	G(\omega) = |g(\omega)|^2 = 4E_0^2 \frac{\sin^2((\omega-\omega_0)\frac{\tau}{2}}{(\omega \omega_0)^2} \mathrm{.}
+\end{equation}
+Die Intensitätsverteilung \eqref{eqn:waveintensity} hat ein Maximum bei $\omega=\omega_0$ und 
+als Verteilungsfunktion die Breite $\Delta \omega = \frac{2\pi}{\tau}$.
+Mit dem Zusammenhang 
+\begin{equation}
+	\lambda_0 := \frac{2\pi \symup{c}}{\omega_0} \mathrm{,}
+\end{equation}
+der Breite $\Delta \omega = \frac{2\pi}{\tau}$ der Verteilungsfunktion $G(\omega)$ und 
+Differentiation ergibt sich
+\begin{equation}
+	\Delta \lambda = \frac{\lambda_0^2}{\symup{c}\tau}
+\end{equation}
+und wegen der Dauer eines Wellenzuges $\tau = \frac{\ell}{\symup{c}}$ 
+(auch \textbf{Kohärenzzeit}) ein Zusammenhang zwischen der Kohärenzlänge $\ell$, der Dauer
+eines Wellenzuges $\tau$ und der Breite $\Delta \lambda$ der Wellenlängen- und Frequenzverteilung zu 
+\begin{equation}
+	\Delta \lambda = \frac{\lambda_0^2}{\ell} \mathrm{.}
+\end{equation}
+
+Des Weiteren zu beachten ist, dass in der Realität verwendete Lichtquellen nicht punktförmig 
+sind, sondern eine endliche Ausdehnung haben. Strahlen, die von einer ausgedehnten Lichtquelle 
+(siehe Abbildung \ref{fig:...}) aus durch eine Linse auf einen Beobachtungspunkt P fokussiert 
+werden, können paarweise interferieren, wenn sie aus dem gleichen Punkt emittiert wurden. 
+Durch den Winkel $\psi$ in Abbildung \ref{fig:...} tritt eine zusätzliche Phasenverschiebung 
+$\Delta \phi$ zwischen den Strahlen 3 und 4 auf, sodass das Interferenzbild im Punkt P 
+zerstört werden kann, wenn die Phasenverschiebung $\Delta \phi$ durch den Winkel $psi$ nicht 
+viel kleiner als $\pi$ ist.
+Somit ergibt sich mit 
+\begin{equation}
+	\Delta \phi = \frac{2\pi}{\lambda} a \sin(\psi) \mathrm{,}
+\end{equation}
+die \textbf{Kohärenzbedingung für ausgedehnte Lichtquellen} zu 
+\begin{equation}
+	a \sin(\psi) \ll \frac{lambda}{2} \mathrm{.}
+\end{equation}
+
+
 
 
 
