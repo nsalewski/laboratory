@@ -1,11 +1,11 @@
 \section{Auswertung}
 \label{sec:Auswertung}
 \subsection{Bestimmung der Wellenlänge des Lasers}
-Zur Bestimmung der Wellenlänge des Lasers werden Datenpaare aus den gezählten Interferenzmaxima am Photoelement $z$ und der Verschiebestrecke des Spiegels $\Delta d$ benötigt.
-Die Verschiebestrecke ergibt sich über die abgelesene Verschiebung an der Mikrometerschraube multipliziert mit dem Faktor $\frac{1}{HÜ}$.
-Dabei ist $HÜ=5.046$ die Hebelübersetzung.
+Zur Bestimmung der Wellenlänge des Lasers werden Datenpaare aus den gezählten Interferenzmaxima $z$ am Photoelement und der Verschiebestrecke des Spiegels $\Delta d$ benötigt.
+Die Verschiebestrecke ergibt sich über die abgelesene Verschiebung an der Mikrometerschraube multipliziert mit dem Faktor $\frac{1}{H}$.
+Dabei ist $H=5.046$ die Hebelübersetzung.
 
-Ebenso wie die Datenpaare befinden sich die aus ihnen nach Formel \eqref{eqn:sf} berechneten Wellenlängen $\lambda $ in Tabelle %\tabref{tab:spieglein}.
+Ebenso wie die Datenpaare befinden sich die aus ihnen nach Formel \eqref{eqn:lambda} berechneten Wellenlängen $\lambda $ in Tabelle \ref{tab:spieglein}.
 \begin{table}
   \caption{Datenpaare zur Berechnung der Wellenlänge des Lasers.}
   \label{tab:spieglein}
@@ -29,7 +29,7 @@ $\Delta d$/$10^{-4}\si{\meter}$ & Anzahl $z$ der Intensitätsmaxima & Wellenlän
 
 Die Wellenlängen werden mittels python/numpy \cite{numpy} gemittelt und es ergibt sich:
 \begin{equation}
-\lambda=  \SI{829(23)}{\nano\meter}
+\lambda=  \SI{829(23)}{\nano\meter} \text{.}
 \end{equation}
 
 \subsection{Bestimmung des Brechungsindex von Luft}
@@ -68,9 +68,9 @@ Für die Bestimmung der Brechungsindizes werden folgende Werte verwendet:
 \end{table}
 
 In Tabelle \ref{tab:luftbrech} sind die Messwerte zur Bestimmung des Brechungsindex von Luft
-und der jeweils bestimmte Brechungsindex aufgetragen. 
-Der Brechungsindex wird mit Formel \eqref{eqn:????} berechnet, wobei sich $\Delta n$ aus Formel 
-\eqref{eqn:???} ergibt.
+und der jeweils bestimmte Brechungsindex aufgetragen.
+Der Brechungsindex wird mit Formel \eqref{eqn:n} berechnet, wobei sich $\Delta n$ aus Formel
+\eqref{eqn:deltan} ergibt.
 
 Es ergibt sich der Brechungsindex für Luft mit dem Fehler des Mittelwerts von
 \begin{equation}
@@ -80,7 +80,7 @@ Es ergibt sich der Brechungsindex für Luft mit dem Fehler des Mittelwerts von
 
 \subsection{Bestimmung des Brechungsindex von \texorpdfstring{$CO_2$}{math} }
 
-Analog zur Bestimmung des Brechungsindex von Luft verläuft die Berechnung des 
+Analog zur Bestimmung des Brechungsindex von Luft verläuft die Berechnung des
 Brechungsindex von CO$_2$.
 
 \begin{table}
@@ -110,7 +110,3 @@ Es ergibt sich der Brechungsindex zu
 \begin{equation}
 	n_{\mathrm{CO}_2} = 1.000463 \pm 0.000028 \mathrm{.}
 \end{equation}
-
-
-
-

@@ -24,7 +24,7 @@ Die Lichtausbreitung im Vakuum lässt sich durch ebene elektromagnetische Wellen
 \end{equation}
 beschreiben, wobei $\vec{E}$ der elektrischen Feldstärke, $x$ dem Ort, $t$ der Zeit, $k=\frac{2\pi}{\lambda}$ der Wellenzahl, $\lambda$
 der Wellenlänge, $\omega$ der Kreisfrequenz und $\delta$ dem Phasenunterschied bezüglich eines
-festen Bezugspunktes entspricht.
+festen Bezugspunktes entspricht.\\
 Die Beschreibbarkeit der Ausbreitung des Lichts durch elektromagnetische Wellen impliziert die
 Gültigkeit der Maxwell'schen Gleichungen. Diese sind lineare Differentialgleichungen. Daher
 gilt das Prinzip der linearen Superposition, welches besagt, dass ein elektrisches Feld
@@ -32,7 +32,7 @@ $\vec{E}$, das aus mehreren einzelnen elektrischen Feldern $\vec{E}_{\mathrm{i}}
 zusammengesetzt wird, der Summe dieser, also $\vec{E} = \sum \vec{E}_{\mathrm{i}}$, entspricht.
 
 Weiterhin ist die Feldstärke von Licht, aufgrund der hohen Frequenz, von
-Messgeräten nicht messbar. Diesbezüglich wird die Intensität von Licht, die Lichtleistung pro
+Messgeräten nicht messbar. Daher wird die Intensität von Licht, die Lichtleistung pro
 Fläche, betrachtet.
 Aus den Maxwell'schen Gleichungen ergibt sich diese zu
 \begin{equation}
@@ -49,6 +49,7 @@ wobei das Beobachtungsintervall $t_2 - t_1$ groß gegen die Periodendauer $T=\fr
 sein soll.
 Einsetzen und Ausmultiplizieren liefert schließlich
 \begin{equation}
+	\label{eqn:4}
 	I_{\mathrm{GES}} = 2C \, \vec{E_0}^2 (1+\cos(\delta_2 - \delta_1)) \mathrm{,}
 \end{equation}
 den Interferenzterm. Die Intensitäten weichen bei einem Phasenunterschied von
@@ -63,7 +64,7 @@ Werden Lichtwellen aus verschiedenen Quellen überlagert, sind keine Interferenz
 beobachten. Dies hat die Ursache, dass bei der Emission von Lichtwellen Elektronen
 Emissionszentren darstellen: Die Elektronen werden durch hinzugefügte Energie in einen
 angeregten Zustand versetzt und emittieren bei der Rückkehr in den Grundzustand Energie in Form
-eines Wellenzuges endlicher Länge, also einer Wellengruppe. Des Weiteren treten diese Emissionen
+eines Wellenzuges endlicher Länge, also einer Wellengruppe. \\Des Weiteren treten diese Emissionen
 statistisch verteilt in der Elektronenhülle des Atoms bzw. Moleküls auf und daher sind die Phasen
 $\delta_1$ bzw. $\delta_2$ statistische Funktionen der Zeit.
 
@@ -83,9 +84,9 @@ sogenanntes \textbf{kohährentes} Licht.
 \label{sec:kohärenz}
 
 Um Interferenzeffekte mit kohärentem Licht erzeugen zu können, muss die Quelle Licht mit
-festem $k$, $\omega$ und $\delta$ (vergleiche Gleichung \eqref{eqn:ebenewelle}) emittieren.
+festem $k$, $\omega$ und $\delta$ (vergleiche Gleichung \eqref{eqn:ebenewelle}) emittieren.\\
 Weiterhin muss der Strahlengang des Lichts getrennt werden, damit sich die beiden Teilwellen
-an einem Punkt P überlagern können.
+an einem Punkt P überlagern können.\\
 Der Unterschied der Weglängen der beiden Teilwellen wird \textbf{Wegunterschied $\Delta$}
 genannt.
 Hierbei ist zu beachten, dass der Wegunterschied $\Delta$ nicht zu groß gegen die Länge eines
@@ -94,8 +95,7 @@ emittierte Wellenzug somit eine endliche Länge hat. Ist der Wegunterschied $\De
 gegen die Länge dieses Wellenzuges, treffen Teilwellen aus unterschiedlichen Wellenzügen
 zeitgleich am Punkt P auf und können aufgrund der inkonstanten Phasenbeziehung zueinander nicht
 interferieren.
-Der Wegunterschied $\Delta$, ab dem keine Interferenzeffekte auftreten, heißt \textbf{
-	Kohärenzlänge $\ell$}. Sie ergibt sich aus der Anzahl $N$ der im Interferenzbild
+Der Wegunterschied $\Delta$, ab dem keine Interferenzeffekte auftreten, heißt \textbf{Kohärenzlänge $\ell$}.\\ Sie ergibt sich aus der Anzahl $N$ der im Interferenzbild
 auftretenden Intensitätsmaxima und der Wellenlänge $\lambda$ zu
 \begin{equation}
 	\ell = N \lambda \, \mathrm{.}
@@ -134,16 +134,21 @@ eines Wellenzuges $\tau$ und der Breite $\Delta \lambda$ der Wellenlängen- und 
 \begin{equation}
 	\Delta \lambda = \frac{\lambda_0^2}{\ell} \mathrm{.}
 \end{equation}
-
+\begin{figure}
+	\caption{Versuchsanordnung zur Kohärenzbedingung ausgedehnter Lichtquellen}
+	\label{fig:...}
+	\centering
+	\includegraphics[width=0.85\textwidth]{Bilder/ausgedehnte_lichtquelle.png}
+\end{figure}
 Des Weiteren zu beachten ist, dass in der Realität verwendete Lichtquellen nicht punktförmig
 sind, sondern eine endliche Ausdehnung haben. Strahlen, die von einer ausgedehnten Lichtquelle
 (siehe Abbildung \ref{fig:...}) aus durch eine Linse auf einen Beobachtungspunkt P fokussiert
-werden, können paarweise interferieren, wenn sie aus dem gleichen Punkt emittiert wurden.
+werden, können paarweise interferieren, wenn sie aus dem gleichen Punkt emittiert wurden.\\
 Durch den Winkel $\zeta$ in Abbildung \ref{fig:...} tritt eine zusätzliche Phasenverschiebung
 $\Delta \phi$ zwischen den Strahlen 3 und 4 auf, sodass das Interferenzbild im Punkt P
 zerstört werden kann, wenn die Phasenverschiebung $\Delta \phi$ durch den Winkel $\zeta$ nicht
 viel kleiner als $\pi$ ist.
-Somit ergibt sich mit
+\\Somit ergibt sich mit
 \begin{equation}
 	\Delta \phi = \frac{2\pi}{\lambda} a \sin(\zeta) \mathrm{,}
 \end{equation}
@@ -156,21 +161,34 @@ die \textbf{Kohärenzbedingung für ausgedehnte Lichtquellen} zu
 \subsection{Die Theorie des Michelson-Interferometers}
 
 Das Michelson-Interferometer erlaubt, mithilfe der Betrachtung von Interferenzeffekten, die Messung optischer Größen.
-Um Interferenzen zu erhalten, ist es nötig, einen Lichtstrahl in zwei Teilbündel zu zerteilen und diese, nachdem ein Teilbündel beispielsweise einer Variation seines optischen Wegs erfahren hat, wieder zusammen.
+Um Interferenzen zu erhalten, ist es nötig, einen Lichtstrahl in zwei Teilbündel zu zerteilen und diese, nachdem ein Teilbündel beispielsweise einer Variation seines optischen Wegs erfahren hat, wieder zusammenzuführen.\\
 Beim Michelson-Morley Experiment erfolgt die Strahlteilung mittels einer semipermeablen Platte $P$ .
-Eines der Strahlbündel geht dabei ohne Richtungsänderung durch den Strahlteiler zu Spiegel $S_2$, der Rest wird senkrecht zum ursprünglichen Strahl hin zu Spiegel $S_1$ gebrochen.
-Beide Strahlbündel werden an den Spiegeln reflektiert und treffen am Strahlteiler $P$ wieder zusammen. Jeweils ein Teil der Strahlbündel läuft nun zurück zur Quelle $L$ und wird auch nicht weiter betrachtet. Die anderen Teile der beiden Strahlbündel laufen parallel zum Beobachtungsort $D$.
-Sofern der optische Wegunterschied der beiden Strahlbündel kleiner ist als die Kohärenzlänge der Lichtquelle, sind die am Beobachtungsort ankommenden Strahlbündel kohärent.
-Im Strahlweg des Strahlbündels $S_2$ wird eine zusätzliche Kompensationsplatte eingebracht, da das Strahlbündel $S_1$ dreimal ddie semipermeable Platte passiert, während selbige das Strahlbündel $S_2$ nur einmal passiert.
-Sind beide Strahlwege exakt gleich lang realisiert, kommt es dennoch am Beobachtungsort $D$ zur destruktiven Interferenz, da das Strahlbündel $S_2$ bei der Reflexion am Strahlteiler einen Phasensprung erfährt.
+Eines der Strahlbündel geht dabei ohne Richtungsänderung durch den Strahlteiler zu Spiegel $S_2$, der Rest wird senkrecht zum ursprünglichen Strahl hin zu Spiegel $S_1$ gebrochen.\\
+Beide Strahlbündel werden an den Spiegeln reflektiert und treffen am Strahlteiler $P$ wieder zusammen. Jeweils ein Teil der Strahlbündel läuft nun zurück zur Quelle $L$ und wird auch nicht weiter betrachtet. Die anderen Teile der beiden Strahlbündel laufen parallel zum Beobachtungsort $D$.\\
+Sofern der optische Wegunterschied der beiden Strahlbündel kleiner ist als die Kohärenzlänge der Lichtquelle, sind die am Beobachtungsort ankommenden Strahlbündel kohärent.\\
+Im Strahlweg des Strahlbündels $S_2$ wird eine zusätzliche Kompensationsplatte eingebracht, da das Strahlbündel $S_1$ dreimal die semipermeable Platte passiert, während selbige durch das Strahlbündel $S_2$ nur einmal passiert wird.\\
+Sind beide Strahlwege exakt gleich lang realisiert, kommt es dennoch am Beobachtungsort $D$ zur destruktiven Interferenz, da das Strahlbündel $S_2$ bei der Reflexion am Strahlteiler einen Phasensprung erfährt.\\
 Wird einer der Spiegel um das Wegstück $\Delta d$ verschoben, besteht ein Wegunterschied von $2\Delta d$ zwischen beiden Strahlwegen.
-
-To be continued
-
-
-
-
-
-
-
-\cite{Anleitung}
+Mit den bereits angestellten Überlegungen wird nach Formel \eqref{eqn:4} folglich also die Intensität am Beobachtungsort immer zwischen 0 und einem Maximalwert schwanken.
+Werden die Intensitätsmaxima pro Verschiebestrecke $\Delta d$ gezählt, ergibt sich die Wellenlänge zu:
+\begin{equation}
+	\label{eqn:lambda}
+	\lambda= \Delta\text{d}\cdot \frac{2}{z} \text{.}
+\end{equation}
+Eine Variation der optischen Weglänge lässt sich außerdem erreichen, indem eines der Teilbündel beispielsweise durch eine Messzelle mit einem Medium mit geänderten Brechungsindex läuft.\\
+Das Michelson-Interferometer kann damit auch zur Bestimmung des Brechungsindex eines Gases verwendet werden.
+Dazu wird die Messzelle bestmöglichst auf den Druck $p'$ evakuiert und das zu untersuchende Gas wird in die Messzelle strömen gelassen, bis wieder der Umgebungsdruck $p$ erreicht ist.
+In der Messzelle herrsche der Brechungsindex $n+ \Delta n$. Der Umgebungsdruck sei $n$.
+\\Der optische Wegunterschied zwischen beiden Strahlwegen beträgt $b\cdot \Delta d$. Hierbei ist $b$ die Breite der Messzelle.
+\\Die Anzahl $z$ der gezählten Intensitätsmaxima am Beobachtungsort multipliziert mit der halben Wellenlänge ist gleich dem optischen Wegunterschied.
+\\Die Differenz des Brechungsindex bestimmt sich daher nach
+\begin{equation}
+\label{eqn:deltan}
+\Delta n= \frac{z \lambda}{2b} \text{.}
+\end{equation}
+Der Brechungsindex unter Normalbedingungen eines zu untersuchenden Gases in der Messzelle ergibt sich mit der Dispersionstheorie und der Idealen Gasgleichung zu
+\begin{equation}
+\label{eqn:n}
+	n(p_0,T_0)=1+\Delta n \cdot \frac{T}{T_0}\frac{p_0}{\Delta p} \text{.}
+\end{equation}
+Hierbei ist $T$ die Umgebungstemperatur, $\Delta p$ die Druckdifferenz $p-p'$ und $\Delta n$ ergibt sich nach Formel \eqref{eqn:n}.

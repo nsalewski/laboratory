@@ -5,7 +5,7 @@ from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
 d, n = np.genfromtxt("Messdaten/spiegelverschiebung.txt", unpack=True)
-uebersetzung=5.024
+uebersetzung=5.046
 d=d/100
 d=d/uebersetzung
 wellenlaenge=(2*d)/n
@@ -36,4 +36,3 @@ ascii.write([p2, n2, np.round(1+T/T0 * p0/p2 * n2 * lambdi / (2*b), 6)], 'Messda
 
 co2brechi = ufloat(np.mean(1+T/T0 * p0/p2 * n2 * lambdi / (2*b)), np.std(1+T/T0 * p0/p2 * n2 * lambdi / (2*b)))
 print("co2brechi: ", co2brechi)
-
