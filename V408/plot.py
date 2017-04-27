@@ -142,3 +142,55 @@ print("f1 rot =",f1)
 
 f2=ufloat(np.mean(unp.nominal_values(f2)), np.std(unp.nominal_values(f2)))
 print("f2 rot=",f2)
+
+#############################################################################################
+
+
+graw, braw, BGraw = np.genfromtxt("Messdaten/d.txt",unpack=True)
+BGraw = BGraw/100
+GG = 0.03
+Vraw = BGraw/GG
+BG = unp.uarray(BGraw, err)
+V = BG / GG
+g__ = graw - 35.4
+b__ = braw - g__
+
+g_ = unp.uarray(g__, err)
+b_ = unp.uarray(b__, err)
+
+
+ascii.write([g_, b_, V], "Messdaten/abbe.tex", format="latex")
+
+g__ = g__/100
+
+def gstrich(x,f,m):
+    return f*x+m
+
+params, covariance = curve_fit(gstrich, (1+1/Vraw), g__)
+
+plt.plot(np.linspace(0,50), params[0]*np.linspace(0,3)+params[1], 'b-',label='fit')
+plt.plot(1+1/Vraw, g__, 'rx', label='Messwerte')
+plt.tight_layout()
+plt.savefig('Messdaten/123.pdf')
+
+print('****************** f = ', params[0])
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
