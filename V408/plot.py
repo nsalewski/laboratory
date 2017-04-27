@@ -47,11 +47,7 @@ G=unp.uarray(G,error)
 V_klein=bk/gk
 print(V_klein)
 V_groß=B/G
-ascii.write([bk,gk,B,G,V_klein,V_groß],"Messdaten/tab_a_B.tex",format="latex",names=["b","g","B","G","b/g","B/G"])
-V_klein=ufloat(np.mean(unp.nominal_values(V_klein)), np.std(unp.nominal_values(V_klein)))
-V_groß=ufloat(np.mean(unp.nominal_values(V_groß)), np.std(unp.nominal_values(V_groß)))
-print("V_klein=", V_klein)
-print("V_groß=", V_groß)
+ascii.write([bk,gk,B,G,V_klein,V_groß, unp.sqrt((V_klein-V_groß)**2)],"Messdaten/tab_a_B.tex",format="latex",names=["b","g","B","G","b/g","B/G","\Delta V"])
 
 c=1/b +1/g
 f_l=1/c
@@ -64,8 +60,8 @@ for i in range(10):
     plt.plot([0,b[i].nominal_value], [g[i].nominal_value,0],label=i)
 
 
-plt.xlabel(r"$g_{\mathrm{i}}$")
-plt.ylabel(r"$b_{\mathrm{i}}$")
+plt.xlabel(r"$g_{\mathrm{i}}$/$\si{\centi\meter}$")
+plt.ylabel(r"$b_{\mathrm{i}}$/$\si{\centi\meter}$")
 plt.ylim(0,20)
 plt.xlim(8.5,11.0)
 #plt.legend(loc="best")
