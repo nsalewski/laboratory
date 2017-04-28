@@ -5,17 +5,17 @@ Zur Bestimmung der Brennweite über die Bildweite und die Gegenstandsweite werde
 Die verwendeten Datentupel sind hierbei in Tabelle \ref{tab:bundg} angegeben.
 \\Der sich ergebende Schnittpunkt aller Verbindungsgraden hat schließlich als Koordinaten für beide Raumrichtungen die Brennweite $f$ der verwendeten Linse. \\Um die Brennweite aus dem Graphen möglichst genau abzulesen, wird der Bereich des Schnittpunkts vergrößert in Abbildung \ref{fig:plota} dargestellt.
 Die Brennweite wurde abgelesen zu
-\begin{equation}
+\begin{equation*}
   f_{\mathrm{abgelesen}}=\SI{9.7(1)}{\centi\meter}\text{.}
-\end{equation}
+\end{equation*}
 \subsubsection{Experimentelle Überprüfung der Linsengleichung und des Abbildungsgesetz.}
 Über die Linsengleichung \eqref{eqn:linsi} ergibt sich, über die Mittelung der Brennweiten $f_{\mathrm{i}}$, berechnet aus den Datentupeln aus Bild-und Gegenstandsweite, die Brennweite $f_{\mathrm{Linsengleichung}}$.
 Ebenso wie hier, wird auch in den folgenden Mittelwertberechnungen, selbiger mittels python/numpy \cite{numpy} ermittelt.\\
 Hierbei wird als Fehler, wie in den weiteren Messungen ebenfalls, lediglich der Fehler des Mittelwerts angegeben.\\
 Es ergibt sich
-\begin{equation}
+\begin{equation*}
   f_{\mathrm{Linsengleichung}}=\SI{9.70(9)}{\centi\meter}\text{.}
-\end{equation}
+\end{equation*}
 
 \begin{figure}
   \centering
@@ -68,7 +68,8 @@ Die Abweichungen liegen also zumeist unter der Messauflösung, oder zumindest se
 \end{tabular}
 \end{table}
 \FloatBarrier
-\subsection{Bestimmung der Brennweite mit der Methode von Bessel}
+\subsection{Methode von Bessel}
+\subsubsection{Bestimmung der Brennweite mit der Methode von Bessel}
 Zur Bestimmung der Brennweite einer Linse nach der Methode von Bessel wird jede der beiden Linsenpositionen, bei denen ein scharfes Bild auf dem Schirm entsteht, einzeln ausgewertet. \\
 Theoretisch sollte die Linsenanordnung völlig symmetrisch sein, weswegen auch ein annähernd gleiches Ergebnis für die Brennweite erwartet wird, allerdings treten sicherlich Messungenauigkeiten und kleine Ablesefehler auf, sodass die Linsenanordnung sich in der Realität als nicht völlig symmetrisch darstellt.
 \\In den Tabellen \ref{tab:besseli} und \ref{tab:bessii} sind die jeweilige Gegenstandsweite $g_\mathrm{i}$ und die Bildweite $b_\mathrm{i}$, sowie der Abstand $e_\mathrm{i}=g_\mathrm{i} + b_\mathrm{i}$ zwischen Objekt und Bild und dem Abstand $d_\mathrm{i}=g_\mathrm{i} - b_\mathrm{i}$ zwischen den beiden Linsenpositionen eingetragen.
@@ -95,7 +96,7 @@ $b_\mathrm{1}/\si{\centi\meter}$ & $g_\mathrm{1}/\si{\centi\meter}$ & $e_\mathrm
 \end{tabular}
 \end{table}
 \begin{table}
-  \caption{Messdaten zur Bestimmung der Brennweite mittels Bessel-Methode für ungefiltertes Licht bezüglich Linsenposition 2}
+  \caption{Messdaten zur Bestimmung der Brennweite mittels Bessel-Methode für ungefiltertes Licht bezüglich Linsenposition 2.}
   \label{tab:bessii}
   \centering
 \begin{tabular}{ccccc}
@@ -121,8 +122,8 @@ Der Mittelwert der Brennweiten $f_\mathrm{i}$ ergibt sich erneut mittels python/
   f_\mathrm{weiß, 2}= \SI{9.71(7)}{\centi\meter}\text{.}
 \end{gather*}
 \FloatBarrier
-\subsubsection{Untersuchung der chromatischen Abberation}
-Ebenso wie zur Bestimmung der Brennweite der Linse für das Licht der Halogenlampe wird zur Untersuchung der chromatischen Abberration vorgegangen.
+\subsubsection{Untersuchung der chromatischen Abberration}
+Ebenso wie zur Bestimmung der Brennweite der Linse für das ungefilterte Licht der Halogenlampe wird zur Untersuchung der chromatischen Abberration vorgegangen.
 \\Die verwendeten Messdaten für blaues Licht befinden sich in Tabelle \ref{tab:blaueins} und \ref{tab:blauzwo}.
 \begin{table}
   \caption{Gemessene und berechnete Werte zur Bestimmung der Brennweite für blaues Licht zur Untersuchung der chromatischen Abberration der Linsenposition 1.}
@@ -240,13 +241,13 @@ in Tabelle \ref{tab:abbemess} aufgetragen.
 \end{figure}
 
 Es werden nach der ersten Formel von \eqref{eqn:abbe} die Gegenstandsweiten $g'$ des Bezugspunkts A
-gegen $(1+\frac{1}{V})$ aufgetragen. Diese Zusammenhang ist in Abbildung \ref{fig:ausgleichd} 
-dargestellt, wobei die Ausgleichsgerade durch eine lineare Ausgleichsrechnung der Form 
+gegen $(1+\frac{1}{V})$ aufgetragen. Diese Zusammenhang ist in Abbildung \ref{fig:ausgleichd}
+dargestellt, wobei die Ausgleichsgerade durch eine lineare Ausgleichsrechnung der Form
 \begin{equation}
 	g' = m \cdot x + n
 \end{equation}
-bestimmt wird. Die Steigung $m$ der Gleichung \ref{eqn:abbe} entspricht der Brennweite des 
-Linsensystems und der Achsenabschnitt $n$ dem Abstand $h$ vom Bezugspunkt A zur ersten 
+bestimmt wird. Die Steigung $m$ der Gleichung \ref{eqn:abbe} entspricht der Brennweite des
+Linsensystems und der Achsenabschnitt $n$ dem Abstand $h$ vom Bezugspunkt A zur ersten
 Hauptebene.
 
 Die lineare Ausgleichsrechnung mit python ergibt für die Parameter:
@@ -264,7 +265,7 @@ Die lineare Ausgleichsrechnung mit python ergibt für die Parameter:
 
 
 
-Die Lage der zweiten Hauptebene wird nach der zweiten Formel von \eqref{eqn:abbe} analog wie 
+Die Lage der zweiten Hauptebene wird nach der zweiten Formel von \eqref{eqn:abbe} analog wie
 zuvor mit einer linearen Ausgleichsrechnung bestimmt.
 Die Ausgleichsgerade samt aufgennommener Messwerte befinden sich in Abbildung \ref{fig:ausgleichd}. Hier wird die Bildweite $b'$ des Bezugspunkts A gegen $(1+V)$ aufgetragen.
 Es ergeben sich die Parameter:
@@ -272,6 +273,3 @@ Es ergeben sich die Parameter:
 	f = \SI{0.173(4)}{\meter}   \\
 	h = \SI{0.471(4)}{\meter}
 \end{align}
-
-
-
