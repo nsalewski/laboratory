@@ -231,3 +231,47 @@ in Tabelle \ref{tab:abbemess} aufgetragen.
 		\bottomrule
 	\end{tabular}
 \end{table}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{Messdaten/123.pdf}
+  \caption{Lineare Ausgleichsrechnung zur Bestimmung der Brennweite des Linsensystems und Lage der ersten Hauptebene.}
+  \label{fig:ausgleichd}
+\end{figure}
+
+Es werden nach der ersten Formel von \eqref{eqn:abbe} die Gegenstandsweiten $g'$ des Bezugspunkts A
+gegen $(1+\frac{1}{V})$ aufgetragen. Diese Zusammenhang ist in Abbildung \ref{fig:ausgleichd} 
+dargestellt, wobei die Ausgleichsgerade durch eine lineare Ausgleichsrechnung der Form 
+\begin{equation}
+	g' = m \cdot x + n
+\end{equation}
+bestimmt wird. Die Steigung $m$ der Gleichung \ref{eqn:abbe} entspricht der Brennweite des 
+Linsensystems und der Achsenabschnitt $n$ dem Abstand $h$ vom Bezugspunkt A zur ersten 
+Hauptebene.
+
+Die lineare Ausgleichsrechnung mit python ergibt für die Parameter:
+\begin{align}
+	f &= \SI{0.181(4)}{\meter} \\
+	h &= -\SI{0.092(4)}{\meter}
+\end{align}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{Messdaten/1234.pdf}
+  \caption{Lineare Ausgleichsrechnung zur Bestimmung der Brennweite des Linsensystems und Lage der zweiten Hauptebene.}
+  \label{fig:ausgleichd2}
+\end{figure}
+
+
+
+Die Lage der zweiten Hauptebene wird nach der zweiten Formel von \eqref{eqn:abbe} analog wie 
+zuvor mit einer linearen Ausgleichsrechnung bestimmt.
+Die Ausgleichsgerade samt aufgennommener Messwerte befinden sich in Abbildung \ref{fig:ausgleichd}. Hier wird die Bildweite $b'$ des Bezugspunkts A gegen $(1+V)$ aufgetragen.
+Es ergeben sich die Parameter:
+\begin{align}
+	f = \SI{0.173(4)}{\meter}   \\
+	h = \SI{0.471(4)}{\meter}
+\end{align}
+
+
+

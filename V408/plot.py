@@ -158,25 +158,35 @@ b_ = unp.uarray(b__, err)
 ascii.write([g_, b_, V], "Messdaten/abbe.tex", format="latex")
 
 g__ = g__/100
+b__ = b__/100
 
 def gstrich(x,f,m):
     return f*x+m
 
 params, covariance = curve_fit(gstrich, (1+1/Vraw), g__)
+errors = np.sqrt(np.diag(covariance))
 
-plt.plot(np.linspace(0,50), params[0]*np.linspace(0,3)+params[1], 'b-',label='fit')
-plt.plot(1+1/Vraw, g__, 'rx', label='Messwerte')
+plt.plot(np.linspace(0,5), params[0]*np.linspace(0,5)+params[1], 'b-',label='fit')
+plt.plot((1+1/Vraw), g__, 'rx', label='Messwerte')
 plt.tight_layout()
 plt.savefig('Messdaten/123.pdf')
 
-print('****************** f = ', params[0])
+print('****************** f = ', params[0], '+/-', errors[0])
+print('h = ', params[1], '+/-', errors[0])
 
 
+params1, covariance1 = curve_fit(gstrich, (1+Vraw), b__)
+errors1 = np.sqrt(np.diag(covariance1))
+
+plt.clf()
+plt.plot(np.linspace(0,5), (params1[0]*np.linspace(0,5)+params1[1]), 'b-', label='fit')
+plt.plot((1+Vraw), b__, 'rx', label='Messwerte')
+plt.tight_layout()
+plt.savefig('Messdaten/1234.pdf')
 
 
-
-
-
+print('f = ', params1[0], '+/-', errors1[0])
+print('h = ', params1[1], '+/-', errors1[0])
 
 
 
