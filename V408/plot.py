@@ -149,7 +149,7 @@ Vraw = BGraw/GG
 BG = unp.uarray(BGraw, err)
 V = BG / GG
 g__ = graw - 35.4
-b__ = braw - g__
+b__ = braw - graw
 
 g_ = unp.uarray(g__, err)
 b_ = unp.uarray(b__, err)
@@ -183,17 +183,39 @@ plt.plot(np.linspace(0,5), (params1[0]*np.linspace(0,5)+params1[1]), 'b-', label
 plt.plot((1+Vraw), b__, 'rx', label='Messwerte')
 plt.tight_layout()
 plt.savefig('Messdaten/1234.pdf')
-
+plt.clf()
 
 print('f = ', params1[0], '+/-', errors1[0])
 print('h = ', params1[1], '+/-', errors1[0])
 
 
+graw1, braw1 = np.genfromtxt("Messdaten/b.txt",unpack=True)
+g___ = graw1 - 35.4
+b___ = braw1 - graw1
+g___ = g___/100
+b___ = b___/100
+
+f = ufloat(np.mean(unp.nominal_values((1/ (1/b___ + 1/g___)))), np.std(unp.nominal_values((1/ (1/b___ + 1/g___)))))
+
+print('f= ', f)
+
+ascii.write([g___*100, b___*100], "Messdaten/wasser.tex", format="latex")
+
+#########################################################################################
+g___ = g___*100
+b___ = b___*100
+
+for i in range(10):
+    plt.plot([0,b___[i]], [g___[i],0],label=i)
 
 
-
-
-
+plt.xlabel(r"$g_{\mathrm{i}}$/$\si{\centi\meter}$")
+plt.ylabel(r"$b_{\mathrm{i}}$/$\si{\centi\meter}$")
+plt.ylim(0,20)
+plt.xlim(5,10)
+#plt.legend(loc="best")
+plt.tight_layout()
+plt.savefig("Bilder/schnitti.pdf")
 
 
 
