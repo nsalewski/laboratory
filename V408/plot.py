@@ -168,6 +168,8 @@ errors = np.sqrt(np.diag(covariance))
 
 plt.plot(np.linspace(0,5), params[0]*np.linspace(0,5)+params[1], 'b-',label='fit')
 plt.plot((1+1/Vraw), g__, 'rx', label='Messwerte')
+plt.ylabel(r"$g'$/$\si{\meter}$")
+plt.xlabel(r"$(1+\frac{1}{V})$")
 plt.tight_layout()
 plt.savefig('Messdaten/123.pdf')
 
@@ -181,6 +183,8 @@ errors1 = np.sqrt(np.diag(covariance1))
 plt.clf()
 plt.plot(np.linspace(0,5), (params1[0]*np.linspace(0,5)+params1[1]), 'b-', label='fit')
 plt.plot((1+Vraw), b__, 'rx', label='Messwerte')
+plt.ylabel(r"$b'$/$\si{\meter}$")
+plt.xlabel(r"$(1+V)$")
 plt.tight_layout()
 plt.savefig('Messdaten/1234.pdf')
 plt.clf()
@@ -216,9 +220,3 @@ plt.xlim(5,10)
 #plt.legend(loc="best")
 plt.tight_layout()
 plt.savefig("Bilder/schnitti.pdf")
-
-
-
-
-
-
