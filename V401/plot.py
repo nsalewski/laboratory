@@ -28,7 +28,7 @@ ascii.write([p1, n1, np.round(1+T/T0 * p0/p1 * n1 * lambdi / (2*b), 6)], 'Messda
 
 luftibrechi = ufloat(np.mean(1+T/T0 * p0/p1 * n1 * lambdi / (2*b)), np.std(1+T/T0 * p0/p1 * n1 * lambdi / (2*b)))
 print("Luftbrechi: ", luftibrechi)
-
+print("Luftbrechi Δn: ", luftibrechi-1)
 
 
 p2, n2 = np.genfromtxt("Messdaten/co2.txt", unpack=True)
@@ -36,3 +36,4 @@ ascii.write([p2, n2, np.round(1+T/T0 * p0/p2 * n2 * lambdi / (2*b), 6)], 'Messda
 
 co2brechi = ufloat(np.mean(1+T/T0 * p0/p2 * n2 * lambdi / (2*b)), np.std(1+T/T0 * p0/p2 * n2 * lambdi / (2*b)))
 print("co2brechi: ", co2brechi)
+print("co2brechi Δn: ", co2brechi-1)
