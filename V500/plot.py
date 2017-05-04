@@ -30,3 +30,10 @@ import uncertainties.unumpy as unp
 #plt.tight_layout()
 #plt.savefig('Bilder/b1.pdf')
 #
+
+
+x = np.linspace(0, 2 * np.pi, 10)
+errX = 0.4 * np.random.randn(10)
+errY = 0.4 * np.random.randn(10)
+
+plt.errorbar(x + errX, x + errY, xerr=0.4, yerr=errY, fmt='o')
