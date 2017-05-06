@@ -6,7 +6,6 @@ from uncertainties import ufloat
 import uncertainties.unumpy as unp
 
 
-#n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
 #f=f*1000
 #theta=(n*np.pi)/14
 #w=f*2*np.pi
@@ -112,3 +111,39 @@ e=ufloat(1.6021766208, 0.0000000098)
 e=e/10**19
 he=h/e
 print("Theorie h/e= ",he)
+
+#######################################################################################
+
+
+U_g, I_ = np.genfromtxt("Messdaten/gelb.txt", unpack = True)
+
+plt.plot(U_g, I_, 'rx', label="Messdaten")
+#plt.plot(U_g,  U_g*2, 'b-', label="Lessdaten")
+plt.xlabel(r"$U$ / $\si{\volt}$")
+plt.ylabel(r"$I$ / $\si{\nano\ampere}$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('Bilder/gelbplot.pdf')
+plt.clf()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

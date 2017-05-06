@@ -334,3 +334,66 @@ $\lambda \cdot 10^{-9}$/$\si{\meter}$& $\nu \cdot 10^{12}$/$\si{\hertz}$ & $U_\m
   \label{fig:ak}
   \includegraphics{Bilder/Ug.pdf}
 \end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FloatBarrier
+\subsection{Diskussion des Photostroms in Abhängigkeit von der anliegenden Spannung beim gelben Licht}
+
+Die Messdaten für die Messung mit gelbem Licht sind in Tabelle \ref{tab:ugg} zu finden.
+Diese sind in Abbildung \ref{fig:datayellow} dargestellt, wobei der Photostrom $I$ gegen die
+anliegende Spannung $U$ aufgetragen ist. Erwähnenswert ist, dass die negativen Spannungen $U$
+einer beschleunigenden Spannung entsprechen.
+\begin{figure}
+	\centering
+	\caption{Photostrom $I$ in Abhängigkeit von der anliegenden Spannung $U$ beim gelben Licht}
+	\label{fig:datayellow}
+	\includegraphics{Bilder/gelbplot.pdf}
+\end{figure}
+Insgesamt lässt sich erkennen, dass der Photostrom bei steigender Spannung $U$ monton fällt.
+Für hohe beschleunigende Spannungen -- im Bereich von $-\SI{20}{\volt}$ bis $-\SI{10}{\volt}$ --
+lässt sich eine Annäherung an einen Sättigungswert beobachten. Auf den ersten Blick scheint 
+dieser Zusammenhang wie ein Widerspruch zum Ohm'schen Gesetz
+\begin{equation*}
+	I = \frac{U}{R} \mathrm{,}
+\end{equation*}
+nach dem ein wachsender Strom bei wachsender Spannung gegeben sein müsste.
+Allerdings kommt diese obere Schranke zustande, da nach Formel \eqref{eqn:gleichi} ab einer 
+bestimmten Spannung $U$ die Energie aller ausgelösten Elektronen ausreicht, um die Anode zu 
+erreichen. Die obere Schranke des Photostroms ist also gegeben durch die Anzahl der 
+ausgelösten Elektronen, die durch die Intensität des Lichts festgelegt wird. Die Intensität 
+des Lichts wird allerdings bei diesem Versuch konstant gehalten und hängt nicht mit der 
+anliegenden Spannung zusammen. Dieses Ergebnis stellt also keinen Widerspruch zum 
+Ohm'schen Gesetz dar.
+
+Dieser Sättigungswert des Photostroms wird nur asymptotisch erreicht, weil in der Realität
+nicht jedes ausgelöste Elektron mit einer hinreichend großen kinetischen Energie die Anode 
+erreicht. Dafür müsste eine unendliche Spannung anliegen, die dafür sorgt, dass jedes 
+ausgelöste Elektron durch das entstehende Feld zur Anode gelangt. Des Weiteren ist die 
+Größe der Anode beschränkt.
+Um den Sättigungswert bei endlicher Spannung zu erreichen, müsste die Anode eine größere 
+Oberfläche haben, sodass kein Elektron nicht zur Anode gelangt.
+
+Dass der Photostrom vor der Grenzspannung beginnt zu sinken, liegt an der Energieverteilung 
+der Elektronen im Material. Diese durch die Fermi-Dirac-Statistik gegebene Verteilung sorgt 
+dafür, dass ausgelöste Elektronen eine unterschiedlich hohe kinetische Energie beim Austritt 
+aus der Oberfläche besitzen und somit auch eine statistisch verteilte Gegenspannung, bei der
+das Elektron die Anode nicht mehr erreichen kann. Dadurch erreichen einzelne Elektronen die 
+Anode, während andere Elektronen keine hinreichend große Energie besitzen, um das Gegenfeld
+zu passieren. Daher verschwindet der Photostrom nicht instantan bei der Grenzspannung.
+
+Weiterhin sorgt die Verdampfungstemperetur des verwendeten Kathodenmaterials von
+$\SI{20}{\celsius}$ dafür, dass Elektronen durch den Verdampfungsprozess aus dem Material 
+gelöst werden und sich an der Anode anlagern. Durch die Gegenspannung -- für die durch das 
+Licht ausgelösten Elektronen -- entsteht für die an der Anode liegenden Elektronen 
+ein beschleunigendes Feld, sodass diese Elektronen aus der Anode gelöst und  zur Kathode
+hin beschleunigt werden. 
+Dies hat zur Folge, dass ein dem Photostrom entgegengerichteter Strom auftreten kann.
+Dazu lässt sich anmerken, dass aufgrund der geringen Quantität der durch den Verdampfungsprozess
+ausgelösten Elektronen und der Potentialdifferenz zwischen Anode und Kathode der Sättigungswert
+bei diesem umgekehrtem Prozess erreicht werden kann.
+
+Da bei relativ langwelligem Licht der negative Strom auftritt, lässt sich sich für 
+die Austrittsarbeit der Anode sagen, dass sie höchstens so groß sein kann wie bei der
+Kathode.
+
