@@ -60,10 +60,10 @@ def plot_and_return_ug(filename):
     errors=np.sqrt(np.diag(covariance))
     plt.xlim(np.min(U)-(np.max(U)-np.min(U))*0.15,np.max(U)+(np.max(U)-np.min(U))*0.15)
     plt.ylim(np.min(np.sqrt(Itab)*10**5)-0.5,np.max(np.sqrt(Itab)*10**5)+1)
-    plt.plot(x, lin(x,*params)*10**5, 'b-', label="linearer Fit")
+    plt.plot(x, lin(x,*params)*10**5, 'b-', label="lineare Regressionsgrade")
     plt.errorbar(U, np.sqrt(Itab)*10**5, xerr=0, yerr=(errorI), fmt='rx', label="Messdaten samt Errorbalken")
-    plt.ylabel(r"$\sqrt{I}\cdot 10^{-5}/\sqrt{\si{\ampere}}$")
-    plt.xlabel(r"$U_{\mathrm{G}}/\si{\volt}$")
+    plt.ylabel(r"$\sqrt{I}\cdot 10^{-5}$/$\sqrt{\si{\ampere}}$")
+    plt.xlabel(r"$U_{\mathrm{B}}$/$\si{\volt}$")
     plt.legend(loc='best')
     plt.tight_layout()
     plt.savefig('Bilder/{}.pdf'.format(filename))
@@ -74,10 +74,41 @@ def plot_and_return_ug(filename):
     print('b von {}'.format(filename),b)
 
     print('U von {}'.format(filename),-b/a)
-    return -b/a
+    bdiva=-params[1]/params[0]
+    return (bdiva)
 
-farben=["violett","blaugrün","grün","violett_drittkleinste","ultraviolett","gelb"]
+farben=["ultraviolett","violett","violett_drittkleinste","blaugrün","grün","gelb"]
 Ug=[]
 for x in farben:
     Ug.append(plot_and_return_ug(x))
 U_G=np.asarray(Ug)
+Wellenlänge=[365,405,435,492,546,577]
+Wellenlänge=[(x/10**9) for x in Wellenlänge]
+c=299792458.0
+Frequenz=[(c/x) for x in Wellenlänge]
+paramsg, covarianceg=curve_fit(lin,Frequenz,U_G)
+errorsg=np.sqrt(np.diag(covarianceg))
+a=ufloat(paramsg[0],errorsg[0])
+b=ufloat(paramsg[1],errorsg[1])
+print("a=h/e: ",a)
+print("b=ak/e: ",-b)
+Frequenztab=[(x/10**14) for x in Frequenz]
+ascii.write([Wellenlänge,Frequenztab,U_G],'Messdaten/Ug.tex',format="latex",names=["lamnda","nü","Ug"])
+params, covariance=curve_fit(lin,Frequenztab,U_G)
+errors=np.sqrt(np.diag(covariance))
+x=np.linspace(np.min(Frequenztab)-(np.max(Frequenztab)-np.min(Frequenztab))*0.15,np.max(Frequenztab)+(np.max(Frequenztab)-np.min(Frequenztab))*0.15)
+plt.xlim(np.min(Frequenztab)-(np.max(Frequenztab)-np.min(Frequenztab))*0.15,np.max(Frequenztab)+(np.max(Frequenztab)-np.min(Frequenztab))*0.15)
+plt.plot(x, lin(x,*params), 'b-', label="lineare Regressionsgrade")
+plt.plot(Frequenztab,U_G,'rx',label="Messdaten")
+plt.ylabel(r"$U_\mathrm{G}$/$\si{\volt}$")
+plt.xlabel(r"$\nu \cdot 10^{14}$/$\si{\hertz}$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('Bilder/Ug.pdf')
+plt.clf()
+h=ufloat(6.626070040,0.000000081)
+h=h/10**34
+e=ufloat(1.6021766208, 0.0000000098)
+e=e/10**19
+he=h/e
+print("Theorie h/e= ",he)
