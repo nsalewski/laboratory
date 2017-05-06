@@ -290,7 +290,7 @@ In Tabelle \ref{tab:ug} sind errechneten Gradenparameter der Regressionsgraden s
   \includegraphics{Bilder/gelb.pdf}
 \end{figure}
 \FloatBarrier
-\subsection{Bestimmung des Verhältnis $\frac{h}{e_0}$ und der Austrittsarbeit $A_{K}$}
+\subsection{Bestimmung des Verhältnis $\frac{\symup{h}}{\symup{e}_0}$ und der Austrittsarbeit $A_{K}$}
 Nach Gleichung \eqref{eqn:gleichi} besteht ein linearer Zusammenhang zwischen der Grenzspannung und der Frequenz $\nu$ der zugehörigen Spektralfarbe.
 Zwischen der Wellenlänge $\lambda$ und der Frequenz $\nu$ besteht der Zusammenhang
 \begin{equation*}
@@ -300,20 +300,20 @@ Hierbei ist $c$ die Lichtgeschwindigkeit im Vakuum nach \cite{c}.\\
 In Tabelle \ref{tab:ak} sind hierzu die Wellenlängen $\lambda$ nach \cite{Anleitung} der Spektrallinien, die zugehörigen Frequenzen $\nu$ sowie die zuvor berechneten Grenzspannungen $U_\mathrm{G}$ eingetragen.\\
 Aus Gleichung \eqref{eqn:gleichi} ergibt sich durch Umformung
 \begin{equation*}
-  U_\mathrm{G}=\frac{h}{e_0} \cdot{\nu}-A_\mathrm{K} \text{.}
+  U_\mathrm{G}=\frac{\symup{h}}{\symup{e}_0} \cdot{\nu}-A_\mathrm{K} \text{.}
 \end{equation*}
 Hierbei ist $A_\mathrm{K}$ die Austrittsarbeit in $\si{\electronvolt}$.
 In Abbildung \ref{fig:ak} ist daher die Grenzspannung $U_\mathrm{G}$ gegen die Frequenz $\nu$ der Spektrallinien aufgetragen.\\
 Aus den Parametern der mit scipy/python \cite{scipy} ermittelten Regressionsgraden ergibt sich:
 \begin{gather*}
-  a=\frac{h}{e_0}= \SI{4.3(3)e-15}{\electronvolt}\\
+  a=\frac{\symup{h}}{\symup{e}_0}= \SI{4.3(3)e-15}{\electronvolt}\\
 b=A_\mathrm{K}=\SI{1.8(2)}{\electronvolt}
 \end{gather*}
 
 
 \begin{table}
   \centering
-\caption{Messdaten zur Bestimmung des Verhältnis $\frac{h}{e_0}$ und der Austrittsarbeit $A_\mathrm{K}$.}
+\caption{Messdaten zur Bestimmung des Verhältnis $\frac{h}{\symup{e}_0}$ und der Austrittsarbeit $A_\mathrm{K}$.}
 \label{tab:ak}
 \begin{tabular}{ccc}
   \toprule
