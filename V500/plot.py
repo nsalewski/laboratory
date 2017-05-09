@@ -58,9 +58,9 @@ def plot_and_return_ug(filename):
     params, covariance=curve_fit(lin,U,np.sqrt(Itab))
     errors=np.sqrt(np.diag(covariance))
     plt.xlim(np.min(U)-(np.max(U)-np.min(U))*0.15,np.max(U)+(np.max(U)-np.min(U))*0.15)
-    plt.ylim(np.min(np.sqrt(Itab)*10**5)-0.5,np.max(np.sqrt(Itab)*10**5)+1)
+    plt.ylim(np.min(np.sqrt(Itab)*10**5)-0.6,np.max(np.sqrt(Itab)*10**5)+1.2)
     plt.plot(x, lin(x,*params)*10**5, 'b-', label="lineare Regressionsgrade")
-    plt.errorbar(U, np.sqrt(Itab)*10**5, xerr=0, yerr=(errorI), fmt='rx', label="Messdaten samt Errorbalken")
+    plt.errorbar(U, np.sqrt(Itab)*10**5, xerr=0, yerr=(errorI), fmt='ro',capsize=3, label="Messdaten samt Errorbalken")
     plt.ylabel(r"$\sqrt{I}\cdot 10^{-5}$/$\sqrt{\si{\ampere}}$")
     plt.xlabel(r"$U_{\mathrm{B}}$/$\si{\volt}$")
     plt.legend(loc='best')
@@ -125,25 +125,3 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/gelbplot.pdf')
 plt.clf()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
