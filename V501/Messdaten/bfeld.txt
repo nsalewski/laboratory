@@ -1,0 +1,1 @@
+0.25 Ampere Spulenstrom, 1/4 Inch Ablenkung, U_b=150V, Phi=75°, Windungszahl n=20; Spulenradius r=0.282m

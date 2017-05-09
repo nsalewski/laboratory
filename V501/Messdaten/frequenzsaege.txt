@@ -1,0 +1,5 @@
+#Frequenzverhältnis, nü_saege
+0.5 39.96
+1   79.95
+2   159.85
+3   239.73
