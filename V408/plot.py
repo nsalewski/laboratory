@@ -212,6 +212,11 @@ b___ = b___*100
 for i in range(10):
     plt.plot([0,b___[i]], [g___[i],0],label=i)
 
+f1_=unp.uarray(params[0],errors[0])
+f2_=unp.uarray(params1[0],errors1[0])
+FGES = 100/f1_ + 100/f2_ - 600/(f1_*f2_)
+print('FGES = ', FGES)
+
 
 plt.xlabel(r"$g_{\mathrm{i}}$/$\si{\centi\meter}$")
 plt.ylabel(r"$b_{\mathrm{i}}$/$\si{\centi\meter}$")
