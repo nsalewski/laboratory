@@ -7,18 +7,17 @@
 \label{sec:zuvor}
 Zur Bestimmung der Brennweite über die Bildweite und die Gegenstandsweite werden die gemessenen Gegenstandsweiten $g_{\mathrm{i}}$ auf der x-Achse und die gemessenen Bildweiten $b_{\mathrm{i}}$ auf der y-Achse aufgetragen und die zueinandergehörigen Datentupel miteinander verbunden. \\
 Die verwendeten Datentupel sind hierbei in Tabelle \ref{tab:bundg} angegeben.
-\\Der sich ergebende Schnittpunkt aller Verbindungsgraden hat schließlich als Koordinaten für beide Raumrichtungen die Brennweite $f$ der verwendeten Linse. \\Um die Brennweite aus dem Graphen möglichst genau abzulesen, wird der Bereich des Schnittpunkts vergrößert in Abbildung \ref{fig:plota} dargestellt.
-Die Brennweite wird abgelesen zu
-\begin{equation*}
-  f_{\mathrm{abgelesen}}=\SI{9.7(1)}{\centi\meter}\text{.}
-\end{equation*}
+Bildweite und Gegenstandsweite wurde hierbei jeweils mit einem Ablesefehler von $\SI{0.1}{\centi\meter}$ bestimmt. Der sich fortpflanzende Fehler in der Brennweite $f$ liegt unter dem Ablesefehler und wird daher vernachlässigt.
+\\Der sich ergebende Schnittpunkt aller Verbindungsgraden hat schließlich als Koordinaten für beide Raumrichtungen die Brennweite $f$ der verwendeten Linse.
+Ein Vergleich der Brennweite des Versuchsaufbau ($f=\SI{10}{\centi\meter}$) mit dem Schnittpunkt der Geraden zeigt eine gute Übereinstimmung.
+
 \subsubsection{Experimentelle Überprüfung der Linsengleichung und des Abbildungsgesetz.}
-Über die Linsengleichung \eqref{eqn:linsi} ergibt sich, über die Mittelung der Brennweiten $f_{\mathrm{i}}$, berechnet aus den Datentupeln aus Bild-und Gegenstandsweite, die Brennweite $f_{\mathrm{Linsengleichung}}$.
+Über die Linsengleichung \eqref{eqn:linsi} ergibt sich, über die Mittelung der Brennweiten $f_{\mathrm{i}}$, berechnet aus den Datentupeln aus Bild-und Gegenstandsweite, die Brennweite $f_{\mathrm{Lg}}$.
 Ebenso wie hier, wird auch in den folgenden Mittelwertberechnungen, selbiger mittels python/numpy \cite{numpy} ermittelt.\\
 Hierbei wird als Fehler, wie in den weiteren Messungen ebenfalls, lediglich der Fehler des Mittelwerts angegeben.\\
 Es ergibt sich
 \begin{equation*}
-  f_{\mathrm{Linsengleichung}}=\SI{9.70(9)}{\centi\meter}\text{.}
+  f_{\mathrm{Lg}}=\SI{9.70(9)}{\centi\meter}\text{.}
 \end{equation*}
 
 \begin{figure}
@@ -38,16 +37,16 @@ Ein Vergleich mit dem aus dem Graphen abgelesenen $f_{\mathrm{abgelesen}}$ zeigt
     \toprule
   $b/\si{\centi\meter}$ & $g/\si{\centi\meter}$ & $f/\si{\centi\meter}$ \\
 \midrule
-  19.8 \pm 0.1 & 19.2 \pm 0.1 & 9.75 \pm 0.04 \\
-  33.7 \pm 0.1 & 13.3 \pm 0.1 & 9.54 \pm 0.05 \\
-  21.8 \pm 0.1 & 17.4 \pm 0.1 & 9.68 \pm 0.04 \\
-  15.6 \pm 0.1 & 25.8 \pm 0.1 & 9.72 \pm 0.04 \\
-  14.0 \pm 0.1 & 31.0 \pm 0.1 & 9.64 \pm 0.05 \\
-  100.5 \pm 0.1 & 11.0 \pm 0.1 & 9.91 \pm 0.08 \\
-  16.1 \pm 0.1 & 24.4 \pm 0.1 & 9.70 \pm 0.04 \\
-  13.8 \pm 0.1 & 33.3 \pm 0.1 & 9.76 \pm 0.05 \\
-  13.0 \pm 0.1 & 37.9 \pm 0.1 & 9.68 \pm 0.06 \\
-  13.7 \pm 0.1 & 32.8 \pm 0.1 & 9.66 \pm 0.05 \\
+  19.8 & 19.2 & 9.75 \\
+  33.7 & 13.3 & 9.54 \\
+  21.8 & 17.4 & 9.68 \\
+  15.6 & 25.8 & 9.72 \\
+  14.0 & 31.0 & 9.64 \\
+  100.5 & 11.0 & 9.91 \\
+  16.1 & 24.4 & 9.70 \\
+  13.8 & 33.3 & 9.76 \\
+  13.0 & 37.9 & 9.68 \\
+  13.7 & 32.8 & 9.66 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -57,9 +56,8 @@ Ein Vergleich mit dem aus dem Graphen abgelesenen $f_{\mathrm{abgelesen}}$ zeigt
 \FloatBarrier
 
 
-Zur Überprüfung des Abbildungsgesetzes werden zudem die Bildgrößen $B$ und Gegenstandsgrößen $G$ benötigt. \\Die gemessenen Datentupel finden sich in Tabelle \ref{tab:groesse}. \\
-Ein Vergleich des aus  Bildweite und Gegenstandsweite berechneten Abbildungsmaßstabs $V_\mathrm{1}$ mit dem Abbildungsmaßstab $V_\mathrm{2}$ berechnet aus Bildgröße und Gegenstandsgröße, zeigt, dass sich nur geringe Unterschiede ergeben.\\ So liegt $\Delta V$ zumeist im Fehlerintervall beider Abbildungsmaßstäbe $V_\mathrm{i}$.\\
-Die Abweichungen liegen also zum größten Teil unter der Messauflösung, oder zumindest sehr nah an den Fehlerintervallen beider Abbildungsmaßstäbe $V_\mathrm{i}$.
+Zur Überprüfung des Abbildungsgesetzes werden zudem die Bildgrößen $B$ und Gegenstandsgrößen $G$ benötigt. Die gemessenen Datentupel finden sich in Tabelle \ref{tab:groesse}. Die fortgepflanzten Fehler in den Abbildungsmaßstäben liegen erneut deutlich unter der Messauflösung und werden daher vernachlässigt.\\
+Ein Vergleich des aus  Bildweite und Gegenstandsweite berechneten Abbildungsmaßstabs $V_\mathrm{1}$ mit dem Abbildungsmaßstab $V_\mathrm{2}$ berechnet aus Bildgröße und Gegenstandsgröße, zeigt, dass sich nur geringe Unterschiede ergeben.
 \\Die Gültigkeit des Abbildungsgesetzes wird also durch die vorliegende Messung bestätigt.
 \begin{table}
   \caption{Aufgenommene Messdaten zur Untersuchung des Abbildungsgesetzes.}
@@ -69,11 +67,11 @@ Die Abweichungen liegen also zum größten Teil unter der Messauflösung, oder z
   \toprule
   $b/\si{\centi\meter} $& $g/\si{\centi\meter} $& $B/\si{\centi\meter} $& $G/\si{\centi\meter}$ &$ V_{\mathrm{1}}=\frac{b}{g}$ & $V_\mathrm{2}=\frac{B}{G}$ & $\Delta V$ \\
 \midrule
-  19.8 \pm 0.1 & 19.2 \pm 0.1 & 3.0 \pm 0.1 & 3.0 \pm 0.1 & 1.031 \pm 0.007 & 1.00 \pm 0.05 & 0.03 \pm 0.05 \\
-  33.7 \pm 0.1 & 13.3 \pm 0.1 & 7.4 \pm 0.1 & 3.0 \pm 0.1 & 2.534 \pm 0.020 & 2.47 \pm 0.09 & 0.07 \pm 0.09 \\
-  21.8 \pm 0.1 & 17.4 \pm 0.1 & 3.7 \pm 0.1 & 3.0 \pm 0.1 & 1.253 \pm 0.009 & 1.23 \pm 0.05 & 0.02 \pm 0.05 \\
-  15.6 \pm 0.1 & 25.8 \pm 0.1 & 1.9 \pm 0.1 & 3.0 \pm 0.1 & 0.605 \pm 0.005 & 0.63 \pm 0.04 & 0.03 \pm 0.04 \\
-  14.0 \pm 0.1 & 31.0 \pm 0.1 & 1.5 \pm 0.1 & 3.0 \pm 0.1 & 0.452 \pm 0.004 & 0.50 \pm 0.04 & 0.05 \pm 0.04 \\
+  19.8 & 19.2& 3.0& 3.0 & 1.031 & 1.00 & 0.03 \\
+  33.7 & 13.3 & 7.4& 3.0 & 2.534  & 2.47 & 0.07  \\
+  21.8 & 17.4 & 3.7& 3.0 & 1.253  & 1.23 & 0.02  \\
+  15.6  & 25.8  & 1.9& 3.0 & 0.605& 0.63 & 0.03  \\
+  14.0 & 31.0 & 1.5 & 3.0 & 0.452 4 & 0.50 & 0.05 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -112,7 +110,7 @@ aufgetragen.
 Für die Brennweite der mit Wasser gefüllten Linse ergibt sich mit Gleichung \eqref{eqn:linsi}
 und den Werten aus Tabelle \ref{tab:hquer} die Brennweite des Linsensystems zu
 \begin{equation*}
-	f_{\mathrm{Linsengleichung}} = \SI{7.5(1)}{\centi\meter} \mathrm{.}
+	f_{\mathrm{Lg}} = \SI{7.5(1)}{\centi\meter} \mathrm{.}
 \end{equation*}
 
 \begin{figure}
@@ -127,9 +125,9 @@ Analog zur Bestimmung der Brennweite der bekannten Linse (vgl. \ref{sec:zuvor}) 
 die Wertetupel $(g_{\mathrm{i}}, b_{\mathrm{i}})$ auf die Achsen eines Koordinatensystems
 auftragen, und aus dem Schnittpunkt der Verbindungslinien die Brennweite ablesen.
 Diese Darstellung  ist in Abbildung \ref{fig:kopiert} zu finden.
-Die Brennweite wird zu
+Die Brennweite wird etwa zu
 \begin{equation*}
-	f_{\mathrm{abgelesen}} = \SI{7.9(1)}{\centi\meter}
+	f_{\mathrm{abgelesen}} = (7-8)\,\si{\centi\meter}
 \end{equation*}
 abgelesen.
 
@@ -142,7 +140,7 @@ abgelesen.
 Zur Bestimmung der Brennweite einer Linse nach der Methode von Bessel wird jede der beiden Linsenpositionen, bei denen ein scharfes Bild auf dem Schirm entsteht, einzeln ausgewertet. \\
 Theoretisch sollte die Linsenanordnung völlig symmetrisch sein, weswegen auch ein annähernd gleiches Ergebnis für die Brennweite erwartet wird. Allerdings treten sicherlich Messungenauigkeiten und kleine Ablesefehler auf, sodass die Linsenanordnung sich in der Realität als nicht völlig symmetrisch darstellt.
 \\In den Tabellen \ref{tab:besseli} und \ref{tab:bessii} sind die jeweilige Gegenstandsweite $g_\mathrm{i}$ und die Bildweite $b_\mathrm{i}$, sowie der Abstand $e_\mathrm{i}=g_\mathrm{i} + b_\mathrm{i}$ zwischen Objekt und Bild und dem Abstand $d_\mathrm{i}=g_\mathrm{i} - b_\mathrm{i}$ zwischen den beiden Linsenpositionen eingetragen.
-\\Zudem wurde jeweils nach Formel \ref{eqn:nochmalbessel} die Brennweite $f_\mathrm{i}$ berechnet.
+\\Zudem wird jeweils nach Formel \ref{eqn:nochmalbessel} die Brennweite $f_\mathrm{i}$ berechnet.
 \begin{table}
   \caption{Gemessene Bild-und Gegenstandsweiten sowie zugehörige berechnete $e$, $d$ und der Brennweite bezüglich der ersten Linsenposition bei ungefiltertem Licht. }
   \label{tab:besseli}
@@ -188,10 +186,12 @@ $b_\mathrm{2}/\si{\centi\meter}$ & $g_\mathrm{2}/\si{\centi\meter}$ & $e_\mathrm
 \end{table}
 
 Der Mittelwert der Brennweiten $f_\mathrm{i}$ ergibt sich erneut mittels python/numpy \cite{numpy} zu
-\begin{gather*}
-  f_\mathrm{weiß, 1}= \SI{9.77(3)}{\centi\meter}\text{,}\\
-  f_\mathrm{weiß, 2}= \SI{9.71(7)}{\centi\meter}\text{.}
-\end{gather*}
+\begin{equation*}
+  f_\mathrm{weiß}= \SI{9.74(6)}{\centi\meter}\text{,}\\
+\end{equation*}
+
+
+
 \FloatBarrier
 \subsubsection{Untersuchung der chromatischen Abberation}
 Analog zur Bestimmung der Brennweite der Linse für das Licht der Halogenlampe wird zur Untersuchung der chromatischen Abberration vorgegangen.
@@ -229,10 +229,9 @@ $b_\mathrm{2}/\si{\centi\meter}$ & $g_\mathrm{2}/\si{\centi\meter}$ & $e_\mathrm
 \end{tabular}
 \end{table}
 \\Die Mittelwerte der Brennweiten ergeben sich mit python/numpy zu:
-\begin{gather*}
-  f_\mathrm{blau, 1}= \SI{9.77(3)}{\centi\meter} \text{,}\\
-  f_\mathrm{blau, 2}= \SI{9.72(7)}{\centi\meter}\text{.}
-\end{gather*}
+\begin{equation*}
+  f_\mathrm{blau}= \SI{9.75(6)}{\centi\meter} \text{,}\\
+\end{equation*}
 
 
 Für die Untersuchung der Brennweite des roten Lichts finden sich die gemessenen und berechneten Daten in Tabelle \ref{tab:red} und \ref{tab:notblue}.
@@ -269,10 +268,9 @@ $b_\mathrm{2}/\si{\centi\meter}$ & $g_\mathrm{2}/\si{\centi\meter}$ & $e_\mathrm
 \end{tabular}
 \end{table}
 \\Der Mittelwert der Brennweiten samt dessen Fehler ergibt sich zu:
-\begin{gather*}
-  f_\mathrm{rot, 1}= \SI{9.85(3)}{\centi\meter}\text{,}\\
-  f_\mathrm{rot, 2}= \SI{9.73(7)}{\centi\meter}\text{.}
-\end{gather*}
+\begin{equation*}
+  f_\mathrm{rot}= \SI{9.79(8)}{\centi\meter}\text{.}
+\end{equation*}
 
 
 
@@ -313,11 +311,8 @@ in Tabelle \ref{tab:abbemess} aufgetragen.
 
 Es werden nach der ersten Formel von \eqref{eqn:abbe} die Gegenstandsweiten $g'$ des Bezugspunkts A
 gegen $(1+\frac{1}{V})$ aufgetragen. Diese Zusammenhang ist in Abbildung \ref{fig:ausgleichd}
-dargestellt, wobei die Ausgleichsgerade durch eine lineare Ausgleichsrechnung der Form
-\begin{equation}
-	g' = m \cdot x + n
-\end{equation}
-bestimmt wird. Die Steigung $m$ der Gleichung \ref{eqn:abbe} entspricht der Brennweite des
+dargestellt.
+Die Steigung $m$ der Gleichung \ref{eqn:abbe} entspricht der Brennweite des
 Linsensystems und der Achsenabschnitt $n$ dem Abstand $h$ vom Bezugspunkt A zur ersten
 Hauptebene.
 

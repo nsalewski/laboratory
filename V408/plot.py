@@ -62,9 +62,9 @@ for i in range(10):
 
 plt.xlabel(r"$g_{\mathrm{i}}$/$\si{\centi\meter}$")
 plt.ylabel(r"$b_{\mathrm{i}}$/$\si{\centi\meter}$")
-plt.ylim(0,20)
-plt.xlim(8.5,11.0)
 #plt.legend(loc="best")
+plt.xlim(0,100)
+plt.ylim(0.40)
 plt.tight_layout()
 plt.savefig("Bilder/plot_a.pdf")
 plt.clf()
@@ -86,9 +86,9 @@ print("f2= ",f2)
 ascii.write([b1,g1,e1,d1,f1],"Messdaten/tab_cweiß1.tex",format="latex",names=["b1","g1","e1","d1","f1"])
 ascii.write([b2,g2,e2,d2,f2],"Messdaten/tab_cweiß2.tex",format="latex",names=["b2","g2","e2","d2","f2"])
 
-f1=ufloat(np.mean(unp.nominal_values(f1)), np.std(unp.nominal_values(f1)))
-print("f1=",f1)
-
+#f1=ufloat(np.mean(unp.nominal_values(f1)), np.std(unp.nominal_values(f1)))
+#print("f1=",f1)
+f2=[f1,f2]
 f2=ufloat(np.mean(unp.nominal_values(f2)), np.std(unp.nominal_values(f2)))
 print("f2=",f2)
 #blau
@@ -109,9 +109,9 @@ f2=f(d2,e2)
 ascii.write([b1,g1,e1,d1,f1],"Messdaten/tab_cblau1.tex",format="latex",names=["b1","g1","e1","d1","f1"])
 ascii.write([b2,g2,e2,d2,f2],"Messdaten/tab_cblau2.tex",format="latex",names=["b2","g2","e2","d2","f2"])
 
-f1=ufloat(np.mean(unp.nominal_values(f1)), np.std(unp.nominal_values(f1)))
-print("f1 blau=",f1)
-
+#f1=ufloat(np.mean(unp.nominal_values(f1)), np.std(unp.nominal_values(f1)))
+#print("f1 blau=",f1)
+f2=[f1,f2]
 f2=ufloat(np.mean(unp.nominal_values(f2)), np.std(unp.nominal_values(f2)))
 print("f2 blau=",f2)
 
@@ -133,9 +133,9 @@ f2=f(d2,e2)
 ascii.write([b1,g1,e1,d1,f1],"Messdaten/tab_crot1.tex",format="latex",names=["b1","g1","e1","d1","f1"])
 ascii.write([b2,g2,e2,d2,f2],"Messdaten/tab_crot2.tex",format="latex",names=["b2","g2","e2","d2","f2"])
 
-f1=ufloat(np.mean(unp.nominal_values(f1)), np.std(unp.nominal_values(f1)))
-print("f1 rot =",f1)
-
+#f1=ufloat(np.mean(unp.nominal_values(f1)), np.std(unp.nominal_values(f1)))
+#print("f1 rot =",f1)
+f2=[f1,f2]
 f2=ufloat(np.mean(unp.nominal_values(f2)), np.std(unp.nominal_values(f2)))
 print("f2 rot=",f2)
 
