@@ -4,12 +4,12 @@
 \subsection{Bestimmung der Grenzspannung $U_\mathrm{G}$}
 Zunächst wird die Grenzspannung $U_\mathrm{G}$ für die jeweiligen Spektrallinien bestimmt. \\Dazu wird die Wurzel des gemessenen Stroms $I$ gegen die zugehörige Bremsspannung $U_\mathrm{B}$ aufgetragen.\\
 Es wird ein linearer Zusammenhang angenommen, daher wird mittels scipy/python \cite{scipy} eine lineare Ausgleichsrechnung durchgeführt.
-Die Ausgleichgrade ist gegeben durch
+Die Ausgleichgerade ist gegeben durch
 \begin{equation}
   \label{eqn:ausgleich}
 y=a \cdot x +b \text{.}
 \end{equation}
-Die Grenzspannung $U_\mathrm{G}$ ergibt sich aus dem Schnittpunkt der Ausgleichsgrade mit der $U_\mathrm{B}$-Achse, also aus dem Verhältnis $U_\mathrm{G}=\frac{-b}{a}$.
+Die Grenzspannung $U_\mathrm{G}$ ergibt sich aus dem Schnittpunkt der Ausgleichsgerade mit der $U_\mathrm{B}$-Achse, also aus dem Verhältnis $U_\mathrm{G}=\frac{-b}{a}$.
 \\In den Tabellen \ref{tab:uguv} bis \ref{tab:ugg} sind die gemessenen Bremsspannungen $U_\mathrm{B}$ sowie die Photoströme $I$ samt der zugehörigen Wurzeln der Photoströme $\sqrt{I}$ aufgetragen.\\
 In den Abbildungen \ref{fig:uguv} bis \ref{fig:ugg} wurde jeweils die Wurzel des Photostroms $\sqrt{I}$ gegen die Bremsspannung $U_\mathrm{B}$ aufgetragen, sowie, wie zuvor beschrieben, eine Regressionsgrade \ref{eqn:ausgleich} eingezeichnet.\\
 Die verschieden großen Unsicherheiten ergeben sich hierbei durch die jeweils verwendete Messskala zur Messung des Photostroms. \\Der Ablesefehler wurde jeweils auf den halben Abstand zwischen zwei Markierungen der Messskala geschätzt. \\Der Ablesefehler wird daher auch in den Abbildungen als verschieden hohe Fehlerbalken berücksichtigt.
@@ -19,7 +19,7 @@ Für große Wellenlängen (grüne und gelbe Spektrallinie) mussten zum Teil besc
 Für die lineare Regression wurden daher bei der grünen Spektrallinie die ersten drei Datentupel ebenso wenig berücksichtigt, wie für die gelbe Spektrallinie lediglich die letzten zehn Datentupel verwendet wurden.\\
 
 
-In Tabelle \ref{tab:ug} sind errechneten Gradenparameter der Regressionsgraden sowie die daraus bestimmten Grenzspannungen $U_\mathrm{G}$ zu den jeweiligen Spektrallinien eingetragen.\\
+In Tabelle \ref{tab:ug} sind errechneten Geradenparameter der Regressionsgraden sowie die daraus bestimmten Grenzspannungen $U_\mathrm{G}$ zu den jeweiligen Spektrallinien eingetragen.\\
 \begin{table}
   \centering
   \caption{Messdaten zur Bestimmung der Grenzspannung $U_\mathrm{G}$.}
