@@ -4,23 +4,6 @@
 \subsection{Ablenkung im elektrischen Feld}
 
 \begin{table}
-	\caption{Bestimmte Synchronisationsfrequenzen zur Erzeugung von stehenden Wellen auf dem Schirm.}
-	\label{tab:saegen}
-	\centering
-	\begin{tabular}{cc}
-	\toprule
-		Frequenzverhältnis $n$ & $\nu$ / $\si{\hertz}$ \\
-	\midrule
-		0.5 & 39.96 \\
-		1.0 & 79.95 \\
-		2.0 & 159.85 \\
-		3.0 & 239.73 \\
-	\bottomrule
-	\end{tabular}
-\end{table}
-
-
-\begin{table}
 	\caption{Efeld amk.}
 	\label{tab:efeldtab}
 	\centering
@@ -43,6 +26,24 @@
 	\end{tabular}
 \end{table}
 
+\begin{table}
+	\caption{Bestimmte Synchronisationsfrequenzen zur Erzeugung von stehenden Wellen auf dem Schirm.}
+	\label{tab:saegen}
+	\centering
+	\begin{tabular}{cc}
+	\toprule
+		Frequenzverhältnis $n$ & $\nu$ / $\si{\hertz}$ \\
+	\midrule
+		0.5 & 39.96 \\
+		1.0 & 79.95 \\
+		2.0 & 159.85 \\
+		3.0 & 239.73 \\
+	\bottomrule
+	\end{tabular}
+\end{table}
+
+
+
 
 %\begin{figure}
 %  \centering
@@ -51,9 +52,30 @@
 %  \label{fig:plot}
 %\end{figure}
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
 \subsection{Ablenkung im magnetischen Feld}
+
+\subsubsection{Bestimmung von $\frac{\symup{e}_0}{\symup{m}_0}$}
+Die Messergebnisse zur Berechnung von $\frac{\symup{e}_0}{\symup{m}_0}$ sind in Tabelle
+\ref{tab:efeldtab} aufgetragen. Es wird eine lineare Ausgleichsrechnung der Form 
+\begin{equation*}
+	y = m \cdot x + b
+\end{equation*}
+gemäß Formel \eqref{eqn:???} mit scipy/python \cite{scipy} durchgeführt. Hierbei entspricht das
+$y$ dem Faktor $\frac{D}{L^2+D^2}$ und das $x$ der Flussdichte $B$.
+Die Paramter ergeben sich zu
+m = b =  \begin{gather*}
+	m = -\SI{15548(3386)}{\kelvin} \mathrm{,} \\
+	b = \SI{2.6(3)}{\per\meter} \mathrm{.}
+\end{gather*}
+\begin{figure}
+  \centering
+  \includegraphics{Messdaten/plotbfeld.pdf}
+  \caption{Plot.}
+  \label{fig:bfeldplot}
+\end{figure}
+Die Ausgleichsgerade mit den Messwerten ist in Abbildung \ref{fig:bfeldplot} dargestellt.
 
 \begin{table}
 	\caption{Messwerte für die Verschiebung $D$ in Abhängigkeit von Strom blavla..}
