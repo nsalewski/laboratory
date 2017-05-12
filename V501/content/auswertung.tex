@@ -64,7 +64,7 @@ Die Messergebnisse zur Berechnung von $\frac{\symup{e}_0}{\symup{m}_0}$ sind in 
 \end{equation*}
 gemäß Formel \eqref{eqn:???} mit scipy/python \cite{scipy} durchgeführt. Hierbei entspricht das
 $y$ dem Faktor $\frac{D}{L^2+D^2}$ und das $x$ der Flussdichte $B$.
-Die Paramter ergeben sich zu
+Die Parameter für die Beschleunigungsspannung $U_{\mathrm{b}}=\SI{250}{\volt}$ ergeben sich zu
 m = b =  \begin{gather*}
 	m = -\SI{15548(3386)}{\kelvin} \mathrm{,} \\
 	b = \SI{2.6(3)}{\per\meter} \mathrm{.}
@@ -76,7 +76,19 @@ m = b =  \begin{gather*}
   \label{fig:bfeldplot}
 \end{figure}
 Die Ausgleichsgerade mit den Messwerten ist in Abbildung \ref{fig:bfeldplot} dargestellt.
-
+Analog lassen sich die Parameter für die Beschleunigungsspannung $U_{\mathrm{b}}=\SI{450}{\volt}$
+zu
+\begin{gather*}
+	m = -\SI{13662(2964)}{\kelvin} \mathrm{,} \\
+	b = \SI{2.8(4)}{\per\meter}
+\end{gather*}
+\begin{figure}
+  \centering
+  \includegraphics{Messdaten/plotbfeld2.pdf}
+  \caption{Plot.}
+  \label{fig:bfeldplot2}
+\end{figure}
+bestimmen. Die Ausgleichsgerade ist in Abbildung \ref{tab:bfeldplot2} dargestellt. 
 \begin{table}
 	\caption{Messwerte für die Verschiebung $D$ in Abhängigkeit von Strom blavla..}
 	\label{tab:bfeldtab}
@@ -96,3 +108,8 @@ Die Ausgleichsgerade mit den Messwerten ist in Abbildung \ref{fig:bfeldplot} dar
 	\bottomrule
 	\end{tabular}
 \end{table}
+Damit ergeben sich die Verhältnisse gemäß Formel \eqref{eqn:???} und scipy \cite{scipy} zu
+\begin{gather*}
+	theorie =  (1.758820024+/-0.000000024)e+11 \\
+	\frac{\symup{e}_0}{\symup{m}_0} = \SI{480(210)}{\giga\second}
+\end{gather*}

@@ -30,12 +30,36 @@ errors = np.sqrt(np.diag(covariance))
 print('m = ', params[0], '+/-', errors[0])
 print('b = ', params[1], '+/-', errors[1])
 
+m = unp.uarray(params[0], errors[0])
+e_theo = unp.uarray(1.6021766208*10**(-19), 0.0000000098*10**(-19))
+m_theo = unp.uarray(9.10938356*10**(-31), 0.00000011*10**(-31))
+e_m=m**2*8*250
+e_m_theo = e_theo/m_theo
+print('experiment = ', e_m)
+print('theorie = ', e_m_theo)
+
 plt.plot(np.linspace(0,0.0002), params[0]*np.linspace(0,0.0002)+params[1], 'b-',label='Ausgleichsgerade')
 plt.plot(4*np.pi*10**(-7)*8/np.sqrt(125)*20*I250/0.282,D_/(D_**2+0.143**2) , 'rx', label='Messwerte')
 plt.ylabel(r"$\frac{D}{D^2+L^2}$/$\si{\per\meter}$")
 plt.xlabel(r"$B$/$\si{\tesla}$")
 plt.tight_layout()
 plt.savefig('Messdaten/plotbfeld.pdf')
+plt.clf()
+
+D_ = D_[0:-1]
+I450 = I450[0:-1]
+params, covariance = curve_fit(y, 4*np.pi*10**(-7)*8/np.sqrt(125)*20*I450/0.282, D_/(D_**2+0.143**2))
+errors = np.sqrt(np.diag(covariance))
+
+print('m = ', params[0], '+/-', errors[0])
+print('b = ', params[1], '+/-', errors[1])
+
+plt.plot(np.linspace(0,0.0002), params[0]*np.linspace(0,0.0002)+params[1], 'b-',label='Ausgleichsgerade')
+plt.plot(4*np.pi*10**(-7)*8/np.sqrt(125)*20*I450/0.282,D_/(D_**2+0.143**2) , 'rx', label='Messwerte')
+plt.ylabel(r"$\frac{D}{D^2+L^2}$/$\si{\per\meter}$")
+plt.xlabel(r"$B$/$\si{\tesla}$")
+plt.tight_layout()
+plt.savefig('Messdaten/plotbfeld2.pdf')
 
 
 
