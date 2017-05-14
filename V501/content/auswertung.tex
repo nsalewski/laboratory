@@ -25,14 +25,21 @@
 	\bottomrule
 	\end{tabular}
 \end{table}
+%m400 =  0.116881090893 +/- 0.00479928829188
+%m300 =  0.159090765549 +/- 0.00458761479794
+%m200 =  0.249959257039 +/- 0.00555335139132
+%m_ud =  53.4155276043 +/- 0.95744924067
 
+
+\subsection{Untersuchung einer Sinusspannung mittels des Kathodenstrahl-Oszillographs}
+In Tabelle \ref{tab:saegen} sind die gemessenen Frequenzen der Sägespannung eingetragen, bei denen eine Entartung des Oszilloskopbilds zu einer stehenden Welle festgestellt wurde. Zudem sind die zugehörigen Frequenzverhätnisse zwischen angelegter Wechselspannung und der Sägespannungsfrequenz $\nu_\mathrm{Säge}$ eingetragen.
 \begin{table}
 	\caption{Bestimmte Synchronisationsfrequenzen zur Erzeugung von stehenden Wellen auf dem Schirm.}
 	\label{tab:saegen}
 	\centering
 	\begin{tabular}{cc}
 	\toprule
-		Frequenzverhältnis $n$ & $\nu$ / $\si{\hertz}$ \\
+		Frequenzverhältnis $n$ & $\nu_\mathrm{Säge}$ / $\si{\hertz}$ \\
 	\midrule
 		0.5 & 39.96 \\
 		1.0 & 79.95 \\
@@ -41,7 +48,10 @@
 	\bottomrule
 	\end{tabular}
 \end{table}
-
+Eine Mittellung über alle Werte ergibt mittels python/numpy \cite{numpy} für die Frequenz der angelegten Sinusspannung:
+\begin{equation*}
+	\nu_\mathrm{Sinus}=\SI{79.926(9)}{\hertz} \text{.}
+\end{equation*}
 
 
 
@@ -58,7 +68,7 @@
 
 \subsubsection{Bestimmung von $\frac{\symup{e}_0}{\symup{m}_0}$}
 Die Messergebnisse zur Berechnung von $\frac{\symup{e}_0}{\symup{m}_0}$ sind in Tabelle
-\ref{tab:efeldtab} aufgetragen. Es wird eine lineare Ausgleichsrechnung der Form 
+\ref{tab:efeldtab} aufgetragen. Es wird eine lineare Ausgleichsrechnung der Form
 \begin{equation*}
 	y = m \cdot x + b
 \end{equation*}

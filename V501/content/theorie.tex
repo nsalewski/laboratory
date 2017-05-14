@@ -1,4 +1,95 @@
 \section{Theorie}
 \label{sec:Theorie}
+\subsection{Aufbau einer Kathodenstrahlröhre}
+Eine Kathodenstrahlröhre ein bis auf einen Restdruck von $\SI{10e-06}{\bar}$ evakuiertes Instrument zur Erzeugung eines möglichst unbeeinflussten Elektronenstrahls.
+Im Wesentlichen besteht eine Kathodenstrahlröhre aus einer "Elektronenkanone", diese erzeugt und fokussiert einen Elektronenstrahl, einem Ablenksystem und einem Leuchtschirm, auf dem der Elektronenstrahl sichtbar gemacht werden kann.
+Der Elektronenstrahl wird erzeugt an der sogenannten Kathode. Ihre Oberfläche besteht aus einem Material mit niedriger Elektronenaustrittsarbeit.
+Die Kathode wird indirekt über eine bis zur Rotglut erhitzten Draht beheizt, sodass
+Elektronen aus der Kathode ausgelöst werden.
+Umgeben ist die Kathode von dem Wehnelt-Zylinder. Dieser hat ein negatives Potential gegenüber der Kathode, sodass der Elektronenstrahl fokussiert wird. Über das variable Potential des Wehnelt-Zylinders ist es möglich, die Intensität des Elektronenstrahls zu variieren.
+Vor dem Wehnelt-Zylinder befindet sich, wie in Abbildung \ref{fig:kathode} zu sehen, eine beschleunigendee Elektrode. Diese beschleunigt die Elektronen nach dem Energieerhaltungssatz auf
+\begin{equation}
+  \label{eqn:speedy}
+  v_\mathrm{z}=\sqrt{2U_\mathrm{B}\frac{e_0}{m_0}} \text{.}
+\end{equation}
+Hinter der beschleunigenden Elektrode befindet sich ein regelbares Fokussierungssystem mit Elektroden verschiedener Potentiale (vgl. dazu \ref{fig:kathode}).
+Der Elektronenstrahl wird hierbei über inhomogene elektrische Felder zwischen den Stirnseiten der Fokussierelektroden realisiert.
+Der Elektronenstrahl passiert zunächst zwei senkrecht zueinander stehende Plattenpaare, welche bei angelegten Potentialen als Ablenksystem dienen, und trifft schließlich auf den Leuchtschirm. Die auftreffenden Elektronen regen Störstellen im Kristallgitter des Leuchtschirms zur Emission von Photonen an, sodass der Auftreffpunkt des Elektronenstrahls visuell sichtbar wird.
+\subsection{Ablenkung eines Elektronenstrahls im elektrischen Feld}
+Elektrostatische Felder wirken auf Elektronen. Passiert ein Elektronenstrahl wie in Abbildung \ref{fig:ablenkii} ein annähernd homogenes elektrisches Feld zwischen zwei Ablenkplatten, so wirkt auf jedes Elektron, für die Dauer $\Delta t$ des Aufenthalts im elektrischen Feld, die Kraft
+\begin{equation}
+  |\vec{F}|=|e_0\vec{E}|=e_0\frac{U_\mathrm{d}}{d}\text{.}
+\end{equation}
 
-\cite{Anleitung}
+Hierbei ist $d$ der Abstand der Ablenkplatten und $U_\mathrm{d}$ das anliegende Potential.
+Die Durchlaufzeit $\Delta t$ durch das elektrische Feld zwischen den Platten ergibt sich über die Geschwindigkeit der Elektronen in $z$-Richtung nach Gleichung \eqref{eqn:speedy} zu
+\begin{equation}
+  \Delta t=\frac{p}{v_\mathrm{z}} \text{.}
+\end{equation}
+Nach dem Passieren der Ablenkplatten hat jedes Elektron eine Geschwindigkeit in $y$-Richtung:
+\begin{equation}
+  v_\mathrm{y}=F \frac{\Delta t}{m_0}=\frac{e_0}{m_0}\frac{U_\mathrm{d}}{d}\cdot\frac{p}{v_\mathrm{z}} \text{.}
+\end{equation}
+Aus Abbildung \ref{fig:ablenkii} ergibt sich die Verschiebung $D$ des Auftreffpunkts des Elektronenstrahl am Leuchtschirm zu:
+\begin{equation}
+    D=\frac{e_0}{m_0}L\frac{U_d}{d}\frac{p}{v_\mathrm{z}} \text{,}
+\end{equation}
+und unter Verwendung von Gleichung \eqref{eqn:speedy} schließlich
+\begin{equation}
+  D=\frac{p}{2d}L\frac{U_\mathrm{d}}{U_\mathrm{B}} \text{.}
+\end{equation}
+Es besteht also ein Zusammenhang zwischen der Verschiebung am Leuchtschirm und der Ablenkungspannung. Somit eignet sich die kathodenstrahlröhre zur Spannungsmessung.
+\subsubsection{Der Kathodenstrahl-Oszillograph}
+Die Kathodenstrahlröhre kann erweitert werden zu einem Kathodenstrahl-Oszillographen.
+Dieser dient zur Untersuchung der Zeitabhängigkeit von Wechselspannungen.
+Dazu wird auf die Ablenkplatten in $x$-Richtung eine Sägezahnspannung aufgegeben. Eine zweite, über die $y$-Ablenkplatten aufgegebene Spannung kann nun untersucht werden.
+Stehen die zu untersuchende Wechselspannungsfrequenz $\nu_\mathrm{WS}$ und die Sägezahnspannungsfrequenz $\nu_\mathrm{Säge}$ in einem geeigneten Verhältnis zueinander, wird auf dem Leuchtschirm der Kathodenstrahlröhre der zeitliche Verlauf der Wechselspannung dargestellt.
+Die dafür nötige Synchronisationsbedingung lautet:
+\begin{equation}
+    n\cdot \nu_\mathrm{Säge}=m \cdot \nu_\mathrm{WS} \text{ mit } n,m \in [1,2,3,...] \text{.}
+\end{equation}
+
+\subsection{Ablenkung eines Elektronenstrahls im transversalen Magnetfeld}
+Magnetfelder erzeugen, anders als elektrostatische Felder, lediglich Kräfte auf relativ zum Feld bewegte Ladungen. Diese Kraft wird als Lorentz-Kraft bezeichnet.
+Durch ein homogenes Magnetfeld $\vec{B}$, dessen Feldlinien in einem kartesischen Koordinatensystem in $\vec{X}$ Richtung verlaufen, wirkt also auf ein Elektron, welches sich mit der Geschwindigkeit $\vec{v}_0$ in $\vec{Z}$-Richtung bewegt, die Lorentzkraft
+\begin{equation}
+  F_\mathrm{Ly}=e_0v_0B \text{,}
+\end{equation}
+in $y$-Richtung.
+Das Elektron bewegt sich daher auf einer gekrümmten Bahn in der $YZ$-Ebene
+Da die Lorentzkraft immer senkrecht zu jedem Wegstück der Bahn des Elektron wirkt, ändert sich die potentielle Energie des Elektron nicht.
+Mit der Energieerhaltung folgt sofot, dass auch die kinetische Energie erhalten bleibt.
+Folglich darf sich die Geschwindigkeit $|\vec{v}|$ des Elektron nicht ändern.
+Die Geschwindigkeit des Elektron zu jedem Zeitpunkt ist daher gegeben durch seine Geschwindigkeit $\vec{v_0}$, welche es vor Eintritt in das Magnetfeld hatte.
+Die Lorentzkraft wirkt also als eine Zentripetalkraft und es gilt:
+\begin{equation}
+    e_0v_0B=\frac{m_0v_0^2}{r} \text{.}
+\end{equation}
+Für den Radius der Kreisbahn ergibt sich:
+\begin{equation}
+  \label{eqn:Radius}
+  r=\frac{m_0v_0}{e_0B}
+\end{equation}
+Die spezifische Elektronenladung $\frac{e_0}{m_0}$ lässt sich über Gleichung \eqref{eqn:Radius} mittels einer Kathodenstrahlröhre bestimmen.
+Die konstante Geschwindigkeit der Elektronen ergibt sich über das Beschleunigungspotential $U_\mathrm{B}$ wie folgt:
+\begin{equation}
+  \label{eqn:vnull}
+  v_0=\sqrt{2U_\mathrm{B}\frac{e_0}{m_0}} \text{.}
+\end{equation}
+Wie aus Abbildung \ref{fig:D} ersichtlich, verursacht das Magnetfeld $\vec{B}$ eine Ablenkung um $D$ von der ursprünglichen Bahn des Elektron.
+Die Größe $D$ kann am Schirm der Kathodenstrahlröhre gemessen werden.
+Für den Bahnradius $r$ ergibt sich
+\begin{equation}
+  \label{eqn:dreii}
+  r=\frac{L^2+D^2}{2D}
+\end{equation}
+Ein Gleichsetzen der Gleichungen \eqref{eqn:Radius} und \eqref{eqn:dreii} eliminiert den Bahnradius $r$. Unter Verwendung von Gleichung \eqref{eqn:vnull} ergibt sich
+\begin{equation}
+  \frac{D}{L^2+D^2}=\frac{1}{\sqrt{8U_\mathrm{B}}}\sqrt{\frac{e_0}{m_0}}B \text{.}
+\end{equation}
+Im vorliegenden Experiment wird zur Erzeugung eines homogenen Magnetfeldes ein Helmholtzspulenpaar verwendet.
+Die Flussdichte $B$ ist gegeben durch:
+\begin{equation}
+  B=\mu_0\frac{8}{\sqrt{125}}\frac{N\cdot I}{R} \text{.}
+\end{equation}
+Hierbei ist $N$ die Windungszahl und $I$ der Spulenstrom.
