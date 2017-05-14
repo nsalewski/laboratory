@@ -2,16 +2,59 @@
 \label{sec:Auswertung}
 
 \subsection{Ablenkung im elektrischen Feld}
+Die Messdaten zur Untersuchung der Ablenkung von bewegten Elektronen im elektrischen Feld finden sich in Tabelle \ref{tab:efeldtab}.
+\begin{figure}
+  \centering
+  \includegraphics{Messdaten/plotefeld.pdf}
+  \caption{Ablenkung $D$ am Leuchtschirm aufgetragen gegen die gemessene Ablenkspannungen $U_\mathrm{d}$ zur Bestimmung der Empfindlichkeit $\kappa_i$.}
+  \label{fig:efeld}
+\end{figure}
+
+Zur Bestimmung der Empfindlichkeit $\kappa=\frac{D}{U_\mathrm{d}}$ der Kathodenstrahlröhre wird die Position $D$ des Auftreffspunkt am Leuchtschirm gegen die gemessene Ablenkspannung $U_\mathrm{d}$ für die gemessenen Beschleunigungsspannungen $U_\mathrm{B}$ in Abbildung \ref{fig:efeld} aufgetragen.
+Hierbei wurde eine lineare Ausgleichsrechnung mittels scipy/python \cite{scipy} nach
+\begin{equation*}
+	y=m\cdot x+b
+\end{equation*}
+durchgeführt.
+Aus dem Geradenparameter %huiii richtig geschrieben :P
+$m$ ergibt sich schließlich die Empfindlichkeit $\kappa$ der Elektronestrahlröhre.
+Für die verschiedenen Beschleunigungsspannungen $U_\mathrm{B}$ ergibt sich:
+\begin{gather*}
+	\kappa_{400\,\si{\volt}} =  \SI{0.117(5)}{\centi\meter\per\volt} \text{,}\\
+	\kappa_{300\,\si{\volt}}  =  \SI{0.159(5)}{\centi\meter\per\volt} \text{,}\\
+	\kappa_{200\,\si{\volt}}  =  \SI{0.250(6)}{\centi\meter\per\volt} \text{.}
+\end{gather*}
+\begin{figure}
+  \centering
+  \includegraphics{Messdaten/plotm.pdf}
+  \caption{Empfindlichkeit $\kappa_i$ aufgetragen gegen die reziproke Beschleunigungsspannung $U_\mathrm{B}$.}
+  \label{fig:m}
+\end{figure}
+In Abbildung \ref{fig:m} sind die bestimmten $\kappa_\mathrm{i}$ gegen die zugehörigen reziproken Beschleunigungsspannungen $U_\mathrm{B}$ aufgetragen.
+Erneut wird mittels scipy/python \cite{scipy} eine lineare Ausgleichsrechnung durchgeführt.
+Die Steigung $m$ der Ausgleichsgraden entspricht der Apparaturkonstanten $K$.
+Mit Gleichung \eqref{eqn:K} ergibt sich
+\begin{equation*}
+	K= D \cdot \frac{U_\mathrm{B}}{U_\mathrm{d}}=\frac{p\cdot L}{2d} \text{.}
+\end{equation*}
+Die experimentell bestimmte Apparaturkonstante $K$ ist
+\begin{equation*}
+	K=m_\mathrm{Ausgleich} =  \SI{53(1)}{\centi\meter} \text{.}
+\end{equation*}
+Wird die Apparaturkonstante über die Abmessungen der Kathodenstrahlröhre ermittelt, ergibt sich mit $L=\SI{14.3}{\centi\meter}$, $p=\SI{1.9}{\centi\meter}$ und $d=\SI{0.38}{\centi\meter}$:
+\begin{equation*}
+	K=\SI{35.75}{\centi\meter}\text{.}
+\end{equation*}
 
 \begin{table}
-	\caption{Efeld amk.}
+	\caption{Messdaten zur Bestimmung der Empfindlichkeit $\kappa$ der Kathodenstrahlröhre.}
 	\label{tab:efeldtab}
 	\centering
 	\begin{tabular}{cccc}
 	\toprule
 		& & $U_{\mathrm{d}}$ für & \\
 		\midrule
-		$D$ / \si{\centi\meter} & $U_{\mathrm{b}}=\SI{400}{\volt}$ & $U_{\mathrm{b}}=\SI{300}{\volt}$ & $U_{\mathrm{b}}=\SI{400}{\volt}$ \\
+		$D$ / \si{\centi\meter} & $U_{\mathrm{B}}=\SI{400}{\volt}$ & $U_{\mathrm{B}}=\SI{300}{\volt}$ & $U_{\mathrm{B}}=\SI{400}{\volt}$ \\
 		\midrule
 		0.000 & -7.70 & -8.2 & -6.0 \\
 		0.635 & -5.40 & -5.4 & -4.3 \\
@@ -25,16 +68,12 @@
 	\bottomrule
 	\end{tabular}
 \end{table}
-%m400 =  0.116881090893 +/- 0.00479928829188
-%m300 =  0.159090765549 +/- 0.00458761479794
-%m200 =  0.249959257039 +/- 0.00555335139132
-%m_ud =  53.4155276043 +/- 0.95744924067
 
 
 \subsection{Untersuchung einer Sinusspannung mittels des Kathodenstrahl-Oszillographs}
 In Tabelle \ref{tab:saegen} sind die gemessenen Frequenzen der Sägespannung eingetragen, bei denen eine Entartung des Oszilloskopbilds zu einer stehenden Welle festgestellt wurde. Zudem sind die zugehörigen Frequenzverhätnisse zwischen angelegter Wechselspannung und der Sägespannungsfrequenz $\nu_\mathrm{Säge}$ eingetragen.
 \begin{table}
-	\caption{Bestimmte Synchronisationsfrequenzen zur Erzeugung von stehenden Wellen auf dem Schirm.}
+	\caption{Bestimmte Synchronisationsfrequenzen zur Erzeugung von stehenden Wellen auf dem Leuchtschirm.}
 	\label{tab:saegen}
 	\centering
 	\begin{tabular}{cc}
@@ -72,7 +111,7 @@ Die Messergebnisse zur Berechnung von $\frac{\symup{e}_0}{\symup{m}_0}$ sind in 
 \begin{equation*}
 	y = m \cdot x + b
 \end{equation*}
-gemäß Formel \eqref{eqn:???} mit scipy/python \cite{scipy} durchgeführt. Hierbei entspricht das
+gemäß Formel \eqref{eqn:bfeld1} mit scipy/python \cite{scipy} durchgeführt. Hierbei entspricht das
 $y$ dem Faktor $\frac{D}{L^2+D^2}$ und das $x$ der Flussdichte $B$.
 Die Parameter für die Beschleunigungsspannung $U_{\mathrm{b}}=\SI{250}{\volt}$ ergeben sich zu
 m = b =  \begin{gather*}
@@ -98,7 +137,7 @@ zu
   \caption{Plot.}
   \label{fig:bfeldplot2}
 \end{figure}
-bestimmen. Die Ausgleichsgerade ist in Abbildung \ref{tab:bfeldplot2} dargestellt. 
+bestimmen. Die Ausgleichsgerade ist in Abbildung \ref{fig:bfeldplot2} dargestellt.
 \begin{table}
 	\caption{Messwerte für die Verschiebung $D$ in Abhängigkeit von Strom blavla..}
 	\label{tab:bfeldtab}
@@ -118,7 +157,7 @@ bestimmen. Die Ausgleichsgerade ist in Abbildung \ref{tab:bfeldplot2} dargestell
 	\bottomrule
 	\end{tabular}
 \end{table}
-Damit ergeben sich die Verhältnisse gemäß Formel \eqref{eqn:???} und scipy \cite{scipy} zu
+Damit ergeben sich die Verhältnisse gemäß Formel \eqref{eqn:bfeld1} und scipy \cite{scipy} zu
 \begin{gather*}
 	theorie =  (1.758820024+/-0.000000024)e+11 \\
 	\frac{\symup{e}_0}{\symup{m}_0} = \SI{480(210)}{\giga\second}
