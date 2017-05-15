@@ -2,7 +2,8 @@
 \label{sec:Auswertung}
 
 \subsection{Ablenkung im elektrischen Feld}
-Die Messdaten zur Untersuchung der Ablenkung von bewegten Elektronen im elektrischen Feld finden sich in Tabelle \ref{tab:efeldtab}.
+Die Messdaten zur Untersuchung der Ablenkung von bewegten Elektronen im elektrischen Feld sind
+in Tabelle \ref{tab:efeldtab} zu finden.
 \begin{figure}
   \centering
   \includegraphics{Messdaten/plotefeld.pdf}
@@ -114,14 +115,14 @@ Die Messergebnisse zur Berechnung von $\frac{\symup{e}_0}{\symup{m}_0}$ sind in 
 gemäß Formel \eqref{eqn:bfeld1} mit scipy/python \cite{scipy} durchgeführt. Hierbei entspricht das
 $y$ dem Faktor $\frac{D}{L^2+D^2}$ und das $x$ der Flussdichte $B$.
 Die Parameter für die Beschleunigungsspannung $U_{\mathrm{b}}=\SI{250}{\volt}$ ergeben sich zu
-m = b =  \begin{gather*}
+\begin{gather*}
 	m = -\SI{15548(3386)}{\kelvin} \mathrm{,} \\
 	b = \SI{2.6(3)}{\per\meter} \mathrm{.}
 \end{gather*}
 \begin{figure}
   \centering
   \includegraphics{Messdaten/plotbfeld.pdf}
-  \caption{Plot.}
+  \caption{Ausgleichsgerade mit Messwerten für eine Beschleunigungsspannung von $U_{\mathrm{b}}=\SI{250}{\volt}$.}
   \label{fig:bfeldplot}
 \end{figure}
 Die Ausgleichsgerade mit den Messwerten ist in Abbildung \ref{fig:bfeldplot} dargestellt.
@@ -134,12 +135,12 @@ zu
 \begin{figure}
   \centering
   \includegraphics{Messdaten/plotbfeld2.pdf}
-  \caption{Plot.}
+  \caption{Ausgleichsgerade mit Messwerten für eine Beschleunigungsspannung von $U_{\mathrm{b}}=\SI{450}{\volt}$.}
   \label{fig:bfeldplot2}
 \end{figure}
 bestimmen. Die Ausgleichsgerade ist in Abbildung \ref{fig:bfeldplot2} dargestellt.
 \begin{table}
-	\caption{Messwerte für die Verschiebung $D$ in Abhängigkeit von Strom blavla..}
+	\caption{Messwerte für die Verschiebung $D$ in Abhängigkeit vom Spulenstrom bei Beschleunigungsspannungen von $U_{\mathrm{b}}=\SI{250}{\volt}$ und $U_{\mathrm{b}}=\SI{450}{\volt}$.}
 	\label{tab:bfeldtab}
 	\centering
 	\begin{tabular}{ccc}
@@ -159,6 +160,9 @@ bestimmen. Die Ausgleichsgerade ist in Abbildung \ref{fig:bfeldplot2} dargestell
 \end{table}
 Damit ergeben sich die Verhältnisse gemäß Formel \eqref{eqn:bfeld1} und scipy \cite{scipy} zu
 \begin{gather*}
-	theorie =  (1.758820024+/-0.000000024)e+11 \\
-	\frac{\symup{e}_0}{\symup{m}_0} = \SI{480(210)}{\giga\second}
+	\frac{\symup{e}_0}{\symup{m}_0}_{\mathrm{theo}} =  -\SI{175.8820024(24)}{\giga\coulomb\per\kilo\gram} \mathrm{,} \\
+	\frac{\symup{e}_0}{\symup{m}_0}_{U_{\mathrm{b}} = \SI{250}{\volt}} = -\SI{480(210)}{\giga\coulomb\per\kilo\gram} \mathrm{,} \\
+	\frac{\symup{e}_0}{\symup{m}_0}_{U_{\mathrm{b}} = \SI{450}{\volt}} = -\SI{900(400)}{\giga\coulomb\per\kilo\gram} \mathrm{,}
 \end{gather*}
+mit der Elementarladung nach \cite{e} und der Elektronenmasse nach \cite{m} für den Theoriewert.
+

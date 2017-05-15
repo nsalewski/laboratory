@@ -105,6 +105,9 @@ plt.xlabel(r"$B$/$\si{\tesla}$")
 plt.tight_layout()
 plt.savefig('Messdaten/plotbfeld2.pdf')
 
+m2 = unp.uarray(params[0], errors[0])
+e_m=m**2*8*450
+print('experiment = ', e_m)
 
 
 
