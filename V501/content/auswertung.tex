@@ -165,4 +165,16 @@ Damit ergeben sich die Verhältnisse gemäß Formel \eqref{eqn:bfeld1} und scipy
 	\frac{\symup{e}_0}{\symup{m}_0}_{U_{\mathrm{b}} = \SI{450}{\volt}} = -\SI{900(400)}{\giga\coulomb\per\kilo\gram} \mathrm{,}
 \end{gather*}
 mit der Elementarladung nach \cite{e} und der Elektronenmasse nach \cite{m} für den Theoriewert.
-
+\subsection{Bestimmung der Intensität des lokalen Erdmagnetfelds}
+Zur Bestimmung der Intensität des lokalen Erdmagnetfelds wird zunächst mittels des Deklinatorium-Inklinatoriums der lokale Inklinationswinkel des Erdmagnetfelds zur Horizontalebene zu $\alpha=75^\circ$.
+Nach Formel \eqref{eqn:b-feld} wird die Flussdichte $B$ des Ausgleichsfeld bestimmt.
+Hierbei beträgt der Spulenstrom $I=\SI{0.25}{\ampere}$, die Windungszahl der Helmholtzspule $N=20$ und der Spulenradius $R=\SI{0.282}{\meter}$.
+Es ergibt sich:
+\begin{equation}
+  B_\mathrm{Ausgleich}=\SI{1.59e-05}{\tesla} \text{.}
+\end{equation}
+Zur Bestimmung der Intensität des lokalen Erdmagnetfelds muss der berechnete Wert noch durch den Kosinus des Inklinationswinkel dividiert wird.
+Diese ergibt sich schließlich zu:
+\begin{equation}
+  B_\mathrm{Erde}=\SI{6.16e-05}{\tesla} \text{.}
+\end{equation}
