@@ -1,0 +1,71 @@
+Einleitung
+-Quantennatur der Elektronenhülle
+-Anregungsenergie
+-Zusammenhang zwischen Wellenlänge des emittierten Lichts und Anregungsenergie E_a
+-Bestätigte Bohrs Postulate
+-Es sollen diskrete Energiewerte des Hg Atoms bestimmt werden
+-Zwei Wege möglich
+-zum Einen Wechselwirkung mit elektromagnetischer Strahlung
+-zum Anderen ELEKTRONENSTOẞEXPERIMENTE
+-> monoenenergetische Elektronen wechselwirken mit Hg Atomen in Form von Hg Dampf. abg. Raum
+->elastische und inelastische Stöße
+->Energiedifferenz der Elektronen vor und nach dem Stoß geben Rückschluss auf von den Hg Atomen
+aufgenommene Energie
+->  ENERGIEDIFFERENZGL (Ende Seite 1)
+-Gegenfeldmethode
+-Energieverteilung der Elektronen 
+-Ionisationsenergie der Hg Atome
+
+
+
+
+prinzipieller Aufbau
+-SKIZZE AUFBAU ANFANG SEITE 2
+-evakuiertes Gefäß mit Quecksilber
+-Gemäß Dampfdruckkurve stellt sich Gleichgewichtsdruck ein. (T abhängig)
+-Glüdraht in Gefäß wird erhitzt und gemäß lichtelektrischen Effekts lösen sich Elektronen 
+-Gegenüber Beschleunigungselektrode
+-Elektronen erhalten Ekin (GLEICHUNG ENDE SEITE 2) -- vorr. v(0)=0
+-Am Ende des Kolbens ist Auffängerelektrode die Gegenfeld erzeugt
+-> Nur Elektronen mit hinreichend großer Geschwindigkeit kommen gegen Ggfeld an (GL)
+
+-Hg_Atome führen Stöße mit beschl Elektronen aus
+-> elastische Stöße, wenn E nicht zu groß
+-> aufgrund großer Massendifferenz ist Energieabgabe von Elektron an Hg-Atom vern. gerin
+-> allerdings Richtungsänderung des Elektrons
+
+->unelastische Stöße, wenn E >= Energiedifferenz E1-E0
+-> Elektron kann Hg-Atom anregen
+-> überträgt E1-E0 auf Atom und behält Rest
+-> Angeregtes Hg-Atom relaxiert in Grundzustand innerhalb von 10^-8 seconds und emittiert
+Lichtquanten mit Energie hv = E1-E0
+
+-> Es wird Auffängerstrom I_A in Abhängigkeit von U_B beobachtet
+-> Elektronen werden solange beschleunigt bis sie Atom anregen können, daraufhin erfolgt 
+instantaner ABfall der Kurve (THEORIE!!!!) da *alle* Elektronen Energie abgeben.
+-> Abstände der periodischen Maxima entsprechen vielfachen der Anregungsenergie / e0
+-> Nullperioden sind dadurch zu erklären, dass Restenergie nicht ausreicht um Gegenfeld zu durch
+-> Periodische Zu und Abnahme des Auffängerstroms
+
+
+
+Einflüsse auf Franck-Hertz-Kurve
+
+- Einfluss des Kontaktpotentials
+ -> Das Kontaktpotential entspricht Differenz zwischen Austrittsarbeiten der 
+
+
+
+- Einfluss des Energie-Spektrums
+
+
+
+
+- Einflusss des Dampfdruckes
+
+
+
+
+
+
+
