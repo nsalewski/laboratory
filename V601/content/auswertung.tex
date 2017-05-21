@@ -20,8 +20,8 @@ Die abgelesenen Werte für die Skalierung der Messung bei $\SI{150}{\celsius}$ s
 Tabelle \ref{tab:skalierung_a_2} aufgetragen.
 \begin{table}
 	\centering
-	\caption{Messdaten zur Bestimmung der Grenzspannung $U_\mathrm{G}$.}
-	\label{tab:ug}
+	\caption{Messdaten zur Bestimmung der Skalierung bei der Messung bei \SI{150}{\celsius}.}
+	\label{tab:a_2}
 	\begin{tabular}{cc}
 		\toprule
 		$U_{\mathrm{B}}$ / $\si{\volt}$ & Abstand / $\si{\centi\meter}$ \\
@@ -40,6 +40,51 @@ Tabelle \ref{tab:skalierung_a_2} aufgetragen.
 		\bottomrule
 	\end{tabular}
 \end{table}
+Es ergibt sich mit einer linearen Ausgleichsrechnung mit python \cite{python} gemäß
+\begin{equation*}
+	y = m \cdot x + b
+\end{equation*}
+ und den abgelesenen Werten aus Tabelle \ref{tab:a_2} der Skalierungsfaktor 
+\begin{equation*}
+	f = \SI{0.497(2)}{\volt\per\centi\meter} \mathrm{.}
+\end{equation*}
+%m_a_2 =  0.496966305893 +/- 0.00230842118047
+%b_a_2 =  0.0167833055363 +/- 0.0274136925578
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{table}
+	\centering
+	\caption{Messwerte zur Skalierung bei der Bestimmung der Ionisationsspannung.}
+	\label{tab:c}
+	\begin{tabular}{cc}
+		\toprule
+		$U_{\mathrm{B}}$ / $\si{\volt}$ & Abstand / $\si{\centi\meter}$ \\
+		\midrule
+		0 & 0 \\
+		5 & 1.9 \\
+		10 & 3.9 \\
+		15 & 6.0 \\
+		20 & 7.8 \\
+		25 & 9.9 \\
+		30 & 11.9 \\
+		35 & 14.0 \\
+		40 & 16.1 \\
+		45 & 18.2 \\
+		50 & 20.1 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Es ergibt sich mit einer linearen Ausgleichsrechnung mit python \cite{python} gemäß
+\begin{equation*}
+	y = m \cdot x + b
+\end{equation*}
+und den abgelesenen Werten aus Tabelle \ref{tab:c} der Skalierungsfaktor 
+\begin{equation*}
+	f = \SI{2.47(1)}{\volt\per\centi\meter} \mathrm{.}
+\end{equation*}
+%m_c =  2.47255968113 +/- 0.0112648842464
+%b_c =  0.319358820599 +/- 0.13353607149
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Zur Skalierung der Messung der integralen Energieverteilung wird zunächst jeder Abstand zwischen zwei Punkten bekannter Bremsspannung gemessen und über alle Abstände mittels python/scipy \cite{scipy} gemittelt.
 Die zugehörigen Messdaten finden sich in Tabelle \ref{tab:skalaa}.
 Es ergibt sich als mittlere Länge $x$ pro $\SI{1}{\volt}$:
@@ -144,6 +189,7 @@ Mit der Beziehung $\lambda=\frac{c}{\nu}$ und unter Verwendung von Formel
 \end{equation}
 Da für den Glühdraht und für die Beschleunigungselektrode ein Material mit unterschiedlicher Elektronenaustrittsarbeit verwendet wurde, ist die Franck-Hertz-kurve um das Kontaktpotential verschoben.
 Die ersten Maxima können aus der aufgenommenen Franck-Hertz-Kurve allerdings nicht eindeutig bestimmt werden, daher wird ihre Lage anhand der bekannten
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
 \subsection{Bestimmung der Ionisationsspannung von Quecksilber}

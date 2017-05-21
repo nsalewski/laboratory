@@ -55,4 +55,23 @@ print(lambdi)
 #plt.legend(loc='best')
 #plt.tight_layout()
 #plt.savefig('Bilder/b1.pdf')
+
+########################################################################################
+#Ausgleichsrechnung zur SKalierung
+x, y = np.genfromtxt('Messdaten/a_2_skala.txt', unpack=True)
+def f(x, m, b):
+    return m*x+b
+
+params_a_2, covariance_a_2 = curve_fit(f, x, y)
+errors_a_2 = np.sqrt(np.diag(covariance_a_2))
+print('m_a_2 = ', params_a_2[0], '+/-', errors_a_2[0])
+print('b_a_2 = ', params_a_2[1], '+/-', errors_a_2[1])
 #
+x_c, y_c = np.genfromtxt('Messdaten/c_skala.txt', unpack=True)
+params_c, covariance_c = curve_fit(f, x_c, y_c)
+errors_c = np.sqrt(np.diag(covariance_c))
+print('m_c = ', params_c[0], '+/-', errors_c[0])
+print('b_c = ', params_c[1], '+/-', errors_c[1])
+
+
+########################################################################################
