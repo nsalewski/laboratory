@@ -4,8 +4,34 @@ from scipy.optimize import curve_fit
 from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
+n=np.genfromtxt("Messdaten/datenraumtemperatur.txt",unpack=True)
+print(n)
+c=np.mean(n)
+m=np.std(n) / np.sqrt(len(n))
+v1=ufloat(c,m)
+v1=1/v1
+print('Skala Raumtemperatur',v1)
+p=np.genfromtxt("Messdaten/skalafranckhertz.txt",unpack=True)
+c=np.mean(p)
+m_2=np.std(p) / np.sqrt(len(p))
+vhertz=ufloat(c,m_2)
+print('Skala Franckhertz',vhertz)
 
-
+vhertz=5/vhertz
+print('Skala Franckhertz',vhertz)
+e_theo = unp.uarray(1.6021766208*10**(-19), 0.0000000098*10**(-19))
+abstand=np.genfromtxt("Messdaten/maximafranckhertz.txt", unpack=True)
+ascii.write([abstand,abstand*vhertz.nominal_value],'Messdaten/franck.tex',format='latex')
+c=np.mean(abstand*vhertz.nominal_value)
+m_3=np.std(abstand*vhertz.nominal_value)/np.sqrt(len(abstand*vhertz.nominal_value))
+print(c,m_3)
+delta=ufloat(c,m_3)
+e_theo = unp.uarray(1.6021766208*10**(-19), 0.0000000098*10**(-19))
+delta=delta*e_theo
+h=ufloat(6.626070040*10**(-34),0.000000081*10**(-34))
+licht=299792458
+lambdi=licht*h/delta
+print(lambdi)
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
 #f=f*1000
 #theta=(n*np.pi)/14
