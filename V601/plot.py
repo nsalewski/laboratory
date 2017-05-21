@@ -11,6 +11,22 @@ m=np.std(n) / np.sqrt(len(n))
 v1=ufloat(c,m)
 v1=1/v1
 print('Skala Raumtemperatur',v1)
+z,n,pos=np.genfromtxt("Messdaten/steigung.txt",unpack=True)
+steigung=z/n
+pos=pos*v1.nominal_value
+ascii.write([np.round(pos,1),np.round(steigung,2)],'Messdaten/steigii.tex',format='latex')
+print(steigung)
+print(pos)
+plt.plot(pos, steigung, 'rx', label="Messwerte")
+plt.ylabel(r"$Steigung$")
+plt.xlabel(r"$U_\mathrm{A}$/$\si{\volt}$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('Bilder/b1.pdf')
+
+
+
+
 p=np.genfromtxt("Messdaten/skalafranckhertz.txt",unpack=True)
 c=np.mean(p)
 m_2=np.std(p) / np.sqrt(len(p))
