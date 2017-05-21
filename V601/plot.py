@@ -5,11 +5,17 @@ from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
 #Berechnung mittlere freie Weglänge
-
-
+#die ersten beiden sind deine Plots.
+T=[415.95, 423.15, 299.75, 458.9]
+T=np.asarray(T)
+psaet=5.5*10**7*np.exp(-6876/T)
+w=0.0029/psaet
+a=1
+#print(w)
+ascii.write([T,psaet,w,w/a],'Messdaten/w.tex',format='latex' )
 
 n=np.genfromtxt("Messdaten/datenraumtemperatur.txt",unpack=True)
-print(n)
+#print(n)
 c=np.mean(n)
 m=np.std(n) / np.sqrt(len(n))
 v1=ufloat(c,m)
@@ -19,8 +25,8 @@ z,n,pos=np.genfromtxt("Messdaten/steigung.txt",unpack=True)
 steigung=z/n
 pos=pos*v1.nominal_value
 ascii.write([np.round(pos,1),np.round(steigung,2)],'Messdaten/steigii.tex',format='latex')
-print(steigung)
-print(pos)
+#print(steigung)
+#print(pos)
 plt.plot(pos, steigung, 'rx', label="Messwerte")
 plt.ylabel(r"$Steigung$")
 plt.xlabel(r"$U_\mathrm{A}$/$\si{\volt}$")
@@ -45,12 +51,19 @@ ascii.write([abstand,abstand*vhertz.nominal_value],'Messdaten/franck.tex',format
 c=np.mean(abstand*vhertz.nominal_value)
 m_3=np.std(abstand*vhertz.nominal_value)/np.sqrt(len(abstand*vhertz.nominal_value))
 print(c,m_3)
+d=np.mean(abstand)
+m_4=np.std(abstand)/np.sqrt(len(abstand))
+abst=ufloat(d,m_4)
 delta=ufloat(c,m_3)
 e_theo = unp.uarray(1.6021766208*10**(-19), 0.0000000098*10**(-19))
+max1=44-2*abst.nominal_value
+max1*vhertz
 delta=delta*e_theo
+print(max1)
 h=ufloat(6.626070040*10**(-34),0.000000081*10**(-34))
 licht=299792458
 lambdi=licht*h/delta
+
 print(lambdi)
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
 #f=f*1000

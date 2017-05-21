@@ -118,11 +118,16 @@ sondern sich aufgrund der statistischen Verteilung über ein Intervall erstrecke
 Voraussetzung für den Franck-Hertz-Versuch sind Stöße der Elektronen mit Atomen.
 Daher muss die mittlere freie Weglänge $\bar{w}$ klein gegen den Abstand $a$ zwischen Kathode
 und Beschleunigungselektrode sein.
-Die mittlere freie Weglänge ergibt sich über Sättigungsdampfdruck $p$ gemäß der kinetischen
+Die mittlere freie Weglänge ergibt sich über Sättigungsdampfdruck $p_{\mathrm{sät}}$ gemäß der kinetischen
 Gastheorie zu
 \begin{equation}
 	\label{eqn:freiewegl}
-	\bar{w} = \frac{0.0029}{p_{\mathrm{sätt}}} \mathrm{.}
+	\bar{w} = \frac{0,0029}{p_{\mathrm{sät}}} \mathrm{.}
+\end{equation}
+Der Sättigungsdampfdruck ist abhängig von der Temperatur und berechnet sie wie folgt:
+\begin{equation}
+	\label{eqn:p}
+	p_\mathrm{sät}=5,5\cdot10^{7}\exp(-6876/T) \mathrm{.}
 \end{equation}
 \begin{figure}
   \centering

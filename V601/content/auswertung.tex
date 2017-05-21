@@ -2,17 +2,32 @@
 \label{sec:Auswertung}
 \FloatBarrier
 \subsection{Bestimmung der mittleren freien Weglänge und des Kontaktpotentials}
+\subsubsection{Bestimmung der mittleren freien Weglänge}
+Die mittlere freie Weglänge $\bar{w}$ wird über den Sättigungsdampfdruck nach Formel \eqref{eqn:freiewegl} und \eqref{eqn:p} für alle im Experiment gemessenen Temperaturen des Innenraums der Versuchsapparatur bestimmt.
+Ein Vergleich mit dem Abstand $a=\SI{1}{\centi\meter}$ zwischen der Beschleunigungselektrode und der Kathode zeigt, dass für alle gemessenen Temperaturen außer der Messreihe bei $T=\SI{299.75}{\kelvin}$ die Bedingung erfüllt ist, dass die mittlere Weglänge mindestens um den Faktor 1000 kleiner ist, daher ist eine ausreichende Stoßwahrscheinlichkeit gegeben, sodass der Franck-Hertz-Effekt beobachtet werden kann.
+\begin{table}
+	\centering
+	\caption{Berechnung des Sättigungsdampfdrucks $p_\mathrm{sät}$und der mittleren freien Weglänge.}
+	\label{tab:w}
+\begin{tabular}{cccc}
+\toprule
+$T$/$\si{\kelvin}$ & $p_\mathrm{sät}$/$\si{\milli\bar}$ & $\bar{w}$/$\si{\centi\meter}$\\
+\midrule
+415,95 & 3,6 & $7,97 \cdot 10^{-4}$\\
+423,15 & 4,8 &$6,01 \cdot 10^{-4}$\\
+299,75 & $6\cdot10^{-3}$ & $4,83\cdot 10^{-1}$\\
+458,9 & 17,1& $1,70\cdot 10^{-4}$\\
+\bottomrule
+\end{tabular}
+\end{table}
 %\begin{figure}
 %  \centering
 %  \includegraphics{plot.pdf}
 %  \caption{Plot.}
 %  \label{fig:plot}
 %\end{figure}
-\subsubsection{Bestimmung der mittleren freien Weglänge}
 Die mittlere freie Weglänge ergibt sich mit Formel \eqref{eqn:freiewegl} zu
-\begin{equation*}
-	\bar{w} = 1
-\end{equation*}
+
 
 \FloatBarrier
 \subsection{Bestimmung der Skalierungen}
@@ -98,9 +113,15 @@ beziehungsweise als mittlere Spannung pro Kästchen auf dem Millimeterpapier:
 Da die Fehler unter der Messauflösung liegen, werden sie im Folgenden nicht weiter berücksichtigt.
 
 Um aus der integralen Energieverteilung schließlich die differentielle Energieverteilung zu erhalten, wird die Steigung der integralen Energieverteilung mittels Steigungsdreiecken, wie in Abbildung \ref{fig:originaleins} eingezeichnet, bestimmt.
+Die bestimmten Steigungen samt der zugehörigen Position bezüglich des Nullpunkts der Messung finden sich in Tabelle \ref{tab:tab2}.
+In Abbildung \ref{fig:plot} findet sich die daraus ermittelte Differentielle Energieverteilung. Aus der Lage des Maximums bei $x_{\mathrm{max}}=\SI{7.5}{\volt}$ ergibt sich das Kontaktpotential über die angelegte Beschleunigungsspannung $U_\mathrm{B}=\SI{11}{\volt}$ zu:
+\begin{equation}
+	K_2=U_\mathrm{B}-x_\mathrm{max}=\SI{3.5}{\volt} \text{.}
+\end{equation}
+
 \begin{table}
 	\centering
-	\caption{Messdaten zur Bestimmung der differentiellen Energieverteilung}
+	\caption{Messdaten zur Bestimmung der differentiellen Energieverteilung.}
 	\label{tab:tab2}
 \begin{tabular}{cc}
 \toprule
@@ -243,7 +264,7 @@ beziehungsweise als mittlere Spannung pro Kästchen auf dem Millimeterpapier:
 	V_1= \SI{28.0(3)e-02}{\volt\per\milli\meter} \mathrm{.}
 \end{equation}
 Da die Fehler unter der Messauflösung liegen, werden sie im Folgenden erneut nicht weiter berücksichtigt.
-Es wird nun der Abstand zwischen den Maxima der Franck-Hertz-Kurve gemessen. Diese Abstände entsprechen hierbei, multipliziert mit der Elementarladung $\symup{e}_0$ der 1. Anregungsenergie des Hg-Atoms (vgl. Formel \eqref{eqn:photonemission}).
+Es wird nun der Abstand zwischen den Maxima der Franck-Hertz-Kurve gemessen. Diese Abstände entsprechen hierbei, multipliziert mit der Elementarladung $\symup{e}_0$ nach \cite{e} der 1. Anregungsenergie des Hg-Atoms (vgl. Formel \eqref{eqn:photonemission}).
 In Tabelle \ref{tab:hertzchen} finden sich die gemessenen Abstände sowie die daraus bestimmten $U_\mathrm{1}$.
 \begin{table}
 	\centering
@@ -273,8 +294,18 @@ Mit der Beziehung $\lambda=\frac{c}{\nu}$ und unter Verwendung von Formel
 \begin{equation}
 	\lambda=\SI{235(5)}{\nano\meter}
 \end{equation}
+Hierbei wurde die Lichtgeschwindigkeit nach \cite{c} und die Planksche Konstante $\symup{h}$ nach \cite{h} verwendet.
 Da für den Glühdraht und für die Beschleunigungselektrode ein Material mit unterschiedlicher Elektronenaustrittsarbeit verwendet wurde, ist die Franck-Hertz-kurve um das Kontaktpotential verschoben.
-Die ersten Maxima können aus der aufgenommenen Franck-Hertz-Kurve allerdings nicht eindeutig bestimmt werden, daher wird ihre Lage anhand der bekannten
+Die ersten Maxima können aus der aufgenommenen Franck-Hertz-Kurve allerdings nicht eindeutig bestimmt werden, daher wird ihre Lage anhand des bekannten Abstands zwischen zwei Maxima $U_1=\Delta E/\si{\electronvolt}=\SI{5.3(1)}{\volt}$ und der Lage des dritten Maximums bei $U_\mathrm{B}=\SI{16.85}{\volt}$ der Franck-Hertz-Kurve bestimmt.
+Für die Lage des ersten Maximums ergibt sich
+\begin{equation}
+	U_\mathrm{1.max}=\SI{6.25}{\volt}=U_1+K_1 \text{,}
+\end{equation}
+mit dem bestimmten Wert für $U_1$ gilt also
+\begin{equation}
+	K_1=\SI{0.95(10)}{\volt}\text{.}
+\end{equation}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
