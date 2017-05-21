@@ -40,11 +40,11 @@ Tabelle \ref{tab:skalierung_a_2} aufgetragen.
 		\bottomrule
 	\end{tabular}
 \end{table}
-Es ergibt sich mit einer linearen Ausgleichsrechnung mit python \cite{python} gemäß
+Es ergibt sich mit einer linearen Ausgleichsrechnung mit python/scipy \cite{scipy} gemäß
 \begin{equation*}
 	y = m \cdot x + b
 \end{equation*}
- und den abgelesenen Werten aus Tabelle \ref{tab:a_2} der Skalierungsfaktor 
+ und den abgelesenen Werten aus Tabelle \ref{tab:a_2} der Skalierungsfaktor
 \begin{equation*}
 	f = \SI{0.497(2)}{\volt\per\centi\meter} \mathrm{.}
 \end{equation*}
@@ -77,7 +77,7 @@ Es ergibt sich mit einer linearen Ausgleichsrechnung mit python \cite{python} ge
 \begin{equation*}
 	y = m \cdot x + b
 \end{equation*}
-und den abgelesenen Werten aus Tabelle \ref{tab:c} der Skalierungsfaktor 
+und den abgelesenen Werten aus Tabelle \ref{tab:c} der Skalierungsfaktor
 \begin{equation*}
 	f = \SI{2.47(1)}{\volt\per\centi\meter} \mathrm{.}
 \end{equation*}
@@ -85,7 +85,7 @@ und den abgelesenen Werten aus Tabelle \ref{tab:c} der Skalierungsfaktor
 %b_c =  0.319358820599 +/- 0.13353607149
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Zur Skalierung der Messung der integralen Energieverteilung wird zunächst jeder Abstand zwischen zwei Punkten bekannter Bremsspannung gemessen und über alle Abstände mittels python/scipy \cite{scipy} gemittelt.
+Zur Skalierung der Messung der integralen Energieverteilung wird zunächst jeder Abstand zwischen zwei Punkten bekannter Bremsspannung gemessen und über alle Abstände mittels python/numpy \cite{numpy} gemittelt.
 Die zugehörigen Messdaten finden sich in Tabelle \ref{tab:skalaa}.
 Es ergibt sich als mittlere Länge $x$ pro $\SI{1}{\volt}$:
 \begin{equation}
@@ -264,7 +264,7 @@ In Tabelle \ref{tab:hertzchen} finden sich die gemessenen Abstände sowie die da
 \end{tabular}
 \end{table}
 
-Aus einer Mittelung mittels python/scipy \cite{scipy} ergibt sich
+Aus einer Mittelung mittels python/numpy \cite{numpy} ergibt sich
 \begin{equation}
 	\Delta E=\SI{5.3(1)}{\electronvolt} \mathrm{.}
 \end{equation}
@@ -293,7 +293,7 @@ die Parameter zu
 \end{gather*}
 %m_ion=  0.493670336896 +/- 0.0318497210683
 %b_ion=  -12.8280885804 +/- 1.25053616518
-Die Summe von der Ionisationsspannung $U_{\mathrm{ion}}$ und dem Kontaktpotential $K$ ergibt 
+Die Summe von der Ionisationsspannung $U_{\mathrm{ion}}$ und dem Kontaktpotential $K$ ergibt
 sich als Schnittpunkt der Augleichsgeraden mit der x-Achse zu
 \begin{equation*}
 	U_{\mathrm{ion}} + K = \SI{26(3)}{\volt} \mathrm{.}

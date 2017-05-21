@@ -4,6 +4,10 @@ from scipy.optimize import curve_fit
 from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
+#Berechnung mittlere freie Weglänge
+
+
+
 n=np.genfromtxt("Messdaten/datenraumtemperatur.txt",unpack=True)
 print(n)
 c=np.mean(n)
@@ -23,7 +27,7 @@ plt.xlabel(r"$U_\mathrm{A}$/$\si{\volt}$")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Bilder/b1.pdf')
-
+plt.clf()
 
 
 
@@ -111,12 +115,3 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Messdaten/aufgabea2.pdf')
 plt.clf()
-
-
-
-
-
-
-
-
-
