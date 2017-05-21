@@ -121,6 +121,43 @@ Um aus der integralen Energieverteilung schließlich die differentielle Energiev
 		\bottomrule
 	\end{tabular}
 \end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FloatBarrier
+\subsection{Bestimmung des Kontaktpotentials $K$}
+\subsubsection{Temperatur \SI{142.8(1)}{\celsius}}
+Die differentielle Energieverteilung ist in Tabelle \ref{tab:steigisdreieckslol} aufgetragen.
+\begin{table}
+	\centering
+	\caption{Differentielle Energieverteilung zur Bestimmung des Kontaktpotentials $K$.}
+	\label{tab:steigisdreieckslol}
+	\begin{tabular}{ccc}
+		\toprule
+		$x$ / $\si{\centi\meter}$ & $U_{\mathrm{A}}$ / $\si{\volt}$ & Steigung $\frac{\Delta y}{\Delta x}$ \\
+		\midrule
+		0-1 & 21.5 \\
+		1-2 & 18.5 \\
+		2-3 & 20.0 \\
+		3-4 & 20.0 \\
+		4-5 & 20.0 \\
+		5-6 & 19.5 \\
+		6-7 & 20.5 \\
+		7-8 & 20.5 \\
+		8-9 & 20.5 \\
+		9-10 & 22.0 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\begin{figure}
+	\centering
+	\includegraphics{Messdaten/aufgabea2.pdf}
+	\caption{Plot.}
+	\label{fig:aufgabeA2}
+\end{figure}
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
 \subsection{Franck-Hertz-Kurve}
@@ -196,3 +233,19 @@ Die ersten Maxima können aus der aufgenommenen Franck-Hertz-Kurve allerdings ni
 In Abbildung \ref{fig:ionisation} ist der Auffängerstrom $I_{\mathrm{A}}$ in Abhängigkeit
 von der Beschleunigungsspannung $U_{\mathrm{B}}$ bei einer Gegenspannung von $-\SI{30}{\volt}$
 aufgetragen.
+Es ergeben sich mit einer linearen Ausgleichsrechnung gemäß
+\begin{equation*}
+	y = m \cdot x + b
+\end{equation*}
+die Parameter zu
+\begin{gather*}
+	m = 0.49(3) \mathrm{,} \\
+	b = -13(1) \mathrm{.}  \\
+\end{gather*}
+%m_ion=  0.493670336896 +/- 0.0318497210683
+%b_ion=  -12.8280885804 +/- 1.25053616518
+Die Summe von der Ionisationsspannung $U_{\mathrm{ion}}$ und dem Kontaktpotential $K$ ergibt 
+sich als Schnittpunkt der Augleichsgeraden mit der x-Achse zu
+\begin{equation*}
+	U_{\mathrm{ion}} + K = \SI{26(3)}{\volt} \mathrm{.}
+\end{equation*}

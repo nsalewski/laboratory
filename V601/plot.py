@@ -55,7 +55,6 @@ print(lambdi)
 #plt.legend(loc='best')
 #plt.tight_layout()
 #plt.savefig('Bilder/b1.pdf')
-
 ########################################################################################
 #Ausgleichsrechnung zur SKalierung
 x, y = np.genfromtxt('Messdaten/a_2_skala.txt', unpack=True)
@@ -75,3 +74,33 @@ print('b_c = ', params_c[1], '+/-', errors_c[1])
 
 
 ########################################################################################
+#Aufgabenteil c: Ionisierung
+U_B_c, I_A_c = np.genfromtxt('Messdaten/aufg_c.txt', unpack=True)
+params_ioc, covariance_ioc = curve_fit(f,params_c[0]*U_B_c, I_A_c)
+errors_ioc = np.sqrt(np.diag(covariance_ioc))
+print('m_ion= ', params_ioc[0], '+/-', errors_ioc[0])
+print('b_ion= ', params_ioc[1], '+/-', errors_ioc[1])
+M = unp.uarray(params_ioc[0], errors_ioc[0])
+B = unp.uarray(params_ioc[1], errors_ioc[1])
+print(-B/M)
+
+#######################################################################################
+#Differentielle Energie T = 150°C
+x_, diff = np.genfromtxt('Messdaten/a_2_diff.txt', unpack=True)
+U_A_ = x_ * params_a_2[0]
+plt.plot(U_A_, diff, 'rx', label='differentiele Energieverteilung')
+plt.xlabel(r'Bremsspannung $U_{\mathrm{A}}/\si{\volt}$')
+plt.ylabel(r'Steigung')
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('Messdaten/aufgabea2.pdf')
+plt.clf()
+
+
+
+
+
+
+
+
+
