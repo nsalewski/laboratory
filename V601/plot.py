@@ -28,7 +28,7 @@ ascii.write([np.round(pos,1),np.round(steigung,2)],'Messdaten/steigii.tex',forma
 #print(steigung)
 #print(pos)
 plt.plot(pos, steigung, 'rx', label="differentielle Energieverteilung")
-plt.ylabel(r"$prop. zur Steigung$")
+plt.ylabel(r"prop. zur Steigung")
 plt.xlabel(r"$U_\mathrm{A}$/$\si{\volt}$")
 plt.legend(loc='best')
 plt.tight_layout()
@@ -121,8 +121,10 @@ print(-B/M)
 #Differentielle Energie T = 150°C
 x_, diff = np.genfromtxt('Messdaten/a_2_diff.txt', unpack=True)
 U_A_ = x_ * params_a_2[0]
+ascii.write([U_A_, diff],'Messdaten/franck2.tex',format='latex')
+
 plt.plot(U_A_, diff, 'rx', label='differentiele Energieverteilung')
-plt.xlabel(r'Bremsspannung $U_{\mathrm{A}}/\si{\volt}$')
+plt.xlabel(r'$U_{\mathrm{A}}/\si{\volt}$')
 plt.ylabel(r'prop. zur Steigung')
 plt.legend(loc='best')
 plt.tight_layout()
