@@ -25,6 +25,17 @@ sigma=Z-np.sqrt(E/R)
 print(sigma)
 print(theta)
 
+###########################################################################################
+# Absorptionsspektren
+#Germanium
+E_ge = h*c/(2*d*np.sin(16))
+print('E_Ge = ', E_ge/enull)
+
+#Gold
+E_au_beta = h*c/(2*d*np.sin(12.8))
+E_au_gamma = h*c/(2*d*np.sin(15.0))
+print('Gold', E_au_beta/enull, 'zweite:', E_au_gamma/enull)
+
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
 #f=f*1000
 #theta=(n*np.pi)/14
