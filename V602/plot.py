@@ -29,13 +29,26 @@ ascii.write([Z,E/enull,np.round(theta,2),np.round(sigma,2)],'Tabelle_literatur.t
 
 ###########################################################################################
 # Absorptionsspektren
+
+#Zink
+E_zi = h*c/(2*d*np.sin(20.2))
+print('E_ZI = ', E_zi/enull)
+
 #Germanium
-E_ge = h*c/(2*d*np.sin(16))
-print('E_Ge = ', E_ge/enull)
+E_ge = h*c/(2*d*np.sin(16.3))
+print('E_GE = ', E_ge/enull)
+
+#Brom
+E_br = h*c/(2*d*np.sin(13.35))
+print('E_BR = ', E_br/enull)
+
+#Zirkonium
+E_zr = h*c/(2*d*np.sin(10))
+print('E_ZR = ', E_zr/enull)
 
 #Gold
-E_au_beta = h*c/(2*d*np.sin(12.8))
-E_au_gamma = h*c/(2*d*np.sin(15.0))
+E_au_beta = h*c/(2*d*np.sin(13.0))
+E_au_gamma = h*c/(2*d*np.sin(15.2))
 print('Gold', E_au_beta/enull, 'zweite:', E_au_gamma/enull)
 
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
