@@ -4,7 +4,7 @@ In Tabelle \ref{tab:lit} sind die Literaturwerte der verwendeten Absorber einget
 Die Literaturwerte für die Energien $E_\mathrm{K,Lit}$ wurden hierbei \cite{lit} entnommen.
 Aus der Bragg-Bedingung ergibt sich durch Umformen und Ausnutzung des Zusammenhangs $\lambda=\frac{c}{\nu}=\frac{c\cdot h}{E}$ für den Glanzwinkel
 \begin{equation}
-	\theta=\arcsin{\frac{n\cdot \frac{c\cdot h}{E}}{2d}} \text{.}
+	\theta=\arcsin{\left(\frac{n\cdot \frac{c\cdot h}{E}}{2d}\right)} \text{.}
 \end{equation}
 Die Abschirmkonstante wurde jeweils nach Formel \eqref{eqn:schirm} bestimmt.
 \begin{table}
@@ -24,7 +24,8 @@ Au; L-III-Kante&79 & 11.92 & 14.97 & 60.1 \\
 \bottomrule
 \end{tabular}
 \end{table}
-
+Hierbei wurde das Plancksche Wirkungsquantum $h$ nach \cite{h}, die Elementarladung nach \cite{e} und die Lichtgeschwindigkeit nach \cite{c} verwendet.
+In den folgenden Messungen ergeben sich zum Teil Messunsicherheiten nur durch die Unsicherheit im Planckschen Wirkungsquantum. Da diese deutlich unterhalb der Messauflösung liegen, ist es nicht sinnvoll, diese Unsicherheit anzugeben, daher wird sie vernachlässigt.
 Zudem wurden nach \cite{UniG} die Literaturwerte für die Lage der Kennlinien bei einer Röntgenröhre mit Kupferanode verwendet, und erneut Glanzwinkel sowie Abschirmkonstante bestimmt. Die berechneten Theoriewerte finden sich in Tabelle \ref{tab2}.
 \begin{table}
 	\title{Literaturwerte zur Lage der Kennlinien des charakteristischen Spektrums der Rötgenröhre bei Verwendung einer Kupferanode ($Z=29$).}
@@ -77,18 +78,60 @@ Da ein fester Kristallwinkel von $\theta=14\textdegree$ für die Messung eingest
 \FloatBarrier
 \subsection{Das Emissionsspektrum der Kupfer-Röntgenröhre}
 \begin{figure}
-	\includegraphics[width=0.95\textwidth]{nIKO_und_jULIAN_ÜLADS/Kupferemission.png}
-	\caption{Aufgenommenes Emissionssspektrum der Cu-Röntgenröhre.}
-	\label{fig:kupfer}
-\end{figure}
-\begin{figure}
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/Kupfaemmision.jpg}
 	\caption{Aufgenommenes Emissionssspektrum der Kupfer-Röntgenröhre.}
 	\label{fig:emissionlol}
 \end{figure}
-
-
-
+In Abbildung \ref{fig:emissionlol} ist das aufgenommene Emissionsspektrum der Kupfer-Röntgenröhre dargestellt.
+Wie unschwer zu erkennen ist, war vor dem Geiger-Müller-Zählrohr bei der Messung des Emmissionsspektrum noch ein Absorber angebracht, die benötigten Kennlinien des Emissionsspektrum sind dennoch ebenso wie der Grenzwinkel noch eindeutig zu erkennen.
+Die beiden sehr großen Abweichungen vom kontinuierlichen Bremsspektrum bei etwa $\theta=7\textdegree$ und bei etwa $\theta=13.8\textdegree$ sind durch den Absorber verursacht.
+Aus den zu den Graphen gehörigen Messdaten wird das Maximum der $K_\beta$-Linie zu
+$\theta=20,4\textdegree$ und das Maximum der $K_\alpha$-Linie zu $\theta=22,6\textdegree$ bestimmt. Die zugehörigen Messdaten finden sich aus Übersichtlichkeitsgründen im Anhang.
+Der Beginn des Bremsspektrums wird nach den Messdaten bei $\theta_\mathrm{Grenz}=5.2\textdegree$ angenommen. Da das Bremsspektrum kontinuierlich ist, erstreckt es sich über alle Winkel größer dem Grenzwinkel.
+Über den Grenzwinkel lässt sich mit Formel \eqref{eqn:braggii} die minimale Wellenlänge der Röntenstrahlung bestimmt.
+Es ergibt sich:
+\begin{equation*}
+	 \lambda_\mathrm{min}=\SI{36.5}{\pico\meter} \text{.}
+\end{equation*}
+Über die Beziehung $E=\frac{h\cdot c}{\lambda}$ ergibt sich die maximale Energie der Röntgenstrahlung zu:
+\begin{equation*}
+	E_\mathrm{max}=\SI{33962}{\electronvolt} \text{.}
+\end{equation*}
+Aus den Messdaten im Anhang wird die Halbwertsbreite beider sichtbarer Linien des charakteristischen Spektrums entnommen.
+Hierfür werden die Maxima der beiden Kennlinien bestimmt und in gemessenen Impulsen pro Sekunde angegeben.
+Diese liegen bei $K_{\beta,mathrm{max}}=19 \, \frac{\mathrm{Imp}}{\si{\second}}$ und $K_{\alpha,mathrm{max}}=28 \, \frac{\mathrm{Imp}}{\si{\second}}$.
+Da für die Höhe des halben Maximums jeweils keine Messpunkte vorliegen, wird zwischen den beiden umliegenden Messpunkten eine Ausgleichsgrade bestimmt und für die halbe maximale Höhe der jeweiligen Kennlinie ausgewertet.
+\begin{table}
+	\centering
+	\caption{Daten zur Berechnung der Halbwertsbreite.}
+	\label{tab:moped}
+	\begin{tabular}{ccccc}
+		\toprule
+Kennlinie&Steigung $m$/$ \frac{\mathrm{Imp}}{\si{\second}}$&Achsenabschnitt $b$/ $\frac{Imp}{\si{\second}}$&$\theta$ in Grad&Energie $E_i$/$\si{\electronvolt}$\\
+\midrule
+		$K_{\alpha,\mathrm{1}}$&57.5&-2571.0& 22.48&8050.7 \\
+		$K_{\alpha,\mathrm{2}}$&20.0 &-895.0 &22.73&7967.9\\
+		$K_{\beta,\mathrm{1}}$&25.0&-992.0&20.03&8986.7\\
+		$K_{\beta,\mathrm{2}}$&23.3&-947.3&20.50&8787.8\\
+		\bottomrule
+\end{tabular}
+\end{table}
+Die Energieauflösung des Versuchs wird als kleinste aufzulösende Energie definiert.
+Da im vorliegenden Versuch Röntgenstrahlen gemessen werden, wäre die kleinstmögliche Auflösung zwischen zwei Röntgenquanten verschiedener Wellenlängen $\lambda_1$ und $\lambda_2$ gerade dadurch bestimmt, dass das Intensitätsmaximum von $\lambda_1$ genau im Intensitätsminimum von $\lambda_2$ liegen muss. Zwischen ihnen muss also genau die Wellenlängendifferenz vorliegen, die gleich der Halbwertsbreite des Intensitätsmaximum ist. Da die Wellenlänge verknüft ist mit der Energie über $\lambda=\frac{hc}{e}$, gilt selbiges für die zugehörigen Energien.
+Daher ergibt sich mit den ermittelten Daten nach Tabelle \ref{tab:moped} jeweils über $\Delta E=E_2-E_1$ die Energieauflösung der Messung.
+Die zu den Winkeln $\theta$ gehörigen Energien $E$ wurden erneut nach Formel \eqref{eqn:braggii} berechnet.
+Die Energieauflösung der Messung ergibt sich zu:
+\begin{gather*}
+	\Delta E_{\alpha}=\SI{82.8}{\electronvolt}\text{,}\\
+	\Delta E_{\beta}=\SI{198.9}{\electronvolt} \text{.}
+\end{gather*}
+Mit der Energiedifferenz $\Delta E_{\alpha-\beta}$ der $K_\alpha$-und $K_\beta$-Linie ergibt sich die Abschirmkonstante schließlich nach Formel \eqref{eqn:schirm}.
+Hierfür muss angenommen werden, dass $E_{\mathrm{K}_\beta}\approx E_\mathrm{K}(\sigma_1)$ gilt. Damit ergibt sich für das Energieniveau $E_\mathrm{K}(\sigma_2)=E_{\mathrm{K}_\beta}-E_{\mathrm{K}_\alpha}$.
+Es ergibt sich für die zugehörigen Abschirmzahlen aus den nach den Messdaten bestimmten Werten für $\theta_\alpha=22.6\textdegree$ und $\theta_\beta=20.4\textdegree$:
+\begin{gather*}
+	\sigma_1=3.71 \text{,}\\
+	\sigma_2=21.86 \text{.}
+\end{gather*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier

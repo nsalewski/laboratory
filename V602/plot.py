@@ -9,7 +9,6 @@ Z=np.asarray(Z)
 E=[8.048,8.028,8.905,9.65,11.1031,13.4737,15.1997,16.1046,17.9976,18.9856,13.7336,11.9187]
 E=np.asarray(E)
 E=E*1000
-print(E)
 enull=1.6021766208*10**(-19)
 R=13.6
 r=10973731.568508
@@ -20,13 +19,56 @@ Rzwo=r*h.nominal_value*c
 R=Rzwo
 E=E*enull
 a=1/137
-print(Z[0]-np.sqrt(E[0]/R))
 theta=(360/(2*np.pi))*(np.arcsin(((c*h.nominal_value)/(2*d*E))))
 sigma=Z-np.sqrt(E/R-(a**2*Z**4)/4)
 print(sigma)
 print(theta)
 ascii.write([Z,E/enull,np.round(theta,2),np.round(sigma,2)],'Tabelle_literatur.tex',format='latex')
+grenz=5.2*(2*np.pi/360)
+lambdi=2*d*np.sin(grenz)
+print("lambda min= ",lambdi)
+power=(h*c)/lambdi
+power=power/enull
+print("Emax= ",power)
+Etheo=35*1000
+Etheo=Etheo*enull
+ltheo=(h*c)/Etheo
+print("lamnda theo= ",ltheo )
+xalpha1=[44.8,45.2]
+yalpha1=[5.0,28.0]
+xalpha2=[45.5,46.0]
+yalpha2=[15.0,5.0]
+xbeta1=[40,40.4]
+ybeta1=[8.0,18.0]
+xbeta2=[41.2,41.5]
+ybeta2=[14.0,7.0]
+def ausgabe(x,y,peak):
+    m=np.sqrt(((y[0]-y[1])/(x[0]-x[1]))**2)
+    b=y[0]-m*x[0]
+    yval=peak/2
+    value=(yval-b)/m
+    value=value/2
+    vtheta=value*(2*np.pi/360)
+    Ehalb=(h*c)/(2*d*np.sin(vtheta))
+    Ehalb=Ehalb/enull
+    print(Ehalb)
+    #print(m)
+    #print(b)
+    print("Wert= ",value)
+betatheta=20.4*(2*np.pi/360)
+alphatheta=22.6*(2*np.pi/360)
+Ealpha=(h.nominal_value*c)/(2*d*np.sin(alphatheta))
+Ebeta=(h.nominal_value*c)/(2*d*np.sin(betatheta))
+sigmaone=29-np.sqrt(Ebeta/R-(a**2*29**4)/4)
+sigmazwo=29-np.sqrt((Ebeta-Ealpha)/R-(a**2*29**4)/4)
 
+print(sigmaone)
+print(sigmazwo)
+
+ausgabe(xalpha1,yalpha1,28)
+ausgabe(xalpha2,yalpha2,28)
+ausgabe(xbeta1,ybeta1,19)
+ausgabe(xbeta2,ybeta2,19)
 ###########################################################################################
 # Absorptionsspektren
 
