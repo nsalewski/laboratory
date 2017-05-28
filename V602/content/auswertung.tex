@@ -1,24 +1,64 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+In Tabelle \ref{tab:lit} sind die Literaturwerte der verwendeten Absorber eingetragen.
+Die Literaturwerte für die Energien $E_\mathrm{K,Lit}$ wurden hierbei \cite{lit} entnommen.
+Aus der Bragg-Bedingung ergibt sich durch Umformen und Ausnutzung des Zusammenhangs $\lambda=\frac{c}{\nu}=\frac{c\cdot h}{E}$ für den Glanzwinkel
+\begin{equation}
+	\theta=\arcsin{\frac{n\cdot \frac{c\cdot h}{E}}{2d}} \text{.}
+\end{equation}
+Die Abschirmkonstante wurde jeweils nach Formel \eqref{eqn:schirm} bestimmt.
+\begin{table}
+	\title{Literaturwerte zu den verwendeten Absorbern.}
+	\label{tab:lit}
+	\centering
+\begin{tabular}{ccccc}
+\toprule
+Absorber & $Z$ & $E_\mathrm{K,Lit}$/$\si{\kilo\electronvolt}$ & $\theta_\mathrm{K,Lit}$ in Grad&$\sigma_\mathrm{K,Lit}$ \\
+\midrule
+Zn&30 & 9.65 & 18.6 & 3.57 \\
+Ge&32 & 11.10 & 16.09 & 3.68 \\
+Br&35 & 13.47& 13.21 & 3.85 \\
+Zr&40 & 18.00 & 9.85 & 4.1 \\
+Au; L-II-Kante&79 & 13.73 & 12.95 & 56.85 \\
+Au; L-III-Kante&79 & 11.92 & 14.97 & 60.1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Zudem wurden nach \cite{UniG} die Literaturwerte für die Lage der Kennlinien bei einer Röntgenröhre mit Kupferanode verwendet, und erneut Glanzwinkel sowie Abschirmkonstante bestimmt. Die berechneten Theoriewerte finden sich in Tabelle \ref{tab2}.
+\begin{table}
+	\title{Literaturwerte zur Lage der Kennlinien des charakteristischen Spektrums der Rötgenröhre bei Verwendung einer Kupferanode ($Z=29$).}
+	\centering
+\begin{tabular}{cccc}
+\toprule
+ Kennlinie& $E_\mathrm{K,Lit}$/$\si{\electronvolt}$ & $\theta_\mathrm{K,Lit}$ in Grad&$\sigma_\mathrm{K,Lit}$ \\
+\midrule
+$K_\mathrm{\alpha,1}$& 8048.0 & 22.49 & 4.87 \\
+$K_\mathrm{\alpha,2}$& 8028.0 & 22.55 & 4.9 \\
+$K_\mathrm{\beta}$& 8905.0 & 20.22 & 3.6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
 
 \subsection{Überprüfung der Bragg-Bedingung}
 \begin{figure}
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/breck.jpg}
 	\caption{Gemessene Impulse in Abhängigkeit des abgelaufenen Winkels zur Überprüfung der Bragg-Bedingung.}
-	\label{fig:Braggi}
+	\label{fig:braeck}
 \end{figure}
 Zur Überprüfung der Bragg-Bedindung wird das Maximum der Messkurve in Plot \ref{fig:braeck} bestimmt.
 Um das Maximum möglichst genau bestimmen zu können sind die von der Messapparatur aufgenommenen Messdaten um das Maximum herum in Tabelle \ref{tab:bregg} aufgetragen.
-Das Maximum wird abgelesen zu $\theta=28.2$
-
-
+Das Maximum wird aus der Tabelle entnommen zu $\alpha_\mathrm{max}=2\cdot \theta=28.2\textdegree$.
+Da ein fester Kristallwinkel von $\theta=14\textdegree$ für die Messung eingestellt wurde, entspricht das gefundene Maximum fast genau dem Sollwinkel von $\alpha_\mathrm{Soll}=28\textdegree$ und die Bragg-Bedingung kann bestätigt werden.
 \begin{table}
-	\caption{title}
+	\centering
+	\caption{Aufgenommene Messdaten um das Maximum zur Bestätigung der Bragg-Bedingung.}
 	\label{tab:bregg}
 	\begin{tabular} {cc}
-		$2 \cdot \theta$ /$\textdegree$ &Impulse \\%blaa angaben in grad?
-		27,5	&36,0\\
-		27,6	&32,0\\
+		\toprule
+		$2 \cdot \theta$ /$\textdegree$ &Impulse/$\si{\second}$ \\%blaa angaben in grad?
+\midrule
 		27,7	&41,0\\
 		27,8	&38,0\\
 		27,9	&38,0\\
@@ -30,12 +70,17 @@ Das Maximum wird abgelesen zu $\theta=28.2$
 		28,5	&40,0\\
 		28,6	&41,0\\
 		28,7	&43,0\\
-		28,8	&37,0\\
+\bottomrule
 	\end{tabular}
 \end{table}
 
+\FloatBarrier
 \subsection{Das Emissionsspektrum der Kupfer-Röntgenröhre}
-
+\begin{figure}
+	\includegraphics[width=0.95\textwidth]{nIKO_und_jULIAN_ÜLADS/Kupferemission.png}
+	\caption{Aufgenommenes Emissionssspektrum der Cu-Röntgenröhre.}
+	\label{fig:kupfer}
+\end{figure}
 \begin{figure}
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/Kupfaemmision.jpg}
 	\caption{Aufgenommenes Emissionssspektrum der Kupfer-Röntgenröhre.}

@@ -6,7 +6,7 @@ from uncertainties import ufloat
 import uncertainties.unumpy as unp
 Z=[29,29,29,30,32,35,37,38,40,41,79,79]
 Z=np.asarray(Z)
-E=[8.048,8.028,8.905,9.65,11.1031,13.4737,15.1997,16.1046,17.9976,18.9856,13.739,11.925]
+E=[8.048,8.028,8.905,9.65,11.1031,13.4737,15.1997,16.1046,17.9976,18.9856,13.7336,11.9187]
 E=np.asarray(E)
 E=E*1000
 print(E)
@@ -19,11 +19,13 @@ h=ufloat(6.626070040*10**(-34),0.000000081*10**(-34))
 Rzwo=r*h.nominal_value*c
 R=Rzwo
 E=E*enull
+a=1/137
 print(Z[0]-np.sqrt(E[0]/R))
 theta=(360/(2*np.pi))*(np.arcsin(((c*h.nominal_value)/(2*d*E))))
-sigma=Z-np.sqrt(E/R)
+sigma=Z-np.sqrt(E/R-(a**2*Z**4)/4)
 print(sigma)
 print(theta)
+ascii.write([Z,E/enull,np.round(theta,2),np.round(sigma,2)],'Tabelle_literatur.tex',format='latex')
 
 ###########################################################################################
 # Absorptionsspektren
