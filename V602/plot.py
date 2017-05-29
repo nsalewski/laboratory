@@ -71,27 +71,66 @@ ausgabe(xbeta1,ybeta1,19)
 ausgabe(xbeta2,ybeta2,19)
 ###########################################################################################
 # Absorptionsspektren
+Ry = ufloat(13.605693009, 0.000000084)
 
 #Zink
-E_zi = h*c/(2*d*np.sin(20.2))
-print('E_ZI = ', E_zi/enull)
+E_zi = h*c/(2*d*np.sin(20.2*2*np.pi/360)*enull)
+print('E_ZI = ', E_zi)
+sigma_zn = 30-unp.sqrt(E_zi/Ry - (30**4)/(4*137**2))
+print('sigma_zn= ', sigma_zn)
 
 #Germanium
-E_ge = h*c/(2*d*np.sin(16.3))
-print('E_GE = ', E_ge/enull)
+E_ge = h*c/(2*d*np.sin(16.3*2*np.pi/360)*enull)
+print('E_GE = ', E_ge)
+sigma_ge = 32-unp.sqrt(E_ge/Ry - (32**4)/(4*137**2))
+print('sigma_ge= ', sigma_ge)
 
 #Brom
-E_br = h*c/(2*d*np.sin(13.35))
-print('E_BR = ', E_br/enull)
+E_br = h*c/(2*d*np.sin(13.35*2*np.pi/360)*enull)
+print('E_BR = ', E_br)
+sigma_br = 35-unp.sqrt(E_br/Ry - (35**4)/(4*137**2))
+print('sigma_br= ', sigma_br)
 
 #Zirkonium
-E_zr = h*c/(2*d*np.sin(10))
-print('E_ZR = ', E_zr/enull)
+E_zr = h*c/(2*d*np.sin(10*2*np.pi/360)*enull)
+print('E_ZR = ', E_zr)
+sigma_zr = 40-unp.sqrt(E_zr/Ry - (40**4)/(4*137**2))
+print('sigma_zr= ', sigma_zr)
 
 #Gold
-E_au_beta = h*c/(2*d*np.sin(13.0))
-E_au_gamma = h*c/(2*d*np.sin(15.2))
-print('Gold', E_au_beta/enull, 'zweite:', E_au_gamma/enull)
+E_au_beta = h*c/(2*d*np.sin(13.0*2*np.pi/360)*enull)
+E_au_gamma = h*c/(2*d*np.sin(15.2*2*np.pi/360)*enull)
+print('Gold', E_au_beta/enull, 'zweite:', E_au_gamma)
+sigma_au = 79-unp.sqrt(4*137*unp.sqrt((E_au_beta-E_au_gamma)/Ry)-5*(E_au_beta-E_au_gamma)/Ry) * (1+19/(32*137**2)*(E_au_gamma-E_au_beta)/Ry)**(1/2)
+print('SIGMAGOLD= ', sigma_au)
+
+#########################################################################################
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
 #f=f*1000
