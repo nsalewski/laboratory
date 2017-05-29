@@ -8,35 +8,36 @@ Aus der Bragg-Bedingung ergibt sich durch Umformen und Ausnutzung des Zusammenha
 \end{equation}
 Die Abschirmkonstante wurde jeweils nach Formel \eqref{eqn:schirm} bestimmt.
 \begin{table}
-	\title{Literaturwerte zu den verwendeten Absorbern.}
+	\caption{Literaturwerte zu den verwendeten Absorbern.}
 	\label{tab:lit}
 	\centering
 \begin{tabular}{ccccc}
 \toprule
-Absorber & $Z$ & $E_\mathrm{K,Lit}$/$\si{\kilo\electronvolt}$ & $\theta_\mathrm{K,Lit}$ in Grad&$\sigma_\mathrm{K,Lit}$ \\
+Absorber & $Z$ & $E_\mathrm{Lit}$/$\si{\kilo\electronvolt}$ & $\theta_\mathrm{Lit}$ in Grad&$\sigma_\mathrm{Lit}$ \\
 \midrule
-Zn&30 & 9.65 & 18.6 & 3.57 \\
-Ge&32 & 11.10 & 16.09 & 3.68 \\
-Br&35 & 13.47& 13.21 & 3.85 \\
-Zr&40 & 18.00 & 9.85 & 4.1 \\
+Zn; K-Kante&30 & 9.65 & 18.6 & 3.57 \\
+Ge; K-Kante&32 & 11.10 & 16.09 & 3.68 \\
+Br; K-Kante&35 & 13.47& 13.21 & 3.85 \\
+Zr; K-Kante&40 & 18.00 & 9.85 & 4.1 \\
 Au; L-II-Kante&79 & 13.73 & 12.95 & 56.85 \\
 Au; L-III-Kante&79 & 11.92 & 14.97 & 60.1 \\
 \bottomrule
 \end{tabular}
 \end{table}
-Hierbei wurde das Plancksche Wirkungsquantum $h$ nach \cite{h}, die Elementarladung nach \cite{e} und die Lichtgeschwindigkeit nach \cite{c} verwendet.
-In den folgenden Messungen ergeben sich zum Teil Messunsicherheiten nur durch die Unsicherheit im Planckschen Wirkungsquantum. Da diese deutlich unterhalb der Messauflösung liegen, ist es nicht sinnvoll, diese Unsicherheit anzugeben, daher wird sie vernachlässigt.
-Zudem wurden nach \cite{UniG} die Literaturwerte für die Lage der Kennlinien bei einer Röntgenröhre mit Kupferanode verwendet, und erneut Glanzwinkel sowie Abschirmkonstante bestimmt. Die berechneten Theoriewerte finden sich in Tabelle \ref{tab2}.
+Hierbei wurde das Plancksche Wirkungsquantum $h$ nach \cite{h}, die Elementarladung nach \cite{e} und die Lichtgeschwindigkeit nach \cite{c} verwendet.\\
+In den folgenden Messungen ergeben sich zum Teil Messunsicherheiten nur durch die Unsicherheit im Planckschen Wirkungsquantum. Da diese deutlich unterhalb der Messauflösung liegen, ist es nicht sinnvoll, diese Unsicherheit anzugeben, daher wird sie vernachlässigt.\\
+Zudem wurden nach \cite{UniG} die Literaturwerte für die Lage der Kennlinien bei einer Röntgenröhre mit Kupferanode verwendet, und erneut Glanzwinkel sowie Abschirmkonstante bestimmt. Die berechneten Theoriewerte finden sich in Tabelle \ref{tab:tab2}.
 \begin{table}
-	\title{Literaturwerte zur Lage der Kennlinien des charakteristischen Spektrums der Rötgenröhre bei Verwendung einer Kupferanode ($Z=29$).}
+	\caption{Literaturwerte zur Lage der Kennlinien des charakteristischen Spektrums der Rötgenröhre bei Verwendung einer Kupferanode ($Z=29$).}
+\label{tab:tab2}
 	\centering
 \begin{tabular}{cccc}
 \toprule
  Kennlinie& $E_\mathrm{K,Lit}$/$\si{\electronvolt}$ & $\theta_\mathrm{K,Lit}$ in Grad&$\sigma_\mathrm{K,Lit}$ \\
 \midrule
-$K_\mathrm{\alpha,1}$& 8048.0 & 22.49 & 4.87 \\
-$K_\mathrm{\alpha,2}$& 8028.0 & 22.55 & 4.9 \\
-$K_\mathrm{\beta}$& 8905.0 & 20.22 & 3.6 \\
+$K_\mathrm{\alpha,1}$& 8048& 22.49 & 4.87 \\
+$K_\mathrm{\alpha,2}$& 8028& 22.55 & 4.9 \\
+$K_\mathrm{\beta}$& 8905& 20.22 & 3.6 \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -44,6 +45,7 @@ $K_\mathrm{\beta}$& 8905.0 & 20.22 & 3.6 \\
 
 \subsection{Überprüfung der Bragg-Bedingung}
 \begin{figure}
+	\centering
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/breck.jpg}
 	\caption{Gemessene Impulse in Abhängigkeit des abgelaufenen Winkels zur Überprüfung der Bragg-Bedingung.}
 	\label{fig:braeck}
@@ -78,13 +80,14 @@ Da ein fester Kristallwinkel von $\theta=14\textdegree$ für die Messung eingest
 \FloatBarrier
 \subsection{Das Emissionsspektrum der Kupfer-Röntgenröhre}
 \begin{figure}
+	\centering
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/Kupfaemmision.jpg}
 	\caption{Aufgenommenes Emissionssspektrum der Kupfer-Röntgenröhre.}
 	\label{fig:emissionlol}
 \end{figure}
 In Abbildung \ref{fig:emissionlol} ist das aufgenommene Emissionsspektrum der Kupfer-Röntgenröhre dargestellt.
 Wie unschwer zu erkennen ist, war vor dem Geiger-Müller-Zählrohr bei der Messung des Emmissionsspektrum noch ein Absorber angebracht, die benötigten Kennlinien des Emissionsspektrum sind dennoch ebenso wie der Grenzwinkel noch eindeutig zu erkennen.
-Die beiden sehr großen Abweichungen vom kontinuierlichen Bremsspektrum bei etwa $\theta=7\textdegree$ und bei etwa $\theta=13.8\textdegree$ sind durch den Absorber verursacht.
+Die beiden sehr großen Abweichungen vom kontinuierlichen Bremsspektrum bei etwa $\theta=7\textdegree$ und bei etwa $\theta=13.8\textdegree$ sind durch den Absorber verursacht.\\
 Aus den zu den Graphen gehörigen Messdaten wird das Maximum der $K_\beta$-Linie zu
 $\theta=20,4\textdegree$ und das Maximum der $K_\alpha$-Linie zu $\theta=22,6\textdegree$ bestimmt. Die zugehörigen Messdaten finden sich aus Übersichtlichkeitsgründen im Anhang.
 Der Beginn des Bremsspektrums wird nach den Messdaten bei $\theta_\mathrm{Grenz}=5.2\textdegree$ angenommen. Da das Bremsspektrum kontinuierlich ist, erstreckt es sich über alle Winkel größer dem Grenzwinkel.
@@ -99,7 +102,7 @@ Es ergibt sich:
 \end{equation*}
 Aus den Messdaten im Anhang wird die Halbwertsbreite beider sichtbarer Linien des charakteristischen Spektrums entnommen.
 Hierfür werden die Maxima der beiden Kennlinien bestimmt und in gemessenen Impulsen pro Sekunde angegeben.
-Diese liegen bei $K_{\beta,mathrm{max}}=19 \, \frac{\mathrm{Imp}}{\si{\second}}$ und $K_{\alpha,mathrm{max}}=28 \, \frac{\mathrm{Imp}}{\si{\second}}$.
+Diese liegen bei $K_{\beta,\mathrm{max}}=19 \, \frac{\mathrm{Imp}}{\si{\second}}$ und $K_{\alpha,\mathrm{max}}=28 \, \frac{\mathrm{Imp}}{\si{\second}}$.
 Da für die Höhe des halben Maximums jeweils keine Messpunkte vorliegen, wird zwischen den beiden umliegenden Messpunkten eine Ausgleichsgrade bestimmt und für die halbe maximale Höhe der jeweiligen Kennlinie ausgewertet.
 \begin{table}
 	\centering
@@ -139,6 +142,7 @@ Es ergibt sich für die zugehörigen Abschirmzahlen aus den nach den Messdaten b
 
 \subsubsection{Absorber Zink}
 \begin{figure}
+	\centering
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/zink.jpg}
 	\caption{Aufgenommenes Absorptionsspektrum mit dem Absorber Zink.}
 	\label{fig:zink_absorber}
@@ -146,9 +150,9 @@ Es ergibt sich für die zugehörigen Abschirmzahlen aus den nach den Messdaten b
 Das Absorptionsspektrum von Zink ist in Abbildung \ref{fig:zink_absorber} aufgetragen.
 Es ergibt sich die K-Kante bei dem Winkel
 \begin{equation*}
-	\theta_{\mathrm{Zn,K}} = \SI{20,20}{\degree}
+	\theta_{\mathrm{Zn,K}} = \SI{20,2}{\degree}
 \end{equation*}
-als Mittelwert von $\SI{20,0}{\degree}$ und $\SI{20,4}{\degree}$. 
+als Mittelwert von $\SI{20,0}{\degree}$ und $\SI{20,4}{\degree}$.
 Mit Formel \eqref{eqn:braggii} und dem Zusammenhang $E = \frac{\symup{hc}}{\lambda}$,
 wobei $\symup{h}$
 das Planck'sche Wirkungsquantum und $\symup{c}$ die Lichtgeschwindigkeit im Vakuum ist, lässt
@@ -160,17 +164,18 @@ sich die Absorptionsenergie durch
 ermitteln.
 Damit ergibt sich die Absorptionsenergie von Zink zu
 \begin{equation*}
-	E_{\mathrm{Zn,K}} = \SI{8,9142038(1)}{\kilo\electronvolt} \mathrm{.}
+	E_{\mathrm{Zn,K}} = \SI{8,91}{\kilo\electronvolt} \mathrm{.}
 \end{equation*}
 Mit Formel \eqref{eqn:schirm} ergibt sich die Abschirmkonstante von Zink zu
 \begin{equation*}
-	\sigma_{\mathrm{Zn}} = \num{4,6151062(2)} \mathrm{.}
+	\sigma_{\mathrm{Zn}} = \num{4,62} \mathrm{.}
 \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \FloatBarrier
 \subsubsection{Absorber Germanium}
 \begin{figure}
+	\centering
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/germanium.jpg}
 	\caption{Aufgenommenes Absorptionsspektrum mit dem Absorber Germanium.}
 	\label{fig:germanium_absorber}
@@ -179,16 +184,16 @@ Das Absorptionsspektrum von Germanium ist in Abbildung \ref{fig:germanium_absorb
 dargestellt. Es wird die K-Kante als Mittelwert von $\theta_1 = \SI{16,0}{\degree}$ und
 $\theta_2 = \SI{16,6}{\degree}$ zu
 \begin{equation*}
-	\theta_{\mathrm{Ge,K}} = \SI{16,30}{\degree}
+	\theta_{\mathrm{Ge,K}} = \SI{16,3}{\degree}
 \end{equation*}
 bestimmt. Damit ergibt sich nach Formel \eqref{eqn:Absorptionsenergie} die Absorptionsenergie
 von Germanium zu
 \begin{equation*}
-	E_{\mathrm{Ge,K}} = \SI{10,9669527(1)}{\kilo\electronvolt} \mathrm{.}
+	E_{\mathrm{Ge,K}} = \SI{10,97}{\kilo\electronvolt} \mathrm{.}
 \end{equation*}
 Weiterhin lässt sich mit Formel \eqref{eqn:schirm} die Abschirmzahl von Germanium zu
 \begin{equation*}
-	\sigma_{\mathrm{Ge}} = \num{3,8559189(2)}
+	\sigma_{\mathrm{Ge}} = \num{3,86}
 \end{equation*}
 berechnen.
 
@@ -196,51 +201,54 @@ berechnen.
 \FloatBarrier
 \subsubsection{Absorber Brom}
 \begin{figure}
+	\centering
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/brom.jpg}
 	\caption{Aufgenommenes Absorptionsspektrum mit dem Absorber Brom.}
 	\label{fig:brom_absorber}
 \end{figure}
 Das Absorptionsspektrum von Brom ist in Abbildung \ref{fig:brom_absorber} dargestellt.
-Es ergibt sich wieder analog wie bei Zink und Germanium die K-Kante als Mittelwert von 
+Es ergibt sich wieder analog wie bei Zink und Germanium die K-Kante als Mittelwert von
 $\SI{13,1}{\degree}$ und $\SI{13,6}{\degree}$ zu
 \begin{equation*}
 	\theta_{\mathrm{Br,K}} = \SI{13,35}{\degree} \mathrm{.}
 \end{equation*}
-Damit ergbt sich die Absorptionsenergie mit Formel \eqref{eqn:Absorptionsenergie} zu
+Damit ergibt sich die Absorptionsenergie mit Formel \eqref{eqn:Absorptionsenergie} zu
 \begin{equation*}
-	E_{\mathrm{Br,K}} = \SI{13,3307626(2)}{\kilo\electronvolt} \mathrm{.}
+	E_{\mathrm{Br,K}} = \SI{13,33}{\kilo\electronvolt} \mathrm{.}
 \end{equation*}
-Die Abschirmkonstante ergbt sich analog wie zuvor zu
+Die Abschirmkonstante ergibt sich analog wie zuvor zu
 \begin{equation*}
-	\sigma_{\mathrm{Br}} = \num{4,0192817(2)} \mathrm{.}
+	\sigma_{\mathrm{Br}} = \num{4,02} \mathrm{.}
 \end{equation*}
 
 \FloatBarrier
 \subsubsection{Absorber Zirkonium}
 \begin{figure}
+	\centering
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/zirkonium.jpg}
 	\caption{Aufgenommenes Absorptionsspektrum mit dem Absorber Zirkonium.}
 	\label{fig:zirkonium_absorber}
 \end{figure}
-In Abbildung \ref{fig:zirkonium_absorber} ist das Absorptionsspektrum von Zirkonium 
+In Abbildung \ref{fig:zirkonium_absorber} ist das Absorptionsspektrum von Zirkonium
 dargestellt.
 Es ergibt sich die K-Kante bei
 \begin{equation*}
-	\theta_{\mathrm{Zr,K}} = \SI{10,00}{\degree} \mathrm{,}
+	\theta_{\mathrm{Zr,K}} = \SI{10,0}{\degree} \mathrm{,}
 \end{equation*}
 als Mittelwert von $\SI{9,7}{\degree}$ und $\SI{10,3}{\degree}$.
 Es ergibt sich die Absorptionsenergie von Zirkonium zu
 \begin{equation*}
-	E_{\mathrm{Zr,K}} = \SI{17,7258326(2)}{\kilo\electronvolt} \mathrm{.}
+	E_{\mathrm{Zr,K}} = \SI{17,73}{\kilo\electronvolt} \mathrm{.}
 \end{equation*}
 Es ergibt sich die Abschirmkonstante zu
 \begin{equation*}
-	\sigma_{\mathrm{Zr}} = \num{4,3808212(3)} \mathrm{.}
+	\sigma_{\mathrm{Zr}} = \num{4,38} \mathrm{.}
 \end{equation*}
 
 \FloatBarrier
 \subsubsection{Absorber Gold}
 \begin{figure}
+	\centering
 	\includegraphics[width=1.0\textwidth]{nIKO_und_jULIAN_ÜLADS/gold.jpg}
 	\caption{Aufgenommenes Absorptionsspektrum mit dem Absorber Gold.}
 	\label{fig:gold_absorber}
@@ -248,22 +256,56 @@ Es ergibt sich die Abschirmkonstante zu
 Das Absorptionsspektrum von Gold ist in Abbildung \ref{fig:gold_absorber} dargestellt.
 Es werden die L-Kanten bei
 \begin{gather*}
-	\theta_{\mathrm{Au,L}_{\mathrm{II}}} = \SI{13,00}{\degree} \mathrm{,} \\
-	\theta_{\mathrm{Au,L}_{\mathrm{III}}} = \SI{15,20}{\degree} \mathrm{,} \\
+	\theta_{\mathrm{Au,L}_{\mathrm{II}}} = \SI{13,0}{\degree} \mathrm{,} \\
+	\theta_{\mathrm{Au,L}_{\mathrm{III}}} = \SI{15,2}{\degree} \mathrm{,} \\
 \end{gather*}
 als Mittelwert von $\SI{12,8}{\degree}$ und $\SI{13,2}{\degree}$ bzw. $\SI{14,9}{\degree}$
 und $\SI{15,5}{\degree}$ abgelesen.
 Es ergeben sich mit Formel \eqref{eqn:Absorptionsenergie} wieder die Absorptionsenergien von
 Gold zu
 \begin{gather*}
-	E_{\mathrm{Au,L}_{\mathrm{II}}} = \SI{13,6832367(2)}{\kilo\electronvolt} \mathrm{,} \\
-	E_{\mathrm{Au,L}_{\mathrm{III}}} = \SI{11,7398362(1)}{\kilo\electronvolt} \mathrm{.} \\
+	E_{\mathrm{Au,L}_{\mathrm{II}}} = \SI{13,68}{\kilo\electronvolt} \mathrm{,} \\
+	E_{\mathrm{Au,L}_{\mathrm{III}}} = \SI{11,74}{\kilo\electronvolt} \mathrm{.} \\
 \end{gather*}
-Mit Formel \eqref{eqn:goldi} lässt sich die Abschirmkonstante von Gold zu 
+Mit Formel \eqref{eqn:goldi} lässt sich die Abschirmkonstante von Gold zu
 \begin{equation*}
-	\sigma_{\mathrm{Au}} = \num{2,7842411(2)}
+	\sigma_{\mathrm{Au}} = \num{2,78}
 \end{equation*}
 bestimmen.
 
 \subsubsection{Bestimmung der Rydbergkonstante}
+Zur Bestimmung der Rydbergkonstanten wird die Wurzel aus der Energie der bestimmten K-Kanten $\sqrt{E_\mathrm{K}}$ gegen die Kernladungszahlen $Z$ aufgetragen.
+Nach Gleichung \eqref{eqn:blubba} besteht zwischen beiden Größen ein linearer Zusammenhang mit der Wurzel der Rydberg-Energie als Vorfaktor.
+In Tabelle \ref{tab:ryd} finden sich die verwendeten Daten, in Abbildung \ref{fig:ryddi} sind selbige samt einer Ausgleichsgraden $y=m\cdot x+b$ graphisch dargestellt.
+Die Ausgleichsrechnung wurde mit python/scipy \cite{scipy} durchgeführt.
+Mit den Geradenparametern:
+\begin{gather*}
+	m=\sqrt{R_{\infty}}=\num{3.8(2)}\,\sqrt{\si{\electronvolt}} \text{,}
+	b= \num{-18(6)}\,\sqrt{\si{\electronvolt}} \text{,}
+\end{gather*}
+ergibt sich die Rydberg-Energie zu:
+\begin{equation}
+R_{\infty}= \SI{14(2)}{\electronvolt}\text{.}
+\end{equation}
+\begin{figure}
+	\centering
+	\includegraphics[width=0.92\textwidth]{R.pdf}
+	\caption{Lineare Ausgleichsrechnung zur bestimmung der Rydberg-Energie.}
+	\label{fig:ryddi}
+\end{figure}
 
+\begin{table}
+	\centering
+	\caption{Messdaten zur Bestimmung der Rydberg-Energie}
+	\label{tab:ryd}
+\begin{tabular}{cc}
+\toprule
+$E_\mathrm{K}$/$\sqrt{\si{\electronvolt}}$& Kernladungszahl $Z$ \\
+\midrule
+94.39& 30 \\
+104.74& 32 \\
+115.46& 35 \\
+133.15 & 40 \\
+\bottomrule
+\end{tabular}
+\end{table}

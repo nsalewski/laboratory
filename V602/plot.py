@@ -24,7 +24,7 @@ sigma=Z-np.sqrt(E/R-(a**2*Z**4)/4)
 print(sigma)
 print(theta)
 ascii.write([Z,E/enull,np.round(theta,2),np.round(sigma,2)],'Tabelle_literatur.tex',format='latex')
-grenz=5.2*(2*np.pi/360)
+grenz=5*(2*np.pi/360)
 lambdi=2*d*np.sin(grenz)
 print("lambda min= ",lambdi)
 power=(h*c)/lambdi
@@ -105,54 +105,24 @@ sigma_au = 79-unp.sqrt(4*137*unp.sqrt((E_au_beta-E_au_gamma)/Ry)-5*(E_au_beta-E_
 print('SIGMAGOLD= ', sigma_au)
 
 #########################################################################################
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
-#f=f*1000
-#theta=(n*np.pi)/14
-#w=f*2*np.pi
-#L=1.217*1/10**3
-#C=20.13*1/10**9
-#thetaplot = np.linspace(0, 3)
-#
-#def theorie(theta):
-#    return np.sqrt(2/(L*C)*(1-np.cos(theta)))
-#
-#ascii.write([n,f/1000,np.round(f*2/1000*np.pi,1),np.round(theta,2)], 'Messdaten/tab_b1.tex', format="latex",
-#            names=['n','frequenz','kreis','theta'])
-#
-#
-#plt.plot(theta, w/1000, 'rx', label="Messwerte")
-#plt.plot(thetaplot, theorie(thetaplot)/1000, 'b-', label="Theoriekurve")
-#
-#plt.ylabel(r"$\omega/\si{\kilo\hertz}$")
-#plt.xlabel(r"$\theta/\si{\radian}$")
-#plt.legend(loc='best')
-#plt.tight_layout()
-#plt.savefig('Bilder/b1.pdf')
-#
+Ek=[8.91,10.97,13.33,17.73]
+Ek=np.asarray(Ek)*1000
+Z=[30,32,35,40]
+Zls=np.linspace(29,41)
+def theorie(x,m,b):
+    return m*x+b
+ascii.write([np.sqrt(Ek),Z],'tab_007.tex',format='latex',names=["wurzel e","Z"])
+plt.plot(Z,np.sqrt(Ek), 'rx', label="Messwerte")
+params, covariance = curve_fit(theorie,Z,np.sqrt(Ek))
+errors = np.sqrt(np.diag(covariance))
+ryd=ufloat(params[0],errors[0])
+ryd=ryd**2
+print('m= Rydbeck=',ryd)
+print('b=',params[1],errors[1])
+plt.plot(Zls, params[0]*Zls+params[1], 'b-', label="Lineare Regression")
+plt.ylabel(r"$\sqrt{E_\mathrm{K}}$/$\sqrt{\si{\electronvolt}}$")
+plt.xlabel(r"Kernladungszahl $Z$")
+plt.xlim(29,41)
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('R.pdf')
