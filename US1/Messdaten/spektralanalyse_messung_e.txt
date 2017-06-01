@@ -1,0 +1,4 @@
+#peaks; laufzeit in mikrosekunden;
+1   30.41
+2   34.87
+3   42.32
