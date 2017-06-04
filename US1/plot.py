@@ -4,11 +4,17 @@ from scipy.optimize import curve_fit
 from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
+pos1=1.374E+00
+pos2=1.211E+02
+print (pos2-pos1)
 def form(t,c):
     return 0.5*c*t
 def theorie(x,m,b):
     return m*x+b
-
+s=120.5*10**(-3)
+t=88.69*10**(-6)
+c=2*s/t
+print("Schallgeschwindigkeit=",c)
 s,t=np.genfromtxt("Messdaten/laufzeit.txt", unpack=True)
 s=s*10**(-3)
 t=t*10**(-6)
