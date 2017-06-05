@@ -84,6 +84,14 @@ plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Messdaten/amplitude.pdf')
 plt.clf()
+###############################################################################################
+c_ = [2717, 2738, 2770]
+t = [30.41*10**(-6), 34.87*10**(-6), 42.32*10**(-6)]
+print('c = ', np.mean(c_), '+/-', np.std(c_))
+c__ = unp.uarray(np.mean(c_), np.std(c_))
+print('s = ', 1/2 * c * t[0])
+print('s = ', 1/2 * c * t[1])
+print('s = ', 1/2 * c * t[2])
 
 ###############################################################################################
 #Bestimmung der Abstände im Auge:
@@ -92,14 +100,14 @@ c_GK = 1410
 n,t=np.genfromtxt('Messdaten/auge.txt', unpack=True)
 t=t*10**(-6)
 
-Strecke_Hornhaut_AnfangLinse = 1/2 * c_GK * (t[1]-t[0])
-Strecke_Hornhaut_EndeLinse = 1/2 * c_L * (t[2]-t[1]) + Strecke_Hornhaut_AnfangLinse
-Strecke_Hornhaut_Retina = 1/2 * c_GK * (t[3]-t[2]) + Strecke_Hornhaut_EndeLinse
-print('Abstand Hornhaut Anfang Linse= ', Strecke_Hornhaut_AnfangLinse)
-print('Avstand Hornhaut Ende Linse= ', Strecke_Hornhaut_EndeLinse)
-print('Abstand Hornhaut Retina= ', Strecke_Hornhaut_Retina)
-print(t)
-
+s_1 = 1/2 * c_GK * (t[1]-t[0])
+s_2 = 1/2 * c_GK * (t[2]-t[1])
+s_3 = 1/2 * c_L * (t[3]-t[2]) + s_2
+s_4 = 1/2 * c_GK * (t[4]-t[3]) + s_3
+print('s_1= ', s_1)
+print('s_2= ', s_2)
+print('s_3= ', s_3)
+print('s_4= ', s_4)
 ###############################################################################################
 
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
