@@ -77,7 +77,7 @@ s_ls=s_ls*10**(-3)
 plt.plot(s*10**3, np.log(a1/a2), 'rx', label="Messwerte")
 plt.plot(s_ls*10**3, theorie(s_ls,*params), 'b-', label="Theoriekurve")
 plt.xlim(25,88)
-plt.ylabel(r"$\ln\left(\frac{I(x)}{I_0}\right)$")
+plt.ylabel(r"$\ln\left(\frac{I(s)}{I_0}\right)$")
 plt.xlabel(r"$s$/$\si{\milli\meter}$")
 
 plt.legend(loc='best')

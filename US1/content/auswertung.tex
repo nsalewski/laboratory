@@ -11,49 +11,51 @@
 \begin{figure}
   \centering
   \includegraphics{Messdaten/a.jpg}
-  \caption{Plot.}
+  \caption{Amplituden-Scan zur Bestimmung der Schallgeschwindigkeit im Probenmaterial.}
   \label{fig:a1}
 \end{figure}
 Zur Bestimmung der Schallgeschwindigkeit im Material der vorliegenden Acrylzylinder wird die Länge eines Zylinders vermessen und die Zeitdifferenz $\Delta t$ zwischen zwei Impulsen bestimmt.
 In Abbildung \ref{fig:a1} ist der Amplituden-Scan der Messung dargestellt.
-Die Zeitdifferenz zwischen den beiden Maxima wird mithilfe der Cursor bestimmt zu
+Die Zeitdifferenz zwischen den beiden Maxima bei $t_1=\SI{0.51}{\micro\second}$ und $t_2=\SI{89.20}{\micro\second}$ wird mithilfe der Cursor bestimmt zu
 \begin{equation}
   \Delta t=\SI{88.69}{\micro\second} \text{.}
 \end{equation}
-Die Amplitudenhöhe wurde nicht vermessen, da nicht bekannt ist, wie die Verstärkung des Signals herausgerechnet werden muss.
+Die Amplitudenhöhe wurde nicht vermessen, da nicht bekannt ist, wie die Verstärkung des Signals herausgerechnet werden muss.\\
 Über die gemessene Länge des Acrylzylinders $s=\SI{120.5}{\milli\meter}$ ergibt sich mit Formel \eqref{eqn:laufzeit} eine Schallgeschwindigkeit von
 \begin{equation}
   v_{\mathrm{Schall}}=\SI{2717.33}{\meter\per\second} \text{.}
 \end{equation}
-Da es zahlreiche unterschiedliche Literaturwerte für die Schallgeschwindigkeit in Acryl gibt, wird, dem Messergebnis folgend, für die folgende Messung eine Schallgeschwindigkeit von $v_{\mathrm{Schall}}=\SI{2720}{\meter\per\second}$ in das Messprogramm eingetragen.
+Da es zahlreiche unterschiedliche Literaturwerte für die Schallgeschwindigkeit in Acryl gibt, wird, auf Anraten der Versuchsleitung, für die folgende Messung eine Schallgeschwindigkeit von $v_{\mathrm{Schall}}=\SI{2720}{\meter\per\second}$ in das Messprogramm eingetragen.
 Mit diesem Wert ist das Programm schließlich in der Lage, die Eindringtiefe der Schallwelle in das Material zu bestimmen.
 Der Abstand zwischen den beiden Peaks entspricht dann der Länge des Acrylstabs.
 Die durch das Programm berechnete Länge ergibt sich zu
 \begin{equation}
-  s=\SI{119.726}{\milli\meter} \text{.}
+  s=\SI{119.73}{\milli\meter} \text{.}
 \end{equation}
 \FloatBarrier
 
 \subsection{Schallgeschwindigkeit über Impuls-Echo-Verfahren}
-Die Zylinderlängen $s$ der mittels Impuls-Echo-Verfahrens vermessenen Zylinder samt der zugehörigen gemessenen Laufzeiten $t$ findet sich in Tabelle \ref{tab:iev}. In Abbildung \ref{fig:iev} sind die Zylinderlängen gegen die Laufzeiten aufgetragen. Nach Formel \eqref{eqn:laufzeit} besteht ein linearer Zusammenhang zwischen der Zylinderlänge und der Laufzeit.
+Die Zylinderlängen $s$ der mittels Impuls-Echo-Verfahrens vermessenen Zylinder samt der zugehörigen gemessenen Laufzeiten $t$ findet sich in Tabelle \ref{tab:iev}. In Abbildung \ref{fig:iev} sind die Zylinderlängen gegen die Laufzeiten aufgetragen.
+Hierbei wurde der Messpunkt bei $t=\SI{82.6}{\micro\second}$ bei der Berechnung der Schallgeschwindigkeit vernachlässigt, da er deutlich vom linearen Verlauf abweicht und das Ergebnis deutlich verschlechtert.
+Nach Formel \eqref{eqn:laufzeit} besteht ein linearer Zusammenhang zwischen der Zylinderlänge und der Laufzeit.
 Mit python/scipy \cite{scipy} wird daher eine lineare Ausgleichsrechnung nach
 \begin{equation}
   y=m\cdot x +b
 \end{equation}
-durchgeführt.
+durchgeführt.\\
 Aus dem doppelten Steigungsparameter $m$ ergibt sich die Schallgeschwindigkeit $c_\mathrm{IE}$.
 \begin{gather*}
-2 \cdot m=c_\mathrm{IE}=  \SI{2738(11)}{\meter\per\second} \text{,}
+2 \cdot m=c_\mathrm{IE}=  \SI{2738(11)}{\meter\per\second} \text{,}\\
 b=  \SI{11(3)}{\micro\meter} \text{.}
 \end{gather*}
 Der Geradenparameter $b$ ist von Null verschieden, da eine Anpassungsschicht zwischen der Sonde und dem Zylinder vorliegt. Die Ausgleichsgrade ist daher nach rechts verschoben. Die Dicke der Anpassungsschicht entspricht dabei dem Geradenparameter $b$.
 \begin{table}
   \centering
-  \caption{bla}
+  \caption{Messdaten zur Bestimmung der Schallgewschindigkeit über das Impuls-Echo-Verfahren.}
   \label{tab:iev}
   \begin{tabular}{cc}
     \toprule
-    s & t \\
+    $s$/$\si{\milli\meter}$ & $t$/$\si{\micro\second}$ \\
     \midrule
     102.7 & 76.12 \\
     80.7 & 59.4 \\
@@ -70,7 +72,7 @@ Der Geradenparameter $b$ ist von Null verschieden, da eine Anpassungsschicht zwi
 \begin{figure}
   \centering
   \includegraphics{Messdaten/ascan.pdf}
-  \caption{Plot.}
+  \caption{Messdaten samt Ausgleichsgrade zur Bestimmung der Schallgeschwindigkeit über das Impuls-Echo-Verfahren.}
   \label{fig:iev}
 \end{figure}
 \FloatBarrier
@@ -81,23 +83,23 @@ In Tabelle \ref{tab:durchschall} finden sich die Längen der vermessenen Zylinde
 In Abbildung \ref{fig:durchschall} sind die Längen der Zylinder $s$ gegen die zugehörigen Laufzeiten $t$ geplottet. Mittels python/scipy \cite{scipy} wird eine lineare Ausgleichsrechnung durchgeführt.
 Nach Formel \eqref{eqn:laufzeit} ergibt sich die Schallgeschwindigkeit der Durchschallmessung $c_\mathrm{DS}$ aus dem doppelten Steigungsparameter $m$ zu:
 \begin{gather*}
-  2\cdot m=c_\mathrm{DS}=  \SI{2770(40)}{\meter\per\second}
-  b= \SI{-53(11)}{\micro\meter}
+  2\cdot m=c_\mathrm{Ds}=  \SI{2770(40)}{\meter\per\second}\text{,}\\
+  b= \SI{-53(11)}{\micro\meter}\text{.}
 \end{gather*}
 Der Geradenparameter $b$ ist von null verschieden. Dies entsteht durch die Dicke der Anpassungsschicht beider Sonden.
 \begin{figure}
   \centering
   \includegraphics{Messdaten/d.pdf}
-  \caption{Plot.}
+  \caption{Messdaten samt Ausgleichsgrade zur Bestimmung der Schallgeschwindigkeit über das Durchschallungsverfahren.}
   \label{fig:durchschall}
 \end{figure}
 \begin{table}
   \centering
-  \caption{bla}
+  \caption{Messdaten zur Bestimmung der Schallgewschindigkeit über das Durchschallungsverfahren.}
   \label{tab:durchschall}
 \begin{tabular}{cc}
   \toprule
-s & t \\
+$s$/$\si{\milli\meter}$ & $t$/$\si{\micro\second}$ \\
 \midrule
 61.5 & 24.62 \\
 40.15 & 16.3 \\
@@ -119,18 +121,18 @@ Es besteht daher ein lineares Verhältnis zwischen der Dämpfungskonstante und d
 In Tabelle \ref{tab:daempf} finden sich in die verwendeten Messdaten und in Abbildung \ref{fig:daempf} ist der Logarithmus des Amplitudenverhältnis aufgetragen gegen die Länge der Acrylstäbe aufgetragen.
 Mittels einer linearer Ausgleichsrechnung mit python/scipy \cite{scipy} ergibt sich die Dämpfungskonstante aus der Steigung der Ausgleichsgrade:
 \begin{gather*}
--m=\alpha=\SI{47(2)}{\per\meter} \text{,}
+-m=\alpha=\SI{47(2)}{\per\meter} \text{,}\\
 b=  \num{0.28(14)}\text{.}
 \end{gather*}
 
 
 \begin{table}
 \centering
-\caption{bla}
+\caption{Messdaten zur Bestimmung der Dämpfungskonstante $\alpha$.}
 \label{tab:daempf}
 \begin{tabular}{cccc}
   \toprule
-s & a1 & a2 & ln(a1/a2) \\
+$s$/$\si{\milli\meter}$ & $I(s)$/$\si{\volt}$ & $I_0$/$\si{\volt}$ & $ln\left(\frac{I(s)}{I_0}\right)$ \\
 \midrule
 80.7 & 0.986 & 0.018 & 4.00328459671 \\
 80.5 & 0.987 & 0.019 & 3.95023106027 \\
@@ -145,7 +147,7 @@ s & a1 & a2 & ln(a1/a2) \\
 \begin{figure}
   \centering
   \includegraphics{Messdaten/amplitude.pdf}
-  \caption{Plot.}
+  \caption{Messpunkte samt Ausgleichsgrade zur Bestimmung der Dämpfungskonstante $\alpha$.}
   \label{fig:daempf}
 \end{figure}
 \FloatBarrier
