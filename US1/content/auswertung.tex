@@ -1,6 +1,6 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-
+\FloatBarrier
 %\begin{figure}
 %  \centering
 %  \includegraphics{plot.pdf}
@@ -10,7 +10,7 @@
 \subsection{Konfiguration des Messprogramms}
 \begin{figure}
   \centering
-  \includegraphics{Messdaten/a.jpg}
+  \includegraphics[width=\textwidth]{Messdaten/a.jpg}
   \caption{Amplituden-Scan zur Bestimmung der Schallgeschwindigkeit im Probenmaterial.}
   \label{fig:a1}
 \end{figure}
@@ -25,7 +25,7 @@ Die Amplitudenhöhe wurde nicht vermessen, da nicht bekannt ist, wie die Verstä
 \begin{equation}
   v_{\mathrm{Schall}}=\SI{2717.33}{\meter\per\second} \text{.}
 \end{equation}
-Da es zahlreiche unterschiedliche Literaturwerte für die Schallgeschwindigkeit in Acryl gibt, wird, auf Anraten der Versuchsleitung, für die folgende Messung eine Schallgeschwindigkeit von $v_{\mathrm{Schall}}=\SI{2720}{\meter\per\second}$ in das Messprogramm eingetragen.
+Da es zahlreiche unterschiedliche Literaturwerte für die Schallgeschwindigkeit in Acryl gibt, wird für die folgende Messung eine Schallgeschwindigkeit von $v_{\mathrm{Schall}}=\SI{2720}{\meter\per\second}$ angenommen und in das Messprogramm eingetragen.
 Mit diesem Wert ist das Programm schließlich in der Lage, die Eindringtiefe der Schallwelle in das Material zu bestimmen.
 Der Abstand zwischen den beiden Peaks entspricht dann der Länge des Acrylstabs.
 Die durch das Programm berechnete Länge ergibt sich zu
@@ -81,7 +81,7 @@ Der Geradenparameter $b$ ist von Null verschieden, da eine Anpassungsschicht zwi
 Die Schallgeschwindigkeit wird mittels des Durschallungsverfahren erneut bestimmt.
 In Tabelle \ref{tab:durchschall} finden sich die Längen der vermessenen Zylinder sowie die zugehörigen gemessenen Laufzeiten.
 In Abbildung \ref{fig:durchschall} sind die Längen der Zylinder $s$ gegen die zugehörigen Laufzeiten $t$ geplottet. Mittels python/scipy \cite{scipy} wird eine lineare Ausgleichsrechnung durchgeführt.
-Nach Formel \eqref{eqn:laufzeit} ergibt sich die Schallgeschwindigkeit der Durchschallmessung $c_\mathrm{DS}$ aus dem doppelten Steigungsparameter $m$ zu:
+Nach Formel \eqref{eqn:laufzeit} ergibt sich die Schallgeschwindigkeit der Durchschallmessung $c_\mathrm{Ds}$ aus dem doppelten Steigungsparameter $m$ zu:
 \begin{gather*}
   2\cdot m=c_\mathrm{Ds}=  \SI{2770(40)}{\meter\per\second}\text{,}\\
   b= \SI{-53(11)}{\micro\meter}\text{.}
@@ -117,7 +117,7 @@ Es lässt sich Formel \eqref{eqn:dampf} umformen zu:
 \begin{equation}
   \ln{\left( \frac{I(x)}{I_0}\right)}=-\alpha x \text{.}
 \end{equation}
-Es besteht daher ein lineares Verhältnis zwischen der Dämpfungskonstante und dem Logarithmus des Amplitudenverhältnis.
+Es besteht daher ein linearer Zusammenhang zwischen der Dämpfungskonstante und dem Logarithmus des Amplitudenverhältnis.
 In Tabelle \ref{tab:daempf} finden sich in die verwendeten Messdaten und in Abbildung \ref{fig:daempf} ist der Logarithmus des Amplitudenverhältnis aufgetragen gegen die Länge der Acrylstäbe aufgetragen.
 Mittels einer linearer Ausgleichsrechnung mit python/scipy \cite{scipy} ergibt sich die Dämpfungskonstante aus der Steigung der Ausgleichsgrade:
 \begin{gather*}
@@ -156,15 +156,15 @@ $s$/$\si{\milli\meter}$ & $I(s)$/$\si{\volt}$ & $I_0$/$\si{\volt}$ & $ln\left(\f
 Das aufgenommene Cepstrum ist in Abbildung \ref{fig:cepstrum} dargestellt.
 \begin{figure}
   \centering
-  \includegraphics{Messdaten/cepstrum.jpg}
+  \includegraphics[width=\textwidth]{Messdaten/cepstrum.jpg}
   \caption{Cepstrum.}
   \label{fig:cepstrum}
 \end{figure}
 Die Laufzeiten der drei zu bestimmenden Mehrfachreflexionen sind mit der Cursorfunktion
-aufgenommen worden. Um die Dicke der Acrylplatten zu berechnen, wird der Mittelwert der 
-bisher bestimmten Schallgeschwindigkeiten verwendet. Er ergibt sich zu
+aufgenommen worden. Um die Dicke der Acrylplatten zu berechnen, wird der Mittelwert der
+bisher bestimmten Schallgeschwindigkeiten ($c_\mathrm{Ds}$ und $c_\mathrm{IE}$) verwendet. Er ergibt sich zu
 \begin{equation*}
-	\bar{c} = \SI{2742(22)}{\meter\per\second} \mathrm{.}
+	\bar{c} = \SI{2754(16)}{\meter\per\second} \mathrm{.}
 \end{equation*}
 Mit Formel \eqref{eqn:laufzeit} lassen sich die zugehörigen Längen berechnen.
 In Tabelle \ref{tab:cepstrum} sind die Laufzeiten mit den zugehörigen abgelaufenen Strecken
@@ -212,7 +212,7 @@ Es ergibt sich also eine im Rahmen der Messgenauigkeit sehr geringe Abweichung d
 und der aus dem Ceptrum bestimmten Dicke der Platten.
 \begin{figure}
   \centering
-  \includegraphics{Messdaten/fft.jpg}
+  \includegraphics[width=\textwidth]{Messdaten/fft.jpg}
   \caption{Spektrum der Sonde.}
   \label{fig:spektrum}
 \end{figure}
@@ -222,7 +222,7 @@ und der aus dem Ceptrum bestimmten Dicke der Platten.
 \subsection{Biometrische Untersuchung eines Augenmodells}
 \begin{figure}
   \centering
-  \includegraphics{Messdaten/auge_ascan.jpg}
+  \includegraphics[width=\textwidth]{Messdaten/auge_ascan.jpg}
   \caption{A-Scan des Augenmodells.}
   \label{fig:auge_ascan}
 \end{figure}
@@ -236,12 +236,12 @@ zu
 	t_5 &= \SI{71,02}{\micro\second}
 \end{align*}
 bestimmt. Die Peaks kommen durch die Reflexionen an der Oberfläche des Modells, der Iris, der
-Vorder- bzw. Rückseite der Linse und der Retina zustande. Die Abstände werden unter 
-Berücksichtung der unterschiedlichen Schallgeschwindigkeiten in der Linse ($c_{\mathrm{L}} = 
-\SI{2500}{\meter\per\second}$) und in der Glaskörperflüssigkeit ($c_{\mathrm{GK}} = 
+Vorder- bzw. Rückseite der Linse und der Retina zustande. Die Abstände werden unter
+Berücksichtung der unterschiedlichen Schallgeschwindigkeiten in der Linse ($c_{\mathrm{L}} =
+\SI{2500}{\meter\per\second}$) und in der Glaskörperflüssigkeit ($c_{\mathrm{GK}} =
 \SI{1410}{\meter\per\second}$) mit Formel \eqref{eqn:laufzeit} berechnet.
-Der Abstand $s_1$ wird als Abstand zwischen der Oberfläche des Modells und der Iris 
-definiert. Die darauffolgenden Abstände sind von der Iris aus bis zur Vorder- bzw. Rückseite 
+Der Abstand $s_1$ wird als Abstand zwischen der Oberfläche des Modells und der Iris
+definiert. Die darauffolgenden Abstände sind von der Iris aus bis zur Vorder- bzw. Rückseite
 der Linse und der Retina angegeben. Es ergeben sich die Abstände:
 \begin{align*}
 	s_1 &= \SI{6,26}{\milli\meter} \mathrm{,} \\
