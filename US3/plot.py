@@ -16,9 +16,18 @@ import uncertainties.unumpy as unp
 
 def local_plot(fname,pname):
     t,I,f=np.genfromtxt("Messdaten/b_{}.txt".format(fname),unpack=True)
-    t=t*3/2
-    t_ls=np.linspace(np.min(t)-0.1*(np.max(t)-np.min(t)),np.max(t)+0.1*(np.max(t)-np.min(t)))
-    plt.plot(t, I, 'rx', label="Messwerte für P={}\%".format(pname))
+
+    a=80.06411626# nach vorbereitung
+    api=a*2*np.pi/360
+    f0=2*10**6
+    c=1800
+    v=f/(2*f0)*c/np.cos(api)
+    e=t-12.29
+    e=e*1.798
+    e=e+12.29*2.7
+    ascii.write([t,np.round(e,1),I,f,np.round(v,3)],'Messdaten/tab_{}'.format(fname),format='latex',names=[r"Eindringtiefe in sec",r"Eindringtiefe/$\si{\milli\meter}$",r"$I_\mathrm{S}$/$\si{\square\volt\per\second}$",r"$\Delta \nu$/$\si{\Hz}$",r"momentane Geschwindigkeit/$\si{\meter\per\second}$"])
+    t_ls=np.linspace(np.min(e)-0.1*(np.max(e)-np.min(e)),np.max(e)+0.1*(np.max(e)-np.min(e)))
+    plt.plot(e, I, 'rx', label="Messwerte für P={}\%".format(pname))
     plt.ylabel(r"$I_\mathrm{S}$/$\si{\square\volt\per\second}$")
     plt.xlabel(r"$x/\si{\milli\meter}$")
     plt.legend(loc='best')
@@ -26,14 +35,13 @@ def local_plot(fname,pname):
     plt.savefig('Bilder/I{}.pdf'.format(fname))
     plt.clf()
 
-    plt.plot(t, f, 'rx', label="Messwerte für P={}\%".format(pname))
-    plt.ylabel(r"$\Delta \nu$/$\si{\Hz}$")
+    plt.plot(e, v, 'rx', label="Messwerte für P={}\%".format(pname))
+    plt.ylabel(r"$v$/$\si{\meter\per\second}$")
     plt.xlabel(r"$x/\si{\milli\meter}$")
     plt.legend(loc='best')
     plt.tight_layout()
     plt.savefig('Bilder/f{}.pdf'.format(fname))
     plt.clf()
-    ascii.write([t,I,f],'Messdaten/tab_{}'.format(fname),format='latex',names=[r"Eindringtiefe/$\si{\milli\meter}$",r"$I_\mathrm{S}$/$\si{\square\volt\per\second}$",r"$\Delta \nu$/$\si{\Hz}$"])
 local_plot(70,70)
 local_plot('45-2','45.2')
 
