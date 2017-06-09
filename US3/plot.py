@@ -5,11 +5,25 @@ from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
 
+#########################################################
+P ,f15, f30, f60, m15, m30, m60, d15, d30, d60=np.genfromtxt("Messdaten/a.txt", unpack=True)
+# Delta v = 2 v0 v/c cos(a)
+v0 = 2*10**6
+c = 1800
+
+def local_pace(Delta, a):
+    return Delta * c/(2*v0*np.cos(a))
 
 
+print(local_pace(f15[0], 15))
 
+ploty = []
+for i in range(0, 4):
+    ploty[i]=f15[i]/np.cos(15)
+    ploty[i+3]=f30[i]/np.cos(30)
+    ploty[i+6]=f60[i]/np.cos(60)
 
-
+print(ploty)
 
 ########################################################
 #Strömungsprofil
