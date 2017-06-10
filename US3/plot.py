@@ -5,33 +5,67 @@ from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
 
+######
+def theorie(x,m,b):
+    return m*x+b
 #########################################################
 P ,f15, f30, f60, m15, m30, m60, d15, d30, d60=np.genfromtxt("Messdaten/a.txt", unpack=True)
 # Delta v = 2 v0 v/c cos(a)
+f15=np.absolute(f15)
+f60=np.abs(f60)
+m30=np.abs(m30)
+d30=np.abs(d30)
 v0 = 2*10**6
 c = 1800
 #Berechnet Dopplerwinkel
 def local_doppler(theta):
     a=90-np.arcsin(np.sin(theta*2*np.pi/360)*2/3)*360/(2*np.pi)
-    return a
-
-print(local_doppler(15))
-
+    return a*2*np.pi/360
+#print(local_doppler(15))
 
 def local_pace(Delta, a):
-    return np.absolute(Delta * c/(2*v0*np.cos(a*2*np.pi/360)))
+    return (Delta * c/(2*v0*np.cos(a)))
 
-
-print(local_pace(f15, local_doppler(15)))
+#print(local_pace(f15, local_doppler(15)))
+v0=2*10**(6)
+c=1800
+print('Steigung Theorie',2*v0/c)
 
 #habs nur eben kurz programmiert, die labels passen alle noch nicht.
-
 def local_pace_plot(fname,pname,f,m,b):#Funktion soll für jeden Prismenwinkel die nötigen Plots erstellen
-    plt.plot(local_pace(np.absolute(f),local_doppler(pname)),np.absolute(f)/np.cos(local_doppler(pname)) , 'rx-', label=r"Röhre f bei \theta={}\%".format(pname))
-    plt.plot(local_pace(np.absolute(m),local_doppler(pname)),np.absolute(m)/np.cos(local_doppler(pname)) , 'gx-', label=r"Röhre m bei \theta={}\%".format(pname))
-    plt.plot(local_pace(np.absolute(b),local_doppler(pname)),np.absolute(b)/np.cos(local_doppler(pname)) , 'bx-', label=r"Röhre d bei\theta={}\%".format(pname))
-    plt.ylabel(r"$I_\mathrm{S}$/$\si{\square\volt\per\second}$")
-    plt.xlabel(r"$x/\si{\milli\meter}$")
+    #Ausgleichgrade füür alle Rohrdicken
+    paramsf, covariancef = curve_fit(theorie,local_pace((f),local_doppler(pname)),(f)/np.cos(local_doppler(pname)))
+    errorsf = np.sqrt(np.diag(covariancef))
+    steigungf=ufloat(paramsf[0],errorsf[0])
+    yf=ufloat(paramsf[1],errorsf[1])
+    print('Steigung für dickes Rohr bei {} °'.format(pname), steigungf)
+    print('Achsenabschnitt für dickes Rohr bei {} °'.format(pname), yf)
+
+    paramsm, covariancem = curve_fit(theorie,local_pace((m),local_doppler(pname)),(m)/np.cos(local_doppler(pname)))
+    errorsm = np.sqrt(np.diag(covariancem))
+    steigungm=ufloat(paramsm[0],errorsm[0])
+    ym=ufloat(paramsm[1],errorsm[1])
+    print('Steigung für mittleres Rohr bei {} °'.format(pname), steigungm)
+    print('Achsenabschnitt für mittleres Rohr bei {} °'.format(pname), ym)
+
+
+    paramsb, covarianceb = curve_fit(theorie,local_pace((b),local_doppler(pname)),(b)/np.cos(local_doppler(pname)))
+    errorsb = np.sqrt(np.diag(covarianceb))
+    steigungb=ufloat(paramsb[0],errorsb[0])
+    yb=ufloat(paramsb[1],errorsb[1])
+    print('Steigung für dünnes Rohr bei {} °'.format(pname), steigungb)
+    print('Achsenabschnitt für dünnes Rohr bei {} °'.format(pname), yb)
+    plt.plot(local_pace((f),local_doppler(pname)),(f)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre dick bei \theta={}\textdegree".format(pname))
+    plt.plot(local_pace((f),local_doppler(pname)),theorie(local_pace((f),local_doppler(pname)),*paramsf),'r-',label=r"Ausgleichgrade Röhre dick bei \theta={}\textdegree".format(pname))
+
+    plt.plot(local_pace((m),local_doppler(pname)),(m)/np.cos(local_doppler(pname)) , 'gx', label=r"Messwerte Röhre mittel bei \theta={}\textdegree".format(pname))
+    plt.plot(local_pace((m),local_doppler(pname)),theorie(local_pace((m),local_doppler(pname)),*paramsm),'g-',label=r"Ausgleichgrade Röhre mittel bei \theta={}\textdegree".format(pname))
+
+    plt.plot(local_pace((b),local_doppler(pname)),(b)/np.cos(local_doppler(pname)) , 'bx', label=r"Messwerte Röhre dünn bei\theta={}\textdegree".format(pname))
+    plt.plot(local_pace((b),local_doppler(pname)),theorie(local_pace((b),local_doppler(pname)),*paramsb),'b-',label=r"Ausgleichgrade Röhre dünn bei \theta={}\textdegree".format(pname))
+
+    plt.ylabel(r"$\frac{\Delta \nu}{\cos{\alpha}}$/$\si{\Hz}$")
+    plt.xlabel(r"$v$/$\si{\meter\per\second}$")
     plt.legend(loc='best')
     plt.tight_layout()
     plt.savefig('Bilder/Theta_{}.pdf'.format(fname))
