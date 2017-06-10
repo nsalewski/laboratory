@@ -37,33 +37,59 @@ def vP(d, P):
 v_f = np.array(vP(0.016, P))
 v_m = np.array(vP(0.010, P))
 v_d = np.array(vP(0.007, P))
-vall=np.concatenate((v_d,v_m,v_f),axis=0)
 
 
 
-def local_pace_plot(fname,pname,v,f,m,b):#Funktion soll für jeden Prismenwinkel die nötigen Plots erstellen
-    print(v)
-    deltanu=np.concatenate((f,m,b),axis=0)
-    params, covariance = curve_fit(theorie,v,(deltanu)/np.cos(local_doppler(pname)))
+#def local_pace_plot(fname,pname,v,f,m,b):#Funktion soll für jeden Prismenwinkel die nötigen Plots erstellen
+#    print(v)
+#    deltanu=np.concatenate((f,m,b),axis=0)
+#    params, covariance = curve_fit(theorie,v,(deltanu)/np.cos(local_doppler(pname)))
+#    errors = np.sqrt(np.diag(covariance))
+#    steigung=ufloat(params[0],errors[0])
+#    y=ufloat(params[1],errors[1])
+#    print('Steigung bei {} °'.format(pname), steigung)
+#    print('Achsenabschnitt bei {} °'.format(pname), y)
+#    plt.plot(v,(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
+#    #plt.plot(local_pace((deltanu),local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
+#    plt.plot(v,theorie(v,*params),'r-',label=r"Ausgleichgrade bei \theta={}\textdegree".format(pname))
+#    plt.ylabel(r"$\frac{\Delta \nu}{\cos{\alpha}}$/$\si{\Hz}$")
+#    plt.xlabel(r"$v$/$\si{\meter\per\second}$")
+#    plt.legend(loc='best')
+#    plt.tight_layout()
+#    plt.savefig('Bilder/Theta_{}.pdf'.format(fname))
+#    plt.clf()
+#local_pace_plot('15',15,vall,d15,m15,f15)
+#local_pace_plot('30',30,vall,d30,m30,f30)
+#local_pace_plot('60',60,vall,d60,m60,f60)
+
+def local_plot(fname,v,nu,winkel):
+    params, covariance = curve_fit(theorie,v,(nu)/np.cos(local_doppler(winkel)))
     errors = np.sqrt(np.diag(covariance))
     steigung=ufloat(params[0],errors[0])
     y=ufloat(params[1],errors[1])
-    print('Steigung bei {} °'.format(pname), steigung)
-    print('Achsenabschnitt bei {} °'.format(pname), y)
-    plt.plot(v,(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
-    #plt.plot(local_pace((deltanu),local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
-    plt.plot(v,theorie(v,*params),'r-',label=r"Ausgleichgrade bei \theta={}\textdegree".format(pname))
+    print('Steigung bei {}{}°'.format(fname,winkel), steigung)
+    print('Achsenabschnitt {}{}°'.format(fname,winkel), y)
+    plt.plot(v,(nu)/np.cos(local_doppler(winkel)) , 'rx', label=r"Messwerte {}{}\textdegree".format(fname,winkel))
+    plt.plot(v,theorie(v,*params),'b-',label=r"Ausgleichgrade {}{}\textdegree".format(fname,winkel))
     plt.ylabel(r"$\frac{\Delta \nu}{\cos{\alpha}}$/$\si{\Hz}$")
     plt.xlabel(r"$v$/$\si{\meter\per\second}$")
     plt.legend(loc='best')
     plt.tight_layout()
-    plt.savefig('Bilder/Theta_{}.pdf'.format(fname))
+    plt.savefig('Bilder/{}_{}.pdf'.format(fname,winkel))
     plt.clf()
-local_pace_plot('15',15,vall,d15,m15,f15)
-local_pace_plot('30',30,vall,d30,m30,f30)
-local_pace_plot('60',60,vall,d60,m60,f60)
+    return(steigung)
 
+v_arr=np.asarray([v_f,v_f,v_f,v_m,v_m,v_m,v_d,v_d,v_d])
+nu_arr=np.asarray([f15,f30,f60,m15,m30,m60,d15,d30,d60])
+namearr=np.asarray(['dick','dick','dick','mittel','mittel','mittel','dünn','dünn','dünn'])
+degree_arr=np.asarray([15,30,60,15,30,60,15,30,60])
+steigung_arr=[]
+for i in range(0,9):
+    steigung_arr.append(local_plot(namearr[i],v_arr[i],nu_arr[i],degree_arr[i]))
 
+steigung=np.asarray(steigung_arr)
+steigung=np.mean(steigung)
+print(steigung)
 ########################################################
 #Strömungsprofil
 
