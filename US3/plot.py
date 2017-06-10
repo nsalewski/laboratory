@@ -34,36 +34,17 @@ print('Steigung Theorie',2*v0/c)
 #habs nur eben kurz programmiert, die labels passen alle noch nicht.
 def local_pace_plot(fname,pname,f,m,b):#Funktion soll für jeden Prismenwinkel die nötigen Plots erstellen
     #Ausgleichgrade füür alle Rohrdicken
-    paramsf, covariancef = curve_fit(theorie,local_pace((f),local_doppler(pname)),(f)/np.cos(local_doppler(pname)))
-    errorsf = np.sqrt(np.diag(covariancef))
-    steigungf=ufloat(paramsf[0],errorsf[0])
-    yf=ufloat(paramsf[1],errorsf[1])
-    print('Steigung für dickes Rohr bei {} °'.format(pname), steigungf)
-    print('Achsenabschnitt für dickes Rohr bei {} °'.format(pname), yf)
+    deltanu=np.concatenate((f,m,b),axis=0)
+    print(deltanu)
+    params, covariance = curve_fit(theorie,local_pace((deltanu),local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)))
+    errors = np.sqrt(np.diag(covariance))
+    steigung=ufloat(params[0],errors[0])
+    y=ufloat(params[1],errors[1])
+    print('Steigung bei {} °'.format(pname), steigung)
+    print('Achsenabschnitt bei {} °'.format(pname), y)
 
-    paramsm, covariancem = curve_fit(theorie,local_pace((m),local_doppler(pname)),(m)/np.cos(local_doppler(pname)))
-    errorsm = np.sqrt(np.diag(covariancem))
-    steigungm=ufloat(paramsm[0],errorsm[0])
-    ym=ufloat(paramsm[1],errorsm[1])
-    print('Steigung für mittleres Rohr bei {} °'.format(pname), steigungm)
-    print('Achsenabschnitt für mittleres Rohr bei {} °'.format(pname), ym)
-
-
-    paramsb, covarianceb = curve_fit(theorie,local_pace((b),local_doppler(pname)),(b)/np.cos(local_doppler(pname)))
-    errorsb = np.sqrt(np.diag(covarianceb))
-    steigungb=ufloat(paramsb[0],errorsb[0])
-    yb=ufloat(paramsb[1],errorsb[1])
-    print('Steigung für dünnes Rohr bei {} °'.format(pname), steigungb)
-    print('Achsenabschnitt für dünnes Rohr bei {} °'.format(pname), yb)
-    plt.plot(local_pace((f),local_doppler(pname)),(f)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre dick bei \theta={}\textdegree".format(pname))
-    plt.plot(local_pace((f),local_doppler(pname)),theorie(local_pace((f),local_doppler(pname)),*paramsf),'r-',label=r"Ausgleichgrade Röhre dick bei \theta={}\textdegree".format(pname))
-
-    plt.plot(local_pace((m),local_doppler(pname)),(m)/np.cos(local_doppler(pname)) , 'gx', label=r"Messwerte Röhre mittel bei \theta={}\textdegree".format(pname))
-    plt.plot(local_pace((m),local_doppler(pname)),theorie(local_pace((m),local_doppler(pname)),*paramsm),'g-',label=r"Ausgleichgrade Röhre mittel bei \theta={}\textdegree".format(pname))
-
-    plt.plot(local_pace((b),local_doppler(pname)),(b)/np.cos(local_doppler(pname)) , 'bx', label=r"Messwerte Röhre dünn bei\theta={}\textdegree".format(pname))
-    plt.plot(local_pace((b),local_doppler(pname)),theorie(local_pace((b),local_doppler(pname)),*paramsb),'b-',label=r"Ausgleichgrade Röhre dünn bei \theta={}\textdegree".format(pname))
-
+    plt.plot(local_pace((deltanu),local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
+    plt.plot(local_pace((deltanu),local_doppler(pname)),theorie(local_pace((deltanu),local_doppler(pname)),*params),'r-',label=r"Ausgleichgrade bei \theta={}\textdegree".format(pname))
     plt.ylabel(r"$\frac{\Delta \nu}{\cos{\alpha}}$/$\si{\Hz}$")
     plt.xlabel(r"$v$/$\si{\meter\per\second}$")
     plt.legend(loc='best')
