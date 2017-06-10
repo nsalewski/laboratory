@@ -1,19 +1,63 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+\subsection{Bestimmung der Strömungsgeschwindigkeit aus der Dopplerverschiebung}
+\begin{table}
+	\centering
+	\caption{Messdaten zur Bestimmung der Strömungsgeschwindigkeit der Dopplerflüssigkeit aus der Dopplerverschiebung für die drei unterschiedlichen Rohre bei den drei Prismawinkeln.}
+	\label{tab:aufgabeA}
+	\begin{tabular}{cccccccccc}
+		\toprule
+		& & & & & $\Delta \nu$ / $\si{\hertz}$ & & & & \\
+		\midrule 
+		& & dick & & & mittel & & & dünn & \\
+		\midrule
+		$P$ & $\SI{15}{\degree}$ & $\SI{30}{\degree}$ & $\SI{60}{\degree}$ & $\SI{15}{\degree}$ & $\SI{30}{\degree}$ & $\SI{60}{\degree}$ & $\SI{15}{\degree}$ & $\SI{30}{\degree}$ & $\SI{60}{\degree}$ \\ 
+		\midrule
+		36 & -61 & 98 & -146 & 122 & -195 & 403 & 220 & -391 & 659 \\
+		44 & -85 & 134 & -232 & 171 & -317 & 610 & 330 & -598 & 946 \\
+		52 & -122 & 220 & -354 & 269 & -470 & 610 & 525 & -1000 & 1660 \\        
+		60 & -171 & 305 & -500 & 348 & -654 & 1306 & 702 & -1337 & 2051 \\
+		68 & -220 & 403 & -580 & 458 & -888 & 1428 & 930 & -1650 & 2450 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Die Messdaten zur Bestimmung der Strömungsgeschwindigkeit der Dopplerflüssigkeit sind 
+in Tabelle \ref{tab:aufgabeA} aufgetragen.
+Es wird das Verhältnis $\frac{\Delta \nu}{\cos(\alpha)}$ in Abhängigkeit von der
+Strömungsgeschwindigkeit der Dopplerflüssigkeit bestimmt. Die Strömungsgeschwindigkei
+wird mit den Durchmessern der Rohre sowie der maximalen Pumpleistung der Zentrifugalpumpe 
+$P_{\mathrm{max}} = \SI{10}{\litre\per\minute}$ berechnet. Weiterhin wurden die 
+Dopplerwinkel mit Formel \eqref{eqn:doppler} ermittelt.
+Es fällt auf, dass die Strömungsgeschwindigkeit bei geringerem Rohrdurchmesser steigt.
+Eine lineare Ausgleichsrechnung der Form $y=mx+b$ ergibt die in Tabelle \ref{tab:fitcoeff} 
+angegebenen Parameter. Diese zeigen nur geringe Abweichungen voneinander und ergeben im 
+Mittel $m = \SI{30}{\per\centi\meter}$. Der theoretische Wert ergibt sich aus Formel 
+\eqref{eqn:tehorie} zu $m_{\mathrm{theo}} = \SI{20}{\per\centi\meter}$.
 
-%\begin{figure}
-%  \centering
-%  \includegraphics{plot.pdf}
-%  \caption{Plot.}
-%  \label{fig:plot}
-%\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics{Bilder/Theta15.pdf}
+	\caption{Plot für Prismawinkel 15.}
+	\label{fig:Theta15}
+\end{figure}
+\begin{figure}
+	\centering
+	\includegraphics{Bilder/Theta30.pdf}
+	\caption{Plot für Prismawinkel 30.}
+	\label{fig:Theta30}
+\end{figure}
 
-
-
+\begin{figure}
+	\centering
+	\includegraphics{Bilder/Theta60.pdf}
+	\caption{Plot für Prismawinkel 60.}
+	\label{fig:Theta60}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Strömungsprofil
 %%%%%%%Pumpleistung 70%
+\subsection{Strömungsprofil}
 Zur Untersuchung der Streuintensität und der Momentangeschwindigkeit in Abhängigkeit zur Eindringtiefe ist es zunächst notwendig, die Eindringtiefe $x_{\mathrm{sec}}$ welche in der Messung in Microsekunden aufgenommen wurde, in die Eindringtiefe $x_{\mathrm{mm}}$ in Millimetern umzurechnen.
 Es werden hierzu zunächst die Verhältnisse zwischen $x_{\mathrm{sec}}$ und $x_{\mathrm{mm}}$ für beide Materialien bestimmt.\\
 Hierbei ist die Vorlaufstrecke, welche sich aus der Vorlaufstrecke im Prisma und der Wand der untersuchten Röhre ergibt, als $x_\mathrm{vor}=\SI{33.2}{\milli\meter}$ ebenso bekannt, wie die Schallgeschwindingkeit im Prisma $c_\mathrm{P}=\SI{2700}{\meter\per\second}$, in der Dopplerphantomflüssigkeit $c_\mathrm{L}=\SI{1800}{\meter\per\second}$ sowie der Innendurchmesser der verwendeten Strömungsröhre $d_\mathrm{innen}=\SI{10}{\milli\meter}$ nach Versuchsanleitung \cite{Anleitung}.\\

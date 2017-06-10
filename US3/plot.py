@@ -31,6 +31,13 @@ v0=2*10**(6)
 c=1800
 print('Steigung Theorie',2*v0/c)
 
+def vP(d, P):
+    return P/100 * 0.01/((d/2)**2*np.pi)/60
+
+v_f = np.array(vP(0.016, P))
+v_m = np.array(vP(0.010, P))
+v_d = np.array(vP(0.007, P))
+
 #habs nur eben kurz programmiert, die labels passen alle noch nicht.
 def local_pace_plot(fname,pname,f,m,b):#Funktion soll für jeden Prismenwinkel die nötigen Plots erstellen
     #Ausgleichgrade füür alle Rohrdicken
@@ -42,8 +49,8 @@ def local_pace_plot(fname,pname,f,m,b):#Funktion soll für jeden Prismenwinkel d
     y=ufloat(params[1],errors[1])
     print('Steigung bei {} °'.format(pname), steigung)
     print('Achsenabschnitt bei {} °'.format(pname), y)
-
-    plt.plot(local_pace((deltanu),local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
+    plt.plot(v_f,local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
+    #plt.plot(local_pace((deltanu),local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
     plt.plot(local_pace((deltanu),local_doppler(pname)),theorie(local_pace((deltanu),local_doppler(pname)),*params),'r-',label=r"Ausgleichgrade bei \theta={}\textdegree".format(pname))
     plt.ylabel(r"$\frac{\Delta \nu}{\cos{\alpha}}$/$\si{\Hz}$")
     plt.xlabel(r"$v$/$\si{\meter\per\second}$")
@@ -53,16 +60,8 @@ def local_pace_plot(fname,pname,f,m,b):#Funktion soll für jeden Prismenwinkel d
     plt.clf()
 local_pace_plot('15',15,f15,m15,d15)
 local_pace_plot('60',60,f60,m60,d60)
-
 local_pace_plot('30',30,f30,m30,d30)
 
-#ploty = []
-#for i in range(0, 4):
-#    ploty[i]=f15[i]/np.cos(15)
-#    ploty[i+3]=f30[i]/np.cos(30)
-#    ploty[i+6]=f60[i]/np.cos(60)
-#
-#print(ploty)
 
 ########################################################
 #Strömungsprofil
