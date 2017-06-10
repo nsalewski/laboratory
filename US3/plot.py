@@ -11,7 +11,7 @@ def theorie(x,m,b):
 #########################################################
 P ,f15, f30, f60, m15, m30, m60, d15, d30, d60=np.genfromtxt("Messdaten/a.txt", unpack=True)
 # Delta v = 2 v0 v/c cos(a)
-f15=np.absolute(f15)
+f15=np.abs(f15)
 f60=np.abs(f60)
 m30=np.abs(m30)
 d30=np.abs(d30)
@@ -23,8 +23,8 @@ def local_doppler(theta):
     return a*2*np.pi/360
 #print(local_doppler(15))
 
-def local_pace(Delta, a):
-    return (Delta * c/(2*v0*np.cos(a)))
+#def local_pace(Delta, a):
+#    return (Delta * c/(2*v0*np.cos(a)))
 
 #print(local_pace(f15, local_doppler(15)))
 v0=2*10**(6)
@@ -37,30 +37,31 @@ def vP(d, P):
 v_f = np.array(vP(0.016, P))
 v_m = np.array(vP(0.010, P))
 v_d = np.array(vP(0.007, P))
+vall=np.concatenate((v_d,v_m,v_f),axis=0)
 
-#habs nur eben kurz programmiert, die labels passen alle noch nicht.
-def local_pace_plot(fname,pname,f,m,b):#Funktion soll für jeden Prismenwinkel die nötigen Plots erstellen
-    #Ausgleichgrade füür alle Rohrdicken
+
+
+def local_pace_plot(fname,pname,v,f,m,b):#Funktion soll für jeden Prismenwinkel die nötigen Plots erstellen
+    print(v)
     deltanu=np.concatenate((f,m,b),axis=0)
-    print(deltanu)
-    params, covariance = curve_fit(theorie,local_pace((deltanu),local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)))
+    params, covariance = curve_fit(theorie,v,(deltanu)/np.cos(local_doppler(pname)))
     errors = np.sqrt(np.diag(covariance))
     steigung=ufloat(params[0],errors[0])
     y=ufloat(params[1],errors[1])
     print('Steigung bei {} °'.format(pname), steigung)
     print('Achsenabschnitt bei {} °'.format(pname), y)
-    plt.plot(v_f,local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
+    plt.plot(v,(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
     #plt.plot(local_pace((deltanu),local_doppler(pname)),(deltanu)/np.cos(local_doppler(pname)) , 'rx', label=r"Messwerte Röhre \theta={}\textdegree".format(pname))
-    plt.plot(local_pace((deltanu),local_doppler(pname)),theorie(local_pace((deltanu),local_doppler(pname)),*params),'r-',label=r"Ausgleichgrade bei \theta={}\textdegree".format(pname))
+    plt.plot(v,theorie(v,*params),'r-',label=r"Ausgleichgrade bei \theta={}\textdegree".format(pname))
     plt.ylabel(r"$\frac{\Delta \nu}{\cos{\alpha}}$/$\si{\Hz}$")
     plt.xlabel(r"$v$/$\si{\meter\per\second}$")
     plt.legend(loc='best')
     plt.tight_layout()
     plt.savefig('Bilder/Theta_{}.pdf'.format(fname))
     plt.clf()
-local_pace_plot('15',15,f15,m15,d15)
-local_pace_plot('60',60,f60,m60,d60)
-local_pace_plot('30',30,f30,m30,d30)
+local_pace_plot('15',15,vall,d15,m15,f15)
+local_pace_plot('30',30,vall,d30,m30,f30)
+local_pace_plot('60',60,vall,d60,m60,f60)
 
 
 ########################################################
