@@ -89,7 +89,7 @@ def local_plot(fname,pname):
     plt.clf()
 
     plt.plot(e, v, 'rx', label="Messwerte für P={}\%".format(pname))
-    plt.ylabel(r"$v$/$\si{\meter\per\second}$")
+    plt.ylabel(r"$v_\mathrm{mom}$/$\si{\meter\per\second}$")
     plt.xlabel(r"$x/\si{\milli\meter}$")
     plt.legend(loc='best')
     plt.tight_layout()
