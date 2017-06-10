@@ -10,20 +10,44 @@ P ,f15, f30, f60, m15, m30, m60, d15, d30, d60=np.genfromtxt("Messdaten/a.txt", 
 # Delta v = 2 v0 v/c cos(a)
 v0 = 2*10**6
 c = 1800
+#Berechnet Dopplerwinkel
+def local_doppler(theta):
+    a=90-np.arcsin(np.sin(theta*2*np.pi/360)*2/3)*360/(2*np.pi)
+    return a
+
+print(local_doppler(15))
+
 
 def local_pace(Delta, a):
-    return Delta * c/(2*v0*np.cos(a))
+    return np.absolute(Delta * c/(2*v0*np.cos(a*2*np.pi/360)))
 
 
-print(local_pace(f15[0], 15))
+print(local_pace(f15, local_doppler(15)))
 
-ploty = []
-for i in range(0, 4):
-    ploty[i]=f15[i]/np.cos(15)
-    ploty[i+3]=f30[i]/np.cos(30)
-    ploty[i+6]=f60[i]/np.cos(60)
+#habs nur eben kurz programmiert, die labels passen alle noch nicht.
 
-print(ploty)
+def local_pace_plot(fname,pname,f,m,b):#Funktion soll für jeden Prismenwinkel die nötigen Plots erstellen
+    plt.plot(local_pace(np.absolute(f),local_doppler(pname)),np.absolute(f)/np.cos(local_doppler(pname)) , 'rx-', label=r"Röhre f bei \theta={}\%".format(pname))
+    plt.plot(local_pace(np.absolute(m),local_doppler(pname)),np.absolute(m)/np.cos(local_doppler(pname)) , 'gx-', label=r"Röhre m bei \theta={}\%".format(pname))
+    plt.plot(local_pace(np.absolute(b),local_doppler(pname)),np.absolute(b)/np.cos(local_doppler(pname)) , 'bx-', label=r"Röhre d bei\theta={}\%".format(pname))
+    plt.ylabel(r"$I_\mathrm{S}$/$\si{\square\volt\per\second}$")
+    plt.xlabel(r"$x/\si{\milli\meter}$")
+    plt.legend(loc='best')
+    plt.tight_layout()
+    plt.savefig('Bilder/Theta_{}.pdf'.format(fname))
+    plt.clf()
+local_pace_plot('15',15,f15,m15,d15)
+local_pace_plot('60',60,f60,m60,d60)
+
+local_pace_plot('30',30,f30,m30,d30)
+
+#ploty = []
+#for i in range(0, 4):
+#    ploty[i]=f15[i]/np.cos(15)
+#    ploty[i+3]=f30[i]/np.cos(30)
+#    ploty[i+6]=f60[i]/np.cos(60)
+#
+#print(ploty)
 
 ########################################################
 #Strömungsprofil
@@ -31,7 +55,7 @@ print(ploty)
 def local_plot(fname,pname):
     t,I,f=np.genfromtxt("Messdaten/b_{}.txt".format(fname),unpack=True)
 
-    a=80.06411626# nach vorbereitung
+    a=local_doppler(15)
     api=a*2*np.pi/360
     f0=2*10**6
     c=1800
