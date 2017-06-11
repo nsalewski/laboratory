@@ -27,33 +27,101 @@ Es wird das Verhältnis $\frac{\Delta \nu}{\cos(\alpha)}$ in Abhängigkeit von d
 Strömungsgeschwindigkeit der Dopplerflüssigkeit bestimmt. Die Strömungsgeschwindigkei
 wird mit den Durchmessern der Rohre sowie der maximalen Pumpleistung der Zentrifugalpumpe 
 $P_{\mathrm{max}} = \SI{10}{\litre\per\minute}$ berechnet. Weiterhin wurden die 
-Dopplerwinkel mit Formel \eqref{eqn:doppler} ermittelt.
+Dopplerwinkel mit Formel \eqref{eqn:dopplerwinkel} ermittelt.
 Es fällt auf, dass die Strömungsgeschwindigkeit bei geringerem Rohrdurchmesser steigt.
 Eine lineare Ausgleichsrechnung der Form $y=mx+b$ ergibt die in Tabelle \ref{tab:fitcoeff} 
-angegebenen Parameter. Diese zeigen nur geringe Abweichungen voneinander und ergeben im 
-Mittel $m = \SI{30}{\per\centi\meter}$. Der theoretische Wert ergibt sich aus Formel 
-\eqref{eqn:tehorie} zu $m_{\mathrm{theo}} = \SI{20}{\per\centi\meter}$.
+angegebenen Parameter. 
+Diese zeigen nur geringe Abweichungen voneinander und ergeben im 
+Mittel $m = \SI{2,99(9)}{\per\centi\meter}$. Der theoretische Wert ergibt sich aus Formel 
+\eqref{eqn:verschiebung} zu $m_{\mathrm{theo}} = \SI{2,22}{\per\centi\meter}$.
+Die zugehörigen Plots sind in den Abbildungen \ref{fig:duenn_15}, \ref{fig:duenn_30} und
+\ref{fig:duenn_60} für das dünne Rohr, \ref{fig:mittel_15}, \ref{fig:mittel_30} und 
+\ref{fig:mittel_60} für das mittlere Rohr und \ref{fig:dick_15}, \ref{fig:dick_30} und
+\ref{fig:dick_60} für das dicke Rohr dargestellt.
+\begin{table}
+	\centering
+	\caption{Ergebnisse der linearen Ausgleichsrechnungen gemäß Formel \eqref{eqn:verschiebung}.}
+	\label{tab:fitcoeff}
+	\begin{tabular}{ccc}
+		\toprule
+		Rohrdicke / Prismawinkel & $m$ / $\si{\per\meter}$ & $b$ / $\si{\hertz}$ \\
+		\midrule
+		dick / \SI{15}{\degree} & \num{3530(270)} & -\num{760(120)} \\
+		dick / \SI{30}{\degree} & \num{3530(300)} & -\num{830(130)} \\
+		dick / \SI{60}{\degree} & \num{2970(160)} & -\num{650(70)} \\
+		mittel / \SI{15}{\degree} & \num{2900(200)} & -\num{1610(220)} \\
+		mittel / \SI{30}{\degree} & \num{3040(220)} & -\num{1850(250)} \\
+		mittel / \SI{60}{\degree} & \num{2800(600)} & -\num{1600(700)} \\
+		dünn / \SI{15}{\degree} & \num{3000(190)} & -\num{3600(400)} \\
+		dünn / \SI{30}{\degree} & \num{2820(140)} & -\num{3370(320)} \\
+		dünn / \SI{60}{\degree} & \num{2340(170)} & -\num{2600(400)} \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\begin{figure}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{15}{\degree}$ in dem dünnen Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/dünn_15.pdf}
+	    \label{fig:duenn_15}
+\end{figure}
 
 \begin{figure}
-	\centering
-	\includegraphics{Bilder/Theta15.pdf}
-	\caption{Plot für Prismawinkel 15.}
-	\label{fig:Theta15}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics{Bilder/Theta30.pdf}
-	\caption{Plot für Prismawinkel 30.}
-	\label{fig:Theta30}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{60}{\degree}$ in dem dünnen Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/dünn_60.pdf}
+	    \label{fig:duenn_60}
 \end{figure}
 
 \begin{figure}
-	\centering
-	\includegraphics{Bilder/Theta60.pdf}
-	\caption{Plot für Prismawinkel 60.}
-	\label{fig:Theta60}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{30}{\degree}$ in dem dünnen Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/dünn_30.pdf}
+	    \label{fig:duenn_30}
 \end{figure}
 
+\begin{figure}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{15}{\degree}$ in dem mittleren Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/mittel_15.pdf}
+	    \label{fig:mittel_15}
+\end{figure}
+
+\begin{figure}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{60}{\degree}$ in dem mittleren Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/mittel_60.pdf}
+	    \label{fig:mittel_60}
+\end{figure}
+
+\begin{figure}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{30}{\degree}$ in dem mittleren Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/mittel_30.pdf}
+	    \label{fig:mittel_30}
+\end{figure}
+
+\begin{figure}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{15}{\degree}$ in dem breiten Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/dick_15.pdf}
+	    \label{fig:dick_15}
+\end{figure}
+
+\begin{figure}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{60}{\degree}$ in dem breiten Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/dick_60.pdf}
+	    \label{fig:dick_60}
+\end{figure}
+
+\begin{figure}
+	 \centering
+	  \caption{Dopplerverschiebung bei einem Winkel von $\SI{30}{\degree}$ in dem breiten Rohr.}
+	   \includegraphics[width=\linewidth-70pt,height=\textheight-70pt,keepaspectratio]{Bilder/dick_30.pdf}
+	    \label{fig:dick_30}
+\end{figure}
+
+\FloatBarrier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Strömungsprofil
 %%%%%%%Pumpleistung 70%
