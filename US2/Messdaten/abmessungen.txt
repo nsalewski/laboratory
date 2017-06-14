@@ -1,0 +1,14 @@
+#abmessung block: b=8cm;l=15cm
+#abmessung löcher
+#nr. Durchmesser in cm
+1 0.13
+2 0.13
+3 0.58
+4 0.48
+5 0.4
+6 0.29
+7 0.29
+8 0.29
+9 0.29
+10  0.29
+11  0.95

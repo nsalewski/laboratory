@@ -89,8 +89,8 @@ In Abbildung \ref{fig:emissionlol} ist das aufgenommene Emissionsspektrum der Ku
 Wie unschwer zu erkennen ist, war vor dem Geiger-Müller-Zählrohr bei der Messung des Emmissionsspektrum noch ein Absorber angebracht, die benötigten Kennlinien des Emissionsspektrum sind dennoch ebenso wie der Grenzwinkel noch eindeutig zu erkennen.
 Die beiden sehr großen Abweichungen vom kontinuierlichen Bremsspektrum bei etwa $\theta=7\textdegree$ und bei etwa $\theta=13.8\textdegree$ sind durch den Absorber verursacht.\\
 Aus den zu den Graphen gehörigen Messdaten wird das Maximum der $K_\beta$-Linie zu
-$\theta=20,4\textdegree$ und das Maximum der $K_\alpha$-Linie zu $\theta=22,6\textdegree$ bestimmt. Die zugehörigen Messdaten finden sich aus Übersichtlichkeitsgründen im Anhang.
-Der Beginn des Bremsspektrums wird nach den Messdaten bei $\theta_\mathrm{Grenz}=5.2\textdegree$ angenommen. Da das Bremsspektrum kontinuierlich ist, erstreckt es sich über alle Winkel größer dem Grenzwinkel.
+${\theta=20,4\textdegree}$ und das Maximum der $K_\alpha$-Linie zu ${\theta=22,6\textdegree}$ bestimmt. Die zugehörigen Messdaten finden sich aus Übersichtlichkeitsgründen im Anhang.
+Der Beginn des Bremsspektrums wird nach den Messdaten bei ${\theta_\mathrm{Grenz}=5.2\textdegree}$ angenommen. Da das Bremsspektrum kontinuierlich ist, erstreckt es sich über alle Winkel größer dem Grenzwinkel.
 Über den Grenzwinkel lässt sich mit Formel \eqref{eqn:braggii} die minimale Wellenlänge der Röntenstrahlung bestimmt.
 Es ergibt sich:
 \begin{equation*}
@@ -150,9 +150,9 @@ Es ergibt sich für die zugehörigen Abschirmzahlen aus den nach den Messdaten b
 Das Absorptionsspektrum von Zink ist in Abbildung \ref{fig:zink_absorber} aufgetragen.
 Es ergibt sich die K-Kante bei dem Winkel
 \begin{equation*}
-	\theta_{\mathrm{Zn,K}} = \SI{20,2}{\degree}
+	\theta_{\mathrm{Zn,K}} = \SI{18.8}{\degree}
 \end{equation*}
-als Mittelwert von $\SI{20,0}{\degree}$ und $\SI{20,4}{\degree}$.
+als Mittelwert von $\SI{18.6}{\degree}$ und $\SI{19}{\degree}$.
 Mit Formel \eqref{eqn:braggii} und dem Zusammenhang $E = \frac{\symup{hc}}{\lambda}$,
 wobei $\symup{h}$
 das Planck'sche Wirkungsquantum und $\symup{c}$ die Lichtgeschwindigkeit im Vakuum ist, lässt
@@ -164,11 +164,11 @@ sich die Absorptionsenergie durch
 ermitteln.
 Damit ergibt sich die Absorptionsenergie von Zink zu
 \begin{equation*}
-	E_{\mathrm{Zn,K}} = \SI{8,91}{\kilo\electronvolt} \mathrm{.}
+	E_{\mathrm{Zn,K}} = \SI{9.55}{\kilo\electronvolt} \mathrm{.}
 \end{equation*}
 Mit Formel \eqref{eqn:schirm} ergibt sich die Abschirmkonstante von Zink zu
 \begin{equation*}
-	\sigma_{\mathrm{Zn}} = \num{4,62} \mathrm{.}
+	\sigma_{\mathrm{Zn}} = \num{3.71} \mathrm{.}
 \end{equation*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -280,12 +280,13 @@ In Tabelle \ref{tab:ryd} finden sich die verwendeten Daten, in Abbildung \ref{fi
 Die Ausgleichsrechnung wurde mit python/scipy \cite{scipy} durchgeführt.
 Mit den Geradenparametern:
 \begin{gather*}
-	m=\sqrt{R_{\infty}}=\num{3.8(2)}\,\sqrt{\si{\electronvolt}} \text{,}
-	b= \num{-18(6)}\,\sqrt{\si{\electronvolt}} \text{,}
+	m=\sqrt{R_{\infty}}=\left(\num{3.55(1)}\right)\,\sqrt{\si{\electronvolt}} \text{,}\\
+	b= \left(\num{-8(2)}\right)\,\sqrt{\si{\electronvolt}} \text{,}
 \end{gather*}
+
 ergibt sich die Rydberg-Energie zu:
 \begin{equation}
-R_{\infty}= \SI{14(2)}{\electronvolt}\text{.}
+R_{\infty}= \SI{12.57(4)}{\electronvolt}\text{.}
 \end{equation}
 \begin{figure}
 	\centering
@@ -302,10 +303,10 @@ R_{\infty}= \SI{14(2)}{\electronvolt}\text{.}
 \toprule
 $E_\mathrm{K}$/$\sqrt{\si{\electronvolt}}$& Kernladungszahl $Z$ \\
 \midrule
-94.39& 30 \\
-104.74& 32 \\
-115.46& 35 \\
-133.15 & 40 \\
+97,72 & 30 \\
+104,74 & 32 \\
+115,46 & 35 \\
+133,15 & 40 \\
 \bottomrule
 \end{tabular}
 \end{table}

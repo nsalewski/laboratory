@@ -30,7 +30,7 @@ def vP(d, P):
 v_f = np.array(vP(0.016, P))
 v_m = np.array(vP(0.010, P))
 v_d = np.array(vP(0.007, P))
-
+print(v_f,v_m,v_d)
 def local_plot(fname,v,nu,winkel): #Verwendung fname ist dateiname, v ist geschwindigkeit der Flüssigkeit
 #nu ist momentane Dopplerverschiebung, winkel ist zugehöriger theta-Winkel
     params, covariance = curve_fit(theorie,v,(nu)/np.cos(local_doppler(winkel)))

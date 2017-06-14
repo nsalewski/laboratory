@@ -1,0 +1,13 @@
+#ideale Laufzeit (nach Formel): 58.5 microsec.(c=2730m/s; s=0.08m); reale Laufzeit: 60.6 microsec. verwendet wurde 1MHz Sonde
+#nr störstelle; hinweg, rückweg; jeweils in microsec.
+1  15.8     48.3
+2  18.0     45.6
+3  46.3     11.9
+4  41.3     17.9
+5  35.8     24.2
+6  30.4     30.2
+7  24.7     36.2
+8  19.0     42.0
+9    13.0   47.8
+10    7.2    53.9
+11    42.6    13.2

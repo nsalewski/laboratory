@@ -74,7 +74,7 @@ ausgabe(xbeta2,ybeta2,19)
 Ry = ufloat(13.605693009, 0.000000084)
 
 #Zink
-E_zi = h*c/(2*d*np.sin(20.2*2*np.pi/360)*enull)
+E_zi = h*c/(2*d*np.sin(18.8*2*np.pi/360)*enull)
 print('E_ZI = ', E_zi)
 sigma_zn = 30-unp.sqrt(E_zi/Ry - (30**4)/(4*137**2))
 print('sigma_zn= ', sigma_zn)
@@ -105,7 +105,7 @@ sigma_au = 79-unp.sqrt(4*137*unp.sqrt((E_au_beta-E_au_gamma)/Ry)-5*(E_au_beta-E_
 print('SIGMAGOLD= ', sigma_au)
 
 #########################################################################################
-Ek=[8.91,10.97,13.33,17.73]
+Ek=[9.55,10.97,13.33,17.73]
 Ek=np.asarray(Ek)*1000
 Z=[30,32,35,40]
 Zls=np.linspace(29,41)
