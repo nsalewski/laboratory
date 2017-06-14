@@ -5,7 +5,8 @@ from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
 
-
+nr,d=np.genfromtxt("Messdaten/abmessungen.txt",unpack=True)
+ascii.write([nr,d*10],'Messdaten/tab_abmessung.tex',format='latex', names=['$n$', '$d$/'r"$\si{\milli\meter}$"])
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
 #f=f*1000
 #theta=(n*np.pi)/14
@@ -37,4 +38,3 @@ import uncertainties.unumpy as unp
 #params, covariance = curve_fit(theorie,Z,np.sqrt(Ek))
 #errors = np.sqrt(np.diag(covariance))
 #ryd=ufloat(params[0],errors[0])
-
