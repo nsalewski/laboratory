@@ -1,3 +1,6 @@
+herz 1: x-Achse 10sec.
+
+herz 2:
 achsenskalierung: x: 100 sec, in 10-er Schritten
 y-Achse: 69 microsec.
 Membran Ruhe: Messtiefe 51.3 microsec.

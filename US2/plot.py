@@ -7,6 +7,58 @@ import uncertainties.unumpy as unp
 
 nr,d=np.genfromtxt("Messdaten/abmessungen.txt",unpack=True)
 ascii.write([nr,d*10],'Messdaten/tab_abmessung.tex',format='latex', names=['$n$', '$d$/'r"$\si{\milli\meter}$"])
+
+
+
+##########Auswertung bscan###############
+nr=np.linspace(1,11,11)
+rueck=np.asarray([489,500,136,199,265,330,392,453,514,2, 149])
+hin=np.asarray([-1,166,501,443,384,328,268,205,145,84,456])
+rueck=rueck-22
+hin=hin-22
+pixel=724
+sec=69
+umrech=sec/pixel
+def umrechnung(a,c):
+    return c*a
+hin=umrechnung(hin,umrech)
+rueck=umrechnung(rueck,umrech)
+anpass=0.9
+hin=hin-anpass
+rueck=rueck-anpass
+c=2730
+t_rueck=rueck
+t_hin=hin
+hinweg=0.5*c*hin*10**(-4)
+rueckweg=0.5*c*rueck*10**(-4)
+print(np.round(8-hinweg-rueckweg,2))
+print(np.round((np.round(8-hinweg-rueckweg,2)-d)/d*100,1))
+ascii.write([nr,np.round(t_hin,1),np.round(t_rueck,1),np.round(hinweg,2),np.round(rueckweg,2),np.round(8-hinweg-rueckweg,2),d,np.round((np.round(8-hinweg-rueckweg,2)-d)/d*100,1)],'bscan/tab_bscan.tex',format='latex',names=['$n$','thin','trueck','hin', 'rueck','d','dnom','diff'])
+
+################Auswertung Herz################
+maximum=np.asarray([430,400,399,391,414,396,392,395,396,407,398,399,396])
+minimum=np.asarray([535,540,536,538,534,535,535,533,535,538,537,535,539])
+print(len(maximum),len(minimum))
+maximum=maximum-22
+minimum=minimum-22
+umrech2=69/706
+minimum=umrechnung(minimum,umrech2)
+maximum=umrechnung(maximum,umrech2)
+c=1497
+minweg=0.5*c*minimum*10**(-4)
+maxweg=0.5*c*maximum*10**(-4)
+ascii.write([np.round(minimum,2),np.round(maximum,2),np.round(minweg,2),np.round(maxweg,2)],'bscan/herz.tex',format='latex',names=['min','max','hmin','hmax'])
+print(minweg,maxweg)
+medmin=np.mean(minweg)
+medmax=np.mean(maxweg)
+print('hmin, hmax=',medmin-medmax)
+r=6
+h=medmin-medmax
+V=np.pi/3*h**2*(3*r-h)
+f=1.3
+print('Schlagvolumen= ',V)
+print('HZV=',V*f)
+
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
 #f=f*1000
 #theta=(n*np.pi)/14
