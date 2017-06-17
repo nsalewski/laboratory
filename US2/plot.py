@@ -31,14 +31,11 @@ t_rueck=rueck
 t_hin=hin
 hinweg=0.5*c*hin*10**(-4)
 rueckweg=0.5*c*rueck*10**(-4)
-print(np.round(8-hinweg-rueckweg,2))
-print(np.round((np.round(8-hinweg-rueckweg,2)-d)/d*100,1))
 ascii.write([nr,np.round(t_hin,1),np.round(t_rueck,1),np.round(hinweg,2),np.round(rueckweg,2),np.round(8-hinweg-rueckweg,2),d,np.round((np.round(8-hinweg-rueckweg,2)-d)/d*100,1)],'bscan/tab_bscan.tex',format='latex',names=['$n$','thin','trueck','hin', 'rueck','d','dnom','diff'])
 
 ################Auswertung Herz################
 maximum=np.asarray([430,400,399,391,414,396,392,395,396,407,398,399,396])
 minimum=np.asarray([535,540,536,538,534,535,535,533,535,538,537,535,539])
-print(len(maximum),len(minimum))
 maximum=maximum-22
 minimum=minimum-22
 umrech2=69/706
@@ -48,7 +45,6 @@ c=1497
 minweg=0.5*c*minimum*10**(-4)
 maxweg=0.5*c*maximum*10**(-4)
 ascii.write([np.round(minimum,2),np.round(maximum,2),np.round(minweg,2),np.round(maxweg,2)],'bscan/herz.tex',format='latex',names=['min','max','hmin','hmax'])
-print(minweg,maxweg)
 medmin=np.mean(minweg)
 medmax=np.mean(maxweg)
 print('hmin, hmax=',medmin-medmax)
