@@ -8,6 +8,16 @@ import uncertainties.unumpy as unp
 nr,d=np.genfromtxt("Messdaten/abmessungen.txt",unpack=True)
 ascii.write([nr,d*10],'Messdaten/tab_abmessung.tex',format='latex', names=['$n$', '$d$/'r"$\si{\milli\meter}$"])
 
+#######################################################################################
+c=2730
+number, side1, side2 = np.genfromtxt('Messdaten/ascan.txt', unpack = True)
+side1 = side1 - 2
+side2 = side2 - 2
+position1 = 1/2 * c * side1 * 10**(-6)
+position2 = 1/2 * c * side2 * 10**(-6)
+ascii.write([number, side1, position1, side2, position2],'Messdaten/tab_.ascantex',format='latex')
+ascii.write([number, 0.08 - position1 - position2], 'Messdaten/tab_dicken.tex', format='latex')
+
 
 
 ##########Auswertung bscan###############
@@ -26,7 +36,6 @@ rueck=umrechnung(rueck,umrech)
 anpass=0.9
 hin=hin-anpass
 rueck=rueck-anpass
-c=2730
 t_rueck=rueck
 t_hin=hin
 hinweg=0.5*c*hin*10**(-4)

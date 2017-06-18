@@ -32,18 +32,104 @@ Zunächst werden die Durchmesser $d_\mathrm{SL}$ sämtlicher Fehlstellen mittels
 Zusätzlich wurde der gesamte Acrylblock mittels der Schiebelehre vermessen. Es ergibt sich eine Breite von ${\SI{8}{\centi\meter}}$. Mit der Schallgeschwindigkeit ${c=\SI{2730}{\meter\per\second}}$ nach \cite{schall} und Formel \eqref{eqn:laufzeit} ergibt sich die Laufzeit des Ultraschallsignals durch den Acrylblock zu ${t_{\mathrm{theo}}=\SI{58.6}{\micro\second}}$.
 Wird allerdings die tatsächliche Laufzeit des Ultraschallsignals in der Messung bestimmt, ergibt sich eine Laufzeit von ${t_\mathrm{real}=\SI{60.6}{\micro\second}}$. Dies liegt an der Anpassungsschicht zwischen der Ultraschallsonde und dem Acrylblock. Um in den weiteren Messungen die tatsächlichen Laufzeiten im Acrylblock zu bestimmen, muss von jedem bestimmten Wert daher die Laufzeit durch die Anpassungsschicht ${\Delta t=\SI{2}{\micro\second}}$ abgezogen werden.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%A-Scan%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FloatBarrier
+\subsection{Bestimmung der Abmessung der Fehlstellen über den A-Scan}
+Die Messwerte zur Bestimmung der Lage der Fehlstellen sind in Tabelle \ref{tab:ascan}
+aufgetragen. Hierbei wird die Lage der Fehlstelle im Acrylblock mit den gemessenen Laufzeiten
+und Formel \eqref{eqn:laufzeit} bestimmt. Für die Schallgeschwindigkeit in Acryl wird der
+Wert $c = \SI{2730}{\meter\per\second}$ verwendet. Weiterhin wird jeweils die Laufzeitkorrektur
+von $\SI{2}{\micro\second}$ beachtet.
+Die Werte $t_1$ und $s_1$ gehören zur Messung mit der Ausrichtung wie in Abbildung
+\ref{fig:fehlstellen} und $t_2$ und $s_2$ gehören entsprechend zur Messung mit dem gedrehten 
+Acrylblock.
+\begin{table}
+  \centering
+	\caption{Messwerte der Laufzeiten mit der Lage der zugehörigen Fehlstelle nach Formel \eqref{eqn:laufzeit} bei der normalen Ausrichtung und dem gedrehten Block.}
+	\label{tab:ascan}
+	\begin{tabular}{ccccc}
+		\toprule
+		$n$ & $t_1$/$\si{\micro\second}$ & $s_1$/$\si{\milli\meter}$ & $t_2$/$\si{\micro\second}$ & $s_2$/$\si{\milli\meter}$ \\
+		\midrule
+		1 & 13.8 & 18.84 & 46.3 & 63.20 \\
+		2 & 16.0 & 21.84 & 43.6 & 59.51 \\
+		3 & 44.3 & 60.47 & 9.9 & 13.51 \\
+		4 & 39.3 & 53.64 & 15.9 & 21.70 \\
+		5 & 33.8 & 46.14 & 22.2 & 30.30 \\
+		6 & 28.4 & 38.77 & 28.2 & 38.49 \\
+		7 & 22.7 & 30.99 & 34.2 & 46.68 \\
+		8 & 17.0 & 23.21 & 40.0 & 54.60 \\
+		9 & 11.0 & 15.02 & 45.8 & 62.52 \\
+		10 & 5.2 & 7.10 & 51.9 & 70.84 \\
+		11 & 40.6 & 55.42 & 11.2 & 15.29 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Aus den Positionen der Hin- und Rückseite der jeweiligen Fehlstellen lässt sich nun der
+Durchmesser der Fehlstellen durch
+\begin{equation*}
+	d = \SI{8}{\centi\meter} - s_1 - s_2
+\end{equation*}
+berechnen.
+Die so bestimmten Durchmesser der Fehlstellen sind in Tabelle \ref{tab:durchfehl} zu finden.
+\begin{table}
+  \centering
+	\caption{Berechneten Durchmesser der Fehlstellen im Acrylblock.}
+	\label{tab:durchfehl}
+	\begin{tabular}{cc}
+		\toprule
+		$n$ & $d$/$\si{\milli\meter}$ \\
+		\midrule
+		1 & 2.0 \\
+		2 & 1.4 \\
+		3 & 6.0 \\
+		4 & 4.7 \\
+		5 & 3.6 \\
+		6 & 2.7 \\
+		7 & 2.3 \\
+		8 & 2.2 \\
+		9 & 2.6 \\
+		10 & 2.1 \\
+		11 & 9.3 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Axiale Aufösung%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\FloatBarrier
+\subsection{Untersuchung des Auflösungsvermögen}
+Zur Untersuchung des Auflösungsvermögen werden die Fehlstellen 1 und 2 aus Abbildung 
+\ref{fig:fehlstellen} betrachtet. 
+Bei einem A-Scan mit einer $\SI{4}{\mega\hertz}$ Sonde wurden die beiden Laufzeiten bei
+Reflexionen an der Hinseite der Fehlstellen 1 und 2 zu
+\begin{align*}
+	t_1 &= \SI{13.6}{\micro\second} \, \mathrm{,} \\
+	t_2 &= \SI{14.8}{\micro\second} \, \mathrm{.}
+\end{align*}
+Damit ergeben sich mit Formel \eqref{eqn:laufzeit} die beiden Lagen der Fehlstellen zu
+\begin{align*}
+	s_1 &= \SI{18.6}{\milli\meter} \, \mathrm{,} \\
+	s_2 &= \SI{20.2}{\milli\meter} \, \mathrm{.}
+\end{align*}
+Da die $\SI{4}{\mega\hertz}$ Sonde durch die höhere Frequenz eine geringere Eindringtiefe 
+hat, wird die Lage der Rückseite aus Tabelle \ref{tab:ascan} verwendet.
+Es ergeben sich die beiden Dicken der Fehlstellen 1 und 2 zu
+\begin{align*}
+	d_1 &= \SI{1.8}{\milli\meter} \, \mathrm{,} \\
+	d_2 &= \SI{0.3}{\milli\meter} \, \mathrm{.}
+\end{align*}
+Es lässt sich also sagen, dass eine höhere Frequenz durch die kleinere Wellenlänge 
+für eine bessere Auflösung sorgt.
+Allerdings folgt aus einer höheren Frequenz auch eine geringere Eindringtiefe, sodass die 
+Reflexionen an der Hin- und Rückseite der Fehlstelle an dem näheren Ende des Acrylblocks zu
+erkennen sein müssen.
+Da die Reflexion an der hinteren Seite der Fehlstelle nicht zu erkennen war, muss also für 
+einen Vergleichswert die Laufzeit für die Reflexion mit der $\SI{1}{\mega\hertz}$ Sonde 
+verwendet werden, was bei der zweiten Fehlstele sogar für eine größere Abweichung vom gemessenen
+Durchmesser sorgt. Der erste Durchmesser zeigt liegt näher am erwarteten Wert.
 
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%BScan%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Bestimmung der Abmessung der Fehlstellen über den B-Scan.}
+%%%%%%%%%%%%%%%%%%%%%%BScan%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Bestimmung der Abmessung der Fehlstellen über den B-Scan}
 \label{sec:bscan}
 \begin{figure}
   \centering
