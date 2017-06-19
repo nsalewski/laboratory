@@ -1,12 +1,7 @@
 \section{Theorie}
 \label{sec:Theorie}
+
 \subsection{Grundlagen}
-\begin{wrapfigure}{R}{5cm}
-	\centering
-	\includegraphics[width=0.25\textwidth]{Bilder/Messverfahren.png}
-	\caption{Prinzipielle Darstellung der Messverfahren. \cite{Anleitung}}
-	\label{fig:echo}
-\end{wrapfigure}
 Ultraschallwellen sind Schallwellen im Frequenzbereich von $\SI{20}{\kilo\hertz}$ bis
 $\SI{1}{\giga\hertz}$ mit denen die Struktur von Materialien untersucht werden kann.
 %Schallwellen sind longitudinale Wellen der Form
@@ -41,28 +36,55 @@ mit dem Ort $x$ abfällt;
 Die Absorptionsstärke wird vom materialabhängigen Absorptionskoeffzienten $\alpha$ festgelegt.
 Luft beispielsweise absorbiert Schall sehr stark, sodass in der Praxis ein Kontaktmittel an der
 Grenzfläche von dem untersuchten Material aufgetragen wird.
-%mogel die mal einfach schonmal hier rein
-\begin{equation}
-	\label{eqn:laufzeit}
-	s=\frac{1}{2}c\cdot t
-\end{equation}
-%ätsch
 Wenn Schall auf eine Grenzfläche trifft, wird ein Teil reflektiert
 %-- der Anteil wird durch den
 %Reflexionskoeffizienten
-\begin{wrapfigure}{R}{5cm}
-	\centering
-	\includegraphics[width=0.25\textwidth]{Bilder/Messverfahren.png}
-	\caption{Prinzipielle Darstellung der Messverfahren. \cite{Anleitung}}
-	\label{fig:echo}
-\end{wrapfigure}
+%\begin{wrapfigure}{R}{5cm}
+%	\centering
+%	\includegraphics[width=0.25\textwidth]{Bilder/Messverfahren.png}
+%	\caption{Prinzipielle Darstellung der Messverfahren. \cite{Anleitung}}
+%	\label{fig:echo}
+%\end{wrapfigure}
 %\begin{equation}
 %	R =(\frac{Z_1-Z_2}{Z_1+Z_2})^2
 %\end{equation}
 %bestimmt --
 und ein Teil transmittiert.
+%(Anteil ergibt sich aus $T=1-R$).
 
 Ultraschall kann beispielsweise mit dem piezo-elektrischen Effekt erzeugt werden.
 Durch ein elektrisches Wechselfeld kann ein piezo-elektrischer Kristall -- z.B. Quarze -- zu
 Schwingungen angeregt werden. Wird der Kristall mit
+Schwingungen, die der Eigenfrequenz des Kristalls entsprechen, angeregt, werden
+Ultraschallwellen mit höherem Schalldruck ausgesandt. Piezokristalle können auch durch
+Wechselwirkung mit Schallwellen zu Schwingungen angeregt werden.
+Im Folgenden werden die grundlegenden Messverfahren mit Ultraschall erläutert.
+\subsection{Messverfahren mit Ultraschall}
+Messungen mit Ultraschallwellen werden durch Laufzeitmessungen realisiert.
+Es lässt sich zwischen zwei elementaren Messverfahren unterscheiden:
+Bei dem Durchschallungs-Verfahren wird ein Impuls am Anfang des Probestücks mit einem 
+Ultraschallsender ausgesendet
+und am Ende des Probestücks wird die abgeschwächte Intensität des Impulses gemessen (vgl.
+Abbildung \ref{fig:echo}).
+Dieses Messverfahren bringt keine Aussage über die Lage einer Fehlstelle in einem
+Material. 
 
+Das Impuls-Echo-Verfahren hingegen ermöglicht eine Aussage über die Fehlstelle des Probestücks.
+Hierbei wird der ausgesandte Impuls nach einer Reflexion am Ende des Probestücks am Anfang des
+Probestücks gemessen (vgl. Abbildung \ref{fig:echo}).
+Liegt eine Fehlstelle im Probestück vor, wird der Schallimpuls an dieser reflektiert und die
+verkürzte Laufzeit $t$ legt die Lage der Fehlstelle gemäß
+\begin{equation}
+	\label{eqn:laufzeit}
+	s = \frac{1}{2} c t
+\end{equation}
+fest.
+
+Weiterhin gibt es drei verschiedene Darstellungsarten für die Laufzeitdiagramme.
+Zum Einen wird beim A-Scan (Amplituden-Scan) ein eindimensionales Bild der Struktur eines 
+Objekts aufgenommen. Hier werden die Echoamplituden gegen die Laufzeit aufgetragen. Des Weiteren
+lässt sich mit einem B-Scan (Brightness-Scan) ein zweidimensionales Bild erstellen. Es werden
+die Echoamplituden in unterschiedlichen Helligkeiten dargestellt.
+Außerdem kann mit einem TM-Scan (Time-Motion-Scan) der zeitliche Verlauf einer Bewegung 
+beobachtet werden. Diese Methode wird beispielsweise bei der Untersuchung von Organen verwendet.
+\FloatBarrier
