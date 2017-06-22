@@ -1,4 +1,4 @@
-#nr der Messung gezählte Impulse
+#nr der Messung gezählte Impulse Nulleffekt=220imps per 900s
 1   2576
 2   2250
 3   2116

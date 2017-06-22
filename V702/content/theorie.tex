@@ -1,20 +1,46 @@
 \section{Theorie}
 \label{sec:Theorie}
-Zur Untersuchung der Halbwertszeit $T$ von instabilen Nukliden ist es zunächst nötig
-Nuklide einer im vorliegenden Rahmen beobachtbaren Halbwertszeit von wenigen Sekunden bis Stunden. Die Halbwertszeit meint hierbei die Zeit, bei der genau die Hälfte einer großen Anzahl an instabilen Nukliden zerfallen ist.
-Nuklide sind stabil, wenn das Verhältnis ihrer Neutronen-und Protonenzahl innerhalb bestimmer Grenzen liegt.
-Je nach Nuklid muss die Neutronenzahl hierzu etwa $\SI{20}{\percent}$ bis $\SI{50}{\percent}$ betragen. Instabile Kerne zerfallen mit bestimmten Wahrscheinlichkeiten in stabile oder instabile Kerne, welche wiederum weiter zerfallen.
-Instabile Nuklide werden im vorliegenden Experiment über den Beschuss stabiler Kerne mit Neutronen.
-\subsection{Wechselwirkungen zwischen Neutronen mit Nukliden}
+Die Stabilität eines Atomkerns wird maßgeblich durch das Zahlenverhältnis von Neutronen zu Protonen bestimmt. Liegt die Neutronenzahl etwa um $\SI{20}{\percent}$ bis $\SI{50}{\percent}$ über der Protonenanzahl, ist der Kern stabil.
+
+Als Maß für die Zerfallswahrscheinlichkeit wird die Halbwertszeit bezeichnet. Diese ist definiert als die Zeit, nach der genau die Hälfte der Menge der ursprünglich vorhandenen Kerne zerfallen ist.
+Im vorliegenden Versuch werden sinnigerweise Isotope untersucht, deren Halbwertszeit im Rahmen von wenigen Minuten bis Stunden liegt.
+So geartete Isotope müssen zunächt allerdings erzeugt werden. Dazu werden zunächst stabile Atomkerne mit Neutronen beschossen. Die erzeugten Isotope sind recht instabil, sodass ihre Halbwertszeit im geforderten Rahmen liegt.
+
+
+\subsection{Aktivierung mit Neutronen}
 Wechselwirkungen zwischen Teilchen und Kernen werden als Kernreaktionen bezeichnet.
 Die ablaufende Reaktion bei Beschuss eines Kerns $A$ mit einem Neutron lässt sich wie folgt schreiben:
-\begin{equation*}
-  ^{\mathrm{m}}_\mathrm{z}A+
-\end{equation*}
-Wird ein Kern $A$ mit einem Neutron beschossen, entsteht zunächst ein sogenannter \textbf{Zwischenkern} $A^{*}$, auch \textbf{Coupondkern} genannt, erzeugt. Die zusätzlich eingebrachte Energie gegenüber dem Kern $A$ durch die kinetische Energie und die Bindungsenergie des Neutrons wird auf eine große Anzahl an Nukleonen im Kern verteilt.
+\begin{align}
+  \ce{^{m}_{z}A+ ^{1}_0n -> ^{m+1}_zA^{*} -> ^{m+1}_zA +\gamma}
+\end{align}
+Wird ein Kern $A$ mit einem Neutron beschossen, wird zunächst ein sogenannter \textbf{Zwischenkern} $\ce{A^{*}}$, auch \textbf{Coupondkern} genannt, erzeugt. Die zusätzlich eingebrachte Energie gegenüber dem Kern $A$ durch die kinetische Energie und die Bindungsenergie des Neutrons wird auf eine große Anzahl an Nukleonen im Kern verteilt.
 Nach einer kurzen Zeitspanne von $\SI{10e-16}{\second}$ geht der Zwischenkern unter Emission eines $\gamma$-Quants in seinen Grundzustand zurück.
+Der so erzeugte Kern $\ce{^{m+1}_zA }$ hat allerdings ein Neutron zuviel, sodass er instabil ist.
+Unter Emmission eines Elektron geht dieser wieder in einen stabilen Zustand über:
+\begin{align*}
+\ce{^{m+1}_zA -> ^{m+1}_{z+1}C +\beta ^{-} + E_{\mathrm{kin }}+ \bar{\symup{\nu}}_e}
+\end{align*}
+
+In der Kernphysik ist der Wirkungsquerscchnitt $\sigma$ ein Maß dafür, mit welcher Wahrscheinlichkeit ein Neutron durch einen stabilen Kern eingefangen wird.
+Nach Breit und Wigner lässt sich der Wirkungsquerschnitt als Funktion der Neutronenenergie $E$ darstellen:
+\begin{equation}
+  \sigma (E)=\sigma _0 \sqrt{\frac{E_{\mathrm{r}_i}}{E}}\frac{\tilde{c}}{\left(E-E_{\mathrm{r}_i}\right)^2 +\tilde{c}} \text{.}
+\end{equation}
+Hierbei stellt $E_{\mathrm{r}_i}$ die Energieniveaus des Zwischenkerns $A^{*}$ dar und $\tilde{c}$ sowie $\sigma_0$ sind für die betreffende Kernreaktion charakteristische Konstanten.
+Ist die Summe $E$ aus der kinetischen Energie und der Bindungsenergie des einfallenden Neutrons sehr viel kleiner als die Energieniveaus des Zwischenkerns $E_{\mathrm{r}_i}$, so wird der Nenner des Bruchs im Wirkungsquerschnitt praktisch konstant. Da die Energie $E$ des einfallenden Neutron proportional zu $v^2$ ist, ergibt sich somit:
+\begin{equation}
+  \label{eqn:siggi}
+  \sigma \propto \frac{1}{\sqrt{E}}\propto \frac{1}{v} \text{.}
+\end{equation}
+
 \subsection{Erzeugung niederenergetischer Neutronen}
-
-
+Nach der Überlegung \ref{eqn:siggi} ergibt sich besonders für niederenergetische Neutronen also eine hohe Wahrscheinlichkeit für Kernreaktionen.
+Neutronen sind instabil und müssen daher zunächst über geeignete Kernreaktionen erzeugt werden.
+Im vorliegenden Versuch werden hierzu $\ce{^{9}Be}$-Kerne mit $\alpha$-Teilchen beschossen und hierbei Neutronen freigesetzt:
+\begin{align}
+    \ce{ ^{9}_4Be + ^{4}_2He^{+ 2}  -> ^{12}_6C + ^{1}_0n}\text{.}
+\end{align}
+Um die kinetische Energie und damit die Geschwindigkeit der $\alpha$-Teilchen zu verringern, diffundieren die Neutronen nach dem Austritt aus der Neutronenquelle zunächst durch eine Mantelschicht aus Paraffin. Im Paraffin finden elastische Stöße zwischen den Neutronen und dem Paraffin statt. Durch die elastischen Stöße wird das Neutron recht effektiv gebremst, da die Stoßpartner annähernd gleich groß sind.
+Die Neutronen werden gebremst bis auf eine Energie von etwa $\SI{0.025}{\electronvolt}$ bei $T=\SI{290}{\kelvin}$. Die Neutronen haben hierbei eine mittlere Geschwindigkeit von $\bar{v}=\SI{2.2}{\kilo\meter\per\second}$.
 
 \subsection{Untersuchung des Zerfalls instabiler Isotope}
