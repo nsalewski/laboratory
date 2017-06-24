@@ -11,7 +11,27 @@ def theorie(x,m,b):
     return m*x+b
 
 
-########Auswertung Silber
+#####################################################################################
+#Indium
+number, N = np.genfromtxt('Messdaten/indium.txt', unpack=True)
+time_interval = 240
+time = number*240
+ascii.write([time, N], 'Messdaten/tab_indium.tex', format="latex")
+N = N - 176/3
+
+params, covariance = curve_fit(theorie, time, np.log(N))
+errors = np.sqrt(np.diag(covariance))
+pace = ufloat(params[0],errors[0])
+
+print('m = ', params[0], ' +/- ', errors[0], ' b = ', params[1], ' +/- ', errors[1])
+print('Halbertszeit = ', np.log(2) / pace)
+
+
+
+
+
+
+########Auswertung Silber##############################################################
 imps=np.genfromtxt("Messdaten/silver.txt", unpack=True)
 imps=imps[:52]
 t_int=8
