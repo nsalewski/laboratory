@@ -21,71 +21,71 @@ t=np.linspace(0,len(imps),len(imps))
 print(nullsilver)
 #es werden werte aus dem array entfernt, welche unter 1+nullsilver liegen, sonst probleme im logarithmus
 
-def plot(teins,tzwei):
-    arrteins=imps[0:teins]
-    lineins=t[0:teins]
-    arrtzwei=imps[tzwei:len(imps)]
-    linzwei=t[tzwei:len(imps)]
-    params2lin, covariance2lin = curve_fit(theorie,8*linzwei,(arrtzwei))
-
-    arrtzwei=np.log(arrtzwei)
-    print(arrtzwei)
-    params2, covariance2 = curve_fit(theorie,8*linzwei,(arrtzwei))
-    errors2 = np.sqrt(np.diag(covariance2))
-    m2=ufloat(params2[0],errors2[0])
-    b2=ufloat(params2[1],errors2[1])
-    print(r"Zweiter Prozess ")
-    print("m",m2,r'\n b',b2)
-    m_zwei=-m2
-    t_zwei=np.log(2)/m_zwei.nominal_value
-    print('Halbwertszeit langer Zerfall', t_zwei)
-
-    abzug=theorie(lineins,*params2lin)
-    arrteins=arrteins-abzug
-    arrteins=np.log(arrteins)
-    params1, covariance1 = curve_fit(theorie,8*lineins,(arrteins))
-    errors1 = np.sqrt(np.diag(covariance1))
-    m1=ufloat(params1[0],errors1[0])
-
-    b1=ufloat(params1[1],errors1[1])
-    print(r"Erster Prozess ")
-    print("m",m1,r'\n b',b1)
-    m_eins=-m1
-    t_eins=np.log(2)/(m_eins.nominal_value)
-    print('Halbwertszeit langer Zerfall', t_eins)
-
-    linspace1=np.linspace(-10,54)
-
-    plt.plot(linspace1*8, theorie(linspace1*8, *params1), 'g-', label="Ausgleichsgrade 1")
-    a=np.log(imps)-np.log(imps-np.sqrt(imps))
-    b=(np.log(imps+np.sqrt(imps))-np.log(imps))
-    for x in range(0,len(t)):
-        if ((np.log(imps[x])-a[x])<=0.0):
-            a[x]=np.log(imps[x])
-    plt.errorbar(t*8, np.log(imps), yerr=[a,b], xerr=None, fmt='x', label="Messwerte")
-    #plt.plot(t*8, np.log(imps), 'rx', label="Messwerte")
-    linspace2=np.linspace(-10,54)
-    plt.plot(linspace2*8, theorie(linspace2*8,*params2),'b-', label="Ausgleichsgrade 2")
-    plt.axvline(x=teins*8, ls=':', color="g")
-    plt.axvline(x=tzwei*8, ls=':', color="c", label=r"t^{*}")
-    plt.ylabel(r"$\log(N(t))$/$\si{\per\second}$")
-    plt.xlabel(r"$t$/$\si{\second}$")
-    plt.ylim(-0.1,5.5)
-    plt.xlim(-10,54*8)
-    plt.legend(loc='best')
-    plt.tight_layout()
-    plt.savefig('Messdaten/silber.pdf')
-    plt.clf()
-    plt.errorbar(t*8, np.log(imps), yerr=[a,b], xerr=None, fmt='x', label="Messwerte")
-    plt.plot(t*8,np.exp(-m_eins.nominal_value*8*t)+np.exp(-m_zwei.nominal_value*8*t),'g-',label="Thei")
-    plt.ylabel(r"$\log(N(t))$/$\si{\per\second}$")
-    plt.xlabel(r"$t$/$\si{\second}$")
-    plt.legend(loc='best')
-    plt.tight_layout()
-    plt.savefig('Messdaten/ergebnis.pdf')
-    plt.clf()
-plot(13,25)
-
+#def plot(teins,tzwei):
+#    arrteins=imps[0:teins]
+#    lineins=t[0:teins]
+#    arrtzwei=imps[tzwei:len(imps)]
+#    linzwei=t[tzwei:len(imps)]
+#    params2lin, covariance2lin = curve_fit(theorie,8*linzwei,(arrtzwei))
+#
+#    arrtzwei=np.log(arrtzwei)
+#    print(arrtzwei)
+#    params2, covariance2 = curve_fit(theorie,8*linzwei,(arrtzwei))
+#    errors2 = np.sqrt(np.diag(covariance2))
+#    m2=ufloat(params2[0],errors2[0])
+#    b2=ufloat(params2[1],errors2[1])
+#    print(r"Zweiter Prozess ")
+#    print("m",m2,r'\n b',b2)
+#    m_zwei=-m2
+#    t_zwei=np.log(2)/m_zwei.nominal_value
+#    print('Halbwertszeit langer Zerfall', t_zwei)
+#
+#    abzug=theorie(lineins,*params2lin)
+#    arrteins=arrteins-abzug
+#    arrteins=np.log(arrteins)
+#    params1, covariance1 = curve_fit(theorie,8*lineins,(arrteins))
+#    errors1 = np.sqrt(np.diag(covariance1))
+#    m1=ufloat(params1[0],errors1[0])
+#
+#    b1=ufloat(params1[1],errors1[1])
+#    print(r"Erster Prozess ")
+#    print("m",m1,r'\n b',b1)
+#    m_eins=-m1
+#    t_eins=np.log(2)/(m_eins.nominal_value)
+#    print('Halbwertszeit langer Zerfall', t_eins)
+#
+#    linspace1=np.linspace(-10,54)
+#
+#    plt.plot(linspace1*8, theorie(linspace1*8, *params1), 'g-', label="Ausgleichsgrade 1")
+#    a=np.log(imps)-np.log(imps-np.sqrt(imps))
+#    b=(np.log(imps+np.sqrt(imps))-np.log(imps))
+#    for x in range(0,len(t)):
+#        if ((np.log(imps[x])-a[x])<=0.0):
+#            a[x]=np.log(imps[x])
+#    plt.errorbar(t*8, np.log(imps), yerr=[a,b], xerr=None, fmt='x', label="Messwerte")
+#    #plt.plot(t*8, np.log(imps), 'rx', label="Messwerte")
+#    linspace2=np.linspace(-10,54)
+#    plt.plot(linspace2*8, theorie(linspace2*8,*params2),'b-', label="Ausgleichsgrade 2")
+#    plt.axvline(x=teins*8, ls=':', color="g")
+#    plt.axvline(x=tzwei*8, ls=':', color="c", label=r"t^{*}")
+#    plt.ylabel(r"$\log(N(t))$/$\si{\per\second}$")
+#    plt.xlabel(r"$t$/$\si{\second}$")
+#    plt.ylim(-0.1,5.5)
+#    plt.xlim(-10,54*8)
+#    plt.legend(loc='best')
+#    plt.tight_layout()
+#    plt.savefig('Messdaten/silber.pdf')
+#    plt.clf()
+#    plt.errorbar(t*8, np.log(imps), yerr=[a,b], xerr=None, fmt='x', label="Messwerte")
+#    plt.plot(t*8,np.exp(-m_eins.nominal_value*8*t)+np.exp(-m_zwei.nominal_value*8*t),'g-',label="Thei")
+#    plt.ylabel(r"$\log(N(t))$/$\si{\per\second}$")
+#    plt.xlabel(r"$t$/$\si{\second}$")
+#    plt.legend(loc='best')
+#    plt.tight_layout()
+#    plt.savefig('Messdaten/ergebnis.pdf')
+#    plt.clf()
+#plot(13,25)
+#
 
 
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
