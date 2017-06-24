@@ -26,10 +26,17 @@ pace = ufloat(params[0],errors[0])
 print('m = ', params[0], ' +/- ', errors[0], ' b = ', params[1], ' +/- ', errors[1])
 print('Halbertszeit = ', np.log(2) / pace)
 
-
-
-
-
+t_values = np.linspace(0,3700)
+plt.plot(t_values, theorie(t_values, *params), 'g-', label="Ausgleichsgerade")
+plt.errorbar(time, np.log(N), yerr=[abs(np.log(N)-np.log(N-np.sqrt(N))), abs(np.log(N+np.sqrt(N))-np.log(N))], xerr=None, fmt='rx', label="Messwerte", visible=True)
+plt.ylabel(r"$\log(N(t))$/$\si{\per\second}$")
+plt.xlabel(r"$t$/$\si{\second}$")
+plt.ylim(0,10)
+plt.xlim(0,3700)
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('Messdaten/indium.pdf')
+plt.clf()
 
 ########Auswertung Silber##############################################################
 imps=np.genfromtxt("Messdaten/silver.txt", unpack=True)
