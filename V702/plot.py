@@ -36,6 +36,9 @@ def plot(teins,tzwei):
     b2=ufloat(params2[1],errors2[1])
     print(r"Zweiter Prozess ")
     print("m",m2,r'\n b',b2)
+    m_zwei=-m2
+    t_zwei=np.log(2)/m_zwei.nominal_value
+    print('Halbwertszeit langer Zerfall', t_zwei)
 
     abzug=theorie(lineins,*params2lin)
     arrteins=arrteins-abzug
@@ -47,7 +50,11 @@ def plot(teins,tzwei):
     b1=ufloat(params1[1],errors1[1])
     print(r"Erster Prozess ")
     print("m",m1,r'\n b',b1)
-    linspace1=np.linspace(0,teins)
+    m_eins=-m1
+    t_eins=np.log(2)/(m_eins.nominal_value)
+    print('Halbwertszeit langer Zerfall', t_eins)
+
+    linspace1=np.linspace(0,54)
 
     plt.plot(linspace1*8, theorie(linspace1*8, *params1), 'g-', label="Ausgleichsgrade 1")
     a=np.log(imps)-np.log(imps-np.sqrt(imps))
@@ -57,17 +64,27 @@ def plot(teins,tzwei):
             a[x]=np.log(imps[x])
     plt.errorbar(t*8, np.log(imps), yerr=[a,b], xerr=None, fmt='x', label="Messwerte")
     #plt.plot(t*8, np.log(imps), 'rx', label="Messwerte")
-    linspace2=np.linspace(tzwei,54)
+    linspace2=np.linspace(0,54)
     plt.plot(linspace2*8, theorie(linspace2*8,*params2),'b-', label="Ausgleichsgrade 2")
     plt.axvline(x=teins*8, ls=':', color="g")
-    plt.axvline(x=tzwei*8, ls=':', color="c")
+    plt.axvline(x=tzwei*8, ls=':', color="c", label=r"t^{*}")
+    plt.ylabel(r"$\log(N(t))$/$\si{\per\second}$")
+    plt.xlabel(r"$t$/$\si{\second}$")
+    plt.ylim(-0.1,5.5)
+    plt.legend(loc='best')
+    plt.tight_layout()
+    plt.savefig('Messdaten/silber.pdf')
+    plt.clf()
+    plt.errorbar(t*8, np.log(imps), yerr=[a,b], xerr=None, fmt='x', label="Messwerte")
+    plt.plot(t*8,np.exp(-m_eins.nominal_value*8*t)+np.exp(-m_zwei.nominal_value*8*t),'g-',label="Thei")
     plt.ylabel(r"$\log(N(t))$/$\si{\per\second}$")
     plt.xlabel(r"$t$/$\si{\second}$")
     plt.legend(loc='best')
     plt.tight_layout()
-    plt.savefig('Messdaten/silber.pdf')
+    plt.savefig('Messdaten/ergebnis.pdf')
+    plt.clf()
+plot(13,25)
 
-plot(11,23)
 
 
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
