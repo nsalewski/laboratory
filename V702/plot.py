@@ -7,6 +7,9 @@ import uncertainties.unumpy as unp
 nulleffekt=220
 tnull=900
 nulleff=220/900
+zeit=ufloat(2.382,0.011)
+zeit=zeit*60
+print("Hwz lang=",zeit)
 def theorie(x,m,b):
     return m*x+b
 
@@ -39,14 +42,14 @@ plt.savefig('Messdaten/indium.pdf')
 plt.clf()
 
 ########Auswertung Silber##############################################################
-imps=np.genfromtxt("Messdaten/silver.txt", unpack=True)
-imps=imps[:52]
+impsges=np.genfromtxt("Messdaten/silver.txt", unpack=True)
+imps=impsges[:52]
 t_int=8
 nullsilver=nulleff*t_int
 imps=imps-nullsilver
-
+tges=np.linspace(1,len(impsges),len(impsges))
 t=np.linspace(1,len(imps),len(imps))
-ascii.write([t,np.round(np.log(imps),3),np.round(np.log(imps),3)],'Messdaten/anhang.tex', format='latex', names=['t','n-n0', 'ln(n)'])
+ascii.write([tges,np.round(impsges-nullsilver,3),np.round(np.log(impsges-nullsilver),3)],'Messdaten/anhang.tex', format='latex', names=['t','n-n0', 'ln(n)'])
 print(nullsilver)
 #es werden werte aus dem array entfernt, welche unter 1+nullsilver liegen, sonst probleme im logarithmus
 
@@ -109,10 +112,12 @@ def plot(teins,tzwei):
     an=imps-(imps-np.sqrt(imps))
     bn=((imps+np.sqrt(imps))-imps)
     plt.errorbar(t*8,imps, yerr=[an,bn], xerr=None, fmt='rx', label="Messwerte")
-    plt.plot(t*8,np.exp(theorie(8*t,*params1))+np.exp(theorie(t*8,*params2)),'g-',label="Überlagerung d. beiden Zerfälle ")
+    t_ls=np.linspace(0, 54,100)
+    plt.plot(t_ls*8,np.exp(theorie(8*t_ls,*params1))+np.exp(theorie(t_ls*8,*params2)),'g-',label="Überlagerung d. beiden Zerfälle ")
 
     plt.ylabel(r"$N(t)$")
     plt.xlabel(r"$t$/$\si{\second}$")
+    plt.xlim(0,54*8)
     plt.legend(loc='best')
     plt.tight_layout()
     plt.savefig('Messdaten/ergebnis.pdf')

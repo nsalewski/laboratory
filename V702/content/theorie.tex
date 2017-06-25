@@ -41,7 +41,7 @@ Im vorliegenden Versuch werden hierzu $\ce{^{9}Be}$-Kerne mit $\alpha$-Teilchen 
     \ce{ ^{9}_4Be + ^{4}_2He^{2+}  -> ^{12}_6C + ^{1}_0n}\text{.}
 \end{align}
 Um die kinetische Energie und damit die Geschwindigkeit der $\alpha$-Teilchen zu verringern, diffundieren die Neutronen nach dem Austritt aus der Neutronenquelle zunächst durch eine Mantelschicht aus Paraffin. Im Paraffin finden elastische Stöße zwischen den Neutronen und dem Paraffin statt. Durch die elastischen Stöße wird das Neutron recht effektiv gebremst, da die Stoßpartner annähernd gleich groß sind.
-Die Neutronen werden gebremst bis auf eine Energie von etwa $\SI{0.025}{\electronvolt}$ bei $T=\SI{290}{\kelvin}$. Sie haben hierbei eine mittlere Geschwindigkeit von $\bar{v}=\SI{2.2}{\kilo\meter\per\second}$. Neutronen mit den genannten Eigenschaften werden als \textbf{therminsche Neutronen} bezeichnen.
+Die Neutronen werden gebremst bis auf eine Energie von etwa $\SI{0.025}{\electronvolt}$ bei $T=\SI{290}{\kelvin}$. Sie haben hierbei eine mittlere Geschwindigkeit von $\bar{v}=\SI{2.2}{\kilo\meter\per\second}$. Neutronen mit den genannten Eigenschaften werden als \textbf{thermische Neutronen} bezeichnen.
 
 \subsection{Untersuchung des Zerfalls instabiler Isotope}
 Im vorliegenden Versuch wird zum einen Indium $\ce{^{115}_49In}$ mit einem einfachen Zerfall und Silber mit zwei parallel ablaufenden Zerfällen untersucht.
@@ -63,15 +63,15 @@ Nach hinreichend großer Zeitdauer ist das kurzlebige Isotop $\ce{^{110}Ag}$ und
 
 Für radioaktive Zerfälle gilt das Zerfallsgesetz:
 \begin{equation}
-  \label{eqn:halbwertszeit}
   N(t)=N_0 \cdot \exp{(-\lambda t)} \text{.}
 \end{equation}
 Es ist $\lambda$ die materialspezifische Zerfallskonstante und $N_0$ die Anzahl der Kerne zu Beginn der Beobachtung.
 Nach der Definition der Halbwertszeit ergibt sich diese zu:
-\begin{gather*}
-  \frac{1}{2} N_0= N_0 \cdot \exp{(-\lambda t)}\\
-  \rightarrow T_{\frac{1}{2}}=\frac{\ln{2}}{\lambda} \text{ .}
-\end{gather*}
+\begin{align}
+  \label{eqn:halbwertszeit}
+  \frac{1}{2} N_0&= N_0 \cdot \exp{(-\lambda T_\frac{1}{2})}\\
+  \rightarrow T_{\frac{1}{2}}&=\frac{\ln{2}}{\lambda} \text{ .}
+\end{align}
 Die Bestimmung der Halbwertszeit und der Zerfallskonstante über eine Messung der Zeitabhängigkeit der Kernanzahl $N(t)$ stellt sich als schwierig heraus.
 Es wird daher die Anzahl $N_{\Delta t}(t)$ an Kernzerfällen in einem festen Zeitintervall $\Delta t$ bestimmt.
 Mit der Definition
@@ -83,16 +83,16 @@ ergibt sich für $N_{\Delta t}(t)$ nach Gleichung \eqref{eqn:halbwertszeit}:
   \label{eqn:Delta_t}
   N_{\Delta t}(t)=N_0 \cdot \exp{(-\lambda t)}-N_0 \cdot \exp{(-\lambda(t+\Delta t))} \text{.}
 \end{equation}
-Wird Gleichung \eqref{eqn:Delta_t} beidseitig logarithmiert, zeigt sich ein linearer Zusammenhang
+Wird Gleichung \eqref{eqn:Delta_t} beidseitig logarithmiert, zeigt sich ein linearer Zusammenhang in den Wertepaaren ${t, \ln{N_{\Delta t}(t)}}$:
 \begin{equation}
   \label{eqn:ausgleichsrechnung}
-  \ln{  N_{\Delta t}(t)}=\ln{N_0 \left(1- \exp{(-\lambda \Delta t}\right))}-\lambda t \text{ .}
+  \ln{  N_{\Delta t}(t)}=\ln{(N_0 \left(1- \exp{(-\lambda \Delta t}\right)))}-\lambda t \text{ .}
 \end{equation}
 Hierbei ist die Wahl eines geeigneten Messintervalls $\Delta t$ nicht trivial und erfordert langwierige Vorversuche. Eine Liste mit geeeigneten Messintervallen liegt daher dem Experiment bei.
 \begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{Bilder/zerfallskurve.png}
-  \caption{Prinzipielle Zerfallskurve eines Materials, welches aus zwei Isotopen mit sehr unterschiedlichen Zerfallskonstanten besteht.}
+  \caption{Prinzipielle Zerfallskurve eines Materials, welches aus zwei Isotopen mit sehr unterschiedlichen Zerfallskonstanten besteht. \cite{Anleitung}}
   \label{fig:zerfallskurve}
 \end{figure}
 Die verschiedenen Zerfälle beim Silber lassen sich wie folgt getrennt untersuchen:
