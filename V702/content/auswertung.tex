@@ -47,7 +47,7 @@ Eine lineare Ausgleichsrechnung der Form
 \end{equation*}
 mit den Datentupeln $\{ t, \ln (N)\}$ aus Tabelle \ref{tab:indium} ergibt die Geradenparameter
 \begin{align*}
-	m &= (-\num{2,2(8)}) \cdot 10^{-4} \si{\per\second}  \, \mathrm{,} \\
+	m &= (\SI{-2,2(8)E-04}{\per\second}  \, \mathrm{,} \\
 	b &= \num{7,80(2)} \, \mathrm{.}
 \end{align*}
 Damit ist die Zerfallskonstante
@@ -55,7 +55,7 @@ Damit ist die Zerfallskonstante
 	\lambda = (\num{2,2(8)}) \cdot 10^{-4} \si{\per\second}  \, \mathrm{.} \\
 \end{equation*}
 Die zugehörige Ausgleichsgerade ist in Abbildung \ref{fig:indium} dargestellt.
-Mit Formel \eqref{eqn:???} ergibt sich die Halbwertszeit von Indium $^{116}\mathrm{In}$
+Mit Formel \eqref{eqn:halbwertszeit} ergibt sich die Halbwertszeit von Indium $^{116}\mathrm{In}$
 zu
 \begin{equation*}
 	\tau =  (\num{3.08(11)}) \cdot 10^3 \si{\second} \, \mathrm{.}
@@ -74,13 +74,17 @@ zu
 
 \subsection{Untersuchung der Halbwertszeit der beiden Zerfälle bei Silber}
 Zu Beginn wird von jeder Anzahl $N$ an gemessenen Zerfällen die Nullmessung abgezogen.
-Das Messintervall beträgt für die Untersuchung des Zerfalls bei Silber jeweils $\Delta t = \SI{8}{\second}$.
+Das Messintervall beträgt für die Untersuchung des Zerfalls bei Silber jeweils $\Delta t = \SI{8}{\second}$.\\
 Die Nullmessung entspricht $220$ Impulsen bei einer Messzeit von $\SI{900}{\second}$.
-Für das vorliegende Messintervall ergibt sich also ein Wert von $N_0=\frac{220\mathrm{ [Imps]}}{\SI{900}{\second}}\cdot \SI{8}{\second}\approx 1.96\mathrm{ [Imps]}$.
+Für das vorliegende Messintervall ergibt sich also ein Wert von
+\begin{equation*}
+	N_0=\frac{220\mathrm{ [Imps]}}{\SI{900}{\second}}\cdot \SI{8}{\second}\approx 1.96\mathrm{ [Imps]}\text{ .}
+\end{equation*}
 Im Anhang in Tabelle \ref{tab:anhang} finden sich die gemessenen Werte für die Zerfälle abzüglich der Nullmessung, sowie ihr Logarithmus.
-Es lässt sich zunächst ein Zeitpunkt $t^{*}$ bestimmt, zu dem sich annähernd nur noch der langlebige Zerfall gemessen wird.
-Es wird $t^{*}=\SI{168}{\second}$ gewählt, da ab diesem Zeitpunkt der Graph bis auf statistische Schwankungen nur noch einen schwach fallenden, annähern linearen Verlauf aufweist.
+Es lässt sich ein Zeitpunkt $t^{*}$ bestimmt, zu dem sich annähernd nur noch der langlebige Zerfall gemessen wird.
+Es wird $t^{*}=\SI{168}{\second}$ gewählt, da ab diesem Zeitpunkt der Graph bis auf statistische Schwankungen nur noch einen schwach fallenden, annähern linearen Verlauf aufweist.\\
 Nach Formel \eqref{eqn:ausgleichsrechnung} besteht ein linearer Zusammenhang zwischem dem Logarithmus der Zählrate $\ln{(N(t))}$ und der Messzeit $t$.
+
 Mittels Python/Scipy \cite{scipy} wird eine lineare Ausgleichsrechnung durchgeführt.
 In Tabelle \ref{tab:silver2} finden sich die hierfür verwendeten Messzeiten, die zugehörigen Zählraten und deren Logarithmus.
 Es ergeben sich die Parameter:
@@ -88,18 +92,22 @@ Es ergeben sich die Parameter:
 	m_{\mathrm{l}}= \SI{-0.0061(13)}{\per\second}=\lambda_\mathrm{l}\text{,}\\
 	b_{\mathrm{l}}=\num{3.3(4)}=\ln{(N_0 \left(1- \exp{(-\lambda_mathrm{l} \Delta t}\right)))}\text{.}
 \end{gather*}
+
 Nach Gleichung \eqref{eqn:halbwertszeit} berechnet sich die Halbwertszeit für den langlebigen Zerfall zu
 \begin{equation}
 	T_{\mathrm{l},\frac{1}{2}}=\SI{112.92}{\second}\text{.}
 \end{equation}
+
+
 Zur Betrachtung des kurzlebigen Zerfalls des Isotops $\ce{^{110}_47Ag}$ wird der bereits bekannte langlebige Zerfall von den gemessenen Zerfällen abgezogen.
-Anschließend wird ebenso wie für den langlebigen Zerfall vorgegangen.
+Anschließend wird ebenso wie für den langlebigen Zerfall vorgegangen.\\
 In Tabelle \ref{tab:silver1} finden sich die hierzu verwendeten Daten.
 Es ergeben sich die Parameter der Ausgleichsgrade zu:
 \begin{align*}
 	m_{\mathrm{k}}= \SI{-0.0278(18)}{\per\second}=\lambda_\mathrm{k}\text{,}\\
 	b_{\mathrm{k}}=\num{5.11(11)}=\ln{(N_0 \left(1- \exp{(-\lambda_mathrm{k} \Delta t}\right)))}\text{.}
 \end{align*}
+
 Als Halbwertszeit ergibt sich schließlich:
 \begin{equation}
 	T_{\mathrm{k},\frac{1}{2}}=\SI{24.97}{\second}\text{.}
@@ -173,9 +181,10 @@ $t$/$\si{\second}$ & Anzahl der Zerfälle $N$&$N_\mathrm{k}=N-N_\mathrm{l}$ & Lo
 \bottomrule
 \end{tabular}
 \end{table}
+
 In Abbildung \ref{fig:silber} sind die Messdaten des gesamten Zerfalls samt Fehlerbalken eingetragen.
 Für den Fehler wurde ein Intervall von $\pm \sigma=\sqrt{N(t)}$ angenommen.
-Für die graphische Darstellung wurden Zeiten größer als $t=\SI{416}{\second}$ nicht berücksichtigt, da hier Werte kleiner als die Nullmessung gemessen wurden. Sodass anzunehmen ist, dass hier keine genaue Aussage getroffen werden kann, ob hier jeweils ein tatsächlicher Zerfall der untersuchten Isotope oder lediglich eine Störung gemessen wurde.
+Für die graphische Darstellung wurden Zeiten größer als $t=\SI{416}{\second}$ nicht berücksichtigt, da hier Werte kleiner als die Nullmessung gemessen wurden, sodass anzunehmen ist, dass hier keine genaue Aussage getroffen werden kann, ob hier jeweils ein tatsächlicher Zerfall der untersuchten Isotope oder lediglich eine Störung gemessen wurde.\\
 Zudem werden alle Fehlerbalken, welche unter die Nulllinie im logarithmischen Plot gehen, abgeschnitten, da dies bedeuten würde, dass kein Impuls registriert wird. Dies ist im Rahmen der Messung nicht sinnvoll.
 In Abbildung \ref{fig:silber} sind außerdem die zuvor berechneten Ausgleichgraden beider Zerfälle eingezeichnet.
 
@@ -185,7 +194,13 @@ In Abbildung \ref{fig:silber} sind außerdem die zuvor berechneten Ausgleichgrad
   \caption{Zerfallskurve für Silber samt beider Ausgleichgraden zur Bestimmung der verschieden ablaufenden Einzelzerfälle.}
   \label{fig:silber}
 \end{figure}
+
 In Abbildung \ref{fig:ergebnis} ist die Summe der beiden errechneten Zerfälle ebenso eingezeichnet, wie die Messwerte samt --analog wie in Abbildung \ref{fig:silber} bestimmter -- Fehlerbalken.
+Die Summe beider Zerfälle ist gegeben über die Summe der exponierten Ausgleichsgraden:
+\begin{equation*}
+	N(t)=\exp{(m_\mathrm{k}\cdot t+b_\mathrm{k})}+ \exp{(m_\mathrm{l}\cdot t+b_\mathrm{l})}\text{ .}
+\end{equation*}
+
 
 \begin{figure}
   \centering
