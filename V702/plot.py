@@ -100,7 +100,7 @@ def plot(teins,tzwei):
     linspace2=np.linspace(-10,54)
     plt.plot(linspace2*8, theorie(linspace2*8,*params2),'b-', label=r"Ausgleichgrade Zerfall mit großem $T_{\frac{1}{2}}$ ")
     plt.axvline(x=teins*8, ls=':', color="g")
-    plt.axvline(x=tzwei*8, ls=':', color="c", label=r"t^{*}")
+    plt.axvline(x=tzwei*8, ls=':', color="c", label='t*')
     plt.ylabel(r"$\ln(N(t))$")
     plt.xlabel(r"$t$/$\si{\second}$")
     plt.ylim(-0.1,5.5)

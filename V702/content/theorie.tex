@@ -11,20 +11,20 @@ So geartete Isotope müssen zunächt allerdings erzeugt werden. Dazu werden stab
 Wechselwirkungen zwischen Teilchen und Kernen werden als Kernreaktionen bezeichnet.
 Die ablaufende Reaktion bei Beschuss eines Kerns $A$ mit einem Neutron lässt sich wie folgt schreiben:
 \begin{align}
-  \ce{^{m}_{z}A+ ^{1}_0n -> ^{m+1}_zA^{*} -> ^{m+1}_zA +\gamma}
+	\ce{^{m}_{z}A+ ^{1}_0n -> ^{m+1}_zA^{*} -> ^{m+1}_zA +\gamma} \, \mathrm{.}
 \end{align}
-Wird ein Kern $A$ mit einem Neutron beschossen, entsteht zunächst ein sogenannter \textbf{Zwischenkern} $\ce{A^{*}}$, auch \textbf{Coupondkern} genannt. Die zusätzlich eingebrachte Energie gegenüber dem Kern $A$ durch die kinetische Energie und die Bindungsenergie des Neutrons wird auf eine große Anzahl an Nukleonen im Kern verteilt.
+Wird ein Kern $A$ mit einem Neutron beschossen, entsteht zunächst ein sogenannter \textbf{Zwischenkern} $\ce{A^{*}}$, auch \textbf{Compoundkern} genannt. Die zusätzlich eingebrachte Energie gegenüber dem Kern $A$ durch die kinetische Energie und die Bindungsenergie des Neutrons wird auf eine große Anzahl an Nukleonen im Kern verteilt.
 Nach einer kurzen Zeitspanne von $\SI{10e-16}{\second}$ geht der Zwischenkern unter Emission eines $\gamma$-Quants in seinen Grundzustand zurück.
 Der so erzeugte Kern $\ce{^{m+1}_zA }$ hat allerdings ein Neutron zuviel, sodass er instabil ist.\\
-Unter Emmission eines Elektron geht dieser wieder in einen stabilen Zustand über:
+Unter Emission eines Elektron geht dieser wieder in einen stabilen Zustand über:
 \begin{align*}
-\ce{^{m+1}_zA -> ^{m+1}_{z+1}C +\beta ^{-} + E_{\mathrm{kin }}+ \bar{\symup{\nu}}_e}
+\ce{^{m+1}_zA -> ^{m+1}_{z+1}C +\beta ^{-} + E_{\mathrm{kin }} + \bar{\symup{\nu}}_e}
 \end{align*}
 
-In der Kernphysik ist der Wirkungsquerscchnitt $\sigma$ ein Maß dafür, mit welcher Wahrscheinlichkeit ein Neutron durch einen stabilen Kern eingefangen wird.
+In der Kernphysik ist der Wirkungsquerschnitt $\sigma$ ein Maß dafür, mit welcher Wahrscheinlichkeit ein Neutron durch einen stabilen Kern eingefangen wird.
 Nach Breit und Wigner lässt sich der Wirkungsquerschnitt als Funktion der Neutronenenergie $E$ darstellen:
 \begin{equation}
-  \sigma (E)=\sigma _0 \sqrt{\frac{E_{\mathrm{r}_i}}{E}}\frac{\tilde{c}}{\left(E-E_{\mathrm{r}_i}\right)^2 +\tilde{c}} \text{.}
+  \sigma (E)=\sigma _0 \sqrt{\frac{E_{\mathrm{r}_i}}{E}}\frac{\tilde{c}}{\left(E-E_{\mathrm{r}_i}\right)^2 +\tilde{c}} \, \text{.}
 \end{equation}
 Hierbei stellt $E_{\mathrm{r}_i}$ die Energieniveaus des Zwischenkerns $A^{*}$ dar und $\tilde{c}$ sowie $\sigma_0$ sind für die betreffende Kernreaktion charakteristische Konstanten.\\
 Ist die Summe $E$ aus der kinetischen Energie und der Bindungsenergie des einfallenden Neutrons sehr viel kleiner als die Energieniveaus des Zwischenkerns $E_{\mathrm{r}_i}$, so wird der Nenner des Bruchs im Wirkungsquerschnitt praktisch konstant. Da die Energie $E$ des einfallenden Neutron proportional zu $v^2$ ist, ergibt sich somit:
@@ -62,7 +62,7 @@ Wird ein Silberblech mittels Neutronenbeschuss aktiviert, so laufen beide Zerfal
 Nach hinreichend großer Zeitdauer ist das kurzlebige Isotop $\ce{^{110}_47Ag}$ und das langlebige Isotop $\ce{^{108}_47Ag}$ lässt sich nahezu isoliert beobachten.
 
 
-Für radioaktive Zerfälle gilt das Zerfallsgesetz:
+Für radioaktive Zerfälle gilt das Zerfallsgesetz
 \begin{equation}
   N(t)=N_0 \cdot \exp{(-\lambda t)} \text{.}
 \end{equation}
@@ -89,7 +89,7 @@ Wird Gleichung \eqref{eqn:Delta_t} beidseitig logarithmiert, zeigt sich ein line
   \label{eqn:ausgleichsrechnung}
   \ln{  N_{\Delta t}(t)}=\ln{(N_0 \left(1- \exp{(-\lambda \Delta t}\right)))}-\lambda t \text{ .}
 \end{equation}
-Hierbei ist die Wahl eines geeigneten Messintervalls $\Delta t$ nicht trivial und erfordert langwierige Vorversuche. Eine Liste mit geeeigneten Messintervallen liegt daher dem Experiment bei.
+Hierbei ist die Wahl eines geeigneten Messintervalls $\Delta t$ nicht trivial und erfordert langwierige Vorversuche. Eine Liste mit geeigneten Messintervallen liegt daher dem Experiment bei.
 \begin{figure}
   \centering
   \includegraphics[width=0.7\textwidth]{Bilder/zerfallskurve.png}
@@ -101,5 +101,5 @@ Hierbei ist die Wahl eines geeigneten Messintervalls $\Delta t$ nicht trivial un
 Die verschiedenen Zerfälle beim Silber lassen sich wie folgt getrennt untersuchen:
 Im Zerfalls-Diagramm (vgl. Abbildung \ref{fig:zerfallskurve}) ist ein Zeitpunkt $t^{*}$ so zu wählen, dass für alle $t_i>t^{*}$ die Zerfallskurve praktisch eine Gerade ist.
 Für diesen Bereich wird nahezu nur noch der langlebige Zerfall gemessen.
-In diesem Bereich lässt sich die Zerfallskonstante $\lambda$ für den langlebigen Zerfall des Isotops $\ce{^{108}_47}$ bestimmen.
+In diesem Bereich lässt sich die Zerfallskonstante $\lambda$ für den langlebigen Zerfall des Isotops $\ce{^{108}_47Ag}$ bestimmen.
 Der kurzlebige Zerfall lässt sich untersuchen, indem für $t_i<t^{*}$ der langlebige Zerfall mit der bereits bestimmten Zerfallskonstante von den gemessenen $N(t)$ abgezogen wird und mit den neu bestimmten $N(t)$ erneut eine lineare Regression nach Gleichung \eqref{eqn:ausgleichsrechnung} durchgeführt wird.
