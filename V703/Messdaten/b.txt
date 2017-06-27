@@ -1,0 +1,4 @@
+#Quelle: Imps per 60sec
+q1      3499
+q1+2    49676
+q2      46298
