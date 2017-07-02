@@ -65,6 +65,7 @@ impstab=[imps1,imps2,imps3]
 
 ascii.write([names,imps,impstab], 'Messdaten/totzeit.tex', format='latex')
 T=(imps1+imps3-imps2)/(2*imps1*imps3)
+T=T*10**6
 print('Totzeit=',T)
 
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)

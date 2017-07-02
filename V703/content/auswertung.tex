@@ -7,9 +7,9 @@ Zur Untersuchung der Charakteristik des Halogen-Zählrohrs wird die gemessene An
 
 \begin{longtable}{ccc}
   \caption{Messdaten zur Untersuchung der Charakteristik des Zählrohrs.}\\
-  \label{tab:a}\\
+  \label{tab:atab}\\
 \toprule
-$U$/$\si{\volt}$ &$N$/$\frac{\mathrm{[Imps]}}{\si{\minute}}$&$N_\mathrm{sec}$/$\frac{\mathrm{[Imps]}}{\si{\second}}$ \\
+$U$/$\si{\volt}$ &$N$/$\si{\minute}$&$N_\mathrm{sec}$/$\si{\second}$ \\
 
 \midrule
 \endhead
@@ -65,22 +65,21 @@ $U$/$\si{\volt}$ &$N$/$\frac{\mathrm{[Imps]}}{\si{\minute}}$&$N_\mathrm{sec}$/$\
 \end{longtable}
 
 
-In Tabelle \ref{tab:a} finden sich die gemessenen Datentupel aus angelegter Spannung $U$ und gezählten Impulsen $N$ pro Minute. Zudem werden die hieraus berechneten Impulse pro Sekunde $N_\mathrm{sec}$ und die Breite des zugehörigen Vertrauensintervall $\frac{\sqrt{N_\mathrm{sec}}}{N_\mathrm{sec}}$ angegeben.\\
+In Tabelle \ref{tab:atab} finden sich die gemessenen Datentupel aus angelegter Spannung $U$ und gezählten Impulsen $N$ pro Minute. Zudem werden die hieraus berechneten Impulse pro Sekunde $N_\mathrm{sec}$ und die Breite des zugehörigen Vertrauensintervall $\frac{\sqrt{N_\mathrm{sec}}}{N_\mathrm{sec}}$ angegeben.\\
 In Abbildung \ref{fig:a} findet sich die Zählrohrcharakteristik.
-Da der Bereich der Dauerentladung mit der vorliegenden Messapparatur nicht erreicht wurde, und die Anzahl der gemessenen Impulse zum Ende der Messung wieder leicht sinkt, wird ein Fehler im Versuch angenommen und als Arbeitsbereich des Zählrohrs das Intervall von $\SI{480}{\volt}$ bis $\SI{870}{\volt}$ angenommen.
-Es ergibt sich somit eine Plateaulänge von $l=\SI{390}{\volt}$.
+Da der Bereich der Dauerentladung mit der vorliegenden Messapparatur nicht erreicht wurde, und die Anzahl der gemessenen Impulse zum Ende der Messung wieder leicht sinkt, wird ein Fehler im Versuch vermutet und als Arbeitsbereich des Zählrohrs das Intervall von $\SI{480}{\volt}$ bis $\SI{870}{\volt}$ angenommen.
+Es ergibt sich somit eine Plateaulänge von $\Delta U_\mathrm{P}=\SI{390}{\volt}$.
 Im Arbeitsbereich des Zählrohrs wird eine lineare Ausgleichsrechnung mit python/scipy \cite{scipy} durchgeführt.\\
 Es ergeben sich die Parameter der Ausgleichgraden $y=m\cdot x+b$ zu:
 \begin{align}
-  m=  \num{0.061(5)}\,\frac{\mathrm{[Imps]}\cdot \si{\volt}}{\si{\second}} \text{,}\\
-  b=  \num{587(4)}\,\frac{\mathrm{[Imps]}}{\si{\second}}\text{.}
+  m=  \SI{0.061(5)}{\volt\per\second} \text{,}\\
+  b=  \SI{587(4)}{\per\second}\text{.}
 \end{align}
 
-Aus der Steigung der Ausgleichsgraden lässt sich die Steigung $P_\mathrm{S}$ im Plateaubereich zu
+Aus der Steigung der Ausgleichsgraden lässt sich die Steigung $P_\mathrm{S}$ im Plateaubereich ablesen zu:
 \begin{equation*}
-  P_\mathrm{S}=\frac{\SI{6.1(5)}{\percent}}{\SI{100}{\volt}} \text{ ,}
+  P_\mathrm{S}=\frac{\SI{6.1(5)}{\percent}}{\SI{100}{\volt}} \text{ .}
 \end{equation*}
-ablesen.
 \begin{figure}
   \centering
   \includegraphics{Bilder/a.pdf}
@@ -98,7 +97,7 @@ Nach Abbildung \ref{fig:nachladen} wird die Zeit zwischen dem ersten Impuls und 
 \subsection{Bestimmung der Totzeit aus dem Oszilloskopbild}
 Die Totzeit lässt sich nach Abbildung \ref{fig:nachladen} aus dem Oszilloskop ablesen.
 In Tabelle \ref{tab:c} finden sich die bei verschiedenen Betriebsspannungen abgelesenen Totzeiten $T$, sowie die zugehörigen Erholungszeiten $T_\mathrm{E}$.
-Da diese sich sehr willkürlich bestimmen lassen, ist eine weitere Betrachtung der Erholungszeiten nicht sinnvoll.
+Da diese sich sehr willkürlich und nur ungenau bestimmen lassen, ist eine weitere Betrachtung der Erholungszeiten nicht sinnvoll.
 \begin{table}
   \centering
   \caption{Messdaten zur Bestimmung der Totzeit aus dem Oszilloskopbild.}
