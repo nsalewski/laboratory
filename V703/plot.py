@@ -73,11 +73,11 @@ ireg=otto[4:len(otto)-3]
 ureg = uA[4:len(uA)-3]
 impsroh2 = impsroh[4:len(impsroh)-3]
 Q = ireg/impsreg
-Qe = Q/(1.6021766208*10**(-19))
+Qe = Q/(impsroh2*1.6021766208*10**(-19))
 print(len(Qe), len(ureg), len(impsroh2), len(impsreg))
-ascii.write([ureg, impsroh2, impsreg, np.round(Q,3), np.round(Qe,3)],'Messdaten/tab_d.tex',format='latex')
+ascii.write([ureg, impsroh2, np.round(impsreg,3), np.round(Q,3), np.round(Qe,3)],'Messdaten/tab_d.tex',format='latex')
 lol = sum(Qe)/len(Qe)
-print(lol)
+print(np.mean(Qe), 'und', np.std(Qe))
 
 
 
