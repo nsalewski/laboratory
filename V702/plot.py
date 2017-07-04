@@ -19,8 +19,8 @@ def theorie(x,m,b):
 number, N = np.genfromtxt('Messdaten/indium.txt', unpack=True)
 time_interval = 240
 time = number*240
-ascii.write([time, N], 'Messdaten/tab_indium.tex', format="latex")
-N = N - 176/3
+N = N - 59
+ascii.write([time, N,np.round(abs(np.log(N)-np.log(N-np.sqrt(N))),3), np.round(abs(np.log(N+np.sqrt(N))-np.log(N)),3)], 'Messdaten/tab_indium.tex', format="latex")
 
 params, covariance = curve_fit(theorie, time, np.log(N))
 errors = np.sqrt(np.diag(covariance))
@@ -32,7 +32,7 @@ print('Halbertszeit = ', np.log(2) / pace)
 t_values = np.linspace(0,3700)
 plt.plot(t_values, theorie(t_values, *params), 'g-', label="Ausgleichsgerade")
 plt.errorbar(time, np.log(N), yerr=[abs(np.log(N)-np.log(N-np.sqrt(N))), abs(np.log(N+np.sqrt(N))-np.log(N))], xerr=None, fmt='rx', label="Messwerte", visible=True)
-plt.ylabel(r"$\log(N(t))$/$\si{\per\second}$")
+plt.ylabel(r"$\log(N(t))$")
 plt.xlabel(r"$t$/$\si{\second}$")
 plt.ylim(0,10)
 plt.xlim(0,3700)
@@ -49,7 +49,7 @@ nullsilver=nulleff*t_int
 imps=imps-nullsilver
 tges=np.linspace(1,len(impsges),len(impsges))
 t=np.linspace(1,len(imps),len(imps))
-ascii.write([tges,np.round(impsges-nullsilver,3),np.round(np.log(impsges-nullsilver),3)],'Messdaten/anhang.tex', format='latex', names=['t','n-n0', 'ln(n)'])
+ascii.write([tges*8,np.round(impsges-nullsilver,0),np.round(np.log(impsges-nullsilver),3)],'Messdaten/anhang.tex', format='latex', names=['t','n-n0', 'ln(n)'])
 print(nullsilver)
 #es werden werte aus dem array entfernt, welche unter 1+nullsilver liegen, sonst probleme im logarithmus
 
@@ -69,38 +69,43 @@ def plot(teins,tzwei):
     print(r"Zweiter Prozess ")
     print("m",m2,r'\n b',b2)
     m_zwei=-m2
-    t_zwei=np.log(2)/m_zwei.nominal_value
+    t_zwei=np.log(2)/m_zwei
     print('Halbwertszeit langer Zerfall', t_zwei)
-    ascii.write([8*linzwei,np.round(Nzwei,1),np.round(np.log(Nzwei),3)],'Messdaten/tab1_silver.tex',
-    format='latex', names=['t','n', 'ln(n)'])
+    a=np.log(imps)-np.log(imps-np.sqrt(imps))
     abzug=theorie(lineins,*params2lin)
     Neins=arrteins-abzug
     arrteins=np.log(Neins)
     params1, covariance1 = curve_fit(theorie,8*lineins,(arrteins))
     errors1 = np.sqrt(np.diag(covariance1))
     m1=ufloat(params1[0],errors1[0])
-    ascii.write([8*lineins,np.round(arreins,1),np.round(Neins,2),np.round(arrteins,2)],'Messdaten/tab2_silver.tex', format='latex', names=['t','n','n-nlang','ln(n)'])
+    sigma1=np.log(Neins)-np.log(Neins-np.sqrt(Neins))
+    sigma2=(np.log(Neins+np.sqrt(Neins))-np.log(Neins))
+
+    ascii.write([8*lineins,np.round(arreins,1),np.round(Neins,0),np.round(arrteins,2), np.round(sigma1,3),np.round(sigma2,3)],'Messdaten/tab2_silver.tex', format='latex', names=['t','n','n-nlang','ln(n)', "sigma up", 'sigma down'])
     b1=ufloat(params1[1],errors1[1])
     print(r"Erster Prozess ")
     print("m \n",m1,'b\n',b1)
     m_eins=-m1
-    t_eins=np.log(2)/(m_eins.nominal_value)
+    t_eins=np.log(2)/(m_eins)
     print('Halbwertszeit kurzer Zerfall', t_eins)
 
     linspace1=np.linspace(-10,54)
 
     plt.plot(linspace1*8, theorie(linspace1*8, *params1), 'g-', label=r"Ausgleichgrade Zerfall mit kleinem $T_\frac{1}{2}$ ")
-    a=np.log(imps)-np.log(imps-np.sqrt(imps))
-    b=(np.log(imps+np.sqrt(imps))-np.log(imps))
     for x in range(0,len(t)):
         if ((np.log(imps[x])-a[x])<=0.0):
             a[x]=np.log(imps[x])
+    ass=np.log(Nzwei)-np.log(Nzwei-np.sqrt(Nzwei))
+    bs=(np.log(Nzwei+np.sqrt(Nzwei))-np.log(Nzwei))
+    a=np.log(imps)-np.log(imps-np.sqrt(imps))
+    b=(np.log(imps+np.sqrt(imps))-np.log(imps))
+    ascii.write([8*linzwei,np.round(Nzwei,1),np.round(np.log(Nzwei),3),np.round(ass,3),np.round(bs,3)],'Messdaten/tab1_silver.tex',format='latex', names=['t','n', 'ln(n)', 'sigma down', 'sigma up'])
     plt.errorbar(t*8, np.log(imps), yerr=[a,b], xerr=None, fmt='rx', label="Messwerte")
     #plt.plot(t*8, np.log(imps), 'rx', label="Messwerte")
     linspace2=np.linspace(-10,54)
     plt.plot(linspace2*8, theorie(linspace2*8,*params2),'b-', label=r"Ausgleichgrade Zerfall mit großem $T_{\frac{1}{2}}$ ")
-    plt.axvline(x=teins*8, ls=':', color="g")
-    plt.axvline(x=tzwei*8, ls=':', color="c", label='t*')
+    plt.axvline(x=teins*8, ls=':', color="g", label="$t_{{max}}$")
+    plt.axvline(x=tzwei*8, ls=':', color="c", label='$t*$')
     plt.ylabel(r"$\ln(N(t))$")
     plt.xlabel(r"$t$/$\si{\second}$")
     plt.ylim(-0.1,5.5)
