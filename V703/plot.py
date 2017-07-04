@@ -11,7 +11,7 @@ def theorie(x,m,b):
 impsroh, uA, otto =np.genfromtxt('Messdaten/a.txt',unpack=True)
 imps=impsroh/60
 impsreg=imps[4:len(imps)-3]
-ascii.write([uA,impsroh,np.round(imps,2),np.round((np.sqrt(imps)/imps),3)],'Messdaten/tab_a.tex',format='latex',names=["U in V","Imps mess","Imps per second","err"])
+ascii.write([uA,impsroh,np.round(imps,2),np.round((np.sqrt(impsroh)/60),3)],'Messdaten/tab_a.tex',format='latex',names=["U in V","Imps mess","Imps per second","err"])
 params, covariance = curve_fit(theorie,uA[4:len(imps)-3], impsreg)
 errors = np.sqrt(np.diag(covariance))
 m=ufloat(params[0],errors[0])
@@ -19,13 +19,19 @@ b=ufloat(params[1], errors[1])
 print('Messung a: ')
 print("m= ", m)
 print("b= ", b)
+errmops=np.sqrt(impsroh)/60
+impserr=unp.uarray(impsroh,errmops)
+c=np.mean(impserr/60)
+print(c)
+meaan=m*100/c
+print("mittlere Zählrate Plateau", meaan)
 uls=np.linspace(min(uA)-0.1*min(uA),max(uA)+0.1*max(uA))
 plt.plot(uls,theorie(uls,*params), 'b-', label="Ausgleichsgrade")
 plt.axvline(x=480, ls=':', color="k", label="Arbeitsbereich des Zählrohrs")
 plt.axvline(x=max(uA)-30, ls=':', color="k")
 
-plt.errorbar(uA,imps, yerr=[-np.sqrt(imps)/imps,+np.sqrt(imps)/imps], xerr=None, fmt='rx', label="Messwerte")
-plt.ylabel(r"$N$/$\frac{\mathrm{[Imps]}}{\si{\second}}$")
+plt.errorbar(uA,imps, yerr=[-np.sqrt(imps)/60,+np.sqrt(imps)/60], xerr=None, fmt='rx', label="Messwerte")
+plt.ylabel(r"$N$/$\frac{1}{\si{\second}}$")
 plt.xlabel(r"$U$/$\si{\volt}$")
 plt.xlim(min(uA)-0.1*min(uA),max(uA)+0.1*max(uA))
 plt.legend(loc='best')
