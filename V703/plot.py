@@ -19,12 +19,11 @@ b=ufloat(params[1], errors[1])
 print('Messung a: ')
 print("m= ", m)
 print("b= ", b)
-errmops=np.sqrt(impsroh)/60
-impserr=unp.uarray(impsroh,errmops)
-c=np.mean(impserr/60)
-print(c)
-meaan=m*100/c
-print("mittlere Zählrate Plateau", meaan)
+errmops=np.sqrt(impsroh[4:len(impsroh)-3])/60
+print(errmops)
+impserr=unp.uarray(impsroh[4:len(impsroh)-3]/60,errmops)
+c=np.mean(impserr)
+print("mittlere Zählrate Plateau",c, "Steigung:", m*100/c)
 uls=np.linspace(min(uA)-0.1*min(uA),max(uA)+0.1*max(uA))
 plt.plot(uls,theorie(uls,*params), 'b-', label="Ausgleichsgrade")
 plt.axvline(x=480, ls=':', color="k", label="Arbeitsbereich des Zählrohrs")
@@ -64,9 +63,9 @@ print('***********************Ende Erholungszeit************************')
 names=[r'N_1',r'N_{1+2}',r'N_{2}']
 imps=np.asarray([3499,49676,46298])
 imps_per_s=imps/60
-imps1=ufloat(imps_per_s[0],np.sqrt(imps_per_s[0])/imps_per_s[0])
-imps2=ufloat(imps_per_s[1],np.sqrt(imps_per_s[1])/imps_per_s[1])
-imps3=ufloat(imps_per_s[2],np.sqrt(imps_per_s[2])/imps_per_s[2])
+imps1=ufloat(imps_per_s[0],np.sqrt(imps[0])/60)
+imps2=ufloat(imps_per_s[1],np.sqrt(imps[1])/60)
+imps3=ufloat(imps_per_s[2],np.sqrt(imps[2])/60)
 impstab=[imps1,imps2,imps3]
 
 ascii.write([names,imps,impstab], 'Messdaten/totzeit.tex', format='latex')

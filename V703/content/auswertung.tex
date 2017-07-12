@@ -74,10 +74,9 @@ Es ergeben sich die Parameter der Ausgleichgraden $y=m\cdot x+b$ zu:
   b=  \SI{587(4)}{\per\second}\text{.}
 \end{align}
 
-Aus der Steigung der Ausgleichsgraden lässt sich die Steigung $P_\mathrm{S}$ im Plateaubereich mit der mittleren Zählrate $\overline{N}=\SI{614}{\per\second}$ ablesen zu:
+Aus der Steigung der Ausgleichsgraden lässt sich die Steigung $P_\mathrm{S}$ im Plateaubereich mit der mittleren Zählrate im Plateaubereich $\overline{N_\mathrm{P}}=\SI{628.9(5)}{\per\second}$ (ermitteln mittels python/numpy \cite{numpy}) ablesen zu:
 \begin{equation*}
-  P_\mathrm{S}=\frac{m}{\overline{N}}=\frac{\SI{6.1(5)}{\percent}}{\SI{100}{\volt\second}\cdot \overline{N}}=\SI{1.00(8)E-02}{\percent}
- \text{ .}
+  P_\mathrm{S}=\frac{m \cdot 100} {\overline{N_\mathrm{P}}}= \frac{\SI{0.97(8)}{\percent}}{\SI{100}{\volt}}\text{ .}
 \end{equation*}
 \begin{figure}
   \centering
@@ -124,9 +123,9 @@ Eine Mittelung über alle Totzeiten ergibt eine mittlere Totzeit von $\overline{
   \toprule
 Quelle& $N$/$\si{\minute}$& $N$/$\si{\second}$ \\
 \midrule
-$N_1$ & 3499 & \num{58.3(1)} \\
-$N_{1+2}$ & 49676 & \num{827.93(4)} \\
-$N_{2}$ & 46298 & \num{771.63(4)} \\
+$N_1$ & 3499 & \num{58(1)} \\
+$N_{1+2}$ & 49676 & \num{828(4)} \\
+$N_{2}$ & 46298 & \num{772(4)} \\
 \bottomrule
 \end{tabular}
 \end{table}

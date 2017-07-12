@@ -1,0 +1,9 @@
+d) Das beobachtete Verhalten war zu erwarten.
+
+Es zeigt sich, dass das Newton-Verfahren schneller konvergiert als das Bisektionsverfahren.
+
+Im Allgemeinen kann es sein, dass das Newton-Verfahren gar nicht konvergiert, wenn der Startwert ungünstig gewählt ist.
+
+Das Bisektionsverfahren konvergiert immer, und zwar mit exponentiell kleiner werdenen Fehler (vgl. linearen Verlauf im halblogarithmischen Plot).
+Da der Startwert des Newton-Verfahrens günstig gewählt ist, und die Funktion im Intervall [a,b] streng monoton fallend ist,
+zeigt sich für das Newton-Verfahren  eine schnellere Konvergenz als für das Bisektionsverfahren, da sich die Anzahl der richtigen Nachkommastellen im Newton-Verfahren bei günstiger Wahl des Startwerts mit jedem Schritt verdoppelt.
