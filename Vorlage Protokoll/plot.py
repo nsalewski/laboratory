@@ -4,6 +4,13 @@ from scipy.optimize import curve_fit
 from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
+from modules.table.textable import latex_tab
+
+
+arr1=[1,2,3,4]
+arr2=[43,213,123,12]
+latex_tab(data=[arr1,arr2],names=["bla","blup"], filename="latex_tables/example.tex",caption="Caption",label="test")
+
 
 
 #n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
