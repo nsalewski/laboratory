@@ -1,6 +1,5 @@
 import matplotlib.pyplot as plt
 import numpy as np
-import textable as tex
 from scipy.optimize import curve_fit
 from astropy.io import ascii
 from uncertainties import ufloat
