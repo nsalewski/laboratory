@@ -1,4 +1,63 @@
 \section{Theorie}
 \label{sec:Theorie}
-Das Ziel dieses Versuches ist
-\cite{Anleitung}
+Das Ziel dieses Versuches ist die präzise Messung der Hyperfeinstruktur- sowie
+Zeemann-Aufspaltung mit Hilfe der Methode des optischen Pumpens. Weiterhin sollen die Land\'{e}-
+Faktoren von zwei Rubidium-Isotopen ermittelt werden.
+
+In der Elektronenhülle eines Atoms können die Elektronen verschiedene Energieniveaus einnehmen. 
+Dabei wird immer der energetisch günstigste Zustand angestrebt, sodass die innersten Schalen
+vollständig besetzt sind. Interessant für diesen Versuch sind die äußeren Niveaus, dessen 
+Besetzung eine Temperaturabhängigkeit aufweist. Seien nun die beiden Energieniveaus 
+$W_{\mathrm{i}}$ und $W_{\mathrm{i}+1}$ ($W_{\mathrm{i}+1} >  W_{\mathrm{i}}$) gegeben.
+Dann erfüllen diese die Boltzmannsche Gleichung
+\begin{equation}
+	\frac{N_{\mathrm{i}+1}}{N_{\mathrm{i}}} = \frac{g_{\mathrm{i}+1}}{g_{\mathrm{i}}} \frac{\exp(-W_{\mathrm{i}+1} / \mathrm{k}_{\mathrm{B}}T)}{\exp(-W_{\mathrm{i}} / \mathrm{k}_{\mathrm{B}}T)} \, \mathrm{,}
+\end{equation}
+wobei $g_{\mathrm{i}}$ dem statistischen Gewicht und $N_{\mathrm{i}}$ der Besetzungszahl 
+des jeweiligen Energieniveaus, 
+$\mathrm{k}_{\mathrm{B}}$ der Boltzmann-Konstanten und $T$ der Temperatur im thermischen 
+Gleichgewicht entspricht.
+Im Normalfall sollte folglich $W_{\mathrm{i}}$ eine höhere Besetzungszahl aufweisen. 
+Mit dem optischen Pumpen wird eine Inversion ($N_{\mathrm{i}+1} > N_{\mathrm{i}}$) möglich.
+Wenn diese Konstellation hergestellt wid, können Übergänge zwischen den beiden Niveaus 
+induziert werden, bei denen ein Photon mit der Energie 
+\begin{equation}
+	\mathrm{h} \nu = W_{\mathrm{i}+1} - W_{\mathrm{i}} \, \mathrm{,}
+\end{equation}
+emittiert wird. Die Frequenz wird hier $\nu$ genannt und h entspricht dem Planckschen 
+Wirkungsquantum.
+
+\subsection{Zusammenhang zwischen Drehimpuls, magnetischem Moment und Kernspin}
+
+Die Elektronenhülle des Atoms besitzt einen Drehimpuls $\vec{J}$, der sich aus dem
+Bahndrehimpuls $\vec{L}$ und dem Spin $\vec{S}$ zusammensetzt. An diesen koppelt das
+zugehörige magnetische Moment
+\begin{equation}
+	\vec{\mu}_J = - g_J \mu_{\mathrm{B}} \vec{J} \, \mathrm{,}
+\end{equation}
+mit dem Bohrschen Magneton $\mu_{\mathrm{B}}$ und dem Land\'{e}-Faktor $g_J$.
+Die Zusammensetzung des magnetischen Momentes der Elektronenhülle gemäß der
+Russel-Saunders-Kopplung $\vec{\mu}_J = \vec{\mu}_L + \vec{\mu}_S$ ermöglicht unter
+Verwendung des Kosinussatzes den Ausdruck
+\begin{equation}
+	g_J = \frac{3,0023 J(J+1) + 1,0023 (S(S+1)-L(L+1))}{2J(J+1)}
+\end{equation}
+für den Land\'{e}-Faktor.
+
+Befindet sich das Atom in einem externen B-Feld, so tritt eine Aufspaltung der bisherigen 
+Energieniveaus ein. Dieser Effekt wird Zeemann-Effekt genannt.
+Das B-Feld wirkt auf das magnetische Moment des Atoms und dieses führt eine Präzessionsbewegung
+in Feldrichtung aus, wodurch sich eine Richtungsquantelung des Drehimpulses ergibt. Damit 
+ergibt sich die Wechselwirkungsenergie
+\begin{equation}
+	U_{\mathrm{mag}} = - \vec{\mu}_J \cdot \vec{B} = M_J g_J \mu_{\mathrm{B}} B \, \mathrm{,} \, M_J \in \{J \in \mathbb{Z} \, \vert -J \le M_J \le J\} \, \mathrm{.}
+\end{equation}
+Die Orientierungsquantenzahl $M_J$ folgt aus der Richtungsquantelung. 
+
+Bei dieser Überlegung wurde allerdings noch nicht der Einfluss des Kernspins berücksichtigt.
+Der Gesamtdrehimpuls des Atoms ergibt sich nämlich durch eine Drehimpulsaddition von dem 
+Gesamtdrehimpuls der Elektronenhülle und dem Drehimpuls des Kerns: $\vec{F}=\vec{J}+\vec{I}$.
+Durch den Kernspin, der wieder ein magnetisches Moment impliziert, welches im B-Feld der 
+Elektronenhülle wieder eine Richtungsquantelung aufweist, findet eine Aufspaltung in die 
+sogenannte Hyperfeinstrukturaufspaltung statt. Jeder Zustand in dieser Struktur wird durch
+die Quantenzahl $F \in \{F \in \mathbb{N} \, \vert I+J \le F \le |I-J| \}$ klassifiziert.
