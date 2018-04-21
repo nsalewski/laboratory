@@ -35,9 +35,9 @@ B1=B_sweep_1+B_Horizontal_1
 B2=B_sweep_2+B_Horizontal_2
 
 #Tabellen
-textable.latex_tab(data=[rf/1000,(horizontal_1*10**3).astype(int),(horizontal_2*10**3).astype(int),(peak_1*10**3).astype(int),(peak_2*10**3).astype(int)],names=[r"RF-Wechselfeld/$\si{\kilo\hertz}$",r"$I_{\mathrm{Horizontal,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Horizontal,2}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,2}}/\si{\milli \ampere}$"], filename=r"latex_tables/current.tex",caption=r"Im Experiment gemessene Ströme der Sweep-Spule und der Horizontalfeldspule für die Transparenzminima beider Isotope sowie die Frequenz des angelegten RF-Wechselfelds ",label=r"tab:current")
+textable.latex_tab(data=[rf/1000,(horizontal_1*10**3).astype(int),(horizontal_2*10**3).astype(int),(peak_1*10**3).astype(int),(peak_2*10**3).astype(int)],names=[r"RF-Wechselfeld/$\si{\kilo\hertz}$",r"$I_{\mathrm{Horizontal,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Horizontal,2}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,2}}/\si{\milli \ampere}$"], filename=r"latex_tables/current.tex",caption=r"Im Experiment gemessene Ströme der Sweep-Spule und der Horizontalfeldspule für die Transparenzminima beider Isotope sowie die Frequenz des angelegten RF-Wechselfelds ",label=r"current")
 
-textable.latex_tab(data=[rf/1000,np.round(B_sweep_1*10**6,2),np.round(B_sweep_2*10**6,2),np.round(B_Horizontal_1*10**6,2),np.round(B_Horizontal_2*10**6,2)], names=[r"RF-Wechselfeld/$\si{\kilo\hertz}$",r"$B_{\mathrm{Horizontal,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Horizontal,2}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Sweep,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Sweep,2}}/10^{-6}\si{\tesla}$"], filename=r"latex_tables/fields.tex",caption=r"Aus den gemessenen Strömen berechnete B-Felder für die Horizontalfeldspule und die Sweep-Spule in den Transparenzminima beider Isotope",label=r"tab:fields")
+textable.latex_tab(data=[rf/1000,np.round(B_sweep_1*10**6,2),np.round(B_sweep_2*10**6,2),np.round(B_Horizontal_1*10**6,2),np.round(B_Horizontal_2*10**6,2)], names=[r"RF-Feld/$\si{\kilo\hertz}$",r"$B_{\mathrm{Horizontal,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Horizontal,2}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Swp,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Swp,2}}/10^{-6}\si{\tesla}$"], filename=r"latex_tables/fields.tex",caption=r"Aus den gemessenen Strömen berechnete B-Felder für die Horizontalfeldspule und die Sweep-Spule $B_{\mathrm{Swp}}$ in den Transparenzminima beider Isotope",label=r"fields")
 
 
 #Ausgleichsrechnung
@@ -67,14 +67,13 @@ print("Horizontales lokales Erdmagnetfeld",'{:.1f}'.format(erdges*10**6))
 #Amplitudenverhältnis
 a1=ufloat(287,0.02*287)
 a2=ufloat(496,0.02*496)
-print(a1,a2,a1/a2)
+print("a1,a2,a1/a2",a1,a2,a1/a2)
 
 #quadratischer Zeeman
 mu_b=9.274*10**(-24)
 def zeeman(gf,mf,ehy,b):
     return (((gf**2)*(mu_b**2)*(b**2)*((1-2*mf)/(ehy))))
-print("Zeeman1",(g1*mu_b*250*10**(-6)),zeeman(g1,0,2.01*10**(-24),250*10**(-6)))
-print("Zeeman2",(g2*mu_b*250*10**(-6)),zeeman(g2,0,4.53*10**(-24),250*10**(-6)))
+print("Zeeman",(g2*mu_b*250*10**(-6)),zeeman(g2,0,4.53*10**(-24),250*10**(-6)))
 
 #Plot
 plt.plot(rf/1000,B1*10**6, 'ro', label="Messwerte 1. Minimum")
@@ -82,7 +81,7 @@ plt.plot(rf/1000,B2*10**6, 'rx', label="Messwerte 2. Minimum")
 plt.plot(rf_theo/1000, theorie(rf_theo, *params1)*10**6, 'b-', label="Regressionsgrade 1. Minimum")
 plt.plot(rf_theo/1000, theorie(rf_theo, *params2)*10**6, 'k-', label="Regressionsgrade 2.Minimum")
 plt.xlim(0,1100)
-plt.ylabel(r"Gesamtes Horizontales Magnetfeld $B_{\mathrm{ges}}/10^{-6}\si{\tesla}$")
+plt.ylabel(r"$B_{\mathrm{ges}}/10^{-6}\si{\tesla}$")
 plt.xlabel(r"Frequenz des RF-Felds $\nu/\si{\kilo\hertz}$")
 plt.legend(loc='best')
 plt.tight_layout()
