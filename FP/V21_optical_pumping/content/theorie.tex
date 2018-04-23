@@ -60,4 +60,61 @@ Gesamtdrehimpuls der Elektronenhülle und dem Drehimpuls des Kerns: $\vec{F}=\ve
 Durch den Kernspin, der wieder ein magnetisches Moment impliziert, welches im B-Feld der 
 Elektronenhülle wieder eine Richtungsquantelung aufweist, findet eine Aufspaltung in die 
 sogenannte Hyperfeinstrukturaufspaltung statt. Jeder Zustand in dieser Struktur wird durch
-die Quantenzahl $F \in \{F \in \mathbb{N} \, \vert I+J \le F \le |I-J| \}$ klassifiziert.
+die Quantenzahl $F \in \{F \in \mathbb{N} \, \vert |I-J| \le F \le I+J \}$ klassifiziert.
+In einem externen Magnetfeld ergeben sich schließlich $2F+1$ Zeemann-Niveaus.
+Gemäß des Kosinussatzes folgt aus der Vektoraddition der Ausdruck 
+\begin{equation}
+	g_F = g_J \, \frac{F(F+1)+J(J+1)-I(I+1)}{2F(F+1)}
+\end{equation}
+für den Land\'{e}-Faktor.
+\subsection{Prinzip des optischen Pumpens}
+Das optische Pumpen ermöglicht eine nicht-thermische Verteilung der 
+Elektronen auf die verschiedenen Energieniveaus. Es werden energetisch
+günstigere Niveaus leergepumpt und höhere Niveaus besetzt. 
+Dieser Prozess lässt sich gut anhand Abbildung \ref{fig:übergaenge_alkali}
+erläutern.
+Hierbei werden die Übergänge zwischen den beiden Zuständen $^2P_{\frac{1}{2}}$ und $^2S_{\frac{1}{2}}$ betrachtet.
+Jedem Strahlenübergang, welcher jeweils die Auswahlregel $\Delta M_J = 0, \pm 1$ erfüllt, ist eine Energie und ein Polarisationszustand zugeordnet.
+Bei den beiden $\pi$-Übergängen wird jeweils linear polarisiertes Licht
+emittiert bzw. absorbiert. Des Weiteren entspricht der $\sigma^+$-Übergang
+rechtszirkular- und der $\sigma^-$-Übergang linkszirkular-polarisiertem Licht.
+Wenn nun, wie beim Versuch, D$_1$-Licht (rechtszirkular-polarisiert)
+eingestrahlt wird, werden die Elektronen nach der Absorption aus 
+dem Niveau $^2S_{\frac{1}{2}}, M_J = -\frac{1}{2}$ in das Niveau 
+$^2P_{\frac{1}{2}}, M_J = +\frac{1}{2}$ übergehen. Dabei ist eine 
+spontane Emission möglich, bei der das Elektron unter Emission eines 
+Photons in den vorherigen Zustand zurückkehrt. Allerdings gilt nach
+der Planckschen Formel eine Frequenzabhängigkeit der 
+Übergangwahrscheinlichkeit mit einem spontanen Prozess von $\nu^3$, sodass
+spontane Prozesse erst für hohe Frequenzen zu berücksichtigen sind.
+Es überwiegen also induzierte Prozesse. Damit ist es theoretisch möglich
+das energetisch günstigere  $^2S_{\frac{1}{2}}, M_J = -\frac{1}{2}$ Niveau
+mit D$_1$-Licht leerzupumpen.
+
+Bei dem Versuch wird die Transparenz, also die transmittierte Intensität 
+des D$_1$-Lichtes, verwendet, um die Übergänge zwischen den Zeemann-Niveaus
+zu messen.
+Ein typischer Verlauf der Transparenz gegen das anliegende Magnetfeld
+ist in Abbildung \ref{fig:transparenz} dargestellt. 
+Um den Wert $B=0$ fällt die Transparenz offensichtlich ab, weil dort
+kein Zeemann-Effekt auftritt.
+Zunächst wird mit dem D$_1$-Licht die Besetzungsinversion erzeugt, sodass
+das energetisch günstigere Niveau nahezu leer ist. Damit können keine
+durch das D$_1$-Licht implizierten Übergänge stattfinden, sodass die
+Transparenz maximal wird. Nun ermöglicht das frequenzvariable 
+Wechselfeld eine induzierte Emission bei
+\begin{equation}
+	B_{\mathrm{m}} = \frac{4\pi \mathrm{m}_0}{\mathrm{e}_0 g_J} \, \nu
+\end{equation}
+erzeugt, wobei $\mathrm{m}_0$ der Elektronenmasse, $\mathrm{e}_0$ der 
+Elementarladung und $\nu$ der angelegten Frequenz entspricht.
+Bei dieser Resonanzfrequenz $\nu$ wird die Inversion rückgängig gemacht.
+Und das energetisch günstigere Niveau ist wieder besetzt, was sich auch
+bei der Transparenz bemerkbar macht, die einen weiteren negativen Peak
+erfährt, der durch die wieder ermöglichten Absorptionen des 
+$^2S_{\frac{1}{2}}, M_J = -\frac{1}{2}$ Niveaus bedingt ist.
+
+
+
+
+
