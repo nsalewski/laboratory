@@ -33,6 +33,7 @@ build:
 
 clean:
 	rm -rf build
+	rm -rf latex_tables
 
 FORCE:
 

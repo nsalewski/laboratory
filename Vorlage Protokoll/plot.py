@@ -1,47 +1,40 @@
+#!usr/bin/env python
+#coding:utf8
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
 from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
-from modules.table.textable import latex_tab
+from modules.table import textable
+import scipy.constants as const
+import math as math
+
+#Daten
+#rf,horizontal_1,horizontal_2, peak_1,peak_2=np.genfromtxt("data/data.txt",unpack=True)
 
 
-arr1=[1,2,3,4]
-arr2=[43,213,123,12]
-latex_tab(data=[arr1,arr2],names=["bla","blup"], filename="latex_tables/example.tex",caption="Caption",label="test")
+
+#how to use textable
+
+#arr1=[0.4,0.75,1.4]
+#arr2=[2,3,4]
+#textable.latex_tab(data=[arr1,arr2],names=[r"title column 1",r"title column 2"], filename=r"example.tex",caption=r"Beautiful caption",label=r"important_label",dec_points=[2,0])
+
+# dec_points sets precision, i.e. dec_points[0]=2 will display 2 decimal places for all values in column 1
 
 
 
-#n,f=np.genfromtxt("Messdaten/b_2.txt",unpack=True)
-#f=f*1000
-#theta=(n*np.pi)/14
-#w=f*2*np.pi
-#L=1.217*1/10**3
-#C=20.13*1/10**9
-#thetaplot = np.linspace(0, 3)
-#
-#def theorie(theta):
-#    return np.sqrt(2/(L*C)*(1-np.cos(theta)))
-#
-#ascii.write([n,f/1000,np.round(f*2/1000*np.pi,1),np.round(theta,2)], 'Messdaten/tab_b1.tex', format="latex",
-#            names=['n','frequenz','kreis','theta'])
-#
-#
-#plt.plot(theta, w/1000, 'rx', label="Messwerte")
-#plt.plot(thetaplot, theorie(thetaplot)/1000, 'b-', label="Theoriekurve")
-#
-#plt.ylabel(r"$\omega/\si{\kilo\hertz}$")
-#plt.xlabel(r"$\theta/\si{\radian}$")
+#Ausgleichsrechnung
+#params1, covariance1 = curve_fit(theorie,rf,B1)
+#errors1 = np.sqrt(np.diag(covariance1))
+
+#Plot
+#plt.plot(rf/1000,B1*10**6, 'ro', label="Messwerte 1. Minimum")
+#plt.plot(rf_theo/1000, theorie(rf_theo, *params1)*10**6, 'b-', label="Regressionsgrade 1. Minimum")
+#plt.xlim(0,1100)
+#plt.ylabel(r"$B_{\mathrm{ges}}/10^{-6}\si{\tesla}$")
+#plt.xlabel(r"Frequenz des RF-Felds $\nu/\si{\kilo\hertz}$")
 #plt.legend(loc='best')
 #plt.tight_layout()
-#plt.savefig('Bilder/b1.pdf')
-#curve_fitting:
-#def theorie(x,m,b):
-#    return m*x+b
-#ascii.write([np.sqrt(Ek),Z],'tab_007.tex',format='latex',names=["wurzel e","Z"])
-#plt.plot(Z,np.sqrt(Ek), 'rx', label="Messwerte")
-#params, covariance = curve_fit(theorie,Z,np.sqrt(Ek))
-#errors = np.sqrt(np.diag(covariance))
-#ryd=ufloat(params[0],errors[0])
-
+#plt.savefig('pictures/lin_regress.pdf')

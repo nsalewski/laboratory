@@ -61,7 +61,6 @@
   separate-uncertainty=true,   % immer Fehler mit \pm
   per-mode=symbol-or-fraction, % / in inline math, fraction in display math
 ]{siunitx}
-%setup \micro to work properly
 \sisetup{math-micro=\text{µ},text-micro=µ}
 
 % chemische Formeln
@@ -134,6 +133,7 @@
 \usepackage[shortcuts]{extdash}
 \usepackage{blindtext}
 \usepackage{longtable}
+%fix Problem with micro (siunitx using wrong package) in new latex-version
 \usepackage{textcomp}
 
 
