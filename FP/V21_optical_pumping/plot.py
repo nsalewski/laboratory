@@ -6,7 +6,7 @@ from scipy.optimize import curve_fit
 from astropy.io import ascii
 from uncertainties import ufloat
 import uncertainties.unumpy as unp
-import textable
+from modules.table import textable
 import scipy.constants as const
 import math as math
 def kernspin(g_j,g_f):
@@ -35,9 +35,9 @@ B1=B_sweep_1+B_Horizontal_1
 B2=B_sweep_2+B_Horizontal_2
 
 #Tabellen
-textable.latex_tab(data=[rf/1000,(horizontal_1*10**3).astype(int),(horizontal_2*10**3).astype(int),(peak_1*10**3).astype(int),(peak_2*10**3).astype(int)],names=[r"RF-Wechselfeld/$\si{\kilo\hertz}$",r"$I_{\mathrm{Horizontal,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Horizontal,2}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,2}}/\si{\milli \ampere}$"], filename=r"latex_tables/current.tex",caption=r"Im Experiment gemessene Ströme der Sweep-Spule und der Horizontalfeldspule für die Transparenzminima beider Isotope sowie die Frequenz des angelegten RF-Wechselfelds ",label=r"current")
+textable.latex_tab(data=[rf/1000,(horizontal_1*10**3).astype(int),(horizontal_2*10**3).astype(int),(peak_1*10**3).astype(int),(peak_2*10**3).astype(int)],names=[r"RF-Wechselfeld/$\si{\kilo\hertz}$",r"$I_{\mathrm{Horizontal,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Horizontal,2}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,2}}/\si{\milli \ampere}$"], filename=r"latex_tables/current.tex",caption=r"Im Experiment gemessene Ströme der Sweep-Spule und der Horizontalfeldspule für die Transparenzminima beider Isotope sowie die Frequenz des angelegten RF-Wechselfelds ",label=r"current",dec_points=[0,0,0,0,0])
 
-textable.latex_tab(data=[rf/1000,np.round(B_sweep_1*10**6,2),np.round(B_sweep_2*10**6,2),np.round(B_Horizontal_1*10**6,2),np.round(B_Horizontal_2*10**6,2)], names=[r"RF-Feld/$\si{\kilo\hertz}$",r"$B_{\mathrm{Horizontal,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Horizontal,2}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Swp,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Swp,2}}/10^{-6}\si{\tesla}$"], filename=r"latex_tables/fields.tex",caption=r"Aus den gemessenen Strömen berechnete B-Felder für die Horizontalfeldspule und die Sweep-Spule $B_{\mathrm{Swp}}$ in den Transparenzminima beider Isotope",label=r"fields")
+textable.latex_tab(data=[rf/1000,np.round(B_sweep_1*10**6,2),np.round(B_sweep_2*10**6,2),np.round(B_Horizontal_1*10**6,2),np.round(B_Horizontal_2*10**6,2)], names=[r"RF-Feld/$\si{\kilo\hertz}$",r"$B_{\mathrm{Horizontal,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Horizontal,2}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Swp,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Swp,2}}/10^{-6}\si{\tesla}$"], filename=r"latex_tables/fields.tex",caption=r"Aus den gemessenen Strömen berechnete B-Felder für die Horizontalfeldspule und die Sweep-Spule $B_{\mathrm{Swp}}$ in den Transparenzminima beider Isotope",label=r"fields",dec_points=[1,2,2,2,2])
 
 
 #Ausgleichsrechnung
