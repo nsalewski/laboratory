@@ -1,0 +1,44 @@
+\section{Fehlerrechnung}
+\label{sec:Fehlerrechnung}
+
+Bei einem endlichen Datensatz von $\left\{x_1,x_2,\ldots ,x_n\right\}$
+lässt sich der Mittelwert wie folgt berechnen:
+\begin{equation}
+  \overline{x} =  \frac{1}{N} \sum_{i=1}^N x_i
+\end{equation}
+Um die Maß für die Streuung um diesen Mittelwert zu erhalten, wird die Varianz $V$
+herangezogen. Die Wurzel der Varianz ist die Standartabweichung $\sigma$. Die
+Standartabweichung ist das übliche Maß für die Messungenauigkeit.
+\begin{equation}
+  \sigma = \sqrt{V(x)} = \sqrt{\frac{1}{N} \sum_{i=1}^N \left(x_i-\overline{x}\right)^2}
+\end{equation}
+Da es sich bei Versuchen immer um Stichproben handelt, muss die Formel für die Varianz $V$
+modifiziert werden, sodass sich folgendes ergibt:
+\begin{equation}
+  \sigma = \sqrt{V(x)} = \sqrt{\frac{1}{N-1} \sum_{i=1}^N \left(x_i-\overline{x}\right)^2}
+\end{equation}
+Es ergibt sich also für die Standartabweichung des Mittelwertes:
+\begin{equation}
+  \Delta \overline{x} = \frac{1}{\sqrt{N}}\sqrt{\frac{1}{N-1} \sum_{i=1}^N \left(x_i-\overline{x}\right)^2}
+\end{equation}
+Werden in weiteren Berechnungen Werte mit Unsicherheiten benutzt, wird
+die Gauß'sche Fehlerfortpflanzung verwendet.
+\begin{equation}
+  \Delta f = \sqrt{\sum_{i=1}^N \left(\frac{\partial f}{\partial x_i}\right)^2 \cdot \left(\Delta x_i \right)^2}
+\end{equation}
+Falls Ausgleichsgeraden der Form $y(x)=mx+b$ berechnet werden wird um die Steigung $m$ zu berechnen verwendet:
+\begin{equation}
+  m=\frac{\overline{x \cdot y} - \overline{x} \cdot \overline{y}}{\overline{x^2} - \overline{x}^2}
+\end{equation}
+Und um den y-Achsenabschnitt $b$ zu bestimmen:
+\begin{equation}
+  b = \frac{\overline{x^2} \cdot \overline{y} - \overline{x} \cdot \overline{x \cdot y}}{\overline{x^2} - \overline{x}^2}
+\end{equation}
+Die Varianz der Steigung $m$ berechnet sich mit:
+\begin{equation}
+  \sigma_m^2 = \frac{\sigma^2}{N\left(\overline{x^2}-\overline{x}^2\right)}
+\end{equation}
+und die Varianz des y-Achsenabschnitts $b$:
+\begin{equation}
+  \sigma_b^2 = \frac{\sigma^2 \overline{x}}{N\left(\overline{x^2}-\overline{x}^2\right)}
+\end{equation}

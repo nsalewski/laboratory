@@ -1,0 +1,123 @@
+\section{Theorie}
+\label{sec:Theorie}
+
+Der Zeemann-Effekt beschreibt die Aufspaltung der Energieniveaus,
+durch Anlegen eines Magnetfeldes. Dies führt beispielsweise beim Wasserstoff
+zur Aufhebung der Entartung in der Energie.
+
+\subsection{Magnetisches Moment}
+In quantenmechanischer Betrachtung besitzen Schalenelektronen aufgrund ihrer
+Bewegung um den Kern einen Bahndrehimpuls, welcher die Eigenwerte
+\begin{equation}
+\norm{\symbf{l}}=\sqrt{l(l+1)} \, \symup{\hbar}
+\end{equation}
+besitzt.
+
+Versuche wie das Stern-Gerlach Experiment oder der Einstein-de Haas-Effekt
+bestätigten, dass Elektronen zudem einen Spin besitzen, der die Eigenwerte
+\begin{equation}
+\norm{\symbf{s}}=\sqrt{s(s+1)} \, \symup{\hbar}
+\end{equation}
+besitzt und häufig als Eigendrehimpuls gedeutet wird.
+
+Aus diesen beiden Bewegungen ergibt sich jeweils ein magnetisches Moment.
+Einmal das magnetische Drehimpulsmoment
+\begin{equation}
+\symbf{\mu_l}=-\symup{\mu_B} \, \norm{\symbf{l}} \, \symbf{l_e} \, \frac{1}{\symup{\hbar}} \, ,
+\end{equation}
+wobei $\symbf{l_e}$ einen Einheitsvektor in l-Richtung bezeichnet und
+\begin{equation}
+\symup{\mu_B} = -\frac{1}{2} \, \symup{e_0} \, \frac{\symup{\hbar}}{\symup{m_0}}
+\end{equation}
+das Bohrsche Magneton.
+
+
+Das magnetische Spinmoment beträgt
+\begin{equation}
+\symbf{\mu_s}=-\symup{g_s} \, \frac{\symup{\mu_B}}{\symup{\hbar}} \, \norm{\symbf{s}} \, \symbf{s_e} \, ,
+\end{equation}
+mit dem Landé-Faktor $\symup{g_s} \approx 2$.
+
+\subsection{Spin-Bahn-Kopplung und Wechselwirkung von magnetischen Momenten}
+
+Für System mit geringen Kernladungszahlen $Z$ betrachtet man den Gesamtdrehimpuls
+$\symbf{L} = \sum_{i=1}^N \symbf{l}_i$
+mit Eigenwerten $\norm{\symbf{L}}=\sqrt{L(L+1)} \, \hbar$ und magnetischem
+Drehimpulsmoment
+\begin{equation}
+\label{eq:mul}
+\norm{\symbf{\mu_L}}=\symup{\mu_B} \, \sqrt{L(L+1)} \, .
+\end{equation}
+Analog definiert man einen Gesamtspin $\symbf{S} = \sum_{i=1}^N \symbf{s}_i$
+mit Eigenwerten  $\norm{\symbf{S}} = \sqrt{S(S+1)} \, \hbar$ und magnetischem
+Spinmoment
+\begin{equation}
+\label{eq:mus}
+\norm{\symbf{\mu_S}}=\symup{g_S} \, \symup{\mu_B} \, \sqrt{S(S+1)} \, .
+\end{equation}
+
+Da die beiden Drehimpulse miteinander koppeln führt man einen weiteren
+Drehimpuls ein $\symbf{J} = \symbf{L} + \symbf{S}$ mit den Eigenwerten
+$\norm{\symbf{J}}=\sqrt{J(J+1)}\,\symup{\hbar}$.
+Dieser besitzt ein magnetisches Moment $\symup{\mu_J}=\symup{\mu_L}+\symup{\mu_S}$
+und führt anschaulich eine Präzessionsbewegung um den Gesamtdrehimpuls $\symbf{J}$
+aus. Da sich somit die zu $\symbf{J}$ senkrechte Komponente im Kreis bewegt,
+verschwindet der Erwartungswert im Mittel. Es kann gezeigt werden das der Eigenwert
+\begin{equation}
+\label{eq:muj}
+\norm{\mu_J} = \symup{\mu_B} \, g_J \, \sqrt{J(J+1)}
+\end{equation}
+beträgt, mit Lande-Faktor
+\begin{equation}
+\label{eq:gj}
+g_J = \frac{3J(J+1)+S(S+1)-L(L+1)}{2J(J+1)} \, .
+\end{equation}
+
+\subsection{Richtungsquantelung und Auswahlregeln}
+Im folgenden wird nur noch die z-Komponente betrachtet, da die
+zu $\mu_{J_z}=-m \, g_J \,\symup{\mu_B}$ senkrechte Komponente in der $x-y$-Ebene liegt.
+Es treten nur solche Winkel auf bei denen für die sogenannte
+Orientierungsquantenzahl $m=-J,-J+1,...,0,...J-1,J$ gilt.
+Damit ergeben sich $2J+1$ Einstellmöglichkeiten für das magnetische Moment
+zu einem äußeren Magnetfeld.
+Die magnetische Energie berechnet sich analog zur Elektrodynamik über
+\begin{equation}
+\label{eq:emag}
+E_{mag}=-\symbf{\mu}_J \, \cdot \symbf{B} \, ,
+\end{equation}
+es kommt also zu einer Aufspaltung der Energien.
+Aus quantenmechanischen Überlegungen erhält man nun Auswahlregeln,
+für die Übergänge zwischen verschiedenen Energieniveaus.
+
+Betrachtet man die Überlagerung zweier Wellenfunktionen $\Psi_1$ und
+$\Psi_2$ und ein homogenes Magnetfeld in $z$-Richtung $\symbf{B}=B\,\symbf{e}_z$,
+so verschwindet die z-Komponente genau dann nicht, wenn die Orientierungsquantenzahlen
+$m_1$ und $m_2$ übereinstimmen, also
+\begin{equation}
+\Delta m = m_1 - m_2 = 0 \, .
+\end{equation}
+Anschaulich "schwingt" das Elektron dann also parallel zum $B$-Feld,
+strahlt also senkrecht dazu die Energie ab. Dementsprechend ist die
+Strahlung linear in Feldrichtung polarisiert und wird nur transversal,
+also senkrecht zum Feld beobachtet. Dieser Übergang wird als $\pi$-Übergang
+bezeichnet.
+
+Die $x$- und $y$-Komponeten verschwinden gerade dann nicht,
+wenn $m_2=\pm m_1$ gilt, also
+\begin{equation}
+\Delta m = \pm 1 \, .
+\end{equation}
+Dann ist die Strahlung zirkular um die Feldachse polarisiert und somit
+aus transversaler Beobachtung linear polarisiert. Solche Übergänge werden
+als $\sigma$-Übergang bezeichnet.
+
+\subsection{Normaler und Anomaler Zeemann-Effekt}
+Der Fall $S=0$ wird als normaler Zeemann-Effekt bezeichnet. Für diesen Fall ist immer
+$g_J = 1$ und $\Delta E = m \, \symup{\mu_B} \, B$.
+Der andere Fall $S \neq 0$ ist der anomale Zeemann-Effekt, für den die
+Energiedifferenz
+\begin{equation}
+\label{eq:dE}
+\Delta E = m_1 \, g(L_1,S_1,J_1) - m_2 \, g(L_2,S_2,J_2)
+\end{equation}
+beträgt und sich die Landé-Faktoren über \ref{eq:gj} berechnen lassen.

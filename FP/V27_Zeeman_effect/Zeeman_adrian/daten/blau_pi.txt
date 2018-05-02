@@ -1,0 +1,19 @@
+#ohne_B   mit_B Koordinaten des aufgespaltenen Signals    Koordinaten der Interferenzsignale in der Mitte in Pixel ausgelesen
+366       312  363
+501       441  492
+621       564  615
+744       675  732
+855       798  849
+969       909  951
+1077      1017 1059
+1176      1116  1152
+1275      1215  1254
+1365      1317  1359
+1461      1413  1446
+1551      1503  1542
+1647      1593  1626
+1728      1680  1710
+1812      1767  1800
+1902      1848  1887
+1986      1932  1965
+2076      2010  2049
