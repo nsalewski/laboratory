@@ -57,3 +57,4 @@ if __name__ == "__main__":
     print("42 is the answer to life the universe and everything!")
     print("Running this module as script generates a sample table.tex")
     latex_tab([arr1,arr2],["col1","col2"],"table.tex",'caption','sample')
+

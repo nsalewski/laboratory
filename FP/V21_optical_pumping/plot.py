@@ -35,6 +35,12 @@ B1=B_sweep_1+B_Horizontal_1
 B2=B_sweep_2+B_Horizontal_2
 
 #Tabellen
+#example textable
+arr2= unp.uarray([1.095473487583, 2,3], [0.0112445, 0.002,0.2])
+arr1=[2,3,4]
+textable.latex_tab(data=[arr1,arr2],names=[r"title column 1",r"title column 2"], filename=r"example.tex",caption=r"Beautiful caption",label=r"important_label",dec_points=[2,2])
+# dec_points sets precision, i.e. dec_points[0]=2 will display 2 decimal places for all values in column 1
+
 textable.latex_tab(data=[rf/1000,(horizontal_1*10**3).astype(int),(horizontal_2*10**3).astype(int),(peak_1*10**3).astype(int),(peak_2*10**3).astype(int)],names=[r"RF-Wechselfeld/$\si{\kilo\hertz}$",r"$I_{\mathrm{Horizontal,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Horizontal,2}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,1}}/\si{\milli \ampere}$",r"$I_{\mathrm{Sweep,2}}/\si{\milli \ampere}$"], filename=r"latex_tables/current.tex",caption=r"Im Experiment gemessene Ströme der Sweep-Spule und der Horizontalfeldspule für die Transparenzminima beider Isotope sowie die Frequenz des angelegten RF-Wechselfelds ",label=r"current",dec_points=[0,0,0,0,0])
 
 textable.latex_tab(data=[rf/1000,np.round(B_sweep_1*10**6,2),np.round(B_sweep_2*10**6,2),np.round(B_Horizontal_1*10**6,2),np.round(B_Horizontal_2*10**6,2)], names=[r"RF-Feld/$\si{\kilo\hertz}$",r"$B_{\mathrm{Horizontal,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Horizontal,2}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Swp,1}}/10^{-6}\si{\tesla}$",r"$B_{\mathrm{Swp,2}}/10^{-6}\si{\tesla}$"], filename=r"latex_tables/fields.tex",caption=r"Aus den gemessenen Strömen berechnete B-Felder für die Horizontalfeldspule und die Sweep-Spule $B_{\mathrm{Swp}}$ in den Transparenzminima beider Isotope",label=r"fields",dec_points=[1,2,2,2,2])
