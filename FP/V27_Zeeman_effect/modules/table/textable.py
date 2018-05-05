@@ -11,7 +11,7 @@ def latex_tab(data=[[1,2,3],[42,42,42]],names=["col1","col2"],filename="test.tex
             raise TypeError("data and names and dec_points must have same dimension! "+"len(data)= "+str(len(data))+"; len(names)= "+str(len(names)) +"; len(dec_points)= "+str(len(dec_points)))
     except TypeError: raise
     else:
-        texfile = open(filename,"w");
+        texfile = open(filename,"w")
         texfile.write("\\begin{table}\n");
         texfile.write(" \\caption{"+caption+"}\n");
         texfile.write(" \\label{tab:"+label+"}\n")
