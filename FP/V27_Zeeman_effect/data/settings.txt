@@ -1,0 +1,11 @@
+Magnetfeld rote Linie: 10.5A Spulenstrom;
+pi-Linie blau: 16A
+sigma-Linie blau: 5.5A
+
+Reihenfolge Bilder:
+Kalibrierung grün
+rot ohne B-Feld;
+rot mit B-Feld;
+blau ohne B-Feld;
+blau mit B-Feld, Sigma-Linie;
+blau mit B-Feld, pi-Linie;
