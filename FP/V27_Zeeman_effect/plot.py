@@ -10,6 +10,31 @@ from modules.table import textable
 import scipy.constants as const
 import math as math
 
+##############################################################################################
+# Eichen
+I, B = np.genfromtxt('data/magnetfeld.txt', unpack=True)
+
+def polynom(x, a, b, c, d):
+    return a*x**3 + b*x**2 + c*x + d
+
+params, covariance = curve_fit(polynom, I, B)
+errors = np.sqrt(np.diag(covariance))
+interval_eich = np.linspace(0, 16)
+
+plt.plot(I, B, 'rx', label='Messwerte')
+plt.plot(interval_eich, polynom(interval_eich, *params), 'b-', label='Ausgleichspolynom')
+plt.xlabel(r'Feldstrom $I / \si{\ampere}$')
+plt.ylabel(r'Magnetfeld $B / \si{\milli\tesla}$')
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('pictures/eichi.pdf')
+
+
+
+
+
+##############################################################################################
+
 #Daten
 #rf,horizontal_1,horizontal_2, peak_1,peak_2=np.genfromtxt("data/data.txt",unpack=True)
 
