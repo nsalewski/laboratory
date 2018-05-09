@@ -36,7 +36,7 @@ Somit ergibt sich ein Amplitudenverhältnis von
 \subsection{Bestimmung der Horizontalkomponente des Erdmagnetfelds und der Landéschen $g_{\mathrm{F}}$-Faktoren}
 Zur Bestimmung der Landé-Faktoren und der Horizontalkomponente des Erdmagnetfelds werden die Frequenzen des angelegten RF-Feldes gegen die Magnetfeldstärken in den Resonanzen der beiden Isotope aufgetragen.\\
 Das gesamte B-Feld ergibt sich hierbei aus der Addition von Horizontalfeld und dem Feld der Sweep-Spule.\\
-Die jeweiligen Magnetfeldstärken ergeben sich wiederum mit der Formel für die Helmholtzspule \ref{eqn:hholtz}.\\
+Die jeweiligen Magnetfeldstärken ergeben sich wiederum mit der Formel für die Helmholtzspule \eqref{eqn:hholtz}.\\
 In Tabelle \ref{tab:current} sind die gemessenen Stromstärken von Horizontalfeldspule und Sweep-Feldspule für beide Transparenzminima eingetragen.\\
 Die daraus berechneten Magnetfeldstärken befinden sich ebenso in Tabelle \ref{tab:fields} wie die Frequenz des RF-Felds.\\
 Das gesamte Magnetfeld, welches nötig ist um die Transparenzminima zu erzeugen, setzt sich zusammen aus dem Feld $B_{\mathrm{m}}$, welches notwendig ist, um die gepumpten Niveaus wieder zu leeren und der lokalen Horizontalkomponente des Erdmagnetfelds $B_{\mathrm{Erde}}$:
@@ -65,6 +65,8 @@ Die $g_{\mathrm{F}}$-Faktoren ergeben sich anschließend über den Steigungspara
 \end{equation*}
 Die Elementarladung und die Ruhemasse des Elektron wurden der CODATA entnommen; \cite{e} bzw. \cite{m_0}.
 In Tabelle \ref{tab:res1} finden sich die bestimmten Regressionsparameter und die daraus berechneten Landé-Faktoren.
+\input{latex_tables/current.tex}
+\input{latex_tables/fields.tex}
 \begin{table}
   \caption{Regressionsparameter und Landé-Faktoren beider Isotope}
   \label{tab:res1}
@@ -80,8 +82,6 @@ Isotop2&$215.19\pm0.61$&$0.332\pm0.001$ &$17.69\pm0.38$\\
 \end{table}
 Der Mittelwert (gebildet mittels python/numpy \cite{numpy}) der y-Achsenabschnitte der Ausgleichsgrade beider Isotope ergibt die lokale Horizontalkomponente des Erdmagnetfelds zu $B_{\mathrm{Erde,ges}}=\SI{18.3(5)e-6}{\tesla}$.
 
-\input{latex_tables/current.tex}
-\input{latex_tables/fields.tex}
 
 \subsection{Bestimmung der Kernspins beider Isotope}
 Das hier betrachtete Rubidium ist ein Alkalimetall und hat daher ein einzelnes Elektron auf einer s-Schale (bei Rubidium ist dies die 5s-Schale), welches den Gesamtspin der Elektronenhülle bestimmt.\\
