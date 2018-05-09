@@ -4,9 +4,9 @@
 %\input{latex_tables/current.tex}
 In der Auswertung wird zunächst das Eichen des Elektromagneten ausgewertet
 
-\subsection{Eichen des Elektromagneten}
+\subsection{Eichen des Elektromagneten}%Tabelle mit den Messdaten für B-Feld Eichung?
 Das gemessene Magnetfeld $B$ ist in Abbildung \ref{fig:eichi} gegen den Feldstrom $I$ auf dem
-Intervall $\SI{1}{\ampere} \le I \le \SI{16}{\ampere}$ mit zugehörigem Ausgleichspolynom 
+Intervall $\SI{1}{\ampere} \le I \le \SI{16}{\ampere}$ mit zugehörigem Ausgleichspolynom
 aufgetragen. Dabei ist das Ausgleichspolynom dritter Ordnung.
 Die Ausgleichsrechnung wird mit Python \cite{scipy} durchgeführt.
 \begin{figure}
@@ -22,35 +22,34 @@ Die Ausgleichsrechnung wird mit Python \cite{scipy} durchgeführt.
 	\begin{align*}
 		5^1D_2 \rightarrow 5^1P_1
 	\end{align*}
-	erzeugt, wobei sich durch die Multiplizität $M=2S+1=1$ jeweils ein Gesamtspin von 
+	erzeugt, wobei sich durch die Multiplizität $M=2S+1=1$ jeweils ein Gesamtspin von
 	$S=0$ ergibt -- für den normalen Zeemann-Effekt notwendigerweise erfüllt --
 	was zur Folge hat, dass der Landé-Faktor eins wird.
 	Die Niveaus, die an der Erzeugung der blauen Linie beteiligt sind, tragen offensichtlich
 	einen Spin, sodass der Landé-Faktor von $L$, $S$ und $J$ abhängt. Der angedeutete
-	Übergang lautet 
+	Übergang lautet
 	\begin{align*}
 		6^3S_1 (g_J=2) \rightarrow 5^3S_1 (g_J=\frac{3}{2}) \, \mathrm{.}
 	\end{align*}
 
-	Weiterhin wird das Dispersionsgebiet $\Delta \lambda_{\mathrm{D}}$ der 
-	Lummer-Gehrcke-Platte mit Formel 
-	\eqref{eq:???} bestimmt. Dabei ist die Dicke der Platte $d=\SI{4}{\milli\meter}$
+	Weiterhin wird das Dispersionsgebiet $\Delta \lambda_{\mathrm{D}}$ der
+	Lummer-Gehrcke-Platte mit Formel
+	\eqref{eqn:dispersionsgebiet} bestimmt. Dabei ist die Dicke der Platte $d=\SI{4}{\milli\meter}$
 	und die Länge der Platte  $L = \SI{120}{\milli\meter}$. Zuletzt ergibt sich der
 	Brechungsindex $n$ aus den Wellenlängen des verwendeten Lichtes zu
-	$n(\lambda=\SI{644}{\nano\meter}) = 1,4567$ für das rote Licht und zu 
-	$n(\lambda=\SI{480}{\nano\meter}) = 1,4635$ für das blaue Licht. Damit ergibt sich 
+	$n(\lambda=\SI{644}{\nano\meter}) = 1,4567$ für das rote Licht und zu
+	$n(\lambda=\SI{480}{\nano\meter}) = 1,4635$ für das blaue Licht. Damit ergibt sich
 	das Dispersionsgebiet zu
 	\begin{align*}
 		\Delta \lambda_{\mathrm{D}}(\lambda=\SI{643.8}{\nano\meter}) &= \SI{48.913}{\pico\meter} \, \mathrm{,} \\
 		\Delta \lambda_{\mathrm{D}}(\lambda=\SI{480.0}{\nano\meter}) &= \SI{26.952}{\pico\meter} \, \mathrm{.}
 	\end{align*}
-	Für das Auflösungsvermögen $A$ ergeben sich mit Gleichung \eqref{eq:???} die Werte:
+	Für das Auflösungsvermögen $A$ ergeben sich mit Gleichung \eqref{eqn:A} die Werte:
 \begin{align*}
 	A(\lambda=\SI{643.8}{\nano\meter}) &= 209063,644 \, \mathrm{,} \\
 	A(\lambda=\SI{480}{\nano\meter}) &= 285458,063 \, \mathrm{.}
 \end{align*}
 
 \subsection{Bestimmung der Landé-Faktoren $g$}
-	Die Landé-Faktoren werden mit Formel \eqref{eq:???} bestimmt. Hierfür werden die mit der
+	Die Landé-Faktoren werden mit Formel \eqref{eqn:lande} bestimmt. Hierfür werden die mit der
 	Digital-Kamera aufgenommenen Aufspaltungen mit und ohne B-Feld übereinander aufgetragen.
-
