@@ -105,7 +105,8 @@ Dies wird als der normale Zeeman-Effekt bezeichnet.\\ Der Landé-Faktor ist für
 Die Aufspaltung der Energieniveaus erfolgt äquidistant nach Gleichung \eqref{eqn:Emag} mit $\Delta \mathrm{E}=m\cdot \mu_{\mathrm{B}}$.\\
 Mit der Energie $E_0$ ohne Anwesenheit eines Magnetfelds ergibt sich die Energie der emittierten Spektrallinien zu:
 \begin{equation}
-  E=E_0+ m\cdot \mu_{\mathrm{B}}
+  \label{eqn:normaler}
+  E=E_0+ g_{\mathrm{J}}m\cdot \mu_{\mathrm{B}} B=E_0+ m\cdot \mu_{\mathrm{B}} B
 \end{equation}
 Aufgrund der äquidistanten Energieaufspaltung lässt sich folglich für die verschiedenen Übergänge jeweils nur eine Spektrallinie beobachten (vgl. \ref{fig:normaler}).
 \begin{figure}
@@ -119,6 +120,7 @@ In den bisherigen Überlegungen wurde der Spin zwar nicht berücksichtigt, es ze
 Da die Energieaufspaltung nun nicht mehr äquidistant ist, ist das Emissionsspektrum linienreicher.\\
 Die Energie der emittierten Spektrallinie ist nun abhängig von den Landé-Faktoren $g_i$ der beteiligten Energieniveaus:
 \begin{equation}
+  \label{eqn:anom}
   \Delta E=\left(m_1g_1-m_2g_2\right)\mu_{\mathrm{B}}B+E_0
 \end{equation}
 Hierbei bezeichnen die $m_i$ die Orientierungsquantenzahlen der beteiligten Niveaus und $E_0$ die Energie bei ausgeschalteten B-Feld.
@@ -149,3 +151,34 @@ Das Auflösungsvermögen der Lummer-Gehrcke-Platte ist definiert als
   A=\frac{\lambda}{\Delta \lambda}=\frac{L}{\lambda}\left(n^2-1\right)\mathrm{.}
 \end{equation}
 Hierbei ist $L$ die Länge der Lummer-Gehrcke-Platte.
+\subsection{Experimentelle Bestimmung der Landé-Faktoren}
+Aus den aufgenommenen Linienspektren werden die Abstände $\Delta s$ zwischen zwei Linien ohne anliegendes Magnetfeld sowie die Breite der Aufspaltung einer Linie bei anliegendem Magnetfeld $\delta s$ entnommen.
+Mittels dieser beiden Werte lässt sich die Wellenlängenverschiebung $\delta \lambda$ bestimmen:
+\begin{equation}
+  \label{eq:deltalambda}
+  \delta \lambda = \frac{1}{2} \frac{\delta s}{\Delta s}\cdot \Delta \lambda_{\mathrm{D}}\mathrm{.}
+\end{equation}
+Die Landé-Faktoren lassen sich schließlich aus $\delta \lambda$ bestimmen.
+Nach Formel \eqref{eqn:anom} lässt sich der Landé-Faktor aus der Energiedifferenz $\Delta E$ bestimmen. Da die Beziehung $E=h \nu=\frac{hc}{\lambda}$ gilt, ergibt sich $Delta E$ aus der Ableitung:
+\begin{equation}
+  \frac{\partial E}{\partial \lambda} = -\frac{hc}{\lambda^2}\mathrm{.}
+\end{equation}
+Umstellen dieser Gleichung liefert im Betrag:
+\begin{equation}
+ | \delta E | = \left| \frac{hc}{\lambda^2} \right| \delta \lambda\mathrm{.}
+\end{equation}
+Einsetzen von Formel \eqref{eq:deltalambda} liefert unter Verwendung von Formel \eqref{eqn:anom} eine Formel für den Landé-Faktor des anomalen Zeeman-Effekts:
+\begin{equation}
+  \label{eqn:g_exp}
+   \left(m_1g_1-m_2g_2\right)=\alpha= \frac{hc}{\lambda^2\mu_{\mathrm{B}}B}\cdot \frac{1}{2} \frac{\delta s}{\Delta s}\cdot \Delta \lambda_{\mathrm{D}}\mathrm{.}
+\end{equation}
+Für den normalen Zeeman-Effekt vereinfacht sich die Formel etwas. Unter Verwendung von Formel \eqref{eqn:normaler} ergibt sich:
+\begin{equation}
+  \label{eqn:g_exp}
+   g_{\mathrm{J}}=\alpha= \frac{hc\cdot}{\lambda^2\mu_{\mathrm{B}}B}\cdot \frac{1}{2} \frac{\delta s}{\Delta s}\cdot \Delta \lambda_{\mathrm{D}}\mathrm{.}
+\end{equation}
+Hieraus ergeben sich auch die für die jeweilige Aufspaltung einzustellenden B-Felder:
+\begin{equation}
+  \label{eqn:b-feld}
+  B=\frac{hc}{\lambda^2} \frac{\delta \lambda}{\mu_{\mathrm{B}}\alpha}\mathrm{.}
+\end{equation}

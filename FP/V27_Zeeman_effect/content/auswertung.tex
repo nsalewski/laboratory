@@ -50,17 +50,17 @@ Die Ausgleichsrechnung wird mit Python \cite{scipy} durchgeführt.
 \end{align*}
 
 \subsection{Bestimmung der Landé-Faktoren $g$}
-	Die Landé-Faktoren werden mit Formel \eqref{eqn:???} bestimmt. Hierfür werden die mit der
+	Die Landé-Faktoren werden mit Formel \eqref{eqn:g_exp} bestimmt. Hierfür werden die mit der
 	Digital-Kamera aufgenommenen Aufspaltungen mit und ohne B-Feld übereinander aufgetragen.
 	Mit dem Bildbearbeitungsprogramm Gimp \cite{gimp} können mit der Distanzfunktion
 	die benötigten
 	Werte für $\Delta s$ (aus dem Bild ohne B-Feld) und $\delta s$ (aus dem Bild mit B-Feld)
-	in Pixeln aus den aufgenommenen Bildern bestimmt werden. Dabei wurde jeweils die 
-	Strecke zwischen den intensivsten Punkten gemessen. 
+	in Pixeln aus den aufgenommenen Bildern bestimmt werden. Dabei wurde jeweils die
+	Strecke zwischen den intensivsten Punkten gemessen.
 	Es wird mit den Konstanten
 	\begin{align*}
-		\mathrm{h} &= 6,626 \cdot 10^{-34} \, \si{\joule\second} \, \text{, aus \cite{planck}} \\
-		\mathrm{c} &= \SI{299792459}{\meter\per\second}\, \text{, aus \cite{licht}} \\
+		\mathrm{h} &= 6,626 \cdot 10^{-34} \, \si{\joule\second} \, \text{, aus \cite{h}} \\
+		\mathrm{c} &= \SI{299792459}{\meter\per\second}\, \text{, aus \cite{c}} \\
 		\mu_{\mathrm{B}} &= 927,4 \cdot 10^{-26} \, \si{\joule\per\tesla} \, \text{, aus \cite{magneton}}
 	\end{align*}
 	gerechnet.
@@ -68,8 +68,8 @@ Die Ausgleichsrechnung wird mit Python \cite{scipy} durchgeführt.
 \subsubsection{Rote Linie}
 	Zuerst ist die Zeemann-Aufspaltung mit und ohne B-Feld in Abbildung \ref{fig:roterstern}
 	dargestellt.
-	Die gemessenen Werte für $\delta s$ und $\Delta s$ sind in Tabelle \ref{tab:rot} 
-	aufgetragen. Mit dem bestimmten Dispersionsgebiet (vgl. \ref{sec:vorb}) ergibt sich 
+	Die gemessenen Werte für $\delta s$ und $\Delta s$ sind in Tabelle \ref{tab:rot}
+	aufgetragen. Mit dem bestimmten Dispersionsgebiet (vgl. \ref{sec:vorb}) ergibt sich
 	durch Mittelwert- und Standardabweichungsbestimmung mit Python/Scipy \cite{scipy} für
 	den Landé-Faktor:
 	\begin{equation*}
@@ -142,7 +142,7 @@ Die Ausgleichsrechnung wird mit Python \cite{scipy} durchgeführt.
 
 \FloatBarrier
 \subsubsection{Blaue \texorpdfstring{$\pi-$}ALinie}
-	Zuletzt wird der Landé-Faktor für die blaue $\pi$-Linie bestimmt. Das Vorgehen ist wieder 
+	Zuletzt wird der Landé-Faktor für die blaue $\pi$-Linie bestimmt. Das Vorgehen ist wieder
 	analog zu den vorherigen Abschnitten.
 	Die Messwerte befinden sich in Tabelle \ref{tab:blau_pi} und die Aufspaltung
 	ist in Abbildung \ref{fig:blau_pi} zu finden.
@@ -177,4 +177,3 @@ Die Ausgleichsrechnung wird mit Python \cite{scipy} durchgeführt.
 	\caption{Aufgenommene Zeemann-Aufspaltung der blauen $\pi$-Linie.}
 	\label{fig:blau_pi}
 \end{figure}
-
