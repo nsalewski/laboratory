@@ -2,8 +2,6 @@
 \label{sec:Auswertung}
 %include tables
 %\input{latex_tables/current.tex}
-In der Auswertung wird zunächst das Eichen des Elektromagneten ausgewertet
-
 \subsection{Eichen des Elektromagneten}%Tabelle mit den Messdaten für B-Feld Eichung?
 Das gemessene Magnetfeld $B$ ist in Abbildung \ref{fig:eichi} gegen den Feldstrom $I$ auf dem
 Intervall $\SI{1}{\ampere} \le I \le \SI{16}{\ampere}$ mit zugehörigem Ausgleichspolynom
@@ -17,6 +15,7 @@ Die Ausgleichsrechnung wird mit Python \cite{scipy} durchgeführt.
 \end{figure}
 
 \subsection{Vorbereitende Aufgaben}
+	\label{sec:vorb}
 	Bei der verwendeten Cadmium-Lampe wird die rote Linie für den normalen Zeemann-Effekt
 	mit dem Übergang
 	\begin{align*}
@@ -51,13 +50,131 @@ Die Ausgleichsrechnung wird mit Python \cite{scipy} durchgeführt.
 \end{align*}
 
 \subsection{Bestimmung der Landé-Faktoren $g$}
-	Die Landé-Faktoren werden mit Formel \eqref{eqn:lande} bestimmt. Hierfür werden die mit der
+	Die Landé-Faktoren werden mit Formel \eqref{eqn:???} bestimmt. Hierfür werden die mit der
 	Digital-Kamera aufgenommenen Aufspaltungen mit und ohne B-Feld übereinander aufgetragen.
-
-\subsubsection{Rot}
+	Mit dem Bildbearbeitungsprogramm Gimp \cite{gimp} können mit der Distanzfunktion
+	die benötigten
+	Werte für $\Delta s$ (aus dem Bild ohne B-Feld) und $\delta s$ (aus dem Bild mit B-Feld)
+	in Pixeln aus den aufgenommenen Bildern bestimmt werden. Dabei wurde jeweils die 
+	Strecke zwischen den intensivsten Punkten gemessen. 
+	Es wird mit den Konstanten
+	\begin{align*}
+		\mathrm{h} &= 6,626 \cdot 10^{-34} \, \si{\joule\second} \, \text{, aus \cite{planck}} \\
+		\mathrm{c} &= \SI{299792459}{\meter\per\second}\, \text{, aus \cite{licht}} \\
+		\mu_{\mathrm{B}} &= 927,4 \cdot 10^{-26} \, \si{\joule\per\tesla} \, \text{, aus \cite{magneton}}
+	\end{align*}
+	gerechnet.
+	\FloatBarrier
+\subsubsection{Rote Linie}
+	Zuerst ist die Zeemann-Aufspaltung mit und ohne B-Feld in Abbildung \ref{fig:roterstern}
+	dargestellt.
+	Die gemessenen Werte für $\delta s$ und $\Delta s$ sind in Tabelle \ref{tab:rot} 
+	aufgetragen. Mit dem bestimmten Dispersionsgebiet (vgl. \ref{sec:vorb}) ergibt sich 
+	durch Mittelwert- und Standardabweichungsbestimmung mit Python/Scipy \cite{scipy} für
+	den Landé-Faktor:
+	\begin{equation*}
+		g = \SI{1.014(28)} \, \text{.}
+	\end{equation*}
+	\begin{table}
+		\centering
+		\caption{Messwerte (in Pixel) zur Bestimmung des Landé-Faktors bei der roten Linie mit einem Magnetfeld von $B = \SI{652}{\milli\tesla}$.}
+		\label{tab:rot}
+		\begin{tabular}{c | c}
+			\toprule
+			$\Delta s$ & $\delta s$\\
+			\midrule
+			148 & 72 \\
+			136 & 72 \\
+			130 & 68 \\
+			132 & 66 \\
+			132 & 70 \\
+			126 & 70 \\
+			120 & 66 \\
+			122 & 62 \\
+			122 & 62 \\
+			120 & 66 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
 \begin{figure}
 	\centering
-	\includegraphics[width=\textwidth]{rot.png}
-	\caption{Rot,}
+	\includegraphics[width=\textwidth]{ouurs/red_cropped.png}
+	\caption{Aufgenommene Zeemann-Aufspaltung der roten Linie.}
 	\label{fig:roterstern}
 \end{figure}
+
+\FloatBarrier
+\subsubsection{Blaue \texorpdfstring{$\sigma-$}ALinie}
+	Die Zeemann-Aufspaltung mit und ohne B-Feld ist in Abbildung \ref{fig:blau_sigma}
+	zu sehen. Weiterhin sind analog wie im vorherigen Abschnitt die benötigten Messwerte
+	für $\Delta s$ und $\delta s$ in Tabelle \ref{tab:blau_sigma} aufgetragen.
+	Damit ergibt sich wieder der Landé-Faktor zu:
+	\begin{equation*}
+		g = \SI{1.84(4)} \, \text{.}
+	\end{equation*}
+	\begin{table}
+		\centering
+		\caption{Messwerte (in Pixel) zur Bestimmung des Landé-Faktors bei der blauen $\sigma$-Linie mit einem Magnetfeld von $B = \SI{333}{\milli\tesla}$.}
+		\label{tab:blau_sigma}
+		\begin{tabular}{c | c}
+			\toprule
+			$\Delta s$ & $\delta s$\\
+			\midrule
+			126 & 60 \\
+			123 & 57 \\
+			117 & 61 \\
+			117 & 57 \\
+			114 & 60 \\
+			117 & 57 \\
+			111 & 54 \\
+			111 & 51 \\
+			112 & 57 \\
+			114 & 55 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{ouurs/blau_sigma_cropped.png}
+	\caption{Aufgenommene Zeemann-Aufspaltung der blauen $\sigma$-Linie.}
+	\label{fig:blau_sigma}
+\end{figure}
+
+\FloatBarrier
+\subsubsection{Blaue \texorpdfstring{$\pi-$}ALinie}
+	Zuletzt wird der Landé-Faktor für die blaue $\pi$-Linie bestimmt. Das Vorgehen ist wieder 
+	analog zu den vorherigen Abschnitten.
+	Die Messwerte befinden sich in Tabelle \ref{tab:blau_pi} und die Aufspaltung
+	ist in Abbildung \ref{fig:blau_pi} zu finden.
+	Der Landé-Faktor ergibt sich zu:
+	\begin{equation*}
+		g = \SI{0.488(23)} \, \text{.}
+	\end{equation*}
+	\begin{table}
+		\centering
+		\caption{Messwerte (in Pixel) zur Bestimmung des Landé-Faktors bei der blauen $\pi$-Linie mit einem Magnetfeld von $B = \SI{1001}{\milli\tesla}$.}
+		\label{tab:blau_pi}
+		\begin{tabular}{c | c}
+			\toprule
+			$\Delta s$ & $\delta s$\\
+			\midrule
+			126 & 48 \\
+			120 & 51 \\
+			111 & 45 \\
+			117 & 46 \\
+			111 & 45 \\
+			105 & 48 \\
+			108 & 36 \\
+			102 & 42 \\
+			108 & 36 \\
+			100 & 35 \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
+	\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{ouurs/blau_pi_crop.png}
+	\caption{Aufgenommene Zeemann-Aufspaltung der blauen $\pi$-Linie.}
+	\label{fig:blau_pi}
+\end{figure}
+

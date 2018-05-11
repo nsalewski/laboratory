@@ -54,37 +54,38 @@ print('delta_lambda: ', delta_lambda)
 g = (h*c* delta_lambda) / (lambd**2*mu_B*B_rot)
 print('g: ', g)
 
+###########################################################################
+
+lambd = 480*10**(-9)
+B_blau_sigma = 333*10**(-3)
+blau_lambda_D = 26.952 * 10**(-12)
+Ds = [126, 123, 117, 117, 114, 117, 111, 111, 112, 114 ]
+ds = [60, 57, 61, 57, 60, 57, 54, 51, 57, 55]
+
+D_s_mittel = ufloat(np.mean(Ds),np.std(Ds,ddof=1)/np.sqrt(len(Ds)))
+d_s_mittel = ufloat(np.mean(ds),np.std(ds,ddof=1)/np.sqrt(len(ds)))
+print('BLAU SIGMA :::: D_s Mittelwert: ', D_s_mittel)
+print('d_s Mittelwert: ', d_s_mittel)
+delta_lambda = 0.5 * d_s_mittel/D_s_mittel * blau_lambda_D
+print('delta_lambda: ', delta_lambda)
+g = (h*c* delta_lambda) / (lambd**2*mu_B*B_blau_sigma)
+print('g: ', g)
+
+########################################################################
+
+lambd = 480*10**(-9)
+B_blau_pi = 1001*10**(-3)
+blau_lambda_D = 26.952 * 10**(-12)
+Ds = [126, 120, 111, 117, 111, 105, 108, 102, 108, 100 ]
+ds = [48, 51, 45, 46, 45, 48, 36, 42, 36, 35]
+
+D_s_mittel = ufloat(np.mean(Ds),np.std(Ds,ddof=1)/np.sqrt(len(Ds)))
+d_s_mittel = ufloat(np.mean(ds),np.std(ds,ddof=1)/np.sqrt(len(ds)))
+print('BLAU PI :::: D_s Mittelwert: ', D_s_mittel)
+print('d_s Mittelwert: ', d_s_mittel)
+delta_lambda = 0.5 * d_s_mittel/D_s_mittel * blau_lambda_D
+print('delta_lambda: ', delta_lambda)
+g = (h*c* delta_lambda) / (lambd**2*mu_B*B_blau_pi)
+print('g: ', g)
 
 
-
-
-
-
-#Daten
-#rf,horizontal_1,horizontal_2, peak_1,peak_2=np.genfromtxt("data/data.txt",unpack=True)
-
-
-
-#how to use textable
-
-#arr1=[0.4,0.75,1.4]
-#arr2=[2,3,4]
-#textable.latex_tab(data=[arr1,arr2],names=[r"title column 1",r"title column 2"], filename=r"example.tex",caption=r"Beautiful caption",label=r"important_label",dec_points=[2,0])
-
-# dec_points sets precision, i.e. dec_points[0]=2 will display 2 decimal places for all values in column 1
-
-
-
-#Ausgleichsrechnung
-#params1, covariance1 = curve_fit(theorie,rf,B1)
-#errors1 = np.sqrt(np.diag(covariance1))
-
-#Plot
-#plt.plot(rf/1000,B1*10**6, 'ro', label="Messwerte 1. Minimum")
-#plt.plot(rf_theo/1000, theorie(rf_theo, *params1)*10**6, 'b-', label="Regressionsgrade 1. Minimum")
-#plt.xlim(0,1100)
-#plt.ylabel(r"$B_{\mathrm{ges}}/10^{-6}\si{\tesla}$")
-#plt.xlabel(r"Frequenz des RF-Felds $\nu/\si{\kilo\hertz}$")
-#plt.legend(loc='best')
-#plt.tight_layout()
-#plt.savefig('pictures/lin_regress.pdf')
