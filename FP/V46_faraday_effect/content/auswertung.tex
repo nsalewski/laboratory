@@ -1,0 +1,91 @@
+\section{Auswertung}
+\label{sec:Auswertung}
+%include tables
+%\input{latex_tables/current.tex}
+\subsection{Bestimmung des B-Felds am Ort der Probe}
+Nach der Versuchsanleitung soll angenommen werden, dass sich die Probe am Ort des Maximums des Magnetfelds befindet \cite{Anleitung}.
+Da das Magnetfeld durch zwei Spulen erzeugt wird und sich die Probe annähernd mittig zwischen diesen befindet, wird von einer symmetrischen Verteilung der magnetischen Feldstärke bezüglich ihres Maximums ausgegangen. Zur Ermittlung der $z$-Position des stärksten Magnetfelds wird daher eine Gaußglocke an die aufgenommenen Daten gefittet:
+\begin{equation}
+  \phi(z)=a*\exp{-(z-\mu)^2/b}\mathrm{.}
+\end{equation}
+Hierbei sind $a$ und $b$ Fitparameter, die im Folgenden nicht weiter betrachtet werden.
+Der Erwartungswert der Gaußglocke ergibt sich zu $\mu=\SI{2.84(2)}{\centi\meter}$. Da zu diesem $z$-Wert keine magnetische Feldstärke bestimmt wurde, wird die Feldstärke der beiden umgebenden $z$-Werte gemittelt.
+Es ergibt sich somit ein Magnetfeld $B\approx \SI{377.5}{\milli\tesla}$ an der Position der Probe.
+Dieser Wert für die weiteren Berechnungen als Magnetfeld am Ort der Probe angenommen.
+In Tabelle \ref{tab:magnetfeld} sind die gemessenen Werte für das B-Feld in Abhängigkeit vom Ort angegeben. Hierbei wurde das Magnetfeld in einem Intervall von $\SI{6}{\centi\meter}$ mittig bezüglich des Probenorts vermessen. In Abbildung \ref{fig:magnetfeld} sind die gemessenen Werte gegen den Ort aufgetragen. Zudem wurde durch die gestrichelte rote Linie der Erwartungswert der Gaußglocke eingezeichnet.
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/B_feld.pdf}
+  \caption{Das gemessene B-Feld aufgetragen gegen den Ort $z$. Die Probe befand sich etwa bei $z=\SI{3.1}{\centi\meter}$. Zudem eingezeichnet ist der Erwartungswert der Gaußverteilung, an welchem die größte Magnetfeldstärke vermutet wird.}
+  \label{fig:magnetfeld}
+\end{figure}
+\input{tables/magnetfeld.tex}
+
+\subsection{Bestimmung der Faraday-Rotation}
+Die Faraday-Rotation wurde im vorliegenden Versuch an zwei unterschiedlich dotierten $\ce{GaAs}$-Proben, sowie einer undotierten $\ce{GaAs}$-Probe durchgeführt.
+Die Parameter der Proben finden sich in Tabelle \ref{tab:params}.
+\begin{table}
+  \centering
+  \caption{Parameter der verwendeten Proben}
+  \label{tab:params}
+  \begin{tabular}{ccc}
+    \toprule
+    Probe&Dotierung $N$/$\si{\per\cubic\centi\metre}$&Dicke $L$/$\si{\milli\meter}$\\
+    \midrule
+    $\ce{GaAs}_{\mathrm{und}}$&-&\\
+    $\ce{GaAs}_{\mathrm{d1}}$&$2.8\cdot 10^{18}$&1.296\\
+    $\ce{GaAs}_{\mathrm{d2}}$&$1.2\cdot 10^{18}$&1.36\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Für die Proben wurden jeweils die Winkel $\theta_1$ und $\theta_2$ für die beiden unterschiedlichen Polungen des Magnetfelds gemessen. Da zum Teil Winkel kleiner als $\theta=\ang{0}$ gemessen wurden, werden diese zunächst um den Vollwinkel $\ang{360}$ verringert, sodass alle betrachteten Winkel bezüglich des gleichen Ursprungs betrachtet werden.
+Da die Faraday-Rotation bezüglich beider Orientierungen des Magnetfelds und für verschiedene Materialdicken aufgenommen wurde, wird der Rotationswinkel auf die Dicke $L$ der Proben normiert:
+\begin{equation}
+  \theta=\frac{1}{2L}\left(\theta_1-\theta_2\right)\mathrm{.}
+\end{equation}
+Es wird zudem nur der Betrag der errechneten Rotationswinkel betrachtet.
+In den Tabellen \ref{tab:probe1}-\ref{tab:probe3} finden sich die zum Teil um den Vollwinkel modifizierten Messwerte für die $\theta_i$ sowie die daraus bestimmten Faraday-Rotationen $\theta$.
+\input{tables/probe1.tex}
+\input{tables/probe2.tex}
+\input{tables/probe3.tex}
+In Abbildung \ref{fig:faraday} finden sich die berechneten Faraday-Rotationswinkel aufgetragen gegen die jeweils untersuchte Wellenlänge $\lambda$ des einfallenden Lichts.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/winkel_gg_wellenlaenge.pdf}
+  \caption{Die Faraday-Rotationen $\theta$ der verwendeten Proben aufgetragen gegen die Wellenlänge $\lambda$ des jeweils einfallenden Lichts.}
+  \label{fig:faraday}
+\end{figure}
+\subsection{Bestimmung der effektiven Masse der Kristallelektronen}
+Zur Bestimmung der effektiven Masse wird die Differenz der Faraday-Rotation zwischen dotiertem und undotiertem $\ce{GaAs}$ betrachtet:
+\begin{equation}
+\Delta \theta=\theta_{\mathrm{dotiert}}-\theta_{\mathrm{undotiert}}\mathrm{.}
+\end{equation}
+\input{tables/eff_mass.tex}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/delta1.pdf}
+  \caption{Die Faraday-Rotation $\Delta \theta$ aufgetragen gegen $\lambda^{2}$ mit Regressionsgerade für die Probe $\ce{GaAs}_{\mathrm{d1}}$}
+  \label{fig:delta1}
+\end{figure}
+\begin{figure}
+  \centering
+  \includegraphics[width=\textwidth]{pictures/delta2.pdf}
+  \caption{Die Faraday-Rotation $\Delta \theta$ aufgetragen gegen $\lambda^{2}$ mit Regressionsgerade für die Probe $\ce{GaAs}_{\mathrm{d2}}$}
+  \label{fig:delta2}
+\end{figure}
+Nach Gleichung blaaablaa besteht ein linearer Zusammenhang zwischen der Faraday-Rotation und dem Quadrat der Wellenlänge:
+\begin{equation}
+    \theta(\lambda)=A*\lambda^2 \mathrm{.}
+\end{equation}
+Die effektive Masse der Kristallelektronen lässt sich aus dem Steigungsparameter bestimmen.
+Es ist:
+\begin{equation}
+  A=\frac{e_{\mathrm{0}}^3 \cdot NB}{8\pi \epsilon_{\mathrm{0}} c^3 n {m^{*}}^2}\mathrm{,}
+\end{equation}
+und somit:
+\begin{equation}
+  {m^{*}}=\sqrt{\frac{e_{\mathrm{0}}^3 \cdot NB}{8\pi^2 \epsilon_{\mathrm{0}} c^3 n A}}\mathrm{.}
+\end{equation}
+Es ist $N$ die Dotierung der jeweils betrachteten Probe und $n=3.3$ der Brechungsindex von $\ce{GaAs}$ nach \cite{ioffe}.

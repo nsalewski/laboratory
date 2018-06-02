@@ -1,0 +1,9 @@
+#filter wellenlänge/micrometer  hin(winkel) hin(winkelsekunden) rück(winkel)  rück(winkelsekunden)
+1.06  337 25  72 23
+1.29  6 29   359 20
+1.45  16  9  8  3
+1.96  11 2  11 39
+2.156 339 30  323  26
+2.34  24 11  0  0
+2.51  28 32 17  50
+3.18  342 19  95  29
