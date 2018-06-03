@@ -28,7 +28,7 @@ def winkel(grad,sec):
 def lin(x,a):
     return a*x
 def eff_mass(a,B,N):
-    return np.sqrt((e0)**3*N*B)/(8*np.pi**2*eps*c**3*n*a)
+    return unp.sqrt(((e0)**3*N*B)/(8*np.pi**2*eps*c**3*n*a))
 #daten importieren
 b,z=np.genfromtxt("data/b_feld.txt",unpack=True)
 
@@ -64,14 +64,14 @@ grad3=(1/(2*l3)*(grad3_rueck-grad3_hin)*2*np.pi/360)
 #Berechnung delta theta
 delta1=grad1-grad3
 delta2=grad2-grad3
-textable.latex_tab(data=[f1,grad3,grad1,grad2,delta1,delta2],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_{\mathrm{und}}$/$\si{\radian\per\meter}$",r"$\theta_{\mathrm{d1}}$/$\si{\radian\per\meter}$",r"$\theta_{\mathrm{d2}}$/$\si{\radian\per\meter}$",r"$\Delta \theta_{\mathrm{d1}}$/$\si{\radian\per\meter}$",r"$\Delta \theta_{\mathrm{d2}}$/$\si{\radian\per\meter}$"], filename=r"tables/eff_mass.tex",caption=r"Werte der $\Delta \theta$ zwischen undotiertem und dotiertem $\ce{GaAs}$ zur Bestimmung der effektiven Masse der Kristallelektronen",label=r"eff_mass",dec_points=[2,2,2,2,2,2],tableformat=4.2)
+textable.latex_tab(data=[f1*10**6,grad3,grad1,grad2,delta1,delta2],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_{\mathrm{und}}$/$\si{\radian\per\meter}$",r"$\theta_{\mathrm{d1}}$/$\si{\radian\per\meter}$",r"$\theta_{\mathrm{d2}}$/$\si{\radian\per\meter}$",r"$\Delta \theta_{\mathrm{d1}}$/$\si{\radian\per\meter}$",r"$\Delta \theta_{\mathrm{d2}}$/$\si{\radian\per\meter}$"], filename=r"tables/eff_mass.tex",caption=r"Werte der $\Delta \theta$ zwischen undotiertem und dotiertem $\ce{GaAs}$ zur Bestimmung der effektiven Masse der Kristallelektronen",label=r"eff_mass",dec_points=[2,2,2,2,2,2],tableformat=4.2)
 
 
 
 #Tabellen theta
-textable.latex_tab(data=[f1*10**6,grad1_hin,grad1_rueck,grad1],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_1$/$\si{\degree}$",r"$\theta_2$/$\si{\degree}$",r"$|\theta|$/$\si{\radian\per\meter}$"], filename=r"tables/probe1.tex",caption=r"Messwerte der Faraday-Rotation für die dotierte Probe $\ce{GaAs}_{d1}$",label=r"probe1",dec_points=[2,2,2,2],tableformat=4.2)
-textable.latex_tab(data=[f2*10**6,grad2_hin,grad2_rueck,grad2],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_1$/$\si{\degree}$",r"$\theta_2$/$\si{\degree}$",r"$|\theta|$/$\si{\radian\per\meter}$"], filename=r"tables/probe2.tex",caption=r"Messwerte der Faraday-Rotation für die dotierte Probe $\ce{GaAs}_{d2}$",label=r"probe2",dec_points=[2,2,2,2],tableformat=4.2)
-textable.latex_tab(data=[f3*10**6,grad3_hin,grad3_rueck,grad3],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_1$/$\si{\degree}$",r"$\theta_2$/$\si{\degree}$",r"$|\theta|$/$\si{\radian\per\meter}$"], filename=r"tables/probe3.tex",caption=r"Messwerte der Faraday-Rotation für die undotierte Probe $\ce{GaAs}_{und}$",label=r"probe3",dec_points=[2,2,2,2],tableformat=4.2)
+textable.latex_tab(data=[f1*10**6,grad1_hin,grad1_rueck,grad1],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_1$/$\si{\degree}$",r"$\theta_2$/$\si{\degree}$",r"$\theta$/$\si{\radian\per\meter}$"], filename=r"tables/probe1.tex",caption=r"Messwerte der Faraday-Rotation für die dotierte Probe $\ce{GaAs}_{d1}$",label=r"probe1",dec_points=[2,2,2,2],tableformat=4.2)
+textable.latex_tab(data=[f2*10**6,grad2_hin,grad2_rueck,grad2],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_1$/$\si{\degree}$",r"$\theta_2$/$\si{\degree}$",r"$\theta$/$\si{\radian\per\meter}$"], filename=r"tables/probe2.tex",caption=r"Messwerte der Faraday-Rotation für die dotierte Probe $\ce{GaAs}_{d2}$",label=r"probe2",dec_points=[2,2,2,2],tableformat=4.2)
+textable.latex_tab(data=[f3*10**6,grad3_hin,grad3_rueck,grad3],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_1$/$\si{\degree}$",r"$\theta_2$/$\si{\degree}$",r"$\theta$/$\si{\radian\per\meter}$"], filename=r"tables/probe3.tex",caption=r"Messwerte der Faraday-Rotation für die undotierte Probe $\ce{GaAs}_{und}$",label=r"probe3",dec_points=[2,2,2,2],tableformat=4.2)
 #Tabelle Magnetfeld
 textable.latex_tab(data=[z,b],names=[r"$z$/$\si{\centi\meter}$",r"$B$/$\si{\milli\tesla}$"], filename=r"tables/magnetfeld.tex",caption=r"Messung des Magnetfelds in Abhängigkeit zum Ort $z$ (Probe ist etwa bei $\SI{3.1}{\centi\meter}$ platziert)",label=r"magnetfeld",dec_points=[2,0],tableformat=3.2)
 
@@ -80,24 +80,32 @@ z_theo=np.linspace(0,6,50)
 #Ausgleichsrechnung Magnetfeld
 params, covariance = curve_fit(theorie,z,b)
 errors = np.sqrt(np.diag(covariance))
-
 print("Erwartungswert",params[1],errors[1])
+delta1_calc=np.delete(delta1,[0,3,7])
+f1_calc1=np.delete(f1,[0,3,7])
+delta2_calc=np.delete(delta2,[6,7])
+f1_calc2=np.delete(f1,[6,7])
+
+
 #lin regress delta
-paramsd1, covarianced1 = curve_fit(lin,f1**2,delta1)
+
+paramsd1, covarianced1 = curve_fit(lin,(f1_calc1**2),delta1_calc*10**(-6))
 errorsd1 = np.sqrt(np.diag(covarianced1))
-paramsd2, covarianced2 = curve_fit(lin,f1**2,delta2)
+paramsd2, covarianced2 = curve_fit(lin,(f1_calc2)**2,delta2_calc*10**(-6))
 errorsd2 = np.sqrt(np.diag(covarianced2))
-a1=ufloat(paramsd1[0],errorsd1[0])
-a2=ufloat(paramsd2[0],errorsd2[0])
+
+a1=ufloat(paramsd1[0],errorsd1[0])*10**(6)
+a2=ufloat(paramsd2[0],errorsd2[0])*10**(6)
+
 n=3.3
 e0=const.e
 eps=const.epsilon_0
 c=const.c
-B=377.5*10**(-4)
+B=377.5*10**(-3)
 print("Delta_1 Steigung", a1)
 print("Delta_2 Steigung", a2)
-print("Effektive Masse 1",eff_mass(a1,B,2.8*10**18)/const.m_e)
-print("Effektive Masse 2",eff_mass(a2,B,1.2*10**18)/const.m_e)
+print("Effektive Masse 1",eff_mass(a1,B,2.8*10**18*10**6),eff_mass(a1,B,2.8*10**18*10**6)/const.m_e)
+print("Effektive Masse 2",eff_mass(a2,B,1.2*10**18*10**6),eff_mass(a2,B,1.2*10**18*10**6)/const.m_e)
 
 #Plot Magnetfeld
 plt.plot((params[1],params[1]),(0,400), 'r--', label=r"Erwartungswert der Normalverteilung")
@@ -110,9 +118,9 @@ plt.savefig('pictures/B_feld.pdf')
 plt.clf()
 
 #Plot theta
-plt.plot(f1*10**6,abs(grad1), 'ro', label=r"Messwerte $\theta_{\mathrm{d1}}$")
-plt.plot(f2*10**6,abs(grad2), 'go', label=r"Messwerte $\theta_{\mathrm{d2}}$")
-plt.plot(f3*10**6,abs(grad3), 'bo', label=r"Messwerte $\theta_{\mathrm{und}}$")
+plt.plot(f1*10**6,grad1, 'ro', label=r"Messwerte $\theta_{\mathrm{d1}}$")
+plt.plot(f2*10**6,grad2, 'go', label=r"Messwerte $\theta_{\mathrm{d2}}$")
+plt.plot(f3*10**6,grad3, 'bo', label=r"Messwerte $\theta_{\mathrm{und}}$")
 plt.ylabel(r"$\theta$/$\si{\radian\per\meter}")
 plt.xlabel(r"$\lambda$/$\si{\micro\meter}$")
 plt.legend(loc='best')
@@ -123,16 +131,16 @@ plt.clf()
 
 
 #plot delta
-plt.plot(f1**2,delta1, 'ro', label=r"$\Delta \theta_{\mathrm{d1}}$")
-plt.plot(f1**2,lin(f1**2,*paramsd1), 'b-', label="Ausgleichsgrade")
+plt.plot((f1)**2,delta1, 'ro', label=r"$\Delta \theta_{\mathrm{d1}}$")
+plt.plot((f1)**2,lin(f1**2,*paramsd1*10**6), 'b-', label="Ausgleichsgrade")
 plt.ylabel(r"$\Delta \theta_{\mathrm{d1}}$/$\si{\radian\per\meter}$")
 plt.xlabel(r"$\lambda^{2}$/$\si{\square\meter}$")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('pictures/delta1.pdf')
 plt.clf()
-plt.plot(f1**2,delta2, 'ro', label=r"$\Delta \theta_{\mathrm{d2}}$")
-plt.plot(f1**2,lin(f1**2,*paramsd2), 'b-', label="Ausgleichsgrade")
+plt.plot((f1)**2,delta2, 'ro', label=r"$\Delta \theta_{\mathrm{d2}}$")
+plt.plot((f1)**2,lin(f1**2,*paramsd2*10**6), 'b-', label="Ausgleichsgrade")
 plt.ylabel(r"$\Delta \theta_{\mathrm{d2}}$/$\si{\radian\per\meter}$")
 plt.xlabel(r"$\lambda^{2}$/$\si{\square\meter}$")
 plt.legend(loc='best')

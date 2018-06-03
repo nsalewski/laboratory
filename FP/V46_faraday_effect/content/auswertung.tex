@@ -39,13 +39,12 @@ Die Parameter der Proben finden sich in Tabelle \ref{tab:params}.
   \end{tabular}
 \end{table}
 
-Für die Proben wurden jeweils die Winkel $\theta_1$ und $\theta_2$ für die beiden unterschiedlichen Polungen des Magnetfelds gemessen. Da zum Teil Winkel kleiner als $\theta=\ang{0}$ gemessen wurden, werden diese zunächst um den Vollwinkel $\ang{360}$ verringert, sodass alle betrachteten Winkel bezüglich des gleichen Ursprungs betrachtet werden.
+Für die Proben wurden jeweils die Winkel $\theta_1$ und $\theta_2$ für die beiden unterschiedlichen Polungen des Magnetfelds gemessen. Da zum Teil Winkel kleiner als $\theta=\ang{0}$ gemessen wurden, werden zunächst  alle Winkel auf einen gemeinsamen Bezugspunkt gedreht, sodass alle betrachteten Winkel bezüglich des gleichen Ursprungs betrachtet werden. Hierzu werden alle Winkel um $\theta=\ang{180}$ gedreht, was experimentell der genau gleichen Polarisation entspricht und die weitere Verrechnung der Daten vereinfacht.
 Da die Faraday-Rotation bezüglich beider Orientierungen des Magnetfelds und für verschiedene Materialdicken aufgenommen wurde, wird der Rotationswinkel auf die Dicke $L$ der Proben normiert:
 \begin{equation}
   \theta=\frac{1}{2L}\left(\theta_1-\theta_2\right)\mathrm{.}
 \end{equation}
-Es wird zudem nur der Betrag der errechneten Rotationswinkel betrachtet.
-In den Tabellen \ref{tab:probe1}-\ref{tab:probe3} finden sich die zum Teil um den Vollwinkel modifizierten Messwerte für die $\theta_i$ sowie die daraus bestimmten Faraday-Rotationen $\theta$.
+In den Tabellen \ref{tab:probe1}-\ref{tab:probe3} finden sich die um den Halbwinkel modifizierten Messwerte für die $\theta_i$ sowie die daraus bestimmten Faraday-Rotationen $\theta$.
 \input{tables/probe1.tex}
 \input{tables/probe2.tex}
 \input{tables/probe3.tex}
@@ -57,8 +56,9 @@ In Abbildung \ref{fig:faraday} finden sich die berechneten Faraday-Rotationswink
   \caption{Die Faraday-Rotationen $\theta$ der verwendeten Proben aufgetragen gegen die Wellenlänge $\lambda$ des jeweils einfallenden Lichts.}
   \label{fig:faraday}
 \end{figure}
+\FloatBarrier
 \subsection{Bestimmung der effektiven Masse der Kristallelektronen}
-Zur Bestimmung der effektiven Masse wird die Differenz der Faraday-Rotation zwischen dotiertem und undotiertem $\ce{GaAs}$ betrachtet:
+Zur Bestimmung der effektiven Masse der Elektronen im dotierten $\ce{GaAs}$ wird die Differenz der Faraday-Rotation zwischen dotierten und undotierten $\ce{GaAs}$ betrachtet:
 \begin{equation}
 \Delta \theta=\theta_{\mathrm{dotiert}}-\theta_{\mathrm{undotiert}}\mathrm{.}
 \end{equation}
@@ -75,7 +75,7 @@ Zur Bestimmung der effektiven Masse wird die Differenz der Faraday-Rotation zwis
   \caption{Die Faraday-Rotation $\Delta \theta$ aufgetragen gegen $\lambda^{2}$ mit Regressionsgerade für die Probe $\ce{GaAs}_{\mathrm{d2}}$}
   \label{fig:delta2}
 \end{figure}
-Nach Gleichung blaaablaa besteht ein linearer Zusammenhang zwischen der Faraday-Rotation und dem Quadrat der Wellenlänge:
+Nach Gleichung \eqref{eqn:Masse} besteht ein linearer Zusammenhang zwischen der Faraday-Rotation und dem Quadrat der Wellenlänge:
 \begin{equation}
     \theta(\lambda)=A*\lambda^2 \mathrm{.}
 \end{equation}
@@ -89,3 +89,20 @@ und somit:
   {m^{*}}=\sqrt{\frac{e_{\mathrm{0}}^3 \cdot NB}{8\pi^2 \epsilon_{\mathrm{0}} c^3 n A}}\mathrm{.}
 \end{equation}
 Es ist $N$ die Dotierung der jeweils betrachteten Probe und $n=3.3$ der Brechungsindex von $\ce{GaAs}$ nach \cite{ioffe}.
+Bereits bei einer Betrachtung von Abbildung \ref{fig:faraday} fällt auf, dass einige Messwerte Unstimmigkeiten aufweisen. Dies gilt im Besonderen für die größte eingestrahlte Wellenlänge. Daher werden die Werte für $\lambda=\SI{3.18}{\micro\meter}$ jeweils in der Berechnung der Ausgleichsgraden nicht berücksichtigt.
+Zudem weichen jeweils weitere Werte deutlich ab. In der Berechnung für $\Delta \theta_{\mathrm{d1}}$ wurden daher zusätzlich die Werte für $\lambda=\SI{1.06}{\micro\meter}$ und $\lambda=\SI{1.96}{\micro\meter}$ in der Ausgleichsrechnung ebensowenig berücksichtigt wie $\lambda=\SI{2.51}{\micro\meter}$ in der Berechnung von
+ $\Delta \theta_{\mathrm{d2}}$.
+In Tabelle \ref{tab:steigung} sind die so ermittelten Steigungen und die daraus bestimmten effektiven Massen $m^{*}$ eingetragen. Zudem wurden jeweils die Verhältnisse zur Ruhemasse $m_{0}$ des Elektrons berechnet.
+\begin{table}
+  \centering
+  \caption{Ergebnisse der Ausgleichsrechnung und der daraus bestimmten Massen für beide Dotierungen.}
+  \label{tab:steigung}
+  \begin{tabular}{cccc}
+    \toprule
+    Messung&Parameter $A$/$10^{12}\si{\radian\per\cubic\metre}$&effektive Masse  $m^{*}$/$10^{-32}\si{\kilo\gram}$&$m^{*}$/$m_{0}$\\
+    \midrule
+    $\ce{GaAs}_{\mathrm{d1}}-\ce{GaAs}_{\mathrm{und}}$&$\num{27(7)}$&$\num{5.0(6)}$&$\num{0.055(7)}$\\
+    $\ce{GaAs}_{\mathrm{d2}}-\ce{GaAs}_{\mathrm{und}}$&$\num{51(14)}$&$\num{2.4(3)}$&$\num{0.027(4)}$\\
+    \bottomrule
+  \end{tabular}
+\end{table}

@@ -6,7 +6,7 @@ Der Faraday-Effekt beschreibt die Drehung der Polarisationsebene eines Lichtstra
 Unter bestimmten Voraussetzungen ist es möglich mit diesem Effekt die effektive Masse von Elektronen in einem Halbleiter zu bestimmen.
 Im Folgenden werden die theoretischen Grundlagen erläutert und gezeigt, welche Ergebnisse sich daraus ergeben.
 \subsection{Effektive Masse}
-Die Effektive Masse lässt sich als scheinbare Masse veranschaulichen, die ein Elektron in einer Kristallstruktur (hier in einem Halbleiter) besitzt. Für einen beliebigen Wellenvektor $\vec{k}$ des Elektrons gilt in einem periodischen Gitter nach Taylorentwicklung bis zur 2. Ordnung
+Die Effektive Masse $m_i^*$ lässt sich als scheinbare Masse veranschaulichen, die ein Elektron in einer Kristallstruktur (hier in einem Halbleiter) besitzt. Für einen beliebigen Wellenvektor $\vec{k}$ des Elektrons gilt in einem periodischen Gitter nach Taylorentwicklung bis zur 2. Ordnung
 \begin{align*}
 	E(\vec{k})=E(0)+\frac{1}{2}\sum_{i=1}^3\left(\frac{\partial^2 E}{\partial k_i^2}\right)_{k_i=0}k_i^2+\mathcal{O}(\vec{k}^3) \, \mathrm{.}
 \end{align*}
@@ -16,13 +16,13 @@ Durch einen Vergleich mit der Energie eines freien quantenmechanischen Teilchens
 \end{equation}
 \subsection{Zirkulare Doppelbrechung}
 Zirkulare Doppelbrechung beschreibt die Fähigkeit eines Kristalls die Polarisationsebene eines einfallenden linear polarisierten Lichtstrahls zu drehen.
-%\begin{figure} 
-%	  \centering
-%	  \includegraphics[width=1\textwidth]{Bilder/Drehung_Polarisationsebene.png}
-%	         \caption{Drehung der Polarisationsebene einer Lichtwelle beim Durchgang durch einen Kristall \cite{42}
-%		 }
-%		   \label{fig:Bild1}
-%\end{figure}
+\begin{figure}
+	  \centering
+	  \includegraphics[width=1\textwidth]{pictures/drehung.png}
+	         \caption{Drehung der Polarisationsebene einer Lichtwelle beim Durchgang durch einen Kristall \cite{Anleitung}
+		 }
+		   \label{fig:Bild1}
+\end{figure}
 Zur Berechnung des Drehwinkels $\theta$ wird der linear polarisierte Lichtstrahl zunächst in einen linkshändigen und einen rechtshändigen Anteil zerlegt:
 \begin{equation*}
 	E(z)= \frac{1}{2}(E_R(z)+E_L(z)) \, \mathrm{,}
@@ -31,7 +31,7 @@ wobei sich beide Wellen in z-Richtung fortbewegen und unterschiedliche Wellenzah
 Mit dem Wellenansatz für die beiden Wellen, den beiden Definitionen
 \begin{align}\label{Winkel}
 	\psi := \frac{L}{2} (k_R + k_L) \\\nonumber
-	\theta := \frac{L}{2} (k_R - k_L) 
+	\theta := \frac{L}{2} (k_R - k_L)
 \end{align}
 und der Eulerschen Formel folgt:
 \begin{align}
@@ -67,7 +67,7 @@ besitzt. Da der Wellenzahlvektor von der Phasengeschwindigkeit abhängt wird nun
 \begin{equation*}
 	\theta \approx \frac{L\omega}{2c}(\sqrt{1+\chi_{xx}})^{-1}\chi_{xy} \approx \frac{L\omega}{2cn}\chi_{xy} \, \mathrm{.}
 \end{equation*}
-Für ein gebundenes Elektron der Masse $m$ und der Ladung $e_0$ unter dem Einfluss eines elektromagnetsichen Feldes wird folgende Gleichung angenommen:
+Für ein gebundenes Elektron der Masse $m$ und der Ladung $e_0$ unter dem Einfluss eines elektromagnetischen Feldes wird folgende Gleichung angenommen:
 \begin{equation*}
 	m\frac{\mathrm{d}^2\vec{r}}{\mathrm{d}t^2}+K\vec{r} = - e_o \vec{E}(r) -e_0 \frac{\mathrm{d}\vec{r}}{\mathrm{d}t}\times \vec{B} \, \mathrm{.}
 \end{equation*}
@@ -77,6 +77,6 @@ Hieraus folgt nach einigen Rechnungen folgende Formel für den Drehwinkel:
 	\right)^2-\left(\frac{e_0}{m}B\omega\right)^2}\frac{NBL}{n} \, \mathrm{.}
 \end{equation*}
 Mit einigen weiteren Einschränkungen folgt für den Fall von quasifreien Ladungsträgern:
-\begin{equation}\label{Masse}
+\begin{equation}\label{eqn:Masse}
 	\theta_{frei}\approx\frac{e_0^3}{8 \pi^2 \varepsilon_0 c^3 m^2}\lambda^2\frac{NBL}{n} \, \mathrm{.}
 \end{equation}
