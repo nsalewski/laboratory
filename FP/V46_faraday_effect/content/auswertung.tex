@@ -6,7 +6,7 @@
 Nach der Versuchsanleitung soll angenommen werden, dass sich die Probe am Ort des Maximums des Magnetfelds befindet \cite{Anleitung}.
 Da das Magnetfeld durch zwei Spulen erzeugt wird und sich die Probe annähernd mittig zwischen diesen befindet, wird von einer symmetrischen Verteilung der magnetischen Feldstärke bezüglich ihres Maximums ausgegangen.\\ Zur Ermittlung der $z$-Position des stärksten Magnetfelds wird daher eine Gaußglocke an die aufgenommenen Daten gefittet:
 \begin{equation}
-  \phi(z)=a\cdot\exp{-(z-\mu)^2/b}\mathrm{.}
+	\phi(z)=a\cdot\exp\left({-(z-\mu)^2/b}\right) \, \mathrm{.}
 \end{equation}
 Hierbei sind $a$ und $b$ Fitparameter, die im Folgenden nicht weiter betrachtet werden.\\
 Der Erwartungswert der Gaußglocke ergibt sich zu $\mu=\SI{2.84(2)}{\centi\meter}$. Da zu diesem $z$-Wert keine magnetische Feldstärke bestimmt wurde, wird die Feldstärke der beiden umgebenden $z$-Werte gemittelt.
@@ -16,7 +16,7 @@ In Tabelle \ref{tab:magnetfeld} sind die gemessenen Werte für das B-Feld in Abh
 \begin{figure}
   \centering
   \includegraphics[width=\textwidth]{pictures/B_feld.pdf}
-  \caption{Das gemessene B-Feld aufgetragen gegen den Ort $z$. Die Probe befand sich etwa bei $z=\SI{3.1}{\centi\meter}$. Zudem eingezeichnet ist der Erwartungswert der Gaußverteilung, an welchem die größte Magnetfeldstärke vermutet wird.}
+  \caption{Das gemessene B-Feld aufgetragen gegen den Ort $z$. Die Probe befand sich etwa bei $z=\SI{3.1}{\centi\meter}$. Zudem ist der Erwartungswert der Gaußverteilung eingezeichnet, an welchem die größte Magnetfeldstärke angenommen wird.}
   \label{fig:magnetfeld}
 \end{figure}
 \input{tables/magnetfeld.tex}
@@ -39,15 +39,16 @@ Die Parameter der Proben finden sich in Tabelle \ref{tab:params}.
   \end{tabular}
 \end{table}
 
-Für die Proben wurden jeweils die Winkel $\theta_1$ und $\theta_2$ für die beiden unterschiedlichen Polungen des Magnetfelds gemessen. Da zum Teil Winkel kleiner als $\theta=\ang{0}$ gemessen wurden, werden zunächst  alle Winkel auf einen gemeinsamen Bezugspunkt gedreht. Hierzu werden alle Winkel um $\theta=\ang{180}$ gedreht, was experimentell der genau gleichen Polarisation entspricht und die weitere Verrechnung der Daten vereinfacht.
+Für die Proben wurden jeweils die Winkel $\theta_1$ und $\theta_2$ für die beiden unterschiedlichen Polungen des Magnetfelds gemessen. Da zum Teil Winkel kleiner als $\theta=\ang{0}$ gemessen wurden, werden zunächst  alle Winkel auf einen gemeinsamen Bezugspunkt gedreht. Hierzu werden alle Winkel um $\theta=\ang{180}$ gedreht, was experimentell der genau gleichen Polarisation entspricht und die weitere Auswertung der Daten vereinfacht.
 Da die Faraday-Rotation bezüglich beider Orientierungen des Magnetfelds und für verschiedene Probendicken aufgenommen wurde, wird die Differenz beider Rotationswinkel betrachtet und auf die Dicke $L$ der Proben normiert:
 \begin{equation}
   \theta=\frac{1}{2L}\left(\theta_1-\theta_2\right)\mathrm{.}
 \end{equation}
-In den Tabellen \ref{tab:probe1}-\ref{tab:probe3} finden sich die um den Halbwinkel modifizierten Messwerte für die $\theta_i$ sowie die daraus bestimmten Faraday-Rotationen $\theta$.
+In den Tabellen \ref{tab:probe1}-\ref{tab:probe3} finden sich die um den Halbwinkel modifizierten Messwerte für die $\theta_i$, sowie die daraus bestimmten Faraday-Rotationen $\theta$.
 \input{tables/probe1.tex}
 \input{tables/probe2.tex}
 \input{tables/probe3.tex}
+
 In Abbildung \ref{fig:faraday} finden sich die berechneten Faraday-Rotationswinkel aufgetragen gegen die jeweils untersuchte Wellenlänge $\lambda$ des einfallenden Lichts.
 
 \begin{figure}
@@ -79,20 +80,20 @@ für Probe $\ce{GaAs}_{\mathrm{d2}}$.
 \end{figure}
 Nach Gleichung \eqref{eqn:Masse} besteht ein linearer Zusammenhang zwischen der Faraday-Rotation und dem Quadrat der Wellenlänge:
 \begin{equation}
-    \theta(\lambda)=A\cdot\lambda^2 \mathrm{.}
+    \theta(\lambda)=A\cdot\lambda^2 \, \mathrm{.}
 \end{equation}
 Die effektive Masse der Kristallelektronen lässt sich aus dem Steigungsparameter bestimmen.
 Es ist:
 \begin{equation}
-  A=\frac{e_{\mathrm{0}}^3 \cdot NB}{8\pi \epsilon_{\mathrm{0}} c^3 n {m^{*}}^2}\mathrm{,}
+  A=\frac{e_{\mathrm{0}}^3 \cdot NB}{8\pi \epsilon_{\mathrm{0}} c^3 n {m^{*}}^2} \, \mathrm{,}
 \end{equation}
 und somit:
 \begin{equation}
-  {m^{*}}=\sqrt{\frac{e_{\mathrm{0}}^3 \cdot NB}{8\pi^2 \epsilon_{\mathrm{0}} c^3 n A}}\mathrm{.}
+  {m^{*}}=\sqrt{\frac{e_{\mathrm{0}}^3 \cdot NB}{8\pi^2 \epsilon_{\mathrm{0}} c^3 n A}} \, \mathrm{.}
 \end{equation}
-Es ist $N$ die Dotierung der jeweils betrachteten Probe und $n=3.3$ der Brechungsindex von $\ce{GaAs}$ nach \cite{ioffe}.
+Es ist $N$ die Dotierung der jeweils betrachteten Probe und $n=3,3$ der Brechungsindex von $\ce{GaAs}$ nach \cite{ioffe}.
 Bereits bei einer Betrachtung von Abbildung \ref{fig:faraday} fällt auf, dass einige Messwerte Unstimmigkeiten aufweisen. Dies gilt im Besonderen für die größte eingestrahlte Wellenlänge. Daher werden die Werte für $\lambda=\SI{3.18}{\micro\meter}$ jeweils in der Berechnung der Ausgleichsgraden nicht berücksichtigt.
-Zudem weichen jeweils weitere Werte deutlich ab. In der Berechnung für $\Delta \theta_{\mathrm{d1}}$ wurden daher zusätzlich die Werte für $\lambda=\SI{1.06}{\micro\meter}$ und $\lambda=\SI{1.96}{\micro\meter}$ in der Ausgleichsrechnung ebensowenig berücksichtigt wie $\lambda=\SI{2.51}{\micro\meter}$ in der Berechnung für
+Zudem weichen jeweils weitere Werte deutlich ab. In der Berechnung für $\Delta \theta_{\mathrm{d1}}$ werden daher zusätzlich die Werte für $\lambda=\SI{1.06}{\micro\meter}$ und $\lambda=\SI{1.96}{\micro\meter}$ in der Ausgleichsrechnung ebensowenig berücksichtigt wie $\lambda=\SI{2.51}{\micro\meter}$ in der Berechnung für
  $\Delta \theta_{\mathrm{d2}}$.
 In Tabelle \ref{tab:steigung} sind die so ermittelten Steigungen und die daraus bestimmten effektiven Massen $m^{*}$ eingetragen. Zudem wurden jeweils die Verhältnisse zur Ruhemasse $m_{0}$ des Elektrons berechnet.
 \begin{table}
