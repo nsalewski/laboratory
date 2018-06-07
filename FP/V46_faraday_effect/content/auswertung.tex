@@ -4,22 +4,46 @@
 %\input{latex_tables/current.tex}
 \subsection{Bestimmung des B-Felds am Ort der Probe}
 Nach der Versuchsanleitung soll angenommen werden, dass sich die Probe am Ort des Maximums des Magnetfelds befindet \cite{Anleitung}.
-Da das Magnetfeld durch zwei Spulen erzeugt wird und sich die Probe annähernd mittig zwischen diesen befindet, wird von einer symmetrischen Verteilung der magnetischen Feldstärke bezüglich ihres Maximums ausgegangen.\\ Zur Ermittlung der $z$-Position des stärksten Magnetfelds wird daher eine Gaußglocke an die aufgenommenen Daten gefittet:
+Da das Magnetfeld durch zwei Spulen erzeugt wird und sich die Probe annähernd mittig zwischen diesen befindet, wird von einer symmetrischen Verteilung der magnetischen Feldstärke bezüglich ihres Maximums ausgegangen.\\ Zur Ermittlung der $z$-Position des stärksten Magnetfelds wird daher eine Gaußglocke an die aufgenommenen Daten angepasst:
 \begin{equation}
 	\phi(z)=a\cdot\exp\left({-(z-\mu)^2/b}\right) \, \mathrm{.}
 \end{equation}
-Hierbei sind $a$ und $b$ Fitparameter, die im Folgenden nicht weiter betrachtet werden.\\
-Der Erwartungswert der Gaußglocke ergibt sich zu $\mu=\SI{2.84(2)}{\centi\meter}$. Da zu diesem $z$-Wert keine magnetische Feldstärke bestimmt wurde, wird die Feldstärke der beiden umgebenden $z$-Werte gemittelt.
+Die Parameter $a=\num{404(9)}$  und $b={1.51(9)}$ sind dabei Fitparameter, welche für die Betrachtung des Orts der größten Feldstärke nicht relevant sind.\\
+Der Erwartungswert der Gaußglocke ergibt sich zu $\mu=\SI{-0.26(2)}{\centi\meter}$. Da zu diesem $z$-Wert keine magnetische Feldstärke bestimmt wurde, wird die Feldstärke der beiden umgebenden $z$-Werte gemittelt.
 Es ergibt sich somit ein Magnetfeld $B\approx \SI{377.5}{\milli\tesla}$ an der Position der Probe.\\
 Dieser Wert wird für die weiteren Berechnungen als Magnetfeld am Ort der Probe angenommen.\\
-In Tabelle \ref{tab:magnetfeld} sind die gemessenen Werte für das B-Feld in Abhängigkeit vom Ort angegeben. Hierbei wurde das Magnetfeld in einem Intervall von $\SI{6}{\centi\meter}$ um die Position der Probe vermessen. In Abbildung \ref{fig:magnetfeld} sind die gemessenen Werte gegen den Ort aufgetragen. Zudem wurde durch die gestrichelte rote Linie der Erwartungswert der Gaußglocke eingezeichnet.
+In Tabelle \ref{tab:magnetfeld} sind die gemessenen Werte für das B-Feld in Abhängigkeit vom Ort angegeben. Hierbei wurde das Magnetfeld in einem Intervall von $\SI{6}{\centi\meter}$ um die Position der Probe vermessen, wobei bezüglich der ungefähren Probenposition bei $z=\SI{0}{\centi\meter}$ sowohl in positiver, als auch in negativer $z$-Richtung gemessen wurde. In Abbildung \ref{fig:magnetfeld} sind die gemessenen Werte gegen den Ort $z$ aufgetragen. Zudem wurde durch die gestrichelte rote Linie der Erwartungswert der Gaußglocke eingezeichnet.
 \begin{figure}
   \centering
-  \includegraphics[width=\textwidth]{pictures/B_feld.pdf}
-  \caption{Das gemessene B-Feld aufgetragen gegen den Ort $z$. Die Probe befand sich etwa bei $z=\SI{3.1}{\centi\meter}$. Zudem ist der Erwartungswert der Gaußverteilung eingezeichnet, an welchem die größte Magnetfeldstärke angenommen wird.}
+  \includegraphics[width=0.75\textwidth]{pictures/B_feld.pdf}
+  \caption{Das gemessene B-Feld aufgetragen gegen den Ort $z$. Die Probe befand sich etwa bei $z=\SI{0}{\centi\meter}$. Zudem ist der Erwartungswert der Gaußverteilung eingezeichnet, an welchem die größte Magnetfeldstärke angenommen wird.}
   \label{fig:magnetfeld}
 \end{figure}
-\input{tables/magnetfeld.tex}
+\begin{table}
+ \caption{Messung des Magnetfelds in Abhängigkeit zum Ort $z$ (Probe ist etwa bei $\SI{0}{\centi\meter}$ platziert)}
+ \label{tab:magnetfeld}
+ \centering
+\sisetup{table-format=3.2} \begin{tabular}{SS|SS}
+ \toprule
+    {$z$/$\si{\centi\meter}$}& {$B$/$\si{\milli\tesla}$}&{$z$/$\si{\centi\meter}$}& {$B$/$\si{\milli\tesla}$} \\
+     \midrule
+		 -3.10 &          1 &0.10 &        367 \\
+		 -2.60 &          4 &     0.20 &        359 \\
+		 -2.10 &         19 &     0.40 &        331 \\
+		 -1.60 &         96 &     0.65 &        263 \\
+		 -1.35 &        193 &     0.90 &        170 \\
+		 -1.10 &        287 &     1.15 &         85 \\
+		 -0.85 &        341 &     1.40 &         41 \\
+		 -0.60 &        368 &     1.90 &          9 \\
+		 -0.35 &        378 &     2.40 &          2 \\
+		 -0.10 &        377 &     2.90 &          0 \\
+			0.00 &        373 & & \\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+
+
 \FloatBarrier
 \subsection{Bestimmung der Faraday-Rotation}
 Die Faraday-Rotation wurde im vorliegenden Versuch an zwei unterschiedlich dotierten $\ce{GaAs}$-Proben, sowie einer undotierten $\ce{GaAs}$-Probe durchgeführt.
@@ -32,9 +56,9 @@ Die Parameter der Proben finden sich in Tabelle \ref{tab:params}.
     \toprule
     Probe&Dotierung $N$/$\si{\per\cubic\centi\metre}$&Dicke $L$/$\si{\milli\meter}$\\
     \midrule
-    $\ce{GaAs}_{\mathrm{und}}$&-&5.110\\
-    $\ce{GaAs}_{\mathrm{d1}}$&$2.8\cdot 10^{18}$&1.296\\
-    $\ce{GaAs}_{\mathrm{d2}}$&$1.2\cdot 10^{18}$&1.360\\
+    $\ce{GaAs}_{\mathrm{und}}$&-&$\num{5.110}$\\
+    $\ce{GaAs}_{\mathrm{d1}}$&$\num{2.8e18}$&$\num{1.296}$\\
+    $\ce{GaAs}_{\mathrm{d2}}$&$\num{1.2e18}$&$\num{1.360}$\\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -63,6 +87,8 @@ Zur Bestimmung der effektiven Masse der Elektronen im dotierten $\ce{GaAs}$ wird
 \begin{equation}
 \Delta \theta=\theta_{\mathrm{dotiert}}-\theta_{\mathrm{undotiert}}\mathrm{.}
 \end{equation}
+Durch die Bildung der Differenz zwischen der Faraday-Rotation in dotiertem und reinem $\ce{GaAs}$ ist der verbleibende Rotationswinkel $\Delta\theta$ nur noch verursacht durch die Dotieratome.
+Somit ist in $\Delta\theta$ nur noch der durch die Leitungselektronen verursachte Anteil der Faraday-Rotation enthalten und ermöglicht die Berechnung der Masse der Leitungselektronen.
 In Tabelle \ref{tab:eff_mass} sind die berechneten $\Delta\theta$ eingetragen. In Abbildung \ref{fig:delta1} findet sich die Faraday-Rotation für die Probe $\ce{GaAs}_{\mathrm{d1}}$ sowie in Abbildung \ref{fig:delta2}
 für Probe $\ce{GaAs}_{\mathrm{d2}}$.
 \input{tables/eff_mass.tex}
@@ -78,6 +104,7 @@ für Probe $\ce{GaAs}_{\mathrm{d2}}$.
   \caption{Die Faraday-Rotation $\Delta \theta$ aufgetragen gegen $\lambda^{2}$ mit Regressionsgerade für die Probe $\ce{GaAs}_{\mathrm{d2}}$}
   \label{fig:delta2}
 \end{figure}
+
 Nach Gleichung \eqref{eqn:Masse} besteht ein linearer Zusammenhang zwischen der Faraday-Rotation und dem Quadrat der Wellenlänge:
 \begin{equation}
     \theta(\lambda)=A\cdot\lambda^2 \, \mathrm{.}

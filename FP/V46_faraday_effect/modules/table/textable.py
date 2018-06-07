@@ -1,4 +1,4 @@
-import uncertainties
+import uncertainties#wunsch von clemens: Verschiedene Arraylaegen, anhaengen von "-"
 def latex_tab(data=[[1,2,3],[42,42,42]],names=["col1","col2"],filename="test.tex",caption="Caption",label="test", dec_points=[0,2],tableformat=3.3):
     try:
         for i in range(len(data)-1):

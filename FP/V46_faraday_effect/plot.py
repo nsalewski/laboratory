@@ -73,13 +73,14 @@ textable.latex_tab(data=[f1*10**6,grad1_hin,grad1_rueck,grad1],names=[r"$\lambda
 textable.latex_tab(data=[f2*10**6,grad2_hin,grad2_rueck,grad2],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_1$/$\si{\degree}$",r"$\theta_2$/$\si{\degree}$",r"$\theta$/$\si{\radian\per\meter}$"], filename=r"tables/probe2.tex",caption=r"Messwerte der Faraday-Rotation für die dotierte Probe $\ce{GaAs}_{d2}$",label=r"probe2",dec_points=[2,2,2,2],tableformat=4.2)
 textable.latex_tab(data=[f3*10**6,grad3_hin,grad3_rueck,grad3],names=[r"$\lambda$/$\si{\micro\meter}$",r"$\theta_1$/$\si{\degree}$",r"$\theta_2$/$\si{\degree}$",r"$\theta$/$\si{\radian\per\meter}$"], filename=r"tables/probe3.tex",caption=r"Messwerte der Faraday-Rotation für die undotierte Probe $\ce{GaAs}_{und}$",label=r"probe3",dec_points=[2,2,2,2],tableformat=4.2)
 #Tabelle Magnetfeld
-textable.latex_tab(data=[z,b],names=[r"$z$/$\si{\centi\meter}$",r"$B$/$\si{\milli\tesla}$"], filename=r"tables/magnetfeld.tex",caption=r"Messung des Magnetfelds in Abhängigkeit zum Ort $z$ (Probe ist etwa bei $\SI{3.1}{\centi\meter}$ platziert)",label=r"magnetfeld",dec_points=[2,0],tableformat=3.2)
+textable.latex_tab(data=[z-3.1,b],names=[r"$z$/$\si{\centi\meter}$",r"$B$/$\si{\milli\tesla}$"], filename=r"tables/magnetfeld.tex",caption=r"Messung des Magnetfelds in Abhängigkeit zum Ort $z$ (Probe ist etwa bei $\SI{3.1}{\centi\meter}$ platziert)",label=r"magnetfeld",dec_points=[2,0],tableformat=3.2)
 
 
 z_theo=np.linspace(0,6,50)
 #Ausgleichsrechnung Magnetfeld
-params, covariance = curve_fit(theorie,z,b)
+params, covariance = curve_fit(theorie,z-3.1,b)
 errors = np.sqrt(np.diag(covariance))
+print(params,errors)
 print("Erwartungswert",params[1],errors[1])
 delta1_calc=np.delete(delta1,[0,3,7])
 f1_calc1=np.delete(f1,[0,3,7])
@@ -108,42 +109,47 @@ print("Effektive Masse 1",eff_mass(a1,B,2.8*10**18*10**6),eff_mass(a1,B,2.8*10**
 print("Effektive Masse 2",eff_mass(a2,B,1.2*10**18*10**6),eff_mass(a2,B,1.2*10**18*10**6)/const.m_e)
 
 #Plot Magnetfeld
-plt.plot((params[1],params[1]),(0,400), 'r--', label=r"Erwartungswert der Normalverteilung")
-plt.plot(z,b, 'ro', label="Messwerte $B$")
+plt.plot((params[1],params[1]),(-20,400), 'r--', label="Erwartungswert \n der Normalverteilung")
+plt.plot(z-3.1,b, 'ro', label="Messwerte $B$")
 plt.ylabel(r"$B/\si{\milli\tesla}$")
 plt.xlabel(r"z/\si{\centi\meter}")
 plt.legend(loc='best')
+plt.ylim(-20,400)
 plt.tight_layout()
 plt.savefig('pictures/B_feld.pdf')
 plt.clf()
 
 #Plot theta
-plt.plot(f1*10**6,grad1, 'ro', label=r"Messwerte $\theta_{\mathrm{d1}}$")
-plt.plot(f2*10**6,grad2, 'go', label=r"Messwerte $\theta_{\mathrm{d2}}$")
-plt.plot(f3*10**6,grad3, 'bo', label=r"Messwerte $\theta_{\mathrm{und}}$")
+plt.plot(f1*10**6,grad1, 'rx', label=r"Messwerte $\theta_{\mathrm{d1}}$")
+plt.plot(f2*10**6,grad2, 'gx', label=r"Messwerte $\theta_{\mathrm{d2}}$")
+plt.plot(f3*10**6,grad3, 'bx', label=r"Messwerte $\theta_{\mathrm{und}}$")
 plt.ylabel(r"$\theta$/$\si{\radian\per\meter}")
 plt.xlabel(r"$\lambda$/$\si{\micro\meter}$")
-plt.legend(loc='best')
+plt.legend(loc='lower right')
 plt.tight_layout()
+plt.xlim(1,3.5)
 plt.savefig('pictures/winkel_gg_wellenlaenge.pdf')
 plt.clf()
 
 
-
+f_theo=np.linspace(0,np.max(f1)+0.1*np.max(f1))
 #plot delta
-plt.plot((f1)**2,delta1, 'ro', label=r"$\Delta \theta_{\mathrm{d1}}$")
-plt.plot((f1)**2,lin(f1**2,*paramsd1*10**6), 'b-', label="Ausgleichsgrade")
+plt.plot((f1)**2*10**11,delta1, 'rx', label=r"$\Delta \theta_{\mathrm{d1}}$")
+plt.plot((f_theo)**2*10**11,lin((f_theo)**2,*paramsd1*10**6), 'b-', label="Ausgleichsgrade")
 plt.ylabel(r"$\Delta \theta_{\mathrm{d1}}$/$\si{\radian\per\meter}$")
-plt.xlabel(r"$\lambda^{2}$/$\si{\square\meter}$")
+plt.xlabel(r"$\lambda^{2}$/$\si{\square\meter}\cdot \num{e-11}$")
 plt.legend(loc='best')
+plt.xlim(0,1.1)
 plt.tight_layout()
 plt.savefig('pictures/delta1.pdf')
 plt.clf()
-plt.plot((f1)**2,delta2, 'ro', label=r"$\Delta \theta_{\mathrm{d2}}$")
-plt.plot((f1)**2,lin(f1**2,*paramsd2*10**6), 'b-', label="Ausgleichsgrade")
+plt.plot((f1)**2*10**11,delta2, 'rx', label=r"$\Delta \theta_{\mathrm{d2}}$")
+plt.plot((f_theo)**2*10**11,lin(f_theo**2,*paramsd2*10**6), 'b-', label="Ausgleichsgrade")
 plt.ylabel(r"$\Delta \theta_{\mathrm{d2}}$/$\si{\radian\per\meter}$")
-plt.xlabel(r"$\lambda^{2}$/$\si{\square\meter}$")
+plt.xlabel(r"$\lambda^{2}$/$\si{\square\meter}\cdot\num{e-11}$")
 plt.legend(loc='best')
 plt.tight_layout()
+plt.xlim(0,1.1)
+
 plt.savefig('pictures/delta2.pdf')
 plt.clf()
