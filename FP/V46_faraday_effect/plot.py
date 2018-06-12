@@ -110,7 +110,7 @@ print("Effektive Masse 2",eff_mass(a2,B,1.2*10**18*10**6),eff_mass(a2,B,1.2*10**
 
 #Plot Magnetfeld
 plt.plot((params[1],params[1]),(-20,400), 'r--', label="Erwartungswert \n der Normalverteilung")
-plt.plot(z-3.1,b, 'ro', label="Messwerte $B$")
+plt.plot(z-3.1,b, 'rx', label="Messwerte $B$")
 plt.ylabel(r"$B/\si{\milli\tesla}$")
 plt.xlabel(r"z/\si{\centi\meter}")
 plt.legend(loc='best')
