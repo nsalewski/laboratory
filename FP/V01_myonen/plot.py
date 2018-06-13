@@ -9,7 +9,7 @@ import uncertainties.unumpy as unp
 from modules.table import textable
 import scipy.constants as const
 import math as math
-import axislabel as axis
+from modules.plot import axislabel as axis
 #Daten
 #rf,horizontal_1,horizontal_2, peak_1,peak_2=np.genfromtxt("data/data.txt",unpack=True)
 
@@ -38,7 +38,14 @@ import axislabel as axis
 #plt.legend(loc='best')
 #plt.tight_layout()
 #plt.savefig('pictures/lin_regress.pdf')
-x = np.linspace(-2, 2, 1000)
+x = np.linspace(-2, 2, 100)
 plt.plot(x, x**2, 'b-', label="test")
 axis.labels()
-plt.savefig('test.pdf')
+plt.savefig('axislabel1.pdf')
+
+x = np.linspace(-2, 2, 100)
+plt.plot(x, x**2, 'b-', label="test")
+plt.savefig('axislabel2.pdf')
+x = np.linspace(-2, 2, 100)
+plt.plot(x, x**2, 'b-', label="test")
+plt.savefig('axislabel3.pdf')

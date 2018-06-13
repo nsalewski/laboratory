@@ -1,6 +1,5 @@
 #!usr/bin/env python3
 #coding:utf8
-
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy.optimize import curve_fit
@@ -10,6 +9,7 @@ import uncertainties.unumpy as unp
 from modules.table import textable
 import scipy.constants as const
 import math as math
+from modules.plot import axislabel as axis
 #arr1=[0.4,0.75,1.4]
 #arr2=[2,3,4]
 #textable.latex_tab(data=[arr1,arr2],names=[r"title column 1",r"title column 2"], filename=r"example.tex",caption=r"Beautiful caption",label=r"important_label",dec_points=[2,0])
@@ -115,6 +115,7 @@ plt.ylabel(r"$B/\si{\milli\tesla}$")
 plt.xlabel(r"z/\si{\centi\meter}")
 plt.legend(loc='best')
 plt.ylim(-20,400)
+axis.labels()
 plt.tight_layout()
 plt.savefig('pictures/B_feld.pdf')
 plt.clf()
@@ -127,6 +128,7 @@ plt.ylabel(r"$\theta$/$\si{\radian\per\meter}")
 plt.xlabel(r"$\lambda$/$\si{\micro\meter}$")
 plt.legend(loc='lower right')
 plt.tight_layout()
+axis.labels()
 plt.xlim(1,3.5)
 plt.savefig('pictures/winkel_gg_wellenlaenge.pdf')
 plt.clf()
@@ -139,6 +141,7 @@ plt.plot((f_theo)**2*10**11,lin((f_theo)**2,*paramsd1*10**6), 'b-', label="Ausgl
 plt.ylabel(r"$\Delta \theta_{\mathrm{d1}}$/$\si{\radian\per\meter}$")
 plt.xlabel(r"$\lambda^{2}$/$\si{\square\meter}\cdot \num{e-11}$")
 plt.legend(loc='best')
+axis.labels()
 plt.xlim(0,1.1)
 plt.tight_layout()
 plt.savefig('pictures/delta1.pdf')
@@ -147,6 +150,7 @@ plt.plot((f1)**2*10**11,delta2, 'rx', label=r"$\Delta \theta_{\mathrm{d2}}$")
 plt.plot((f_theo)**2*10**11,lin(f_theo**2,*paramsd2*10**6), 'b-', label="Ausgleichsgrade")
 plt.ylabel(r"$\Delta \theta_{\mathrm{d2}}$/$\si{\radian\per\meter}$")
 plt.xlabel(r"$\lambda^{2}$/$\si{\square\meter}\cdot\num{e-11}$")
+axis.labels()
 plt.legend(loc='best')
 plt.tight_layout()
 plt.xlim(0,1.1)
