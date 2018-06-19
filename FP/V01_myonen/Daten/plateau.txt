@@ -1,0 +1,25 @@
+#Suchzeit Univibrator 20 microseconds
+#Messung d. Plateaus d. Koinzidenz
+#Verzögerung (ns) Counts (60s) #konstante Verzögerung d. 1.: 30 nanoseconds
+0 30
+2 63
+4 233
+6 527
+8 844
+10 1126
+12 1184
+14 1243
+16 1288
+24 1268
+28 1295
+32  1269
+34 1271
+40 1301
+50 1319
+52 1183
+54 985
+56 714
+58 411
+60 188
+62 66
+63.5  33
