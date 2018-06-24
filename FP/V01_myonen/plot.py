@@ -12,8 +12,9 @@ import math as math
 from modules.plot import axislabel as axis
 #Daten
 #rf,horizontal_1,horizontal_2, peak_1,peak_2=np.genfromtxt("data/data.txt",unpack=True)
-
-
+T=[1, 2, 3, 4, 5, 6, 7, 8, 9]
+Kanal=[35, 57.04, 79.83, 102, 124, 146, 168, 190, 212, ]
+texable.latex_tab(data=[T,2*Kanal], names[r'Kanalnummer', r'Doppelimpulsabstand T / $\si{\second}$'], filename=r'eichi.tex', caption=r"Kanalnummer in Abhängigkeit des Doppelimpulsabstandes $T$ für die Zeiteichung der Apparatur.", label=r"tab:eichi", dec_points=[2,0])
 
 #how to use textable
 

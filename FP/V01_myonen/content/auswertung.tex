@@ -1,4 +1,31 @@
 \section{Auswertung}
 \label{sec:Auswertung}
+
+\subsection{Berechnung der Untergrundrate}
+Es sind insgesamt $N_\text{start}=1998242$ Startsignale und 
+$N_\text{stop}=7972$ Stopsignale registriert worden.
+Damit ergibt sich mit der Messdauer $t_\text{measure}=\SI{128829}{\second}$
+die Eintrittsfrequenz der Myonen zu
+\begin{equation*}
+	f = \frac{N_\text{start}}{t_\text{measure}} \approx \SI{30}{\per\second} \, \text{.}
+\end{equation*}
+Weiterhin soll die Wahrscheinlichkeit dafür bestimmt werden, dass in der 
+Suchzeit $T_\text{S}$ genau $n$ weitere Myonen in den Szintillationsdetektor
+eintreffen. Diese Myonen würden eine Fehlmessung auslösen. Die Wahrscheinlichkeit ergibt sich mit der Poissonverteilung zu
+\begin{equation*}
+	p(n)=\frac{(f T_\text{S})^n}{n!} \, \symup{e}^{f T_\text{S}} \, \text{.}
+\end{equation*}
+Für genau ein Myon ergibt sich somit die erwartete Anzahl an Fehlmessungen 
+$N_\text{false}=p(1) \cdot N_\text{start} \approx $. Damit ergibt sich
+nach Division durch die Kanalzahl direkt die Untergrundrate 
+\begin{equation*}
+	U \approx 
+\end{equation*}
+
+\subsection{Zeiteichung der Apparatur}
+Die Messwerte für die Zeiteichung der Apparatur sind in Tabelle
+\ref{tab:eichi} aufgetragen. 
+
+
 %include tables
 %\input{latex_tables/current.tex}
