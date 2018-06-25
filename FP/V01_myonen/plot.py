@@ -13,9 +13,11 @@ from modules.plot import axislabel as axis
 #Daten
 #rf,horizontal_1,horizontal_2, peak_1,peak_2=np.genfromtxt("data/data.txt",unpack=True)
 T=[1, 2, 3, 4, 5, 6, 7, 8, 9]
-Kanal=[35, 57.04, 79.83, 102, 124, 146, 168, 190, 212, ]
-texable.latex_tab(data=[T,2*Kanal], names[r'Kanalnummer', r'Doppelimpulsabstand T / $\si{\second}$'], filename=r'eichi.tex', caption=r"Kanalnummer in Abhängigkeit des Doppelimpulsabstandes $T$ für die Zeiteichung der Apparatur.", label=r"tab:eichi", dec_points=[2,0])
-
+Kanal=[35, 57.04, 79.83, 102, 124, 146, 168, 190, 212]
+#print(2*Kanal) ist liste. Unterschied zu np.array.
+Kanal=np.array(Kanal)
+textable.latex_tab(data=[T,Kanal*2], names=[r'Kanalnummer', r'Doppelimpulsabstand T / $\si{\second}$'], filename=r'eichi.tex', caption=r"Kanalnummer in Abhängigkeit des Doppelimpulsabstandes $T$ für die Zeiteichung der Apparatur.", label=r"tab:eichi", dec_points=[2,0],tableformat=3.3)
+#textable war falsch geschrieben und hinter names fehlte ein "=". Das tableformat was ich noch eingefügt habe, ist optional, die erste zahl steuert, wieviel platz global vor dem komma in der tabelle reserviert wird und die zweite, wieviel danach. für lange zahlen manchmal sehr sinnvoll.
 #how to use textable
 
 #arr1=[0.4,0.75,1.4]
