@@ -25,22 +25,42 @@ textable.latex_tab(data=[T,Kanal*2], names=[r'Kanalnummer', r'Doppelimpulsabstan
 #textable.latex_tab(data=[arr1,arr2],names=[r"title column 1",r"title column 2"], filename=r"example.tex",caption=r"Beautiful caption",label=r"important_label",dec_points=[2,0])
 
 # dec_points sets precision, i.e. dec_points[0]=2 will display 2 decimal places for all values in column 1
+def f(x, m, b):
+    return m*x+b
+params, covariance = curve_fit(f,2*Kanal,T)
+errors = np.sqrt(np.diag(covariance))
+print('m = ', params[0], 'pm', errors[0])
+print('b = ', params[1], 'pm', errors[1])
+
+nmbrs = np.genfromtxt("Daten/messung.txt",unpack=True)
+kanal = np.linspace(3, 444, 442)
+t = kanal * params[0]
+def N(t, NO, l):
+    return NO * np.exp(-l*t) + 0.95
 
 
+params1, covariance1 = curve_fit(N,t,nmbrs)
+errors1 = np.sqrt(np.diag(covariance1))
+print('NO = ', params1[0], 'pm', errors1[0])
+print('l = ', params1[1], 'pm', errors1[1])
+arr = ufloat(params1[1], errors1[1])
+print(1/arr)
 
 #Ausgleichsrechnung
 #params1, covariance1 = curve_fit(theorie,rf,B1)
 #errors1 = np.sqrt(np.diag(covariance1))
 
+t_plot = np.linspace(0, 11)
 #Plot
-#plt.plot(rf/1000,B1*10**6, 'ro', label="Messwerte 1. Minimum")
-#plt.plot(rf_theo/1000, theorie(rf_theo, *params1)*10**6, 'b-', label="Regressionsgrade 1. Minimum")
+plt.plot(t,nmbrs, 'rx', label="Messwerte")
+plt.plot(t_plot, N(t_plot, *params1), 'b-', label="Theoriekurve")
 #plt.xlim(0,1100)
-#plt.ylabel(r"$B_{\mathrm{ges}}/10^{-6}\si{\tesla}$")
-#plt.xlabel(r"Frequenz des RF-Felds $\nu/\si{\kilo\hertz}$")
-#plt.legend(loc='best')
-#plt.tight_layout()
-#plt.savefig('pictures/lin_regress.pdf')
+plt.ylabel(r"$N(t)$")
+plt.xlabel(r"$t$ / $\si{\micro\second}$")
+plt.legend(loc='best')
+plt.tight_layout()
+plt.savefig('Daten/regress.pdf')
+
 x = np.linspace(-2, 2, 100)
 plt.plot(x, x**2, 'b-', label="test")
 axis.labels()
