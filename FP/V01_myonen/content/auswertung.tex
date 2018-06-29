@@ -33,18 +33,18 @@ Die Messwerte für die Zeiteichung der Apparatur sind in Tabelle
  \label{tab:eichi}
  \centering
 \sisetup{table-format=3.3} \begin{tabular}{SS}
- \toprule
-	{Doppelimpulsabstand T / \si{\micro\second}}& {Kanalnummer $N$} \\
+ \toprule 
+    {Kanalnummer}& {Doppelimpulsabstand T / $\si{\second}$} \\
      \midrule
-           1 &         70 \\
-           2 &        114 \\
-           3 &        160 \\
-           4 &        204 \\
-           5 &        248 \\
-           6 &        292 \\
-           7 &        336 \\
-           8 &        380 \\
-           9 &        424 \\
+          35,00 &          1 \\
+          57,04 &          2 \\
+          79,83 &          3 \\
+         102,00 &          4 \\
+         124,00 &          5 \\
+         146,00 &          6 \\
+         168,00 &          7 \\
+         190,00 &          8 \\
+         212,00 &          9 \\
  \bottomrule
  \end{tabular}
 \end{table}
@@ -58,7 +58,7 @@ sind.
 Es ergeben sich die beiden Fitparameter zu
 \begin{equation*}
 	\begin{split}
-		m &= \SI{0.0226(4)}{\micro\second} \, \mathrm{,} \\
+		m &= \SI{0.0452(8)}{\micro\second} \, \mathrm{,} \\
 		b &= \SI{-0.5949(103)}{\micro\second} \, \mathrm{.}
 	\end{split}
 \end{equation*}
@@ -87,9 +87,9 @@ Die Messergebnisse mit zugehöriger Theoriekurve gemäß \eqref{eqn:nnn} sind in
 Mit Python \cite{numpy} ergeben sich die Fitparamter zu
 \begin{align*}
 	N_0 = (198 \pm 4 ) \, \mathrm{,} \\
-	\lambda = \SI{0.93(3)}{\per\micro\second} \, \mathrm{.}
+	\lambda = \SI{0.47(1)}{\per\micro\second} \, \mathrm{.}
 \end{align*}
 Damit ist die experimentell bestimmte Lebensdauer der Myonen
 \begin{equation*}
-	\tau = \frac{1}{\lambda} = \SI{1.069(29)}{\micro\second} \, \mathrm{.}
+	\tau = \frac{1}{\lambda} = \SI{2.14(6)}{\micro\second} \, \mathrm{.}
 \end{equation*}
