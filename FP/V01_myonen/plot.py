@@ -16,7 +16,7 @@ T=[1, 2, 3, 4, 5, 6, 7, 8, 9]
 Kanal=[35, 57.04, 79.83, 102, 124, 146, 168, 190, 212]
 #print(2*Kanal) ist liste. Unterschied zu np.array.
 Kanal=np.array(Kanal)
-textable.latex_tab(data=[T,Kanal*2], names=[r'Kanalnummer', r'Doppelimpulsabstand T / $\si{\second}$'], filename=r'eichi.tex', caption=r"Kanalnummer in Abhängigkeit des Doppelimpulsabstandes $T$ für die Zeiteichung der Apparatur.", label=r"tab:eichi", dec_points=[2,0],tableformat=3.3)
+textable.latex_tab(data=[Kanal,T], names=[r'Kanalnummer', r'Doppelimpulsabstand T / $\si{\second}$'], filename=r'eichi.tex', caption=r"Kanalnummer in Abhängigkeit des Doppelimpulsabstandes $T$ für die Zeiteichung der Apparatur.", label=r"tab:eichi", dec_points=[2,0],tableformat=3.3)
 #textable war falsch geschrieben und hinter names fehlte ein "=". Das tableformat was ich noch eingefügt habe, ist optional, die erste zahl steuert, wieviel platz global vor dem komma in der tabelle reserviert wird und die zweite, wieviel danach. für lange zahlen manchmal sehr sinnvoll.
 #how to use textable
 
@@ -27,7 +27,7 @@ textable.latex_tab(data=[T,Kanal*2], names=[r'Kanalnummer', r'Doppelimpulsabstan
 # dec_points sets precision, i.e. dec_points[0]=2 will display 2 decimal places for all values in column 1
 def f(x, m, b):
     return m*x+b
-params, covariance = curve_fit(f,2*Kanal,T)
+params, covariance = curve_fit(f,Kanal,T)
 errors = np.sqrt(np.diag(covariance))
 print('m = ', params[0], 'pm', errors[0])
 print('b = ', params[1], 'pm', errors[1])
@@ -60,15 +60,3 @@ plt.xlabel(r"$t$ / $\si{\micro\second}$")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Daten/regress.pdf')
-
-x = np.linspace(-2, 2, 100)
-plt.plot(x, x**2, 'b-', label="test")
-axis.labels()
-plt.savefig('axislabel1.pdf')
-
-x = np.linspace(-2, 2, 100)
-plt.plot(x, x**2, 'b-', label="test")
-plt.savefig('axislabel2.pdf')
-x = np.linspace(-2, 2, 100)
-plt.plot(x, x**2, 'b-', label="test")
-plt.savefig('axislabel3.pdf')

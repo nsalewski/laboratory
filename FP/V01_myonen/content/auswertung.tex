@@ -3,22 +3,22 @@
 
 \subsection{Berechnung der Untergrundrate}
 \label{sec:unter}
-Es sind insgesamt $N_\text{start}=1998242$ Startsignale und 
+Es sind insgesamt $N_\text{start}=1998242$ Startsignale und
 $N_\text{stop}=7972$ Stopsignale registriert worden.
 Damit ergibt sich mit der Messdauer $t_\text{measure}=\SI{128829}{\second}$
 die Eintrittsfrequenz der Myonen zu
 \begin{equation*}
 	f = \frac{N_\text{start}}{t_\text{measure}} \approx \SI{21,04}{\per\second} \, \text{.}
 \end{equation*}
-Weiterhin soll die Wahrscheinlichkeit dafür bestimmt werden, dass in der 
+Weiterhin soll die Wahrscheinlichkeit dafür bestimmt werden, dass in der
 Suchzeit $T_\text{S}$ genau $n$ weitere Myonen in den Szintillationsdetektor
 eintreffen. Diese Myonen würden eine Fehlmessung auslösen. Die Wahrscheinlichkeit ergibt sich mit der Poissonverteilung zu
 \begin{equation*}
 	p(n)=\frac{(f T_\text{S})^n}{n!} \, \symup{e}^{f T_\text{S}} \, \text{.}
 \end{equation*}
-Für genau ein Myon ergibt sich somit die erwartete Anzahl an Fehlmessungen 
+Für genau ein Myon ergibt sich somit die erwartete Anzahl an Fehlmessungen
 $N_\text{false}=p(1) \cdot N_\text{start} \approx 420,52$. Damit ergibt sich
-nach Division durch die Kanalzahl direkt die Untergrundrate 
+nach Division durch die Kanalzahl direkt die Untergrundrate
 \begin{equation*}
 	U \approx 0,95 \, \mathrm{,}
 \end{equation*}
@@ -27,13 +27,13 @@ wobei sich die Kanalanzahl nach Nichtberücksichtigung der Einträge mit "$0$" z
 \FloatBarrier
 \label{sec:blaaaaaaa}
 Die Messwerte für die Zeiteichung der Apparatur sind in Tabelle
-\ref{tab:eichi} aufgetragen. 
+\ref{tab:eichi} aufgetragen.
 \begin{table}
  \caption{Kanalnummer in Abhängigkeit des Doppelimpulsabstandes $T$ für die Zeiteichung der Apparatur.}
  \label{tab:eichi}
  \centering
 \sisetup{table-format=3.3} \begin{tabular}{SS}
- \toprule 
+ \toprule
 	{Doppelimpulsabstand T / \si{\micro\second}}& {Kanalnummer $N$} \\
      \midrule
            1 &         70 \\
@@ -54,12 +54,12 @@ Daher wird ein linearer Fit der Form
 	T = m \, N + b
 \end{equation}
 mit Python \cite{numpy} durchgeführt, wobei $m$ und $b$ die Fitparameter in $\si{\micro\second}$
-sind. 
+sind.
 Es ergeben sich die beiden Fitparameter zu
 \begin{equation*}
 	\begin{split}
 		m &= \SI{0.0226(4)}{\micro\second} \, \mathrm{,} \\
-		b &= \SI{-0.5949(103)}{\micro\second} \, \mathrm{.} 
+		b &= \SI{-0.5949(103)}{\micro\second} \, \mathrm{.}
 	\end{split}
 \end{equation*}
 Im Folgenden wird allerdings nur die Steigung $m$ benötigt, sodass der Parameter $b$ nicht weiter
@@ -75,14 +75,14 @@ verwendet wird.
   \label{fig:blubbb}
 \end{figure}
 
-Aus den Messdaten und dem Zusammenhang aus Abschnitt \ref{sec:blaaaaaaa} lassen sich die 
-Messtupel $\big(t, N(t)\big)$ ableiten, die den Zusammenhang 
+Aus den Messdaten und dem Zusammenhang aus Abschnitt \ref{sec:blaaaaaaa} lassen sich die
+Messtupel $\big(t, N(t)\big)$ ableiten, die den Zusammenhang
 \begin{equation}
 	\label{eqn:nnn}
 	N(t) = N_0 \cdot \mathrm{e}^{-\lambda t} + U \, \mathrm{,}
 \end{equation}
-wobei $U$ der Untergrundrate aus Abschnitt \ref{sec:unter} entspricht. 
-Die Messergebnisse mit zugehöriger Theoriekurve gemäß \eqref{eqn:nnn} sind in Abbildung 
+wobei $U$ der Untergrundrate aus Abschnitt \ref{sec:unter} entspricht.
+Die Messergebnisse mit zugehöriger Theoriekurve gemäß \eqref{eqn:nnn} sind in Abbildung
 \ref{fig:blubbb} dargestellt.
 Mit Python \cite{numpy} ergeben sich die Fitparamter zu
 \begin{align*}
