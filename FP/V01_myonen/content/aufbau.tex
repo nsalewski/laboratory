@@ -3,7 +3,7 @@
 \begin{figure}
   \centering
   \includegraphics[width=0.75\columnwidth]{pictures/aufbau.png}
-  \caption{Blockschaltbild des Versuchsaufbau.\cite{Anleitung}}
+  \caption{Blockschaltbild des Versuchsaufbau. Bearbeitet nach \cite{Anleitung}}
   \label{fig:aufbau}
 \end{figure}
 \subsubsection{Prinzipielle Messmethode}
@@ -21,7 +21,7 @@ Verwendet wird hierzu eine monostabile Kippstufe, auch bezeichnet als Univibrato
 Genutzt werden kann dies, um eine Suchzeit zu realisieren, in der auf den Eingang eines Zerfallssignals gewartet wird.
 Die monostabile Kippstufe wird daher an die beiden SEV über eine Koinzidenzschaltung (näheres hierzu im nächsten Abschnitt) geschaltet.
 
-Tritt nun ein Signal an dem Eingang der monostabilen Kippstufe auf, wird über den $\bar{OUT}$-Ausgang ein $L$-Signal an das 1. AND-Gatter gegeben. Somit wird dieses Gatter inaktiv für ein in der Suchzeit $T_{\mathrm{S}}$ auftretendes weiteres Signal geschaltet. Um trotzdem das START-Signal korrekt weiterzugeben, ist daher darauf zu achten, dass das Signal am Eingang der monostabilen Kippstufe verzögert wird gegenüber dem direkten Signal des Ausgangs der Koinzidenzschaltung welches auf dem zweiten Eingang des 1. AND-Gatters aufgegeben wird.
+Tritt nun ein Signal an dem Eingang der monostabilen Kippstufe auf, wird über den $\overline{OUT}$-Ausgang ein $L$-Signal an das 1. AND-Gatter gegeben. Somit wird dieses Gatter inaktiv für ein in der Suchzeit $T_{\mathrm{S}}$ auftretendes weiteres Signal geschaltet. Um trotzdem das START-Signal korrekt weiterzugeben, ist daher darauf zu achten, dass das Signal am Eingang der monostabilen Kippstufe verzögert wird gegenüber dem direkten Signal des Ausgangs der Koinzidenzschaltung welches auf dem zweiten Eingang des 1. AND-Gatters aufgegeben wird.
 Das Signal der Koinzidenzschaltung wird ebenso direkt auf das 2. AND-Gatter gegeben, an welchem zudem der $OUT$-Ausgang der monostabilen Kippstufe anliegt. An dem $OUT$-Ausgang liegt während der Suchzeit ein $H$-Signal an.
 Nach dem Ende der Suchzeit werden die Signale an den Ausgängen der Kippstufe getauscht.
 Tritt nun also ein Startsignal auf, schaltet das 1. AND-Gatter durch und ein Startsignal wird an den TAC gegeben. Durch die Verzögerung vor der Kippstufe schaltet diese anschließend um, sodass ein weiteres Signal innerhalb der Suchzeit als Stopsignal an den TAC gegeben wird.
