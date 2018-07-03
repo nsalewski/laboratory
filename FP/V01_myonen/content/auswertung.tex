@@ -5,11 +5,13 @@
 \label{sec:unter}
 Es sind insgesamt $N_\text{start}=1998242$ Startsignale und
 $N_\text{stop}=7972$ Stopsignale registriert worden.
-Damit ergibt sich mit der Messdauer $t_\text{measure}=\SI{128829}{\second}$
+Damit ergibt sich mit der Messdauer $t_\text{measure}=\SI{94990.5(5)}{\second}$
 die Eintrittsfrequenz der Myonen zu
 \begin{equation*}
-	f = \frac{N_\text{start}}{t_\text{measure}} \approx \SI{21,04}{\per\second} \, \text{.}
+	f = \frac{N_\text{start}}{t_\text{measure}} \approx \SI{21.036(1)}{\per\second} \, \text{.}
 \end{equation*}
+
+
 Weiterhin soll die Wahrscheinlichkeit dafür bestimmt werden, dass in der
 Suchzeit $T_\text{S}$ genau $n$ weitere Myonen in den Szintillationsdetektor
 eintreffen. Diese Myonen würden eine Fehlmessung auslösen. Die Wahrscheinlichkeit ergibt sich mit der Poissonverteilung zu
@@ -17,53 +19,86 @@ eintreffen. Diese Myonen würden eine Fehlmessung auslösen. Die Wahrscheinlichk
 	p(n)=\frac{(f T_\text{S})^n}{n!} \, \symup{e}^{f T_\text{S}} \, \text{.}
 \end{equation*}
 Für genau ein Myon ergibt sich somit die erwartete Anzahl an Fehlmessungen
-$N_\text{false}=p(1) \cdot N_\text{start} \approx 420,52$. Damit ergibt sich
-nach Division durch die Kanalzahl direkt die Untergrundrate
+$N_\text{false}=p(1) \cdot N_\text{start} \approx \num{841.063(4)}$. Damit ergibt sich
+nach Division durch die Kanalzahl direkt die Untergrundrate pro Kanal:
 \begin{equation*}
-	U \approx 0,95 \, \mathrm{,}
+	U \approx \num{1.90286(1)} \, \mathrm{,}
 \end{equation*}
 wobei sich die Kanalanzahl nach Nichtberücksichtigung der Einträge mit "$0$" zu $442$ ergibt.
-\subsection{Zeiteichung der Apparatur}
+\subsection{Bestimmung der Verzögerungszeit}
+Zur Bestimmung der Verzögerungszeit wurde eine Verzögerungsleitung fest eingestellt auf eine Verzögerung von $t_1=\SI{30}{\nano\second}$ und die zweite Verzögerungsleitung variiert von $t_2=(\num{0}-\num{63.5})\si{\nano\second}$ und die zugehörigen Zählraten $N(t)$ in jedem Schritt in einem Zeitintervall von $\Delta t=\SI{60}{\second}$ bestimmt.
+
+Die aufgenommenen Daten finden sich in Tabelle \ref{tab:plateau}. In Abbildung \ref{fig:plateau} wurden die Messdaten mittels matplotlib \cite{matplotlib} geplottet.
+
+Die Fehler ergeben sich nach dem üblichen Fehler von Zählexperimenten mit $\sqrt{N(t)}$. Es zeigt sich ein deutliches Plateau.
+Für die weitere Messung wurde für die Verzögerung $t_2$ etwa die Mitte des Plateaus gewählt mit $t_2=\SI{34}{\nano\second}$, wodurch sich eine relative Verzögerung von $\Delta t=t_1-t_2=\SI{4}{\nano\second}$ im Versuchsaufbau ergibt.
+
+Zur Bestimmung der Halbwertsbreite der Koinzidenz wurde zudem die halbe Plateauhöhe in den Plot eingezeichnet und ihr Schnittpunkt mit den linearen Ausgleichsgraden $N(t)=m_i\cdot t_2+b_i$ der Flanken bestimmt.
+
+Die linearen Ausgleichsgraden der Flanken wurden mittels python/scipy\cite{scipy} ermittelt. Ihre Parameter finden sich in Tabelle \ref{tab:plateau2}.
+\begin{table}
+
+	\caption{Parameter der Flankenregression.}
+  \label{tab:plateau2}
+  \centering
+
+	\begin{tabular}{ccc}
+\toprule
+		Ausgleichsgrade&$m_i$/$\si{\per\second}$&$b_i$\\
+\midrule
+		linke Flanke&\num{110(10)}&\num{92(70)}\\
+		rechte Flanke&\num{-107(8)}&\num{6723(486)}\\
+		\bottomrule
+	\end{tabular}
+\end{table}
+Mit einer Plateauhöhe von $N(t)_{\mathrm{mean}}=\SI{1281.75}{\per\minute}$ ergeben sich die Schnitte der Flanken mit der halben Plateauhöhe zu:
+\begin{align*}
+t_{\mathrm{links}}=\SI{6.6}{\nano\second}\,\text{,}\\
+t_{\mathrm{rechts}}=\SI{56.7}{\nano\second}\,\text{.}
+\end{align*}
+Die Koinzidenzbreite, welche gleichbedeutent mit der Auflösungszeit der Koinzidenz ist, ergibt sich somit zu $t_{\text{K}}=\SI{50.1}{\nano\second}$.
+
+Die Diskriminatorimpulse wiesen etwa eine Länge von $\Delta t=\SI{50}{\nano\second}$ auf. Da dies nicht in einer Messreihe explizit geprüft wurde, sondern nur in einer Einzelmessung für beide Diskriminatoren einmal eher qualitativ gemessen wurde, ist ein genauer Vergleich nicht aussagekräftig.
+
+Da die Koinzidenz nur ein Signal weitergeben soll, wenn an beiden Eingängen ein Signal anliegt, sollte ihre Auflösungszeit möglichst gut mit der Länge eines Diskriminatorsignal übereinstimmen. Dies ist im vorliegenden Fall mit einer Abweichung von $0.2\%$ gut erfüllt.
+
+\input{plateau.tex}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.75\columnwidth]{Daten/plateau.pdf}
+	\caption{Aufgenommene Counts $N(t)$ pro Minute in Abhängigkeit der Verzögerungszeit $t_2$ bei fester Verzögerungszeit $t_1$. Eingezeichnet sind das Plateau sowie die Regressionsgraden der Flanken. Zudem wurde die Halbwertsbreite eingezeichnet, welche der Auflösungszeit der Koinzidenz entspricht.}
+  \label{fig:plateau}
+\end{figure}
+
+
 \FloatBarrier
+\subsection{Zeiteichung der Apparatur}
 \label{sec:blaaaaaaa}
 Die Messwerte für die Zeiteichung der Apparatur sind in Tabelle
 \ref{tab:eichi} aufgetragen.
-\begin{table}
- \caption{Kanalnummer in Abhängigkeit des Doppelimpulsabstandes $T$ für die Zeiteichung der Apparatur.}
- \label{tab:eichi}
- \centering
-\sisetup{table-format=3.3} \begin{tabular}{SS}
- \toprule 
-    {Kanalnummer}& {Doppelimpulsabstand T / $\si{\second}$} \\
-     \midrule
-          35,00 &          1 \\
-          57,04 &          2 \\
-          79,83 &          3 \\
-         102,00 &          4 \\
-         124,00 &          5 \\
-         146,00 &          6 \\
-         168,00 &          7 \\
-         190,00 &          8 \\
-         212,00 &          9 \\
- \bottomrule
- \end{tabular}
-\end{table}
+\input{eichi.tex}
 Hierbei soll die Abhängigkeit zwischen Doppelimpulsabstand $T$ und Kanalnummer $N$ linear sein.
-Daher wird ein linearer Fit der Form
+Daher wird eine lineare Regression der Form
 \begin{equation}
 	T = m \, N + b
 \end{equation}
 mit Python \cite{numpy} durchgeführt, wobei $m$ und $b$ die Fitparameter in $\si{\micro\second}$
 sind.
+Wenn die Anzahl detektierter Impulse sich auf mehrere benachbarte Kanäle aufteilt, wurde die Gesamtzahl der Impulse des zugehörigen Impulsabstandes einem Zwischenwert zugeordnet.
+
+Der Zwischenwert wurde hierbei ermittelt, indem jeder Kanal, auf welchen sich die Impulse aufteilten, mit der Anzahl an gezählten Impulsen gewichtet, zum Zwischenwert beitrug.
 Es ergeben sich die beiden Fitparameter zu
 \begin{equation*}
 	\begin{split}
-		m &= \SI{0.0452(8)}{\micro\second} \, \mathrm{,} \\
-		b &= \SI{-0.5949(103)}{\micro\second} \, \mathrm{.}
+		m &= \SI{0.04521(8)}{\micro\second} \, \mathrm{,} \\
+		b &= \SI{-0.05(1)}{\micro\second} \, \mathrm{.}
 	\end{split}
 \end{equation*}
+
 Im Folgenden wird allerdings nur die Steigung $m$ benötigt, sodass der Parameter $b$ nicht weiter
-verwendet wird.
+verwendet wird. Der Achsenabschnitt $b$ sollte möglichst nahe Null sein, was mit der vorliegenden Regression recht gut erfüllt ist.
+Mithilfe der Fitparameter lassen sich also für jeden Kanal die zugehörigen Zeitabstände aus der linearen Regression entnehmen, wenn angenommen wird, dass sich das lineare Verhalten für Kanäle größer als $\num{200}$ fortsetzt.
+
 %include tables
 %\input{latex_tables/current.tex}
 \FloatBarrier
@@ -79,17 +114,20 @@ Aus den Messdaten und dem Zusammenhang aus Abschnitt \ref{sec:blaaaaaaa} lassen 
 Messtupel $\big(t, N(t)\big)$ ableiten, die den Zusammenhang
 \begin{equation}
 	\label{eqn:nnn}
-	N(t) = N_0 \cdot \mathrm{e}^{-\lambda t} + U \, \mathrm{,}
+	N(t) = N_0 \cdot \mathrm{e}^{-\lambda t} + B \, \mathrm{,}
 \end{equation}
-wobei $U$ der Untergrundrate aus Abschnitt \ref{sec:unter} entspricht.
+wobei $B$ der Untergrundrate $U$ aus Abschnitt \ref{sec:unter} möglichst gut entsprechen sollte.
+Einige Messdaten wurden von der Regressionsrechnung ausgeschlossen. Diese sind im Plot markiert.
+Von einer Linearisierung des Problems wurde abgesehen, da bereits ab Kanal $220$ Nulleinträge auftraten, welche nach der Linearisierung mittels Logarithmieren von der Regression auszuschließen wären, was bedeuten würde, dass nur etwa die Hälfte der aufgenommenen Messdaten zur Bestimmung der Lebensdauer verwendet werden könnte.
 Die Messergebnisse mit zugehöriger Theoriekurve gemäß \eqref{eqn:nnn} sind in Abbildung
 \ref{fig:blubbb} dargestellt.
 Mit Python \cite{numpy} ergeben sich die Fitparamter zu
 \begin{align*}
-	N_0 = (198 \pm 4 ) \, \mathrm{,} \\
-	\lambda = \SI{0.47(1)}{\per\micro\second} \, \mathrm{.}
+	N_0 = \num{192(2)}\, \mathrm{,} \\
+	\lambda = \SI{0.484(5)}{\per\micro\second} \, \mathrm{,}\\
+	B=\num{1.9(2)}\,\text{.}
 \end{align*}
 Damit ist die experimentell bestimmte Lebensdauer der Myonen
 \begin{equation*}
-	\tau = \frac{1}{\lambda} = \SI{2.14(6)}{\micro\second} \, \mathrm{.}
+	\tau = \frac{1}{\lambda} = \SI{2.07(2)}{\micro\second} \, \mathrm{.}
 \end{equation*}
