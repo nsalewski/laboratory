@@ -21,13 +21,11 @@ def lin(x,a,b):
 #rf,horizontal_1,horizontal_2, peak_1,peak_2=np.genfromtxt("data/data.txt",unpack=True)
 #Fehlmessungen:
 n_start=1998242
-zeit_1=94990
-zeit_2=94991
-zeit_ges=ufloat(np.mean([zeit_1,zeit_2]), stats.sem([zeit_1,zeit_2]))
-f=n_start/zeit_ges
+zeit=94990
+f=n_start/zeit
 Ts=20*10**(-6)
 fehl=f*Ts*n_start*unp.exp(f*Ts)
-print(fehl, zeit_ges)
+print(fehl, zeit)
 kanalzahl=442
 u=fehl/kanalzahl
 print("Frequenz", f, "Untergrundrate",u)
@@ -44,20 +42,19 @@ errors_r = np.sqrt(np.diag(covariance_r))
 print("params lin", params_lin, errors_lin)
 print("params r", params_r, errors_r)
 plateau=np.mean(counts[7:15])
-print("Plateau",plateau)
+print("Plateau",plateau/60)
 x1_halb=(plateau/2-params_lin[1])/params_lin[0]
 x2_halb=(plateau/2-params_r[1])/params_r[0]
 print("koinzidenzbreite", x2_halb-x1_halb,x1_halb,x2_halb)
 
-plt.plot(delay,counts, 'rx', label="Daten")
-plt.errorbar(delay, counts, yerr=np.sqrt(counts),fmt='none')
-plt.plot([delay[7], delay[14]], [plateau,plateau], label="Plateau")
-plt.plot([x1_halb, x2_halb], [plateau/2,plateau/2], label="Halbwertsbreite")
-plt.plot(delay[:7], lin(delay[:7],*params_lin), label="Regression links")
-plt.plot(delay[15:], lin(delay[15:],*params_r), label="Regression rechts")
+plt.errorbar(delay, counts/60, yerr=np.sqrt(counts/60),fmt='rx',label="Daten")
+plt.plot([delay[7], delay[14]], [plateau/60,plateau/60], label="Plateau")
+plt.plot([x1_halb, x2_halb], [plateau/120,plateau/120], label="Halbwertsbreite")
+plt.plot(delay[:7], lin(delay[:7],*params_lin)/60, label="Regression links")
+plt.plot(delay[15:], lin(delay[15:],*params_r)/60, label="Regression rechts")
 
-plt.ylabel(r" Zählrate $N(t)$ / $\SI{60}{\second}$")
-plt.xlabel(r"Verzögerung $\Delta t$/\si{\nano\second}")
+plt.ylabel(r" Zählrate $N(t)$ / $\si{\second}$")
+plt.xlabel(r"rel. Verzögerung $\Delta t$/\si{\nano\second}")
 plt.legend(loc='best')
 plt.tight_layout()
 plt.savefig('Daten/plateau.pdf')
@@ -68,7 +65,7 @@ plt.clf()
 T=[1, 2, 3, 4, 5, 6, 7, 8, 9]
 T=np.array(T)
 T=T*10**(-6)
-Kanal=[23,45*3417/(3417+143)+46*143/(3417+143),67*710/(3546+710)+68*3546/(3546+710), 90, 112, 134, 156, 178, 200]
+Kanal=[22,44*3417/(3417+143)+45*143/(3417+143),66*710/(3546+710)+67*3546/(3546+710), 89, 111, 133, 155, 177, 199]
 anzahl=[4432,3417+143,3546+710,4183,3657,5148,3805,3259,26001]
 #print(2*Kanal) ist liste. Unterschied zu np.array.
 Kanal=np.array(Kanal)
@@ -81,12 +78,12 @@ textable.latex_tab(data=[Kanal,T*10**6,anzahl], names=[r'Kanalnummer', r'Doppeli
 #textable.latex_tab(data=[arr1,arr2],names=[r"title column 1",r"title column 2"], filename=r"example.tex",caption=r"Beautiful caption",label=r"important_label",dec_points=[2,0])
 
 # dec_points sets precision, i.e. dec_points[0]=2 will display 2 decimal places for all values in column 1
-def f(x, m, b):
-    return m*x+b
+def f(x, m):
+    return m*x
 params, covariance = curve_fit(f,Kanal,T)
 errors = np.sqrt(np.diag(covariance))
 print('m = ', params[0], 'pm', errors[0])
-print('b = ', params[1], 'pm', errors[1])
+#print('b = ', params[1], 'pm', errors[1])
 Kanal_regress=np.linspace(0,220)
 plt.plot(Kanal,T*10**6, 'rx', label="Daten")
 plt.plot(Kanal_regress, f(Kanal_regress, *params)*10**6, 'b-', label="Regressionsgrade")
@@ -101,9 +98,11 @@ nmbrs = np.genfromtxt("Daten/messung.txt",unpack=True)
 print('*******************')
 print(sum(nmbrs))
 print('*******************')
-
-kanal = np.linspace(3, 444, 442)
-t = kanal * params[0]+params[1]
+kanal = np.linspace(2, 443, 442)
+t = kanal * params[0]
+print('*******************')
+print(params[0]*443)
+print('*******************')
 def N(t, NO, l,b):
     return NO * np.exp(-l*t) + b
 nmbrs_fit=[]
@@ -137,7 +136,6 @@ t_fit=np.append(t_fit,t[4:6])
 t_fit=np.append(t_fit,t[7])
 t_fit=np.append(t_fit,t[9:11])
 t_fit=np.append(t_fit,t[14:])
-print(nmbrs_fit)
 
 params1, covariance1 = curve_fit(N,t_fit,nmbrs_fit)
 
@@ -155,9 +153,11 @@ print(1/arr)
 
 t_plot = np.linspace(0, 21)*10**(-6)
 #Plot
-plt.plot(t_fit*10**6,nmbrs_fit, 'r+', label="Daten")
-plt.plot(t_ignore*10**6, nmbrs_ignore, 'kx',label="Nicht betrachtete Daten")
-plt.plot(t_plot*10**6, N(t_plot, *params1), 'b--', label="Theoriekurve")
+plt.yscale('symlog')
+plt.errorbar(t_fit*10**6, nmbrs_fit, yerr=np.sqrt(nmbrs_fit),fmt='r+',label="Daten",zorder=-30,elinewidth=0.2, capsize=1)
+plt.errorbar(t_ignore*10**6, nmbrs_ignore, yerr=np.sqrt(nmbrs_ignore),fmt='kx',label="Nicht betrachtete Daten",zorder=-32,elinewidth=0.2, capsize=1)
+plt.plot(t_plot*10**6, N(t_plot, *params1), 'b--', label="Fitfunktion")
+#plt.yscale('log')
 #plt.xlim(0,1100)
 plt.ylabel(r"$N(t)$")
 plt.xlabel(r"$t$ / $\si{\micro\second}$")

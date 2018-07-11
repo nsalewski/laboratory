@@ -1,18 +1,25 @@
 \section{Diskussion}
 \label{sec:Diskussion}
-Ein Vergleich der berechneten Untergrudrate $U \approx \num{1.90286(1)} $ sowie der aus dem Fit berechneten Untergrundrate $B=\num{1.9(2)}$ zeigt eine gute Übereinstimmung. Die Untergrundrate $U$ liegt innerhalb des Fehlerbereichs der Untergrundrate $B$.
+Ein Vergleich der berechneten Untergrudrate $U= \num{1.90287} $ sowie der aus dem Fit berechneten Untergrundrate $B=\num{1.9(2)}$ zeigt eine gute Übereinstimmung. Die Untergrundrate $U$ liegt innerhalb der Unsicherheit der Untergrundrate $B$.
 
-Die Auflösungszeit $t_{\text{K}}=\SI{50.1}{\nano\second}$ der Koinzidenz stimmt gut überein mit der Länge der Diskriminatorimpulse von etwa $\Delta t=\SI{50}{\nano\second}$.
+Die Auflösungszeit $t_{\text{K}}=\SI{50.1}{\nano\second}$ liegt mit einer Abweichung von $24.75\%$ nahe an der wahrscheinlich eingestellten Koinzidenzzeit von $t_{\text{K}}=\SI{20}{\micro\second}$.
+
 
 Der Literaturwert für die Lebensdauer des Myons beträgt nach \cite{myon}
 \begin{equation*}
 	\tau_\text{Literatur} = \SI{2.1969811(22)}{\micro\second}\, \mathrm{.}
 \end{equation*}
-Mit dem experimentell bestimmten Wert von $\tau=\SI{2.07(2)}{\micro\second}$ liegt eine Abweichung von ungefähr $6 \%$ gegenüber dem Theoriewert vor.
-
+Mit dem experimentell bestimmten Wert von $\tau=\SI{2.07(2)}{\micro\second}$ liegt eine Abweichung nach unten von ungefähr $6 \%$ gegenüber dem Theoriewert vor.
+Die experimentell zu gering gemessene Myonenlebensdauer lässt sich erklären über den Myoneneinfang durch das Szintillatormedium. Eingefangene Myonen zerfallen schneller und verursachen daher zu hohe Zählraten für besonders kurze Lebensdauern, was zu einer Absenkung der berechneten Myonenlebensdauer führt.
 Anhand der großen Anzahl an aufgenommenen Datensätzen ist eine hohe Übereinstimmung zu erwarten. Ein besseres Ergebnis ließe sich bestimmt durch eine Linearisierung des Problems erhalten, bedauerlicherweise müsste hierzu nahezu die Hälfte der aufgenommenen Daten von der Regression ausgeschlossen werden, da bereits ab dem Kanal $220$ Nulleinträge vorhanden sind.
-Die ausgeschlossenen Messwerte in Abbildung \ref{fig:blubbb} sind ermutlich zum einen zu kleine Zeitabstände gewesen, welche der Vielkanalanalysator nicht korrekt erfassen konnte, zum anderen verteilt der Vielkanalanalysator Ereignisse nahezu gleicher Zeitabstände zum Teil auf mehrere Kanäle. Dies kann in einigen Kanälen zu zu geringen Zählraten führen, während in anderen Kanälen zuviele Ereignisse detektiert werden.
+Die ausgeschlossenen Messwerte in Abbildung \ref{fig:blubbb} sind vermutlich zum einen zu kleine Zeitabstände gewesen, welche der Vielkanalanalysator nicht korrekt erfassen konnte, zum anderen verteilt der Vielkanalanalysator Ereignisse nahezu gleicher Zeitabstände zum Teil auf mehrere Kanäle. Dies kann in einigen Kanälen zu zu geringen Zählraten führen, während in anderen Kanälen zuviele Ereignisse detektiert werden.
+Würde die Messzeit noch größer gewählt, würden statistische Probleme noch geringer ins Gewicht fallen und Kanäle innerhalb der Suchzeit, welche aktuell keine Einträge enthalten, würden bei genügend großer Messzeit gefüllt werden.
 
 Wird zudem die Summe aller im Vielkanalanalysator gemessenen Ereignisse gebildet, ergibt sich $n=\num{9481}$. Am Zählwerk wurden $n_{\text{Zähl}}=\num{7972}$ Stopsignale gezählt. Dies entspricht einer Abweichung von etwa $19\%$, wenn angenommen wird, dass der Wert am Zählwerk der tatsächlichen Ereignisanzahl entspricht. Dies deutet ebenfalls darauf hin, dass einige Ereignisse doppelt gezählt wurden.
 
 Weitere Fehlerquellen sind eventuelle Wackelkontakte in der Apparatur, welche durch locker eingesteckte Kabel erzeugt werden, sowie das händische Einstellen der Diskriminatorschwellen, was zum Filtern tatsächlicher Ereignisse führen könnte. Außerdem unterliegt die Elektronik technischen Limitationen, sehr kurze Zeitabstände können daher nicht gemessen werden.
+
+Die Kalibration der Messapparatur lässt sich nur wenig aussagekräftig vergleichen, da hier nur Einzelmessungen aufgenommen wurden.
+Eine Abweichung von $\num{49.5}\%$ zwischen der wahrscheinlich eingestellten Koinzidenzzeit von $\SI{20}{\nano\second}$ und dem experimentell bestimmten Wert von $\SI{10.1}{\nano\second}$ liegt vor.
+Bei der Kalibration des Messaufbaus gelang es, etwa $35$ Impulse pro Sekunde an beiden Diskriminatoren zu messen, welches zu einer hohen Impulsfrequenz von über $\SI{20}{\per\second}$ hinter der Koinzidenz führt. Dies zeigt sich auch in der Plateauhöhe der Messung der Koinzidenzzeit mit einer Plateauhöhenzählrate von $N_{\text{Plateau}}=\SI{21.3625}{\per\second}$.
+In der Kalibration des Vielkanalanalysators zeigten sich nahezu keine Abweichungen der Messwerte von der Regressionsgeraden (vgl. \ref{fig:eichi}), was sich auch in den kleinen Fehlern der Regressionsparametern widerspiegelt.

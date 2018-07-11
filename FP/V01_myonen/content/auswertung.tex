@@ -5,35 +5,35 @@
 \label{sec:unter}
 Es sind insgesamt $N_\text{start}=1998242$ Startsignale und
 $N_\text{stop}=7972$ Stopsignale registriert worden.
-Damit ergibt sich mit der Messdauer $t_\text{measure}=\SI{94990.5(5)}{\second}$
+Damit ergibt sich mit der Messdauer $t_\text{measure}=\SI{94990}{\second}$ %erste Zeit wählen, da Kondensator totzeit hat, tatsächliche Messzeit also verkürzt
 die Eintrittsfrequenz der Myonen zu
 \begin{equation*}
-	f = \frac{N_\text{start}}{t_\text{measure}} \approx \SI{21.036(1)}{\per\second} \, \text{.}
+	f = \frac{N_\text{start}}{t_\text{measure}}= \SI{21.04}{\per\second} \, \text{.}
 \end{equation*}
 
 
 Weiterhin soll die Wahrscheinlichkeit dafür bestimmt werden, dass in der
 Suchzeit $T_\text{S}$ genau $n$ weitere Myonen in den Szintillationsdetektor
-eintreffen. Diese Myonen würden eine Fehlmessung auslösen. Die Wahrscheinlichkeit ergibt sich mit der Poissonverteilung zu
+eintreffen. Diese Myonen würden eine Fehlmessung auslösen. Die Wahrscheinlichkeit ergibt sich mit der Poissonverteilung zu~\cite{poisson}:
 \begin{equation*}
 	p(n)=\frac{(f T_\text{S})^n}{n!} \, \symup{e}^{f T_\text{S}} \, \text{.}
 \end{equation*}
 Für genau ein Myon ergibt sich somit die erwartete Anzahl an Fehlmessungen
-$N_\text{false}=p(1) \cdot N_\text{start} \approx \num{841.063(4)}$. Damit ergibt sich
+$N_\text{false}=p(1) \cdot N_\text{start} =\num{841.068}$. Damit ergibt sich
 nach Division durch die Kanalzahl direkt die Untergrundrate pro Kanal:
 \begin{equation*}
-	U \approx \num{1.90286(1)} \, \mathrm{,}
+	U = \num{1.90287} \, \mathrm{,}
 \end{equation*}
-wobei sich die Kanalanzahl nach Nichtberücksichtigung der Einträge mit "$0$" zu $442$ ergibt.
+wobei sich die Kanalanzahl nach Nichtberücksichtigung der Einträge mit \glqq $0$ \grqq{} am oberen und unteren Ende des Vielkanalanalysators zu $442$ ergibt.
 \subsection{Bestimmung der Verzögerungszeit}
 Zur Bestimmung der Verzögerungszeit wurde eine Verzögerungsleitung fest eingestellt auf eine Verzögerung von $t_1=\SI{30}{\nano\second}$ und die zweite Verzögerungsleitung variiert von $t_2=(\num{0}-\num{63.5})\si{\nano\second}$ und die zugehörigen Zählraten $N(t)$ in jedem Schritt in einem Zeitintervall von $\Delta t=\SI{60}{\second}$ bestimmt.
 
 Die aufgenommenen Daten finden sich in Tabelle \ref{tab:plateau}. In Abbildung \ref{fig:plateau} wurden die Messdaten mittels matplotlib \cite{matplotlib} geplottet.
 
-Die Fehler ergeben sich nach dem üblichen Fehler von Zählexperimenten mit $\sqrt{N(t)}$. Es zeigt sich ein deutliches Plateau.
+Die Unsicherheiten ergeben sich nach der üblichen Unsicherheit von Zählexperimenten mit $\sqrt{N(t)}$. Es zeigt sich ein deutliches Plateau.
 Für die weitere Messung wurde für die Verzögerung $t_2$ etwa die Mitte des Plateaus gewählt mit $t_2=\SI{34}{\nano\second}$, wodurch sich eine relative Verzögerung von $\Delta t=t_1-t_2=\SI{4}{\nano\second}$ im Versuchsaufbau ergibt.
 
-Zur Bestimmung der Halbwertsbreite der Koinzidenz wurde zudem die halbe Plateauhöhe in den Plot eingezeichnet und ihr Schnittpunkt mit den linearen Ausgleichsgraden $N(t)=m_i\cdot t_2+b_i$ der Flanken bestimmt.
+Zur Bestimmung der Halbwertsbreite der Koinzidenz wurde zudem die halbe Plateauhöhe in die Abbildung eingezeichnet und ihr Schnittpunkt mit den linearen Ausgleichsgraden $N(t)=m_i\cdot t_2+b_i$ der Flanken bestimmt.
 
 Die linearen Ausgleichsgraden der Flanken wurden mittels python/scipy\cite{scipy} ermittelt. Ihre Parameter finden sich in Tabelle \ref{tab:plateau2}.
 \begin{table}
@@ -51,16 +51,20 @@ Die linearen Ausgleichsgraden der Flanken wurden mittels python/scipy\cite{scipy
 		\bottomrule
 	\end{tabular}
 \end{table}
-Mit einer Plateauhöhe von $N(t)_{\mathrm{mean}}=\SI{1281.75}{\per\minute}$ ergeben sich die Schnitte der Flanken mit der halben Plateauhöhe zu:
+Mit einer Plateauhöhe von $N(t)_{\mathrm{mean}}=\SI{1281.75}{\per\minute}$ werden die Schnitte der Flanken mit der halben Plateauhöhe aus der Abbildung abgelesen zu:
 \begin{align*}
 t_{\mathrm{links}}=\SI{6.6}{\nano\second}\,\text{,}\\
 t_{\mathrm{rechts}}=\SI{56.7}{\nano\second}\,\text{.}
 \end{align*}
-Die Koinzidenzbreite, welche gleichbedeutent mit der Auflösungszeit der Koinzidenz ist, ergibt sich somit zu $t_{\text{K}}=\SI{50.1}{\nano\second}$.
+Die Koinzidenzbreite ergibt sich somit zu $t_{\text{B}}=\SI{50.1}{\nano\second}$.
 
-Die Diskriminatorimpulse wiesen etwa eine Länge von $\Delta t=\SI{50}{\nano\second}$ auf. Da dies nicht in einer Messreihe explizit geprüft wurde, sondern nur in einer Einzelmessung für beide Diskriminatoren einmal eher qualitativ gemessen wurde, ist ein genauer Vergleich nicht aussagekräftig.
+Die Diskriminatorimpulse wiesen jeweils etwa eine Länge von $\Delta t=\SI{20}{\nano\second}$ auf. Da dies nicht in einer Messreihe explizit geprüft wurde, sondern nur in einer Einzelmessung für beide Diskriminatoren einmal eher qualitativ gemessen wurde, ist ein genauer Vergleich nicht aussagekräftig.
 
-Da die Koinzidenz nur ein Signal weitergeben soll, wenn an beiden Eingängen ein Signal anliegt, sollte ihre Auflösungszeit möglichst gut mit der Länge eines Diskriminatorsignal übereinstimmen. Dies ist im vorliegenden Fall mit einer Abweichung von $0.2\%$ gut erfüllt.
+Die Koinzidenzzeit $t_{\text{K}}$ aus der Koinzidenzbreite und der Diskriminatorimpulsbreite berechnen zu
+\begin{equation}
+	t_{\text{K}}=t_{\text{B}}-2\cdot\Delta t=\SI{10.1}{\nano\second}\,\text{.}
+\end{equation}
+Ein Vergleich der eingestellten Koinzidenzzeit $t_{\text{K}}=\SI{20}{\nano\second}$ mit dem berechneten Wert zeigt eine Abweichung von  $\num{49.5}\%$, welche aber, da hierfür keine einzelne Messreihe durchgeführt wurde, wenig aussagekräftig ist.
 
 \input{plateau.tex}
 \begin{figure}
@@ -72,10 +76,16 @@ Da die Koinzidenz nur ein Signal weitergeben soll, wenn an beiden Eingängen ein
 
 
 \FloatBarrier
-\subsection{Zeiteichung der Apparatur}
+\subsection{Kalibration der Apparatur}
 \label{sec:blaaaaaaa}
 Die Messwerte für die Zeiteichung der Apparatur sind in Tabelle
-\ref{tab:eichi} aufgetragen.
+\ref{tab:eichi} aufgetragen sowie in Abbildung \ref{fig:eichi} dargestellt.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.75\columnwidth]{Daten/kalibrate.pdf}
+	\caption{Aufgenommene Zählraten samt Regressionsgrade zur Kalibration des Vielkanalanalysators.}
+  \label{fig:eichi}
+\end{figure}
 \input{eichi.tex}
 Hierbei soll die Abhängigkeit zwischen Doppelimpulsabstand $T$ und Kanalnummer $N$ linear sein.
 Daher wird eine lineare Regression der Form
@@ -87,17 +97,16 @@ sind.
 Wenn die Anzahl detektierter Impulse sich auf mehrere benachbarte Kanäle aufteilt, wurde die Gesamtzahl der Impulse des zugehörigen Impulsabstandes einem Zwischenwert zugeordnet.
 
 Der Zwischenwert wurde hierbei ermittelt, indem jeder Kanal, auf welchen sich die Impulse aufteilten, mit der Anzahl an gezählten Impulsen gewichtet, zum Zwischenwert beitrug.
-Es ergeben sich die beiden Fitparameter zu
+Für die Geradensteigung ergibt sich:
 \begin{equation*}
 	\begin{split}
-		m &= \SI{0.04521(8)}{\micro\second} \, \mathrm{,} \\
-		b &= \SI{-0.05(1)}{\micro\second} \, \mathrm{.}
+		m &= \SI{0.04515(3)}{\micro\second} \,\mathrm{.}
 	\end{split}
 \end{equation*}
-
-Im Folgenden wird allerdings nur die Steigung $m$ benötigt, sodass der Parameter $b$ nicht weiter
-verwendet wird. Der Achsenabschnitt $b$ sollte möglichst nahe Null sein, was mit der vorliegenden Regression recht gut erfüllt ist.
-Mithilfe der Fitparameter lassen sich also für jeden Kanal die zugehörigen Zeitabstände aus der linearen Regression entnehmen, wenn angenommen wird, dass sich das lineare Verhalten für Kanäle größer als $\num{200}$ fortsetzt.
+Mithilfe des Fitparameters lassen sich also für jeden Kanal die zugehörigen Zeitabstände aus der linearen Regression entnehmen, wenn angenommen wird, dass sich das lineare Verhalten für Kanäle größer als $\num{200}$ fortsetzt.
+Mithilfe des Steigungsparameters lässt sich zudem die Suchzeit $T_{\mathrm{S}}$ des Univibrators verifizieren.
+Für den letzten gefüllten Kanal sollte der zugehörige Impulsabstand der Suchzeit $T_{\mathrm{S}}=\SI{20}{\micro\second}$ entsprechen.
+Dies ist mit $T=m*443=\SI{20.004}{\micro\second}$ gut erfüllt.
 
 %include tables
 %\input{latex_tables/current.tex}
@@ -121,13 +130,14 @@ Einige Messdaten wurden von der Regressionsrechnung ausgeschlossen. Diese sind i
 Von einer Linearisierung des Problems wurde abgesehen, da bereits ab Kanal $220$ Nulleinträge auftraten, welche nach der Linearisierung mittels Logarithmieren von der Regression auszuschließen wären, was bedeuten würde, dass nur etwa die Hälfte der aufgenommenen Messdaten zur Bestimmung der Lebensdauer verwendet werden könnte.
 Die Messergebnisse mit zugehöriger Theoriekurve gemäß \eqref{eqn:nnn} sind in Abbildung
 \ref{fig:blubbb} dargestellt.
+Für die graphische Darstellung wurde die y-Achse logarithmiert. Besonders für Impulsabstände kleiner als $\SI{10}{\micro\second}$ zeigt sich ein linearer Verlauf der Fitfunktion.
 Mit Python \cite{numpy} ergeben sich die Fitparamter zu
 \begin{align*}
 	N_0 = \num{192(2)}\, \mathrm{,} \\
 	\lambda = \SI{0.484(5)}{\per\micro\second} \, \mathrm{,}\\
 	B=\num{1.9(2)}\,\text{.}
 \end{align*}
-Damit ist die experimentell bestimmte Lebensdauer der Myonen
+Damit ist die experimentell bestimmte Lebensdauer der Myonen:
 \begin{equation*}
 	\tau = \frac{1}{\lambda} = \SI{2.07(2)}{\micro\second} \, \mathrm{.}
 \end{equation*}
