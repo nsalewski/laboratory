@@ -33,7 +33,7 @@ def latex_tab(data=[[1,2,3],[42,42,42]],names=["col1","col2"],filename="test.tex
 
                 if isinstance(data[j][i],uncertainties.core.Variable):
                     data[j][i]=(str(data[j][i])).replace('+/-',' \pm ')
-                    texfile.write('$\\num{'+ data[j][i]+'}$')
+                    texfile.write('$\\num{'+ data[j][i]+'}$'+" & ")
                 else:
                     texfile.write(("{:10.%df}"%dec_points[j]).format(data[j][i])+" & ")
             if isinstance(data[len(data)-1][i],uncertainties.core.Variable):
