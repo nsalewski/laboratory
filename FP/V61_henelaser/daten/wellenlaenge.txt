@@ -1,0 +1,7 @@
+#Gitter 100lines/per mm
+#Abstand Schirm-Gitter: 28.8+/-01cm;
+#Abstände +/-0.05cm
+#links cm rechts cm  n
+2.05  2.05  1
+4.05  4.10  2
+6.00  6.10  3

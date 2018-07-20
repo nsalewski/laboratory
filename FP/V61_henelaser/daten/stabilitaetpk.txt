@@ -1,0 +1,11 @@
+#Messung Fuß-Fuß +1cm wg. Linsenverschiebung, 1mm konkav plan
+#Abstand in cm Strom Photodiode microampere
+84      0.9
+74.0    0.6
+64.3    0.7
+54.1    0.9
+87.5    0.3
+89.5    0.1
+93.5    0.1
+109.5   0.4
+99.7    0.1
