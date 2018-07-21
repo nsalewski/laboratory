@@ -1,16 +1,115 @@
 \section{Auswertung}
 \label{sec:Auswertung}
-Polarisation\\
-$I_0=\SI{16.4(6)}{\micro\ampere}$ $\phi_0=\SI{-3.50(3)}{\radian}$\\
-TEM00\\
-$d_{00}=\SI{1.069(5)}{\milli\meter}$ $w_{00}=\SI{0.60(1)}{\centi\meter}$ $I_{00}=\SI{11.5(2)}{\micro\ampere}$\\
-TEM01\\
-$d_{01,1}=\SI{0.495(9)}{\milli\meter}$ $w_{01,1}=\SI{0.42(2)}{\centi\meter}$ $I_{01,1}=\SI{1.51(6)}{\micro\ampere}$\\
-$d_{01,2}=\SI{1.43(1)}{\milli\meter}$ $w_{01,1}=\SI{0.35(3)}{\centi\meter}$ $I_{01,2}=\SI{0.9(6)}{\micro\ampere}$\\
+Im Folgenden werden die aufgenommenen Messdaten ausgewertet, um die Polarisation, die Stabilitätsmessung für unterschiedliche Resonatorspiegel, die Grundmode sowie die erste angeregte Mode und die Wellenlänge des Lasers
+zu untersuchen.
+\subsection{Bestimmung der Polarisation des Laserstrahls}
+Die Messdaten sind in Tabelle~\ref{tab:polarisation} dargestellt. Die Intensität $I(\phi)$ wurde mittels einer Photodiode in Abhängigkeit des Drehwinkels $\phi$ des Polarisationsfilters gemessen.
+Die Messdaten werden gefittet an eine Funktion der Form:
+\begin{equation}
+    I(\phi)=I_0\cdot \sin{\phi-\phi_0}^2 \,\text{.}
+\end{equation}
+Hierbei stellt $I_0$ die Maximalintensität und $\phi_0$ den Anfangswinkel der Polarisation dar.
+Die Parameter der mittels python/scipy~\cite{scipy} durchgeführten Ausgleichsrechnung ergeben sich zu:
+\begin{align}
+  I_0=\SI{16.4(6)}{\micro\ampere}\,\text {;}\\ \phi_0=\SI{-3.50(3)}{\radian}\,\text{.}
+\end{align}
+In Abbildung~\ref{fig:polarisation} sind die Messdaten samt zugehöriger Regressionsfunktion dargestellt.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.95\columnwidth]{daten/polarisation.pdf}
+  \caption{Darstellung der Messdaten der Polarisationsmessung samt zugehöriger Regressionsfunktion.}
+  \label{fig:polarisation}
+\end{figure}
+\input{daten/polarisation.tex}
+\subsection{Messung von Schwingungsmoden}
+Die Messdaten der Messung der Grundmode $\text{TEM}_{(00)}$ finden sich in Tabelle~\ref{tab:t00} und die der ersten angeregten Mode $\text{TEM}_{(01)}$ in Tabelle~\ref{tab:t01}.
+Die Grundmode entspricht dabei der Form einer Gaußglocke:
+\begin{equation}
+  I_{(00)}(L)=I_0 \exp{-2\left(\frac{L-d_0}{\omega})^2\right)}\,\text{.}
+\end{equation}
+Es ist $I_0$ erneut die Maximalintensität, $d_0$ ist eine Verschiebung der Gaußglocke entlang der $x$-Achse und $\omega$ der Radius der Fundamentalmode. $L$ ist die gemessene Verschiebung der Photodiode senkrecht zur Strahlachse des Lasers.
+Die erste angeregte Mode ist an eine doppelte Gaußglocke mit verschiedener Maximalintensität $I_{(0,i)}$ gefittet:
+\begin{equation}
+    I_{(01)}(L)=I_{(0,1)} \exp{-2\left(\frac{L-d_{(0,1)}}{\omega_1})^2\right)}+I_{(0,2)} \exp{-2\left(\frac{L-d_{(0,2)}}{\omega_2})^2\right)}
+\end{equation}
+In Abbildung~\ref{fig:tem00} sind die Messdaten der $\text{TEM}_{(00)}$-Mode samt der mittels python/scipy ermittelten Regressionsfunktion dargestellt.
+Die zugehörigen Regressionsparameter ergeben sich zu:
+\begin{align}
+  d_{00}=\SI{1.069(5)}{\milli\meter}\,\text{;}\\ w_{00}=\SI{0.60(1)}{\centi\meter}\,\text{;}\\ I_{00}=\SI{11.5(2)}{\micro\ampere}\,\text{.}
+\end{align}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.95\columnwidth]{daten/tem00.pdf}
+  \caption{Messdaten samt zugehöriger Regressionsfunktion der Grundmode $\text{TEM}_{(00)}$.}
+  \label{fig:tem00}
+\end{figure}
+\input{daten/i00.tex}
+\input{daten/i01.tex}
+Die Regressionsparameter der Ausgleichsrechnung der ersten angeregten Mode ergeben sich zu:
+\begin{align}
+  d_{01,1}=\SI{0.495(9)}{\milli\meter}\,\text{;}\\
+  w_{01,1}=\SI{0.42(2)}{\centi\meter} \,\text{;}\\
+  I_{01,1}=\SI{1.51(6)}{\micro\ampere}\,\text{;}\\
+  d_{01,2}=\SI{1.43(1)}{\milli\meter} \,\text{;}\\
+  w_{01,1}=\SI{0.35(3)}{\centi\meter} \,\text{;}\\
+  I_{01,2}=\SI{0.9(6)}{\micro\ampere}\,\text{.}\\
+\end{align}
+In Abbildung~\ref{fig:tem01} finden sich die Messdaten samt ermittelter Regressionsrechnung.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.95\columnwidth]{daten/tem01.pdf}
+  \caption{Messdaten samt zugehöriger Regressionsfunktion der ersten angeregten Mode $\text{TEM}_{(01)}$.}
+  \label{fig:tem01}
+\end{figure}
+\subsection{Stabilitätsmessung für verschiedene Resonatorspiegel}
+Die Messdaten der Stabilitätsmessung des Lasers für verschiedene Resonatorspiegel sind in Tabelle~\ref{tab:stabilitaetpk} beziehungsweise in Tabelle~\ref{tab:stabilitaetkk} dargestellt.
+Die Messdaten des Resonators mit der Spiegelkombination konkav-konkav wurden dabei an eine quadratische Funktion der Form
+\begin{equation}
+  I_{\text{kk}}=a\cdot L^2+b\cdot L+c
+\end{equation}
+gefittet.
+Die zugehörigen Parameter ergeben sich zu:
+\begin{align}
+  a=\SI{6(442)e-6}{\micro\ampere\per\square\centi\meter}\,\text{;}\\
+  b=-\SI{88(88)e-2}{\micro\ampere\per\centi\meter} \,\text{;}\\
+  c=\SI{11(4)}{\micro\ampere}\,\text{.}
+\end{align}
+Die Messdaten samt zugehöriger Regression sind in Abbildung~\ref{fig:kk} dargestellt.
+\begin{figure}
+  \centering
+  \includegraphics[width=0.95\columnwidth]{daten/stabilitaetkp.pdf}
+  \caption{Messdaten samt zugehöriger Regressionsfunktion zur Messung der Stabilität des Lasers bei der Resonatorspiegelkombination planar-konkav.}
+  \label{fig:pk}
+\end{figure}
+\input{daten/stabilitaetkk.tex}
+Für den Resonatorspiegel mit der Kombination planar-konkav werden die Messdaten an eine lineare Regression der Form:
+\begin{equation}
+  I_{\text{pk}}=a\cdot L+b
+\end{equation}
+gefittet.
+Die Parameter ergeben sich zu:
+\begin{align}
+    a=-\SI{13(5)e-3}{\micro\ampere\per\centi\meter}\,\text{;}\\
+  b=\SI{1.6(4)}{\micro\ampere}\,\text{.}
+\end{align}
+In Abbildung~\ref{fig:pk} sind die Messdaten samt Regressiongeraden geplottet.
+\input{daten/stabilitaetpk.tex}
+\begin{figure}
+  \centering
+  \includegraphics[width=0.95\columnwidth]{daten/stabilitaetkk.pdf}
+  \caption{Messdaten samt zugehöriger Regressionsfunktion zur Messung der Stabilität des Lasers bei der Resonatorspiegelkombination konkav-konkav.}
+  \label{fig:kk}
+\end{figure}
 
-Stabilitaet konkav-konkav:\\
-Geradenparameter:\\
-$a=\SI{6(442)e-6}{\micro\ampere\per\square\centi\meter}$, $b=-\SI{88(88)e-2}{\micro\ampere\per\centi\meter}$ $c=\SI{11(4)}{\micro\ampere}$\\
-Stabilitaet planar-konkav:\\
-$a=-\SI{13(5)e-3}{\micro\ampere\per\centi\meter}$, $b=\SI{1.6(4)}{\micro\ampere}$\\
+\subsection{Bestimmung der Wellenlänge}
 \input{daten/wellenlaenge.tex}
+Die Wellenlänge des Lasers lässt sich anhand des Abstands der Beugungsreflexe auf dem Schirm ermitteln.
+Die Berechnung der Wellenlänge erfolgt über die Beziehung:
+\begin{equation}
+  \lambda=\frac{a}{n}\cdot\sin{\arctan{\frac{d_n}{L}}}\,\text{.}
+\end{equation}
+Es ist $a=\SI{0.01}{\milli\meter}$ der Gitterabstand, $d_n$ der Abstand des Hauptmaximums zu den Nebenmaxima, $L=\SI{30.8}{\centi\meter}$ der Abstand zwischen Beugungsgitter und Schirm, sowie $n$ die Ordnung des Beugungsmaximums, wobei $n$ ausgehend vom Hauptmaximum mit $n=0$ aufsteigend mit größer werdenden Abstand der Nebenmaxima gezählt wird.
+In Tabelle~\ref{tab:wellenlaenge} finden sich die ermittelten Messdaten samt der daraus berechneten Wellenlänge für jedes Nebenmaximum.
+Eine Mittelung über alle Wellenlängen ergibt die mittlere Wellenlänge
+$\lambda_{\mathrm{mean}}=\SI{654(4)}{\nano\meter}$
+als beste Schätzung der tatsächlichen Laserwellenlänge.

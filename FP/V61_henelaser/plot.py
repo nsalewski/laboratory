@@ -49,9 +49,9 @@ plt.clf()
 def intens (phi,I_null,phi_null):
     return I_null*(np.sin(phi-phi_null))**2
 phi,i=np.genfromtxt("daten/polarisation.txt",unpack=True)
-phi=unp.uarray(phi, len(phi)*[1])
+phi=phi+20
+phi=unp.uarray(phi*2*np.pi/360, len(phi)*[1])
 i=unp.uarray(i, len(i)*[0.1])
-phi=phi*2*np.pi/360
 params, covariance = curve_fit(intens,unp.nominal_values(phi),unp.nominal_values(i))
 errors = np.sqrt(np.diag(covariance))
 print('****************************')
@@ -59,7 +59,7 @@ print("Polarisation")
 print('I_0=%f(%f)'%(params[0],errors[0]),'\phi_0=%f(%f)'%(params[1], errors[1]))
 print('****************************')
 
-phi_theo=np.linspace(-20,160)
+phi_theo=np.linspace(0,180)
 phi_theo=np.pi*2*phi_theo/360
 f,ax=plt.subplots()
 ax.errorbar(unp.nominal_values(phi)/np.pi, unp.nominal_values(i),xerr=unp.std_devs(phi)/np.pi,yerr=unp.std_devs(i),fmt='bx',label="Messdaten")
@@ -69,6 +69,7 @@ ax.set(ylabel=r"$I(\phi)$/$\si{\micro\ampere}$", xlabel=r"$\phi$/$\si{\radian}$"
 ax.xaxis.set_major_formatter(tck.FormatStrFormatter('%g $\pi$'))
 plt.tight_layout()
 plt.savefig("daten/polarisation.pdf")
+textable.latex_tab(data=[phi,i],names=[r"Polarisationsmessung $\phi$/$\si{\degree}$",r"Intensität $I_{\mathrm{Pol}}$/$\si{\micro\ampere}$"], filename=r"daten/polarisation.tex",caption=r"Messdaten der Polarisationsmessung",label=r"polarisation",dec_points=[0,2])
 
 
 #tem00
@@ -92,6 +93,7 @@ ax.legend(loc='best')
 ax.set(ylabel=r"$I_{00}(L)$/$\si{\micro\ampere}$", xlabel=r"$L$/$\si{\milli\meter}$")
 plt.tight_layout()
 plt.savefig("daten/tem00.pdf")
+textable.latex_tab(data=[vers00,i00],names=[r"Verschiebung $\Delta L$/$\si{\centi\meter}$",r"Intensität $I_{\mathrm{00}}$/$\si{\micro\ampere}$"], filename=r"daten/i00.tex",caption=r"Messdaten der Messung der Grundmode $T_{00}$",label=r"t00",dec_points=[0,2],tableformat=3.3)
 
 
 #tem01
@@ -115,7 +117,7 @@ ax.legend(loc='best')
 ax.set(ylabel=r"$I_{01}(L)$/$\si{\micro\ampere}$", xlabel=r"$L$/$\si{\milli\meter}$")
 plt.tight_layout()
 plt.savefig("daten/tem01.pdf")
-
+textable.latex_tab(data=[vers01,i01],names=[r"Verschiebung $\Delta L$/$\si{\centi\meter}$",r"Intensität $I_{\mathrm{01}}$/$\si{\micro\ampere}$"], filename=r"daten/i01.tex",caption=r"Messdaten der Messung der $T_{01}$-Mode",label=r"t01",dec_points=[0,2],tableformat=3.3)
 
 #stabilität
 def i_skk_fit(L,a,b,c):
@@ -142,7 +144,7 @@ ax.legend(loc='best')
 ax.set(ylabel=r"$I_{01}(L)$/$\si{\micro\ampere}$", xlabel=r"$L$/$\si{\centi\meter}$")
 plt.tight_layout()
 plt.savefig("daten/stabilitaetkk.pdf")
-
+textable.latex_tab(data=[vers_skk,i_skk],names=[r"Resonatorlänge $ L$/$\si{\centi\meter}$",r"Intensität $I_{\mathrm{konkav-konkav}}$/$\si{\micro\ampere}$"], filename=r"daten/stabilitaetkk.tex",caption=r"Messdaten der Stabilitätsmessung für zwei konkave Resonatorspiegel",label=r"stabilitaetkk",dec_points=[0,2],tableformat=3.3)
 vers_skp, i_skp=np.genfromtxt("daten/stabilitaetpk.txt",unpack=True)
 vers_skp=unp.uarray(vers_skp+1,len(vers_skp)*[0.5])
 i_skp=unp.uarray(i_skp, len(i_skp)*[0.02])
@@ -160,7 +162,7 @@ ax.legend(loc='best')
 ax.set(ylabel=r"$I_{01}(L)$/$\si{\micro\ampere}$", xlabel=r"$L$/$\si{\centi\meter}$")
 plt.tight_layout()
 plt.savefig("daten/stabilitaetkp.pdf")
-
+textable.latex_tab(data=[vers_skp,i_skp],names=[r"Resonatorlänge $\Delta L$/$\si{\centi\meter}$",r"Intensität $I_{\mathrm{planar-konkav}}$/$\si{\micro\ampere}$"], filename=r"daten/stabilitaetpk.tex",caption=r"Messdaten der Stabilitätsmessung für einen konkaven und einen planaren Resonatorspiegel",label=r"stabilitaetpk",dec_points=[0,2],tableformat=3.3)
 #wellenlaenge
 def wl(a,n,d,L):
     return a/n*unp.sin(unp.arctan(d/L))*10**9
@@ -172,7 +174,8 @@ links=unp.uarray(links, err)
 rechts=unp.uarray(rechts, err)
 rechtswl=unp.uarray(unp.nominal_values(wl(a,n,rechts,L)), unp.std_devs(wl(a,n,rechts,L)))
 linkswl=unp.uarray(unp.nominal_values(wl(a,n,links,L)), unp.std_devs(wl(a,n,links,L)))
-
-
-print(rechts, links)
+gesamt=unp.uarray([unp.nominal_values(rechtswl),unp.nominal_values(linkswl)],[unp.std_devs(rechtswl),unp.std_devs(linkswl)])
+print('****************************')
+print("Mittlere Wellenlänge: ",gesamt.mean())
+print('****************************')
 textable.latex_tab(data=[n,rechts,rechtswl,links,linkswl],names=[r"Nr. des Nebenmaxima",r"Abstand $r_{\mathrm{rechts}}$/$\si{\centi\meter}$",r"$\lambda_{\mathrm{rechts}}$/$\si{\nano\meter}$",r"Abstand $r_{\mathrm{links}}$/$\si{\centi\meter}$",r"$\lambda_{\mathrm{links}}$/$\si{\nano\meter}$"], filename=r"daten/wellenlaenge.tex",caption=r"Gemessene Abstände $r_i$ der Nebenmaxima zum Hauptmaximum und daraus berechnete Wellenlängen $\lambda_i$.",label=r"wellenlaenge",dec_points=[0,2,0,2,0], tableformat=3.2)
