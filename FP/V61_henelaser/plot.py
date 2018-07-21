@@ -50,7 +50,7 @@ def intens (phi,I_null,phi_null):
     return I_null*(np.sin(phi-phi_null))**2
 phi,i=np.genfromtxt("daten/polarisation.txt",unpack=True)
 phi=phi+20
-phi=unp.uarray(phi*2*np.pi/360, len(phi)*[1])
+phi=unp.uarray(phi*2*np.pi/360, len(phi)*[1*2*np.pi/360])
 i=unp.uarray(i, len(i)*[0.1])
 params, covariance = curve_fit(intens,unp.nominal_values(phi),unp.nominal_values(i))
 errors = np.sqrt(np.diag(covariance))
@@ -127,7 +127,7 @@ def i_skp_fit(L,a,b):
     return a*L+b
 
 vers_skk, i_skk=np.genfromtxt("daten/stabilitaet.txt",unpack=True)
-vers_skk=unp.uarray(vers_skk+1,len(vers_skk)*[0.5])
+vers_skk=unp.uarray(vers_skk+1,len(vers_skk)*[0.3])
 i_skk=unp.uarray(i_skk, len(i_skk)*[0.2])
 params,covariance=curve_fit(i_skk_fit, unp.nominal_values(vers_skk), unp.nominal_values(i_skk))
 errors = np.sqrt(np.diag(covariance))
@@ -146,8 +146,8 @@ plt.tight_layout()
 plt.savefig("daten/stabilitaetkk.pdf")
 textable.latex_tab(data=[vers_skk,i_skk],names=[r"Resonatorlänge $ L$/$\si{\centi\meter}$",r"Intensität $I_{\mathrm{konkav-konkav}}$/$\si{\micro\ampere}$"], filename=r"daten/stabilitaetkk.tex",caption=r"Messdaten der Stabilitätsmessung für zwei konkave Resonatorspiegel",label=r"stabilitaetkk",dec_points=[0,2],tableformat=3.3)
 vers_skp, i_skp=np.genfromtxt("daten/stabilitaetpk.txt",unpack=True)
-vers_skp=unp.uarray(vers_skp+1,len(vers_skp)*[0.5])
-i_skp=unp.uarray(i_skp, len(i_skp)*[0.02])
+vers_skp=unp.uarray(vers_skp+1,len(vers_skp)*[0.3])
+i_skp=unp.uarray(i_skp, len(i_skp)*[0.025])
 params,covariance=curve_fit(i_skp_fit, unp.nominal_values(vers_skp), unp.nominal_values(i_skp))
 errors = np.sqrt(np.diag(covariance))
 print('****************************')

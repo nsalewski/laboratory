@@ -3,7 +3,7 @@
 Im Folgenden werden die aufgenommenen Messdaten ausgewertet, um die Polarisation, die Stabilitätsmessung für unterschiedliche Resonatorspiegel, die Grundmode sowie die erste angeregte Mode und die Wellenlänge des Lasers
 zu untersuchen.
 \subsection{Bestimmung der Polarisation des Laserstrahls}
-Die Messdaten sind in Tabelle~\ref{tab:polarisation} dargestellt. Die Intensität $I(\phi)$ wurde mittels einer Photodiode in Abhängigkeit des Drehwinkels $\phi$ des Polarisationsfilters gemessen.
+Die Messdaten sind in Tabelle~\ref{tab:polarisation} dargestellt. Die Intensität $I(\phi)$ wurde mittels einer Photodiode in Abhängigkeit des Drehwinkels $\phi$ des Polarisationsfilters gemessen. Für den gemessenen Photostrom wurde aufgrund der schwankenden Intensität ein Ablesefehler von $\delta I=\SI{0.1}{\micro\ampere}$ und für den Polarisationswinkel aufgrund des Ablesefehlers ein Fehler von $\delta \phi=\SI{1}{\degree}$ angenommen.
 Die Messdaten werden gefittet an eine Funktion der Form:
 \begin{equation}
     I(\phi)=I_0\cdot \sin{\phi-\phi_0}^2 \,\text{.}
@@ -11,7 +11,7 @@ Die Messdaten werden gefittet an eine Funktion der Form:
 Hierbei stellt $I_0$ die Maximalintensität und $\phi_0$ den Anfangswinkel der Polarisation dar.
 Die Parameter der mittels python/scipy~\cite{scipy} durchgeführten Ausgleichsrechnung ergeben sich zu:
 \begin{align}
-  I_0=\SI{16.4(6)}{\micro\ampere}\,\text {;}\\ \phi_0=\SI{-3.50(3)}{\radian}\,\text{.}
+  I_0&=\SI{16.4(6)}{\micro\ampere}\,\text {;}\\ \phi_0&=\SI{-3.50(3)}{\radian}\,\text{.}
 \end{align}
 In Abbildung~\ref{fig:polarisation} sind die Messdaten samt zugehöriger Regressionsfunktion dargestellt.
 \begin{figure}
@@ -23,6 +23,8 @@ In Abbildung~\ref{fig:polarisation} sind die Messdaten samt zugehöriger Regress
 \input{daten/polarisation.tex}
 \subsection{Messung von Schwingungsmoden}
 Die Messdaten der Messung der Grundmode $\text{TEM}_{(00)}$ finden sich in Tabelle~\ref{tab:t00} und die der ersten angeregten Mode $\text{TEM}_{(01)}$ in Tabelle~\ref{tab:t01}.
+Für die Verschiebung der Photodiode senkrecht zur Strahlachse wird ein Ablesefehler von $\Delta L=\SI{0.5}{\milli\meter}$ angenommen.
+Aufgrund der schwankenden Intensität wird für die Messung der $\text{TEM}_{(00)}$-Mode ein Fehler von $\Delta I=\SI{0.2}{\micro\ampere}$ und für die Messung der $\text{TEM}_{(01)}$-Mode ein Fehler von $\Delta I=\SI{0.05}{\micro\ampere}$ für die Intensität angenommen.
 Die Grundmode entspricht dabei der Form einer Gaußglocke:
 \begin{equation}
   I_{(00)}(L)=I_0 \exp{-2\left(\frac{L-d_0}{\omega})^2\right)}\,\text{.}
@@ -30,12 +32,12 @@ Die Grundmode entspricht dabei der Form einer Gaußglocke:
 Es ist $I_0$ erneut die Maximalintensität, $d_0$ ist eine Verschiebung der Gaußglocke entlang der $x$-Achse und $\omega$ der Radius der Fundamentalmode. $L$ ist die gemessene Verschiebung der Photodiode senkrecht zur Strahlachse des Lasers.
 Die erste angeregte Mode ist an eine doppelte Gaußglocke mit verschiedener Maximalintensität $I_{(0,i)}$ gefittet:
 \begin{equation}
-    I_{(01)}(L)=I_{(0,1)} \exp{-2\left(\frac{L-d_{(0,1)}}{\omega_1})^2\right)}+I_{(0,2)} \exp{-2\left(\frac{L-d_{(0,2)}}{\omega_2})^2\right)}
+    I_{(01)}(L)=I_{(0,1)} \exp{-2\left( \frac{L-d_{(0,1)}}{\omega_1})^2\right)}+I_{(0,2)} \exp{-2\left( \frac{L-d_{(0,2)}}{\omega_2})^2\right)}
 \end{equation}
 In Abbildung~\ref{fig:tem00} sind die Messdaten der $\text{TEM}_{(00)}$-Mode samt der mittels python/scipy ermittelten Regressionsfunktion dargestellt.
 Die zugehörigen Regressionsparameter ergeben sich zu:
 \begin{align}
-  d_{00}=\SI{1.069(5)}{\milli\meter}\,\text{;}\\ w_{00}=\SI{0.60(1)}{\centi\meter}\,\text{;}\\ I_{00}=\SI{11.5(2)}{\micro\ampere}\,\text{.}
+  d_{00}&=\SI{1.069(5)}{\milli\meter}\,\text{;}\\ w_{00}&=\SI{0.60(1)}{\centi\meter}\,\text{;}\\ I_{00}&=\SI{11.5(2)}{\micro\ampere}\,\text{.}
 \end{align}
 \begin{figure}
   \centering
@@ -47,12 +49,12 @@ Die zugehörigen Regressionsparameter ergeben sich zu:
 \input{daten/i01.tex}
 Die Regressionsparameter der Ausgleichsrechnung der ersten angeregten Mode ergeben sich zu:
 \begin{align}
-  d_{01,1}=\SI{0.495(9)}{\milli\meter}\,\text{;}\\
-  w_{01,1}=\SI{0.42(2)}{\centi\meter} \,\text{;}\\
-  I_{01,1}=\SI{1.51(6)}{\micro\ampere}\,\text{;}\\
-  d_{01,2}=\SI{1.43(1)}{\milli\meter} \,\text{;}\\
-  w_{01,1}=\SI{0.35(3)}{\centi\meter} \,\text{;}\\
-  I_{01,2}=\SI{0.9(6)}{\micro\ampere}\,\text{.}\\
+  d_{01,1}&=\SI{0.495(9)}{\milli\meter}\,\text{;}\\
+  w_{01,1}&=\SI{0.42(2)}{\centi\meter} \,\text{;}\\
+  I_{01,1}&=\SI{1.51(6)}{\micro\ampere}\,\text{;}\\
+  d_{01,2}&=\SI{1.43(1)}{\milli\meter} \,\text{;}\\
+  w_{01,1}&=\SI{0.35(3)}{\centi\meter} \,\text{;}\\
+  I_{01,2}&=\SI{0.9(6)}{\micro\ampere}\,\text{.}\\
 \end{align}
 In Abbildung~\ref{fig:tem01} finden sich die Messdaten samt ermittelter Regressionsrechnung.
 \begin{figure}
@@ -63,6 +65,8 @@ In Abbildung~\ref{fig:tem01} finden sich die Messdaten samt ermittelter Regressi
 \end{figure}
 \subsection{Stabilitätsmessung für verschiedene Resonatorspiegel}
 Die Messdaten der Stabilitätsmessung des Lasers für verschiedene Resonatorspiegel sind in Tabelle~\ref{tab:stabilitaetpk} beziehungsweise in Tabelle~\ref{tab:stabilitaetkk} dargestellt.
+Da die Resonatorlänge mittels eines Maßbandes vermessen wurde, dessen Nullanschlag nicht stabil fixiert war und welches sich zudem leicht durchbog, wird eine Ungenauigkeit von $\Delta L=\SI{3}{\milli\meter}$ angenommen.
+Für die Intensitätsmessung wird bei zwei konkaven Resonatoren ein Ablesefehler von $\Delta I=\SI{0.2}{\micro\ampere}$ und für die Resonatorkombination planar-konkav eine Unsicherheit von $\delta I=\SI{0.025}{\micro\ampere}$ angenommen.
 Die Messdaten des Resonators mit der Spiegelkombination konkav-konkav wurden dabei an eine quadratische Funktion der Form
 \begin{equation}
   I_{\text{kk}}=a\cdot L^2+b\cdot L+c
@@ -70,9 +74,9 @@ Die Messdaten des Resonators mit der Spiegelkombination konkav-konkav wurden dab
 gefittet.
 Die zugehörigen Parameter ergeben sich zu:
 \begin{align}
-  a=\SI{6(442)e-6}{\micro\ampere\per\square\centi\meter}\,\text{;}\\
-  b=-\SI{88(88)e-2}{\micro\ampere\per\centi\meter} \,\text{;}\\
-  c=\SI{11(4)}{\micro\ampere}\,\text{.}
+  a&=\SI{6(442)e-6}{\micro\ampere\per\square\centi\meter}\,\text{;}\\
+  b&=-\SI{88(88)e-2}{\micro\ampere\per\centi\meter} \,\text{;}\\
+  c&=\SI{11(4)}{\micro\ampere}\,\text{.}
 \end{align}
 Die Messdaten samt zugehöriger Regression sind in Abbildung~\ref{fig:kk} dargestellt.
 \begin{figure}
@@ -89,8 +93,8 @@ Für den Resonatorspiegel mit der Kombination planar-konkav werden die Messdaten
 gefittet.
 Die Parameter ergeben sich zu:
 \begin{align}
-    a=-\SI{13(5)e-3}{\micro\ampere\per\centi\meter}\,\text{;}\\
-  b=\SI{1.6(4)}{\micro\ampere}\,\text{.}
+    a&=-\SI{13(5)e-3}{\micro\ampere\per\centi\meter}\,\text{;}\\
+  b&=\SI{1.6(4)}{\micro\ampere}\,\text{.}
 \end{align}
 In Abbildung~\ref{fig:pk} sind die Messdaten samt Regressiongeraden geplottet.
 \input{daten/stabilitaetpk.tex}
@@ -106,9 +110,10 @@ In Abbildung~\ref{fig:pk} sind die Messdaten samt Regressiongeraden geplottet.
 Die Wellenlänge des Lasers lässt sich anhand des Abstands der Beugungsreflexe auf dem Schirm ermitteln.
 Die Berechnung der Wellenlänge erfolgt über die Beziehung:
 \begin{equation}
-  \lambda=\frac{a}{n}\cdot\sin{\arctan{\frac{d_n}{L}}}\,\text{.}
+  \lambda=\frac{g}{n}\cdot\sin{\arctan{\frac{d_n}{L}}}\,\text{.}
 \end{equation}
-Es ist $a=\SI{0.01}{\milli\meter}$ der Gitterabstand, $d_n$ der Abstand des Hauptmaximums zu den Nebenmaxima, $L=\SI{30.8}{\centi\meter}$ der Abstand zwischen Beugungsgitter und Schirm, sowie $n$ die Ordnung des Beugungsmaximums, wobei $n$ ausgehend vom Hauptmaximum mit $n=0$ aufsteigend mit größer werdenden Abstand der Nebenmaxima gezählt wird.
+Es ist $g=\SI{0.01}{\milli\meter}$ die Gitterkonstante, $d_n$ der Abstand des Hauptmaximums zu den Nebenmaxima, $L=\SI{30.8(1)}{\centi\meter}$ der Abstand zwischen Beugungsgitter und Schirm, sowie $n$ die Ordnung des Beugungsmaximums, wobei $n$ ausgehend vom Hauptmaximum mit $n=0$ aufsteigend mit größer werdenden Abstand der Nebenmaxima gezählt wird.
+Für die Messung der Abstände der Nebenmaxima zum Hauptmaximum wird ein Ablesefehler von $\Delta d=\SI{0.5}{\milli\meter}$ angenommen.
 In Tabelle~\ref{tab:wellenlaenge} finden sich die ermittelten Messdaten samt der daraus berechneten Wellenlänge für jedes Nebenmaximum.
 Eine Mittelung über alle Wellenlängen ergibt die mittlere Wellenlänge
 $\lambda_{\mathrm{mean}}=\SI{654(4)}{\nano\meter}$
