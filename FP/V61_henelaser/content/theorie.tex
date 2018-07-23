@@ -6,18 +6,23 @@ genauer betrachtet. Die Begriffe werden im Folgenden näher erläutert.
 
 \subsection{Theoretische Grundlagen und die Stabilitätsbedingung}
 Ein Laser (Light Amplification by Stimulated Emission of Radiation) ermöglicht die Erzeugung
-von monochromatischem Licht hoher Kohärenz und Intensität. Er setzt sich aus einem aktiven 
+von monochromatischem Licht hoher Kohärenz und Intensität. Er setzt sich aus einem aktiven
 Lasermedium, einer Pumpquelle und einem Resonator zusammen. Im Lasermedium werden die Photonen
-des Lasers emittiert. 
+des Lasers emittiert.
 
 Es wird ein Zwei-Niveau-System mit den Zuständen ${1}$ und ${2}$ und zugehörigen
 Energienieveaus $E_{1}$ und $E_{2}$ betrachtet. Dabei gilt $E_{2}> E_{1}$. Anhand
-dieses Systems sollen die möglichen Prozesse erklärt werden, die zu einer Absorption oder 
+dieses Systems sollen die möglichen Prozesse erklärt werden, die zu einer Absorption oder
 Emission eines Strahlungsfeldes  $\rho(\nu)$ im Lasermedium führen. Es wird zwischen
-drei Prozessen differenziert, die in Abbildung \ref{fig:absorpemiss} skizziert sind.
-
+drei Prozessen differenziert, die in Abbildung \ref{fig:emission} skizziert sind.
+\begin{figure}
+	  \centering
+	  \includegraphics[width = 0.9\textwidth]{pictures/emission.png}
+		\caption{Darstellung der möglichen Absorptions-und Emissionsprozesse, welche für die Funktion des Lasers relevant sind.~\cite{Anleitung}}
+		\label{fig:emission}
+\end{figure}
 Durch die Absorption eines Photons der Energie $h \nu = E_{2} - E_{1}$ kann ein Elektron aus dem
-Zustand $1$ in den Zustand ${2}$ übergehen. Die Wahrscheinlichkeit $P_{1\rightarrow 2}$ für 
+Zustand $1$ in den Zustand ${2}$ übergehen. Die Wahrscheinlichkeit $P_{1\rightarrow 2}$ für
 diesen Prozess ist proportional zur spektrale Energiedichte $\rho(\nu)$:
 \begin{equation}
 	  P_{1\rightarrow 2} = B_{1\rightarrow 2}\cdot\rho(\nu)
@@ -29,7 +34,7 @@ bezeichnet. Außerdem kann eine induzierte Emission mit der Wahrscheinlichkeit
 \end{equation}
 stattfinden. Dabei ist  $B_{2\rightarrow1}$ der Einsteinkoeffizient der induzierten Emission.
 Das induzierte Photon stimmt in Energie, Phase und Ausbreitungsrichtung mit dem anregenden Photon überein.
-Unabhängig vom externen Strahlungsfeld kann auch spontan ein Photon emittiert werden. Die 
+Unabhängig vom externen Strahlungsfeld kann auch spontan ein Photon emittiert werden. Die
 Wahrscheinlichkeit für diesen Prozess ergibt sich zu
 \begin{equation}
 	  P_{s} = A_{2 \rightarrow 1} ,
@@ -41,20 +46,21 @@ Boltzmann-Statistik:
 	n_{i} = \frac{g_{i}n}{Z}\exp\left(-\frac{E_{i}}{k_{B}T}\right)
 \end{equation}
 Hierbei ist $n$ die Anzahl der Zustände, $g_{i}$ das statistische Gewicht des Zustands ${i}$
-und $Z$ die Zustandssumme. Im thermischen Gleichgewicht dominiert somit die Besetzung 
+und $Z$ die Zustandssumme. Im thermischen Gleichgewicht dominiert somit die Besetzung
 des Grundzustandes. Die Aufgabe des Lasers besteht nun darin,
 eine dauerhafte Verstärkung des Strahlungsfeldes zu erzeugen, was durch eine Besetzungsinversion
 des Systems realisiert wird. Dies wird durch die Pumpquelle ermöglicht.
-Eine Besetzungsinversion ist äquivalent zu der Situation, dass im Medium mehr induzierte 
+Eine Besetzungsinversion ist äquivalent zu der Situation, dass im Medium mehr induzierte
 Emissionen als spontane Emissionen auftreten, was dazu führt, dass das Strahlungsfeld durch
 das Medium verstärkt wird.
-Weiterhin wird der Resonator dazu verwendet, um den Laufweg der Photonen im Medium zu 
+Weiterhin wird der Resonator dazu verwendet, um den Laufweg der Photonen im Medium zu
 verlängern. Das Prinzip ist in Abbildung \ref{fig:prinzip_laser} dargestellt.
-%\begin{figure}
-%	  \centering
-%	    \includegraphics[width = 0.7\textwidth]{pictures/prinzip_laser.png}
-%	        \label{fig:prinzip_laser}
-%\end{figure}
+\begin{figure}
+	  \centering
+	  \includegraphics[width = 0.9\textwidth]{pictures/funktion.png}
+		\caption{Schematische Darstellung der prinzipiellen Funktionsweise eines Lasers.~\cite{Anleitung}}
+		\label{fig:prinzip_laser}
+\end{figure}
 
 Optische Resonatoren sind durch gegenüberliegende Spiegel realisiert, von denen mindestens einer halbdurchlässig ist, um den erzeugten Strahl
 auszukoppeln. Verluste an den offenen Rändern der Anordung werden inbesondere durch konfokale Anordnungen minimiert.
@@ -95,16 +101,16 @@ ein, wenn die folgende Stabilitätbedingung erfüllt ist:
 \end{equation}
 Dabei ist
 \begin{equation}
-	  g_{i} = 1 - L/r_{i}, 
+	  g_{i} = 1 - L/r_{i},
 	    \label{eq:spiegelparameter}
 \end{equation}
-mit den jeweiligen Krümmungsradien $r_{i}$ der Spiegel. 
+mit den jeweiligen Krümmungsradien $r_{i}$ der Spiegel.
 
 \subsection{\ce{HeNe}-Laser }
 Als Resonatormedium wird beim \ce{HeNe}-Laser ein Gemisch aus $\nicefrac{1}{5}$ Helium und
 $\nicefrac{4}{5}$ Neon verwendet, das unter einem Druck von
 ca. $\SI{1}{\milli\bar}$ in einem Glaskolben isoliert ist. Das Lasermedium ist Neon, während Helium zum Pumpen verwendet wird.
-Die Erzeugung der notwendigen Besetzungsinversion ist in Abbildung~\ref{fig:energieschema} 
+Die Erzeugung der notwendigen Besetzungsinversion ist in Abbildung~\ref{fig:energieschema}
 illustriert. Durch eine Gasentladung werden
 die Heliumatome angeregt, welche wiederum durch Stöße zweiter Art die Neon Atome anregen können. Hierbei sind vorallem die sehr stabilen Zustände
 $2^1s$ und $2^3s$ des Helium verantwortlich, deren Anregungsenergie im Rahmen einer natürlichen Linienbreite, die in \ref{fig:energieschema}

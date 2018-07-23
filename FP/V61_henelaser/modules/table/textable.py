@@ -19,7 +19,7 @@ def latex_tab(data=[[1,2,3],[42,42,42]],names=["col1","col2"],filename="test.tex
         texfile.write("\\sisetup{table-format=%s}"%tableformat)
         texfile.write(" \\begin{tabular}{")
         for col in data:
-            texfile.write("S")
+            texfile.write("r")
         texfile.write("}\n");
         texfile.write(" \\toprule \n    ");
         for i in range(len(names)-1):
